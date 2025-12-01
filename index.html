@@ -11,196 +11,638 @@
             --accent: #ed8936;
             --light: #f7fafc;
             --text: #2d3748;
+            --navbar-height: 60px;
+            --sidebar-width: 250px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
             color: var(--text);
             background: var(--light);
         }
-        .header {
+
+        /* Sticky Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--navbar-height);
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+        }
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+        }
+        .navbar-nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .navbar-nav a:hover, .navbar-nav a.active {
+            background: var(--accent);
+            color: white;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Sidebar TOC */
+        .sidebar {
+            position: fixed;
+            top: var(--navbar-height);
+            left: 0;
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--navbar-height));
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            overflow-y: auto;
+            z-index: 100;
+        }
+        .sidebar h3 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        .sidebar-nav {
+            list-style: none;
+        }
+        .sidebar-nav li {
+            margin: 0.25rem 0;
+        }
+        .sidebar-nav a {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        .sidebar-nav a:hover {
+            background: var(--light);
+            border-left-color: var(--secondary);
+        }
+        .sidebar-nav a.active {
+            background: #edf2f7;
+            border-left-color: var(--accent);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .sidebar-section {
+            margin-top: 1.5rem;
+        }
+        .sidebar-section h4 {
+            font-size: 0.75rem;
+            color: #718096;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            margin-top: var(--navbar-height);
+            min-height: calc(100vh - var(--navbar-height));
+        }
+
+        /* Hero Header */
+        .hero {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 4rem 2rem;
             text-align: center;
         }
-        .header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .header p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero .subtitle { font-size: 1.3rem; opacity: 0.95; margin-bottom: 0.5rem; }
+        .hero .tagline { font-size: 1rem; opacity: 0.85; }
         .badges { margin-top: 1.5rem; }
-        .badges a {
+        .badges img { margin: 0.25rem; }
+        .hero-buttons { margin-top: 1.5rem; }
+
+        /* Buttons */
+        .btn {
             display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
             margin: 0.25rem;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        .section { background: white; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .section h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #dd6b20; }
+        .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.3); }
+        .btn-outline { background: transparent; color: var(--secondary); border: 2px solid var(--secondary); }
+        .btn-outline:hover { background: var(--secondary); color: white; }
+
+        /* Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+        /* Sections */
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            scroll-margin-top: calc(var(--navbar-height) + 20px);
+        }
+        .section h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .section h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem; }
+
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+        /* Cards */
         .card {
             background: var(--light);
             border-radius: 8px;
             padding: 1.5rem;
             border-left: 4px solid var(--accent);
         }
-        .card h3 { color: var(--secondary); margin-bottom: 0.5rem; }
-        .team-member { text-align: center; padding: 1rem; }
-        .team-member h4 { color: var(--primary); }
-        .team-member p { font-size: 0.9rem; color: #666; }
+        .card h3, .card h4 { color: var(--secondary); margin-bottom: 0.5rem; }
+        .card p { font-size: 0.95rem; color: #4a5568; }
+
+        /* Team Cards */
+        .team-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .team-card h4 { color: var(--primary); margin-bottom: 0.25rem; }
+        .team-card .role { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+        .team-card .affiliation { font-size: 0.85rem; color: #666; margin-top: 0.5rem; }
+
+        /* Tables */
         table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
         th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
-        th { background: var(--light); color: var(--primary); }
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            margin: 0.5rem 0.25rem;
-            transition: background 0.3s;
+        th { background: var(--light); color: var(--primary); font-weight: 600; }
+
+        /* Publication Card */
+        .pub-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: white;
         }
-        .btn:hover { background: #dd6b20; }
-        .btn-secondary { background: var(--secondary); }
-        .btn-secondary:hover { background: var(--primary); }
+        .pub-card h4 { color: var(--primary); margin-bottom: 0.5rem; line-height: 1.4; }
+        .pub-card .authors { color: #666; font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .pub-card .venue { color: var(--accent); font-weight: 500; font-size: 0.9rem; }
+        .pub-card .abstract { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; font-size: 0.9rem; color: #4a5568; }
+        .pub-card .links { margin-top: 1rem; }
+        .pub-card .links a { margin-right: 1rem; font-size: 0.85rem; }
+
+        /* News Timeline */
+        .news-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-date {
+            min-width: 100px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .news-content h4 { color: var(--primary); margin-bottom: 0.25rem; }
+        .news-content p { font-size: 0.9rem; color: #4a5568; }
+
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .contact-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+        .contact-item p { color: #4a5568; }
+        .contact-item a { color: var(--secondary); }
+
+        /* Footer */
         .footer {
             background: var(--primary);
             color: white;
             text-align: center;
             padding: 2rem;
-            margin-top: 2rem;
         }
         .footer a { color: var(--accent); }
-        ul { margin-left: 1.5rem; }
-        li { margin: 0.5rem 0; }
+        .footer-links { margin-bottom: 1rem; }
+        .footer-links a { color: rgba(255,255,255,0.8); margin: 0 0.75rem; text-decoration: none; }
+        .footer-links a:hover { color: var(--accent); }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 45px;
+            height: 45px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: #dd6b20; transform: translateY(-3px); }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .navbar-nav { display: none; }
+            .menu-toggle { display: block; }
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; }
+            .navbar-nav.show {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--navbar-height);
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                padding: 1rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            }
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero .subtitle { font-size: 1.1rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Narrative Digital Finance</h1>
-        <p>A tale of structural breaks, bubbles & market narratives</p>
-        <p style="margin-top: 0.5rem; font-size: 1rem;">Research Project of the Swiss National Science Foundation (SNSF)</p>
-        <div class="badges">
-            <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"><img src="https://img.shields.io/badge/Funded%20by-SNSF-red" alt="SNSF"></a>
-            <a href="https://cordis.europa.eu/project/id/101119635"><img src="https://img.shields.io/badge/EU-Horizon%20Europe-blue" alt="EU Horizon"></a>
-        </div>
-        <div style="margin-top: 1.5rem;">
-            <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="btn">View on GitHub</a>
-            <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" class="btn btn-secondary">Wiki Documentation</a>
-        </div>
-    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Narrative Digital Finance</a>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <ul class="navbar-nav" id="navMenu">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#objectives">Objectives</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#collaborations">Collaborations</a></li>
+            <li><a href="#funding">Funding</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div class="container">
-        <div class="section">
-            <h2>Project Overview</h2>
-            <p>Large fluctuations, instabilities, trends and uncertainty of financial markets constitute a substantial challenge for asset management companies, pension funds and regulators. This project develops a comprehensive framework that utilizes advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks using diverse data sources.</p>
-        </div>
-
-        <div class="section">
-            <h2>Research Objectives</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Validate Econometric Models</h3>
-                    <p>Validate and refine existing econometric models using real-world financial data</p>
-                </div>
-                <div class="card">
-                    <h3>Narrative Analysis</h3>
-                    <p>Integrate narrative analysis to understand and predict market behaviors and asset price dynamics</p>
-                </div>
-                <div class="card">
-                    <h3>AI/ML Framework</h3>
-                    <p>Create a multidimensional AI and ML framework that enhances the detection of market anomalies</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Team</h2>
-            <p style="margin-bottom: 1rem;"><strong>Cooperation between University of Twente (Netherlands) and Bern Business School (Switzerland)</strong></p>
-            <div class="grid">
-                <div class="team-member card">
-                    <h4>Joerg Osterrieder</h4>
-                    <p><strong>Principal Investigator</strong></p>
-                    <p>Bern Business School, University of Twente</p>
-                </div>
-                <div class="team-member card">
-                    <h4>Marius Jan Klein</h4>
-                    <p><strong>Team Member</strong></p>
-                    <p>Bern Business School</p>
-                </div>
-                <div class="team-member card">
-                    <h4>Branka Hadji Misheva</h4>
-                    <p><strong>Team Member</strong></p>
-                    <p>Bern Business School</p>
-                </div>
-                <div class="team-member card">
-                    <h4>Gabin Taibi</h4>
-                    <p><strong>Team Member</strong></p>
-                    <p>Bern Business School, University of Twente</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Methods</h2>
-            <ul>
-                <li><strong>Data Collection:</strong> Stock prices, macroeconomic indicators, and textual content from the web</li>
-                <li><strong>Text Analysis:</strong> Text mining and NLP techniques to analyze sentiment, narrative structures, and market impact</li>
-                <li><strong>AI Models:</strong> Developing new AI models combining traditional financial analysis with narrative insights</li>
+    <!-- Sidebar TOC -->
+    <aside class="sidebar">
+        <h3>Table of Contents</h3>
+        <ul class="sidebar-nav" id="sidebarNav">
+            <li><a href="#overview">Project Overview</a></li>
+            <li><a href="#objectives">Research Objectives</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#results">Output & Results</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#collaborations">Collaborations</a></li>
+            <li><a href="#funding">Funding</a></li>
+            <li><a href="#news">News & Updates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="sidebar-section">
+            <h4>Quick Links</h4>
+            <ul class="sidebar-nav">
+                <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" target="_blank">GitHub Repo</a></li>
+                <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" target="_blank">Wiki</a></li>
+                <li><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance" target="_blank">Project Website</a></li>
             </ul>
         </div>
+    </aside>
 
-        <div class="section">
-            <h2>Output & Results</h2>
-            <table>
-                <tr><th>Category</th><th>Count</th></tr>
-                <tr><td>Scientific Publications</td><td>1</td></tr>
-                <tr><td>Datasets</td><td>3</td></tr>
-                <tr><td>Collaborations</td><td>1</td></tr>
-            </table>
-        </div>
-
-        <div class="section">
-            <h2>Collaborations</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Deutsche Borse</h3>
-                    <p>Dr. Stefan Schlamp - Head of Quantitative Analytics</p>
-                </div>
-                <div class="card">
-                    <h3>COST Action CA19130</h3>
-                    <p>Fintech and Artificial Intelligence in Finance</p>
-                </div>
-                <div class="card">
-                    <h3>MSCA Industrial Doctoral Network</h3>
-                    <p>Digital Finance Network</p>
-                </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero -->
+        <div class="hero">
+            <h1>Narrative Digital Finance</h1>
+            <p class="subtitle">A tale of structural breaks, bubbles & market narratives</p>
+            <p class="tagline">Research Project of the Swiss National Science Foundation (SNSF)</p>
+            <div class="badges">
+                <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"><img src="https://img.shields.io/badge/Funded%20by-SNSF-red" alt="SNSF"></a>
+                <a href="https://cordis.europa.eu/project/id/101119635"><img src="https://img.shields.io/badge/EU-Horizon%20Europe-blue" alt="EU Horizon"></a>
+                <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Active">
+            </div>
+            <div class="hero-buttons">
+                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="btn btn-primary">View on GitHub</a>
+                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" class="btn btn-secondary">Wiki Documentation</a>
             </div>
         </div>
 
-        <div class="section">
-            <h2>Funding</h2>
-            <p><strong>Swiss National Science Foundation (SNSF)</strong> - Proposal Number: 100018E_213370</p>
-            <p style="margin-top: 1rem;"><strong>Horizon Europe</strong> - Marie Sklodowska-Curie Grant Agreement No. 101119635</p>
-            <div style="margin-top: 1rem;">
-                <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" class="btn btn-secondary">SNSF Grant Page</a>
-                <a href="https://cordis.europa.eu/project/id/101119635" class="btn btn-secondary">EU CORDIS</a>
+        <div class="container">
+            <!-- Overview -->
+            <section id="overview" class="section">
+                <h2>Project Overview</h2>
+                <p>Large fluctuations, instabilities, trends and uncertainty of financial markets constitute a substantial challenge for asset management companies, pension funds and regulators. This project develops a comprehensive framework that utilizes advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks using diverse data sources.</p>
+                <p style="margin-top: 1rem;">The research bridges the gap between traditional econometric approaches and modern AI techniques, providing new insights into the role of narratives and quantitative data in financial decision-making.</p>
+            </section>
+
+            <!-- Objectives -->
+            <section id="objectives" class="section">
+                <h2>Research Objectives</h2>
+                <h3>Overall Objectives</h3>
+                <p>Develop a comprehensive framework utilizing advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks.</p>
+
+                <h3>Specific Aims</h3>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h4>1. Econometric Validation</h4>
+                        <p>Validate and refine existing econometric models using real-world financial data</p>
+                    </div>
+                    <div class="card">
+                        <h4>2. Narrative Analysis</h4>
+                        <p>Integrate narrative analysis to understand and predict market behaviors and asset price dynamics</p>
+                    </div>
+                    <div class="card">
+                        <h4>3. AI/ML Framework</h4>
+                        <p>Create a multidimensional AI and ML framework that enhances detection of market anomalies</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team -->
+            <section id="team" class="section">
+                <h2>Team</h2>
+                <p><strong>Cooperation between University of Twente (Netherlands) and Bern Business School (Switzerland)</strong></p>
+                <div class="grid" style="margin-top: 1.5rem;">
+                    <div class="card team-card">
+                        <h4>Joerg Osterrieder</h4>
+                        <p class="role">Principal Investigator</p>
+                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                    </div>
+                    <div class="card team-card">
+                        <h4>Marius Jan Klein</h4>
+                        <p class="role">Team Member</p>
+                        <p class="affiliation">Bern Business School</p>
+                    </div>
+                    <div class="card team-card">
+                        <h4>Branka Hadji Misheva</h4>
+                        <p class="role">Team Member</p>
+                        <p class="affiliation">Bern Business School</p>
+                    </div>
+                    <div class="card team-card">
+                        <h4>Gabin Taibi</h4>
+                        <p class="role">Team Member</p>
+                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methods -->
+            <section id="methods" class="section">
+                <h2>Methods</h2>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h4>Data Collection</h4>
+                        <p>Stock prices, macroeconomic indicators, and textual content from the web</p>
+                    </div>
+                    <div class="card">
+                        <h4>Text Analysis</h4>
+                        <p>Text mining and NLP techniques to analyze sentiment, narrative structures, and market impact</p>
+                    </div>
+                    <div class="card">
+                        <h4>AI Model Development</h4>
+                        <p>Developing new AI models combining traditional financial analysis with narrative insights</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results -->
+            <section id="results" class="section">
+                <h2>Output & Results</h2>
+                <p>This project has boosted collaboration both within scientific communication and wider public.</p>
+                <table>
+                    <tr><th>Category</th><th>Count</th><th>Description</th></tr>
+                    <tr><td>Scientific Publications</td><td>1</td><td>Peer-reviewed research papers</td></tr>
+                    <tr><td>Datasets</td><td>3</td><td>Novel datasets for market analysis</td></tr>
+                    <tr><td>Collaborations</td><td>4</td><td>Industry and academic partnerships</td></tr>
+                </table>
+            </section>
+
+            <!-- Publications -->
+            <section id="publications" class="section">
+                <h2>Publications</h2>
+                <div class="pub-card">
+                    <h4>Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI</h4>
+                    <p class="authors">Bolesta, K., Taibi, G., Codruta, M., Osterrieder, J., Hadji-Misheva, B. & Hopp, C.</p>
+                    <p class="venue">SSRN, 2024</p>
+                    <div class="abstract">
+                        <p>The paper presents an advanced conceptual framework for the analysis of textual data in the context of financial securities, hypothesizing that a comprehensive evaluation of events within the broader economic environment, particularly through their descriptions, significantly influences the pricing of financial instruments.</p>
+                        <p style="margin-top: 0.75rem;">This research extends beyond the traditional scope of Natural Language Processing by proposing the inclusion of non-textual data forms such as images, videos, and audio in the analysis. The hypothesis posits that the systematic analysis of these diverse multimodal textual inputs could enhance the decision-making process in financial asset management.</p>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="btn btn-outline">View Paper</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collaborations -->
+            <section id="collaborations" class="section">
+                <h2>Collaborations</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Deutsche Borse</h4>
+                        <p><strong>Dr. Stefan Schlamp</strong><br>Head of Quantitative Analytics, Eschborn, Germany</p>
+                    </div>
+                    <div class="card">
+                        <h4>Bern Business School</h4>
+                        <p><strong>Prof. Dr. Branka Hadji Misheva</strong><br>Department of Business</p>
+                    </div>
+                    <div class="card">
+                        <h4>COST Action CA19130</h4>
+                        <p><strong>Fintech and AI in Finance</strong><br>Action Chair: Joerg Osterrieder</p>
+                    </div>
+                    <div class="card">
+                        <h4>MSCA Industrial Doctoral Network</h4>
+                        <p><strong>Digital Finance Network</strong><br>Coordinator: Joerg Osterrieder</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Funding -->
+            <section id="funding" class="section">
+                <h2>Funding</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Swiss National Science Foundation</h4>
+                        <p>Proposal Number: 100018E_213370</p>
+                        <p style="margin-top: 0.5rem;"><a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" class="btn btn-outline" style="margin-top: 0.5rem;">SNSF Grant Page</a></p>
+                    </div>
+                    <div class="card">
+                        <h4>Horizon Europe</h4>
+                        <p>Marie Sklodowska-Curie Actions<br>Grant Agreement No. 101119635</p>
+                        <p style="margin-top: 0.5rem;"><a href="https://cordis.europa.eu/project/id/101119635" class="btn btn-outline" style="margin-top: 0.5rem;">EU CORDIS</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News -->
+            <section id="news" class="section">
+                <h2>News & Updates</h2>
+                <div class="news-item">
+                    <div class="news-date">Dec 2024</div>
+                    <div class="news-content">
+                        <h4>GitHub Repository Launched</h4>
+                        <p>Project repository and documentation now available on GitHub with comprehensive wiki.</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2024</div>
+                    <div class="news-content">
+                        <h4>SSRN Publication</h4>
+                        <p>Published research on multimodal influence in financial instrument pricing using NLP and Generative AI.</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2024</div>
+                    <div class="news-content">
+                        <h4>SNSF Mobility Grants</h4>
+                        <p>Team applied for and received SNSF Mobility Research Grants for international collaboration.</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2023</div>
+                    <div class="news-content">
+                        <h4>Project Launch</h4>
+                        <p>Narrative Digital Finance research project officially started with SNSF funding.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h4>Principal Investigator</h4>
+                        <p><strong>Prof. Dr. Joerg Osterrieder</strong></p>
+                        <p>Bern Business School, Switzerland<br>University of Twente, Netherlands</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Project Website</h4>
+                        <p><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance">digital-finance-msca.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>GitHub</h4>
+                        <p><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">Digital-AI-Finance/Narrative-Digital-Finance</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#overview">Overview</a>
+                <a href="#team">Team</a>
+                <a href="#publications">Publications</a>
+                <a href="#funding">Funding</a>
+                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki">Wiki</a>
             </div>
-        </div>
+            <p>Funded by the European Union. Views and opinions expressed are those of the author(s) only.</p>
+            <p style="margin-top: 0.5rem;">Marie Sklodowska-Curie Grant Agreement No. 101119635</p>
+            <p style="margin-top: 1rem;">
+                <a href="https://www.digital-finance-msca.com">Digital Finance MSCA</a> |
+                <a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a>
+            </p>
+        </footer>
+    </main>
 
-        <div class="section">
-            <h2>Links</h2>
-            <ul>
-                <li><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance">Project Website</a></li>
-                <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">GitHub Repository</a></li>
-                <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki">Wiki Documentation</a></li>
-            </ul>
-        </div>
-    </div>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">&#8593;</button>
 
-    <div class="footer">
-        <p>Funded by the European Union. Views and opinions expressed are those of the author(s) only.</p>
-        <p style="margin-top: 0.5rem;">Marie Sklodowska-Curie Grant Agreement No. 101119635</p>
-        <p style="margin-top: 1rem;"><a href="https://www.digital-finance-msca.com">Digital Finance MSCA</a> | <a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a></p>
-    </div>
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('show');
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Back to top button visibility
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar-nav a, .sidebar-nav a');
+
+        function highlightNav() {
+            let scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+
+                if (scrollPos >= top && scrollPos < top + height) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNav);
+        highlightNav();
+    </script>
 </body>
 </html>
