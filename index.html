@@ -4,64 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Narrative Digital Finance | SNSF Research Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a365d;
-            --secondary: #2c5282;
-            --accent: #ed8936;
-            --light: #f7fafc;
-            --text: #2d3748;
-            --navbar-height: 60px;
-            --sidebar-width: 250px;
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --secondary: #3b82f6;
+            --secondary-light: #60a5fa;
+            --accent: #f59e0b;
+            --accent-light: #fbbf24;
+            --success: #10b981;
+            --light: #f8fafc;
+            --lighter: #ffffff;
+            --text: #334155;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --navbar-height: 70px;
+            --sidebar-width: 280px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --radius: 12px;
+            --radius-lg: 16px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
             color: var(--text);
             background: var(--light);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Sticky Navbar */
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        .animate-fade-up { animation: fadeInUp 0.6s ease-out forwards; }
+        .animate-slide-left { animation: slideInLeft 0.6s ease-out forwards; }
+
+        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             height: var(--navbar-height);
-            background: var(--primary);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
             color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 2rem;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .navbar-brand {
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 1.25rem;
             color: white;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .navbar-brand span {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .navbar-nav {
             display: flex;
             list-style: none;
-            gap: 0.5rem;
+            gap: 0.25rem;
         }
         .navbar-nav a {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            transition: all 0.3s;
+            padding: 0.5rem 0.875rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
         }
-        .navbar-nav a:hover, .navbar-nav a.active {
-            background: var(--accent);
-            color: white;
-        }
+        .navbar-nav a:hover { color: white; background: rgba(255,255,255,0.1); }
+        .navbar-nav a.active { color: white; background: var(--secondary); }
         .menu-toggle {
             display: none;
             background: none;
@@ -69,230 +112,587 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
+            padding: 0.5rem;
         }
 
-        /* Sidebar TOC */
+        /* Sidebar */
         .sidebar {
             position: fixed;
             top: var(--navbar-height);
             left: 0;
             width: var(--sidebar-width);
             height: calc(100vh - var(--navbar-height));
-            background: white;
-            border-right: 1px solid #e2e8f0;
-            padding: 1.5rem;
+            background: var(--lighter);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
             overflow-y: auto;
             z-index: 100;
         }
-        .sidebar h3 {
-            color: var(--primary);
-            font-size: 0.9rem;
+        .sidebar-header {
+            font-size: 0.7rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
             margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent);
         }
-        .sidebar-nav {
-            list-style: none;
-        }
-        .sidebar-nav li {
-            margin: 0.25rem 0;
-        }
+        .sidebar-nav { list-style: none; }
+        .sidebar-nav li { margin: 0.125rem 0; }
         .sidebar-nav a {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             color: var(--text);
             text-decoration: none;
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
             font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
             border-left: 3px solid transparent;
-            transition: all 0.3s;
         }
         .sidebar-nav a:hover {
             background: var(--light);
-            border-left-color: var(--secondary);
+            color: var(--secondary);
         }
         .sidebar-nav a.active {
-            background: #edf2f7;
-            border-left-color: var(--accent);
-            color: var(--primary);
-            font-weight: 600;
+            background: linear-gradient(90deg, rgba(59,130,246,0.1), transparent);
+            border-left-color: var(--secondary);
+            color: var(--secondary);
         }
-        .sidebar-section {
-            margin-top: 1.5rem;
+        .sidebar-nav .icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
         }
-        .sidebar-section h4 {
+        .sidebar-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 1.5rem 0;
+        }
+        .sidebar-section { margin-top: 1.5rem; }
+        .sidebar-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: var(--light);
+            border-radius: 8px;
             font-size: 0.75rem;
-            color: #718096;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            margin: 0.25rem 0;
+            width: 100%;
         }
+        .sidebar-badge img { height: 18px; }
 
         /* Main Content */
         .main-content {
             margin-left: var(--sidebar-width);
             margin-top: var(--navbar-height);
-            min-height: calc(100vh - var(--navbar-height));
         }
 
-        /* Hero Header */
+        /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e3a5f 100%);
             color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
         }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .hero .subtitle { font-size: 1.3rem; opacity: 0.95; margin-bottom: 0.5rem; }
-        .hero .tagline { font-size: 1rem; opacity: 0.85; }
-        .badges { margin-top: 1.5rem; }
-        .badges img { margin: 0.25rem; }
-        .hero-buttons { margin-top: 1.5rem; }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .hero .tagline {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .hero-badges img { height: 24px; transition: transform 0.2s; }
+        .hero-badges a:hover img { transform: scale(1.05); }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
         /* Buttons */
         .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s;
-            margin: 0.25rem;
+            border: none;
+            cursor: pointer;
         }
-        .btn-primary { background: var(--accent); color: white; }
-        .btn-primary:hover { background: #dd6b20; }
-        .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.3); }
-        .btn-outline { background: transparent; color: var(--secondary); border: 2px solid var(--secondary); }
-        .btn-outline:hover { background: var(--secondary); color: white; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            color: white;
+            box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59,130,246,0.5);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        .btn-sm { padding: 0.625rem 1.25rem; font-size: 0.875rem; }
 
         /* Container */
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
 
         /* Sections */
         .section {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
+            background: var(--lighter);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            scroll-margin-top: calc(var(--navbar-height) + 20px);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            scroll-margin-top: calc(var(--navbar-height) + 24px);
+            transition: box-shadow 0.3s;
+        }
+        .section:hover { box-shadow: var(--shadow-lg); }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
         }
         .section h2 {
             color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
             font-size: 1.5rem;
+            font-weight: 700;
         }
-        .section h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem; }
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        .section h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+        }
+        .section p { color: var(--text); }
 
         /* Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
         /* Cards */
         .card {
             background: var(--light);
-            border-radius: 8px;
-            padding: 1.5rem;
-            border-left: 4px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        .card h3, .card h4 { color: var(--secondary); margin-bottom: 0.5rem; }
-        .card p { font-size: 0.95rem; color: #4a5568; }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .card:hover::before { opacity: 1; }
+        .card-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .card h4 {
+            color: var(--primary);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
 
         /* Team Cards */
         .team-card {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
         }
-        .team-card h4 { color: var(--primary); margin-bottom: 0.25rem; }
-        .team-card .role { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
-        .team-card .affiliation { font-size: 0.85rem; color: #666; margin-top: 0.5rem; }
-
-        /* Tables */
-        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
-        th { background: var(--light); color: var(--primary); font-weight: 600; }
-
-        /* Publication Card */
-        .pub-card {
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            background: white;
-        }
-        .pub-card h4 { color: var(--primary); margin-bottom: 0.5rem; line-height: 1.4; }
-        .pub-card .authors { color: #666; font-size: 0.9rem; margin-bottom: 0.75rem; }
-        .pub-card .venue { color: var(--accent); font-weight: 500; font-size: 0.9rem; }
-        .pub-card .abstract { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; font-size: 0.9rem; color: #4a5568; }
-        .pub-card .links { margin-top: 1rem; }
-        .pub-card .links a { margin-right: 1rem; font-size: 0.85rem; }
-
-        /* News Timeline */
-        .news-item {
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            border-radius: 50%;
+            margin: 0 auto 1rem;
             display: flex;
-            gap: 1.5rem;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #e2e8f0;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: 700;
         }
-        .news-item:last-child { border-bottom: none; }
-        .news-date {
-            min-width: 100px;
+        .team-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        .team-card .role {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        .team-card .affiliation {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--light), var(--lighter));
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        /* Publication */
+        .pub-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            background: var(--lighter);
+            transition: all 0.3s;
+        }
+        .pub-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+        .pub-label {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .pub-card h4 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+        .pub-card .authors {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .pub-card .venue {
             color: var(--accent);
             font-weight: 600;
             font-size: 0.9rem;
         }
-        .news-content h4 { color: var(--primary); margin-bottom: 0.25rem; }
-        .news-content p { font-size: 0.9rem; color: #4a5568; }
+        .pub-card .abstract {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.7;
+        }
+        .pub-card .links { margin-top: 1.5rem; }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--secondary), var(--accent));
+        }
+        .timeline-item {
+            position: relative;
+            padding: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 1.75rem;
+            width: 16px;
+            height: 16px;
+            background: var(--lighter);
+            border: 3px solid var(--secondary);
+            border-radius: 50%;
+        }
+        .timeline-date {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-item h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
 
         /* Contact */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .contact-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
-        .contact-item p { color: #4a5568; }
-        .contact-item a { color: var(--secondary); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .contact-card {
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .contact-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        .contact-card h4 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .contact-card a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-card a:hover { text-decoration: underline; }
 
         /* Footer */
         .footer {
             background: var(--primary);
             color: white;
-            text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
-        .footer a { color: var(--accent); }
-        .footer-links { margin-bottom: 1rem; }
-        .footer-links a { color: rgba(255,255,255,0.8); margin: 0 0.75rem; text-decoration: none; }
-        .footer-links a:hover { color: var(--accent); }
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-col h5 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.6);
+        }
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.375rem 0;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+        .footer-bottom a { color: var(--accent); }
 
         /* Back to Top */
         .back-to-top {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            width: 45px;
-            height: 45px;
-            background: var(--accent);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
             color: white;
             border: none;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 1.2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-lg);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s;
             z-index: 99;
         }
         .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: #dd6b20; transform: translateY(-3px); }
+        .back-to-top:hover { transform: translateY(-4px) scale(1.05); }
 
-        /* Mobile Responsive */
-        @media (max-width: 992px) {
+        /* Mobile */
+        @media (max-width: 1024px) {
             .navbar-nav { display: none; }
             .menu-toggle { display: block; }
-            .sidebar { display: none; }
+            .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+            .sidebar.open { transform: translateX(0); }
             .main-content { margin-left: 0; }
             .navbar-nav.show {
                 display: flex;
@@ -303,20 +703,29 @@
                 right: 0;
                 background: var(--primary);
                 padding: 1rem;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                border-top: 1px solid rgba(255,255,255,0.1);
             }
         }
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            .hero .subtitle { font-size: 1.1rem; }
-            .grid { grid-template-columns: 1fr; }
+        @media (max-width: 640px) {
+            .hero { padding: 3rem 1.5rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .container { padding: 1.5rem; }
+            .section { padding: 1.5rem; }
+            .grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .stat-number { font-size: 2rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="#" class="navbar-brand">Narrative Digital Finance</a>
+        <a href="#" class="navbar-brand">
+            <span>NDF</span> Narrative Digital Finance
+        </a>
         <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
         <ul class="navbar-nav" id="navMenu">
             <li><a href="#overview">Overview</a></li>
@@ -325,108 +734,139 @@
             <li><a href="#methods">Methods</a></li>
             <li><a href="#results">Results</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#collaborations">Collaborations</a></li>
-            <li><a href="#funding">Funding</a></li>
             <li><a href="#news">News</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Sidebar TOC -->
-    <aside class="sidebar">
-        <h3>Table of Contents</h3>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">Navigation</div>
         <ul class="sidebar-nav" id="sidebarNav">
-            <li><a href="#overview">Project Overview</a></li>
-            <li><a href="#objectives">Research Objectives</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#methods">Methods</a></li>
-            <li><a href="#results">Output & Results</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#collaborations">Collaborations</a></li>
-            <li><a href="#funding">Funding</a></li>
-            <li><a href="#news">News & Updates</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#overview"><span class="icon">&#9679;</span> Project Overview</a></li>
+            <li><a href="#objectives"><span class="icon">&#9733;</span> Research Objectives</a></li>
+            <li><a href="#team"><span class="icon">&#9787;</span> Team</a></li>
+            <li><a href="#methods"><span class="icon">&#9881;</span> Methods</a></li>
+            <li><a href="#results"><span class="icon">&#9776;</span> Output & Results</a></li>
+            <li><a href="#publications"><span class="icon">&#9998;</span> Publications</a></li>
+            <li><a href="#collaborations"><span class="icon">&#9741;</span> Collaborations</a></li>
+            <li><a href="#funding"><span class="icon">&#9830;</span> Funding</a></li>
+            <li><a href="#news"><span class="icon">&#9888;</span> News & Updates</a></li>
+            <li><a href="#contact"><span class="icon">&#9993;</span> Contact</a></li>
         </ul>
-        <div class="sidebar-section">
-            <h4>Quick Links</h4>
-            <ul class="sidebar-nav">
-                <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" target="_blank">GitHub Repo</a></li>
-                <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" target="_blank">Wiki</a></li>
-                <li><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance" target="_blank">Project Website</a></li>
-            </ul>
-        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-header">Quick Links</div>
+        <ul class="sidebar-nav">
+            <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" target="_blank">GitHub Repository</a></li>
+            <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" target="_blank">Wiki Documentation</a></li>
+            <li><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance" target="_blank">Project Website</a></li>
+        </ul>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-header">Funding</div>
+        <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" class="sidebar-badge" target="_blank">
+            <img src="https://img.shields.io/badge/SNSF-red" alt="SNSF">
+        </a>
+        <a href="https://cordis.europa.eu/project/id/101119635" class="sidebar-badge" target="_blank">
+            <img src="https://img.shields.io/badge/EU-Horizon-blue" alt="EU">
+        </a>
     </aside>
 
-    <!-- Main Content -->
+    <!-- Main -->
     <main class="main-content">
         <!-- Hero -->
         <div class="hero">
-            <h1>Narrative Digital Finance</h1>
-            <p class="subtitle">A tale of structural breaks, bubbles & market narratives</p>
-            <p class="tagline">Research Project of the Swiss National Science Foundation (SNSF)</p>
-            <div class="badges">
-                <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"><img src="https://img.shields.io/badge/Funded%20by-SNSF-red" alt="SNSF"></a>
-                <a href="https://cordis.europa.eu/project/id/101119635"><img src="https://img.shields.io/badge/EU-Horizon%20Europe-blue" alt="EU Horizon"></a>
-                <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Active">
-            </div>
-            <div class="hero-buttons">
-                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="btn btn-primary">View on GitHub</a>
-                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" class="btn btn-secondary">Wiki Documentation</a>
+            <div class="hero-content animate-fade-up">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Active Research Project
+                </div>
+                <h1>Narrative Digital Finance</h1>
+                <p class="subtitle">A tale of structural breaks, bubbles & market narratives</p>
+                <p class="tagline">Research Project of the Swiss National Science Foundation (SNSF)</p>
+                <div class="hero-badges">
+                    <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"><img src="https://img.shields.io/badge/Funded%20by-SNSF-dc2626?style=for-the-badge" alt="SNSF"></a>
+                    <a href="https://cordis.europa.eu/project/id/101119635"><img src="https://img.shields.io/badge/EU-Horizon%20Europe-2563eb?style=for-the-badge" alt="EU"></a>
+                    <img src="https://img.shields.io/badge/Status-Active-10b981?style=for-the-badge" alt="Active">
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="btn btn-primary">View on GitHub</a>
+                    <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" class="btn btn-secondary">Documentation</a>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <!-- Overview -->
-            <section id="overview" class="section">
-                <h2>Project Overview</h2>
+            <section id="overview" class="section animate-fade-up">
+                <div class="section-header">
+                    <div class="section-icon">&#9679;</div>
+                    <div>
+                        <h2>Project Overview</h2>
+                        <p class="section-subtitle">Understanding financial markets through narrative analysis</p>
+                    </div>
+                </div>
                 <p>Large fluctuations, instabilities, trends and uncertainty of financial markets constitute a substantial challenge for asset management companies, pension funds and regulators. This project develops a comprehensive framework that utilizes advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks using diverse data sources.</p>
                 <p style="margin-top: 1rem;">The research bridges the gap between traditional econometric approaches and modern AI techniques, providing new insights into the role of narratives and quantitative data in financial decision-making.</p>
             </section>
 
             <!-- Objectives -->
             <section id="objectives" class="section">
-                <h2>Research Objectives</h2>
-                <h3>Overall Objectives</h3>
-                <p>Develop a comprehensive framework utilizing advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks.</p>
-
-                <h3>Specific Aims</h3>
+                <div class="section-header">
+                    <div class="section-icon">&#9733;</div>
+                    <div>
+                        <h2>Research Objectives</h2>
+                        <p class="section-subtitle">Three pillars of our research agenda</p>
+                    </div>
+                </div>
                 <div class="grid grid-3">
                     <div class="card">
-                        <h4>1. Econometric Validation</h4>
-                        <p>Validate and refine existing econometric models using real-world financial data</p>
+                        <div class="card-number">1</div>
+                        <h4>Econometric Validation</h4>
+                        <p>Validate and refine existing econometric models using real-world financial data from multiple markets and time periods.</p>
                     </div>
                     <div class="card">
-                        <h4>2. Narrative Analysis</h4>
-                        <p>Integrate narrative analysis to understand and predict market behaviors and asset price dynamics</p>
+                        <div class="card-number">2</div>
+                        <h4>Narrative Analysis</h4>
+                        <p>Integrate narrative analysis to understand and predict market behaviors and asset price dynamics through text, speech, and media.</p>
                     </div>
                     <div class="card">
-                        <h4>3. AI/ML Framework</h4>
-                        <p>Create a multidimensional AI and ML framework that enhances detection of market anomalies</p>
+                        <div class="card-number">3</div>
+                        <h4>AI/ML Framework</h4>
+                        <p>Create a multidimensional AI and ML framework that enhances detection of market anomalies and forecasts financial trends.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Team -->
             <section id="team" class="section">
-                <h2>Team</h2>
-                <p><strong>Cooperation between University of Twente (Netherlands) and Bern Business School (Switzerland)</strong></p>
-                <div class="grid" style="margin-top: 1.5rem;">
+                <div class="section-header">
+                    <div class="section-icon">&#9787;</div>
+                    <div>
+                        <h2>Our Team</h2>
+                        <p class="section-subtitle">University of Twente & Bern Business School</p>
+                    </div>
+                </div>
+                <div class="grid">
                     <div class="card team-card">
+                        <div class="team-avatar">JO</div>
                         <h4>Joerg Osterrieder</h4>
                         <p class="role">Principal Investigator</p>
                         <p class="affiliation">Bern Business School<br>University of Twente</p>
                     </div>
                     <div class="card team-card">
+                        <div class="team-avatar">MK</div>
                         <h4>Marius Jan Klein</h4>
                         <p class="role">Team Member</p>
                         <p class="affiliation">Bern Business School</p>
                     </div>
                     <div class="card team-card">
+                        <div class="team-avatar">BH</div>
                         <h4>Branka Hadji Misheva</h4>
                         <p class="role">Team Member</p>
                         <p class="affiliation">Bern Business School</p>
                     </div>
                     <div class="card team-card">
+                        <div class="team-avatar">GT</div>
                         <h4>Gabin Taibi</h4>
                         <p class="role">Team Member</p>
                         <p class="affiliation">Bern Business School<br>University of Twente</p>
@@ -436,59 +876,91 @@
 
             <!-- Methods -->
             <section id="methods" class="section">
-                <h2>Methods</h2>
+                <div class="section-header">
+                    <div class="section-icon">&#9881;</div>
+                    <div>
+                        <h2>Methodology</h2>
+                        <p class="section-subtitle">Our approach to financial market analysis</p>
+                    </div>
+                </div>
                 <div class="grid grid-3">
                     <div class="card">
                         <h4>Data Collection</h4>
-                        <p>Stock prices, macroeconomic indicators, and textual content from the web</p>
+                        <p>Stock prices, macroeconomic indicators, news articles, social media, and textual content from diverse web sources.</p>
                     </div>
                     <div class="card">
-                        <h4>Text Analysis</h4>
-                        <p>Text mining and NLP techniques to analyze sentiment, narrative structures, and market impact</p>
+                        <h4>NLP & Text Mining</h4>
+                        <p>Sentiment analysis, narrative structure extraction, topic modeling, and impact assessment on market movements.</p>
                     </div>
                     <div class="card">
                         <h4>AI Model Development</h4>
-                        <p>Developing new AI models combining traditional financial analysis with narrative insights</p>
+                        <p>Deep learning, transformers, and ensemble methods combining traditional finance with narrative insights.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Results -->
             <section id="results" class="section">
-                <h2>Output & Results</h2>
-                <p>This project has boosted collaboration both within scientific communication and wider public.</p>
-                <table>
-                    <tr><th>Category</th><th>Count</th><th>Description</th></tr>
-                    <tr><td>Scientific Publications</td><td>1</td><td>Peer-reviewed research papers</td></tr>
-                    <tr><td>Datasets</td><td>3</td><td>Novel datasets for market analysis</td></tr>
-                    <tr><td>Collaborations</td><td>4</td><td>Industry and academic partnerships</td></tr>
-                </table>
+                <div class="section-header">
+                    <div class="section-icon">&#9776;</div>
+                    <div>
+                        <h2>Output & Results</h2>
+                        <p class="section-subtitle">Project impact and deliverables</p>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Datasets</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Collaborations</div>
+                    </div>
+                </div>
             </section>
 
             <!-- Publications -->
             <section id="publications" class="section">
-                <h2>Publications</h2>
+                <div class="section-header">
+                    <div class="section-icon">&#9998;</div>
+                    <div>
+                        <h2>Publications</h2>
+                        <p class="section-subtitle">Our research contributions</p>
+                    </div>
+                </div>
                 <div class="pub-card">
+                    <span class="pub-label">Research Paper</span>
                     <h4>Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI</h4>
                     <p class="authors">Bolesta, K., Taibi, G., Codruta, M., Osterrieder, J., Hadji-Misheva, B. & Hopp, C.</p>
                     <p class="venue">SSRN, 2024</p>
                     <div class="abstract">
-                        <p>The paper presents an advanced conceptual framework for the analysis of textual data in the context of financial securities, hypothesizing that a comprehensive evaluation of events within the broader economic environment, particularly through their descriptions, significantly influences the pricing of financial instruments.</p>
-                        <p style="margin-top: 0.75rem;">This research extends beyond the traditional scope of Natural Language Processing by proposing the inclusion of non-textual data forms such as images, videos, and audio in the analysis. The hypothesis posits that the systematic analysis of these diverse multimodal textual inputs could enhance the decision-making process in financial asset management.</p>
+                        <p>This paper presents an advanced conceptual framework for the analysis of textual data in the context of financial securities. We hypothesize that a comprehensive evaluation of events within the broader economic environment significantly influences the pricing of financial instruments.</p>
+                        <p style="margin-top: 0.75rem;">The research extends beyond traditional NLP by proposing the inclusion of non-textual data forms such as images, videos, and audio. We leverage recent developments in Generative AI to expand the breadth of textual analysis through varied textual datasets.</p>
                     </div>
                     <div class="links">
-                        <a href="#" class="btn btn-outline">View Paper</a>
+                        <a href="#" class="btn btn-outline btn-sm">Read Paper</a>
                     </div>
                 </div>
             </section>
 
             <!-- Collaborations -->
             <section id="collaborations" class="section">
-                <h2>Collaborations</h2>
-                <div class="grid">
+                <div class="section-header">
+                    <div class="section-icon">&#9741;</div>
+                    <div>
+                        <h2>Collaborations</h2>
+                        <p class="section-subtitle">Industry and academic partnerships</p>
+                    </div>
+                </div>
+                <div class="grid grid-2">
                     <div class="card">
                         <h4>Deutsche Borse</h4>
-                        <p><strong>Dr. Stefan Schlamp</strong><br>Head of Quantitative Analytics, Eschborn, Germany</p>
+                        <p><strong>Dr. Stefan Schlamp</strong><br>Head of Quantitative Analytics<br>Eschborn, Germany</p>
                     </div>
                     <div class="card">
                         <h4>Bern Business School</h4>
@@ -500,77 +972,88 @@
                     </div>
                     <div class="card">
                         <h4>MSCA Industrial Doctoral Network</h4>
-                        <p><strong>Digital Finance Network</strong><br>Coordinator: Joerg Osterrieder</p>
+                        <p><strong>Digital Finance</strong><br>Coordinator: Joerg Osterrieder</p>
                     </div>
                 </div>
             </section>
 
             <!-- Funding -->
             <section id="funding" class="section">
-                <h2>Funding</h2>
-                <div class="grid">
+                <div class="section-header">
+                    <div class="section-icon">&#9830;</div>
+                    <div>
+                        <h2>Funding</h2>
+                        <p class="section-subtitle">Supporting organizations</p>
+                    </div>
+                </div>
+                <div class="grid grid-2">
                     <div class="card">
                         <h4>Swiss National Science Foundation</h4>
                         <p>Proposal Number: 100018E_213370</p>
-                        <p style="margin-top: 0.5rem;"><a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" class="btn btn-outline" style="margin-top: 0.5rem;">SNSF Grant Page</a></p>
+                        <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" class="btn btn-outline btn-sm" style="margin-top: 1rem;">SNSF Grant Page</a>
                     </div>
                     <div class="card">
                         <h4>Horizon Europe</h4>
                         <p>Marie Sklodowska-Curie Actions<br>Grant Agreement No. 101119635</p>
-                        <p style="margin-top: 0.5rem;"><a href="https://cordis.europa.eu/project/id/101119635" class="btn btn-outline" style="margin-top: 0.5rem;">EU CORDIS</a></p>
+                        <a href="https://cordis.europa.eu/project/id/101119635" class="btn btn-outline btn-sm" style="margin-top: 1rem;">EU CORDIS</a>
                     </div>
                 </div>
             </section>
 
             <!-- News -->
             <section id="news" class="section">
-                <h2>News & Updates</h2>
-                <div class="news-item">
-                    <div class="news-date">Dec 2024</div>
-                    <div class="news-content">
+                <div class="section-header">
+                    <div class="section-icon">&#9888;</div>
+                    <div>
+                        <h2>News & Updates</h2>
+                        <p class="section-subtitle">Latest project developments</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">December 2024</div>
                         <h4>GitHub Repository Launched</h4>
-                        <p>Project repository and documentation now available on GitHub with comprehensive wiki.</p>
+                        <p>Project repository and comprehensive wiki documentation now available on GitHub.</p>
                     </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2024</div>
-                    <div class="news-content">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
                         <h4>SSRN Publication</h4>
-                        <p>Published research on multimodal influence in financial instrument pricing using NLP and Generative AI.</p>
+                        <p>Published research on multimodal influence in financial instrument pricing.</p>
                     </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2024</div>
-                    <div class="news-content">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
                         <h4>SNSF Mobility Grants</h4>
-                        <p>Team applied for and received SNSF Mobility Research Grants for international collaboration.</p>
+                        <p>Team received SNSF Mobility Research Grants for international collaboration.</p>
                     </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2023</div>
-                    <div class="news-content">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
                         <h4>Project Launch</h4>
-                        <p>Narrative Digital Finance research project officially started with SNSF funding.</p>
+                        <p>Narrative Digital Finance research project officially started.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Contact -->
             <section id="contact" class="section">
-                <h2>Contact</h2>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <h4>Principal Investigator</h4>
-                        <p><strong>Prof. Dr. Joerg Osterrieder</strong></p>
-                        <p>Bern Business School, Switzerland<br>University of Twente, Netherlands</p>
+                <div class="section-header">
+                    <div class="section-icon">&#9993;</div>
+                    <div>
+                        <h2>Contact</h2>
+                        <p class="section-subtitle">Get in touch with the team</p>
                     </div>
-                    <div class="contact-item">
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h4>Principal Investigator</h4>
+                        <p><strong>Prof. Dr. Joerg Osterrieder</strong><br>Bern Business School<br>University of Twente</p>
+                    </div>
+                    <div class="contact-card">
                         <h4>Project Website</h4>
                         <p><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance">digital-finance-msca.com</a></p>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-card">
                         <h4>GitHub</h4>
-                        <p><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">Digital-AI-Finance/Narrative-Digital-Finance</a></p>
+                        <p><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">Digital-AI-Finance</a></p>
                     </div>
                 </div>
             </section>
@@ -578,58 +1061,64 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="footer-links">
-                <a href="#overview">Overview</a>
-                <a href="#team">Team</a>
-                <a href="#publications">Publications</a>
-                <a href="#funding">Funding</a>
-                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki">Wiki</a>
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h5>Project</h5>
+                        <a href="#overview">Overview</a>
+                        <a href="#objectives">Objectives</a>
+                        <a href="#methods">Methods</a>
+                        <a href="#results">Results</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Team</h5>
+                        <a href="#team">Members</a>
+                        <a href="#collaborations">Collaborations</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Resources</h5>
+                        <a href="#publications">Publications</a>
+                        <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki">Wiki</a>
+                        <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">GitHub</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Funding</h5>
+                        <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a">SNSF</a>
+                        <a href="https://cordis.europa.eu/project/id/101119635">EU CORDIS</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Funded by the European Union. Views and opinions expressed are those of the author(s) only.</p>
+                    <p style="margin-top: 0.5rem;">Marie Sklodowska-Curie Grant Agreement No. 101119635</p>
+                    <p style="margin-top: 1rem;">&copy; 2024 Narrative Digital Finance | <a href="https://www.digital-finance-msca.com">Digital Finance MSCA</a></p>
+                </div>
             </div>
-            <p>Funded by the European Union. Views and opinions expressed are those of the author(s) only.</p>
-            <p style="margin-top: 0.5rem;">Marie Sklodowska-Curie Grant Agreement No. 101119635</p>
-            <p style="margin-top: 1rem;">
-                <a href="https://www.digital-finance-msca.com">Digital Finance MSCA</a> |
-                <a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a>
-            </p>
         </footer>
     </main>
 
-    <!-- Back to Top Button -->
+    <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">&#8593;</button>
 
     <script>
-        // Mobile menu toggle
         function toggleMenu() {
             document.getElementById('navMenu').classList.toggle('show');
+            document.getElementById('sidebar').classList.toggle('open');
         }
-
-        // Scroll to top
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        // Back to top button visibility
         window.addEventListener('scroll', function() {
             const btn = document.getElementById('backToTop');
-            if (window.scrollY > 300) {
-                btn.classList.add('visible');
-            } else {
-                btn.classList.remove('visible');
-            }
+            btn.classList.toggle('visible', window.scrollY > 300);
         });
-
-        // Active section highlighting
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.navbar-nav a, .sidebar-nav a');
-
         function highlightNav() {
-            let scrollPos = window.scrollY + 100;
-
+            let scrollPos = window.scrollY + 120;
             sections.forEach(section => {
                 const top = section.offsetTop;
                 const height = section.offsetHeight;
                 const id = section.getAttribute('id');
-
                 if (scrollPos >= top && scrollPos < top + height) {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
@@ -640,9 +1129,23 @@
                 }
             });
         }
-
         window.addEventListener('scroll', highlightNav);
         highlightNav();
+        // Animate on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.section').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
