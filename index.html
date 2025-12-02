@@ -6,16 +6,21 @@
     <title>Narrative Digital Finance | SNSF Research Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --primary: #0f172a;
             --primary-light: #1e293b;
             --secondary: #3b82f6;
             --secondary-light: #60a5fa;
+            --secondary-dark: #2563eb;
             --accent: #f59e0b;
             --accent-light: #fbbf24;
             --success: #10b981;
+            --success-light: #34d399;
+            --purple: #8b5cf6;
+            --pink: #ec4899;
             --light: #f8fafc;
             --lighter: #ffffff;
             --text: #334155;
@@ -29,6 +34,7 @@
             --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
             --radius: 12px;
             --radius-lg: 16px;
+            --radius-xl: 24px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -42,7 +48,7 @@
 
         /* Animations */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         @keyframes fadeIn {
@@ -50,12 +56,26 @@
             to { opacity: 1; }
         }
         @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
+            from { opacity: 0; transform: translateX(-30px); }
             to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
         }
         .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
         .animate-fade-up { animation: fadeInUp 0.6s ease-out forwards; }
         .animate-slide-left { animation: slideInLeft 0.6s ease-out forwards; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
 
         /* Navbar */
         .navbar {
@@ -64,8 +84,8 @@
             left: 0;
             right: 0;
             height: var(--navbar-height);
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(20px);
             color: white;
             display: flex;
             align-items: center;
@@ -75,7 +95,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .navbar-brand {
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.25rem;
             color: white;
             text-decoration: none;
@@ -173,7 +193,6 @@
             background: var(--border);
             margin: 1.5rem 0;
         }
-        .sidebar-section { margin-top: 1.5rem; }
         .sidebar-badge {
             display: inline-flex;
             align-items: center;
@@ -196,9 +215,11 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e3a5f 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 50%, var(--primary-light) 100%);
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
             color: white;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -210,10 +231,26 @@
             right: 0;
             bottom: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
+        }
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .hero-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: float 4s ease-in-out infinite;
         }
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
             position: relative;
@@ -225,10 +262,10 @@
             gap: 0.5rem;
             background: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.25rem;
             border-radius: 50px;
             font-size: 0.85rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             backdrop-filter: blur(10px);
         }
         .hero-badge .dot {
@@ -237,31 +274,58 @@
             background: var(--success);
             border-radius: 50%;
             animation: pulse 2s infinite;
+            box-shadow: 0 0 10px var(--success);
         }
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #e2e8f0 50%, #fff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 5s linear infinite;
+        }
+        .hero .subtitle {
+            font-size: 1.35rem;
+            opacity: 0.95;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+        .hero .tagline {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            margin-bottom: 2.5rem;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .hero .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        .hero .tagline {
-            font-size: 1rem;
+        .hero-stat-label {
+            font-size: 0.85rem;
             opacity: 0.7;
-            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         .hero-badges {
             display: flex;
@@ -270,8 +334,8 @@
             flex-wrap: wrap;
             margin-bottom: 2rem;
         }
-        .hero-badges img { height: 24px; transition: transform 0.2s; }
-        .hero-badges a:hover img { transform: scale(1.05); }
+        .hero-badges img { height: 28px; transition: transform 0.2s; }
+        .hero-badges a:hover img { transform: scale(1.1); }
         .hero-buttons {
             display: flex;
             justify-content: center;
@@ -284,8 +348,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
-            border-radius: 10px;
+            padding: 1rem 2rem;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
@@ -294,13 +358,13 @@
             cursor: pointer;
         }
         .btn-primary {
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
             color: white;
-            box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+            box-shadow: 0 4px 20px rgba(59,130,246,0.4);
         }
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59,130,246,0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(59,130,246,0.5);
         }
         .btn-secondary {
             background: rgba(255,255,255,0.1);
@@ -310,7 +374,7 @@
         }
         .btn-secondary:hover {
             background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
         .btn-outline {
             background: transparent;
@@ -325,7 +389,7 @@
 
         /* Container */
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             padding: 3rem 2rem;
         }
@@ -333,48 +397,65 @@
         /* Sections */
         .section {
             background: var(--lighter);
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-xl);
             padding: 2.5rem;
             margin-bottom: 2rem;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
             scroll-margin-top: calc(var(--navbar-height) + 24px);
-            transition: box-shadow 0.3s;
+            transition: all 0.3s;
         }
-        .section:hover { box-shadow: var(--shadow-lg); }
+        .section:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-2px);
+        }
         .section-header {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         .section-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             color: white;
             flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(59,130,246,0.3);
         }
+        .section-icon.accent { background: linear-gradient(135deg, var(--accent), var(--pink)); }
+        .section-icon.success { background: linear-gradient(135deg, var(--success), var(--secondary)); }
+        .section-icon.purple { background: linear-gradient(135deg, var(--purple), var(--pink)); }
         .section h2 {
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 700;
         }
         .section-subtitle {
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-top: 0.25rem;
         }
         .section h3 {
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            margin: 2rem 0 1rem;
+            margin: 2rem 0 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section h3::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, var(--secondary), var(--accent));
+            border-radius: 2px;
         }
         .section p { color: var(--text); }
 
@@ -386,6 +467,7 @@
         }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
         .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 
         /* Cards */
         .card {
@@ -409,8 +491,8 @@
             transition: opacity 0.3s;
         }
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
             border-color: transparent;
         }
         .card:hover::before { opacity: 1; }
@@ -418,18 +500,19 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: var(--secondary);
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
             color: white;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(59,130,246,0.3);
         }
         .card h4 {
             color: var(--primary);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.75rem;
         }
@@ -439,27 +522,66 @@
             line-height: 1.6;
         }
 
-        /* Team Cards */
-        .team-card {
+        /* Feature Cards */
+        .feature-card {
+            background: linear-gradient(135deg, var(--lighter), var(--light));
+            border-radius: var(--radius-lg);
+            padding: 2rem;
             text-align: center;
-            padding: 2rem 1.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
         }
-        .team-avatar {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            border-radius: 50%;
-            margin: 0 auto 1rem;
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             color: white;
+            box-shadow: 0 8px 25px rgba(59,130,246,0.3);
+        }
+        .feature-card h4 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Team Cards */
+        .team-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(180deg, var(--lighter), var(--light));
+        }
+        .team-avatar {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
+            border-radius: 50%;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.25rem;
+            color: white;
             font-weight: 700;
+            box-shadow: 0 8px 25px rgba(59,130,246,0.3);
+            transition: transform 0.3s;
+        }
+        .team-card:hover .team-avatar {
+            transform: scale(1.1);
         }
         .team-card h4 {
             color: var(--primary);
             margin-bottom: 0.25rem;
+            font-size: 1.1rem;
         }
         .team-card .role {
             color: var(--secondary);
@@ -471,39 +593,191 @@
             font-size: 0.8rem;
             color: var(--text-light);
         }
+        .team-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .team-metric {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            background: var(--lighter);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            min-width: 60px;
+        }
+        .team-metric-value {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+        .team-metric-label {
+            font-size: 0.6rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .team-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .team-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.35rem 0.6rem;
+            background: var(--light);
+            border-radius: 6px;
+            font-size: 0.7rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+        }
+        .team-link:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
 
-        /* Stats */
+        /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
         .stat-card {
             text-align: center;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--light), var(--lighter));
-            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, var(--lighter), var(--light));
+            border-radius: var(--radius-lg);
             border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            font-size: 2.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1;
         }
         .stat-label {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-light);
-            margin-top: 0.25rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Project Outputs */
+        .output-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .output-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: linear-gradient(135deg, var(--lighter), var(--light));
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .output-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        .output-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .output-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .output-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        /* Charts */
+        .chart-container {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+        .chart-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .charts-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* Research Topics */
+        .topics-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .topic-tag {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, var(--light), var(--lighter));
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text);
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .topic-tag:hover {
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
+            color: white;
+            border-color: transparent;
+            transform: scale(1.05);
+        }
+        .topic-tag.large {
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.6rem 1.25rem;
+        }
+        .topic-tag.medium {
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* Publication Table */
         .pub-table-container {
             overflow-x: auto;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
         }
         .pub-table {
             width: 100%;
@@ -512,9 +786,9 @@
             min-width: 800px;
         }
         .pub-table th {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
-            padding: 0.75rem 0.5rem;
+            padding: 1rem 0.75rem;
             text-align: left;
             font-weight: 600;
             cursor: pointer;
@@ -530,7 +804,7 @@
             opacity: 0.5;
         }
         .pub-table td {
-            padding: 0.75rem 0.5rem;
+            padding: 0.875rem 0.75rem;
             border-bottom: 1px solid var(--border);
             vertical-align: top;
         }
@@ -563,75 +837,103 @@
             align-items: center;
             gap: 0.25rem;
             background: var(--light);
-            padding: 0.25rem 0.5rem;
-            border-radius: 12px;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
             font-weight: 600;
             color: var(--text);
         }
         .pub-table .citations-badge.high {
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
             color: white;
         }
         .pub-table .doi-link {
             color: var(--secondary);
             text-decoration: none;
             font-size: 0.75rem;
+            font-weight: 500;
         }
         .pub-table .doi-link:hover {
             text-decoration: underline;
         }
         .pub-table .oa-badge {
             display: inline-block;
-            background: var(--success);
+            background: linear-gradient(135deg, var(--success), var(--success-light));
             color: white;
-            padding: 0.125rem 0.375rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-size: 0.65rem;
             font-weight: 600;
         }
+
+        /* Publication Controls */
         .pub-controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: var(--radius);
+        }
+        .pub-filters {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .pub-search {
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1rem;
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 0.9rem;
-            width: 250px;
-            transition: border-color 0.2s;
+            width: 220px;
+            transition: all 0.2s;
         }
         .pub-search:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+        }
+        .pub-filter {
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pub-filter:focus {
             outline: none;
             border-color: var(--secondary);
         }
         .pub-count {
             color: var(--text-light);
             font-size: 0.85rem;
+            font-weight: 500;
         }
         .refresh-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--light);
-            border: 1px solid var(--border);
+            padding: 0.6rem 1.25rem;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            color: white;
+            border: none;
             border-radius: 8px;
             font-size: 0.85rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s;
         }
         .refresh-btn:hover {
-            background: var(--secondary);
-            color: white;
-            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(59,130,246,0.4);
         }
         .refresh-btn.loading {
-            opacity: 0.6;
+            opacity: 0.7;
             pointer-events: none;
         }
         .refresh-btn .spinner {
@@ -650,69 +952,17 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Team Metrics */
-        .team-metrics {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 0.75rem;
-            flex-wrap: wrap;
-        }
-        .team-metric {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.25rem 0.5rem;
-            background: var(--lighter);
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-        .team-metric-value {
-            font-weight: 700;
-            color: var(--secondary);
-            font-size: 0.95rem;
-        }
-        .team-metric-label {
-            font-size: 0.65rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-        }
-        .team-links {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 0.75rem;
-        }
-        .team-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.25rem 0.5rem;
-            background: var(--light);
-            border-radius: 4px;
-            font-size: 0.7rem;
-            color: var(--text);
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .team-link:hover {
-            background: var(--secondary);
-            color: white;
-        }
-        .team-link img {
-            height: 14px;
-        }
-
         /* Timeline */
-        .timeline { position: relative; padding-left: 2rem; }
+        .timeline { position: relative; padding-left: 2.5rem; }
         .timeline::before {
             content: '';
             position: absolute;
-            left: 7px;
+            left: 8px;
             top: 0;
             bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--secondary), var(--accent));
+            width: 3px;
+            background: linear-gradient(180deg, var(--secondary), var(--accent), var(--purple));
+            border-radius: 2px;
         }
         .timeline-item {
             position: relative;
@@ -722,28 +972,55 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2rem;
+            left: -2.5rem;
             top: 1.75rem;
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             background: var(--lighter);
             border: 3px solid var(--secondary);
             border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--lighter);
         }
         .timeline-date {
             color: var(--secondary);
-            font-weight: 600;
-            font-size: 0.85rem;
+            font-weight: 700;
+            font-size: 0.9rem;
             margin-bottom: 0.25rem;
         }
         .timeline-item h4 {
             color: var(--primary);
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
+            font-size: 1.05rem;
+            margin-bottom: 0.35rem;
         }
         .timeline-item p {
             font-size: 0.9rem;
             color: var(--text-light);
+        }
+
+        /* Highlights */
+        .highlight-card {
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-card h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .highlight-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+        .highlight-card .btn {
+            margin-top: 1rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        .highlight-card .btn:hover {
+            background: rgba(255,255,255,0.3);
         }
 
         /* Contact */
@@ -753,23 +1030,24 @@
             gap: 1.5rem;
         }
         .contact-card {
-            padding: 1.5rem;
-            background: var(--light);
+            padding: 1.75rem;
+            background: linear-gradient(135deg, var(--light), var(--lighter));
             border-radius: var(--radius);
             border: 1px solid var(--border);
             transition: all 0.3s;
         }
         .contact-card:hover {
             border-color: var(--secondary);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         .contact-card h4 {
             color: var(--primary);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
         }
         .contact-card p {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-light);
         }
         .contact-card a {
@@ -781,36 +1059,39 @@
 
         /* Footer */
         .footer {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem 2rem;
         }
         .footer-content {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
         .footer-col h5 {
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            color: rgba(255,255,255,0.6);
+            margin-bottom: 1.25rem;
+            color: rgba(255,255,255,0.5);
         }
         .footer-col a {
             display: block;
             color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-size: 0.9rem;
-            padding: 0.375rem 0;
-            transition: color 0.2s;
+            padding: 0.4rem 0;
+            transition: all 0.2s;
         }
-        .footer-col a:hover { color: var(--accent); }
+        .footer-col a:hover {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
         .footer-bottom {
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -825,22 +1106,25 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(135deg, var(--secondary), var(--purple));
             color: white;
             border: none;
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.25rem;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 8px 25px rgba(59,130,246,0.4);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s;
             z-index: 99;
         }
         .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+        .back-to-top:hover {
+            transform: translateY(-6px) scale(1.1);
+            box-shadow: 0 12px 35px rgba(59,130,246,0.5);
+        }
 
         /* Mobile */
         @media (max-width: 1024px) {
@@ -860,18 +1144,26 @@
                 padding: 1rem;
                 border-top: 1px solid rgba(255,255,255,0.1);
             }
+            .charts-row { grid-template-columns: 1fr; }
+            .output-grid { grid-template-columns: repeat(3, 1fr); }
         }
         @media (max-width: 640px) {
-            .hero { padding: 3rem 1.5rem; }
-            .hero h1 { font-size: 2rem; }
-            .hero .subtitle { font-size: 1rem; }
+            .hero { padding: 4rem 1.5rem; }
+            .hero h1 { font-size: 2.25rem; }
+            .hero .subtitle { font-size: 1.1rem; }
+            .hero-stats { gap: 1.5rem; }
+            .hero-stat-value { font-size: 2rem; }
             .container { padding: 1.5rem; }
-            .section { padding: 1.5rem; }
+            .section { padding: 1.5rem; border-radius: var(--radius-lg); }
             .grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .output-grid { grid-template-columns: repeat(2, 1fr); }
             .stat-number { font-size: 2rem; }
             .hero-buttons { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
+            .pub-controls { flex-direction: column; align-items: stretch; }
+            .pub-filters { flex-direction: column; }
+            .pub-search { width: 100%; }
         }
     </style>
 </head>
@@ -884,12 +1176,11 @@
         <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
         <ul class="navbar-nav" id="navMenu">
             <li><a href="#overview">Overview</a></li>
-            <li><a href="#objectives">Objectives</a></li>
+            <li><a href="#highlights">Highlights</a></li>
             <li><a href="#team">Team</a></li>
-            <li><a href="#methods">Methods</a></li>
             <li><a href="#results">Results</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#news">News</a></li>
+            <li><a href="#collaborations">Collaborations</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -899,7 +1190,7 @@
         <div class="sidebar-header">Navigation</div>
         <ul class="sidebar-nav" id="sidebarNav">
             <li><a href="#overview"><span class="icon">&#9679;</span> Project Overview</a></li>
-            <li><a href="#objectives"><span class="icon">&#9733;</span> Research Objectives</a></li>
+            <li><a href="#highlights"><span class="icon">&#9733;</span> Research Highlights</a></li>
             <li><a href="#team"><span class="icon">&#9787;</span> Team</a></li>
             <li><a href="#methods"><span class="icon">&#9881;</span> Methods</a></li>
             <li><a href="#results"><span class="icon">&#9776;</span> Output & Results</a></li>
@@ -930,18 +1221,43 @@
     <main class="main-content">
         <!-- Hero -->
         <div class="hero">
+            <div class="hero-particles">
+                <div class="hero-particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+                <div class="hero-particle" style="left: 20%; top: 60%; animation-delay: 1s;"></div>
+                <div class="hero-particle" style="left: 80%; top: 30%; animation-delay: 2s;"></div>
+                <div class="hero-particle" style="left: 70%; top: 70%; animation-delay: 0.5s;"></div>
+                <div class="hero-particle" style="left: 40%; top: 80%; animation-delay: 1.5s;"></div>
+            </div>
             <div class="hero-content animate-fade-up">
                 <div class="hero-badge">
                     <span class="dot"></span>
-                    Active Research Project
+                    Active Research Project (2023-2026)
                 </div>
                 <h1>Narrative Digital Finance</h1>
                 <p class="subtitle">A tale of structural breaks, bubbles & market narratives</p>
-                <p class="tagline">Research Project of the Swiss National Science Foundation (SNSF)</p>
+                <p class="tagline">Swiss National Science Foundation (SNSF) Research Project</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">122</div>
+                        <div class="hero-stat-label">Publications</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">2,010</div>
+                        <div class="hero-stat-label">Citations</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">6</div>
+                        <div class="hero-stat-label">Researchers</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">7</div>
+                        <div class="hero-stat-label">Partners</div>
+                    </div>
+                </div>
                 <div class="hero-badges">
                     <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"><img src="https://img.shields.io/badge/Funded%20by-SNSF-dc2626?style=for-the-badge" alt="SNSF"></a>
                     <a href="https://cordis.europa.eu/project/id/101119635"><img src="https://img.shields.io/badge/EU-Horizon%20Europe-2563eb?style=for-the-badge" alt="EU"></a>
-                    <img src="https://img.shields.io/badge/Status-Active-10b981?style=for-the-badge" alt="Active">
+                    <img src="https://img.shields.io/badge/CHF-236K-f59e0b?style=for-the-badge" alt="Funding">
                 </div>
                 <div class="hero-buttons">
                     <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="btn btn-primary">View on GitHub</a>
@@ -962,32 +1278,57 @@
                 </div>
                 <p>Large fluctuations, instabilities, trends and uncertainty of financial markets constitute a substantial challenge for asset management companies, pension funds and regulators. This project develops a comprehensive framework that utilizes advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks using diverse data sources.</p>
                 <p style="margin-top: 1rem;">The research bridges the gap between traditional econometric approaches and modern AI techniques, providing new insights into the role of narratives and quantitative data in financial decision-making.</p>
+
+                <h3>Research Topics</h3>
+                <div class="topics-cloud">
+                    <span class="topic-tag large">Machine Learning</span>
+                    <span class="topic-tag large">NLP</span>
+                    <span class="topic-tag large">Financial Markets</span>
+                    <span class="topic-tag medium">Sentiment Analysis</span>
+                    <span class="topic-tag medium">Credit Risk</span>
+                    <span class="topic-tag medium">Deep Learning</span>
+                    <span class="topic-tag">Bubble Detection</span>
+                    <span class="topic-tag">Market Narratives</span>
+                    <span class="topic-tag">Structural Breaks</span>
+                    <span class="topic-tag">ESG Scoring</span>
+                    <span class="topic-tag">P2P Lending</span>
+                    <span class="topic-tag">Explainable AI</span>
+                    <span class="topic-tag">Network Analysis</span>
+                    <span class="topic-tag">Cryptocurrency</span>
+                </div>
             </section>
 
-            <!-- Objectives -->
-            <section id="objectives" class="section">
+            <!-- Research Highlights -->
+            <section id="highlights" class="section">
                 <div class="section-header">
-                    <div class="section-icon">&#9733;</div>
+                    <div class="section-icon accent">&#9733;</div>
                     <div>
-                        <h2>Research Objectives</h2>
-                        <p class="section-subtitle">Three pillars of our research agenda</p>
+                        <h2>Research Highlights</h2>
+                        <p class="section-subtitle">Key findings and contributions</p>
                     </div>
                 </div>
+
+                <div class="highlight-card">
+                    <h4>Featured Publication: P2P Lending Credit Risk</h4>
+                    <p>"Leveraging network topology for credit risk assessment in P2P lending: A comparative study under the lens of machine learning" - Published in Expert Systems with Applications (2024). This paper demonstrates that systematic inclusion of network topological features significantly improves credit scoring accuracy.</p>
+                    <a href="https://doi.org/10.1016/j.eswa.2024.124100" target="_blank" class="btn btn-sm">Read Paper</a>
+                </div>
+
                 <div class="grid grid-3">
-                    <div class="card">
-                        <div class="card-number">1</div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#9733;</div>
                         <h4>Econometric Validation</h4>
                         <p>Validate and refine existing econometric models using real-world financial data from multiple markets and time periods.</p>
                     </div>
-                    <div class="card">
-                        <div class="card-number">2</div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, var(--accent), var(--pink));">&#9998;</div>
                         <h4>Narrative Analysis</h4>
-                        <p>Integrate narrative analysis to understand and predict market behaviors and asset price dynamics through text, speech, and media.</p>
+                        <p>Integrate narrative analysis to understand and predict market behaviors through text, speech, and media analysis.</p>
                     </div>
-                    <div class="card">
-                        <div class="card-number">3</div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, var(--success), var(--secondary));">&#9881;</div>
                         <h4>AI/ML Framework</h4>
-                        <p>Create a multidimensional AI and ML framework that enhances detection of market anomalies and forecasts financial trends.</p>
+                        <p>Create a multidimensional AI and ML framework that enhances detection of market anomalies and forecasts trends.</p>
                     </div>
                 </div>
             </section>
@@ -995,7 +1336,7 @@
             <!-- Team -->
             <section id="team" class="section">
                 <div class="section-header">
-                    <div class="section-icon">&#9787;</div>
+                    <div class="section-icon purple">&#9787;</div>
                     <div>
                         <h2>Our Team</h2>
                         <p class="section-subtitle">University of Twente & Bern Business School</p>
@@ -1028,7 +1369,7 @@
                         </div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar">BH</div>
+                        <div class="team-avatar" style="background: linear-gradient(135deg, var(--purple), var(--pink));">BH</div>
                         <h4>Branka Hadji Misheva</h4>
                         <p class="role">Team Member</p>
                         <p class="affiliation">Bern Business School</p>
@@ -1051,7 +1392,7 @@
                         </div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar">GT</div>
+                        <div class="team-avatar" style="background: linear-gradient(135deg, var(--success), var(--secondary));">GT</div>
                         <h4>Gabin Taibi</h4>
                         <p class="role">PhD Researcher</p>
                         <p class="affiliation">Bern Business School<br>University of Twente</p>
@@ -1067,7 +1408,7 @@
                         </div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar">LB</div>
+                        <div class="team-avatar" style="background: linear-gradient(135deg, var(--accent), var(--pink));">LB</div>
                         <h4>Lennart John Baals</h4>
                         <p class="role">PhD Researcher</p>
                         <p class="affiliation">Bern Business School<br>University of Twente</p>
@@ -1091,7 +1432,7 @@
                         </div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar">YL</div>
+                        <div class="team-avatar" style="background: linear-gradient(135deg, #06b6d4, var(--secondary));">YL</div>
                         <h4>Yiting Liu</h4>
                         <p class="role">PhD Researcher</p>
                         <p class="affiliation">Bern Business School<br>University of Twente</p>
@@ -1112,25 +1453,24 @@
                         <div class="team-links">
                             <a href="https://orcid.org/0009-0006-9554-8205" target="_blank" class="team-link">ORCID</a>
                             <a href="https://people.utwente.nl/yiting.liu" target="_blank" class="team-link">UT Profile</a>
-                            <a href="https://www.digital-finance-msca.com/people/yiting-liu" target="_blank" class="team-link">MSCA</a>
                         </div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar">MK</div>
+                        <div class="team-avatar" style="background: linear-gradient(135deg, #64748b, var(--primary));">MK</div>
                         <h4>Marius Jan Klein</h4>
                         <p class="role">Team Member</p>
                         <p class="affiliation">Bern Business School</p>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-light);">
-                    Metrics from <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a>
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-light);">
+                    Metrics sourced from <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a>
                 </p>
             </section>
 
             <!-- Methods -->
             <section id="methods" class="section">
                 <div class="section-header">
-                    <div class="section-icon">&#9881;</div>
+                    <div class="section-icon success">&#9881;</div>
                     <div>
                         <h2>Methodology</h2>
                         <p class="section-subtitle">Our approach to financial market analysis</p>
@@ -1138,14 +1478,17 @@
                 </div>
                 <div class="grid grid-3">
                     <div class="card">
+                        <div class="card-number">1</div>
                         <h4>Data Collection</h4>
                         <p>Stock prices, macroeconomic indicators, news articles, social media, and textual content from diverse web sources.</p>
                     </div>
                     <div class="card">
+                        <div class="card-number">2</div>
                         <h4>NLP & Text Mining</h4>
                         <p>Sentiment analysis, narrative structure extraction, topic modeling, and impact assessment on market movements.</p>
                     </div>
                     <div class="card">
+                        <div class="card-number">3</div>
                         <h4>AI Model Development</h4>
                         <p>Deep learning, transformers, and ensemble methods combining traditional finance with narrative insights.</p>
                     </div>
@@ -1161,7 +1504,8 @@
                         <p class="section-subtitle">Project impact and deliverables</p>
                     </div>
                 </div>
-                <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+
+                <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">122</div>
                         <div class="stat-label">Publications</div>
@@ -1179,40 +1523,90 @@
                         <div class="stat-label">SNSF Funding</div>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-light);">
+
+                <h3>Project Outputs</h3>
+                <div class="output-grid">
+                    <div class="output-card">
+                        <div class="output-icon">&#9998;</div>
+                        <div class="output-number">4</div>
+                        <div class="output-label">Project Publications</div>
+                    </div>
+                    <div class="output-card">
+                        <div class="output-icon">&#9741;</div>
+                        <div class="output-number">6</div>
+                        <div class="output-label">Collaborations</div>
+                    </div>
+                    <div class="output-card">
+                        <div class="output-icon">&#9733;</div>
+                        <div class="output-number">6</div>
+                        <div class="output-label">Academic Events</div>
+                    </div>
+                    <div class="output-card">
+                        <div class="output-icon">&#9786;</div>
+                        <div class="output-number">4</div>
+                        <div class="output-label">Knowledge Transfer</div>
+                    </div>
+                    <div class="output-card">
+                        <div class="output-icon">&#9830;</div>
+                        <div class="output-number">3</div>
+                        <div class="output-label">Awards</div>
+                    </div>
+                </div>
+
+                <h3>Publication Analytics</h3>
+                <div class="charts-row">
+                    <div class="chart-container">
+                        <div class="chart-title">Publications by Year</div>
+                        <canvas id="pubsByYearChart" height="200"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-title">Citations by Year</div>
+                        <canvas id="citationsByYearChart" height="200"></canvas>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-light);">
                     Publication metrics from <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a> |
-                    Project: Aug 2023 - Aug 2026
+                    Project: July 2023 - June 2026
                 </p>
             </section>
 
             <!-- Publications -->
             <section id="publications" class="section">
                 <div class="section-header">
-                    <div class="section-icon">&#9998;</div>
+                    <div class="section-icon accent">&#9998;</div>
                     <div>
                         <h2>Publications</h2>
                         <p class="section-subtitle">Team research contributions from OpenAlex</p>
                     </div>
                 </div>
                 <div class="pub-controls">
-                    <div style="display: flex; gap: 1rem; align-items: center;">
+                    <div class="pub-filters">
                         <input type="text" class="pub-search" id="pubSearch" placeholder="Search publications...">
-                        <span class="pub-count" id="pubCount">Loading...</span>
+                        <select class="pub-filter" id="yearFilter">
+                            <option value="">All Years</option>
+                        </select>
+                        <select class="pub-filter" id="authorFilter">
+                            <option value="">All Authors</option>
+                        </select>
                     </div>
-                    <button class="refresh-btn" id="refreshBtn" onclick="refreshFromOpenAlex()">
-                        <span class="spinner"></span>
-                        Refresh from OpenAlex
-                    </button>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <span class="pub-count" id="pubCount">Loading...</span>
+                        <button class="refresh-btn" id="refreshBtn" onclick="refreshFromOpenAlex()">
+                            <span class="spinner"></span>
+                            Refresh
+                        </button>
+                    </div>
                 </div>
                 <div class="pub-table-container">
                     <table class="pub-table" id="pubTable">
                         <thead>
                             <tr>
-                                <th onclick="sortTable(0)" style="width: 60px;">Year <span class="sort-icon">&#8597;</span></th>
+                                <th onclick="sortTable(0)" style="width: 70px;">Year <span class="sort-icon">&#8597;</span></th>
                                 <th onclick="sortTable(1)">Title <span class="sort-icon">&#8597;</span></th>
                                 <th onclick="sortTable(2)" style="width: 180px;">Authors <span class="sort-icon">&#8597;</span></th>
                                 <th onclick="sortTable(3)" style="width: 150px;">Venue <span class="sort-icon">&#8597;</span></th>
-                                <th onclick="sortTable(4)" style="width: 80px;">Citations <span class="sort-icon">&#8597;</span></th>
+                                <th onclick="sortTable(4)" style="width: 90px;">Citations <span class="sort-icon">&#8597;</span></th>
                                 <th style="width: 80px;">Links</th>
                             </tr>
                         </thead>
@@ -1221,7 +1615,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-light);">
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-light);">
                     Data source: <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a> -
                     Open catalog of scholarly works
                 </p>
@@ -1230,14 +1624,14 @@
             <!-- Collaborations -->
             <section id="collaborations" class="section">
                 <div class="section-header">
-                    <div class="section-icon">&#9741;</div>
+                    <div class="section-icon purple">&#9741;</div>
                     <div>
                         <h2>Collaborations</h2>
                         <p class="section-subtitle">Industry and academic partnerships</p>
                     </div>
                 </div>
                 <h3>Industry Partners</h3>
-                <div class="grid grid-3">
+                <div class="grid grid-2">
                     <div class="card">
                         <h4>Deutsche Borse AG</h4>
                         <p><strong>Dr. Stefan Schlamp</strong><br>Head of Quantitative Analytics<br>HFT & Market Microstructure (since Jan 2024)</p>
@@ -1251,7 +1645,7 @@
                 <div class="grid grid-3">
                     <div class="card">
                         <h4>Humboldt-University Berlin</h4>
-                        <p>Research collaboration on financial econometrics and machine learning</p>
+                        <p>Financial econometrics and machine learning research</p>
                     </div>
                     <div class="card">
                         <h4>American University of Sharjah</h4>
@@ -1259,7 +1653,7 @@
                     </div>
                     <div class="card">
                         <h4>Babes-Bolyai University</h4>
-                        <p>Academic collaboration on quantitative finance research</p>
+                        <p>Quantitative finance research collaboration</p>
                     </div>
                 </div>
                 <h3>Networks & Initiatives</h3>
@@ -1278,7 +1672,7 @@
             <!-- Funding -->
             <section id="funding" class="section">
                 <div class="section-header">
-                    <div class="section-icon">&#9830;</div>
+                    <div class="section-icon success">&#9830;</div>
                     <div>
                         <h2>Funding</h2>
                         <p class="section-subtitle">Supporting organizations</p>
@@ -1287,7 +1681,7 @@
                 <div class="grid grid-2">
                     <div class="card">
                         <h4>Swiss National Science Foundation</h4>
-                        <p>Proposal Number: 100018E_213370</p>
+                        <p>Proposal Number: 100018E_213370<br>Grant: IZCOZ0_213370<br>Amount: CHF 236,118</p>
                         <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" class="btn btn-outline btn-sm" style="margin-top: 1rem;">SNSF Grant Page</a>
                     </div>
                     <div class="card">
@@ -1301,7 +1695,7 @@
             <!-- News -->
             <section id="news" class="section">
                 <div class="section-header">
-                    <div class="section-icon">&#9888;</div>
+                    <div class="section-icon accent">&#9888;</div>
                     <div>
                         <h2>News & Updates</h2>
                         <p class="section-subtitle">Latest project developments</p>
@@ -1311,22 +1705,22 @@
                     <div class="timeline-item">
                         <div class="timeline-date">December 2024</div>
                         <h4>GitHub Repository Launched</h4>
-                        <p>Project repository and comprehensive wiki documentation now available on GitHub.</p>
+                        <p>Project repository and comprehensive wiki documentation now available on GitHub with OpenAlex integration.</p>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">2024</div>
-                        <h4>SSRN Publication</h4>
-                        <p>Published research on multimodal influence in financial instrument pricing.</p>
+                        <div class="timeline-date">May 2024</div>
+                        <h4>Expert Systems Publication</h4>
+                        <p>Published "Leveraging network topology for credit risk assessment in P2P lending" in Expert Systems with Applications.</p>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">2024</div>
-                        <h4>SNSF Mobility Grants</h4>
-                        <p>Team received SNSF Mobility Research Grants for international collaboration.</p>
+                        <div class="timeline-date">January 2024</div>
+                        <h4>Deutsche Borse Partnership</h4>
+                        <p>Started collaboration with Deutsche Borse AG on HFT and market microstructure research.</p>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-date">2023</div>
+                        <div class="timeline-date">July 2023</div>
                         <h4>Project Launch</h4>
-                        <p>Narrative Digital Finance research project officially started.</p>
+                        <p>Narrative Digital Finance research project officially started with SNSF funding.</p>
                     </div>
                 </div>
             </section>
@@ -1364,7 +1758,7 @@
                     <div class="footer-col">
                         <h5>Project</h5>
                         <a href="#overview">Overview</a>
-                        <a href="#objectives">Objectives</a>
+                        <a href="#highlights">Highlights</a>
                         <a href="#methods">Methods</a>
                         <a href="#results">Results</a>
                     </div>
@@ -1400,6 +1794,7 @@
     <script>
         // Global publications data
         let publicationsData = [];
+        let allPublicationsData = [];
         let sortDirection = {};
 
         function toggleMenu() {
@@ -1433,6 +1828,7 @@
         }
         window.addEventListener('scroll', highlightNav);
         highlightNav();
+
         // Animate on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1444,17 +1840,124 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.section').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
+            el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease-out';
             observer.observe(el);
         });
+
+        // Charts
+        let pubsByYearChart, citationsByYearChart;
+
+        function initCharts(pubs) {
+            const yearCounts = {};
+            const citationsByYear = {};
+
+            pubs.forEach(pub => {
+                const year = pub.year || 'Unknown';
+                yearCounts[year] = (yearCounts[year] || 0) + 1;
+                citationsByYear[year] = (citationsByYear[year] || 0) + (pub.cited_by_count || 0);
+            });
+
+            const years = Object.keys(yearCounts).filter(y => y !== 'Unknown').sort();
+            const counts = years.map(y => yearCounts[y]);
+            const citations = years.map(y => citationsByYear[y]);
+
+            // Publications by Year Chart
+            const ctx1 = document.getElementById('pubsByYearChart').getContext('2d');
+            if (pubsByYearChart) pubsByYearChart.destroy();
+            pubsByYearChart = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Publications',
+                        data: counts,
+                        backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Citations by Year Chart
+            const ctx2 = document.getElementById('citationsByYearChart').getContext('2d');
+            if (citationsByYearChart) citationsByYearChart.destroy();
+            citationsByYearChart = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Citations',
+                        data: citations,
+                        borderColor: 'rgba(139, 92, 246, 1)',
+                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function populateFilters(pubs) {
+            const years = [...new Set(pubs.map(p => p.year).filter(y => y))].sort((a,b) => b-a);
+            const authors = [...new Set(pubs.flatMap(p => p.team_member ? [p.team_member] : []))].sort();
+
+            const yearFilter = document.getElementById('yearFilter');
+            yearFilter.innerHTML = '<option value="">All Years</option>' +
+                years.map(y => `<option value="${y}">${y}</option>`).join('');
+
+            const authorFilter = document.getElementById('authorFilter');
+            authorFilter.innerHTML = '<option value="">All Authors</option>' +
+                authors.map(a => `<option value="${a}">${a}</option>`).join('');
+        }
+
+        function filterPublications() {
+            const search = document.getElementById('pubSearch').value.toLowerCase();
+            const year = document.getElementById('yearFilter').value;
+            const author = document.getElementById('authorFilter').value;
+
+            let filtered = allPublicationsData.filter(pub => {
+                const matchSearch = !search ||
+                    (pub.title || '').toLowerCase().includes(search) ||
+                    (pub.authors_str || '').toLowerCase().includes(search) ||
+                    (pub.venue || '').toLowerCase().includes(search);
+                const matchYear = !year || pub.year == year;
+                const matchAuthor = !author || pub.team_member === author;
+                return matchSearch && matchYear && matchAuthor;
+            });
+
+            publicationsData = filtered;
+            renderPublications(filtered);
+        }
 
         // Publications functionality
         async function loadPublications() {
             try {
                 const response = await fetch('data/publications.json');
-                publicationsData = await response.json();
+                allPublicationsData = await response.json();
+                publicationsData = [...allPublicationsData];
                 renderPublications(publicationsData);
+                initCharts(publicationsData);
+                populateFilters(allPublicationsData);
             } catch (error) {
                 console.error('Error loading publications:', error);
                 document.getElementById('pubTableBody').innerHTML =
@@ -1516,19 +2019,12 @@
             renderPublications(sortedData);
         }
 
-        // Search functionality
-        document.getElementById('pubSearch').addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase();
-            const filtered = publicationsData.filter(pub =>
-                (pub.title || '').toLowerCase().includes(query) ||
-                (pub.authors_str || '').toLowerCase().includes(query) ||
-                (pub.venue || '').toLowerCase().includes(query) ||
-                String(pub.year || '').includes(query)
-            );
-            renderPublications(filtered);
-        });
+        // Event listeners for filters
+        document.getElementById('pubSearch').addEventListener('input', filterPublications);
+        document.getElementById('yearFilter').addEventListener('change', filterPublications);
+        document.getElementById('authorFilter').addEventListener('change', filterPublications);
 
-        // OpenAlex API endpoints
+        // OpenAlex API
         const OPENALEX_AUTHORS = [
             { name: 'Joerg Osterrieder', search: 'Joerg Osterrieder', minWorks: 100 },
             { name: 'Branka Hadji Misheva', search: 'Branka Hadji Misheva' },
@@ -1548,7 +2044,6 @@
                 const seenIds = new Set();
 
                 for (const author of OPENALEX_AUTHORS) {
-                    // Search for author
                     let url = `https://api.openalex.org/authors?search=${encodeURIComponent(author.search)}&per_page=5&mailto=web@example.com`;
                     if (author.minWorks) {
                         url += `&filter=works_count:>${author.minWorks}`;
@@ -1560,7 +2055,6 @@
                     if (authorData.results && authorData.results.length > 0) {
                         const authorId = authorData.results[0].id;
 
-                        // Fetch works
                         const worksRes = await fetch(
                             `https://api.openalex.org/works?filter=authorships.author.id:${authorId}&per_page=100&sort=publication_year:desc&mailto=web@example.com`
                         );
@@ -1588,11 +2082,12 @@
                     }
                 }
 
-                // Sort by year desc
                 allWorks.sort((a, b) => (b.year || 0) - (a.year || 0));
-
-                publicationsData = allWorks;
+                allPublicationsData = allWorks;
+                publicationsData = [...allWorks];
                 renderPublications(publicationsData);
+                initCharts(publicationsData);
+                populateFilters(allPublicationsData);
 
             } catch (error) {
                 console.error('Error fetching from OpenAlex:', error);
