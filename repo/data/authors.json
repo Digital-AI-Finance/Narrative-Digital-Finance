@@ -83,27 +83,27 @@
     "role": "PhD Researcher",
     "affiliation": "Bern Business School / University of Twente",
     "openalex_found": true,
-    "openalex_id": "https://openalex.org/A5100664847",
-    "orcid": "https://orcid.org/0000-0002-0083-1803",
-    "works_count": 48,
-    "cited_by_count": 2387,
-    "h_index": 15,
-    "i10_index": 16,
-    "2yr_mean_citedness": 2.076923076923077,
+    "openalex_id": "https://openalex.org/A5056621270",
+    "orcid": "0009-0006-9554-8205",
+    "works_count": 12,
+    "cited_by_count": 351,
+    "h_index": 4,
+    "i10_index": 4,
+    "2yr_mean_citedness": 4.363636363636363,
     "google_scholar": null,
     "ssrn": null,
     "last_known_institutions": [
       {
-        "name": "Nanjing Agricultural University",
-        "country": "CN"
+        "name": "Bern University of Applied Sciences",
+        "country": "CH"
       },
       {
-        "name": "The University of Melbourne",
-        "country": "AU"
+        "name": "École Supérieure de Commerce de Rennes",
+        "country": "FR"
       },
       {
-        "name": "Zhejiang University",
-        "country": "CN"
+        "name": "University of Twente",
+        "country": "NL"
       }
     ]
   },

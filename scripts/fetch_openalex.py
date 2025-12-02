@@ -52,7 +52,7 @@ TEAM_MEMBERS = [
     },
     {
         "name": "Yiting Liu",
-        "orcid": None,  # Will search by name
+        "orcid": "0009-0006-9554-8205",  # Correct ORCID for BFH/UT researcher
         "role": "PhD Researcher",
         "affiliation": "Bern Business School / University of Twente",
         "search_terms": ["Yiting Liu"],

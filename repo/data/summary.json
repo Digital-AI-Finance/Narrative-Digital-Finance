@@ -1,9 +1,9 @@
 {
-  "fetched_at": "2025-12-02T08:57:59.282973",
+  "fetched_at": "2025-12-02T09:09:49.226810",
   "total_team_members": 6,
-  "total_unique_publications": 169,
-  "total_citations": 4046,
-  "max_h_index": 15,
+  "total_unique_publications": 122,
+  "total_citations": 2010,
+  "max_h_index": 13,
   "data_source": "OpenAlex API",
   "project": {
     "name": "Narrative Digital Finance",
