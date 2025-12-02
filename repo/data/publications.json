@@ -1,5 +1,33 @@
 [
   {
+    "id": "https://openalex.org/W4410422890",
+    "title": "Independent and combined effects of volatile organic compounds on sarcopenia: Insights into environmental pollutants and muscle health",
+    "year": 2025,
+    "doi": "10.1016/j.ecoenv.2025.118344",
+    "doi_url": "https://doi.org/10.1016/j.ecoenv.2025.118344",
+    "authors": [
+      "Haobiao Liu",
+      "Zhuohang Chen",
+      "Rongqi Xiang",
+      "Yiting Liu"
+    ],
+    "authors_str": "Haobiao Liu, Zhuohang Chen, Rongqi Xiang, Yiting Liu",
+    "venue": "Ecotoxicology and Environmental Safety",
+    "cited_by_count": 7,
+    "type": "article",
+    "open_access": true,
+    "abstract": "This study investigates the associations between volatile organic compound (VOC) exposure and sarcopenia, focusing on independent and combined effects and exploring potential biological mechanisms. Utilizing data from the National Health and Nutrition Examination Survey, we applied logistic regression to examine associations between individual VOCs and sarcopenia, while restricted cubic splines (RCS) assessed dose-response relationships. Weighted quantile sum (WQS) and Bayesian kernel machine re...",
+    "concepts": [
+      "Pollutant",
+      "Sarcopenia",
+      "Environmental chemistry",
+      "Environmental science",
+      "Chemistry"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.ecoenv.2025.118344",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4412450521",
     "title": "An analytical approach to credit risk assessment using machine learning models",
     "year": 2025,
@@ -12,7 +40,7 @@
     ],
     "authors_str": "Marcos Machado, Daniel Chen, Joerg Osterrieder",
     "venue": "Decision Analytics Journal",
-    "cited_by_count": 3,
+    "cited_by_count": 4,
     "type": "article",
     "open_access": true,
     "abstract": "",
@@ -52,6 +80,66 @@
     ],
     "pdf_url": "https://doi.org/10.1007/s10203-025-00512-1",
     "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4410401324",
+    "title": "miR827 increases susceptibility to <i>Alternaria alternata</i> by shearing the <scp>mRNAs</scp> of low‐affinity phosphate transporters <i>PHT5‐2</i> and <i>PHT5‐3</i> in apple",
+    "year": 2025,
+    "doi": "10.1111/tpj.70222",
+    "doi_url": "https://doi.org/10.1111/tpj.70222",
+    "authors": [
+      "Lifang Cao",
+      "Changguo Luo",
+      "Yiting Liu",
+      "Liming Lan",
+      "Tingting Zhou",
+      "Kaixu Hu",
+      "Sanhong Wang",
+      "Xinyi Yu",
+      "Shenchun Qu"
+    ],
+    "authors_str": "Lifang Cao, Changguo Luo, Yiting Liu, Liming Lan, Tingting Zhou...",
+    "venue": "The Plant Journal",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "SUMMARY Apple leaf spot disease, caused by Alternaria alternata , significantly impacts apple production. Phosphorus plays a crucial role in maintaining the healthy growth of plants and enhancing their defense against pathogens. Both low‐affinity and high‐affinity phosphate transporters are important proteins involved in the response to phosphate starvation and increasing phosphate content. The difference is that the former does not easily cause excessive accumulation of phosphorus, leading to p...",
+    "concepts": [
+      "Alternaria alternata",
+      "Phosphate",
+      "Callose",
+      "Botrytis cinerea",
+      "Transporter"
+    ],
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/tpj.70222",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4407043379",
+    "title": "Proxy and learning back-feeding: How older adults use smartphones in China",
+    "year": 2025,
+    "doi": "10.1177/20501579241300960",
+    "doi_url": "https://doi.org/10.1177/20501579241300960",
+    "authors": [
+      "Chengyu She",
+      "Yiting Liu",
+      "Siyue Li"
+    ],
+    "authors_str": "Chengyu She, Yiting Liu, Siyue Li",
+    "venue": "Mobile Media & Communication",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": false,
+    "abstract": "Digital back-feeding is a bottom-up process by which younger generations teach or assist older generations in digital access, usage, and literacy. This study aims to examine how two means of digital back-feeding—proxy back-feeding and learning back-feeding—might be differently impacted by older adults’ perceptions of smartphone use, as well as their impact on older adults’ digital literacy. A cross-sectional questionnaire survey ( n = 433) was conducted in mainland China. Our findings revealed t...",
+    "concepts": [
+      "Proxy (statistics)",
+      "Psychology",
+      "Perception",
+      "Literacy",
+      "Mainland China"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
   },
   {
     "id": "https://openalex.org/W4415376695",
@@ -261,6 +349,96 @@
     "team_member": "Branka Hadji Misheva"
   },
   {
+    "id": "https://openalex.org/W4410216298",
+    "title": "Association between cardiometabolic index and bone mineral density among adolescents in the United States",
+    "year": 2025,
+    "doi": "10.3389/fendo.2025.1535509",
+    "doi_url": "https://doi.org/10.3389/fendo.2025.1535509",
+    "authors": [
+      "Haobiao Liu",
+      "Rongqi Xiang",
+      "Chenyue Liu",
+      "Zhuohang Chen",
+      "Yuhang Shi",
+      "Yiting Liu",
+      "Yan Liu"
+    ],
+    "authors_str": "Haobiao Liu, Rongqi Xiang, Chenyue Liu, Zhuohang Chen, Yuhang Shi...",
+    "venue": "Frontiers in Endocrinology",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Objectives The cardiometabolic index (CMI) serves as a comprehensive metric for evaluating cardiometabolic health, and is correlated with several health outcomes. However, research examining the relationship between CMI and bone mineral density (BMD), particularly in adolescent populations, remains limited and warrants further investigation. Methods The weighted multiple linear regression analysis was conducted to elucidate the association between CMI and BMD. Results Our study ultimately includ...",
+    "concepts": [
+      "Bone mineral",
+      "Association (psychology)",
+      "Medicine",
+      "Index (typography)",
+      "Bone density"
+    ],
+    "pdf_url": "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1535509/pdf",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4407276694",
+    "title": "A Comprehensive Review of Suicide among Migrant Older Adults (65+ Years) in Australia",
+    "year": 2025,
+    "doi": "10.54254/2753-7048/2025.20760",
+    "doi_url": "https://doi.org/10.54254/2753-7048/2025.20760",
+    "authors": [
+      "Yiting Liu"
+    ],
+    "authors_str": "Yiting Liu",
+    "venue": "Lecture Notes in Education Psychology and Public Media",
+    "cited_by_count": 0,
+    "type": "review",
+    "open_access": false,
+    "abstract": "Australia's multicultural society, influenced by high levels of immigration, presents unique challenges for older migrants (aged 65 years and older). This review focuses on factors influencing increased suicide rates among older migrants, a critical but underexplored public health issue. This review examines the interaction between migration history, acculturation, and ageing, highlighting the compounding risk of mental illness, loneliness, and social isolation. The review used a comprehensive r...",
+    "concepts": [
+      "Gerontology",
+      "Geography",
+      "Psychology",
+      "Demography",
+      "Medicine"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4410914946",
+    "title": "Global, Regional, and National Burden of Early-Onset Bladder Cancer in Adolescents and Young Adults Aged 15-49 Years: Trends from 1990 to 2021 and Projections to 2051",
+    "year": 2025,
+    "doi": "10.2139/ssrn.5270525",
+    "doi_url": "https://doi.org/10.2139/ssrn.5270525",
+    "authors": [
+      "Rui Min",
+      "Xing Zeng",
+      "Yaxin Hou",
+      "Zhenyu Zhao",
+      "Zhipeng Yao",
+      "Zhenhao Liu",
+      "Yiting Liu",
+      "Yuhong Ding",
+      "Yang Li",
+      "Pengjie Shi"
+    ],
+    "authors_str": "Rui Min, Xing Zeng, Yaxin Hou, Zhenyu Zhao, Zhipeng Yao...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Medicine",
+      "Bladder cancer",
+      "Demography",
+      "Cancer",
+      "Political science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5270525",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4396699123",
     "title": "Leveraging network topology for credit risk assessment in P2P lending: A comparative study under the lens of machine learning",
     "year": 2024,
@@ -342,6 +520,36 @@
     ],
     "pdf_url": "https://doi.org/10.1016/j.frl.2024.105308",
     "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4401612306",
+    "title": "Application of a lyophilized CRISPR/Cas12a and RPA assay for rapid detection of Actinobacillus pleuropneumoniae",
+    "year": 2024,
+    "doi": "10.1016/j.microc.2024.111443",
+    "doi_url": "https://doi.org/10.1016/j.microc.2024.111443",
+    "authors": [
+      "Jie Hao",
+      "Tianmu Yang",
+      "Yiting Liu",
+      "Mengyan Jia",
+      "Zhenling Zeng",
+      "Wenguang Xiong"
+    ],
+    "authors_str": "Jie Hao, Tianmu Yang, Yiting Liu, Mengyan Jia, Zhenling Zeng...",
+    "venue": "Microchemical Journal",
+    "cited_by_count": 7,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [
+      "Actinobacillus pleuropneumoniae",
+      "CRISPR",
+      "Microbiology",
+      "Chemistry",
+      "Chromatography"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
   },
   {
     "id": "https://openalex.org/W4404632218",
@@ -1123,6 +1331,36 @@
     "team_member": "Joerg Osterrieder"
   },
   {
+    "id": "https://openalex.org/W4405028868",
+    "title": "Renshen (Radix Ginseng) polysaccharide promotes repair of the mice intestinal mucosa through regulatory mechanisms based on polyamine and human antigen R.",
+    "year": 2024,
+    "doi": "10.19852/j.cnki.jtcm.2024.06.003",
+    "doi_url": "https://doi.org/10.19852/j.cnki.jtcm.2024.06.003",
+    "authors": [
+      "Guanyu Wang",
+      "Dai Xingzhen",
+      "Yiting Liu",
+      "Zhu Zeming",
+      "H U Ling",
+      "Ru‐Liu Li"
+    ],
+    "authors_str": "Guanyu Wang, Dai Xingzhen, Yiting Liu, Zhu Zeming, H U Ling...",
+    "venue": "PubMed",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Renshen (<i>Radix Ginseng</i>) polysaccharide-induced repair of intestinal mucosal injury may be mediated by increased cell migration <i>via</i> polyamine-based regulatory mechanisms. <i>In vitro</i> and <i>in vivo</i> experiments suggest that Renshen (<i>Radix Ginseng</i>) polysaccharide-induced post-transcriptional regulation of STIM1 and Cdc42 may be related to differences in the regulation of different target genes by HuR. Taken together, these data provide a reference for further exploratio...",
+    "concepts": [
+      "Radix (gastropod)",
+      "Ginseng",
+      "Polyamine",
+      "Polysaccharide",
+      "Antigen"
+    ],
+    "pdf_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11589556",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4313481730",
     "title": "A Primer on Deep Reinforcement Learning for Finance",
     "year": 2023,
@@ -1201,6 +1439,37 @@
     ],
     "pdf_url": "https://doi.org/10.2139/ssrn.4317320",
     "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4389301108",
+    "title": "Application of a rapid and sensitive RPA-CRISPR/Cas12a assay for naked-eye detection of Haemophilus parasuis",
+    "year": 2023,
+    "doi": "10.1016/j.aca.2023.342101",
+    "doi_url": "https://doi.org/10.1016/j.aca.2023.342101",
+    "authors": [
+      "Jie Hao",
+      "Mengyan Jia",
+      "Yiting Liu",
+      "Zhenlin Lv",
+      "Junming Chen",
+      "Wenguang Xiong",
+      "Zhenling Zeng"
+    ],
+    "authors_str": "Jie Hao, Mengyan Jia, Yiting Liu, Zhenlin Lv, Junming Chen...",
+    "venue": "Analytica Chimica Acta",
+    "cited_by_count": 7,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [
+      "CRISPR",
+      "Haemophilus",
+      "Recombinase Polymerase Amplification",
+      "Naked eye",
+      "Chemistry"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
   },
   {
     "id": "https://openalex.org/W4319592075",
@@ -1423,6 +1692,38 @@
     ],
     "pdf_url": "https://doi.org/10.2139/ssrn.4634266",
     "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385376485",
+    "title": "Total ginsenosides promotes intestinal epithelial proliferation via affecting polyamine-mediated HuR on post-transcriptional control",
+    "year": 2023,
+    "doi": "10.1016/j.fbio.2023.102970",
+    "doi_url": "https://doi.org/10.1016/j.fbio.2023.102970",
+    "authors": [
+      "Anrong Wang",
+      "Xinyi Liang",
+      "Wanxia Chen",
+      "Yiting Liu",
+      "Yiping Zhu",
+      "Dong Zhang",
+      "Ling Hu",
+      "Ru‐Liu Li"
+    ],
+    "authors_str": "Anrong Wang, Xinyi Liang, Wanxia Chen, Yiting Liu, Yiping Zhu...",
+    "venue": "Food Bioscience",
+    "cited_by_count": 3,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [
+      "Cell growth",
+      "Polyamine",
+      "Ginseng",
+      "Chemistry",
+      "Messenger RNA"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
   },
   {
     "id": "https://openalex.org/W4387577844",
@@ -1810,6 +2111,61 @@
     "team_member": "Joerg Osterrieder"
   },
   {
+    "id": "https://openalex.org/W4382517550",
+    "title": "18F-FDG PET/CT Imaging Findings of a Case of Primary Cardiac Chondrosarcoma and Pulmonary Inflammation",
+    "year": 2023,
+    "doi": "10.1097/rlu.0000000000004759",
+    "doi_url": "https://doi.org/10.1097/rlu.0000000000004759",
+    "authors": [
+      "Yiting Liu",
+      "You Cheng",
+      "Dan Shao"
+    ],
+    "authors_str": "Yiting Liu, You Cheng, Dan Shao",
+    "venue": "Clinical Nuclear Medicine",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": false,
+    "abstract": "Abstract Primary cardiac chondrosarcoma invading the right pulmonary vein is very rare, whereas secondary cardiac chondrosarcoma is relatively common. We reported the 18 F-FDG PET/CT findings of primary cardiac chondrosarcoma and pulmonary inflammation misdiagnosed as cardiac malignancy and pulmonary metastasis in a 27-year-old man.",
+    "concepts": [
+      "Medicine",
+      "Chondrosarcoma",
+      "Malignancy",
+      "Radiology",
+      "Cardiac imaging"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4388962154",
+    "title": "Fourier-transform microwave spectroscopy of the s-<i>trans</i>-3-propenalyl (CH<sub>2</sub>CHĊO) and 3-propenolyl (ĊH<sub>2</sub>CHCO) radicals",
+    "year": 2023,
+    "doi": "10.1039/d3cp05210a",
+    "doi_url": "https://doi.org/10.1039/d3cp05210a",
+    "authors": [
+      "Yiting Liu",
+      "Ching-Hua Chang",
+      "Masakazu Nakajima",
+      "Yasuki Endo"
+    ],
+    "authors_str": "Yiting Liu, Ching-Hua Chang, Masakazu Nakajima, Yasuki Endo",
+    "venue": "Physical Chemistry Chemical Physics",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": false,
+    "abstract": "Two conformers of an open-shell radical, CH 2 CHCO, are observed by Fourier-transform microwave spectroscopy, where the bent s- trans form was found to be the lowest energy conformer.",
+    "concepts": [
+      "Radical",
+      "Rotational spectroscopy",
+      "Spectroscopy",
+      "Fourier transform infrared spectroscopy",
+      "Fourier transform"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4388523841",
     "title": "Examining share repurchase executions: insights and synthesis from the existing literature",
     "year": 2023,
@@ -2131,6 +2487,102 @@
     "team_member": "Joerg Osterrieder"
   },
   {
+    "id": "https://openalex.org/W4366983587",
+    "title": "Characterization of a newly emerging HCV subtype 6xk among Burmese travelers arriving at Ruili Port in Yunnan, China",
+    "year": 2023,
+    "doi": "10.1016/j.jinf.2023.04.011",
+    "doi_url": "https://doi.org/10.1016/j.jinf.2023.04.011",
+    "authors": [
+      "Jin Liu",
+      "Jie Li",
+      "Binghui Wang",
+      "Yiting Liu",
+      "Li Liu",
+      "Yang Liu",
+      "Yue Feng",
+      "Weihong Qin",
+      "Xueshan Xia"
+    ],
+    "authors_str": "Jin Liu, Jie Li, Binghui Wang, Yiting Liu, Li Liu...",
+    "venue": "Journal of Infection",
+    "cited_by_count": 0,
+    "type": "letter",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [
+      "Medicine",
+      "Hepatocellular carcinoma",
+      "Public health",
+      "Cirrhosis",
+      "Hepatitis C virus"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4307893842",
+    "title": "Bubbles all the way down? Detecting and date-stamping bubble behaviours in NFT and DeFi markets",
+    "year": 2022,
+    "doi": "10.1080/14765284.2022.2138161",
+    "doi_url": "https://doi.org/10.1080/14765284.2022.2138161",
+    "authors": [
+      "Yizhi Wang",
+      "Florian Horky",
+      "Lennart John Baals",
+      "Brian M. Lucey",
+      "Samuel A. Vigne"
+    ],
+    "authors_str": "Yizhi Wang, Florian Horky, Lennart John Baals, Brian M. Lucey, Samuel A. Vigne",
+    "venue": "Journal of Chinese Economic and Business Studies",
+    "cited_by_count": 65,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Amid surging market values and widespread regulatory discussion, NFT and DeFi markets are widely perceived as being simply speculative in nature. This paper detects the existence and dates of price bubbles in the NFT and DeFi markets by applying SADF and GSADF tests. We document that NFT and DeFi markets both exhibit speculative bubbles, with NFT bubbles being more recurrent and having higher average explosive magnitudes than DeFi bubbles. The price bubbles in the NFT and DeFi markets are highly...",
+    "concepts": [
+      "Bubble",
+      "Stamping",
+      "Economics",
+      "Business",
+      "Engineering"
+    ],
+    "pdf_url": "https://www.tandfonline.com/doi/epdf/10.1080/14765284.2022.2138161?needAccess=true&role=button",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W4294771161",
+    "title": "TREM2/β-catenin attenuates NLRP3 inflammasome-mediated macrophage pyroptosis to promote bacterial clearance of pyogenic bacteria",
+    "year": 2022,
+    "doi": "10.1038/s41419-022-05193-x",
+    "doi_url": "https://doi.org/10.1038/s41419-022-05193-x",
+    "authors": [
+      "Yi Wang",
+      "Can Cao",
+      "Yanting Zhu",
+      "Huifeng Fan",
+      "Qiaojuan Liu",
+      "Yiting Liu",
+      "Kang Chen",
+      "Yongjian Wu",
+      "Siping Liang",
+      "Meiyu Li"
+    ],
+    "authors_str": "Yi Wang, Can Cao, Yanting Zhu, Huifeng Fan, Qiaojuan Liu...",
+    "venue": "Cell Death and Disease",
+    "cited_by_count": 57,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Pyroptosis",
+      "Inflammasome",
+      "Macrophage",
+      "Microbiology",
+      "TREM2"
+    ],
+    "pdf_url": "https://www.nature.com/articles/s41419-022-05193-x.pdf",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4223538073",
     "title": "Default or profit scoring credit systems? Evidence from European and US peer-to-peer lending markets",
     "year": 2022,
@@ -2157,6 +2609,65 @@
     ],
     "pdf_url": "https://jfin-swufe.springeropen.com/track/pdf/10.1186/s40854-022-00338-5",
     "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W4289135250",
+    "title": "Persistent TLR4 Activation Promotes Hepatocellular Carcinoma Growth through Positive Feedback Regulation by LIN28A/Let-7g miRNA",
+    "year": 2022,
+    "doi": "10.3390/ijms23158419",
+    "doi_url": "https://doi.org/10.3390/ijms23158419",
+    "authors": [
+      "I‐Ting Chen",
+      "An‐Chieh Cheng",
+      "Yiting Liu",
+      "Chieh Yan",
+      "Yi-Chen Cheng",
+      "Chiung‐Fang Chang",
+      "Ping‐Hui Tseng"
+    ],
+    "authors_str": "I‐Ting Chen, An‐Chieh Cheng, Yiting Liu, Chieh Yan, Yi-Chen Cheng...",
+    "venue": "International Journal of Molecular Sciences",
+    "cited_by_count": 19,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Chronic inflammation caused by liver damage or infection plays an important role in the development and progression of hepatocellular carcinoma (HCC). The activation of Toll-like receptors 4 (TLR4) is involved in HCC tumorigenesis. Moreover, high TLR4 expression in HCC has been linked to poor prognosis. Although the expression of TLR4 in HCC is relatively low compared to hematopoietic cells, it is important to explore the molecular mechanism leading to the elevation of TLR4 in HCC. In this study...",
+    "concepts": [
+      "TLR4",
+      "microRNA",
+      "Hepatocellular carcinoma",
+      "Inflammation",
+      "Cancer research"
+    ],
+    "pdf_url": "https://www.mdpi.com/1422-0067/23/15/8419/pdf?version=1659431867",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4225690437",
+    "title": "Towards a Research Agenda on the Financial Economics of NFT’s",
+    "year": 2022,
+    "doi": "10.2139/ssrn.4070710",
+    "doi_url": "https://doi.org/10.2139/ssrn.4070710",
+    "authors": [
+      "Lennart John Baals",
+      "Brian M. Lucey",
+      "Samuel A. Vigne",
+      "Suwan Long"
+    ],
+    "authors_str": "Lennart John Baals, Brian M. Lucey, Samuel A. Vigne, Suwan Long",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 14,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Parallels",
+      "Perspective (graphical)",
+      "Behavioral economics",
+      "Social studies of finance",
+      "Dissent"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4070710",
+    "team_member": "Lennart John Baals"
   },
   {
     "id": "https://openalex.org/W3134447554",
@@ -2188,6 +2699,37 @@
     "team_member": "Joerg Osterrieder"
   },
   {
+    "id": "https://openalex.org/W4281964828",
+    "title": "Prevalence of psychological distress among people living with HIV/AIDS: a systematic review and meta-analysis",
+    "year": 2022,
+    "doi": "10.1080/09540121.2022.2080802",
+    "doi_url": "https://doi.org/10.1080/09540121.2022.2080802",
+    "authors": [
+      "Haiqi Ma",
+      "Zhu Fu",
+      "Huimin Zhai",
+      "Yue Ma",
+      "Yiting Liu",
+      "Shangjie Wang",
+      "Ying Xu"
+    ],
+    "authors_str": "Haiqi Ma, Zhu Fu, Huimin Zhai, Yue Ma, Yiting Liu...",
+    "venue": "AIDS Care",
+    "cited_by_count": 7,
+    "type": "review",
+    "open_access": false,
+    "abstract": "Although people living with HIV/AIDS (PLWHA) are known to be vulnerable to psychological distress (PD), little is known about the prevalence of PD among PLWHA. A systematic literature search of several databases was conducted from inception to August 2021 focusing on studies reporting on PD symptoms among PLWHA. The overall prevalence estimates were pooled using a random-effects meta-analysis. Differences according to study-level characteristics were examined using stratified meta-analysis. We p...",
+    "concepts": [
+      "Meta-analysis",
+      "Confidence interval",
+      "Medicine",
+      "Psychological distress",
+      "Demography"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4229014297",
     "title": "Editorial: Explainable, Trustworthy, and Responsible AI for the Financial Service Industry",
     "year": 2022,
@@ -2214,6 +2756,69 @@
     "team_member": "Branka Hadji Misheva"
   },
   {
+    "id": "https://openalex.org/W4381888245",
+    "title": "Aquaporin 9 is involved in CRC metastasis through DVL2-dependent Wnt/β-catenin signaling activation",
+    "year": 2022,
+    "doi": "10.1093/gastro/goad033",
+    "doi_url": "https://doi.org/10.1093/gastro/goad033",
+    "authors": [
+      "Yiting Liu",
+      "Qianling Gao",
+      "Xingzhi Feng",
+      "Guanxing Chen",
+      "Xuefei Jiang",
+      "Daici Chen",
+      "Zihuan Yang"
+    ],
+    "authors_str": "Yiting Liu, Qianling Gao, Xingzhi Feng, Guanxing Chen, Xuefei Jiang...",
+    "venue": "Gastroenterology report",
+    "cited_by_count": 5,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Abstract Background Aquaporin 9 (AQP9) is permeable to water or other small molecules, and plays an important role in various cancers. We previously found that AQP9 was related to the efficacy of chemotherapy in patients with colorectal cancer (CRC). This study aimed to identify the role and regulatory mechanism of AQP9 in CRC metastasis. Methods The clinical significance of AQP9 was analysed by using bioinformatics and tissue microarray. Transcriptome sequencing, Dual-Luciferase Reporter Assay,...",
+    "concepts": [
+      "Medicine",
+      "Wnt signaling pathway",
+      "Cancer research",
+      "Metastasis",
+      "Catenin"
+    ],
+    "pdf_url": "https://academic.oup.com/gastro/article-pdf/doi/10.1093/gastro/goad033/50683982/goad033.pdf",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4226243069",
+    "title": "Fine and hyperfine coupling constants of the <i>cis</i>-β-cyanovinyl radical, HCCHCN",
+    "year": 2022,
+    "doi": "10.1039/d2cp00516f",
+    "doi_url": "https://doi.org/10.1039/d2cp00516f",
+    "authors": [
+      "Masakazu Nakajima",
+      "Yiting Liu",
+      "Ching-Hua Chang",
+      "Kenji Seiki",
+      "Yoshihiro Sumiyoshi",
+      "Yasuhiro Ohshima",
+      "Jian Tang",
+      "Yasuki Endo"
+    ],
+    "authors_str": "Masakazu Nakajima, Yiting Liu, Ching-Hua Chang, Kenji Seiki, Yoshihiro Sumiyoshi...",
+    "venue": "Physical Chemistry Chemical Physics",
+    "cited_by_count": 5,
+    "type": "article",
+    "open_access": false,
+    "abstract": "A Fourier-transform microwave spectrum of the cis -β-cyanovinyl radical is re-measured for the K a = 0 ladder of the a-type transitions up to 30 GHz and the 2 12 –1 11 transition at 19.85 GHz.",
+    "concepts": [
+      "Hyperfine structure",
+      "Radical",
+      "Chemistry",
+      "Hyperfine coupling",
+      "Microwave"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4295066518",
     "title": "Editorial: Artificial intelligence in finance and industry: Highlights from 6 European COST conferences",
     "year": 2022,
@@ -2238,6 +2843,40 @@
     ],
     "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2022.1007074/pdf",
     "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4283078849",
+    "title": "TREM2/β-catenin attenuates NLRP3 inflammasome-mediated macrophage pyroptosis to promote bacterial clearance of pyogenic bacteria",
+    "year": 2022,
+    "doi": "10.21203/rs.3.rs-1738955/v1",
+    "doi_url": "https://doi.org/10.21203/rs.3.rs-1738955/v1",
+    "authors": [
+      "Yi Wang",
+      "Can Cao",
+      "Yanting Zhu",
+      "Huifeng Fan",
+      "Qiaojuan Liu",
+      "Yiting Liu",
+      "Kang Chen",
+      "Yongjian Wu",
+      "Siping Liang",
+      "Meiyu Li"
+    ],
+    "authors_str": "Yi Wang, Can Cao, Yanting Zhu, Huifeng Fan, Qiaojuan Liu...",
+    "venue": "Research Square (Research Square)",
+    "cited_by_count": 3,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Abstract Triggering receptors expressed on myeloid cells 2 (TREM2) is considered a protective factor to protect host from bacterial infection, while how it elicits this role is unclear. In the present study, we demonstrate that deficiency of triggering receptors expressed on myeloid cells 2 (TREM2) significantly enhanced macrophage pyroptosis induced by four common pyogenic bacteria including Staphylococcus aureus , Pseudomonas aeruginosa , Streptococcus pneumoniae and Escherichia coli . TREM2 d...",
+    "concepts": [
+      "Pyroptosis",
+      "Inflammasome",
+      "Macrophage",
+      "TREM2",
+      "Microbiology"
+    ],
+    "pdf_url": "https://www.researchsquare.com/article/rs-1738955/latest.pdf",
+    "team_member": "Yiting Liu"
   },
   {
     "id": "https://openalex.org/W4312605210",
@@ -2527,6 +3166,105 @@
     "team_member": "Branka Hadji Misheva"
   },
   {
+    "id": "https://openalex.org/W3216442674",
+    "title": "Chlorogenic acid: Potential source of natural drugs for the therapeutics of fibrosis and cancer",
+    "year": 2021,
+    "doi": "10.1016/j.tranon.2021.101294",
+    "doi_url": "https://doi.org/10.1016/j.tranon.2021.101294",
+    "authors": [
+      "Ebuka-Olisaemeka Nwafor",
+      "Peng Lü",
+      "Ying Zhang",
+      "Rui Liu",
+      "Hui Peng",
+      "Bin Xing",
+      "Yiting Liu",
+      "Ziwei Li",
+      "Kuibin Zhang",
+      "Yukun Zhang"
+    ],
+    "authors_str": "Ebuka-Olisaemeka Nwafor, Peng Lü, Ying Zhang, Rui Liu, Hui Peng...",
+    "venue": "Translational Oncology",
+    "cited_by_count": 89,
+    "type": "review",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Medicine",
+      "Fibrosis",
+      "Cancer",
+      "Disease",
+      "Nintedanib"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.tranon.2021.101294",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W3135056523",
+    "title": "Mt-Keima detects PINK1-PRKN mitophagy <i>in vivo</i> with greater sensitivity than mito-QC",
+    "year": 2021,
+    "doi": "10.1080/15548627.2021.1896924",
+    "doi_url": "https://doi.org/10.1080/15548627.2021.1896924",
+    "authors": [
+      "Yiting Liu",
+      "Danielle A. Sliter",
+      "Mario K. Shammas",
+      "Xiaoping Huang",
+      "Chunxin Wang",
+      "Hannah Calvelli",
+      "Dragan Maric",
+      "Derek P. Narendra"
+    ],
+    "authors_str": "Yiting Liu, Danielle A. Sliter, Mario K. Shammas, Xiaoping Huang, Chunxin Wang...",
+    "venue": "Autophagy",
+    "cited_by_count": 61,
+    "type": "article",
+    "open_access": true,
+    "abstract": "PINK1 and PRKN, which cause Parkinson disease when mutated, form a quality control mitophagy pathway that is well-characterized in cultured cells. The extent to which the PINK1-PRKN pathway contributes to mitophagy <i>in vivo</i>, however, is controversial. This is due in large part to conflicting results from studies using one of two mitophagy reporters: mt-Keima or mito-QC. Studies using mt-Keima have generally detected PINK1-PRKN mitophagy <i>in vivo</i>, whereas those using mito-QC generally...",
+    "concepts": [
+      "Mitophagy",
+      "PINK1",
+      "Biology",
+      "In vivo",
+      "Autophagy"
+    ],
+    "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/15548627.2021.1896924?needAccess=true&role=button",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W3209057292",
+    "title": "Role of Galectins in the Liver Diseases: A Systematic Review and Meta-Analysis",
+    "year": 2021,
+    "doi": "10.3389/fmed.2021.744518",
+    "doi_url": "https://doi.org/10.3389/fmed.2021.744518",
+    "authors": [
+      "Yang An",
+      "Shixue Xu",
+      "Yiting Liu",
+      "Xiangbo Xu",
+      "Cyriac Abby Philips",
+      "Chen Jiang",
+      "Nahúm Méndez‐Sánchez",
+      "Xiaozhong Guo",
+      "Xingshun Qi"
+    ],
+    "authors_str": "Yang An, Shixue Xu, Yiting Liu, Xiangbo Xu, Cyriac Abby Philips...",
+    "venue": "Frontiers in Medicine",
+    "cited_by_count": 46,
+    "type": "review",
+    "open_access": true,
+    "abstract": "Background: Galectins, a family of β-galactoside-binding proteins, are related to the development and progression of various human diseases such as cancer, heart failure, and chronic kidney disease. However, its role in liver diseases is unclear. Methods: The PubMed, Embase, and Cochrane Library databases were searched. Hazard ratios (HRs), odds ratios (ORs), and mean differences (MDs) with 95% CIs were pooled to evaluate the association of the galectins with the outcomes and risk of liver disea...",
+    "concepts": [
+      "Galectin",
+      "Meta-analysis",
+      "Medicine",
+      "Immunology",
+      "Internal medicine"
+    ],
+    "pdf_url": "https://doi.org/10.3389/fmed.2021.744518",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4287319433",
     "title": "Explainable AI in Credit Risk Management",
     "year": 2021,
@@ -2554,6 +3292,38 @@
     ],
     "pdf_url": "https://research.utwente.nl/en/publications/c01c619f-b3d8-4513-8c4e-e046defdc322",
     "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3153331950",
+    "title": "Comment on “mt-Keima detects PINK1-PRKN mitophagy <i>in vivo</i> with greater sensitivity than mito-QC”",
+    "year": 2021,
+    "doi": "10.1080/15548627.2021.1909999",
+    "doi_url": "https://doi.org/10.1080/15548627.2021.1909999",
+    "authors": [
+      "Yiting Liu",
+      "Danielle A. Sliter",
+      "Mario K. Shammas",
+      "Xiaoping Huang",
+      "Chunxin Wang",
+      "Hannah Calvelli",
+      "Dragan Maric",
+      "Derek P. Narendra"
+    ],
+    "authors_str": "Yiting Liu, Danielle A. Sliter, Mario K. Shammas, Xiaoping Huang, Chunxin Wang...",
+    "venue": "Autophagy",
+    "cited_by_count": 6,
+    "type": "letter",
+    "open_access": true,
+    "abstract": "We thank Ganley et al. for their thoughtful comment on our recent report [1]. We agree with Ganley et al. that both mito-Keima and mt-QC detect mitophagy. Our report demonstrates, however, that mit...",
+    "concepts": [
+      "Mitophagy",
+      "Biology",
+      "PINK1",
+      "Autophagy",
+      "Sensitivity (control systems)"
+    ],
+    "pdf_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8726638",
+    "team_member": "Yiting Liu"
   },
   {
     "id": "https://openalex.org/W3172372614",
@@ -2724,6 +3494,36 @@
     "team_member": "Joerg Osterrieder"
   },
   {
+    "id": "https://openalex.org/W3135397239",
+    "title": "Endoscopic transpapillary gallbladder drainage for management of acute cholecystitis with coagulopathy",
+    "year": 2021,
+    "doi": "10.1177/0300060521996912",
+    "doi_url": "https://doi.org/10.1177/0300060521996912",
+    "authors": [
+      "Xiaoping Sun",
+      "Yiting Liu",
+      "Qing Hu",
+      "Xuyang Zhao",
+      "Xingjie Li",
+      "Zhiping Wang"
+    ],
+    "authors_str": "Xiaoping Sun, Yiting Liu, Qing Hu, Xuyang Zhao, Xingjie Li...",
+    "venue": "Journal of International Medical Research",
+    "cited_by_count": 3,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Acute cholecystitis is a common and frequently occurring disease, and laparoscopic cholecystectomy is the preferred treatment method. Percutaneous transhepatic gallbladder drainage is regarded as the first-line palliative procedure for elderly patients with poor cardiopulmonary function who cannot tolerate general anesthesia. However, for patients with acute cholecystitis who are undergoing treatment with oral antithrombotics or who have abnormal coagulation mechanisms, endoscopic transpapillary...",
+    "concepts": [
+      "Medicine",
+      "Endoscopic retrograde cholangiopancreatography",
+      "Gallbladder",
+      "Cystic duct",
+      "Percutaneous"
+    ],
+    "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/0300060521996912",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W4285553811",
     "title": "Wasserstein GAN: Deep Generation Applied on Financial Time Series",
     "year": 2021,
@@ -2891,6 +3691,190 @@
     "team_member": "Joerg Osterrieder"
   },
   {
+    "id": "https://openalex.org/W4394531122",
+    "title": "Additional file 2 of Vesicle transporter GOLT1B mediates the cell membrane localization of DVL2 and PD-L2 and promotes colorectal cancer metastasis",
+    "year": 2021,
+    "doi": "10.6084/m9.figshare.14707780",
+    "doi_url": "https://doi.org/10.6084/m9.figshare.14707780",
+    "authors": [
+      "Tengfei Liu",
+      "Binbin Liu",
+      "Yiting Liu",
+      "Xingzhi Feng",
+      "Xuefei Jiang",
+      "Jiahui Long",
+      "Qianling Gao",
+      "Zihuan Yang"
+    ],
+    "authors_str": "Tengfei Liu, Binbin Liu, Yiting Liu, Xingzhi Feng, Xuefei Jiang...",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": true,
+    "abstract": "Additional file 2: Table S2. The RNA-seq sequencing data of GOLT1B siRNA samples.",
+    "concepts": [
+      "Metastasis",
+      "Transporter",
+      "Cancer research",
+      "Colorectal cancer",
+      "Cell"
+    ],
+    "pdf_url": "https://doi.org/10.6084/m9.figshare.14707780",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4394105092",
+    "title": "Mt-Keima detects PINK1-PRKN mitophagy <i>in vivo</i> with greater sensitivity than mito-QC",
+    "year": 2021,
+    "doi": "10.6084/m9.figshare.14184742",
+    "doi_url": "https://doi.org/10.6084/m9.figshare.14184742",
+    "authors": [
+      "Yiting Liu",
+      "Danielle A. Sliter",
+      "Mario K. Shammas",
+      "Xiaoping Huang",
+      "Chunxin Wang",
+      "Hannah Calvelli",
+      "Dragan Maric",
+      "Derek P. Narendra"
+    ],
+    "authors_str": "Yiting Liu, Danielle A. Sliter, Mario K. Shammas, Xiaoping Huang, Chunxin Wang...",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": true,
+    "abstract": "PINK1 and PRKN, which cause Parkinson disease when mutated, form a quality control mitophagy pathway that is well-characterized in cultured cells. The extent to which the PINK1-PRKN pathway contributes to mitophagy <i>in vivo</i>, however, is controversial. This is due in large part to conflicting results from studies using one of two mitophagy reporters: mt-Keima or mito-QC. Studies using mt-Keima have generally detected PINK1-PRKN mitophagy <i>in vivo</i>, whereas those using mito-QC generally...",
+    "concepts": [
+      "Mitophagy",
+      "Sensitivity (control systems)",
+      "PINK1",
+      "Computer science",
+      "Engineering"
+    ],
+    "pdf_url": "https://doi.org/10.6084/m9.figshare.14184742",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4394187481",
+    "title": "Additional file 4 of Vesicle transporter GOLT1B mediates the cell membrane localization of DVL2 and PD-L2 and promotes colorectal cancer metastasis",
+    "year": 2021,
+    "doi": "10.6084/m9.figshare.14707786",
+    "doi_url": "https://doi.org/10.6084/m9.figshare.14707786",
+    "authors": [
+      "Tengfei Liu",
+      "Binbin Liu",
+      "Yiting Liu",
+      "Xingzhi Feng",
+      "Xuefei Jiang",
+      "Jiahui Long",
+      "Qianling Gao",
+      "Zihuan Yang"
+    ],
+    "authors_str": "Tengfei Liu, Binbin Liu, Yiting Liu, Xingzhi Feng, Xuefei Jiang...",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": true,
+    "abstract": "Additional file 4: Table S3. The pathological information of CRC patients used in PDX model.",
+    "concepts": [
+      "Metastasis",
+      "Colorectal cancer",
+      "Transporter",
+      "Cancer research",
+      "Chemistry"
+    ],
+    "pdf_url": "https://doi.org/10.6084/m9.figshare.14707786",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4394130231",
+    "title": "Additional file 1 of Vesicle transporter GOLT1B mediates the cell membrane localization of DVL2 and PD-L2 and promotes colorectal cancer metastasis",
+    "year": 2021,
+    "doi": "10.6084/m9.figshare.14707777",
+    "doi_url": "https://doi.org/10.6084/m9.figshare.14707777",
+    "authors": [
+      "Tengfei Liu",
+      "Binbin Liu",
+      "Yiting Liu",
+      "Xingzhi Feng",
+      "Xuefei Jiang",
+      "Jiahui Long",
+      "Qianling Gao",
+      "Zihuan Yang"
+    ],
+    "authors_str": "Tengfei Liu, Binbin Liu, Yiting Liu, Xingzhi Feng, Xuefei Jiang...",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": true,
+    "abstract": "Additional file 1: Table S1. The list of primers and siRNA sequence.",
+    "concepts": [
+      "Metastasis",
+      "Colorectal cancer",
+      "Cancer research",
+      "Transporter",
+      "Chemistry"
+    ],
+    "pdf_url": "https://doi.org/10.6084/m9.figshare.14707777",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W3094412177",
+    "title": "The Role of Antibodies in the Pathogenesis of Multiple Sclerosis",
+    "year": 2020,
+    "doi": "10.3389/fneur.2020.533388",
+    "doi_url": "https://doi.org/10.3389/fneur.2020.533388",
+    "authors": [
+      "Xiaoli Yu",
+      "Michael W. Graner",
+      "Peter G. E. Kennedy",
+      "Yiting Liu"
+    ],
+    "authors_str": "Xiaoli Yu, Michael W. Graner, Peter G. E. Kennedy, Yiting Liu",
+    "venue": "Frontiers in Neurology",
+    "cited_by_count": 39,
+    "type": "review",
+    "open_access": true,
+    "abstract": "The presence of persistent intrathecal oligoclonal immunoglobulin G (IgG) bands (OCBs) and lesional IgG deposition are seminal features of multiple sclerosis (MS) disease pathology. Despite extensive investigations, the role of antibodies, the products of mature CD19<sup>+</sup> B cells, in disease development is still controversial and under significant debate. Recent success of B cell depletion therapies has revealed that CD20<sup>+</sup> B cells contribute to MS pathogenesis via both antigen-...",
+    "concepts": [
+      "Antibody",
+      "Immunology",
+      "Multiple sclerosis",
+      "Pathogenesis",
+      "CD20"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/fneur.2020.533388/pdf",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W3048133072",
+    "title": "Galectins for Diagnosis and Prognostic Assessment of Human Diseases:&#x0D;An Overview of Meta-Analyses",
+    "year": 2020,
+    "doi": "10.12659/msm.923901",
+    "doi_url": "https://doi.org/10.12659/msm.923901",
+    "authors": [
+      "Yiting Liu",
+      "Hao Meng",
+      "Shixue Xu",
+      "Xingshun Qi"
+    ],
+    "authors_str": "Yiting Liu, Hao Meng, Shixue Xu, Xingshun Qi",
+    "venue": "Medical Science Monitor",
+    "cited_by_count": 11,
+    "type": "review",
+    "open_access": true,
+    "abstract": "An increasing number of studies have explored the activities and functions of galectins. However, translation of these researches into clinical practice seems to be lacking. As compared to scattered individual studies, meta-analyses can provide a more comprehensive review of current evidence and reach a more unbiased and powered conclusion by synthesizing data from diverse studies. In this paper, findings from meta-analyses were reviewed to establish the role of galectins in diagnosis and progno...",
+    "concepts": [
+      "Galectin",
+      "Medicine",
+      "Biomarker",
+      "Disease",
+      "Cancer"
+    ],
+    "pdf_url": "https://doi.org/10.12659/msm.923901",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W2997058569",
     "title": "Lead Behaviour in Bitcoin Markets",
     "year": 2020,
@@ -2971,6 +3955,96 @@
     ],
     "pdf_url": null,
     "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W3028944408",
+    "title": "Proteomic screening of saturated fatty acid-induced hepatocytes-derived exosomes.",
+    "year": 2020,
+    "doi": "10.1200/jco.2020.38.15_suppl.e13568",
+    "doi_url": "https://doi.org/10.1200/jco.2020.38.15_suppl.e13568",
+    "authors": [
+      "Yiting Liu",
+      "Jee‐Fu Huang",
+      "Ming‐Lung Yu",
+      "Shu-Chi Wang"
+    ],
+    "authors_str": "Yiting Liu, Jee‐Fu Huang, Ming‐Lung Yu, Shu-Chi Wang",
+    "venue": "Journal of Clinical Oncology",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "e13568 Background: Most countries continuously westernize and industrialize, the prevalence of NAFLD is expected to increase, which will greatly increase social and economic burden. Meanwhile, the trend that NAFLD acts as a main stream of liver diseases will be much emphasized with the eradication and/or effective control of viral hepatitis in the future. There are many studies indicated that lipotoxicity of hepatocyte plays an important role in the inflammation and hepatic injury during the pro...",
+    "concepts": [
+      "Hepatic stellate cell",
+      "Lipotoxicity",
+      "Microvesicles",
+      "Medicine",
+      "Steatohepatitis"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2933970118",
+    "title": "Membrane assembly of aquaporin-4 autoantibodies regulates classical complement activation in neuromyelitis optica",
+    "year": 2019,
+    "doi": "10.1172/jci122942",
+    "doi_url": "https://doi.org/10.1172/jci122942",
+    "authors": [
+      "John Soltys",
+      "Yiting Liu",
+      "Alanna Ritchie",
+      "Scott M. Wemlinger",
+      "K Schaller",
+      "H. Schumann",
+      "Gregory P. Owens",
+      "Jeffrey L. Bennett"
+    ],
+    "authors_str": "John Soltys, Yiting Liu, Alanna Ritchie, Scott M. Wemlinger, K Schaller...",
+    "venue": "Journal of Clinical Investigation",
+    "cited_by_count": 112,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Neuromyelitis optica (NMO) is an autoimmune CNS disorder mediated by pathogenic aquaporin-4 (AQP4) water channel autoantibodies (AQP4-IgG). Although AQP4-IgG-driven complement-dependent cytotoxicity (CDC) is critical for the formation of NMO lesions, the molecular mechanisms governing optimal classical pathway activation are unknown. We investigated the molecular determinants driving CDC in NMO using recombinant AQP4-specific autoantibodies (AQP4 rAbs) derived from affected patients. We identifi...",
+    "concepts": [
+      "Neuromyelitis optica",
+      "Complement system",
+      "Epitope",
+      "Autoantibody",
+      "Aquaporin 4"
+    ],
+    "pdf_url": "http://www.jci.org/articles/view/122942/files/pdf",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2942223082",
+    "title": "Concentration-dependent effects of CSF1R inhibitors on oligodendrocyte progenitor cells ex vivo and in vivo",
+    "year": 2019,
+    "doi": "10.1016/j.expneurol.2019.04.011",
+    "doi_url": "https://doi.org/10.1016/j.expneurol.2019.04.011",
+    "authors": [
+      "Yiting Liu",
+      "Katherine S. Given",
+      "Erin L. Dickson",
+      "Gregory P. Owens",
+      "Wendy B. Macklin",
+      "Jeffrey L. Bennett"
+    ],
+    "authors_str": "Yiting Liu, Katherine S. Given, Erin L. Dickson, Gregory P. Owens, Wendy B. Macklin...",
+    "venue": "Experimental Neurology",
+    "cited_by_count": 109,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Microglia",
+      "Ex vivo",
+      "In vivo",
+      "Progenitor cell",
+      "Myelin"
+    ],
+    "pdf_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6615458",
+    "team_member": "Yiting Liu"
   },
   {
     "id": "https://openalex.org/W2985066636",
@@ -3108,6 +4182,31 @@
     "team_member": "Branka Hadji Misheva"
   },
   {
+    "id": "https://openalex.org/W2947544363",
+    "title": "New ex vivo demyelination/remyelination models to defeat multiple sclerosis and neuromyelitis optica",
+    "year": 2019,
+    "doi": "10.4103/1673-5374.257525",
+    "doi_url": "https://doi.org/10.4103/1673-5374.257525",
+    "authors": [
+      "Yiting Liu"
+    ],
+    "authors_str": "Yiting Liu",
+    "venue": "Neural Regeneration Research",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Multiple sclerosis (MS) and neuromyelitis optica (NMO) are inflammatory diseases of the central nervous system (CNS) resulting in CNS inflammation, infiltration of peripheral immune cells, loss of myelin and oligodendrocytes, interruption of axonal communication, and neurologic deficits. Following oligodendrocyte injury, newly generated myelinating oligodendrocytes derived from oligodendrocyte progenitors (OPCs) may produce new myelin sheaths around denuded axons (remyelination) restoring neuron...",
+    "concepts": [
+      "Remyelination",
+      "Multiple sclerosis",
+      "Neuromyelitis optica",
+      "Oligodendrocyte",
+      "Myelin"
+    ],
+    "pdf_url": "https://doi.org/10.4103/1673-5374.257525",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W2934208943",
     "title": "Latent Factor Models for Credit Scoring in P2P Systems",
     "year": 2019,
@@ -3162,6 +4261,101 @@
     "team_member": "Branka Hadji Misheva"
   },
   {
+    "id": "https://openalex.org/W3118281430",
+    "title": "The excessive use of cesarean section and its contribution factors in Shanghai, China",
+    "year": 2019,
+    "doi": "10.21203/rs.2.17664/v1",
+    "doi_url": "https://doi.org/10.21203/rs.2.17664/v1",
+    "authors": [
+      "Yuyin Xiao",
+      "Chenshu Shi",
+      "Wu Zeng",
+      "Minye Dong",
+      "Chunling Lu",
+      "Yiting Liu",
+      "Jun Zhang",
+      "Guohong Li"
+    ],
+    "authors_str": "Yuyin Xiao, Chenshu Shi, Wu Zeng, Minye Dong, Chunling Lu...",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "<title>Abstract</title> Objectives: This study proposes a mathematical analysis framework to estimate the proportion of cesarean section (CS) with non-medical indications and of CS cases correctly diagnosed, examine the excessive use of CS, and investigate its contributing factors in Shanghai. Design and Settings A mathematical model (C-model), developed by the World Health Organization, was employed to estimate the expected proportion of women having CS based on clinical indicators. Cases in wh...",
+    "concepts": [
+      "Section (typography)",
+      "China",
+      "Shanghai china",
+      "Geography",
+      "Business"
+    ],
+    "pdf_url": "https://www.researchsquare.com/article/rs-8296/v1.pdf",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2894087757",
+    "title": "Distinct patterns of glia repair and remyelination in antibody‐mediated demyelination models of multiple sclerosis and neuromyelitis optica",
+    "year": 2018,
+    "doi": "10.1002/glia.23512",
+    "doi_url": "https://doi.org/10.1002/glia.23512",
+    "authors": [
+      "Yiting Liu",
+      "Katherine S. Given",
+      "Gregory P. Owens",
+      "Wendy B. Macklin",
+      "Jeffrey L. Bennett"
+    ],
+    "authors_str": "Yiting Liu, Katherine S. Given, Gregory P. Owens, Wendy B. Macklin, Jeffrey L. Bennett",
+    "venue": "Glia",
+    "cited_by_count": 28,
+    "type": "article",
+    "open_access": false,
+    "abstract": "Abstract Multiple sclerosis (MS) and neuromyelitis optica (NMO) are inflammatory demyelinating disorders of the central nervous system with evidence of antibody‐mediated pathology. Using ex vivo organotypic mouse cerebellar slice cultures, we have demonstrated that recombinant antibodies (rAbs) cloned from cerebrospinal fluid plasmablasts of MS and NMO patients target myelin‐ and astrocyte‐specific antigens to induce disease‐specific oligodendrocyte loss and myelin degradation. In this study, we...",
+    "concepts": [
+      "Remyelination",
+      "Multiple sclerosis",
+      "Myelin",
+      "Oligodendrocyte",
+      "Biology"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2806271954",
+    "title": "Stimulator of Interferon Genes Promotes Host Resistance Against Pseudomonas aeruginosa Keratitis",
+    "year": 2018,
+    "doi": "10.3389/fimmu.2018.01225",
+    "doi_url": "https://doi.org/10.3389/fimmu.2018.01225",
+    "authors": [
+      "Kang Chen",
+      "Qiang Fu",
+      "Siping Liang",
+      "Yiting Liu",
+      "Wenting Qu",
+      "Yongjian Wu",
+      "Xinger Wu",
+      "Lei Wei",
+      "Yi Wang",
+      "Yujuan Xiong"
+    ],
+    "authors_str": "Kang Chen, Qiang Fu, Siping Liang, Yiting Liu, Wenting Qu...",
+    "venue": "Frontiers in Immunology",
+    "cited_by_count": 19,
+    "type": "article",
+    "open_access": true,
+    "abstract": "<i>Pseudomonas aeruginosa</i> (PA) is the leading cause of bacterial keratitis, especially in those who wear contact lens and who are immunocompromised. Once the invading pathogens are recognized by pattern recognition receptors expressed on the innate immune cells, the innate immune response is stimulated to exert host defense function, which is the first line to fight against PA infection. As a converging point of cytosolic DNA sense signaling, stimulator of interferon genes (STING) was report...",
+    "concepts": [
+      "Pseudomonas aeruginosa",
+      "Host resistance",
+      "Microbiology",
+      "Keratitis",
+      "Host (biology)"
+    ],
+    "pdf_url": "https://doi.org/10.3389/fimmu.2018.01225",
+    "team_member": "Yiting Liu"
+  },
+  {
     "id": "https://openalex.org/W2787112035",
     "title": "P2P lending scoring models: Do they predict default?",
     "year": 2018,
@@ -3211,6 +4405,331 @@
     ],
     "pdf_url": "https://ieeexplore.ieee.org/document/8631481",
     "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W3028820460",
+    "title": "Clinical efficacy of laparoscopic fundoplication for gastroesophageal reflux disease complicated with Barrett′s esophagus",
+    "year": 2018,
+    "doi": "10.3760/cma.j.issn.1673-9752.2018.12.013",
+    "doi_url": "https://doi.org/10.3760/cma.j.issn.1673-9752.2018.12.013",
+    "authors": [
+      "Huiqi Yang",
+      "Yiting Liu",
+      "Jie Chen"
+    ],
+    "authors_str": "Huiqi Yang, Yiting Liu, Jie Chen",
+    "venue": "Zhōnghuá xiāohuà wàikē zázhì/Zhonghua xiaohua waike zazhi",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "Objective\r\nTo investigate the clinical efficacy of laparoscopic fundoplication for gastro-esophageal reflux disease complicated with Barrett′s esophagus.\r\n\r\n\r\nMethods\r\nThe retrospective cross-sectional study was conducted. The clinicopathological data of 12 patients with gastroesophageal reflux disease complicated with Barrett′s esophagus who were admitted to Beijing Chao-Yang Hospital of Capital Medical University between July 2012 to July 2016 were collected. Preoperative tests of patients inc...",
+    "concepts": [
+      "Medicine",
+      "Hiatal hernia",
+      "Reflux",
+      "GERD",
+      "Esophagus"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2801994148",
+    "title": "Tu1677 - TSG-6 Induces Epithelial-Mesenchymal Transition in Colorectal Cancer Cells and Connects Communication to Fibroblasts",
+    "year": 2018,
+    "doi": "10.1016/s0016-5085(18)33321-3",
+    "doi_url": "https://doi.org/10.1016/s0016-5085(18)33321-3",
+    "authors": [
+      "Binbin Liu",
+      "Zihuan Yang",
+      "Xingzhi Feng",
+      "Yiting Liu",
+      "Jianping Wang"
+    ],
+    "authors_str": "Binbin Liu, Zihuan Yang, Xingzhi Feng, Yiting Liu, Jianping Wang",
+    "venue": "Gastroenterology",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [
+      "Epithelial–mesenchymal transition",
+      "Colorectal cancer",
+      "Cell biology",
+      "Chemistry",
+      "Cancer research"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2600133287",
+    "title": "Myelin-specific multiple sclerosis antibodies cause complement-dependent oligodendrocyte loss and demyelination",
+    "year": 2017,
+    "doi": "10.1186/s40478-017-0428-6",
+    "doi_url": "https://doi.org/10.1186/s40478-017-0428-6",
+    "authors": [
+      "Yiting Liu",
+      "Katherine S. Given",
+      "Danielle E. Harlow",
+      "Adeline Matschulat",
+      "Wendy B. Macklin",
+      "Jeffrey L. Bennett",
+      "Gregory P. Owens"
+    ],
+    "authors_str": "Yiting Liu, Katherine S. Given, Danielle E. Harlow, Adeline Matschulat, Wendy B. Macklin...",
+    "venue": "Acta Neuropathologica Communications",
+    "cited_by_count": 69,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Intrathecal immunoglobulin G (IgG) synthesis, cerebrospinal fluid (CSF) oligoclonal IgG bands and lesional IgG deposition are seminal features of multiple sclerosis (MS) disease pathology. Both the specific targets and pathogenic effects of MS antibodies remain poorly characterized. We produced IgG1 monoclonal recombinant antibodies (rAbs) from clonally-expanded plasmablasts recovered from MS patient CSF. Among these were a subset of myelin-specific MS rAbs. We examined their immunoreactivity to...",
+    "concepts": [
+      "Multiple sclerosis",
+      "Oligodendrocyte",
+      "Myelin",
+      "Neuromyelitis optica",
+      "Demyelinating disease"
+    ],
+    "pdf_url": "https://actaneurocomms.biomedcentral.com/track/pdf/10.1186/s40478-017-0428-6",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2679489946",
+    "title": "AQP9-induced cell cycle arrest is associated with RAS activation and improves chemotherapy treatment efficacy in colorectal cancer",
+    "year": 2017,
+    "doi": "10.1038/cddis.2017.282",
+    "doi_url": "https://doi.org/10.1038/cddis.2017.282",
+    "authors": [
+      "Dandan Huang",
+      "Xingzhi Feng",
+      "Yiting Liu",
+      "Yanhong Deng",
+      "Hao Chen",
+      "Daici Chen",
+      "Lekun Fang",
+      "Yue Cai",
+      "Huanliang Liu",
+      "Lei Wang"
+    ],
+    "authors_str": "Dandan Huang, Xingzhi Feng, Yiting Liu, Yanhong Deng, Hao Chen...",
+    "venue": "Cell Death and Disease",
+    "cited_by_count": 43,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Abstract Aquaporin-9 (AQP9) expression is associated with arsenic sensitivity in leukemia cells. However, the role of AQP9 in regulating tumor sensitivity to adjuvant chemotherapy in colorectal cancer (CRC) has not been elucidated. In this study, we demonstrated that AQP9 can serve as an independent predictive marker for adjuvant chemotherapy in CRC. Patients with high AQP9 expression had higher rate of disease-free survival (DFS) than those with low AQP9 expression. Upregulation of AQP9 was ass...",
+    "concepts": [
+      "Downregulation and upregulation",
+      "Colorectal cancer",
+      "Chemotherapy",
+      "Cancer research",
+      "Medicine"
+    ],
+    "pdf_url": "https://doi.org/10.1038/cddis.2017.282",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2559337508",
+    "title": "Variable sensitivity to complement-dependent cytotoxicity in murine models of neuromyelitis optica",
+    "year": 2016,
+    "doi": "10.1186/s12974-016-0767-4",
+    "doi_url": "https://doi.org/10.1186/s12974-016-0767-4",
+    "authors": [
+      "Yiting Liu",
+      "Danielle E. Harlow",
+      "Katherine S. Given",
+      "Gregory P. Owens",
+      "Wendy B. Macklin",
+      "Jeffrey L. Bennett"
+    ],
+    "authors_str": "Yiting Liu, Danielle E. Harlow, Katherine S. Given, Gregory P. Owens, Wendy B. Macklin...",
+    "venue": "Journal of Neuroinflammation",
+    "cited_by_count": 16,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Astrocyte",
+      "Oligodendrocyte",
+      "Neuromyelitis optica",
+      "Cytotoxicity",
+      "Immunology"
+    ],
+    "pdf_url": "https://doi.org/10.1186/s12974-016-0767-4",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2215642300",
+    "title": "Thermal Stable Immunoglobulin G Antibodies in Multiple Sclerosis (P5.233)",
+    "year": 2015,
+    "doi": "10.1212/wnl.84.14_supplement.p5.233",
+    "doi_url": "https://doi.org/10.1212/wnl.84.14_supplement.p5.233",
+    "authors": [
+      "I. M. Stewart",
+      "Xiaomeng Li",
+      "Yiting Liu",
+      "Michael W. Graner",
+      "Xiaoli Yu"
+    ],
+    "authors_str": "I. M. Stewart, Xiaomeng Li, Yiting Liu, Michael W. Graner, Xiaoli Yu",
+    "venue": "Neurology",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "Background\nA characteristic feature of the central nervous system (CNS) inflammatory response in multiple sclerosis (MS) is the increased intrathecal synthesis of IgG, and the presence of oligoclonal bands (OCBs) in the brain and CSF. MS patients with the most malignant courses had raised CSF IgG levels more frequently than that of patients with a benign course, indicating that the intrathecal IgG may play critical role in disease pathogenesis. Recent study showed that B cells in peripheral bloo...",
+    "concepts": [
+      "Antibody",
+      "Multiple sclerosis",
+      "Medicine",
+      "Immunoglobulin G",
+      "Immunology"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2016162237",
+    "title": "OPTIMIZATION OF FERMENTATION CONDITIONS AND PURIFICATION OF CORDYCEPIN FROM<i>Cordyceps militaris</i>",
+    "year": 2013,
+    "doi": "10.1080/10826068.2013.833111",
+    "doi_url": "https://doi.org/10.1080/10826068.2013.833111",
+    "authors": [
+      "Jiapeng Tang",
+      "Yiting Liu",
+      "Li Zhu"
+    ],
+    "authors_str": "Jiapeng Tang, Yiting Liu, Li Zhu",
+    "venue": "Preparative Biochemistry & Biotechnology",
+    "cited_by_count": 41,
+    "type": "article",
+    "open_access": false,
+    "abstract": "The fermentation medium and conditions for the production of cordycepin were optimized in static culture using single-factor experiments, Placket-Burman design, a central composite design, and response surface methodology. Among seven variables including temperature, pH, and the concentrations of glucose, tryptone, yeast extract, KH₂PO₄, and MgSO₄ · 7H₂O, temperature and the concentrations of yeast extract and tryptone were found to be the important factors that significantly affected cordycepin...",
+    "concepts": [
+      "Cordycepin",
+      "Yeast extract",
+      "Cordyceps militaris",
+      "Response surface methodology",
+      "Industrial fermentation"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2146603821",
+    "title": "Gene Polymorphism of XRCC1 Arg399Gln and Cervical Carcinoma Susceptibility in Asians: A Meta-analysis Based on 1,759 Cases and 2,497 Controls",
+    "year": 2013,
+    "doi": "10.7314/apjcp.2013.14.1.189",
+    "doi_url": "https://doi.org/10.7314/apjcp.2013.14.1.189",
+    "authors": [
+      "Yiting Liu",
+      "Jingpu Shi",
+      "Lingyu Fu",
+      "Bo Zhou",
+      "Hailong Wang",
+      "Xiaomei Wu"
+    ],
+    "authors_str": "Yiting Liu, Jingpu Shi, Lingyu Fu, Bo Zhou, Hailong Wang...",
+    "venue": "Asian Pacific Journal of Cancer Prevention",
+    "cited_by_count": 8,
+    "type": "review",
+    "open_access": true,
+    "abstract": "Many epidemiological studies in Asian populations have investigated associations between the Arg399Gln gene polymorphism of X-ray repair cross complementing gene 1 (XRCC1) and risk of cervical carcinoma, but no conclusions have been available because of controversial results. Therefore a meta-analysis was conducted for clarification. Relevant studies were identified by searching the Pubmed, Embase, the Web of Science, Cochrane Collaboration's database, Chinese National Knowledge Infrastructure (...",
+    "concepts": [
+      "Odds ratio",
+      "XRCC1",
+      "Meta-analysis",
+      "Confidence interval",
+      "Subgroup analysis"
+    ],
+    "pdf_url": "http://society.kisti.re.kr/sv/SV_svpsbs03V.do?method=download&cn1=JAKO201312855329455",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W4239582564",
+    "title": "Linear Program for Hedging Option Portfolios with Multiple Underlying Assets",
+    "year": 2013,
+    "doi": "10.2139/ssrn.2325296",
+    "doi_url": "https://doi.org/10.2139/ssrn.2325296",
+    "authors": [
+      "Chang-Chun Lin",
+      "Yiting Liu",
+      "An‐Pin Chen"
+    ],
+    "authors_str": "Chang-Chun Lin, Yiting Liu, An‐Pin Chen",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Actuarial science",
+      "Financial economics",
+      "Econometrics",
+      "Economics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.2325296",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W2038811384",
+    "title": "Oligodendroglia metabolically support axons and contribute to neurodegeneration",
+    "year": 2012,
+    "doi": "10.1038/nature11314",
+    "doi_url": "https://doi.org/10.1038/nature11314",
+    "authors": [
+      "Youngjin Lee",
+      "Brett M. Morrison",
+      "Yun Li",
+      "Sylvain Lengacher",
+      "Mohamed H. Farah",
+      "Paul N. Hoffman",
+      "Yiting Liu",
+      "Akivaga Tsingalia",
+      "Lin Jin",
+      "Ping-Wu Zhang"
+    ],
+    "authors_str": "Youngjin Lee, Brett M. Morrison, Yun Li, Sylvain Lengacher, Mohamed H. Farah...",
+    "venue": "Nature",
+    "cited_by_count": 1566,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Axon",
+      "Transporter",
+      "Neurodegeneration",
+      "Neuroscience",
+      "Monocarboxylate transporter"
+    ],
+    "pdf_url": "https://serval.unil.ch/notice/serval:BIB_1604C69BA0EC",
+    "team_member": "Yiting Liu"
+  },
+  {
+    "id": "https://openalex.org/W123518619",
+    "title": "[Meta-analysis on the relationship between 25-hydroxyvitamin D level and hypertension].",
+    "year": 2012,
+    "doi": null,
+    "doi_url": null,
+    "authors": [
+      "Yiting Liu",
+      "Yunfei Cai",
+      "Jingpu Shi"
+    ],
+    "authors_str": "Yiting Liu, Yunfei Cai, Jingpu Shi",
+    "venue": "PubMed",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": false,
+    "abstract": "The 25-hydroxyvitamin D level is associated with hypertension. With regards to the question of whether or not the 25-hydroxyvitamin D level deficiency serves as one of the potential risk factor for hypertension, prospective studies of larger sample sizes are warranted.",
+    "concepts": [
+      "Medicine",
+      "Meta-analysis",
+      "Internal medicine",
+      "Incidence (geometry)",
+      "Etiology"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
   },
   {
     "id": "https://openalex.org/W3180585540",

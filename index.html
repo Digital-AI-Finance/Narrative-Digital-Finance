@@ -1067,6 +1067,54 @@
                         </div>
                     </div>
                     <div class="card team-card">
+                        <div class="team-avatar">LB</div>
+                        <h4>Lennart John Baals</h4>
+                        <p class="role">PhD Researcher</p>
+                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                        <div class="team-metrics">
+                            <div class="team-metric">
+                                <span class="team-metric-value">14</span>
+                                <span class="team-metric-label">Works</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">125</span>
+                                <span class="team-metric-label">Citations</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">5</span>
+                                <span class="team-metric-label">h-index</span>
+                            </div>
+                        </div>
+                        <div class="team-links">
+                            <a href="https://www.researchgate.net/scientific-contributions/Lennart-John-Baals-2218848188" target="_blank" class="team-link">ResearchGate</a>
+                            <a href="https://www.linkedin.com/in/lennart-john-baals-a621aa193/" target="_blank" class="team-link">LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-avatar">YL</div>
+                        <h4>Yiting Liu</h4>
+                        <p class="role">PhD Researcher</p>
+                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                        <div class="team-metrics">
+                            <div class="team-metric">
+                                <span class="team-metric-value">48</span>
+                                <span class="team-metric-label">Works</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">2,387</span>
+                                <span class="team-metric-label">Citations</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">15</span>
+                                <span class="team-metric-label">h-index</span>
+                            </div>
+                        </div>
+                        <div class="team-links">
+                            <a href="https://people.utwente.nl/yiting.liu" target="_blank" class="team-link">UT Profile</a>
+                            <a href="https://www.digital-finance-msca.com/people/yiting-liu" target="_blank" class="team-link">MSCA</a>
+                        </div>
+                    </div>
+                    <div class="card team-card">
                         <div class="team-avatar">MK</div>
                         <h4>Marius Jan Klein</h4>
                         <p class="role">Team Member</p>
@@ -1114,16 +1162,16 @@
                 </div>
                 <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
                     <div class="stat-card">
-                        <div class="stat-number">119</div>
+                        <div class="stat-number">169</div>
                         <div class="stat-label">Publications</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">1,534</div>
+                        <div class="stat-number">4,046</div>
                         <div class="stat-label">Total Citations</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">13</div>
-                        <div class="stat-label">h-index (PI)</div>
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Max h-index</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">CHF 236K</div>
@@ -1187,15 +1235,34 @@
                         <p class="section-subtitle">Industry and academic partnerships</p>
                     </div>
                 </div>
+                <h3>Industry Partners</h3>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h4>Deutsche Borse AG</h4>
+                        <p><strong>Dr. Stefan Schlamp</strong><br>Head of Quantitative Analytics<br>HFT & Market Microstructure (since Jan 2024)</p>
+                    </div>
+                    <div class="card">
+                        <h4>Quoniam Asset Management</h4>
+                        <p>Quantitative investment strategies and risk management collaboration</p>
+                    </div>
+                </div>
+                <h3>Academic Partners</h3>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h4>Humboldt-University Berlin</h4>
+                        <p>Research collaboration on financial econometrics and machine learning</p>
+                    </div>
+                    <div class="card">
+                        <h4>American University of Sharjah</h4>
+                        <p>International research partnership on digital finance</p>
+                    </div>
+                    <div class="card">
+                        <h4>Babes-Bolyai University</h4>
+                        <p>Academic collaboration on quantitative finance research</p>
+                    </div>
+                </div>
+                <h3>Networks & Initiatives</h3>
                 <div class="grid grid-2">
-                    <div class="card">
-                        <h4>Deutsche Borse</h4>
-                        <p><strong>Dr. Stefan Schlamp</strong><br>Head of Quantitative Analytics<br>Eschborn, Germany</p>
-                    </div>
-                    <div class="card">
-                        <h4>Bern Business School</h4>
-                        <p><strong>Prof. Dr. Branka Hadji Misheva</strong><br>Department of Business</p>
-                    </div>
                     <div class="card">
                         <h4>COST Action CA19130</h4>
                         <p><strong>Fintech and AI in Finance</strong><br>Action Chair: Joerg Osterrieder</p>
@@ -1464,7 +1531,9 @@
         const OPENALEX_AUTHORS = [
             { name: 'Joerg Osterrieder', search: 'Joerg Osterrieder', minWorks: 100 },
             { name: 'Branka Hadji Misheva', search: 'Branka Hadji Misheva' },
-            { name: 'Gabin Taibi', search: 'Gabin Taibi' }
+            { name: 'Gabin Taibi', search: 'Gabin Taibi' },
+            { name: 'Lennart John Baals', search: 'Lennart Baals' },
+            { name: 'Yiting Liu', search: 'Yiting Liu' }
         ];
 
         async function refreshFromOpenAlex() {
