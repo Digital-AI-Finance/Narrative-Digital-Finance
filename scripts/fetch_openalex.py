@@ -37,9 +37,27 @@ TEAM_MEMBERS = [
     {
         "name": "Gabin Taibi",
         "orcid": None,  # Will search by name
-        "role": "Team Member",
+        "role": "PhD Researcher",
         "affiliation": "Bern Business School / University of Twente",
         "search_terms": ["Gabin Taibi"]
+    },
+    {
+        "name": "Lennart John Baals",
+        "orcid": None,  # Will search by name
+        "role": "PhD Researcher",
+        "affiliation": "Bern Business School / University of Twente",
+        "search_terms": ["Lennart Baals", "Lennart John Baals"],
+        "researchgate": "https://www.researchgate.net/scientific-contributions/Lennart-John-Baals-2218848188",
+        "linkedin": "https://www.linkedin.com/in/lennart-john-baals-a621aa193/"
+    },
+    {
+        "name": "Yiting Liu",
+        "orcid": None,  # Will search by name
+        "role": "PhD Researcher",
+        "affiliation": "Bern Business School / University of Twente",
+        "search_terms": ["Yiting Liu"],
+        "ut_profile": "https://people.utwente.nl/yiting.liu",
+        "msca_profile": "https://www.digital-finance-msca.com/people/yiting-liu"
     },
     {
         "name": "Marius Jan Klein",
