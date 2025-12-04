@@ -4,1179 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Narrative Digital Finance | SNSF Research Project</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        :root {
-            --primary: #0f172a;
-            --primary-light: #1e293b;
-            --secondary: #3b82f6;
-            --secondary-light: #60a5fa;
-            --secondary-dark: #2563eb;
-            --accent: #f59e0b;
-            --accent-light: #fbbf24;
-            --success: #10b981;
-            --success-light: #34d399;
-            --purple: #8b5cf6;
-            --pink: #ec4899;
-            --light: #f8fafc;
-            --lighter: #ffffff;
-            --text: #334155;
-            --text-light: #64748b;
-            --border: #e2e8f0;
-            --navbar-height: 70px;
-            --sidebar-width: 280px;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            --radius: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background: var(--light);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes countUp {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
-        .animate-fade-up { animation: fadeInUp 0.6s ease-out forwards; }
-        .animate-slide-left { animation: slideInLeft 0.6s ease-out forwards; }
-        .animate-float { animation: float 3s ease-in-out infinite; }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--navbar-height);
-            background: rgba(15, 23, 42, 0.98);
-            backdrop-filter: blur(20px);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .navbar-brand span {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .navbar-nav {
-            display: flex;
-            list-style: none;
-            gap: 0.25rem;
-        }
-        .navbar-nav a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            padding: 0.5rem 0.875rem;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        .navbar-nav a:hover { color: white; background: rgba(255,255,255,0.1); }
-        .navbar-nav a.active { color: white; background: var(--secondary); }
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: fixed;
-            top: var(--navbar-height);
-            left: 0;
-            width: var(--sidebar-width);
-            height: calc(100vh - var(--navbar-height));
-            background: var(--lighter);
-            border-right: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            overflow-y: auto;
-            z-index: 100;
-        }
-        .sidebar-header {
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-        .sidebar-nav { list-style: none; }
-        .sidebar-nav li { margin: 0.125rem 0; }
-        .sidebar-nav a {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text);
-            text-decoration: none;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            border-left: 3px solid transparent;
-        }
-        .sidebar-nav a:hover {
-            background: var(--light);
-            color: var(--secondary);
-        }
-        .sidebar-nav a.active {
-            background: linear-gradient(90deg, rgba(59,130,246,0.1), transparent);
-            border-left-color: var(--secondary);
-            color: var(--secondary);
-        }
-        .sidebar-nav .icon {
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-        }
-        .sidebar-divider {
-            height: 1px;
-            background: var(--border);
-            margin: 1.5rem 0;
-        }
-        .sidebar-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0.75rem;
-            background: var(--light);
-            border-radius: 8px;
-            font-size: 0.75rem;
-            color: var(--text-light);
-            margin: 0.25rem 0;
-            width: 100%;
-        }
-        .sidebar-badge img { height: 18px; }
-
-        /* Main Content */
-        .main-content {
-            margin-left: var(--sidebar-width);
-            margin-top: var(--navbar-height);
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 50%, var(--primary-light) 100%);
-            background-size: 200% 200%;
-            animation: gradient 15s ease infinite;
-            color: white;
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .hero-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        .hero-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            animation: float 4s ease-in-out infinite;
-        }
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-        }
-        .hero-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: var(--success);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-            box-shadow: 0 0 10px var(--success);
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, #e2e8f0 50%, #fff 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient 5s linear infinite;
-        }
-        .hero .subtitle {
-            font-size: 1.35rem;
-            opacity: 0.95;
-            margin-bottom: 0.75rem;
-            font-weight: 500;
-        }
-        .hero .tagline {
-            font-size: 1.1rem;
-            opacity: 0.7;
-            margin-bottom: 2.5rem;
-        }
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-        .hero-stat {
-            text-align: center;
-        }
-        .hero-stat-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero-stat-label {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .hero-badges {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        .hero-badges img { height: 28px; transition: transform 0.2s; }
-        .hero-badges a:hover img { transform: scale(1.1); }
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            color: white;
-            box-shadow: 0 4px 20px rgba(59,130,246,0.4);
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(59,130,246,0.5);
-        }
-        .btn-secondary {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-        }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-3px);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--secondary);
-            border: 2px solid var(--secondary);
-        }
-        .btn-outline:hover {
-            background: var(--secondary);
-            color: white;
-        }
-        .btn-sm { padding: 0.625rem 1.25rem; font-size: 0.875rem; }
-
-        /* Container */
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        /* Sections */
-        .section {
-            background: var(--lighter);
-            border-radius: var(--radius-xl);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            scroll-margin-top: calc(var(--navbar-height) + 24px);
-            transition: all 0.3s;
-        }
-        .section:hover {
-            box-shadow: var(--shadow-xl);
-            transform: translateY(-2px);
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .section-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            color: white;
-            flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(59,130,246,0.3);
-        }
-        .section-icon.accent { background: linear-gradient(135deg, var(--accent), var(--pink)); }
-        .section-icon.success { background: linear-gradient(135deg, var(--success), var(--secondary)); }
-        .section-icon.purple { background: linear-gradient(135deg, var(--purple), var(--pink)); }
-        .section h2 {
-            color: var(--primary);
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
-        .section-subtitle {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-top: 0.25rem;
-        }
-        .section h3 {
-            color: var(--primary);
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin: 2rem 0 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .section h3::before {
-            content: '';
-            width: 4px;
-            height: 20px;
-            background: linear-gradient(180deg, var(--secondary), var(--accent));
-            border-radius: 2px;
-        }
-        .section p { color: var(--text); }
-
-        /* Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-
-        /* Cards */
-        .card {
-            background: var(--light);
-            border-radius: var(--radius);
-            padding: 1.75rem;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--secondary), var(--accent));
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-xl);
-            border-color: transparent;
-        }
-        .card:hover::before { opacity: 1; }
-        .card-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            color: white;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 10px rgba(59,130,246,0.3);
-        }
-        .card h4 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        .card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Feature Cards */
-        .feature-card {
-            background: linear-gradient(135deg, var(--lighter), var(--light));
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            box-shadow: 0 8px 25px rgba(59,130,246,0.3);
-        }
-        .feature-card h4 {
-            font-size: 1.15rem;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        /* Team Cards */
-        .team-card {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background: linear-gradient(180deg, var(--lighter), var(--light));
-        }
-        .team-avatar {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            border-radius: 50%;
-            margin: 0 auto 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.25rem;
-            color: white;
-            font-weight: 700;
-            box-shadow: 0 8px 25px rgba(59,130,246,0.3);
-            transition: transform 0.3s;
-        }
-        .team-card:hover .team-avatar {
-            transform: scale(1.1);
-        }
-        .team-card h4 {
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-            font-size: 1.1rem;
-        }
-        .team-card .role {
-            color: var(--secondary);
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-        .team-card .affiliation {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-        .team-metrics {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-        .team-metric {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.5rem 0.75rem;
-            background: var(--lighter);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            min-width: 60px;
-        }
-        .team-metric-value {
-            font-weight: 700;
-            color: var(--secondary);
-            font-size: 1rem;
-        }
-        .team-metric-label {
-            font-size: 0.6rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-        .team-links {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-        .team-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.35rem 0.6rem;
-            background: var(--light);
-            border-radius: 6px;
-            font-size: 0.7rem;
-            color: var(--text);
-            text-decoration: none;
-            transition: all 0.2s;
-            border: 1px solid var(--border);
-        }
-        .team-link:hover {
-            background: var(--secondary);
-            color: white;
-            border-color: var(--secondary);
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .stat-card {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background: linear-gradient(135deg, var(--lighter), var(--light));
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-        .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        .stat-number {
-            font-size: 2.75rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-top: 0.5rem;
-            font-weight: 500;
-        }
-
-        /* Project Outputs */
-        .output-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        .output-card {
-            text-align: center;
-            padding: 1.5rem 1rem;
-            background: linear-gradient(135deg, var(--lighter), var(--light));
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-        .output-card:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-lg);
-        }
-        .output-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        .output-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        .output-label {
-            font-size: 0.75rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        /* Charts */
-        .chart-container {
-            background: var(--light);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border: 1px solid var(--border);
-        }
-        .chart-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        .charts-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        /* Research Topics */
-        .topics-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: center;
-            margin: 1.5rem 0;
-        }
-        .topic-tag {
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, var(--light), var(--lighter));
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--text);
-            transition: all 0.3s;
-            cursor: default;
-        }
-        .topic-tag:hover {
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            color: white;
-            border-color: transparent;
-            transform: scale(1.05);
-        }
-        .topic-tag.large {
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 0.6rem 1.25rem;
-        }
-        .topic-tag.medium {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Publication Table */
-        .pub-table-container {
-            overflow-x: auto;
-            margin-top: 1rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-        }
-        .pub-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            min-width: 800px;
-        }
-        .pub-table th {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            padding: 1rem 0.75rem;
-            text-align: left;
-            font-weight: 600;
-            cursor: pointer;
-            white-space: nowrap;
-            position: sticky;
-            top: 0;
-        }
-        .pub-table th:hover {
-            background: var(--primary-light);
-        }
-        .pub-table th .sort-icon {
-            margin-left: 0.25rem;
-            opacity: 0.5;
-        }
-        .pub-table td {
-            padding: 0.875rem 0.75rem;
-            border-bottom: 1px solid var(--border);
-            vertical-align: top;
-        }
-        .pub-table tr:hover {
-            background: var(--light);
-        }
-        .pub-table .title-cell {
-            max-width: 350px;
-        }
-        .pub-table .title-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .pub-table .title-link:hover {
-            color: var(--secondary);
-            text-decoration: underline;
-        }
-        .pub-table .authors-cell {
-            color: var(--text-light);
-            font-size: 0.8rem;
-            max-width: 200px;
-        }
-        .pub-table .venue-cell {
-            font-style: italic;
-            color: var(--text-light);
-        }
-        .pub-table .citations-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            background: var(--light);
-            padding: 0.3rem 0.6rem;
-            border-radius: 20px;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .pub-table .citations-badge.high {
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            color: white;
-        }
-        .pub-table .doi-link {
-            color: var(--secondary);
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        .pub-table .doi-link:hover {
-            text-decoration: underline;
-        }
-        .pub-table .oa-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--success), var(--success-light));
-            color: white;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            font-weight: 600;
-        }
-
-        /* Publication Controls */
-        .pub-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--light);
-            border-radius: var(--radius);
-        }
-        .pub-filters {
-            display: flex;
-            gap: 0.75rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .pub-search {
-            padding: 0.6rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 0.9rem;
-            width: 220px;
-            transition: all 0.2s;
-        }
-        .pub-search:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
-        }
-        .pub-filter {
-            padding: 0.6rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 0.85rem;
-            background: white;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .pub-filter:focus {
-            outline: none;
-            border-color: var(--secondary);
-        }
-        .pub-count {
-            color: var(--text-light);
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        .refresh-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.25rem;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .refresh-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(59,130,246,0.4);
-        }
-        .refresh-btn.loading {
-            opacity: 0.7;
-            pointer-events: none;
-        }
-        .refresh-btn .spinner {
-            display: none;
-            width: 14px;
-            height: 14px;
-            border: 2px solid currentColor;
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-        .refresh-btn.loading .spinner {
-            display: inline-block;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Timeline */
-        .timeline { position: relative; padding-left: 2.5rem; }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--secondary), var(--accent), var(--purple));
-            border-radius: 2px;
-        }
-        .timeline-item {
-            position: relative;
-            padding: 1.5rem 0;
-            padding-left: 2rem;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 1.75rem;
-            width: 18px;
-            height: 18px;
-            background: var(--lighter);
-            border: 3px solid var(--secondary);
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--lighter);
-        }
-        .timeline-date {
-            color: var(--secondary);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-        .timeline-item h4 {
-            color: var(--primary);
-            font-size: 1.05rem;
-            margin-bottom: 0.35rem;
-        }
-        .timeline-item p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* Highlights */
-        .highlight-card {
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            color: white;
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            margin: 1.5rem 0;
-        }
-        .highlight-card h4 {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        .highlight-card p {
-            color: rgba(255,255,255,0.9);
-            font-size: 0.95rem;
-        }
-        .highlight-card .btn {
-            margin-top: 1rem;
-            background: rgba(255,255,255,0.2);
-            color: white;
-        }
-        .highlight-card .btn:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-        .contact-card {
-            padding: 1.75rem;
-            background: linear-gradient(135deg, var(--light), var(--lighter));
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-        .contact-card:hover {
-            border-color: var(--secondary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        .contact-card h4 {
-            color: var(--primary);
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-        .contact-card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        .contact-card a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .contact-card a:hover { text-decoration: underline; }
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            padding: 4rem 2rem 2rem;
-        }
-        .footer-content {
-            max-width: 950px;
-            margin: 0 auto;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        .footer-col h5 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.25rem;
-            color: rgba(255,255,255,0.5);
-        }
-        .footer-col a {
-            display: block;
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.4rem 0;
-            transition: all 0.2s;
-        }
-        .footer-col a:hover {
-            color: var(--accent);
-            transform: translateX(4px);
-        }
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-        }
-        .footer-bottom a { color: var(--accent); }
-
-        /* Back to Top */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 54px;
-            height: 54px;
-            background: linear-gradient(135deg, var(--secondary), var(--purple));
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.25rem;
-            box-shadow: 0 8px 25px rgba(59,130,246,0.4);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 99;
-        }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover {
-            transform: translateY(-6px) scale(1.1);
-            box-shadow: 0 12px 35px rgba(59,130,246,0.5);
-        }
-
-        /* Mobile */
-        @media (max-width: 1024px) {
-            .navbar-nav { display: none; }
-            .menu-toggle { display: block; }
-            .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
-            .sidebar.open { transform: translateX(0); }
-            .main-content { margin-left: 0; }
-            .navbar-nav.show {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: var(--navbar-height);
-                left: 0;
-                right: 0;
-                background: var(--primary);
-                padding: 1rem;
-                border-top: 1px solid rgba(255,255,255,0.1);
-            }
-            .charts-row { grid-template-columns: 1fr; }
-            .output-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        @media (max-width: 640px) {
-            .hero { padding: 4rem 1.5rem; }
-            .hero h1 { font-size: 2.25rem; }
-            .hero .subtitle { font-size: 1.1rem; }
-            .hero-stats { gap: 1.5rem; }
-            .hero-stat-value { font-size: 2rem; }
-            .container { padding: 1.5rem; }
-            .section { padding: 1.5rem; border-radius: var(--radius-lg); }
-            .grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .output-grid { grid-template-columns: repeat(2, 1fr); }
-            .stat-number { font-size: 2rem; }
-            .hero-buttons { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-            .pub-controls { flex-direction: column; align-items: stretch; }
-            .pub-filters { flex-direction: column; }
-            .pub-search { width: 100%; }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;font-size:13px;line-height:1.4;color:#334155;background:#f8fafc}
+        a{color:#3b82f6;text-decoration:none}
+        a:hover{text-decoration:underline}
+        .navbar{position:fixed;top:0;left:0;right:0;height:40px;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12px;z-index:1000}
+        .navbar-brand{font-weight:700;font-size:14px;color:#fff;text-decoration:none}
+        .navbar-brand span{color:#f59e0b}
+        .navbar-nav{display:flex;list-style:none;gap:2px}
+        .navbar-nav a{color:rgba(255,255,255,.8);padding:4px 8px;border-radius:4px;font-size:11px;font-weight:500}
+        .navbar-nav a:hover{background:rgba(255,255,255,.1);text-decoration:none}
+        .main{margin-top:40px}
+        .hero{background:linear-gradient(135deg,#0f172a,#1e3a5f);color:#fff;padding:20px;text-align:center}
+        .hero h1{font-size:24px;font-weight:700;margin-bottom:4px}
+        .hero .sub{font-size:13px;opacity:.9;margin-bottom:8px}
+        .hero-stats{display:flex;justify-content:center;gap:24px;margin:12px 0}
+        .hero-stat{text-align:center}
+        .hero-stat-val{font-size:20px;font-weight:700;color:#f59e0b}
+        .hero-stat-lbl{font-size:10px;opacity:.7;text-transform:uppercase}
+        .hero-badges{display:flex;justify-content:center;gap:6px;margin:8px 0}
+        .hero-badges img{height:20px}
+        .hero-btns{display:flex;justify-content:center;gap:8px}
+        .btn{padding:6px 14px;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;display:inline-block}
+        .btn-primary{background:#3b82f6;color:#fff}
+        .btn-secondary{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.2)}
+        .container{max-width:1100px;margin:0 auto;padding:12px}
+        .grid{display:grid;gap:12px}
+        .grid-2{grid-template-columns:repeat(2,1fr)}
+        .grid-3{grid-template-columns:repeat(3,1fr)}
+        .grid-4{grid-template-columns:repeat(4,1fr)}
+        .grid-5{grid-template-columns:repeat(5,1fr)}
+        .grid-6{grid-template-columns:repeat(6,1fr)}
+        .section{background:#fff;border-radius:8px;padding:12px;margin-bottom:12px;border:1px solid #e2e8f0}
+        .section-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+        .section-title::before{content:'';width:3px;height:14px;background:linear-gradient(180deg,#3b82f6,#f59e0b);border-radius:2px}
+        .card{background:#f8fafc;border-radius:6px;padding:10px;border:1px solid #e2e8f0}
+        .card h4{font-size:12px;font-weight:600;color:#0f172a;margin-bottom:4px}
+        .card p{font-size:11px;color:#64748b}
+        .team-card{text-align:center;padding:12px 8px}
+        .team-avatar{width:48px;height:48px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:50%;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+        .team-card h4{font-size:11px;margin-bottom:2px}
+        .team-card .role{color:#3b82f6;font-size:10px;font-weight:600}
+        .team-card .aff{font-size:9px;color:#64748b}
+        .team-metrics{display:flex;justify-content:center;gap:4px;margin-top:6px}
+        .team-metric{background:#fff;border:1px solid #e2e8f0;border-radius:4px;padding:3px 6px;text-align:center}
+        .team-metric-val{font-weight:700;color:#3b82f6;font-size:11px}
+        .team-metric-lbl{font-size:8px;color:#64748b;text-transform:uppercase}
+        .team-links{display:flex;justify-content:center;gap:4px;margin-top:6px;flex-wrap:wrap}
+        .team-link{font-size:9px;padding:2px 6px;background:#e2e8f0;border-radius:3px;color:#334155}
+        .stat-card{text-align:center;padding:10px;background:#f8fafc;border-radius:6px;border:1px solid #e2e8f0}
+        .stat-num{font-size:22px;font-weight:700;color:#3b82f6}
+        .stat-lbl{font-size:10px;color:#64748b}
+        .output-card{text-align:center;padding:8px;background:#f8fafc;border-radius:6px;border:1px solid #e2e8f0}
+        .output-icon{font-size:16px;margin-bottom:2px}
+        .output-num{font-size:18px;font-weight:700;color:#0f172a}
+        .output-lbl{font-size:9px;color:#64748b;text-transform:uppercase}
+        .chart-box{background:#f8fafc;border-radius:6px;padding:10px;border:1px solid #e2e8f0}
+        .chart-title{font-size:11px;font-weight:600;text-align:center;margin-bottom:6px;color:#0f172a}
+        .topics{display:flex;flex-wrap:wrap;gap:4px}
+        .topic{padding:3px 8px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:12px;font-size:10px;color:#334155}
+        .topic.lg{font-size:11px;font-weight:600}
+        .highlight{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:6px;padding:10px;margin:8px 0}
+        .highlight h4{font-size:12px;margin-bottom:4px}
+        .highlight p{font-size:11px;opacity:.9}
+        .pub-controls{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+        .pub-filters{display:flex;gap:6px;align-items:center}
+        .pub-search,.pub-filter{padding:5px 8px;border:1px solid #e2e8f0;border-radius:4px;font-size:11px}
+        .pub-search{width:160px}
+        .pub-count{font-size:11px;color:#64748b}
+        .refresh-btn{padding:5px 10px;background:#3b82f6;color:#fff;border:none;border-radius:4px;font-size:10px;font-weight:600;cursor:pointer}
+        .pub-table{width:100%;border-collapse:collapse;font-size:11px}
+        .pub-table th{background:#0f172a;color:#fff;padding:6px;text-align:left;font-weight:600;font-size:10px;cursor:pointer}
+        .pub-table td{padding:6px;border-bottom:1px solid #e2e8f0;vertical-align:top}
+        .pub-table tr:hover{background:#f8fafc}
+        .pub-table .title-link{color:#0f172a;font-weight:500}
+        .pub-table .authors{color:#64748b;font-size:10px}
+        .pub-table .venue{font-style:italic;color:#64748b;font-size:10px}
+        .citations-badge{display:inline-block;padding:2px 6px;background:#f1f5f9;border-radius:10px;font-size:10px;font-weight:600}
+        .citations-badge.high{background:#3b82f6;color:#fff}
+        .oa-badge{background:#10b981;color:#fff;padding:1px 4px;border-radius:3px;font-size:8px;font-weight:600}
+        .doi-link{font-size:9px;color:#3b82f6}
+        .timeline{padding-left:16px;border-left:2px solid #3b82f6}
+        .timeline-item{padding:6px 0 6px 12px;position:relative}
+        .timeline-item::before{content:'';position:absolute;left:-21px;top:10px;width:8px;height:8px;background:#3b82f6;border-radius:50%}
+        .timeline-date{color:#3b82f6;font-weight:600;font-size:10px}
+        .timeline-item h4{font-size:11px;margin:2px 0}
+        .timeline-item p{font-size:10px;color:#64748b}
+        .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+        .contact-card{padding:10px;background:#f8fafc;border-radius:6px;border:1px solid #e2e8f0}
+        .contact-card h4{font-size:11px;margin-bottom:4px}
+        .contact-card p{font-size:10px;color:#64748b}
+        .footer{background:#0f172a;color:#fff;padding:16px 12px;font-size:10px}
+        .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:12px}
+        .footer h5{font-size:9px;text-transform:uppercase;letter-spacing:.05em;opacity:.5;margin-bottom:6px}
+        .footer a{display:block;color:rgba(255,255,255,.8);padding:2px 0;font-size:10px}
+        .footer-bottom{text-align:center;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);opacity:.7;font-size:9px}
+        @media(max-width:768px){.grid-2,.grid-3,.grid-4,.grid-5,.grid-6{grid-template-columns:1fr}.navbar-nav{display:none}.hero-stats{gap:12px}.footer-grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
-        <a href="#" class="navbar-brand">
-            <span>NDF</span> Narrative Digital Finance
-        </a>
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-        <ul class="navbar-nav" id="navMenu">
+        <a href="#" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
+        <ul class="navbar-nav">
             <li><a href="#overview">Overview</a></li>
-            <li><a href="#highlights">Highlights</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#results">Results</a></li>
             <li><a href="#publications">Publications</a></li>
@@ -1185,921 +118,335 @@
         </ul>
     </nav>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">Navigation</div>
-        <ul class="sidebar-nav" id="sidebarNav">
-            <li><a href="#overview"><span class="icon">&#9679;</span> Project Overview</a></li>
-            <li><a href="#highlights"><span class="icon">&#9733;</span> Research Highlights</a></li>
-            <li><a href="#team"><span class="icon">&#9787;</span> Team</a></li>
-            <li><a href="#methods"><span class="icon">&#9881;</span> Methods</a></li>
-            <li><a href="#results"><span class="icon">&#9776;</span> Output & Results</a></li>
-            <li><a href="#publications"><span class="icon">&#9998;</span> Publications</a></li>
-            <li><a href="#collaborations"><span class="icon">&#9741;</span> Collaborations</a></li>
-            <li><a href="#funding"><span class="icon">&#9830;</span> Funding</a></li>
-            <li><a href="#news"><span class="icon">&#9888;</span> News & Updates</a></li>
-            <li><a href="#contact"><span class="icon">&#9993;</span> Contact</a></li>
-        </ul>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-header">Quick Links</div>
-        <ul class="sidebar-nav">
-            <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" target="_blank">GitHub Repository</a></li>
-            <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" target="_blank">Wiki Documentation</a></li>
-            <li><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance" target="_blank">Project Website</a></li>
-        </ul>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-header">Funding</div>
-        <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" class="sidebar-badge" target="_blank">
-            <img src="https://img.shields.io/badge/SNSF-red" alt="SNSF">
-        </a>
-        <a href="https://cordis.europa.eu/project/id/101119635" class="sidebar-badge" target="_blank">
-            <img src="https://img.shields.io/badge/EU-Horizon-blue" alt="EU">
-        </a>
-    </aside>
-
-    <!-- Main -->
-    <main class="main-content">
-        <!-- Hero -->
+    <main class="main">
         <div class="hero">
-            <div class="hero-particles">
-                <div class="hero-particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-                <div class="hero-particle" style="left: 20%; top: 60%; animation-delay: 1s;"></div>
-                <div class="hero-particle" style="left: 80%; top: 30%; animation-delay: 2s;"></div>
-                <div class="hero-particle" style="left: 70%; top: 70%; animation-delay: 0.5s;"></div>
-                <div class="hero-particle" style="left: 40%; top: 80%; animation-delay: 1.5s;"></div>
+            <h1>Narrative Digital Finance</h1>
+            <p class="sub">A tale of structural breaks, bubbles & market narratives | SNSF Research Project</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-val">122</div><div class="hero-stat-lbl">Publications</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">2,010</div><div class="hero-stat-lbl">Citations</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">6</div><div class="hero-stat-lbl">Researchers</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">7</div><div class="hero-stat-lbl">Partners</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">CHF 236K</div><div class="hero-stat-lbl">Funding</div></div>
             </div>
-            <div class="hero-content animate-fade-up">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    Active Research Project (2023-2026)
-                </div>
-                <h1>Narrative Digital Finance</h1>
-                <p class="subtitle">A tale of structural breaks, bubbles & market narratives</p>
-                <p class="tagline">Swiss National Science Foundation (SNSF) Research Project</p>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">122</div>
-                        <div class="hero-stat-label">Publications</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">2,010</div>
-                        <div class="hero-stat-label">Citations</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">6</div>
-                        <div class="hero-stat-label">Researchers</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">7</div>
-                        <div class="hero-stat-label">Partners</div>
-                    </div>
-                </div>
-                <div class="hero-badges">
-                    <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"><img src="https://img.shields.io/badge/Funded%20by-SNSF-dc2626?style=for-the-badge" alt="SNSF"></a>
-                    <a href="https://cordis.europa.eu/project/id/101119635"><img src="https://img.shields.io/badge/EU-Horizon%20Europe-2563eb?style=for-the-badge" alt="EU"></a>
-                    <img src="https://img.shields.io/badge/CHF-236K-f59e0b?style=for-the-badge" alt="Funding">
-                </div>
-                <div class="hero-buttons">
-                    <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="btn btn-primary">View on GitHub</a>
-                    <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" class="btn btn-secondary">Documentation</a>
-                </div>
+            <div class="hero-badges">
+                <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"><img src="https://img.shields.io/badge/SNSF-red?style=flat-square" alt="SNSF"></a>
+                <a href="https://cordis.europa.eu/project/id/101119635"><img src="https://img.shields.io/badge/EU-Horizon-blue?style=flat-square" alt="EU"></a>
+                <img src="https://img.shields.io/badge/2023--2026-Active-green?style=flat-square" alt="Active">
+            </div>
+            <div class="hero-btns">
+                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="btn btn-primary">GitHub</a>
+                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" class="btn btn-secondary">Wiki</a>
             </div>
         </div>
 
         <div class="container">
-            <!-- Overview -->
-            <section id="overview" class="section animate-fade-up">
-                <div class="section-header">
-                    <div class="section-icon">&#9679;</div>
-                    <div>
-                        <h2>Project Overview</h2>
-                        <p class="section-subtitle">Understanding financial markets through narrative analysis</p>
-                    </div>
-                </div>
-                <p>Large fluctuations, instabilities, trends and uncertainty of financial markets constitute a substantial challenge for asset management companies, pension funds and regulators. This project develops a comprehensive framework that utilizes advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks using diverse data sources.</p>
-                <p style="margin-top: 1rem;">The research bridges the gap between traditional econometric approaches and modern AI techniques, providing new insights into the role of narratives and quantitative data in financial decision-making.</p>
-
-                <h3>Research Topics</h3>
-                <div class="topics-cloud">
-                    <span class="topic-tag large">Machine Learning</span>
-                    <span class="topic-tag large">NLP</span>
-                    <span class="topic-tag large">Financial Markets</span>
-                    <span class="topic-tag medium">Sentiment Analysis</span>
-                    <span class="topic-tag medium">Credit Risk</span>
-                    <span class="topic-tag medium">Deep Learning</span>
-                    <span class="topic-tag">Bubble Detection</span>
-                    <span class="topic-tag">Market Narratives</span>
-                    <span class="topic-tag">Structural Breaks</span>
-                    <span class="topic-tag">ESG Scoring</span>
-                    <span class="topic-tag">P2P Lending</span>
-                    <span class="topic-tag">Explainable AI</span>
-                    <span class="topic-tag">Network Analysis</span>
-                    <span class="topic-tag">Cryptocurrency</span>
+            <section id="overview" class="section">
+                <div class="section-title">Project Overview</div>
+                <p style="margin-bottom:8px">This project develops a comprehensive framework using advanced ML and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks in financial markets.</p>
+                <div class="topics">
+                    <span class="topic lg">Machine Learning</span>
+                    <span class="topic lg">NLP</span>
+                    <span class="topic lg">Financial Markets</span>
+                    <span class="topic">Sentiment Analysis</span>
+                    <span class="topic">Credit Risk</span>
+                    <span class="topic">Deep Learning</span>
+                    <span class="topic">Bubble Detection</span>
+                    <span class="topic">Structural Breaks</span>
+                    <span class="topic">ESG</span>
+                    <span class="topic">P2P Lending</span>
+                    <span class="topic">XAI</span>
+                    <span class="topic">Crypto</span>
                 </div>
             </section>
 
-            <!-- Research Highlights -->
-            <section id="highlights" class="section">
-                <div class="section-header">
-                    <div class="section-icon accent">&#9733;</div>
-                    <div>
-                        <h2>Research Highlights</h2>
-                        <p class="section-subtitle">Key findings and contributions</p>
-                    </div>
+            <section class="section">
+                <div class="section-title">Research Highlights</div>
+                <div class="highlight">
+                    <h4>Featured: P2P Lending Credit Risk (Expert Systems with Applications, 2024)</h4>
+                    <p>"Leveraging network topology for credit risk assessment in P2P lending" - Network features significantly improve credit scoring accuracy.</p>
                 </div>
-
-                <div class="highlight-card">
-                    <h4>Featured Publication: P2P Lending Credit Risk</h4>
-                    <p>"Leveraging network topology for credit risk assessment in P2P lending: A comparative study under the lens of machine learning" - Published in Expert Systems with Applications (2024). This paper demonstrates that systematic inclusion of network topological features significantly improves credit scoring accuracy.</p>
-                    <a href="https://doi.org/10.1016/j.eswa.2024.124100" target="_blank" class="btn btn-sm">Read Paper</a>
-                </div>
-
                 <div class="grid grid-3">
-                    <div class="feature-card">
-                        <div class="feature-icon">&#9733;</div>
-                        <h4>Econometric Validation</h4>
-                        <p>Validate and refine existing econometric models using real-world financial data from multiple markets and time periods.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, var(--accent), var(--pink));">&#9998;</div>
-                        <h4>Narrative Analysis</h4>
-                        <p>Integrate narrative analysis to understand and predict market behaviors through text, speech, and media analysis.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, var(--success), var(--secondary));">&#9881;</div>
-                        <h4>AI/ML Framework</h4>
-                        <p>Create a multidimensional AI and ML framework that enhances detection of market anomalies and forecasts trends.</p>
-                    </div>
+                    <div class="card"><h4>Econometric Validation</h4><p>Validate models using real-world financial data from multiple markets</p></div>
+                    <div class="card"><h4>Narrative Analysis</h4><p>Integrate text, speech, and media analysis for market prediction</p></div>
+                    <div class="card"><h4>AI/ML Framework</h4><p>Detect market anomalies and forecast financial trends</p></div>
                 </div>
             </section>
 
-            <!-- Team -->
             <section id="team" class="section">
-                <div class="section-header">
-                    <div class="section-icon purple">&#9787;</div>
-                    <div>
-                        <h2>Our Team</h2>
-                        <p class="section-subtitle">University of Twente & Bern Business School</p>
-                    </div>
-                </div>
-                <div class="grid" id="teamGrid">
+                <div class="section-title">Team (University of Twente & Bern Business School)</div>
+                <div class="grid grid-6">
                     <div class="card team-card">
                         <div class="team-avatar">JO</div>
                         <h4>Joerg Osterrieder</h4>
                         <p class="role">Principal Investigator</p>
-                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                        <p class="aff">BFH / UT</p>
                         <div class="team-metrics">
-                            <div class="team-metric">
-                                <span class="team-metric-value">136</span>
-                                <span class="team-metric-label">Works</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">1,153</span>
-                                <span class="team-metric-label">Citations</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">13</span>
-                                <span class="team-metric-label">h-index</span>
-                            </div>
+                            <div class="team-metric"><span class="team-metric-val">136</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">1153</span><span class="team-metric-lbl">Cites</span></div>
+                            <div class="team-metric"><span class="team-metric-val">13</span><span class="team-metric-lbl">h</span></div>
                         </div>
-                        <div class="team-links">
-                            <a href="https://orcid.org/0000-0003-0189-8636" target="_blank" class="team-link">ORCID</a>
-                            <a href="https://scholar.google.com/citations?user=ocRaXoIAAAAJ" target="_blank" class="team-link">Scholar</a>
-                            <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2618281" target="_blank" class="team-link">SSRN</a>
-                        </div>
+                        <div class="team-links"><a href="https://orcid.org/0000-0003-0189-8636" class="team-link">ORCID</a><a href="https://scholar.google.com/citations?user=ocRaXoIAAAAJ" class="team-link">Scholar</a></div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar" style="background: linear-gradient(135deg, var(--purple), var(--pink));">BH</div>
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">BH</div>
                         <h4>Branka Hadji Misheva</h4>
                         <p class="role">Team Member</p>
-                        <p class="affiliation">Bern Business School</p>
+                        <p class="aff">BFH</p>
                         <div class="team-metrics">
-                            <div class="team-metric">
-                                <span class="team-metric-value">42</span>
-                                <span class="team-metric-label">Works</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">380</span>
-                                <span class="team-metric-label">Citations</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">9</span>
-                                <span class="team-metric-label">h-index</span>
-                            </div>
+                            <div class="team-metric"><span class="team-metric-val">42</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">380</span><span class="team-metric-lbl">Cites</span></div>
+                            <div class="team-metric"><span class="team-metric-val">9</span><span class="team-metric-lbl">h</span></div>
                         </div>
-                        <div class="team-links">
-                            <a href="https://orcid.org/0000-0001-7020-3469" target="_blank" class="team-link">ORCID</a>
-                        </div>
+                        <div class="team-links"><a href="https://orcid.org/0000-0001-7020-3469" class="team-link">ORCID</a></div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar" style="background: linear-gradient(135deg, var(--success), var(--secondary));">GT</div>
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6)">GT</div>
                         <h4>Gabin Taibi</h4>
                         <p class="role">PhD Researcher</p>
-                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                        <p class="aff">BFH / UT</p>
                         <div class="team-metrics">
-                            <div class="team-metric">
-                                <span class="team-metric-value">1</span>
-                                <span class="team-metric-label">Works</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">1</span>
-                                <span class="team-metric-label">Citations</span>
-                            </div>
+                            <div class="team-metric"><span class="team-metric-val">1</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">1</span><span class="team-metric-lbl">Cites</span></div>
                         </div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar" style="background: linear-gradient(135deg, var(--accent), var(--pink));">LB</div>
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#f59e0b,#ec4899)">LB</div>
                         <h4>Lennart John Baals</h4>
                         <p class="role">PhD Researcher</p>
-                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                        <p class="aff">BFH / UT</p>
                         <div class="team-metrics">
-                            <div class="team-metric">
-                                <span class="team-metric-value">14</span>
-                                <span class="team-metric-label">Works</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">125</span>
-                                <span class="team-metric-label">Citations</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">5</span>
-                                <span class="team-metric-label">h-index</span>
-                            </div>
+                            <div class="team-metric"><span class="team-metric-val">14</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">125</span><span class="team-metric-lbl">Cites</span></div>
+                            <div class="team-metric"><span class="team-metric-val">5</span><span class="team-metric-lbl">h</span></div>
                         </div>
-                        <div class="team-links">
-                            <a href="https://www.researchgate.net/scientific-contributions/Lennart-John-Baals-2218848188" target="_blank" class="team-link">ResearchGate</a>
-                            <a href="https://www.linkedin.com/in/lennart-john-baals-a621aa193/" target="_blank" class="team-link">LinkedIn</a>
-                        </div>
+                        <div class="team-links"><a href="https://www.linkedin.com/in/lennart-john-baals-a621aa193/" class="team-link">LinkedIn</a></div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar" style="background: linear-gradient(135deg, #06b6d4, var(--secondary));">YL</div>
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)">YL</div>
                         <h4>Yiting Liu</h4>
                         <p class="role">PhD Researcher</p>
-                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                        <p class="aff">BFH / UT</p>
                         <div class="team-metrics">
-                            <div class="team-metric">
-                                <span class="team-metric-value">12</span>
-                                <span class="team-metric-label">Works</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">351</span>
-                                <span class="team-metric-label">Citations</span>
-                            </div>
-                            <div class="team-metric">
-                                <span class="team-metric-value">4</span>
-                                <span class="team-metric-label">h-index</span>
-                            </div>
+                            <div class="team-metric"><span class="team-metric-val">12</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">351</span><span class="team-metric-lbl">Cites</span></div>
+                            <div class="team-metric"><span class="team-metric-val">4</span><span class="team-metric-lbl">h</span></div>
                         </div>
-                        <div class="team-links">
-                            <a href="https://orcid.org/0009-0006-9554-8205" target="_blank" class="team-link">ORCID</a>
-                            <a href="https://people.utwente.nl/yiting.liu" target="_blank" class="team-link">UT Profile</a>
-                        </div>
+                        <div class="team-links"><a href="https://orcid.org/0009-0006-9554-8205" class="team-link">ORCID</a></div>
                     </div>
                     <div class="card team-card">
-                        <div class="team-avatar" style="background: linear-gradient(135deg, #64748b, var(--primary));">MK</div>
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#64748b,#0f172a)">MK</div>
                         <h4>Marius Jan Klein</h4>
                         <p class="role">Team Member</p>
-                        <p class="affiliation">Bern Business School</p>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-light);">
-                    Metrics sourced from <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a>
-                </p>
-            </section>
-
-            <!-- Methods -->
-            <section id="methods" class="section">
-                <div class="section-header">
-                    <div class="section-icon success">&#9881;</div>
-                    <div>
-                        <h2>Methodology</h2>
-                        <p class="section-subtitle">Our approach to financial market analysis</p>
-                    </div>
-                </div>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <div class="card-number">1</div>
-                        <h4>Data Collection</h4>
-                        <p>Stock prices, macroeconomic indicators, news articles, social media, and textual content from diverse web sources.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-number">2</div>
-                        <h4>NLP & Text Mining</h4>
-                        <p>Sentiment analysis, narrative structure extraction, topic modeling, and impact assessment on market movements.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-number">3</div>
-                        <h4>AI Model Development</h4>
-                        <p>Deep learning, transformers, and ensemble methods combining traditional finance with narrative insights.</p>
+                        <p class="aff">BFH</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Results -->
             <section id="results" class="section">
-                <div class="section-header">
-                    <div class="section-icon">&#9776;</div>
-                    <div>
-                        <h2>Output & Results</h2>
-                        <p class="section-subtitle">Project impact and deliverables</p>
-                    </div>
+                <div class="section-title">Output & Results</div>
+                <div class="grid grid-4" style="margin-bottom:8px">
+                    <div class="stat-card"><div class="stat-num">122</div><div class="stat-lbl">Publications</div></div>
+                    <div class="stat-card"><div class="stat-num">2,010</div><div class="stat-lbl">Citations</div></div>
+                    <div class="stat-card"><div class="stat-num">13</div><div class="stat-lbl">Max h-index</div></div>
+                    <div class="stat-card"><div class="stat-num">CHF 236K</div><div class="stat-lbl">SNSF Funding</div></div>
                 </div>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">122</div>
-                        <div class="stat-label">Publications</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2,010</div>
-                        <div class="stat-label">Total Citations</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">13</div>
-                        <div class="stat-label">Max h-index</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">CHF 236K</div>
-                        <div class="stat-label">SNSF Funding</div>
-                    </div>
+                <div class="grid grid-5" style="margin-bottom:8px">
+                    <div class="output-card"><div class="output-num">4</div><div class="output-lbl">Publications</div></div>
+                    <div class="output-card"><div class="output-num">6</div><div class="output-lbl">Collaborations</div></div>
+                    <div class="output-card"><div class="output-num">6</div><div class="output-lbl">Events</div></div>
+                    <div class="output-card"><div class="output-num">4</div><div class="output-lbl">Knowledge Transfer</div></div>
+                    <div class="output-card"><div class="output-num">3</div><div class="output-lbl">Awards</div></div>
                 </div>
-
-                <h3>Project Outputs</h3>
-                <div class="output-grid">
-                    <div class="output-card">
-                        <div class="output-icon">&#9998;</div>
-                        <div class="output-number">4</div>
-                        <div class="output-label">Project Publications</div>
-                    </div>
-                    <div class="output-card">
-                        <div class="output-icon">&#9741;</div>
-                        <div class="output-number">6</div>
-                        <div class="output-label">Collaborations</div>
-                    </div>
-                    <div class="output-card">
-                        <div class="output-icon">&#9733;</div>
-                        <div class="output-number">6</div>
-                        <div class="output-label">Academic Events</div>
-                    </div>
-                    <div class="output-card">
-                        <div class="output-icon">&#9786;</div>
-                        <div class="output-number">4</div>
-                        <div class="output-label">Knowledge Transfer</div>
-                    </div>
-                    <div class="output-card">
-                        <div class="output-icon">&#9830;</div>
-                        <div class="output-number">3</div>
-                        <div class="output-label">Awards</div>
-                    </div>
+                <div class="grid grid-2">
+                    <div class="chart-box"><div class="chart-title">Publications by Year</div><canvas id="pubsByYearChart" height="120"></canvas></div>
+                    <div class="chart-box"><div class="chart-title">Citations by Year</div><canvas id="citationsByYearChart" height="120"></canvas></div>
                 </div>
-
-                <h3>Publication Analytics</h3>
-                <div class="charts-row">
-                    <div class="chart-container">
-                        <div class="chart-title">Publications by Year</div>
-                        <canvas id="pubsByYearChart" height="200"></canvas>
-                    </div>
-                    <div class="chart-container">
-                        <div class="chart-title">Citations by Year</div>
-                        <canvas id="citationsByYearChart" height="200"></canvas>
-                    </div>
-                </div>
-
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-light);">
-                    Publication metrics from <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a> |
-                    Project: July 2023 - June 2026
-                </p>
             </section>
 
-            <!-- Publications -->
             <section id="publications" class="section">
-                <div class="section-header">
-                    <div class="section-icon accent">&#9998;</div>
-                    <div>
-                        <h2>Publications</h2>
-                        <p class="section-subtitle">Team research contributions from OpenAlex</p>
-                    </div>
-                </div>
+                <div class="section-title">Publications (OpenAlex)</div>
                 <div class="pub-controls">
                     <div class="pub-filters">
-                        <input type="text" class="pub-search" id="pubSearch" placeholder="Search publications...">
-                        <select class="pub-filter" id="yearFilter">
-                            <option value="">All Years</option>
-                        </select>
-                        <select class="pub-filter" id="authorFilter">
-                            <option value="">All Authors</option>
-                        </select>
+                        <input type="text" class="pub-search" id="pubSearch" placeholder="Search...">
+                        <select class="pub-filter" id="yearFilter"><option value="">All Years</option></select>
+                        <select class="pub-filter" id="authorFilter"><option value="">All Authors</option></select>
                     </div>
-                    <div style="display: flex; gap: 1rem; align-items: center;">
+                    <div style="display:flex;gap:8px;align-items:center">
                         <span class="pub-count" id="pubCount">Loading...</span>
-                        <button class="refresh-btn" id="refreshBtn" onclick="refreshFromOpenAlex()">
-                            <span class="spinner"></span>
-                            Refresh
-                        </button>
+                        <button class="refresh-btn" id="refreshBtn" onclick="refreshFromOpenAlex()">Refresh</button>
                     </div>
                 </div>
-                <div class="pub-table-container">
+                <div style="overflow-x:auto;border:1px solid #e2e8f0;border-radius:6px">
                     <table class="pub-table" id="pubTable">
-                        <thead>
-                            <tr>
-                                <th onclick="sortTable(0)" style="width: 70px;">Year <span class="sort-icon">&#8597;</span></th>
-                                <th onclick="sortTable(1)">Title <span class="sort-icon">&#8597;</span></th>
-                                <th onclick="sortTable(2)" style="width: 180px;">Authors <span class="sort-icon">&#8597;</span></th>
-                                <th onclick="sortTable(3)" style="width: 150px;">Venue <span class="sort-icon">&#8597;</span></th>
-                                <th onclick="sortTable(4)" style="width: 90px;">Citations <span class="sort-icon">&#8597;</span></th>
-                                <th style="width: 80px;">Links</th>
-                            </tr>
-                        </thead>
-                        <tbody id="pubTableBody">
-                            <tr><td colspan="6" style="text-align: center; padding: 2rem;">Loading publications...</td></tr>
-                        </tbody>
+                        <thead><tr>
+                            <th onclick="sortTable(0)" style="width:50px">Year</th>
+                            <th onclick="sortTable(1)">Title</th>
+                            <th onclick="sortTable(2)" style="width:140px">Authors</th>
+                            <th onclick="sortTable(3)" style="width:120px">Venue</th>
+                            <th onclick="sortTable(4)" style="width:60px">Cites</th>
+                            <th style="width:50px">Links</th>
+                        </tr></thead>
+                        <tbody id="pubTableBody"><tr><td colspan="6" style="text-align:center;padding:12px">Loading...</td></tr></tbody>
                     </table>
                 </div>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-light);">
-                    Data source: <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a> -
-                    Open catalog of scholarly works
-                </p>
             </section>
 
-            <!-- Collaborations -->
             <section id="collaborations" class="section">
-                <div class="section-header">
-                    <div class="section-icon purple">&#9741;</div>
-                    <div>
-                        <h2>Collaborations</h2>
-                        <p class="section-subtitle">Industry and academic partnerships</p>
-                    </div>
+                <div class="section-title">Collaborations</div>
+                <div class="grid grid-2" style="margin-bottom:8px">
+                    <div class="card"><h4>Deutsche Borse AG</h4><p>Dr. Stefan Schlamp - HFT & Market Microstructure</p></div>
+                    <div class="card"><h4>Quoniam Asset Management</h4><p>Quantitative investment strategies</p></div>
                 </div>
-                <h3>Industry Partners</h3>
+                <div class="grid grid-3" style="margin-bottom:8px">
+                    <div class="card"><h4>Humboldt-University Berlin</h4><p>Financial econometrics</p></div>
+                    <div class="card"><h4>American University of Sharjah</h4><p>Digital finance</p></div>
+                    <div class="card"><h4>Babes-Bolyai University</h4><p>Quantitative finance</p></div>
+                </div>
                 <div class="grid grid-2">
-                    <div class="card">
-                        <h4>Deutsche Borse AG</h4>
-                        <p><strong>Dr. Stefan Schlamp</strong><br>Head of Quantitative Analytics<br>HFT & Market Microstructure (since Jan 2024)</p>
-                    </div>
-                    <div class="card">
-                        <h4>Quoniam Asset Management</h4>
-                        <p>Quantitative investment strategies and risk management collaboration</p>
-                    </div>
-                </div>
-                <h3>Academic Partners</h3>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h4>Humboldt-University Berlin</h4>
-                        <p>Financial econometrics and machine learning research</p>
-                    </div>
-                    <div class="card">
-                        <h4>American University of Sharjah</h4>
-                        <p>International research partnership on digital finance</p>
-                    </div>
-                    <div class="card">
-                        <h4>Babes-Bolyai University</h4>
-                        <p>Quantitative finance research collaboration</p>
-                    </div>
-                </div>
-                <h3>Networks & Initiatives</h3>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h4>COST Action CA19130</h4>
-                        <p><strong>Fintech and AI in Finance</strong><br>Action Chair: Joerg Osterrieder</p>
-                    </div>
-                    <div class="card">
-                        <h4>MSCA Industrial Doctoral Network</h4>
-                        <p><strong>Digital Finance</strong><br>Coordinator: Joerg Osterrieder</p>
-                    </div>
+                    <div class="card"><h4>COST Action CA19130</h4><p>Fintech and AI in Finance - Chair: J. Osterrieder</p></div>
+                    <div class="card"><h4>MSCA Industrial Doctoral Network</h4><p>Digital Finance - Coordinator: J. Osterrieder</p></div>
                 </div>
             </section>
 
-            <!-- Funding -->
             <section id="funding" class="section">
-                <div class="section-header">
-                    <div class="section-icon success">&#9830;</div>
-                    <div>
-                        <h2>Funding</h2>
-                        <p class="section-subtitle">Supporting organizations</p>
-                    </div>
-                </div>
+                <div class="section-title">Funding</div>
                 <div class="grid grid-2">
-                    <div class="card">
-                        <h4>Swiss National Science Foundation</h4>
-                        <p>Proposal Number: 100018E_213370<br>Grant: IZCOZ0_213370<br>Amount: CHF 236,118</p>
-                        <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" class="btn btn-outline btn-sm" style="margin-top: 1rem;">SNSF Grant Page</a>
-                    </div>
-                    <div class="card">
-                        <h4>Horizon Europe</h4>
-                        <p>Marie Sklodowska-Curie Actions<br>Grant Agreement No. 101119635</p>
-                        <a href="https://cordis.europa.eu/project/id/101119635" class="btn btn-outline btn-sm" style="margin-top: 1rem;">EU CORDIS</a>
-                    </div>
+                    <div class="card"><h4>Swiss National Science Foundation</h4><p>Grant: IZCOZ0_213370 | CHF 236,118 | 2023-2026</p></div>
+                    <div class="card"><h4>Horizon Europe</h4><p>Marie Sklodowska-Curie Grant No. 101119635</p></div>
                 </div>
             </section>
 
-            <!-- News -->
-            <section id="news" class="section">
-                <div class="section-header">
-                    <div class="section-icon accent">&#9888;</div>
-                    <div>
-                        <h2>News & Updates</h2>
-                        <p class="section-subtitle">Latest project developments</p>
-                    </div>
-                </div>
+            <section class="section">
+                <div class="section-title">News & Updates</div>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">December 2024</div>
-                        <h4>GitHub Repository Launched</h4>
-                        <p>Project repository and comprehensive wiki documentation now available on GitHub with OpenAlex integration.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">May 2024</div>
-                        <h4>Expert Systems Publication</h4>
-                        <p>Published "Leveraging network topology for credit risk assessment in P2P lending" in Expert Systems with Applications.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">January 2024</div>
-                        <h4>Deutsche Borse Partnership</h4>
-                        <p>Started collaboration with Deutsche Borse AG on HFT and market microstructure research.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">July 2023</div>
-                        <h4>Project Launch</h4>
-                        <p>Narrative Digital Finance research project officially started with SNSF funding.</p>
-                    </div>
+                    <div class="timeline-item"><div class="timeline-date">Dec 2024</div><h4>GitHub Repository Launched</h4><p>Project repo and wiki now available</p></div>
+                    <div class="timeline-item"><div class="timeline-date">May 2024</div><h4>Expert Systems Publication</h4><p>P2P lending credit risk paper published</p></div>
+                    <div class="timeline-item"><div class="timeline-date">Jan 2024</div><h4>Deutsche Borse Partnership</h4><p>HFT and market microstructure collaboration</p></div>
+                    <div class="timeline-item"><div class="timeline-date">Jul 2023</div><h4>Project Launch</h4><p>SNSF funding started</p></div>
                 </div>
             </section>
 
-            <!-- Contact -->
             <section id="contact" class="section">
-                <div class="section-header">
-                    <div class="section-icon">&#9993;</div>
-                    <div>
-                        <h2>Contact</h2>
-                        <p class="section-subtitle">Get in touch with the team</p>
-                    </div>
-                </div>
+                <div class="section-title">Contact</div>
                 <div class="contact-grid">
-                    <div class="contact-card">
-                        <h4>Principal Investigator</h4>
-                        <p><strong>Prof. Dr. Joerg Osterrieder</strong><br>Bern Business School<br>University of Twente</p>
-                    </div>
-                    <div class="contact-card">
-                        <h4>Project Website</h4>
-                        <p><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance">digital-finance-msca.com</a></p>
-                    </div>
-                    <div class="contact-card">
-                        <h4>GitHub</h4>
-                        <p><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">Digital-AI-Finance</a></p>
-                    </div>
+                    <div class="contact-card"><h4>Principal Investigator</h4><p>Prof. Dr. Joerg Osterrieder<br>Bern Business School / University of Twente</p></div>
+                    <div class="contact-card"><h4>Project Website</h4><p><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance">digital-finance-msca.com</a></p></div>
+                    <div class="contact-card"><h4>GitHub</h4><p><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">Digital-AI-Finance</a></p></div>
                 </div>
             </section>
         </div>
 
-        <!-- Footer -->
         <footer class="footer">
-            <div class="footer-content">
+            <div class="container">
                 <div class="footer-grid">
-                    <div class="footer-col">
-                        <h5>Project</h5>
-                        <a href="#overview">Overview</a>
-                        <a href="#highlights">Highlights</a>
-                        <a href="#methods">Methods</a>
-                        <a href="#results">Results</a>
-                    </div>
-                    <div class="footer-col">
-                        <h5>Team</h5>
-                        <a href="#team">Members</a>
-                        <a href="#collaborations">Collaborations</a>
-                    </div>
-                    <div class="footer-col">
-                        <h5>Resources</h5>
-                        <a href="#publications">Publications</a>
-                        <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki">Wiki</a>
-                        <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">GitHub</a>
-                    </div>
-                    <div class="footer-col">
-                        <h5>Funding</h5>
-                        <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a">SNSF</a>
-                        <a href="https://cordis.europa.eu/project/id/101119635">EU CORDIS</a>
-                    </div>
+                    <div><h5>Project</h5><a href="#overview">Overview</a><a href="#results">Results</a></div>
+                    <div><h5>Team</h5><a href="#team">Members</a><a href="#collaborations">Collaborations</a></div>
+                    <div><h5>Resources</h5><a href="#publications">Publications</a><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki">Wiki</a></div>
+                    <div><h5>Funding</h5><a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a">SNSF</a><a href="https://cordis.europa.eu/project/id/101119635">EU CORDIS</a></div>
                 </div>
-                <div class="footer-bottom">
-                    <p>Funded by the European Union. Views and opinions expressed are those of the author(s) only.</p>
-                    <p style="margin-top: 0.5rem;">Marie Sklodowska-Curie Grant Agreement No. 101119635</p>
-                    <p style="margin-top: 1rem;">&copy; 2024 Narrative Digital Finance | <a href="https://www.digital-finance-msca.com">Digital Finance MSCA</a></p>
-                </div>
+                <div class="footer-bottom">Funded by EU (Grant No. 101119635) and SNSF | &copy; 2024 Narrative Digital Finance</div>
             </div>
         </footer>
     </main>
 
-    <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">&#8593;</button>
-
     <script>
-        // Global publications data
-        let publicationsData = [];
-        let allPublicationsData = [];
-        let sortDirection = {};
+        let publicationsData=[],allPublicationsData=[],sortDirection={};
+        let pubsByYearChart,citationsByYearChart;
 
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('show');
-            document.getElementById('sidebar').classList.toggle('open');
+        function initCharts(pubs){
+            const yearCounts={},citationsByYear={};
+            pubs.forEach(p=>{const y=p.year||'Unknown';yearCounts[y]=(yearCounts[y]||0)+1;citationsByYear[y]=(citationsByYear[y]||0)+(p.cited_by_count||0)});
+            const years=Object.keys(yearCounts).filter(y=>y!=='Unknown').sort();
+            const counts=years.map(y=>yearCounts[y]),citations=years.map(y=>citationsByYear[y]);
+            const ctx1=document.getElementById('pubsByYearChart').getContext('2d');
+            if(pubsByYearChart)pubsByYearChart.destroy();
+            pubsByYearChart=new Chart(ctx1,{type:'bar',data:{labels:years,datasets:[{data:counts,backgroundColor:'rgba(59,130,246,0.8)',borderRadius:4}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.05)'}},x:{grid:{display:false}}}}});
+            const ctx2=document.getElementById('citationsByYearChart').getContext('2d');
+            if(citationsByYearChart)citationsByYearChart.destroy();
+            citationsByYearChart=new Chart(ctx2,{type:'line',data:{labels:years,datasets:[{data:citations,borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,0.1)',fill:true,tension:0.4,pointRadius:3}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.05)'}},x:{grid:{display:false}}}}});
         }
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function populateFilters(pubs){
+            const years=[...new Set(pubs.map(p=>p.year).filter(y=>y))].sort((a,b)=>b-a);
+            const authors=[...new Set(pubs.flatMap(p=>p.team_member?[p.team_member]:[]))].sort();
+            document.getElementById('yearFilter').innerHTML='<option value="">All Years</option>'+years.map(y=>`<option value="${y}">${y}</option>`).join('');
+            document.getElementById('authorFilter').innerHTML='<option value="">All Authors</option>'+authors.map(a=>`<option value="${a}">${a}</option>`).join('');
         }
-        window.addEventListener('scroll', function() {
-            const btn = document.getElementById('backToTop');
-            btn.classList.toggle('visible', window.scrollY > 300);
-        });
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.navbar-nav a, .sidebar-nav a');
-        function highlightNav() {
-            let scrollPos = window.scrollY + 120;
-            sections.forEach(section => {
-                const top = section.offsetTop;
-                const height = section.offsetHeight;
-                const id = section.getAttribute('id');
-                if (scrollPos >= top && scrollPos < top + height) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + id) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
+        function filterPublications(){
+            const search=document.getElementById('pubSearch').value.toLowerCase();
+            const year=document.getElementById('yearFilter').value;
+            const author=document.getElementById('authorFilter').value;
+            let filtered=allPublicationsData.filter(p=>{
+                const matchSearch=!search||(p.title||'').toLowerCase().includes(search)||(p.authors_str||'').toLowerCase().includes(search);
+                return matchSearch&&(!year||p.year==year)&&(!author||p.team_member===author);
             });
-        }
-        window.addEventListener('scroll', highlightNav);
-        highlightNav();
-
-        // Animate on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.section').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-
-        // Charts
-        let pubsByYearChart, citationsByYearChart;
-
-        function initCharts(pubs) {
-            const yearCounts = {};
-            const citationsByYear = {};
-
-            pubs.forEach(pub => {
-                const year = pub.year || 'Unknown';
-                yearCounts[year] = (yearCounts[year] || 0) + 1;
-                citationsByYear[year] = (citationsByYear[year] || 0) + (pub.cited_by_count || 0);
-            });
-
-            const years = Object.keys(yearCounts).filter(y => y !== 'Unknown').sort();
-            const counts = years.map(y => yearCounts[y]);
-            const citations = years.map(y => citationsByYear[y]);
-
-            // Publications by Year Chart
-            const ctx1 = document.getElementById('pubsByYearChart').getContext('2d');
-            if (pubsByYearChart) pubsByYearChart.destroy();
-            pubsByYearChart = new Chart(ctx1, {
-                type: 'bar',
-                data: {
-                    labels: years,
-                    datasets: [{
-                        label: 'Publications',
-                        data: counts,
-                        backgroundColor: 'rgba(59, 130, 246, 0.8)',
-                        borderColor: 'rgba(59, 130, 246, 1)',
-                        borderWidth: 1,
-                        borderRadius: 6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
-                        x: { grid: { display: false } }
-                    }
-                }
-            });
-
-            // Citations by Year Chart
-            const ctx2 = document.getElementById('citationsByYearChart').getContext('2d');
-            if (citationsByYearChart) citationsByYearChart.destroy();
-            citationsByYearChart = new Chart(ctx2, {
-                type: 'line',
-                data: {
-                    labels: years,
-                    datasets: [{
-                        label: 'Citations',
-                        data: citations,
-                        borderColor: 'rgba(139, 92, 246, 1)',
-                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                        fill: true,
-                        tension: 0.4,
-                        pointBackgroundColor: 'rgba(139, 92, 246, 1)',
-                        pointRadius: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
-                        x: { grid: { display: false } }
-                    }
-                }
-            });
-        }
-
-        function populateFilters(pubs) {
-            const years = [...new Set(pubs.map(p => p.year).filter(y => y))].sort((a,b) => b-a);
-            const authors = [...new Set(pubs.flatMap(p => p.team_member ? [p.team_member] : []))].sort();
-
-            const yearFilter = document.getElementById('yearFilter');
-            yearFilter.innerHTML = '<option value="">All Years</option>' +
-                years.map(y => `<option value="${y}">${y}</option>`).join('');
-
-            const authorFilter = document.getElementById('authorFilter');
-            authorFilter.innerHTML = '<option value="">All Authors</option>' +
-                authors.map(a => `<option value="${a}">${a}</option>`).join('');
-        }
-
-        function filterPublications() {
-            const search = document.getElementById('pubSearch').value.toLowerCase();
-            const year = document.getElementById('yearFilter').value;
-            const author = document.getElementById('authorFilter').value;
-
-            let filtered = allPublicationsData.filter(pub => {
-                const matchSearch = !search ||
-                    (pub.title || '').toLowerCase().includes(search) ||
-                    (pub.authors_str || '').toLowerCase().includes(search) ||
-                    (pub.venue || '').toLowerCase().includes(search);
-                const matchYear = !year || pub.year == year;
-                const matchAuthor = !author || pub.team_member === author;
-                return matchSearch && matchYear && matchAuthor;
-            });
-
-            publicationsData = filtered;
+            publicationsData=filtered;
             renderPublications(filtered);
         }
-
-        // Publications functionality
-        async function loadPublications() {
-            try {
-                const response = await fetch('data/publications.json');
-                allPublicationsData = await response.json();
-                publicationsData = [...allPublicationsData];
+        async function loadPublications(){
+            try{
+                const res=await fetch('data/publications.json');
+                allPublicationsData=await res.json();
+                publicationsData=[...allPublicationsData];
                 renderPublications(publicationsData);
                 initCharts(publicationsData);
                 populateFilters(allPublicationsData);
-            } catch (error) {
-                console.error('Error loading publications:', error);
-                document.getElementById('pubTableBody').innerHTML =
-                    '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-light);">Unable to load publications. Try refreshing from OpenAlex.</td></tr>';
-                document.getElementById('pubCount').textContent = '0 publications';
+            }catch(e){
+                document.getElementById('pubTableBody').innerHTML='<tr><td colspan="6" style="text-align:center;padding:12px">Unable to load. Try Refresh.</td></tr>';
+                document.getElementById('pubCount').textContent='0';
             }
         }
-
-        function renderPublications(pubs) {
-            const tbody = document.getElementById('pubTableBody');
-            const countEl = document.getElementById('pubCount');
-
-            if (!pubs || pubs.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem;">No publications found.</td></tr>';
-                countEl.textContent = '0 publications';
-                return;
-            }
-
-            countEl.textContent = `${pubs.length} publications`;
-
-            tbody.innerHTML = pubs.map(pub => {
-                const citationClass = pub.cited_by_count >= 10 ? 'high' : '';
-                const doiLink = pub.doi_url ? `<a href="${pub.doi_url}" target="_blank" class="doi-link">DOI</a>` : '';
-                const oaBadge = pub.open_access ? '<span class="oa-badge">OA</span>' : '';
-                const titleLink = pub.doi_url
-                    ? `<a href="${pub.doi_url}" target="_blank" class="title-link">${pub.title || 'Untitled'}</a>`
-                    : (pub.title || 'Untitled');
-
-                return `<tr>
-                    <td>${pub.year || '-'}</td>
-                    <td class="title-cell">${titleLink}</td>
-                    <td class="authors-cell">${pub.authors_str || '-'}</td>
-                    <td class="venue-cell">${pub.venue || '-'}</td>
-                    <td><span class="citations-badge ${citationClass}">${pub.cited_by_count || 0}</span></td>
-                    <td>${doiLink} ${oaBadge}</td>
-                </tr>`;
+        function renderPublications(pubs){
+            const tbody=document.getElementById('pubTableBody');
+            document.getElementById('pubCount').textContent=pubs.length+' pubs';
+            if(!pubs.length){tbody.innerHTML='<tr><td colspan="6" style="text-align:center;padding:12px">No results</td></tr>';return}
+            tbody.innerHTML=pubs.map(p=>{
+                const citeCls=p.cited_by_count>=10?'high':'';
+                const doi=p.doi_url?`<a href="${p.doi_url}" class="doi-link" target="_blank">DOI</a>`:'';
+                const oa=p.open_access?'<span class="oa-badge">OA</span>':'';
+                const title=p.doi_url?`<a href="${p.doi_url}" class="title-link" target="_blank">${p.title||'Untitled'}</a>`:(p.title||'Untitled');
+                return `<tr><td>${p.year||'-'}</td><td>${title}</td><td class="authors">${p.authors_str||'-'}</td><td class="venue">${p.venue||'-'}</td><td><span class="citations-badge ${citeCls}">${p.cited_by_count||0}</span></td><td>${doi} ${oa}</td></tr>`;
             }).join('');
         }
-
-        function sortTable(columnIndex) {
-            const dir = sortDirection[columnIndex] === 'asc' ? 'desc' : 'asc';
-            sortDirection[columnIndex] = dir;
-
-            const sortedData = [...publicationsData].sort((a, b) => {
-                let valA, valB;
-                switch(columnIndex) {
-                    case 0: valA = a.year || 0; valB = b.year || 0; break;
-                    case 1: valA = (a.title || '').toLowerCase(); valB = (b.title || '').toLowerCase(); break;
-                    case 2: valA = (a.authors_str || '').toLowerCase(); valB = (b.authors_str || '').toLowerCase(); break;
-                    case 3: valA = (a.venue || '').toLowerCase(); valB = (b.venue || '').toLowerCase(); break;
-                    case 4: valA = a.cited_by_count || 0; valB = b.cited_by_count || 0; break;
-                    default: return 0;
-                }
-                if (typeof valA === 'number') {
-                    return dir === 'asc' ? valA - valB : valB - valA;
-                }
-                return dir === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        function sortTable(col){
+            const dir=sortDirection[col]==='asc'?'desc':'asc';
+            sortDirection[col]=dir;
+            const sorted=[...publicationsData].sort((a,b)=>{
+                let va,vb;
+                switch(col){case 0:va=a.year||0;vb=b.year||0;break;case 1:va=(a.title||'').toLowerCase();vb=(b.title||'').toLowerCase();break;case 2:va=(a.authors_str||'').toLowerCase();vb=(b.authors_str||'').toLowerCase();break;case 3:va=(a.venue||'').toLowerCase();vb=(b.venue||'').toLowerCase();break;case 4:va=a.cited_by_count||0;vb=b.cited_by_count||0;break;default:return 0}
+                if(typeof va==='number')return dir==='asc'?va-vb:vb-va;
+                return dir==='asc'?va.localeCompare(vb):vb.localeCompare(va);
             });
-            renderPublications(sortedData);
+            renderPublications(sorted);
         }
+        document.getElementById('pubSearch').addEventListener('input',filterPublications);
+        document.getElementById('yearFilter').addEventListener('change',filterPublications);
+        document.getElementById('authorFilter').addEventListener('change',filterPublications);
 
-        // Event listeners for filters
-        document.getElementById('pubSearch').addEventListener('input', filterPublications);
-        document.getElementById('yearFilter').addEventListener('change', filterPublications);
-        document.getElementById('authorFilter').addEventListener('change', filterPublications);
-
-        // OpenAlex API
-        const OPENALEX_AUTHORS = [
-            { name: 'Joerg Osterrieder', search: 'Joerg Osterrieder', minWorks: 100 },
-            { name: 'Branka Hadji Misheva', search: 'Branka Hadji Misheva' },
-            { name: 'Gabin Taibi', search: 'Gabin Taibi' },
-            { name: 'Lennart John Baals', search: 'Lennart Baals' },
-            { name: 'Yiting Liu', search: 'Yiting Liu' }
-        ];
-
-        async function refreshFromOpenAlex() {
-            const btn = document.getElementById('refreshBtn');
-            btn.classList.add('loading');
-            document.getElementById('pubTableBody').innerHTML =
-                '<tr><td colspan="6" style="text-align: center; padding: 2rem;">Fetching from OpenAlex API...</td></tr>';
-
-            try {
-                const allWorks = [];
-                const seenIds = new Set();
-
-                for (const author of OPENALEX_AUTHORS) {
-                    let url = `https://api.openalex.org/authors?search=${encodeURIComponent(author.search)}&per_page=5&mailto=web@example.com`;
-                    if (author.minWorks) {
-                        url += `&filter=works_count:>${author.minWorks}`;
-                    }
-
-                    const authorRes = await fetch(url);
-                    const authorData = await authorRes.json();
-
-                    if (authorData.results && authorData.results.length > 0) {
-                        const authorId = authorData.results[0].id;
-
-                        const worksRes = await fetch(
-                            `https://api.openalex.org/works?filter=authorships.author.id:${authorId}&per_page=100&sort=publication_year:desc&mailto=web@example.com`
-                        );
-                        const worksData = await worksRes.json();
-
-                        if (worksData.results) {
-                            for (const work of worksData.results) {
-                                if (!seenIds.has(work.id)) {
-                                    seenIds.add(work.id);
-                                    allWorks.push({
-                                        id: work.id,
-                                        title: work.title,
-                                        year: work.publication_year,
-                                        doi: work.doi ? work.doi.replace('https://doi.org/', '') : null,
-                                        doi_url: work.doi,
-                                        authors_str: work.authorships?.slice(0, 5).map(a => a.author?.display_name).join(', ') + (work.authorships?.length > 5 ? '...' : ''),
-                                        venue: work.primary_location?.source?.display_name || '',
-                                        cited_by_count: work.cited_by_count || 0,
-                                        open_access: work.open_access?.is_oa || false,
-                                        team_member: author.name
-                                    });
-                                }
-                            }
-                        }
+        const AUTHORS=[{name:'Joerg Osterrieder',search:'Joerg Osterrieder',minWorks:100},{name:'Branka Hadji Misheva',search:'Branka Hadji Misheva'},{name:'Gabin Taibi',search:'Gabin Taibi'},{name:'Lennart John Baals',search:'Lennart Baals'},{name:'Yiting Liu',search:'Yiting Liu'}];
+        async function refreshFromOpenAlex(){
+            const btn=document.getElementById('refreshBtn');
+            btn.disabled=true;btn.textContent='Loading...';
+            document.getElementById('pubTableBody').innerHTML='<tr><td colspan="6" style="text-align:center;padding:12px">Fetching from OpenAlex...</td></tr>';
+            try{
+                const allWorks=[],seenIds=new Set();
+                for(const author of AUTHORS){
+                    let url=`https://api.openalex.org/authors?search=${encodeURIComponent(author.search)}&per_page=5&mailto=web@example.com`;
+                    if(author.minWorks)url+=`&filter=works_count:>${author.minWorks}`;
+                    const aRes=await fetch(url);const aData=await aRes.json();
+                    if(aData.results?.length){
+                        const wRes=await fetch(`https://api.openalex.org/works?filter=authorships.author.id:${aData.results[0].id}&per_page=100&sort=publication_year:desc&mailto=web@example.com`);
+                        const wData=await wRes.json();
+                        if(wData.results)for(const w of wData.results)if(!seenIds.has(w.id)){seenIds.add(w.id);allWorks.push({id:w.id,title:w.title,year:w.publication_year,doi_url:w.doi,authors_str:w.authorships?.slice(0,5).map(a=>a.author?.display_name).join(', ')+(w.authorships?.length>5?'...':''),venue:w.primary_location?.source?.display_name||'',cited_by_count:w.cited_by_count||0,open_access:w.open_access?.is_oa||false,team_member:author.name})}
                     }
                 }
-
-                allWorks.sort((a, b) => (b.year || 0) - (a.year || 0));
-                allPublicationsData = allWorks;
-                publicationsData = [...allWorks];
-                renderPublications(publicationsData);
-                initCharts(publicationsData);
-                populateFilters(allPublicationsData);
-
-            } catch (error) {
-                console.error('Error fetching from OpenAlex:', error);
-                document.getElementById('pubTableBody').innerHTML =
-                    '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: red;">Error fetching from OpenAlex. Please try again.</td></tr>';
-            } finally {
-                btn.classList.remove('loading');
-            }
+                allWorks.sort((a,b)=>(b.year||0)-(a.year||0));
+                allPublicationsData=allWorks;publicationsData=[...allWorks];
+                renderPublications(publicationsData);initCharts(publicationsData);populateFilters(allPublicationsData);
+            }catch(e){document.getElementById('pubTableBody').innerHTML='<tr><td colspan="6" style="text-align:center;padding:12px;color:red">Error. Try again.</td></tr>'}
+            btn.disabled=false;btn.textContent='Refresh';
         }
-
-        // Load publications on page load
-        document.addEventListener('DOMContentLoaded', loadPublications);
+        document.addEventListener('DOMContentLoaded',loadPublications);
     </script>
 </body>
 </html>
