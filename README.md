@@ -96,3 +96,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 *Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or Horizon Europe: Marie Sklodowska-Curie Actions.*
+
+## Description
+
+SNSF Narrative Digital Finance: A tale of structural breaks, bubbles & market narratives - Research Project of the Swiss National Science Foundation
+
+
+## Installation
+
+```bash
+git clone https://github.com/Digital-AI-Finance/Narrative-Digital-Finance.git
+cd Narrative-Digital-Finance
+pip install -r requirements.txt
+```
+
+
+## Usage
+
+See the repository contents for usage examples.
