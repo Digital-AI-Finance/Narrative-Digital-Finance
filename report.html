@@ -12,85 +12,59 @@
     <meta property="og:description" content="SNSF Final Report: 17 publications, 5 direct outputs, 49 COST countries, extensive research collaboration.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://digital-ai-finance.github.io/Narrative-Digital-Finance/report.html">
+    <meta property="og:image" content="https://digital-ai-finance.github.io/Narrative-Digital-Finance/images/Osterrieder.jpg">
     <meta name="twitter:card" content="summary">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;font-size:13px;line-height:1.5;color:#334155;background:#f8fafc}
-        a{color:#3b82f6;text-decoration:none}
-        a:hover{text-decoration:underline}
-        .navbar{position:fixed;top:0;left:0;right:0;height:36px;background:#0f172a;color:#fff;display:flex;align-items:center;padding:0 12px;z-index:1000}
-        .navbar-brand{font-weight:700;font-size:13px;color:#fff;text-decoration:none}
-        .navbar-brand span{color:#f59e0b}
-        .navbar-nav{margin-left:auto;display:flex;gap:12px}
-        .navbar-nav a{color:rgba(255,255,255,0.8);font-size:11px;text-decoration:none}
-        .navbar-nav a:hover{color:#fff}
-        .main{margin-top:36px;max-width:900px;margin-left:auto;margin-right:auto;padding:20px}
-        .hero{background:linear-gradient(135deg,#0f172a,#1e3a5f);color:#fff;padding:24px;text-align:center;border-radius:8px;margin-bottom:16px}
-        .hero h1{font-size:24px;font-weight:700;margin-bottom:4px}
-        .hero .sub{font-size:12px;opacity:.9}
-        .hero-stats{display:flex;justify-content:center;gap:20px;margin-top:12px}
-        .hero-stat{text-align:center}
-        .hero-stat-val{font-size:18px;font-weight:700;color:#f59e0b}
-        .hero-stat-lbl{font-size:9px;opacity:.7;text-transform:uppercase}
-        .breadcrumb{font-size:11px;color:#64748b;margin-bottom:12px}
-        .breadcrumb a{color:#3b82f6}
-        .section{background:#fff;border-radius:6px;padding:16px;margin-bottom:12px;border:1px solid #e2e8f0}
-        .section-title{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-        .section-title::before{content:'';width:4px;height:16px;background:linear-gradient(180deg,#3b82f6,#f59e0b);border-radius:2px}
+        /* Report-specific styles */
         .section-num{background:#3b82f6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-right:6px}
-        .section p{margin-bottom:10px;line-height:1.6}
-        .section ul{margin:8px 0 12px 20px}
-        .section li{margin-bottom:6px}
-        .highlight{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:6px;padding:12px;margin:12px 0}
-        .highlight h4{font-size:12px;margin-bottom:4px}
-        .highlight p{font-size:11px;opacity:.95}
-        .card{background:#f8fafc;border-radius:5px;padding:12px;border:1px solid #e2e8f0;margin-bottom:10px}
-        .card h4{font-size:12px;font-weight:600;color:#0f172a;margin-bottom:6px}
-        .card p{font-size:11px;color:#475569}
-        .grid{display:grid;gap:10px}
-        .grid-2{grid-template-columns:repeat(2,1fr)}
-        .grid-3{grid-template-columns:repeat(3,1fr)}
-        .grid-4{grid-template-columns:repeat(4,1fr)}
-        .stat-card{text-align:center;padding:12px;background:#f8fafc;border-radius:6px;border:1px solid #e2e8f0}
-        .stat-num{font-size:24px;font-weight:700;color:#3b82f6}
-        .stat-lbl{font-size:10px;color:#64748b;text-transform:uppercase}
-        .pub-card{background:#fff;border-radius:6px;padding:12px;border:1px solid #e2e8f0;border-left:4px solid #3b82f6;margin-bottom:8px}
-        .pub-card h4{font-size:11px;font-weight:600;color:#0f172a;margin-bottom:4px}
-        .pub-card .authors{font-size:10px;color:#64748b;margin-bottom:4px}
-        .pub-card .venue{font-size:10px;color:#3b82f6;font-style:italic}
-        .aim-card{background:#fff;border-radius:6px;padding:14px;border:1px solid #e2e8f0;border-left:4px solid #10b981}
-        .aim-card h4{font-size:12px;font-weight:600;color:#0f172a;margin-bottom:6px;display:flex;align-items:center;gap:6px}
-        .aim-card h4::before{content:'';width:8px;height:8px;background:#10b981;border-radius:50%}
-        .aim-card p{font-size:11px;color:#475569}
-        .collab-card{background:#fff;border-radius:6px;padding:12px;border:1px solid #e2e8f0}
-        .collab-card h4{font-size:11px;font-weight:600;color:#0f172a;margin-bottom:4px}
-        .collab-card p{font-size:10px;color:#64748b}
         .cost-highlight{background:linear-gradient(135deg,#f59e0b,#ec4899);color:#fff;border-radius:6px;padding:16px;margin:12px 0}
         .cost-highlight h4{font-size:14px;margin-bottom:6px}
         .cost-highlight p{font-size:11px;opacity:.95}
-        .cost-stats{display:flex;gap:16px;margin-top:10px}
-        .cost-stat{text-align:center}
-        .cost-stat-val{font-size:20px;font-weight:700}
-        .cost-stat-lbl{font-size:9px;opacity:.8;text-transform:uppercase}
-        .footer{background:#0f172a;color:#fff;padding:16px;font-size:10px;text-align:center;border-radius:0 0 8px 8px;margin-top:20px}
-        .footer a{color:#f59e0b}
         .tag{display:inline-block;padding:2px 8px;background:#eff6ff;color:#3b82f6;border-radius:10px;font-size:9px;font-weight:500;margin:2px}
-        @media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.main{padding:12px}.hero-stats{flex-wrap:wrap;gap:12px}.cost-stats{flex-wrap:wrap}}
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
         <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
-        <div class="navbar-nav">
-            <a href="index.html">Home</a>
-            <a href="objectives.html">Objectives</a>
-            <a href="index.html#publications">Publications</a>
-            <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">GitHub</a>
-        </div>
     </nav>
 
-    <main class="main">
+    <aside class="sidebar" aria-label="Main navigation">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Navigation</div>
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#overview">Overview</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="index.html#publications">Publications</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Pages</div>
+            <a href="objectives.html" class="sidebar-link">Research Objectives</a>
+            <a href="report.html" class="sidebar-link" style="background:#eff6ff;color:#3b82f6;border-radius:4px">Final Report</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Links</div>
+            <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="sidebar-link" target="_blank">GitHub Repo</a>
+            <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki" class="sidebar-link" target="_blank">Wiki</a>
+            <a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance" class="sidebar-link" target="_blank">Project Site</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Funding</div>
+            <div class="sidebar-badge">
+                <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" target="_blank"><img src="https://img.shields.io/badge/SNSF-red?style=flat-square" alt="SNSF"></a>
+                <a href="https://cordis.europa.eu/project/id/101119635" target="_blank"><img src="https://img.shields.io/badge/EU-blue?style=flat-square" alt="EU"></a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main" id="main-content">
         <div class="breadcrumb"><a href="index.html">Home</a> / Final Scientific Report</div>
 
         <div class="hero">
@@ -293,18 +267,25 @@
         </section>
 
         <footer class="footer">
-            <p>SNSF Grant IZCOZ0_213370 | <a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a> | <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a">mySNF</a></p>
-            <p style="margin-top:6px"><a href="index.html">Back to Main Page</a> | <a href="objectives.html">Research Objectives</a></p>
-            <p style="margin-top:8px;opacity:0.7">Prof. Dr. Joerg Osterrieder | Bern Business School / University of Twente | 2025</p>
+            <div class="container">
+                <div class="footer-grid">
+                    <div><h5>Project</h5><a href="index.html#overview">Overview</a><a href="index.html#results">Results</a></div>
+                    <div><h5>Team</h5><a href="index.html#team">Members</a><a href="index.html#collaborations">Collaborations</a></div>
+                    <div><h5>Resources</h5><a href="index.html#publications">Publications</a><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki">Wiki</a></div>
+                    <div><h5>Funding</h5><a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a">SNSF</a><a href="https://cordis.europa.eu/project/id/101119635">EU CORDIS</a></div>
+                </div>
+                <div class="footer-bottom">Funded by EU (Grant No. 101119635) and SNSF (Grant IZCOZ0_213370) | 2023-2025 Narrative Digital Finance</div>
+            </div>
         </footer>
     </main>
 
-<!-- Analytics Tracking -->
-<script>
+<!-- Analytics Tracking (async - H7) -->
+<script async>
 (function(){
   var img = new Image();
   img.src = 'https://analytics-narrative-digital-finance.digital-ai-finance.workers.dev/t?p=' + encodeURIComponent(location.pathname) + '&r=' + encodeURIComponent(document.referrer);
 })();
 </script>
+<div class="copyright-footer">(c) Prof. Dr. Joerg Osterrieder 2025</div>
 </body>
 </html>
