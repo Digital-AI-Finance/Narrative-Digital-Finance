@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Scientific Report | Narrative Digital Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;font-size:13px;line-height:1.5;color:#334155;background:#f8fafc}
+        a{color:#3b82f6;text-decoration:none}
+        a:hover{text-decoration:underline}
+        .navbar{position:fixed;top:0;left:0;right:0;height:36px;background:#0f172a;color:#fff;display:flex;align-items:center;padding:0 12px;z-index:1000}
+        .navbar-brand{font-weight:700;font-size:13px;color:#fff;text-decoration:none}
+        .navbar-brand span{color:#f59e0b}
+        .navbar-nav{margin-left:auto;display:flex;gap:12px}
+        .navbar-nav a{color:rgba(255,255,255,0.8);font-size:11px;text-decoration:none}
+        .navbar-nav a:hover{color:#fff}
+        .main{margin-top:36px;max-width:900px;margin-left:auto;margin-right:auto;padding:20px}
+        .hero{background:linear-gradient(135deg,#0f172a,#1e3a5f);color:#fff;padding:24px;text-align:center;border-radius:8px;margin-bottom:16px}
+        .hero h1{font-size:24px;font-weight:700;margin-bottom:4px}
+        .hero .sub{font-size:12px;opacity:.9}
+        .hero-stats{display:flex;justify-content:center;gap:20px;margin-top:12px}
+        .hero-stat{text-align:center}
+        .hero-stat-val{font-size:18px;font-weight:700;color:#f59e0b}
+        .hero-stat-lbl{font-size:9px;opacity:.7;text-transform:uppercase}
+        .breadcrumb{font-size:11px;color:#64748b;margin-bottom:12px}
+        .breadcrumb a{color:#3b82f6}
+        .section{background:#fff;border-radius:6px;padding:16px;margin-bottom:12px;border:1px solid #e2e8f0}
+        .section-title{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+        .section-title::before{content:'';width:4px;height:16px;background:linear-gradient(180deg,#3b82f6,#f59e0b);border-radius:2px}
+        .section-num{background:#3b82f6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-right:6px}
+        .section p{margin-bottom:10px;line-height:1.6}
+        .section ul{margin:8px 0 12px 20px}
+        .section li{margin-bottom:6px}
+        .highlight{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:6px;padding:12px;margin:12px 0}
+        .highlight h4{font-size:12px;margin-bottom:4px}
+        .highlight p{font-size:11px;opacity:.95}
+        .card{background:#f8fafc;border-radius:5px;padding:12px;border:1px solid #e2e8f0;margin-bottom:10px}
+        .card h4{font-size:12px;font-weight:600;color:#0f172a;margin-bottom:6px}
+        .card p{font-size:11px;color:#475569}
+        .grid{display:grid;gap:10px}
+        .grid-2{grid-template-columns:repeat(2,1fr)}
+        .grid-3{grid-template-columns:repeat(3,1fr)}
+        .grid-4{grid-template-columns:repeat(4,1fr)}
+        .stat-card{text-align:center;padding:12px;background:#f8fafc;border-radius:6px;border:1px solid #e2e8f0}
+        .stat-num{font-size:24px;font-weight:700;color:#3b82f6}
+        .stat-lbl{font-size:10px;color:#64748b;text-transform:uppercase}
+        .pub-card{background:#fff;border-radius:6px;padding:12px;border:1px solid #e2e8f0;border-left:4px solid #3b82f6;margin-bottom:8px}
+        .pub-card h4{font-size:11px;font-weight:600;color:#0f172a;margin-bottom:4px}
+        .pub-card .authors{font-size:10px;color:#64748b;margin-bottom:4px}
+        .pub-card .venue{font-size:10px;color:#3b82f6;font-style:italic}
+        .aim-card{background:#fff;border-radius:6px;padding:14px;border:1px solid #e2e8f0;border-left:4px solid #10b981}
+        .aim-card h4{font-size:12px;font-weight:600;color:#0f172a;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+        .aim-card h4::before{content:'';width:8px;height:8px;background:#10b981;border-radius:50%}
+        .aim-card p{font-size:11px;color:#475569}
+        .collab-card{background:#fff;border-radius:6px;padding:12px;border:1px solid #e2e8f0}
+        .collab-card h4{font-size:11px;font-weight:600;color:#0f172a;margin-bottom:4px}
+        .collab-card p{font-size:10px;color:#64748b}
+        .cost-highlight{background:linear-gradient(135deg,#f59e0b,#ec4899);color:#fff;border-radius:6px;padding:16px;margin:12px 0}
+        .cost-highlight h4{font-size:14px;margin-bottom:6px}
+        .cost-highlight p{font-size:11px;opacity:.95}
+        .cost-stats{display:flex;gap:16px;margin-top:10px}
+        .cost-stat{text-align:center}
+        .cost-stat-val{font-size:20px;font-weight:700}
+        .cost-stat-lbl{font-size:9px;opacity:.8;text-transform:uppercase}
+        .footer{background:#0f172a;color:#fff;padding:16px;font-size:10px;text-align:center;border-radius:0 0 8px 8px;margin-top:20px}
+        .footer a{color:#f59e0b}
+        .tag{display:inline-block;padding:2px 8px;background:#eff6ff;color:#3b82f6;border-radius:10px;font-size:9px;font-weight:500;margin:2px}
+        @media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.main{padding:12px}.hero-stats{flex-wrap:wrap;gap:12px}.cost-stats{flex-wrap:wrap}}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
+        <div class="navbar-nav">
+            <a href="index.html">Home</a>
+            <a href="objectives.html">Objectives</a>
+            <a href="index.html#publications">Publications</a>
+            <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">GitHub</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Final Scientific Report</div>
+
+        <div class="hero">
+            <h1>Final Scientific Report</h1>
+            <p class="sub">SNSF Grant IZCOZ0_213370 | July 2023 - December 2025</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-val">17</div><div class="hero-stat-lbl">Publications</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">5</div><div class="hero-stat-lbl">Direct Outputs</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">6</div><div class="hero-stat-lbl">Team Members</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">49</div><div class="hero-stat-lbl">COST Countries</div></div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-title"><span class="section-num">1.1</span> Achievement of Research Objectives</div>
+            <p>The project successfully achieved all three primary research objectives, producing significant contributions to the field of narrative digital finance and financial market analysis.</p>
+
+            <div class="grid grid-3" style="margin:12px 0">
+                <div class="aim-card">
+                    <h4>Aim 1: Econometric Validation</h4>
+                    <p>Validated and refined existing econometric models using real-world financial data from P2P lending platforms (Bondora, Lending Club) and high-frequency trading data from Deutsche Borse.</p>
+                </div>
+                <div class="aim-card">
+                    <h4>Aim 2: Narrative Analysis</h4>
+                    <p>Developed frameworks integrating NLP and narrative analysis to understand market behaviors, including multimodal approaches using text, speech, and multimedia data.</p>
+                </div>
+                <div class="aim-card">
+                    <h4>Aim 3: AI/ML Framework</h4>
+                    <p>Created multidimensional AI and ML frameworks combining network topology analysis with traditional credit risk features, significantly improving prediction accuracy.</p>
+                </div>
+            </div>
+
+            <h4 style="font-size:12px;font-weight:600;margin:16px 0 10px">Key Publications (Directly Related)</h4>
+
+            <div class="pub-card">
+                <h4>Leveraging Network Topology for Credit Risk Assessment in P2P Lending</h4>
+                <p class="authors">Liu, Baals, Osterrieder, Hadji Misheva (2024)</p>
+                <p class="venue">Expert Systems with Applications, Vol. 252</p>
+            </div>
+
+            <div class="pub-card">
+                <h4>Network Centrality and Credit Risk: A Comprehensive Analysis of P2P Lending Dynamics</h4>
+                <p class="authors">Liu, Baals, Osterrieder, Hadji Misheva (2024)</p>
+                <p class="venue">Finance Research Letters, Vol. 63</p>
+            </div>
+
+            <div class="pub-card">
+                <h4>Hypothesizing Multimodal Influence: NLP and Generative AI for Financial Instrument Pricing</h4>
+                <p class="authors">Bolesta, Taibi, Mare, Hadji Misheva, Hopp, Osterrieder (2024)</p>
+                <p class="venue">SSRN Working Paper</p>
+            </div>
+
+            <div class="pub-card">
+                <h4>A Primer on Narrative Finance</h4>
+                <p class="authors">Osterrieder (2023)</p>
+                <p class="venue">SSRN Working Paper</p>
+            </div>
+
+            <div class="pub-card">
+                <h4>Reaction Times to Economic News in High-Frequency Trading</h4>
+                <p class="authors">Osterrieder, Schlamp - Deutsche Borse (2025)</p>
+                <p class="venue">SSRN Working Paper</p>
+            </div>
+
+            <div class="grid grid-4" style="margin-top:16px">
+                <div class="stat-card"><div class="stat-num">17</div><div class="stat-lbl">Total Publications</div></div>
+                <div class="stat-card"><div class="stat-num">2,056</div><div class="stat-lbl">Team Citations</div></div>
+                <div class="stat-card"><div class="stat-num">13</div><div class="stat-lbl">Max h-index</div></div>
+                <div class="stat-card"><div class="stat-num">CHF 236K</div><div class="stat-lbl">SNSF Funding</div></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title"><span class="section-num">1.2</span> Challenges and Outcomes</div>
+            <p>The project was completed successfully with all objectives achieved. Key adaptations during the project:</p>
+            <div class="card">
+                <h4>Methodological Evolution</h4>
+                <p>The original focus on structural breaks and bubble detection was extended to include network-based credit risk analysis, which proved highly successful in P2P lending contexts. This adaptation resulted in two high-impact journal publications.</p>
+            </div>
+            <div class="card">
+                <h4>Data Access</h4>
+                <p>Access to comprehensive P2P lending data (Bondora, Lending Club) and collaboration with Deutsche Borse for HFT data exceeded initial expectations, enabling more rigorous empirical validation.</p>
+            </div>
+            <div class="card">
+                <h4>Research Network Synergies</h4>
+                <p>Integration with COST Action CA19130 and MSCA Digital Finance network created unexpected opportunities for large-scale collaborative research across 49 countries.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title"><span class="section-num">1.3</span> Contribution to Knowledge Advancement</div>
+
+            <div class="highlight">
+                <h4>Key Scientific Contribution</h4>
+                <p>This research bridges the gap between traditional econometric approaches and modern AI techniques, providing new insights into the role of narratives and quantitative data in financial decision-making.</p>
+            </div>
+
+            <h4 style="font-size:12px;font-weight:600;margin:12px 0 8px">Novel Methodological Contributions</h4>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h4>Network Topology for Credit Risk</h4>
+                    <p>First comprehensive study showing that borrower network centrality significantly improves P2P lending default prediction. Network features (degree centrality, clustering) enhance ML model accuracy.</p>
+                </div>
+                <div class="card">
+                    <h4>Multimodal Financial Analysis</h4>
+                    <p>Novel framework extending traditional NLP to include non-textual data (images, video, audio) for financial instrument pricing using Generative AI.</p>
+                </div>
+                <div class="card">
+                    <h4>Narrative Finance Framework</h4>
+                    <p>Established foundational framework for understanding how narratives shape financial markets, with applications to sustainable finance, AI, and emerging markets.</p>
+                </div>
+                <div class="card">
+                    <h4>HFT Market Microstructure</h4>
+                    <p>Joint research with Deutsche Borse on reaction times to macro-news, contributing to understanding of high-frequency trading dynamics.</p>
+                </div>
+            </div>
+
+            <h4 style="font-size:12px;font-weight:600;margin:16px 0 8px">Impact Areas</h4>
+            <p>
+                <span class="tag">Risk Management</span>
+                <span class="tag">Asset Pricing</span>
+                <span class="tag">Trading Strategies</span>
+                <span class="tag">Regulatory Policy</span>
+                <span class="tag">P2P Lending</span>
+                <span class="tag">Credit Risk</span>
+                <span class="tag">Market Microstructure</span>
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title"><span class="section-num">1.4</span> Research Collaboration & COST Action</div>
+
+            <div class="cost-highlight">
+                <h4>COST Action CA19130 - Fintech and Artificial Intelligence in Finance</h4>
+                <p>As Chair of this COST Action, the project benefited from extensive collaboration across European research institutions and industry partners.</p>
+                <div class="cost-stats">
+                    <div class="cost-stat"><div class="cost-stat-val">49</div><div class="cost-stat-lbl">Countries</div></div>
+                    <div class="cost-stat"><div class="cost-stat-val">270+</div><div class="cost-stat-lbl">Researchers</div></div>
+                    <div class="cost-stat"><div class="cost-stat-val">2020-2025</div><div class="cost-stat-lbl">Duration</div></div>
+                    <div class="cost-stat"><div class="cost-stat-val">H2020</div><div class="cost-stat-lbl">EU Funding</div></div>
+                </div>
+            </div>
+
+            <h4 style="font-size:12px;font-weight:600;margin:12px 0 8px">Added Value from COST Participation</h4>
+            <ul>
+                <li><strong>Annual Conferences</strong>: Organized 7th and 8th European COST Conferences on AI in Finance (Bern 2023, 2024)</li>
+                <li><strong>PhD Training</strong>: COST FinAI PhD School 2024 in Treviso covering GenAI, Chatbots, LLMs in Finance</li>
+                <li><strong>Working Groups</strong>: Coordination across 6 working groups on AI, blockchain, credit risk, and regulatory tech</li>
+                <li><strong>Joint Publications</strong>: Multiple collaborative papers with COST network researchers</li>
+                <li><strong>Knowledge Transfer</strong>: Research stays and personnel exchange with industry partners</li>
+            </ul>
+
+            <h4 style="font-size:12px;font-weight:600;margin:16px 0 8px">Key Collaborations</h4>
+            <div class="grid grid-3">
+                <div class="collab-card">
+                    <h4>Deutsche Borse AG</h4>
+                    <p>Dr. Stefan Schlamp, Head of Quantitative Analytics. Joint HFT research, SSRN publication 2025.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>MSCA Digital Finance</h4>
+                    <p>Coordinator of 4.5M EUR doctoral network with 13 institutions and 100+ researchers.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>Humboldt-University Berlin</h4>
+                    <p>Financial econometrics collaboration, joint publications on quantitative methods.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>Masaryk University</h4>
+                    <p>Czech Republic partner for network-based credit risk project (CHF 348K SNSF Lead Agency).</p>
+                </div>
+                <div class="collab-card">
+                    <h4>SGH Warsaw</h4>
+                    <p>Poland - PhD training, crowdfunding and alternative finance research.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>American University of Sharjah</h4>
+                    <p>UAE - Keynote presentations, blockchain and NFT research collaboration.</p>
+                </div>
+            </div>
+
+            <h4 style="font-size:12px;font-weight:600;margin:16px 0 8px">Events Organized</h4>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h4>8th European COST Conference on AI in Finance</h4>
+                    <p>September 2024, Bern Business School</p>
+                </div>
+                <div class="card">
+                    <h4>7th European COST Conference on AI in Finance</h4>
+                    <p>September 2023, Bern Business School</p>
+                </div>
+                <div class="card">
+                    <h4>COST FinAI PhD School 2024</h4>
+                    <p>Treviso, Italy - GenAI, Chatbots, LLMs in Finance</p>
+                </div>
+                <div class="card">
+                    <h4>COST FinAI Meetings</h4>
+                    <p>Istanbul (May 2024), Brussels (2024)</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>SNSF Grant IZCOZ0_213370 | <a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a> | <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a">mySNF</a></p>
+            <p style="margin-top:6px"><a href="index.html">Back to Main Page</a> | <a href="objectives.html">Research Objectives</a></p>
+            <p style="margin-top:8px;opacity:0.7">Prof. Dr. Joerg Osterrieder | Bern Business School / University of Twente | 2025</p>
+        </footer>
+    </main>
+</body>
+</html>
