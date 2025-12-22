@@ -29,21 +29,21 @@ TEAM_MEMBERS = [
     },
     {
         "name": "Branka Hadji Misheva",
-        "orcid": None,  # Will search by name
+        "orcid": "0000-0001-7020-3469",
         "role": "Team Member",
         "affiliation": "Bern Business School",
         "search_terms": ["Branka Hadji Misheva", "Branka Hadji-Misheva"]
     },
     {
         "name": "Gabin Taibi",
-        "orcid": None,  # Will search by name
+        "orcid": "0000-0002-0785-6771",
         "role": "PhD Researcher",
         "affiliation": "Bern Business School / University of Twente",
         "search_terms": ["Gabin Taibi"]
     },
     {
         "name": "Lennart John Baals",
-        "orcid": None,  # Will search by name
+        "orcid": "0000-0002-7737-9675",
         "role": "PhD Researcher",
         "affiliation": "Bern Business School / University of Twente",
         "search_terms": ["Lennart Baals", "Lennart John Baals"],
