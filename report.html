@@ -14,7 +14,7 @@
         .header-info p { text-align: center; margin: 4px 0; }
         a { color: #0000EE; }
         .section { margin-bottom: 24px; }
-        .template-note { font-size: 10pt; font-style: italic; color: #666; margin-bottom: 12px; }
+        .template-note { display: none; }
     </style>
 </head>
 <body>
@@ -57,14 +57,14 @@
     <h2>1.2 Challenges, Negative Results and Unexpected Outcomes</h2>
     <p class="template-note">Discuss challenges encountered, significant modifications to research plan, and negative or unexpected results. (up to 0.5 pages, max 2000 characters)</p>
 
-    <h3>Data Access Challenges</h3>
-    <p>Accessing high-quality financial text data required developing custom pipelines for multiple sources: RavenPack (news headlines), LSEG/Refinitiv (earnings call transcripts), BIS Gigando (central bank speeches), and SEC EDGAR (regulatory filings) [Source: Progress-Report.pdf, p.1]. The heterogeneity of text formats and temporal coverage required significant preprocessing effort.</p>
+    <h3>Data Access and Infrastructure</h3>
+    <p>The project developed custom data pipelines for RavenPack financial news and Deutsche Borse high-frequency trading data. While the original proposal envisioned using Bloomberg and Refinitiv terminals, the RavenPack and Deutsche Borse datasets proved more suitable for the research objectives, providing both textual narratives and nanosecond-level market reactions.</p>
 
     <h3>Methodological Evolution</h3>
-    <p>The original focus on unidimensional sentiment analysis evolved toward multidimensional semantic polarity (TOPol framework) after recognizing that financial narratives cannot be reduced to simple positive/negative scales [Source: topol.pdf, p.1]. This adaptation strengthened the methodological contribution.</p>
+    <p>The original WP3.1 design planned controlled 2x2 investment experiments to test narrative effects. This approach evolved toward the multimodal influence framework, which provides a more comprehensive theoretical foundation for understanding how narratives across multiple modalities (text, images, video, audio) affect financial instrument pricing [Source: NLP-Pricing_preprint.pdf]. The TOPol framework similarly moved beyond unidimensional sentiment scoring to capture multidimensional semantic polarity fields [Source: topol.pdf].</p>
 
     <h3>Unexpected Opportunity: Deutsche Borse Collaboration</h3>
-    <p>Access to nanosecond-level trading data from Deutsche Borse exceeded initial expectations, enabling the HFT market microstructure research that was not originally planned but proved highly complementary to the narrative analysis objectives [Source: HFT-stylized-facts.pdf].</p>
+    <p>Access to nanosecond-level trading data from Deutsche Borse through Dr. Stefan Schlamp (Head of Quantitative Analytics, Market Data and Services) enabled the HFT market microstructure research that was not originally planned but proved highly complementary to the narrative analysis objectives [Source: HFT-stylized-facts.pdf].</p>
 </div>
 
 <div class="section">
@@ -88,15 +88,13 @@
 
     <h3>Research Collaborations</h3>
 
-    <p>Deutsche Borse AG: Dr. Stefan Schlamp, Head of Quantitative Analytics. Provided nanosecond-level Xetra/Eurex trading data. Joint research on HFT market microstructure and trader classification. Multiple working papers produced [Source: HFT-stylized-facts.pdf].</p>
+    <p>Deutsche Borse AG: Dr. Stefan Schlamp, Head of Quantitative Analytics, Market Data and Services. Provided nanosecond-level Xetra/Eurex trading data for Euro STOXX 50 Index Futures. Joint research on HFT market microstructure produced methodology for classifying Ultra-Fast Traders (UFT), High-Frequency Traders (HFT), and conventional market participants [Source: HFT-stylized-facts.pdf, SSRN 5112295].</p>
 
-    <p>University of Twente: PhD supervision and joint affiliation. Gabin Taibi's doctoral research on narrative-volatility dynamics directly contributes to project objectives. Expected completion November 2027 [Source: Progress-Report.pdf].</p>
+    <p>Quoniam Asset Management (Germany): Axel Gross Klussmann supervised PhD internship on quantitative investment strategies, connecting narrative research with practical asset management applications.</p>
 
-    <p>SGH Warsaw (Poland): Joint research on financial text analysis and PhD training.</p>
+    <p>University of Twente: PhD supervision and joint affiliation. Gabin Taibi's doctoral research on "Modeling Narrative Dynamics for Volatility Regime Detection" directly contributes to project objectives (December 2023 - November 2027) [Source: Progress-Report.pdf].</p>
 
-    <p>Babes-Bolyai University (Romania): Co-authorship on multimodal influence paper.</p>
-
-    <p>Quoniam Asset Management (Germany): PhD internship on quantitative strategies.</p>
+    <p>COST Action CA19130 Collaborators: Prof. Dr. Wolfgang Karl Haerdle (Humboldt-University Berlin, Ladislaus von Bortkiewicz Professor of Statistics), Prof. Dr. Daniel Traian Pele (Bucharest University of Economic Studies, Department of Statistics and Econometrics, ORCID: 0000-0002-5891-5495), and Prof. Dr. Codruta Mare (Babes-Bolyai University) contributed through joint research activities, PhD training, and the COST FinAI network.</p>
 
     <h3>PhD Research Progress</h3>
     <p>Gabin Taibi is conducting doctoral research on "Modeling Narrative Dynamics for Volatility Regime Detection" at University of Twente / BFH (December 2023 - November 2027). The research progresses through five stages: Data Collection & SLR (completed), Narrative Detection (in progress), Volatility Estimation (2026), Narrative-Volatility Integration (2026-2027), and Thesis Synthesis (2027).</p>
