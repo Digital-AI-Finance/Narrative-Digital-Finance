@@ -35,19 +35,19 @@
     <p>The project successfully achieved all research objectives across the four work packages defined in the research plan, producing significant methodological and empirical contributions to the field of narrative digital finance.</p>
 
     <h3>WP1: Text Data & Text Analytics</h3>
-    <p>We developed comprehensive NLP frameworks for financial text analysis. The TOPol (Topic-Orientation Polarity) framework provides a semi-supervised approach for reconstructing multidimensional semantic polarity fields using transformer embeddings, UMAP projection, and Leiden clustering [Source: topol.pdf, p.1]. This moves beyond traditional unidimensional sentiment scoring to capture the full complexity of financial narratives. Additionally, we created an AI-enhanced systematic literature review methodology using NLP techniques, clustering algorithms, and interpretability tools, currently under revision at Financial Innovation journal [Source: FIN-manuscript-v2.pdf].</p>
+    <p>We developed comprehensive NLP frameworks for financial text analysis. The TOPol (Topic-Orientation Polarity) framework provides a semi-unsupervised framework for reconstructing multidimensional semantic polarity fields using transformer embeddings, UMAP projection, and Leiden clustering [Source: topol.pdf, p.1]. This moves beyond traditional unidimensional sentiment scoring to capture the full complexity of financial narratives. Additionally, we created an AI-enhanced systematic literature review methodology using NLP techniques, clustering algorithms, and interpretability tools, currently under revision at Financial Innovation journal [Source: FIN-manuscript-v2.pdf].</p>
 
     <h3>WP2: Structural Breaks Detection & Asset Price Bubbles</h3>
-    <p>We developed methodologies for detecting structural breaks in financial markets. The macro narratives framework combines a PCA-based US Macro Strength Index (using FED Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls from St. Louis FED FRED) with the PELT algorithm for change point detection [Source: Poster_Macro_narratives.pdf]. Applied to Federal Reserve communications around the 2008 financial crisis, this approach successfully identified narrative shifts coinciding with macroeconomic regime changes using BERTopic.</p>
+    <p>We developed methodologies for detecting structural breaks in financial markets. The macro narratives framework combines a PCA-based US Macro Strength Index (using FED Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls from St. Louis FED FRED) with the PELT algorithm for change point detection [Source: Poster_Macro_narratives.pdf]. As a case study, the framework was applied to Federal Reserve banker speech transcripts (BIS Gigando datasets, 2004-2010) around the 2008 financial crisis, successfully identifying narrative shifts at the detected breakpoint (2007-05-01) using BERTopic topic modeling.</p>
 
     <h3>WP3: Narratives for Structural Breaks</h3>
     <p>We established foundational frameworks for understanding how narratives shape financial markets. The "Multimodal Influence" paper extends traditional NLP to include non-textual data (images, video, audio) for financial instrument pricing using Generative AI [Source: NLP-Pricing_preprint.pdf, SSRN 4698153]. The BERTopic-based narrative shift analysis quantifies polarity drift, semantic centroid movement, and keyword evolution across economic regimes.</p>
 
     <h3>WP4: Multidimensional AI and ML Solutions</h3>
-    <p>In collaboration with Deutsche Borse, we developed novel methodology for classifying market participants based on nanosecond-level reaction times [Source: HFT-stylized-facts.pdf, SSRN 5112295]. The HFT Market Microstructure framework distinguishes Ultra-Fast Traders (UFT, &lt;1 microsecond), High-Frequency Traders (HFT, 1-10 microseconds), and conventional participants using Xetra and Eurex trading data. This research documents participation shares, price discovery via mark-out signal-to-noise ratio, and market quality metrics for Euro STOXX 50 Index Futures.</p>
+    <p>In collaboration with Deutsche Borse, we developed novel methodology for classifying market participants based on nanosecond-level reaction times [Source: HFT-stylized-facts.pdf]. The HFT Market Microstructure framework distinguishes Ultra-Fast Traders (UFT, &lt;1 microsecond), High-Frequency Traders (HFT, 1-10 microseconds), and conventional participants using Xetra and Eurex trading data. This research documents participation shares, price discovery via mark-out signal-to-noise ratio, and market quality metrics for Euro STOXX 50 Index Futures.</p>
 
     <h3>Key Publications</h3>
-    <p>TOPol: Semantic Polarity Fields (Taibi, Gomez, 2025, OSF Repository); SLR on Financial Narratives (Taibi et al., 2025, under revision at Financial Innovation); HFT Market Microstructure (Taibi, Osterrieder, Schlamp, 2025, SSRN 5112295); Macro Narratives & Fed Communication (Taibi, 2025, conference poster); Multimodal Influence (Bolesta, Taibi et al., 2024, SSRN 4698153); A Primer on Narrative Finance (Osterrieder, 2023, SSRN 4324860).</p>
+    <p>TOPol: Semantic Polarity Fields (Taibi, Gomez, 2025, OSF Repository); SLR on Financial Narratives (Taibi et al., 2025, under revision at Financial Innovation); Nanosecond Microstructure: HFT Participation Stylized Facts (Taibi, Osterrieder, Schlamp, 2025, working paper); Macro Narratives & Fed Communication (Taibi, 2025, conference poster); Multimodal Influence (Bolesta, Taibi et al., 2024, SSRN 4698153); A Primer on Narrative Finance (Osterrieder, 2023, SSRN 4324860).</p>
 
     <h3>Related Prework: NFT Bubble Detection</h3>
     <p>Note: The following bubble detection research was conducted before this project started (2022) and has been updated and extended for Lennart Baals' PhD dissertation at University of Twente. This work directly addresses the project's focus on detecting asset price bubbles and structural breaks in WP2. Wang, Horky, Baals, Lucey, Vigne (2022) - Journal of Chinese Economic and Business Studies, Vol. 20(4). DOI: 10.1080/14765284.2022.2138161</p>
@@ -73,7 +73,7 @@
 
     <p>This research bridges narrative economics (Shiller) with computational linguistics and financial econometrics, providing quantitative tools for analyzing how stories and interpretations influence market dynamics.</p>
 
-    <p>TOPol Framework: First semi-supervised approach for multidimensional semantic polarity in financial texts, moving beyond sentiment to capture narrative complexity [Source: topol.pdf].</p>
+    <p>TOPol Framework: First semi-unsupervised framework for multidimensional semantic polarity in financial texts, moving beyond sentiment to capture narrative complexity [Source: topol.pdf].</p>
 
     <p>Macro-Narrative Integration: Novel combination of PCA-based macroeconomic indices with topic modeling for detecting narrative regime shifts [Source: Poster_Macro_narratives.pdf].</p>
 
@@ -88,7 +88,7 @@
 
     <h3>Research Collaborations</h3>
 
-    <p>Deutsche Borse AG: Dr. Stefan Schlamp, Head of Quantitative Analytics, Market Data and Services. Provided nanosecond-level Xetra/Eurex trading data for Euro STOXX 50 Index Futures. Joint research on HFT market microstructure produced methodology for classifying Ultra-Fast Traders (UFT), High-Frequency Traders (HFT), and conventional market participants [Source: HFT-stylized-facts.pdf, SSRN 5112295].</p>
+    <p>Deutsche Borse AG: Dr. Stefan Schlamp, Head of Quantitative Analytics, Market Data and Services. Provided nanosecond-level Xetra/Eurex trading data for Euro STOXX 50 Index Futures. Joint research on HFT market microstructure produced methodology for classifying Ultra-Fast Traders (UFT), High-Frequency Traders (HFT), and conventional market participants [Source: HFT-stylized-facts.pdf].</p>
 
     <p>Quoniam Asset Management (Germany): Axel Gross Klussmann supervised PhD internship on quantitative investment strategies, connecting narrative research with practical asset management applications.</p>
 
@@ -129,7 +129,7 @@
 
 <div class="section">
     <h2>Source Documents</h2>
-    <p>TOPol: <a href="docs/topol.pdf">topol.pdf</a> | SLR: <a href="docs/FIN-manuscript-v2.pdf">FIN-manuscript-v2.pdf</a> | Multimodal: <a href="docs/NLP-Pricing_preprint.pdf">NLP-Pricing_preprint.pdf</a> (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153">SSRN</a>) | Macro Narratives: <a href="docs/Poster_Macro_narratives.pdf">Poster_Macro_narratives.pdf</a> | HFT: <a href="docs/HFT-stylized-facts.pdf">HFT-stylized-facts.pdf</a> (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295">SSRN</a>) | PhD Progress: <a href="docs/20251108_Gabin-Taibi_Progress-Report.pdf">Progress-Report.pdf</a> | Application: <a href="docs/SciencePart_Osterrieder.pdf">SciencePart_Osterrieder.pdf</a></p>
+    <p>TOPol: <a href="docs/topol.pdf">topol.pdf</a> | SLR: <a href="docs/FIN-manuscript-v2.pdf">FIN-manuscript-v2.pdf</a> | Multimodal: <a href="docs/NLP-Pricing_preprint.pdf">NLP-Pricing_preprint.pdf</a> (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153">SSRN</a>) | Macro Narratives: <a href="docs/Poster_Macro_narratives.pdf">Poster_Macro_narratives.pdf</a> | HFT: <a href="docs/HFT-stylized-facts.pdf">HFT-stylized-facts.pdf</a> (working paper) | PhD Progress: <a href="docs/20251108_Gabin-Taibi_Progress-Report.pdf">Progress-Report.pdf</a> | Application: <a href="docs/SciencePart_Osterrieder.pdf">SciencePart_Osterrieder.pdf</a></p>
 </div>
 
 <p style="text-align:center;margin-top:40px;font-size:10pt;color:#666">(c) Prof. Dr. Joerg Osterrieder 2025</p>
