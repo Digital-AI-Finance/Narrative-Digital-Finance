@@ -3,420 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Scientific Report | Narrative Digital Finance</title>
-    <meta name="description" content="SNSF Final Scientific Report for Narrative Digital Finance project (Grant IZCOZ0_213370)">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Scientific Report | Narrative Digital Finance</title>
     <style>
-        .section-num{background:#3b82f6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-right:6px}
-        .template-note{background:#fef3c7;border-left:3px solid #f59e0b;padding:8px 12px;font-size:10px;color:#92400e;margin-bottom:12px;border-radius:0 4px 4px 0}
-        .char-count{font-size:9px;color:#64748b;text-align:right;margin-top:4px}
+        body { font-family: 'Times New Roman', serif; font-size: 11pt; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 20px; color: #000; }
+        h1 { font-size: 16pt; text-align: center; margin-bottom: 20px; }
+        h2 { font-size: 12pt; font-weight: bold; margin: 24px 0 12px 0; }
+        h3 { font-size: 11pt; font-weight: bold; margin: 16px 0 8px 0; }
+        p { margin: 0 0 12px 0; text-align: justify; }
+        .header-info { text-align: center; margin-bottom: 30px; }
+        .header-info p { text-align: center; margin: 4px 0; }
+        a { color: #0000EE; }
+        .section { margin-bottom: 24px; }
+        .template-note { font-size: 10pt; font-style: italic; color: #666; margin-bottom: 12px; }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <nav class="navbar">
-        <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
-    </nav>
 
-    <aside class="sidebar" aria-label="Main navigation">
-        <div class="sidebar-section">
-            <div class="sidebar-title">Report Sections</div>
-            <ul class="sidebar-nav">
-                <li><a href="#section-1-1">1.1 Research Objectives</a></li>
-                <li><a href="#section-1-2">1.2 Challenges</a></li>
-                <li><a href="#section-1-3">1.3 Knowledge Advancement</a></li>
-                <li><a href="#section-1-4">1.4 Collaboration & COST</a></li>
-                <li><a href="#references">Source References</a></li>
-                <li><a href="#original-application">Original Application</a></li>
-            </ul>
-        </div>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-section">
-            <div class="sidebar-title">Pages</div>
-            <a href="index.html" class="sidebar-link">Home</a>
-            <a href="objectives.html" class="sidebar-link">Research Objectives</a>
-            <a href="report.html" class="sidebar-link" style="background:#eff6ff;color:#3b82f6;border-radius:4px">Final Report</a>
-        </div>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-section">
-            <div class="sidebar-title">Funding</div>
-            <div class="sidebar-badge">
-                <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" target="_blank"><img src="https://img.shields.io/badge/SNSF-red?style=flat-square" alt="SNSF"></a>
-            </div>
-        </div>
-    </aside>
+<h1>Scientific Report</h1>
 
-    <main class="main" id="main-content">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Final Scientific Report</div>
+<div class="header-info">
+    <p><strong>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</strong></p>
+    <p>Principal Investigator: Prof. Dr. Joerg Osterrieder</p>
+    <p>Institution: Bern University of Applied Sciences / University of Twente</p>
+    <p>Period: July 2023 - June 2026</p>
+</div>
 
-        <div class="hero">
-            <h1>SNSF Scientific Report</h1>
-            <p class="sub">Grant IZCOZ0_213370 | Narrative Digital Finance | July 2023 - June 2026</p>
-            <div class="hero-stats">
-                <div class="hero-stat"><div class="hero-stat-val">Prof. Dr. J. Osterrieder</div><div class="hero-stat-lbl">PI</div></div>
-                <div class="hero-stat"><div class="hero-stat-val">CHF 236,118</div><div class="hero-stat-lbl">Funding</div></div>
-                <div class="hero-stat"><div class="hero-stat-val">BFH / UT</div><div class="hero-stat-lbl">Institutions</div></div>
-            </div>
-        </div>
+<div class="section">
+    <h2>1.1 Achievement of Research Objectives (mandatory)</h2>
+    <p class="template-note">To which extent have you achieved the research objectives? Describe the major accomplishments and outcomes of the project in detail, directly relating them to the objectives stated in your research plan. (~0.5-1.5 pages, up to 6000 characters)</p>
 
-        <!-- Section 1.1: Achievement of Research Objectives (mandatory) -->
-        <section id="section-1-1" class="section">
-            <div class="section-title"><span class="section-num">1.1</span> Achievement of Research Objectives (mandatory)</div>
-            <div class="template-note">To which extent have you achieved the research objectives? Describe the major accomplishments and outcomes of the project in detail, directly relating them to the objectives stated in your research plan. (~0.5-1.5 pages, up to 6000 characters)</div>
+    <p>The project successfully achieved all research objectives across the four work packages defined in the research plan, producing significant methodological and empirical contributions to the field of narrative digital finance.</p>
 
-            <p>The project successfully achieved all research objectives across the four work packages defined in the research plan, producing significant methodological and empirical contributions to the field of narrative digital finance.</p>
+    <h3>WP1: Text Data & Text Analytics</h3>
+    <p>We developed comprehensive NLP frameworks for financial text analysis. The TOPol (Topic-Orientation Polarity) framework provides a semi-supervised approach for reconstructing multidimensional semantic polarity fields using transformer embeddings, UMAP projection, and Leiden clustering [Source: topol.pdf, p.1]. This moves beyond traditional unidimensional sentiment scoring to capture the full complexity of financial narratives. Additionally, we created an AI-enhanced systematic literature review methodology using NLP techniques, clustering algorithms, and interpretability tools, currently under revision at Financial Innovation journal [Source: FIN-manuscript-v2.pdf].</p>
 
-            <div class="card" style="margin:10px 0">
-                <h4>WP1: Text Data & Text Analytics</h4>
-                <p style="font-size:10px">We developed comprehensive NLP frameworks for financial text analysis. The TOPol (Topic-Orientation Polarity) framework provides a semi-supervised approach for reconstructing multidimensional semantic polarity fields using transformer embeddings, UMAP projection, and Leiden clustering <span style="color:#6b7280;font-size:8px">[Source: topol.pdf, p.1]</span>. This moves beyond traditional unidimensional sentiment scoring to capture the full complexity of financial narratives. Additionally, we created an AI-enhanced systematic literature review methodology using NLP techniques, clustering algorithms, and interpretability tools, currently under revision at Financial Innovation journal <span style="color:#6b7280;font-size:8px">[Source: FIN-manuscript-v2.pdf]</span>.</p>
-            </div>
+    <h3>WP2: Structural Breaks Detection & Asset Price Bubbles</h3>
+    <p>We developed methodologies for detecting structural breaks in financial markets. The macro narratives framework combines a PCA-based US Macro Strength Index (using FED Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls from St. Louis FED FRED) with the PELT algorithm for change point detection [Source: Poster_Macro_narratives.pdf]. Applied to Federal Reserve communications around the 2008 financial crisis, this approach successfully identified narrative shifts coinciding with macroeconomic regime changes using BERTopic.</p>
 
-            <div class="card" style="margin:10px 0">
-                <h4>WP2: Structural Breaks Detection & Asset Price Bubbles</h4>
-                <p style="font-size:10px">We developed methodologies for detecting structural breaks in financial markets. The macro narratives framework combines a PCA-based US Macro Strength Index (using FED Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls from St. Louis FED FRED) with the PELT algorithm for change point detection <span style="color:#6b7280;font-size:8px">[Source: Poster_Macro_narratives.pdf]</span>. Applied to Federal Reserve communications around the 2008 financial crisis, this approach successfully identified narrative shifts coinciding with macroeconomic regime changes using BERTopic <span style="color:#6b7280;font-size:8px">[Source: Poster_Macro_narratives.pdf]</span>.</p>
-            </div>
+    <h3>WP3: Narratives for Structural Breaks</h3>
+    <p>We established foundational frameworks for understanding how narratives shape financial markets. The "Multimodal Influence" paper extends traditional NLP to include non-textual data (images, video, audio) for financial instrument pricing using Generative AI [Source: NLP-Pricing_preprint.pdf, SSRN 4698153]. The BERTopic-based narrative shift analysis quantifies polarity drift, semantic centroid movement, and keyword evolution across economic regimes.</p>
 
-            <div class="card" style="margin:10px 0">
-                <h4>WP3: Narratives for Structural Breaks</h4>
-                <p style="font-size:10px">We established foundational frameworks for understanding how narratives shape financial markets. The "Multimodal Influence" paper extends traditional NLP to include non-textual data (images, video, audio) for financial instrument pricing using Generative AI <span style="color:#6b7280;font-size:8px">[Source: NLP-Pricing_preprint.pdf]</span>. The BERTopic-based narrative shift analysis quantifies polarity drift, semantic centroid movement, and keyword evolution across economic regimes <span style="color:#6b7280;font-size:8px">[Source: Poster_Macro_narratives.pdf]</span>.</p>
-            </div>
+    <h3>WP4: Multidimensional AI and ML Solutions</h3>
+    <p>In collaboration with Deutsche Borse, we developed novel methodology for classifying market participants based on nanosecond-level reaction times [Source: HFT-stylized-facts.pdf, SSRN 5112295]. The HFT Market Microstructure framework distinguishes Ultra-Fast Traders (UFT, &lt;1 microsecond), High-Frequency Traders (HFT, 1-10 microseconds), and conventional participants using Xetra and Eurex trading data. This research documents participation shares, price discovery via mark-out signal-to-noise ratio, and market quality metrics for Euro STOXX 50 Index Futures.</p>
 
-            <div class="card" style="margin:10px 0">
-                <h4>WP4: Multidimensional AI and ML Solutions</h4>
-                <p style="font-size:10px">In collaboration with Deutsche Borse, we developed novel methodology for classifying market participants based on nanosecond-level reaction times <span style="color:#6b7280;font-size:8px">[Source: HFT-stylized-facts.pdf, p.1]</span>. The HFT Market Microstructure framework distinguishes Ultra-Fast Traders (UFT, &lt;1 microsecond), High-Frequency Traders (HFT, 1-10 microseconds), and conventional participants using Xetra and Eurex trading data. This research documents participation shares, price discovery via mark-out signal-to-noise ratio, and market quality metrics for Euro STOXX 50 Index Futures <span style="color:#6b7280;font-size:8px">[Source: HFT-stylized-facts.pdf]</span>.</p>
-            </div>
+    <h3>Key Publications</h3>
+    <p>TOPol: Semantic Polarity Fields (Taibi, Gomez, 2025, OSF Repository); SLR on Financial Narratives (Taibi et al., 2025, under revision at Financial Innovation); HFT Market Microstructure (Taibi, Osterrieder, Schlamp, 2025, SSRN 5112295); Macro Narratives & Fed Communication (Taibi, 2025, conference poster); Multimodal Influence (Bolesta, Taibi et al., 2024, SSRN 4698153); A Primer on Narrative Finance (Osterrieder, 2023, SSRN 4324860).</p>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">Key Publications</h4>
-            <div class="grid grid-2">
-                <div class="card"><h4>TOPol: Semantic Polarity Fields (2025)</h4><p style="font-size:9px">Taibi, Gomez - OSF Repository. Semi-supervised multidimensional narrative polarity framework.</p></div>
-                <div class="card"><h4>SLR on Financial Narratives (2025)</h4><p style="font-size:9px">Taibi et al. - Under revision at Financial Innovation. AI-enhanced systematic review methodology.</p></div>
-                <div class="card"><h4>HFT Market Microstructure (2025)</h4><p style="font-size:9px">Taibi, Osterrieder, Schlamp - Deutsche Borse collaboration. Nanosecond-level trader classification.</p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295" target="_blank" style="font-size:8px;color:#3b82f6">SSRN: 5112295</a></div>
-                <div class="card"><h4>Macro Narratives & Fed Communication (2025)</h4><p style="font-size:9px">Taibi - PCA-based macro index with BERTopic narrative shift detection.</p></div>
-                <div class="card"><h4>Multimodal Influence (2024)</h4><p style="font-size:9px">Bolesta, Taibi et al. - NLP and GenAI for financial instrument pricing.</p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153" target="_blank" style="font-size:8px;color:#3b82f6">SSRN: 4698153</a></div>
-                <div class="card"><h4>A Primer on Narrative Finance (2023)</h4><p style="font-size:9px">Osterrieder - Foundation paper on narratives shaping financial markets.</p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4324860" target="_blank" style="font-size:8px;color:#3b82f6">SSRN: 4324860</a></div>
-            </div>
+    <h3>Related Prework: NFT Bubble Detection</h3>
+    <p>Note: The following bubble detection research was conducted before this project started (2022) and has been updated and extended for Lennart Baals' PhD dissertation at University of Twente. This work directly addresses the project's focus on detecting asset price bubbles and structural breaks in WP2. Wang, Horky, Baals, Lucey, Vigne (2022) - Journal of Chinese Economic and Business Studies, Vol. 20(4). DOI: 10.1080/14765284.2022.2138161</p>
+</div>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">Related Prework: NFT Bubble Detection (Lennart Baals PhD)</h4>
-            <div class="highlight" style="margin-bottom:10px;background:#fef3c7;border-left:3px solid #f59e0b">
-                <p style="font-size:10px"><strong>Note:</strong> The following bubble detection research was conducted before this project started (2022) and has been updated and extended for Lennart Baals' PhD dissertation at University of Twente. This work directly addresses the project's focus on detecting asset price bubbles and structural breaks in WP2.</p>
-            </div>
-            <div class="card" style="border-left:3px solid #8b5cf6;max-width:500px">
-                <h4>NFT & DeFi Bubble Detection (2022)</h4>
-                <p style="font-size:9px">Wang, Horky, Baals, Lucey, Vigne - Journal of Chinese Economic and Business Studies, Vol. 20(4). Detecting and date-stamping bubble behaviours in NFT and DeFi markets using GSADF methodology.</p>
-                <a href="https://doi.org/10.1080/14765284.2022.2138161" target="_blank" style="font-size:8px;color:#3b82f6">DOI: 10.1080/14765284.2022.2138161</a>
-            </div>
-        </section>
+<div class="section">
+    <h2>1.2 Challenges, Negative Results and Unexpected Outcomes</h2>
+    <p class="template-note">Discuss challenges encountered, significant modifications to research plan, and negative or unexpected results. (up to 0.5 pages, max 2000 characters)</p>
 
-        <!-- Section 1.2: Challenges (optional) -->
-        <section id="section-1-2" class="section">
-            <div class="section-title"><span class="section-num">1.2</span> Challenges, Negative Results and Unexpected Outcomes</div>
-            <div class="template-note">Discuss challenges encountered, significant modifications to research plan, and negative or unexpected results. (up to 0.5 pages, max 2000 characters)</div>
+    <h3>Data Access Challenges</h3>
+    <p>Accessing high-quality financial text data required developing custom pipelines for multiple sources: RavenPack (news headlines), LSEG/Refinitiv (earnings call transcripts), BIS Gigando (central bank speeches), and SEC EDGAR (regulatory filings) [Source: Progress-Report.pdf, p.1]. The heterogeneity of text formats and temporal coverage required significant preprocessing effort.</p>
 
-            <div class="card" style="margin:10px 0">
-                <h4>Data Access Challenges</h4>
-                <p style="font-size:10px">Accessing high-quality financial text data required developing custom pipelines for multiple sources: RavenPack (news headlines), LSEG/Refinitiv (earnings call transcripts), BIS Gigando (central bank speeches), and SEC EDGAR (regulatory filings) <span style="color:#6b7280;font-size:8px">[Source: Progress-Report.pdf, p.1]</span>. The heterogeneity of text formats and temporal coverage required significant preprocessing effort.</p>
-            </div>
+    <h3>Methodological Evolution</h3>
+    <p>The original focus on unidimensional sentiment analysis evolved toward multidimensional semantic polarity (TOPol framework) after recognizing that financial narratives cannot be reduced to simple positive/negative scales [Source: topol.pdf, p.1]. This adaptation strengthened the methodological contribution.</p>
 
-            <div class="card" style="margin:10px 0">
-                <h4>Methodological Evolution</h4>
-                <p style="font-size:10px">The original focus on unidimensional sentiment analysis evolved toward multidimensional semantic polarity (TOPol framework) after recognizing that financial narratives cannot be reduced to simple positive/negative scales <span style="color:#6b7280;font-size:8px">[Source: topol.pdf, p.1]</span>. This adaptation strengthened the methodological contribution.</p>
-            </div>
+    <h3>Unexpected Opportunity: Deutsche Borse Collaboration</h3>
+    <p>Access to nanosecond-level trading data from Deutsche Borse exceeded initial expectations, enabling the HFT market microstructure research that was not originally planned but proved highly complementary to the narrative analysis objectives [Source: HFT-stylized-facts.pdf].</p>
+</div>
 
-            <div class="card" style="margin:10px 0">
-                <h4>Unexpected Opportunity: Deutsche Borse Collaboration</h4>
-                <p style="font-size:10px">Access to nanosecond-level trading data from Deutsche Borse exceeded initial expectations, enabling the HFT market microstructure research that was not originally planned but proved highly complementary to the narrative analysis objectives <span style="color:#6b7280;font-size:8px">[Source: HFT-stylized-facts.pdf]</span>.</p>
-            </div>
-        </section>
+<div class="section">
+    <h2>1.3 Contribution to Knowledge Advancement</h2>
+    <p class="template-note">Describe how your research findings have contributed to advancing knowledge within your field of research and/or your community of stakeholders. (up to 0.5 pages, max 2000 characters)</p>
 
-        <!-- Section 1.3: Contribution to Knowledge (optional) -->
-        <section id="section-1-3" class="section">
-            <div class="section-title"><span class="section-num">1.3</span> Contribution to Knowledge Advancement</div>
-            <div class="template-note">Describe how your research findings have contributed to advancing knowledge within your field of research and/or your community of stakeholders. (up to 0.5 pages, max 2000 characters)</div>
+    <p>This research bridges narrative economics (Shiller) with computational linguistics and financial econometrics, providing quantitative tools for analyzing how stories and interpretations influence market dynamics.</p>
 
-            <div class="highlight" style="margin-bottom:10px">
-                <h4>Key Scientific Contribution</h4>
-                <p>This research bridges narrative economics (Shiller) with computational linguistics and financial econometrics, providing quantitative tools for analyzing how stories and interpretations influence market dynamics.</p>
-            </div>
+    <p>TOPol Framework: First semi-supervised approach for multidimensional semantic polarity in financial texts, moving beyond sentiment to capture narrative complexity [Source: topol.pdf].</p>
 
-            <div class="grid grid-3">
-                <div class="card">
-                    <h4>TOPol Framework</h4>
-                    <p style="font-size:9px">First semi-supervised approach for multidimensional semantic polarity in financial texts, moving beyond sentiment to capture narrative complexity.</p>
-                </div>
-                <div class="card">
-                    <h4>Macro-Narrative Integration</h4>
-                    <p style="font-size:9px">Novel combination of PCA-based macroeconomic indices with topic modeling for detecting narrative regime shifts.</p>
-                </div>
-                <div class="card">
-                    <h4>HFT Classification</h4>
-                    <p style="font-size:9px">New methodology using nanosecond latency thresholds to distinguish UFT/HFT/conventional market participants.</p>
-                </div>
-            </div>
+    <p>Macro-Narrative Integration: Novel combination of PCA-based macroeconomic indices with topic modeling for detecting narrative regime shifts [Source: Poster_Macro_narratives.pdf].</p>
 
-            <h4 style="font-size:11px;font-weight:600;margin:12px 0 6px">Impact Areas</h4>
-            <p style="font-size:10px">
-                <span style="background:#eff6ff;color:#3b82f6;padding:2px 6px;border-radius:8px;margin:2px;display:inline-block">Narrative Economics</span>
-                <span style="background:#eff6ff;color:#3b82f6;padding:2px 6px;border-radius:8px;margin:2px;display:inline-block">Central Bank Communication</span>
-                <span style="background:#eff6ff;color:#3b82f6;padding:2px 6px;border-radius:8px;margin:2px;display:inline-block">Market Microstructure</span>
-                <span style="background:#eff6ff;color:#3b82f6;padding:2px 6px;border-radius:8px;margin:2px;display:inline-block">Volatility Modeling</span>
-                <span style="background:#eff6ff;color:#3b82f6;padding:2px 6px;border-radius:8px;margin:2px;display:inline-block">NLP in Finance</span>
-            </p>
-        </section>
+    <p>HFT Classification: New methodology using nanosecond latency thresholds to distinguish UFT/HFT/conventional market participants [Source: HFT-stylized-facts.pdf].</p>
 
-        <!-- Section 1.4: Additional Reporting Requirement (mandatory) -->
-        <section id="section-1-4" class="section">
-            <div class="section-title"><span class="section-num">1.4</span> Additional Reporting Requirement (mandatory)</div>
-            <div class="template-note">Describe the research collaboration with co-applicants and project partners. For COST grantees: describe added value through participation in COST Action. (up to 1 page each, max 4000 characters each)</div>
+    <p>Impact Areas: Narrative Economics, Central Bank Communication, Market Microstructure, Volatility Modeling, NLP in Finance.</p>
+</div>
 
-            <h4 style="font-size:12px;font-weight:600;margin:10px 0 8px">Research Collaborations</h4>
-            <div class="grid grid-2" style="margin-bottom:10px">
-                <div class="card">
-                    <h4>Deutsche Borse AG</h4>
-                    <p style="font-size:10px">Dr. Stefan Schlamp, Head of Quantitative Analytics. Provided nanosecond-level Xetra/Eurex trading data. Joint research on HFT market microstructure and trader classification. Multiple working papers produced.</p>
-                </div>
-                <div class="card">
-                    <h4>University of Twente</h4>
-                    <p style="font-size:10px">PhD supervision and joint affiliation. Gabin Taibi's doctoral research on narrative-volatility dynamics directly contributes to project objectives. Expected completion November 2027.</p>
-                </div>
-            </div>
-            <div class="grid grid-3">
-                <div class="card">
-                    <h4>SGH Warsaw</h4>
-                    <p style="font-size:9px">Poland - Joint research on financial text analysis and PhD training.</p>
-                </div>
-                <div class="card">
-                    <h4>Babes-Bolyai University</h4>
-                    <p style="font-size:9px">Romania - Co-authorship on multimodal influence paper.</p>
-                </div>
-                <div class="card">
-                    <h4>Quoniam Asset Management</h4>
-                    <p style="font-size:9px">Germany - PhD internship on quantitative strategies.</p>
-                </div>
-            </div>
+<div class="section">
+    <h2>1.4 Additional Reporting Requirement (mandatory)</h2>
+    <p class="template-note">Describe the research collaboration with co-applicants and project partners. For COST grantees: describe added value through participation in COST Action. (up to 1 page each, max 4000 characters each)</p>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">COST Action CA19130 - Fintech and AI in Finance</h4>
-            <div class="highlight" style="margin-bottom:10px">
-                <p>As Chair of COST Action CA19130 (2020-2025), the project benefited from extensive pan-European collaboration: <strong>49 countries, 270+ researchers, EU H2020 & Horizon Europe funded</strong>.</p>
-            </div>
+    <h3>Research Collaborations</h3>
 
-            <div class="card" style="margin:10px 0">
-                <h4>Added Value from COST Participation</h4>
-                <ul style="font-size:10px;margin:6px 0;padding-left:18px">
-                    <li><strong>Annual Conferences:</strong> Organized 7th and 8th European COST Conferences on AI in Finance (Bern 2023, 2024)</li>
-                    <li><strong>PhD Training:</strong> COST FinAI PhD School 2024 in Treviso - GenAI, Chatbots, LLMs in Finance</li>
-                    <li><strong>Working Groups:</strong> Coordination across 6 WGs on AI, blockchain, credit risk, regulatory tech</li>
-                    <li><strong>International Meetings:</strong> COST FinAI Meets Istanbul (May 2024), Brussels (2024)</li>
-                    <li><strong>Knowledge Transfer:</strong> Research stays and personnel exchange with industry partners</li>
-                </ul>
-            </div>
+    <p>Deutsche Borse AG: Dr. Stefan Schlamp, Head of Quantitative Analytics. Provided nanosecond-level Xetra/Eurex trading data. Joint research on HFT market microstructure and trader classification. Multiple working papers produced [Source: HFT-stylized-facts.pdf].</p>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">PhD Research Progress</h4>
-            <div class="card">
-                <h4>Gabin Taibi - Modeling Narrative Dynamics for Volatility Regime Detection <span style="color:#6b7280;font-size:8px">[Source: Progress-Report.pdf]</span></h4>
-                <p style="font-size:10px">University of Twente / BFH | December 2023 - November 2027</p>
-                <div class="grid grid-5" style="margin-top:8px">
-                    <div style="text-align:center"><div style="font-size:10px;font-weight:600">Stage 1</div><div style="font-size:8px;color:#10b981">Data & SLR - Done</div></div>
-                    <div style="text-align:center"><div style="font-size:10px;font-weight:600">Stage 2</div><div style="font-size:8px;color:#3b82f6">Narratives - Active</div></div>
-                    <div style="text-align:center"><div style="font-size:10px;font-weight:600">Stage 3</div><div style="font-size:8px;color:#64748b">Volatility - 2026</div></div>
-                    <div style="text-align:center"><div style="font-size:10px;font-weight:600">Stage 4</div><div style="font-size:8px;color:#64748b">Integration - 2026-27</div></div>
-                    <div style="text-align:center"><div style="font-size:10px;font-weight:600">Stage 5</div><div style="font-size:8px;color:#64748b">Thesis - 2027</div></div>
-                </div>
-            </div>
-        </section>
+    <p>University of Twente: PhD supervision and joint affiliation. Gabin Taibi's doctoral research on narrative-volatility dynamics directly contributes to project objectives. Expected completion November 2027 [Source: Progress-Report.pdf].</p>
 
-        <!-- Source References -->
-        <section id="references" class="section">
-            <div class="section-title" style="background:#10b981"><span class="section-num" style="background:#065f46">DOC</span> Source Documents & References</div>
-            <p style="font-size:10px;margin-bottom:12px">All claims in this report are verified against the following source documents. Click to download.</p>
+    <p>SGH Warsaw (Poland): Joint research on financial text analysis and PhD training.</p>
 
-            <div class="grid grid-2" style="margin-bottom:10px">
-                <div class="card">
-                    <h4>TOPol: Semantic Polarity Fields</h4>
-                    <p style="font-size:9px">Taibi, Gomez (2025). Topic-Orientation Polarity framework for multidimensional semantic analysis.</p>
-                    <a href="docs/topol.pdf" target="_blank" style="font-size:9px;color:#3b82f6">Download PDF (7 pages)</a>
-                </div>
-                <div class="card">
-                    <h4>SLR on Financial Narratives</h4>
-                    <p style="font-size:9px">Taibi et al. (2025). AI-enhanced systematic literature review. Under revision at Financial Innovation.</p>
-                    <a href="docs/FIN-manuscript-v2.pdf" target="_blank" style="font-size:9px;color:#3b82f6">Download PDF (23 pages)</a>
-                </div>
-            </div>
-            <div class="grid grid-2" style="margin-bottom:10px">
-                <div class="card">
-                    <h4>Multimodal Influence Framework</h4>
-                    <p style="font-size:9px">Bolesta, Taibi, Mare, Hadji Misheva, Hopp, Osterrieder (2024). NLP and GenAI for financial pricing.</p>
-                    <a href="docs/NLP-Pricing_preprint.pdf" target="_blank" style="font-size:9px;color:#3b82f6">Download PDF</a> | <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153" target="_blank" style="font-size:9px;color:#3b82f6">SSRN: 4698153</a>
-                </div>
-                <div class="card">
-                    <h4>Macro Narratives & Fed Communication</h4>
-                    <p style="font-size:9px">Taibi (2025). PCA-based macro index with BERTopic narrative shift detection. Conference poster.</p>
-                    <a href="docs/Poster_Macro_narratives.pdf" target="_blank" style="font-size:9px;color:#3b82f6">Download PDF (1 page)</a>
-                </div>
-            </div>
-            <div class="grid grid-2" style="margin-bottom:10px">
-                <div class="card">
-                    <h4>HFT Market Microstructure</h4>
-                    <p style="font-size:9px">Taibi, Osterrieder, Schlamp (2025). Nanosecond-level trader classification. Deutsche Borse collaboration.</p>
-                    <a href="docs/HFT-stylized-facts.pdf" target="_blank" style="font-size:9px;color:#3b82f6">Download PDF</a> | <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295" target="_blank" style="font-size:9px;color:#3b82f6">SSRN: 5112295</a>
-                </div>
-                <div class="card">
-                    <h4>PhD Progress Report</h4>
-                    <p style="font-size:9px">Taibi (2025). Modeling Narrative Dynamics for Volatility Regime Detection. University of Twente / BFH.</p>
-                    <a href="docs/20251108_Gabin-Taibi_Progress-Report.pdf" target="_blank" style="font-size:9px;color:#3b82f6">Download PDF (2 pages)</a>
-                </div>
-            </div>
+    <p>Babes-Bolyai University (Romania): Co-authorship on multimodal influence paper.</p>
 
-            <h4 style="font-size:11px;font-weight:600;margin:12px 0 6px;color:#8b5cf6">Prework: NFT Bubble Detection (Lennart Baals PhD)</h4>
-            <div class="card" style="border-left:3px solid #8b5cf6;max-width:400px;margin-bottom:10px">
-                <h4>NFT & DeFi Bubble Detection</h4>
-                <p style="font-size:9px">Wang, Horky, Baals, Lucey, Vigne (2022). Journal of Chinese Economic and Business Studies, Vol. 20(4). Research conducted before project, updated for PhD thesis.</p>
-                <a href="https://doi.org/10.1080/14765284.2022.2138161" target="_blank" style="font-size:9px;color:#3b82f6">DOI: 10.1080/14765284.2022.2138161</a>
-            </div>
-        </section>
+    <p>Quoniam Asset Management (Germany): PhD internship on quantitative strategies.</p>
 
-        <!-- Original Application Content -->
-        <section id="original-application" class="section">
-            <div class="section-title" style="background:#64748b"><span class="section-num" style="background:#0f172a">REF</span> Original Research Plan (SNSF Application)</div>
-            <div style="margin-bottom:10px">
-                <a href="docs/SciencePart_Osterrieder.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#3b82f6;color:#fff;padding:6px 12px;border-radius:4px;font-size:11px;font-weight:500;text-decoration:none">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-                    Download Original Application (PDF)
-                </a>
-            </div>
+    <h3>PhD Research Progress</h3>
+    <p>Gabin Taibi is conducting doctoral research on "Modeling Narrative Dynamics for Volatility Regime Detection" at University of Twente / BFH (December 2023 - November 2027). The research progresses through five stages: Data Collection & SLR (completed), Narrative Detection (in progress), Volatility Estimation (2026), Narrative-Volatility Integration (2026-2027), and Thesis Synthesis (2027).</p>
 
-            <div class="card" style="margin:10px 0;background:#f8fafc">
-                <h4>Project Overview</h4>
-                <p style="font-size:10px">The proposed work program comprises <strong>four work packages (WP)</strong> with a conceptually new approach compared to existing research in financial market analysis:</p>
-                <ul style="font-size:10px;margin:6px 0;padding-left:18px">
-                    <li><strong>Limited studies</strong> employing narratives and textual information in financial market analysis</li>
-                    <li><strong>Unexplored emotional evolution</strong> - studies on bubbles have largely ignored narratives underlying times of change</li>
-                    <li><strong>Methodological gap</strong> - finance research has not kept pace with advances in automated text analysis and large text corpora</li>
-                </ul>
-                <p style="font-size:10px">Our empirical setup studies the interplay of narratives, language evolution, financial innovation, and market performance in a comprehensive cross-layer framework where evolutions, causality, and interactions can be measured explicitly.</p>
-            </div>
+    <h3>COST Action CA19130 - Fintech and AI in Finance</h3>
+    <p>As Chair of COST Action CA19130 (2020-2025), the project benefited from extensive pan-European collaboration: 49 countries, 270+ researchers, EU H2020 & Horizon Europe funded.</p>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">Main Research Questions (from Application)</h4>
-            <div class="grid grid-3" style="margin-bottom:10px">
-                <div class="card" style="background:#eff6ff;border-left:3px solid #3b82f6">
-                    <p style="font-size:10px;font-style:italic">In what sense are financial markets (ex-ante) predictable?</p>
-                </div>
-                <div class="card" style="background:#eff6ff;border-left:3px solid #3b82f6">
-                    <p style="font-size:10px;font-style:italic">Is the ex-ante forecastability persistent, can it be applied for real use cases and to which extent?</p>
-                </div>
-                <div class="card" style="background:#eff6ff;border-left:3px solid #3b82f6">
-                    <p style="font-size:10px;font-style:italic">How can structural break detection and changes in financial time series improve and complement modern portfolio theory?</p>
-                </div>
-            </div>
+    <p>Added Value from COST Participation: Annual Conferences (7th and 8th European COST Conferences on AI in Finance, Bern 2023, 2024); PhD Training (COST FinAI PhD School 2024 in Treviso - GenAI, Chatbots, LLMs in Finance); Working Groups (coordination across 6 WGs on AI, blockchain, credit risk, regulatory tech); International Meetings (COST FinAI Meets Istanbul May 2024, Brussels 2024); Knowledge Transfer (research stays and personnel exchange with industry partners).</p>
+</div>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">Original Work Packages</h4>
-            <div class="grid grid-2" style="margin-bottom:8px">
-                <div class="card" style="border-top:3px solid #3b82f6">
-                    <h4>WP1: Text Data & Text Analytics</h4>
-                    <p style="font-size:9px">NLP and text mining techniques for asset allocation and prediction, combined with structural breaks and change point detection methodology. Focus on classic financial assets which tend to be under-researched.</p>
-                    <p style="font-size:9px;color:#64748b;margin-top:4px"><em>RQs: Efficient use of textual analysis for portfolio management; Most promising NLP techniques</em></p>
-                </div>
-                <div class="card" style="border-top:3px solid #8b5cf6">
-                    <h4>WP2: Structural Breaks Detection & Asset Price Bubbles</h4>
-                    <p style="font-size:9px">Three-step approach: (1) Post-ante detection in historical data; (2) Live detection validation; (3) NLP as supporting method for detecting breakpoints.</p>
-                    <p style="font-size:9px;color:#64748b;margin-top:4px"><em>RQs: Detect/identify/date structural breaks; Live detection using alternative data</em></p>
-                </div>
-            </div>
-            <div class="grid grid-2">
-                <div class="card" style="border-top:3px solid #10b981">
-                    <h4>WP3: Narratives for Structural Breaks</h4>
-                    <p style="font-size:9px">Narratives "go viral" with economic impact (Shiller 2017). Use pre-trained Transformers (BERT), text matching with low-dimensional embeddings, 2x2 experimental designs.</p>
-                    <p style="font-size:9px;color:#64748b;margin-top:4px"><em>RQs: Can narratives predict/detect bubbles; Can narratives sway investment opinions</em></p>
-                </div>
-                <div class="card" style="border-top:3px solid #f59e0b">
-                    <h4>WP4: Multidimensional AI and ML Solutions</h4>
-                    <p style="font-size:9px">Combine methods from WP1-3 into a fully integrated framework. Check if combined ML approach outperforms single methods.</p>
-                    <p style="font-size:9px;color:#64748b;margin-top:4px"><em>RQs: Combined ML vs single methods; Complex AI vs simple forecast combinations</em></p>
-                </div>
-            </div>
+<div class="section">
+    <h2>2.3 Detailed Research Plan (from Application)</h2>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">Expected Outcomes (from Application)</h4>
-            <div class="highlight" style="margin-bottom:8px">
-                <p style="font-size:10px"><strong>Unique Contributions:</strong> (1) Exclusive focus on ex-ante forecasting (live detection), easily adjustable to rapidly changing markets; (2) Combining existing data sources, developing new quantitative models, and new frameworks to understand markets.</p>
-            </div>
-            <div class="grid grid-3">
-                <div class="card">
-                    <h4 style="font-size:11px">Enhanced Prediction Models</h4>
-                    <p style="font-size:9px">Financial market models with greater accuracy in detecting asset price bubbles and structural breaks</p>
-                </div>
-                <div class="card">
-                    <h4 style="font-size:11px">Novel Datasets & Methods</h4>
-                    <p style="font-size:9px">Deeper insights into the interplay between market narratives and financial indicators</p>
-                </div>
-                <div class="card">
-                    <h4 style="font-size:11px">Practical Tools</h4>
-                    <p style="font-size:9px">For asset management and regulatory bodies to better anticipate and react to market crises</p>
-                </div>
-            </div>
+    <p>The proposed work program will comprise of four work packages (WP) summarized in Table 1 below. Our suggested approach is conceptually new compared to the existing research in financial market analysis. First, there is a limited number of studies employing narratives and textual information in financial market studies. Second, studies on rational and irrational bubbles have largely ignored the evolution of emotions and narratives underlying these times of change. Third, as it concerns method employed in finance research there is a scarcity of automated text-analyses and research has by and large not kept up with methodological advances in computer science to make explicit use of large text corpora for empirical analyses. The research topics and methodological contributions are timely and relevant for scientific, technological and but also practical/societal needs. While different prior research has studied these topics in isolation, our empirical set up will allow us to study the interplay of narratives, language, evolutions of language patterns, financial innovation, and financial market performance/outcomes, in a comprehensive broad but also cross-layer and cross-aspect framework where evolutions, causality, and potential interactions can be measured explicitly.</p>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">Data Sources (from Application)</h4>
-            <div class="grid grid-4">
-                <div class="card"><p style="font-size:9px"><strong>Financial:</strong> Bloomberg, Refinitiv, Quandl</p></div>
-                <div class="card"><p style="font-size:9px"><strong>Macro:</strong> OECD, World Bank, FRED</p></div>
-                <div class="card"><p style="font-size:9px"><strong>Text:</strong> News, Twitter, Web scraping</p></div>
-                <div class="card"><p style="font-size:9px"><strong>Infra:</strong> SQL database, GPU computing</p></div>
-            </div>
+    <p>In a first step, we will design a tool allowing us to collect all relevant data from various data sources. Indeed, collecting purely financial data, such as stock prices or macroeconomic indicators, can be easily performed using subscription-based platforms such as Bloomberg, Reuters or Investing.com. However, textual data will constitute a substantial challenge in terms of (i) collecting from the web, (ii) formatting, and (iii) pre-processing, including dating and categorising. For this purpose, we will develop an automated tool which will collect textual data, categorise them, date and store them in an easy to analyse format. We will manage our database with SQL solutions. The second step will focus on our research questions and the four building blocks listed below.</p>
 
-            <h4 style="font-size:12px;font-weight:600;margin:14px 0 8px">2.3 Detailed Research Plan (from Application)</h4>
-            <div class="card" style="background:#f8fafc;margin-bottom:10px">
-                <p style="font-size:9px;text-align:justify">The proposed work program will comprise of four work packages (WP) summarized in Table 1 below. Our suggested approach is conceptually new compared to the existing research in financial market analysis. First, there is a limited number of studies employing narratives and textual information in financial market studies. Second, studies on rational and irrational bubbles have largely ignored the evolution of emotions and narratives underlying these times of change. Third, as it concerns method employed in finance research there is a scarcity of automated text-analyses and research has by and large not kept up with methodological advances in computer science to make explicit use of large text corpora for empirical analyses. The research topics and methodological contributions are timely and relevant for scientific, technological and but also practical/societal needs. While different prior research has studied these topics in isolation, our empirical set up will allow us to study the interplay of narratives, language, evolutions of language patterns, financial innovation, and financial market performance/outcomes, in a comprehensive broad but also cross-layer and cross-aspect framework where evolutions, causality, and potential interactions can be measured explicitly.</p>
-            </div>
+    <p>We will formulate numerous data-driven general/main and block-specific research questions within our hypothesis-driven project. The main research questions will be: (1) In what sense are financial markets (ex-ante) predictable? (2) Is the ex-ante forecastability persistent, can it be applied for real use cases and to which extent? (3) How can structural break detection and changes in financial time series improve and complement modern portfolio theory?</p>
 
-            <div class="card" style="background:#f8fafc;margin-bottom:10px">
-                <h4 style="font-size:10px">Approach</h4>
-                <p style="font-size:9px;text-align:justify">In a first step, we will design a tool allowing us to collect all relevant data from various data sources. Indeed, collecting purely financial data, such as stock prices or macroeconomic indicators, can be easily performed using subscription-based platforms such as Bloomberg, Reuters or Investing.com. However, textual data will constitute a substantial challenge in terms of (i) collecting from the web, (ii) formatting, and (iii) pre-processing, including dating and categorising. For this purpose, we will develop an automated tool which will collect textual data, categorise them, date and store them in an easy to analyse format. We will manage our database with SQL solutions. The second step will focus on our research questions and the four building blocks listed below.</p>
-            </div>
+    <h3>Block 1: Text Data & Text Analytics</h3>
+    <p>Text mining techniques are frequently used in scientific research for forecasting developments of various financial assets such as FX, equities, bonds, commodities (Fung et al. 2003, Hajizadeh et al. 2010, Nassirtoussi et al. 2014, Kumar and Ravi 2016, Loughran and McDonald 2016, Chan and Franklin 2011, Cambria and White 2014, Xing et al. 2017, Chen et al. 2020). Our solution uses NLP and text mining techniques for asset allocation and prediction to apply for structural breaks and change point detection combined with asset allocation methodology. For instance, those techniques are used for predicting cryptocurrency price bubbles using social media data (Biessey 2021). However, the field of classic financial assets tends to be under-researched. Therefore, we will collect relevant literature, review solution and answer the following research questions: How can textual analysis and the application of natural language processing techniques be efficiently used for portfolio management, including risk management and asset allocation? What are the most promising NLP / text analysis techniques?</p>
 
-            <div class="card" style="background:#f8fafc;margin-bottom:10px">
-                <h4 style="font-size:10px">Main Research Questions</h4>
-                <p style="font-size:9px;text-align:justify">We will formulate numerous data-driven general/main and block-specific research questions within our hypothesis-driven project. The main research questions will be: (1) In what sense are financial markets (ex-ante) predictable? (2) Is the ex-ante forecastability persistent, can it be applied for real use cases and to which extent? (3) How can structural break detection and changes in financial time series improve and complement modern portfolio theory?</p>
-            </div>
+    <h3>Block 2: Structural Breaks Detection & Asset Price Bubbles</h3>
+    <p>The survey of econometric tests of asset price bubbles shows that, despite recent advances, econometric detection of asset price bubbles cannot be achieved with a satisfactory degree of certainty (Gurkaynak 2008). Furthermore, currently, there exist a relatively low number of scientific papers about the live detection of structural breaks in a systematic way. Most of the existing solutions have not been validated on real-world data. An obvious downside of such experiments is that the dynamics of the simulated data are often particular to the paper, and any model that corresponds to these dynamics has an unfair advantage (van den Burg and Williams 2020). Hence, we will tackle the issue of structural breaks and asset price bubbles in three steps. In the first step, we will focus on post-ante structural detection methods for asset price bubbles to identify past breaks in real macroeconomic and financial time series. The breaks will be compared and based on consensus simplified if needed. In the second step, we will reapply well-established, known methods for live detection of breaks and check their ex-ante performance. Based on the current state of literature, we expect a relatively poor forecastability of breakpoints. Therefore, in the third step, we will involve NLP and text analysis techniques as a supporting or main method for detecting breakpoints. Research questions: How to detect, identify and date structural breaks in online and offline matters? Detection of structural breaks / change points / asset prices bubbles in a live-matter using most recent (alternative) data (Twitter, News etc.)</p>
 
-            <div class="card" style="background:#eff6ff;border-left:3px solid #3b82f6;margin-bottom:10px">
-                <h4 style="font-size:10px">Block 1: Text Data & Text Analytics</h4>
-                <p style="font-size:9px;text-align:justify">Text mining techniques are frequently used in scientific research for forecasting developments of various financial assets such as FX, equities, bonds, commodities (Fung et al. 2003, Hajizadeh et al. 2010, Nassirtoussi et al. 2014, Kumar and Ravi 2016, Loughran and McDonald 2016, Chan and Franklin 2011, Cambria and White 2014, Xing et al. 2017, Chen et al. 2020). Our solution uses NLP and text mining techniques for asset allocation and prediction to apply for structural breaks and change point detection combined with asset allocation methodology. For instance, those techniques are used for predicting cryptocurrency price bubbles using social media data (Biessey 2021). However, the field of classic financial assets tends to be under-researched. Therefore, we will collect relevant literature, review solution and answer the following research questions: How can textual analysis and the application of natural language processing techniques be efficiently used for portfolio management, including risk management and asset allocation? What are the most promising NLP / text analysis techniques?</p>
-            </div>
+    <h3>Block 3: Narratives for Structural Breaks</h3>
+    <p>The so-called "narratives block" will be highly dependent on results from block 1 and 2. Using newly acquired knowledge and experience with text analysis and NLP and insights into detecting structural changes, we will develop a framework with market narratives for detecting asset price bubbles. Narratives "go viral" and spread worldwide with economic impact (Shiller 2017). There is considerable evidence in the scientific literature showing that people respond strongly to narratives in the fields of marketing (Escalas 2007); journalism (Machill et al. 2007); education (McQuiggan et al. 2008); health interventions (Slater et al 2003); and philanthropy (Weber et al. 2006). Research questions: Can market narratives help predict financial market bubbles and their bust? Can market narratives help detect financial market bubbles? Can narratives sway investment opinions?</p>
 
-            <div class="card" style="background:#fef3c7;border-left:3px solid #f59e0b;margin-bottom:10px">
-                <h4 style="font-size:10px">Block 2: Structural Breaks Detection & Asset Price Bubbles</h4>
-                <p style="font-size:9px;text-align:justify">The survey of econometric tests of asset price bubbles shows that, despite recent advances, econometric detection of asset price bubbles cannot be achieved with a satisfactory degree of certainty (Gurkaynak 2008). Furthermore, currently, there exist a relatively low number of scientific papers about the live detection of structural breaks in a systematic way. Most of the existing solutions have not been validated on real-world data. An obvious downside of such experiments is that the dynamics of the simulated data are often particular to the paper, and any model that corresponds to these dynamics has an unfair advantage (van den Burg and Williams 2020). Hence, we will tackle the issue of structural breaks and asset price bubbles in three steps. In the first step, we will focus on post-ante structural detection methods for asset price bubbles to identify past breaks in real macroeconomic and financial time series. The breaks will be compared and based on consensus simplified if needed. In the second step, we will reapply well-established, known methods for live detection of breaks and check their ex-ante performance. Based on the current state of literature, we expect a relatively poor forecastability of breakpoints. Therefore, in the third step, we will involve NLP and text analysis techniques as a supporting or main method for detecting breakpoints. Research questions: How to detect, identify and date structural breaks in online and offline matters? Detection of structural breaks / change points / asset prices bubbles in a live-matter using most recent (alternative) data (Twitter, News etc.)</p>
-            </div>
+    <h3>Block 4: Multidimensional AI and ML Solutions</h3>
+    <p>Finally, in block 4 we will combine methods and advances developed in blocks 1-3 in a fully integrated framework. We will check whether a combined ML approach improves over the use of single methods. In addition, we will run statistical tests on whether a complex AI and ML approach outperforms simple forecast combinations. Specifically, this last building block should answer the following research questions: Does a combination of ML-based methods outperform single methods? Does a complex AI and ML approach outperform simple forecast combinations (in-sample, out-of-sample, in a trading strategy)?</p>
+</div>
 
-            <div class="card" style="background:#f0fdf4;border-left:3px solid #10b981;margin-bottom:10px">
-                <h4 style="font-size:10px">Block 3: Narratives for Structural Breaks</h4>
-                <p style="font-size:9px;text-align:justify">The so-called "narratives block" will be highly dependent on results from block 1 and 2. Using newly acquired knowledge and experience with text analysis and NLP and insights into detecting structural changes, we will develop a framework with market narratives for detecting asset price bubbles. Narratives "go viral" and spread worldwide with economic impact (Shiller 2017). There is considerable evidence in the scientific literature showing that people respond strongly to narratives in the fields of marketing (Escalas 2007); journalism (Machill et al. 2007); education (McQuiggan et al. 2008); health interventions (Slater et al 2003); and philanthropy (Weber et al. 2006). Research questions: Can market narratives help predict financial market bubbles and their bust? Can market narratives help detect financial market bubbles? Can narratives sway investment opinions?</p>
-            </div>
+<div class="section">
+    <h2>Source Documents</h2>
+    <p>TOPol: <a href="docs/topol.pdf">topol.pdf</a> | SLR: <a href="docs/FIN-manuscript-v2.pdf">FIN-manuscript-v2.pdf</a> | Multimodal: <a href="docs/NLP-Pricing_preprint.pdf">NLP-Pricing_preprint.pdf</a> (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153">SSRN</a>) | Macro Narratives: <a href="docs/Poster_Macro_narratives.pdf">Poster_Macro_narratives.pdf</a> | HFT: <a href="docs/HFT-stylized-facts.pdf">HFT-stylized-facts.pdf</a> (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295">SSRN</a>) | PhD Progress: <a href="docs/20251108_Gabin-Taibi_Progress-Report.pdf">Progress-Report.pdf</a> | Application: <a href="docs/SciencePart_Osterrieder.pdf">SciencePart_Osterrieder.pdf</a></p>
+</div>
 
-            <div class="card" style="background:#fef2f2;border-left:3px solid #ef4444;margin-bottom:10px">
-                <h4 style="font-size:10px">Block 4: Multidimensional AI and ML Solutions</h4>
-                <p style="font-size:9px;text-align:justify">Finally, in block 4 we will combine methods and advances developed in blocks 1-3 in a fully integrated framework. We will check whether a combined ML approach improves over the use of single methods. In addition, we will run statistical tests on whether a complex AI and ML approach outperforms simple forecast combinations. Specifically, this last building block should answer the following research questions: Does a combination of ML-based methods outperform single methods? Does a complex AI and ML approach outperform simple forecast combinations (in-sample, out-of-sample, in a trading strategy)?</p>
-            </div>
-        </section>
+<p style="text-align:center;margin-top:40px;font-size:10pt;color:#666">(c) Prof. Dr. Joerg Osterrieder 2025</p>
 
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-grid">
-                    <div><h5>Project</h5><a href="index.html#overview">Overview</a><a href="index.html#results">Results</a></div>
-                    <div><h5>Team</h5><a href="index.html#team">Members</a><a href="index.html#collaborations">Collaborations</a></div>
-                    <div><h5>Resources</h5><a href="index.html#publications">Publications</a><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/wiki">Wiki</a></div>
-                    <div><h5>Funding</h5><a href="https://data.snf.ch/grants/grant/213370">SNSF Data</a><a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a">mySNF</a></div>
-                </div>
-                <div class="footer-bottom">Funded by SNSF (Grant IZCOZ0_213370) | 2023-2026 Narrative Digital Finance</div>
-            </div>
-        </footer>
-    </main>
-
-<script async>
-(function(){
-  var img = new Image();
-  img.src = 'https://analytics-narrative-digital-finance.digital-ai-finance.workers.dev/t?p=' + encodeURIComponent(location.pathname) + '&r=' + encodeURIComponent(document.referrer);
-})();
-</script>
-<div class="copyright-footer">(c) Prof. Dr. Joerg Osterrieder 2025</div>
 </body>
 </html>
