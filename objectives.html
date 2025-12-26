@@ -13,6 +13,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://digital-ai-finance.github.io/Narrative-Digital-Finance/objectives.html">
     <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -157,25 +158,43 @@
 
         <section class="section">
             <div class="section-title">Data Sources</div>
-            <p>Our research is based on large-scale financial databases:</p>
-            <div class="grid grid-2">
+            <p>Our research utilizes diverse textual and financial datasets:</p>
+            <div class="grid grid-3" style="margin-bottom:6px">
                 <div class="card">
-                    <h4>Financial Data</h4>
-                    <p>Bloomberg, Refinitiv, Quandl - price data for financial instruments</p>
+                    <h4>RavenPack</h4>
+                    <p>Financial news headlines for sentiment analysis and narrative detection</p>
                 </div>
                 <div class="card">
-                    <h4>Macroeconomic Data</h4>
-                    <p>OECD, World Bank Open Data, FRED Economic Data</p>
+                    <h4>LSEG (Refinitiv)</h4>
+                    <p>Earnings call transcripts for corporate narrative analysis</p>
+                </div>
+                <div class="card">
+                    <h4>BIS Gigando</h4>
+                    <p>Worldwide central bank speeches for monetary policy narratives</p>
                 </div>
             </div>
-            <p style="margin-top:10px;font-size:11px;color:#64748b">We have existing data licences or use open source data. Our infrastructure handles large-scale data processing with dedicated computing resources for deep learning research.</p>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h4>SEC EDGAR</h4>
+                    <p>10-K and 10-Q filings for regulatory text analysis</p>
+                </div>
+                <div class="card">
+                    <h4>Deutsche Borse</h4>
+                    <p>Nanosecond-level Xetra/Eurex trading data for HFT research</p>
+                </div>
+                <div class="card">
+                    <h4>St. Louis FED FRED</h4>
+                    <p>Macroeconomic indicators (CPI, GDP, Unemployment, FED Funds Rate)</p>
+                </div>
+            </div>
+            <p style="margin-top:10px;font-size:11px;color:#64748b">Custom data pipelines developed for collecting, formatting, and pre-processing textual data. Infrastructure handles large-scale processing with dedicated computing resources.</p>
         </section>
 
         <section class="section">
             <div class="section-title">Approach Summary</div>
             <div class="card">
                 <h4>Step 1: Data Collection Tool</h4>
-                <p>Design automated tool to collect textual data from web, categorize, date, and store in SQL database. Financial data collected via Bloomberg, Reuters, Investing.com.</p>
+                <p>Custom data pipelines collect and structure datasets from RavenPack, LSEG, BIS, SEC EDGAR. Data categorized, dated, and stored for analysis. Market data from Deutsche Borse and FRED.</p>
             </div>
             <div class="card">
                 <h4>Step 2: Research Execution</h4>
