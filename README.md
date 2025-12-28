@@ -40,7 +40,6 @@ The approach involves:
 | Name | Role | Affiliation | ORCID |
 |------|------|-------------|-------|
 | **Joerg Osterrieder** | Principal Investigator | BFH, University of Twente | [0000-0003-0189-8636](https://orcid.org/0000-0003-0189-8636) |
-| **Branka Hadji Misheva** | Senior Researcher | BFH | [0000-0001-7020-3469](https://orcid.org/0000-0001-7020-3469) |
 | **Gabin Taibi** | PhD Researcher | BFH, University of Twente | [0000-0002-0785-6771](https://orcid.org/0000-0002-0785-6771) |
 | **Yiting Liu** | PhD Researcher | BFH, University of Twente | [0009-0006-9554-8205](https://orcid.org/0009-0006-9554-8205) |
 | **Lennart John Baals** | PhD Researcher | BFH, University of Twente | [0000-0002-7737-9675](https://orcid.org/0000-0002-7737-9675) |
@@ -82,7 +81,7 @@ The approach involves:
    - [SSRN 5112295](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295)
 
 5. **Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI**
-   - Bolesta, K., Taibi, G., Mare, C., Osterrieder, J., Hadji-Misheva, B., Hopp, C. (2024).
+   - Bolesta, K., Taibi, G., Mare, C., Osterrieder, J., Hopp, C. (2024).
    - [SSRN 4698153](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153)
 
 ## Project Output

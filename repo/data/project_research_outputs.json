@@ -112,23 +112,6 @@
     },
     "team_members": [
       {
-        "name": "Prof. Dr. Branka Hadji Misheva",
-        "orcid": "0000-0001-7020-3469",
-        "role": "Co-Investigator",
-        "affiliation": "Professor of Applied Data Science and Finance, Bern Business School",
-        "expertise": ["AI applications in finance", "XAI methods", "Network models", "Fintech risk management"],
-        "metrics": {
-          "works_count": 42,
-          "citations": 380,
-          "h_index": 9
-        },
-        "urls": {
-          "orcid": "https://orcid.org/0000-0001-7020-3469",
-          "linkedin": "https://www.linkedin.com/in/hadjimisheva/",
-          "bfh_profile": "https://www.bfh.ch/en/about-bfh/people/w76zvjktchs5/"
-        }
-      },
-      {
         "name": "Gabin Taibi",
         "orcid": "0000-0002-0785-6771",
         "role": "PhD Researcher",
@@ -201,7 +184,7 @@
       },
       {
         "title": "Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI",
-        "authors": ["Karolina Bolesta", "Gabin Taibi", "Codruta Mare", "Branka Hadji Misheva", "Christian Hopp", "Joerg Osterrieder"],
+        "authors": ["Karolina Bolesta", "Gabin Taibi", "Codruta Mare", "Christian Hopp", "Joerg Osterrieder"],
         "year": 2024,
         "type": "Working Paper",
         "venue": "SSRN",
@@ -263,7 +246,7 @@
       },
       {
         "title": "Digital Finance: Reaching New Frontiers",
-        "authors": ["Joerg Osterrieder", "Branka Hadji Misheva", "Marcos Machado"],
+        "authors": ["Joerg Osterrieder", "Marcos Machado"],
         "year": 2023,
         "type": "Journal Article",
         "venue": "Open Research Europe",
@@ -300,7 +283,7 @@
       },
       {
         "title": "Enhancing Security in Blockchain Networks: Anomalies, Frauds, and Advanced Detection Techniques",
-        "authors": ["Joerg Osterrieder", "Stephen Chan", "Jeffrey Chu", "Yuanyuan Zhang", "Branka Hadji Misheva", "Codruta Mare"],
+        "authors": ["Joerg Osterrieder", "Stephen Chan", "Jeffrey Chu", "Yuanyuan Zhang", "Codruta Mare"],
         "year": 2024,
         "venue": "arXiv",
         "doi": "10.48550/arxiv.2402.11231"

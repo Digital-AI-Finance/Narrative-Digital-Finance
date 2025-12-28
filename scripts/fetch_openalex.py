@@ -28,13 +28,6 @@ TEAM_MEMBERS = [
         "min_works": 100  # Filter to find the correct profile
     },
     {
-        "name": "Branka Hadji Misheva",
-        "orcid": "0000-0001-7020-3469",
-        "role": "Team Member",
-        "affiliation": "Bern Business School",
-        "search_terms": ["Branka Hadji Misheva", "Branka Hadji-Misheva"]
-    },
-    {
         "name": "Gabin Taibi",
         "orcid": "0000-0002-0785-6771",
         "role": "PhD Researcher",

@@ -76,18 +76,6 @@
       "website": ""
     },
     {
-      "name": "Prof. Dr. Branka Hadji Misheva",
-      "role": "Researcher",
-      "institution": "Bern Business School, Switzerland",
-      "institution2": "",
-      "image": "images/Hadji_Misheva.jpg",
-      "orcid": "0000-0001-7020-3469",
-      "bio": "Professor of Applied Data Science and Finance. Expert in AI applications in finance, XAI methods, network models and fintech risk management.",
-      "google_scholar": "https://scholar.google.com/citations?user=drpfTlkAAAAJ",
-      "linkedin": "https://www.linkedin.com/in/hadjimisheva/",
-      "website": "https://www.bfh.ch/en/about-bfh/people/w76zvjktchs5/"
-    },
-    {
       "name": "Gabin Taibi",
       "role": "Researcher",
       "institution": "Bern Business School, Switzerland",
@@ -203,7 +191,7 @@
   },
   "key_publications": [
     {
-      "authors": "Bolesta, K., Taibi, G., Codruta, M., Osterrieder, J., Hadji-Misheva, B. & Hopp, C.",
+      "authors": "Bolesta, K., Taibi, G., Codruta, M., Osterrieder, J. & Hopp, C.",
       "year": 2024,
       "title": "Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI",
       "journal": "SSRN",

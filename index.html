@@ -52,13 +52,6 @@
         },
         {
           "@type": "Person",
-          "name": "Branka Hadji Misheva",
-          "jobTitle": "Senior Researcher",
-          "affiliation": {"@type": "Organization", "name": "Bern University of Applied Sciences"},
-          "sameAs": "https://orcid.org/0000-0001-7020-3469"
-        },
-        {
-          "@type": "Person",
           "name": "Gabin Taibi",
           "jobTitle": "PhD Researcher",
           "affiliation": [
@@ -249,18 +242,6 @@
                             <div class="team-metric"><span class="team-metric-val">13</span><span class="team-metric-lbl">h</span></div>
                         </div>
                         <div class="team-links"><a href="https://orcid.org/0000-0003-0189-8636" class="team-link">ORCID</a><a href="https://scholar.google.com/citations?user=ocRaXoIAAAAJ" class="team-link">Scholar</a></div>
-                    </div>
-                    <div class="card team-card">
-                        <div class="team-avatar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">BH</div>
-                        <h4>Branka Hadji Misheva</h4>
-                        <p class="role">Team Member</p>
-                        <p class="aff">BFH</p>
-                        <div class="team-metrics">
-                            <div class="team-metric"><span class="team-metric-val">42</span><span class="team-metric-lbl">Works</span></div>
-                            <div class="team-metric"><span class="team-metric-val">380</span><span class="team-metric-lbl">Cites</span></div>
-                            <div class="team-metric"><span class="team-metric-val">9</span><span class="team-metric-lbl">h</span></div>
-                        </div>
-                        <div class="team-links"><a href="https://orcid.org/0000-0001-7020-3469" class="team-link">ORCID</a></div>
                     </div>
                     <div class="card team-card">
                         <div class="team-avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6)">GT</div>
@@ -575,7 +556,7 @@
 
         // OpenAlex API - polite pool email (M9)
         const OPENALEX_EMAIL='joerg.osterrieder@bfh.ch';
-        const AUTHORS=[{name:'Joerg Osterrieder',search:'Joerg Osterrieder',minWorks:100},{name:'Branka Hadji Misheva',search:'Branka Hadji Misheva'},{name:'Gabin Taibi',search:'Gabin Taibi'},{name:'Lennart John Baals',search:'Lennart Baals'},{name:'Yiting Liu',search:'Yiting Liu'}];
+        const AUTHORS=[{name:'Joerg Osterrieder',search:'Joerg Osterrieder',minWorks:100},{name:'Gabin Taibi',search:'Gabin Taibi'},{name:'Lennart John Baals',search:'Lennart Baals'},{name:'Yiting Liu',search:'Yiting Liu'}];
         async function refreshFromOpenAlex(){
             const btn=document.getElementById('refreshBtn');
             btn.disabled=true;btn.textContent='Loading...';

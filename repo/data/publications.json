@@ -705,75 +705,6 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W4416074989",
-    "title": "TransClean: Finding False Positives in Multi-Source Entity Matching under Real-World Conditions via Transitive Consistency",
-    "year": 2025,
-    "doi": "10.48550/arxiv.2506.04006",
-    "doi_url": "https://doi.org/10.48550/arxiv.2506.04006",
-    "authors": [
-      "Fernando de Meer Pardo",
-      "Branka Hadji Misheva",
-      "Martín Braschler",
-      "Kurt Stockinger"
-    ],
-    "authors_str": "Fernando de Meer Pardo, Branka Hadji Misheva, Martín Braschler, Kurt Stockinger",
-    "venue": "arXiv (Cornell University)",
-    "cited_by_count": 0,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "We present TransClean, a method for detecting false positive predictions of entity matching algorithms under real-world conditions characterized by large-scale, noisy, and unlabeled multi-source datasets that undergo distributional shifts. TransClean is explicitly designed to operate with multiple data sources in an efficient, robust and fast manner while accounting for edge cases and requiring limited manual labeling. TransClean leverages the Transitive Consistency of a matching, a measure of t...",
-    "concepts": [],
-    "pdf_url": "https://arxiv.org/pdf/2506.04006",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W7117129838",
-    "title": "Network Evidence on Credit-Risk Pricing in P2P Lending",
-    "year": 2025,
-    "doi": "10.2139/ssrn.5952776",
-    "doi_url": "https://doi.org/10.2139/ssrn.5952776",
-    "authors": [
-      "Lennart John Baals",
-      "Joerg Osterrieder",
-      "Branka Hadji Misheva",
-      "Y. Wang"
-    ],
-    "authors_str": "Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva, Y. Wang",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Business",
-      "Economics",
-      "Computer science",
-      "Finance",
-      "Payment"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.5952776",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W4416312373",
-    "title": "Time-Series based xAI Methods",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.97",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.97",
-    "authors": [
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Branka Hadji Misheva",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W4415019962",
     "title": "Evolving fuzzy classification for human-centered explainable learning analytics in virtual environments",
     "year": 2025,
@@ -1318,6 +1249,34 @@
       "Key (lock)"
     ],
     "pdf_url": "https://doi.org/10.5281/zenodo.17990872",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7117129838",
+    "title": "Network Evidence on Credit-Risk Pricing in P2P Lending",
+    "year": 2025,
+    "doi": "10.2139/ssrn.5952776",
+    "doi_url": "https://doi.org/10.2139/ssrn.5952776",
+    "authors": [
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Y. Wang"
+    ],
+    "authors_str": "Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva, Y. Wang",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Economics",
+      "Computer science",
+      "Finance",
+      "Payment"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5952776",
     "team_member": "Lennart John Baals"
   },
   {
@@ -1874,38 +1833,6 @@
     ],
     "pdf_url": "http://dx.doi.org/10.2139/ssrn.4730470",
     "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4400018270",
-    "title": "GraLMatch: Matching Groups of Entities with Graphs and Language Models",
-    "year": 2024,
-    "doi": "10.48550/arxiv.2406.15015",
-    "doi_url": "https://doi.org/10.48550/arxiv.2406.15015",
-    "authors": [
-      "Fernando de Meer Pardo",
-      "Claude Lehmann",
-      "Dennis Gehrig",
-      "Andrea Nagy",
-      "Stefano Nicoli",
-      "Branka Hadji Misheva",
-      "Martín Braschler",
-      "Kurt Stockinger"
-    ],
-    "authors_str": "Fernando de Meer Pardo, Claude Lehmann, Dennis Gehrig, Andrea Nagy, Stefano Nicoli...",
-    "venue": "arXiv (Cornell University)",
-    "cited_by_count": 1,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "In this paper, we present an end-to-end multi-source Entity Matching problem, which we call entity group matching, where the goal is to assign to the same group, records originating from multiple data sources but representing the same real-world entity. We focus on the effects of transitively matched records, i.e. the records connected by paths in the graph G = (V,E) whose nodes and edges represent the records and whether they are a match or not. We present a real-world instance of this problem,...",
-    "concepts": [
-      "Matching (statistics)",
-      "Computer science",
-      "Natural language processing",
-      "Linguistics",
-      "Mathematics"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2406.15015",
-    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W4402632405",
@@ -4285,34 +4212,6 @@
     "team_member": "Lennart John Baals"
   },
   {
-    "id": "https://openalex.org/W4223538073",
-    "title": "Default or profit scoring credit systems? Evidence from European and US peer-to-peer lending markets",
-    "year": 2022,
-    "doi": "10.1186/s40854-022-00338-5",
-    "doi_url": "https://doi.org/10.1186/s40854-022-00338-5",
-    "authors": [
-      "Štefan Lyócsa",
-      "Petra Vašaničová",
-      "Branka Hadji Misheva",
-      "Marko Dávid Vateha"
-    ],
-    "authors_str": "Štefan Lyócsa, Petra Vašaničová, Branka Hadji Misheva, Marko Dávid Vateha",
-    "venue": "Financial Innovation",
-    "cited_by_count": 36,
-    "type": "article",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Profitability index",
-      "Random forest",
-      "Credit risk",
-      "Credit history",
-      "Profit (economics)"
-    ],
-    "pdf_url": "https://jfin-swufe.springeropen.com/track/pdf/10.1186/s40854-022-00338-5",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W4281630822",
     "title": "Cyberbullying and Cyberhate as Two Interlinked Instances of Cyber-Aggression in Adolescence: A Systematic Review",
     "year": 2022,
@@ -4491,55 +4390,6 @@
     "team_member": "Gabin Taibi"
   },
   {
-    "id": "https://openalex.org/W4229014297",
-    "title": "Editorial: Explainable, Trustworthy, and Responsible AI for the Financial Service Industry",
-    "year": 2022,
-    "doi": "10.3389/frai.2022.902519",
-    "doi_url": "https://doi.org/10.3389/frai.2022.902519",
-    "authors": [
-      "Branka Hadji Misheva",
-      "Jochen Papenbrock"
-    ],
-    "authors_str": "Branka Hadji Misheva, Jochen Papenbrock",
-    "venue": "Frontiers in Artificial Intelligence",
-    "cited_by_count": 5,
-    "type": "editorial",
-    "open_access": true,
-    "abstract": "EDITORIAL article Front. Artif. Intell., 05 May 2022Sec. Artificial Intelligence in Finance https://doi.org/10.3389/frai.2022.902519",
-    "concepts": [
-      "Trustworthiness",
-      "Service (business)",
-      "Financial services",
-      "Front (military)",
-      "Business"
-    ],
-    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2022.902519/pdf",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W4312605210",
-    "title": "Digital Finance - Reaching New Frontiers",
-    "year": 2022,
-    "doi": "10.2139/ssrn.4292504",
-    "doi_url": "https://doi.org/10.2139/ssrn.4292504",
-    "authors": [
-      "Joerg Osterrieder",
-      "Branka Hadji Misheva",
-      "Marcos Machado"
-    ],
-    "authors_str": "Joerg Osterrieder, Branka Hadji Misheva, Marcos Machado",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 2,
-    "type": "article",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Economics"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.4292504",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W4225714434",
     "title": "Intelligent Knowledge Understanding from Students Questionnaires: A Case Study",
     "year": 2022,
@@ -4620,60 +4470,6 @@
     ],
     "pdf_url": "https://arxiv.org/pdf/2209.14532",
     "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4310884036",
-    "title": "A Time Series Approach to Explainability for Neural Nets with Applications to Risk-Management and Fraud Detection",
-    "year": 2022,
-    "doi": "10.48550/arxiv.2212.02906",
-    "doi_url": "https://doi.org/10.48550/arxiv.2212.02906",
-    "authors": [
-      "Marc Wildi",
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Marc Wildi, Branka Hadji Misheva",
-    "venue": "arXiv (Cornell University)",
-    "cited_by_count": 0,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "Artificial intelligence is creating one of the biggest revolution across technology driven application fields. For the finance sector, it offers many opportunities for significant market innovation and yet broad adoption of AI systems heavily relies on our trust in their outputs. Trust in technology is enabled by understanding the rationale behind the predictions made. To this end, the concept of eXplainable AI emerged introducing a suite of techniques attempting to explain to users how complex ...",
-    "concepts": [
-      "Suite",
-      "Exploit",
-      "Computer science",
-      "Artificial neural network",
-      "Artificial intelligence"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2212.02906",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W4394513826",
-    "title": "Additional file 1 of Default or profit scoring credit systems? Evidence from European and US peer-to-peer lending markets",
-    "year": 2022,
-    "doi": "10.6084/m9.figshare.19581894",
-    "doi_url": "https://doi.org/10.6084/m9.figshare.19581894",
-    "authors": [
-      "Štefan Lyócsa",
-      "Petra Vašaničová",
-      "Branka Hadji Misheva",
-      "Marko Dávid Vateha"
-    ],
-    "authors_str": "Štefan Lyócsa, Petra Vašaničová, Branka Hadji Misheva, Marko Dávid Vateha",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": true,
-    "abstract": "Additional file 1. Data and scripts performing the predictions and evaluation of loans in R.",
-    "concepts": [
-      "Peer-to-peer",
-      "Business",
-      "Profit (economics)",
-      "Financial system",
-      "Monetary economics"
-    ],
-    "pdf_url": "https://doi.org/10.6084/m9.figshare.19581894",
-    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W4300494967",
@@ -4820,35 +4616,6 @@
     "team_member": "Gabin Taibi"
   },
   {
-    "id": "https://openalex.org/W3134447554",
-    "title": "Explainable AI in Credit Risk Management",
-    "year": 2021,
-    "doi": "10.2139/ssrn.3795322",
-    "doi_url": "https://doi.org/10.2139/ssrn.3795322",
-    "authors": [
-      "Branka Hadji Misheva",
-      "Joerg Osterrieder",
-      "Ali Hirsa",
-      "Onkar Kulkarni",
-      "Stephen Fung Lin"
-    ],
-    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder, Ali Hirsa, Onkar Kulkarni, Stephen Fung Lin",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 8,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Computer science",
-      "Transparency (behavior)",
-      "Financial services",
-      "Artificial intelligence",
-      "Credit risk"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.3795322",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W4200124046",
     "title": "Developing Data Literacy Competences at University: the experience of the DEDALUS project",
     "year": 2021,
@@ -4907,35 +4674,6 @@
     "team_member": "Gabin Taibi"
   },
   {
-    "id": "https://openalex.org/W4287319433",
-    "title": "Explainable AI in Credit Risk Management",
-    "year": 2021,
-    "doi": "10.48550/arxiv.2103.00949",
-    "doi_url": "https://doi.org/10.48550/arxiv.2103.00949",
-    "authors": [
-      "Branka Hadji Misheva",
-      "Joerg Osterrieder",
-      "Ali Hirsa",
-      "Onkar P. Kulkarni",
-      "Stephen Fung Lin"
-    ],
-    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder, Ali Hirsa, Onkar P. Kulkarni, Stephen Fung Lin",
-    "venue": "Data Archiving and Networked Services (DANS)",
-    "cited_by_count": 6,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "Artificial Intelligence (AI) has created the single biggest technology revolution the world has ever seen. For the finance sector, it provides great opportunities to enhance customer experience, democratize financial services, ensure consumer protection and significantly improve risk management. While it is easier than ever to run state-of-the-art machine learning models, designing and implementing systems that support real-world finance applications have been challenging. In large part because ...",
-    "concepts": [
-      "Computer science",
-      "Transparency (behavior)",
-      "Financial services",
-      "Artificial intelligence",
-      "State (computer science)"
-    ],
-    "pdf_url": "https://research.utwente.nl/en/publications/c01c619f-b3d8-4513-8c4e-e046defdc322",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W3209254618",
     "title": "Enriching Didactic Similarity Measures of Concept Maps by a Deep Learning Based Approach",
     "year": 2021,
@@ -4963,62 +4701,6 @@
     "team_member": "Gabin Taibi"
   },
   {
-    "id": "https://openalex.org/W3172372614",
-    "title": "The Applicability of Self-Play Algorithms to Trading and Forecasting Financial Markets",
-    "year": 2021,
-    "doi": "10.3389/frai.2021.668465",
-    "doi_url": "https://doi.org/10.3389/frai.2021.668465",
-    "authors": [
-      "Jan-Alexander Posth",
-      "Piotr Kotlarz",
-      "Branka Hadji Misheva",
-      "Joerg Osterrieder",
-      "Peter Schwendner"
-    ],
-    "authors_str": "Jan-Alexander Posth, Piotr Kotlarz, Branka Hadji Misheva, Joerg Osterrieder, Peter Schwendner",
-    "venue": "Frontiers in Artificial Intelligence",
-    "cited_by_count": 5,
-    "type": "review",
-    "open_access": true,
-    "abstract": "The central research question to answer in this study is whether the AI methodology of Self-Play can be applied to financial markets. In typical use-cases of Self-Play, two AI agents play against each other in a particular game, e.g., chess or Go. By repeatedly playing the game, they learn its rules as well as possible winning strategies. When considering financial markets, however, we usually have one player—the trader—that does not face one individual adversary but competes against a vast univ...",
-    "concepts": [
-      "Financial market",
-      "Adversary",
-      "Computational finance",
-      "Prediction market",
-      "Stock (firearms)"
-    ],
-    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2021.668465/pdf",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W4200133817",
-    "title": "Audience-Dependent Explanations for AI-Based Risk Management Tools: A Survey",
-    "year": 2021,
-    "doi": "10.3389/frai.2021.794996",
-    "doi_url": "https://doi.org/10.3389/frai.2021.794996",
-    "authors": [
-      "Branka Hadji Misheva",
-      "David Jaggi",
-      "Jan-Alexander Posth",
-      "Thomas Gramespacher",
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Branka Hadji Misheva, David Jaggi, Jan-Alexander Posth, Thomas Gramespacher, Joerg Osterrieder",
-    "venue": "Frontiers in Artificial Intelligence",
-    "cited_by_count": 4,
-    "type": "article",
-    "open_access": true,
-    "abstract": "Artificial Intelligence (AI) is one of the most sought-after innovations in the financial industry. However, with its growing popularity, there also is the call for AI-based models to be understandable and transparent. However, understandably explaining the inner mechanism of the algorithms and their interpretation is entirely audience-dependent. The established literature fails to match the increasing number of explainable AI (XAI) methods with the different stakeholders’ explainability needs. ...",
-    "concepts": [
-      "Psychology",
-      "Computer science",
-      "Data science"
-    ],
-    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2021.794996/pdf",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W4321847141",
     "title": "THE ECOLOGICAL SYSTEMS THEORY OF HUMAN DEVELOPMENT TO EXPLORE THE STUDENT-SOCIAL MEDIA INTERACTION.",
     "year": 2021,
@@ -5044,37 +4726,6 @@
     ],
     "pdf_url": null,
     "team_member": "Gabin Taibi"
-  },
-  {
-    "id": "https://openalex.org/W3128852300",
-    "title": "The VIX Index Under Scrutiny of Machine Learning Techniques and Neural Networks",
-    "year": 2021,
-    "doi": "10.2139/ssrn.3796351",
-    "doi_url": "https://doi.org/10.2139/ssrn.3796351",
-    "authors": [
-      "Ali Hirsa",
-      "Joerg Osterrieder",
-      "Branka Hadji Misheva",
-      "Wenxin Cao",
-      "Yiwen Fu",
-      "Hanze Sun",
-      "Kin Wai Wong"
-    ],
-    "authors_str": "Ali Hirsa, Joerg Osterrieder, Branka Hadji Misheva, Wenxin Cao, Yiwen Fu...",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 3,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Index (typography)",
-      "Replicate",
-      "Artificial neural network",
-      "Volatility (finance)",
-      "Econometrics"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.3796351",
-    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W3216198659",
@@ -5246,93 +4897,6 @@
     ],
     "pdf_url": "http://hdl.handle.net/10362/140948",
     "team_member": "Gabin Taibi"
-  },
-  {
-    "id": "https://openalex.org/W4287332385",
-    "title": "The VIX index under scrutiny of machine learning techniques and neural\\n networks",
-    "year": 2021,
-    "doi": "10.48550/arxiv.2102.02119",
-    "doi_url": "https://doi.org/10.48550/arxiv.2102.02119",
-    "authors": [
-      "Ali Hirsa",
-      "Joerg Osterrieder",
-      "Branka Hadji Misheva",
-      "Wenxin Cao",
-      "Yiwen Fu",
-      "Hanze Sun",
-      "Kin Wai Wong"
-    ],
-    "authors_str": "Ali Hirsa, Joerg Osterrieder, Branka Hadji Misheva, Wenxin Cao, Yiwen Fu...",
-    "venue": "arXiv (Cornell University)",
-    "cited_by_count": 0,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "The CBOE Volatility Index, known by its ticker symbol VIX, is a popular\\nmeasure of the market's expected volatility on the SP 500 Index, calculated and\\npublished by the Chicago Board Options Exchange (CBOE). It is also often\\nreferred to as the fear index or the fear gauge. The current VIX index value\\nquotes the expected annualized change in the SP 500 index over the following 30\\ndays, based on options-based theory and current options-market data. Despite\\nits theoretical foundation in optio...",
-    "concepts": [
-      "Index (typography)",
-      "Replicate",
-      "Artificial neural network",
-      "Perceptron",
-      "Futures contract"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2102.02119",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W3168060176",
-    "title": "Deep reinforcement learning on a multi-asset environment for trading",
-    "year": 2021,
-    "doi": "10.21256/zhaw-22850",
-    "doi_url": "https://doi.org/10.21256/zhaw-22850",
-    "authors": [
-      "Ali Hirsa",
-      "Joerg Osterrieder",
-      "Branka Hadji Misheva",
-      "Jan-Alexander Posth"
-    ],
-    "authors_str": "Ali Hirsa, Joerg Osterrieder, Branka Hadji Misheva, Jan-Alexander Posth",
-    "venue": "arXiv (Cornell University)",
-    "cited_by_count": 0,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "Financial trading has been widely analyzed for decades with market\\nparticipants and academics always looking for advanced methods to improve\\ntrading performance. Deep reinforcement learning (DRL), a recently\\nreinvigorated method with significant success in multiple domains, still has to\\nshow its benefit in the financial markets. We use a deep Q-network (DQN) to\\ndesign long-short trading strategies for futures contracts. The state space\\nconsists of volatility-normalized daily returns, with ...",
-    "concepts": [
-      "Reinforcement learning",
-      "Futures contract",
-      "Volatility (finance)",
-      "Trading strategy",
-      "Benchmark (surveying)"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2106.08437",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W3175484143",
-    "title": "Deep Reinforcement Learning on a Multi-Asset Environment for Trading",
-    "year": 2021,
-    "doi": "10.2139/ssrn.3867800",
-    "doi_url": "https://doi.org/10.2139/ssrn.3867800",
-    "authors": [
-      "Ali Hirsa",
-      "Joerg Osterrieder",
-      "Branka Hadji Misheva",
-      "Jan-Alexander Posth"
-    ],
-    "authors_str": "Ali Hirsa, Joerg Osterrieder, Branka Hadji Misheva, Jan-Alexander Posth",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 0,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Reinforcement learning",
-      "Futures contract",
-      "Volatility (finance)",
-      "Trading strategy",
-      "Benchmark (surveying)"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.3867800",
-    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W4200113782",
@@ -5649,34 +5213,6 @@
     "team_member": "Gabin Taibi"
   },
   {
-    "id": "https://openalex.org/W2997058569",
-    "title": "Lead Behaviour in Bitcoin Markets",
-    "year": 2020,
-    "doi": "10.3390/risks8010004",
-    "doi_url": "https://doi.org/10.3390/risks8010004",
-    "authors": [
-      "Ying Chen",
-      "Paolo Giudici",
-      "Branka Hadji Misheva",
-      "Simon Trimborn"
-    ],
-    "authors_str": "Ying Chen, Paolo Giudici, Branka Hadji Misheva, Simon Trimborn",
-    "venue": "Risks",
-    "cited_by_count": 10,
-    "type": "article",
-    "open_access": true,
-    "abstract": "We aim to understand the dynamics of Bitcoin blockchain trading volumes and, specifically, how different trading groups, in different geographic areas, interact with each other. To achieve this aim, we propose an extended Vector Autoregressive model, aimed at explaining the evolution of trading volumes, both in time and in space. The extension is based on network models, which improve pure autoregressive models, introducing a contemporaneous contagion component that describes contagion effects b...",
-    "concepts": [
-      "Autoregressive model",
-      "Econometrics",
-      "Component (thermodynamics)",
-      "Financial economics",
-      "Computer science"
-    ],
-    "pdf_url": "https://www.mdpi.com/2227-9091/8/1/4/pdf?version=1578553915",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W3026170541",
     "title": "ARLectio: An Augmented Reality Platform to Support Teachers in Producing Educational Resources",
     "year": 2020,
@@ -5821,35 +5357,6 @@
     "team_member": "Gabin Taibi"
   },
   {
-    "id": "https://openalex.org/W3135824988",
-    "title": "The Applicability of Self-Play Algorithms to Trading and Forecasting Financial Markets: A Feasibility Study",
-    "year": 2020,
-    "doi": "10.2139/ssrn.3737714",
-    "doi_url": "https://doi.org/10.2139/ssrn.3737714",
-    "authors": [
-      "Piotr Kotlarz",
-      "Branka Hadji Misheva",
-      "Jan-Alexander Posth",
-      "Joerg Osterrieder",
-      "Peter Schwendner"
-    ],
-    "authors_str": "Piotr Kotlarz, Branka Hadji Misheva, Jan-Alexander Posth, Joerg Osterrieder, Peter Schwendner",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 1,
-    "type": "article",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Algorithmic trading",
-      "Trading strategy",
-      "Computer science",
-      "Finance",
-      "Financial market"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.3737714",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W3006247724",
     "title": "How Do Search Engines Shape Reality? Preliminary Insights from a Learning Experience",
     "year": 2020,
@@ -5877,31 +5384,6 @@
     ],
     "pdf_url": null,
     "team_member": "Gabin Taibi"
-  },
-  {
-    "id": "https://openalex.org/W3098886510",
-    "title": "Measuring Financial Risks: The Application of Network Theory in Fintech Risk Management",
-    "year": 2020,
-    "doi": null,
-    "doi_url": null,
-    "authors": [
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Branka Hadji Misheva",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [
-      "Risk management",
-      "Business",
-      "Risk analysis (engineering)",
-      "Actuarial science",
-      "Financial risk"
-    ],
-    "pdf_url": null,
-    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W3162168937",
@@ -6016,114 +5498,6 @@
     ],
     "pdf_url": "https://doi.org/10.5220/0009571105670573",
     "team_member": "Gabin Taibi"
-  },
-  {
-    "id": "https://openalex.org/W2985066636",
-    "title": "Network based credit risk models",
-    "year": 2019,
-    "doi": "10.1080/08982112.2019.1655159",
-    "doi_url": "https://doi.org/10.1080/08982112.2019.1655159",
-    "authors": [
-      "Paolo Giudici",
-      "Branka Hadji Misheva",
-      "Alessandro Spelta"
-    ],
-    "authors_str": "Paolo Giudici, Branka Hadji Misheva, Alessandro Spelta",
-    "venue": "Quality Engineering",
-    "cited_by_count": 100,
-    "type": "article",
-    "open_access": true,
-    "abstract": "Peer-to-Peer lending platforms may lead to cost reduction, and to an improved user experience. These improvements may come at the price of inaccurate credit risk measurements, which can hamper lenders and endanger the stability of a financial system. In the article, we propose how to improve credit risk accuracy of peer to peer platforms and, specifically, of those who lend to small and medium enterprises. To achieve this goal, we propose toaugment traditional credit scoring methods with “altern...",
-    "concepts": [
-      "Credit risk",
-      "Business",
-      "Actuarial science",
-      "Econometrics",
-      "Computer science"
-    ],
-    "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/08982112.2019.1655159?needAccess=true",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W2911448996",
-    "title": "Latent factor models for credit scoring in P2P systems",
-    "year": 2019,
-    "doi": "10.1016/j.physa.2019.01.130",
-    "doi_url": "https://doi.org/10.1016/j.physa.2019.01.130",
-    "authors": [
-      "Daniel Felix Ahelegbey",
-      "Paolo Giudici",
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
-    "venue": "Physica A Statistical Mechanics and its Applications",
-    "cited_by_count": 63,
-    "type": "article",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Position (finance)",
-      "Computer science",
-      "Credit risk",
-      "Order (exchange)",
-      "FinTech"
-    ],
-    "pdf_url": "https://mpra.ub.uni-muenchen.de/92636/1/MPRA_paper_92636.pdf",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W2944958951",
-    "title": "Network Based Scoring Models to Improve Credit Risk Management in Peer to Peer Lending Platforms",
-    "year": 2019,
-    "doi": "10.3389/frai.2019.00003",
-    "doi_url": "https://doi.org/10.3389/frai.2019.00003",
-    "authors": [
-      "Paolo Giudici",
-      "Branka Hadji Misheva",
-      "Alessandro Spelta"
-    ],
-    "authors_str": "Paolo Giudici, Branka Hadji Misheva, Alessandro Spelta",
-    "venue": "Frontiers in Artificial Intelligence",
-    "cited_by_count": 47,
-    "type": "article",
-    "open_access": true,
-    "abstract": "Financial intermediation has changed extensively over the course of the last two decades. One of the most significant change has been the emergence of FinTech. In the context of credit services, fintech peer to peer lenders have introduced many opportunities, among which improved speed, better customer experience, and reduced costs. However, peer-to-peer lending platforms lead to higher risks, among which higher credit risk: not owned by the lenders, and systemic risks: due to the high interconn...",
-    "concepts": [
-      "Credit risk",
-      "Credit score",
-      "Context (archaeology)",
-      "Peer-to-peer",
-      "Business"
-    ],
-    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2019.00003/pdf",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W2941654445",
-    "title": "Factorial Network Models to Improve P2P Credit Risk Management",
-    "year": 2019,
-    "doi": "10.3389/frai.2019.00008",
-    "doi_url": "https://doi.org/10.3389/frai.2019.00008",
-    "authors": [
-      "Daniel Felix Ahelegbey",
-      "Paolo Giudici",
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
-    "venue": "Frontiers in Artificial Intelligence",
-    "cited_by_count": 20,
-    "type": "article",
-    "open_access": true,
-    "abstract": "This paper investigates how to improve statistical-based credit scoring of SMEs involved in P2P lending. The methodology discussed in the paper is a factor network-based segmentation for credit score modeling. The approach first constructs a network of SMEs where links emerge from comovement of latent factors, which allows us to segment the heterogeneous population into clusters. We then build a credit score model for each cluster via lasso-type regularization logistic regression. We compare our...",
-    "concepts": [
-      "Logistic regression",
-      "Credit risk",
-      "Segmentation",
-      "Computer science",
-      "Lasso (programming language)"
-    ],
-    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2019.00008/pdf",
-    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W2986071349",
@@ -6266,33 +5640,6 @@
     "team_member": "Gabin Taibi"
   },
   {
-    "id": "https://openalex.org/W3122127378",
-    "title": "Factorial Network Models To Improve P2P Credit Risk Management",
-    "year": 2019,
-    "doi": "10.2139/ssrn.3349001",
-    "doi_url": "https://doi.org/10.2139/ssrn.3349001",
-    "authors": [
-      "Daniel Felix Ahelegbey",
-      "Paolo Giudici",
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 2,
-    "type": "article",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Credit risk",
-      "Risk management",
-      "Business",
-      "Actuarial science",
-      "Risk analysis (engineering)"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.3349001",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W2964032689",
     "title": "A mobile learning platform to guarantee education continuity for unaccompanied foreign minors and refugees",
     "year": 2019,
@@ -6352,60 +5699,6 @@
     ],
     "pdf_url": null,
     "team_member": "Gabin Taibi"
-  },
-  {
-    "id": "https://openalex.org/W2934208943",
-    "title": "Latent Factor Models for Credit Scoring in P2P Systems",
-    "year": 2019,
-    "doi": "10.2139/ssrn.3325231",
-    "doi_url": "https://doi.org/10.2139/ssrn.3325231",
-    "authors": [
-      "Daniel Felix Ahelegbey",
-      "Paolo Giudici",
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 0,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Position (finance)",
-      "Credit risk",
-      "Computer science",
-      "Order (exchange)",
-      "Peer-to-peer"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.3325231",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W3124138210",
-    "title": "Factorial Network Models to Improve P2P Credit Risk Management",
-    "year": 2019,
-    "doi": "10.24451/arbor.17302",
-    "doi_url": "https://doi.org/10.24451/arbor.17302",
-    "authors": [
-      "Daniel Felix Ahelegbey",
-      "Paolo Giudici",
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
-    "venue": "Munich Personal RePEc Archive (Ludwig Maximilian University of Munich)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "This paper investigates how to improve statistical-based credit scoring of SMEs involved in P2P lending. The methodology discussed in the paper is a factor network-based segmentation for credit score modeling. The approach first constructs a network of SMEs where links emerge from comovement of latent factors, which allows us to segment the heterogeneous population into clusters. We then build a credit score model for each cluster via lasso-type regularization logistic regression. We compare our...",
-    "concepts": [
-      "Logistic regression",
-      "Credit risk",
-      "Computer science",
-      "Segmentation",
-      "Lasso (programming language)"
-    ],
-    "pdf_url": "https://arbor.bfh.ch/17302/",
-    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W1591615679",
@@ -6577,57 +5870,6 @@
     "team_member": "Gabin Taibi"
   },
   {
-    "id": "https://openalex.org/W2787112035",
-    "title": "P2P lending scoring models: Do they predict default?",
-    "year": 2018,
-    "doi": "10.69554/kcrx5150",
-    "doi_url": "https://doi.org/10.69554/kcrx5150",
-    "authors": [
-      "Paolo Giudici",
-      "Branka Hadji Misheva"
-    ],
-    "authors_str": "Paolo Giudici, Branka Hadji Misheva",
-    "venue": "Journal of digital banking.",
-    "cited_by_count": 7,
-    "type": "article",
-    "open_access": false,
-    "abstract": "Due to technological advancement, peer-to-peer (P2P) platforms have allowed significant cost reductions in lending. This improved allocation, however, comes at a higher credit risk. In this paper, the authors investigate the effectiveness of credit scoring models employed by P2P platforms with respect to loan default prediction. They argue that because of differences in risk ownership with respect to traditional lenders, the rating grades obtained from P2P scoring models may not be the best pred...",
-    "concepts": [
-      "Computer science",
-      "Econometrics",
-      "Economics"
-    ],
-    "pdf_url": null,
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
-    "id": "https://openalex.org/W2912851430",
-    "title": "Network-Based Models to Improve Credit Scoring Accuracy",
-    "year": 2018,
-    "doi": "10.1109/dsaa.2018.00080",
-    "doi_url": "https://doi.org/10.1109/dsaa.2018.00080",
-    "authors": [
-      "Branka Hadji Misheva",
-      "Paolo Giudici",
-      "Valentino Pediroda"
-    ],
-    "authors_str": "Branka Hadji Misheva, Paolo Giudici, Valentino Pediroda",
-    "venue": "",
-    "cited_by_count": 4,
-    "type": "article",
-    "open_access": true,
-    "abstract": "Technological advancements have prompted the&#13;\\nemergence of peer-to-peer credit services which improve user&#13;\\nexperience and offer significant reductions in costs. These advantages&#13;\\nmay be offset by a higher credit risk, due to disintermediation&#13;\\nand information asymmetries. We postulate that networkbased&#13;\\ninformation can be employed as a tool for reducing risks&#13;\\nthrough an improved credit scoring model that increases the&#13;\\naccuracy of default predictions. Our res...",
-    "concepts": [
-      "Computer science",
-      "Disintermediation",
-      "Credit risk",
-      "Logistic regression",
-      "Offset (computer science)"
-    ],
-    "pdf_url": "https://ieeexplore.ieee.org/document/8631481",
-    "team_member": "Branka Hadji Misheva"
-  },
-  {
     "id": "https://openalex.org/W2115681644",
     "title": "BMP-2 liberated from biomimetic implant coatings induces and sustains direct ossification in an ectopic rat model",
     "year": 2005,
@@ -6653,33 +5895,5 @@
     ],
     "pdf_url": null,
     "team_member": "Yiting Liu"
-  },
-  {
-    "id": "https://openalex.org/W3180585540",
-    "title": "",
-    "year": null,
-    "doi": null,
-    "doi_url": null,
-    "authors": [
-      "Ali Hirsa",
-      "Branka Hadji Misheva",
-      "Joerg Osterrieder",
-      "Jan-Alexander Posth"
-    ],
-    "authors_str": "Ali Hirsa, Branka Hadji Misheva, Joerg Osterrieder, Jan-Alexander Posth",
-    "venue": "",
-    "cited_by_count": 10,
-    "type": "article",
-    "open_access": false,
-    "abstract": "Financial trading has been widely analyzed for decades with market participants and academics always looking for advanced methods to improve trading performance. Deep reinforcement learning (DRL), a recently reinvigorated method with significant success in multiple domains, still has to show its benefit in the financial markets. We use a deep Q-network (DQN) to design long-short trading strategies for futures contracts. The state space consists of volatility-normalized daily returns, with buying...",
-    "concepts": [
-      "Reinforcement learning",
-      "Reinforcement",
-      "Asset (computer security)",
-      "Computer science",
-      "Financial economics"
-    ],
-    "pdf_url": null,
-    "team_member": "Branka Hadji Misheva"
   }
 ]
