@@ -4,8 +4,9 @@
 
 Research Project of the Swiss National Science Foundation (SNSF)
 
-[![SNSF](https://img.shields.io/badge/Funded%20by-SNSF-red)](https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a)
+[![SNSF](https://img.shields.io/badge/Funded%20by-SNSF-red)](https://data.snf.ch/grants/grant/213370)
 [![EU Horizon](https://img.shields.io/badge/EU-Horizon%20Europe-blue)](https://cordis.europa.eu/project/id/101119635)
+[![GitHub Pages](https://img.shields.io/badge/Website-Live-green)](https://digital-ai-finance.github.io/Narrative-Digital-Finance/)
 
 ## Overview
 
@@ -34,60 +35,82 @@ The approach involves:
 
 ## Team
 
-**Cooperation between University of Twente (Netherlands) and Bern Business School (Switzerland)**
+**Cooperation between University of Twente (Netherlands) and Bern University of Applied Sciences (Switzerland)**
 
-| Name | Role | Affiliation |
-|------|------|-------------|
-| **Joerg Osterrieder** | Principal Investigator | Bern Business School, University of Twente |
-| **Marius Jan Klein** | Team Member | Bern Business School |
-| **Branka Hadji Misheva** | Team Member | Bern Business School |
-| **Gabin Taibi** | Team Member | Bern Business School, University of Twente |
+| Name | Role | Affiliation | ORCID |
+|------|------|-------------|-------|
+| **Joerg Osterrieder** | Principal Investigator | BFH, University of Twente | [0000-0003-0189-8636](https://orcid.org/0000-0003-0189-8636) |
+| **Branka Hadji Misheva** | Senior Researcher | BFH | [0000-0001-7020-3469](https://orcid.org/0000-0001-7020-3469) |
+| **Gabin Taibi** | PhD Researcher | BFH, University of Twente | [0000-0002-0785-6771](https://orcid.org/0000-0002-0785-6771) |
+| **Yiting Liu** | PhD Researcher | BFH, University of Twente | [0009-0006-9554-8205](https://orcid.org/0009-0006-9554-8205) |
+| **Lennart John Baals** | PhD Researcher | BFH, University of Twente | [0000-0002-7737-9675](https://orcid.org/0000-0002-7737-9675) |
+| **Marius Jan Klein** | Researcher | BFH | - |
 
 ## Collaborations
 
-- **Deutsche Borse** - Dr. Stefan Schlamp (Head of Quantitative Analytics)
-- **COST Action CA19130** - Fintech and Artificial Intelligence in Finance
-- **MSCA Industrial Doctoral Network on Digital Finance**
+### Industry Partners
+- **Deutsche Borse AG** - Dr. Stefan Schlamp (Head of Quantitative Analytics, Market Data and Services)
+- **Quoniam Asset Management** - Dr. Axel Gross-Klussmann
+
+### Research Networks
+- **COST Action CA19130** - Fintech and Artificial Intelligence in Finance (Chair: J. Osterrieder, 49 countries)
+- **MSCA Industrial Doctoral Network on Digital Finance** - EU Horizon Europe Grant 101119635
+
+### Academic Partners
+- Humboldt-University Berlin (Prof. Dr. Wolfgang Karl Haerdle)
+- Bucharest University of Economic Studies (Prof. Dr. Daniel Traian Pele)
+- Babes-Bolyai University (Prof. Dr. Codruta Mare)
 
 ## Publications
 
-1. **Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI**
-   - Bolesta, K., Taibi, G., Codruta, M., Osterrieder, J., Hadji-Misheva, B. & Hopp, C. (2024). SSRN.
+### 2025
+
+1. **TOPol: Capturing and Explaining Multidimensional Semantic Polarity Fields and Vectors**
+   - Taibi, G., Gomez, L. (2025). Working paper.
+   - [OSF Repository](https://osf.io/nr94j/)
+
+2. **Nanosecond Microstructure: High-Frequency Traders Participation Stylized Facts**
+   - Taibi, G., Osterrieder, J., Schlamp, S. (2025). Working paper.
+
+3. **AI-Enhanced Systematic Literature Review on Financial Narratives**
+   - Taibi, G. et al. (2025). Under revision at Financial Innovation.
+
+### 2024
+
+4. **Reaction Times to Economic News in High-Frequency Trading**
+   - Osterrieder, J., Schlamp, S. (2025).
+   - [SSRN 5112295](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295)
+
+5. **Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI**
+   - Bolesta, K., Taibi, G., Mare, C., Osterrieder, J., Hadji-Misheva, B., Hopp, C. (2024).
+   - [SSRN 4698153](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153)
 
 ## Project Output
 
 | Category | Count |
 |----------|-------|
-| Scientific Publications | 1 |
+| Scientific Publications | 5 |
 | Datasets | 3 |
-| Collaborations | 1 |
+| Collaborations | 8 |
+| Academic Events | 6 |
+| Knowledge Transfer Events | 4 |
 
 ## Funding
 
 - **Swiss National Science Foundation (SNSF)**
-  - Proposal Number: 100018E_213370
+  - Grant Number: IZCOZ0_213370
+  - Amount: CHF 236,118
+  - Duration: July 2023 - June 2026
 - **Horizon Europe - Marie Sklodowska-Curie Actions**
   - Grant Agreement No. 101119635
 
-## Repository Structure
-
-```
-Narrative-Digital-Finance/
-├── README.md           # This file
-├── docs/               # Documentation
-│   ├── objectives.md   # Research objectives
-│   ├── team.md         # Team information
-│   └── funding.md      # Funding details
-├── src/                # Source code
-├── data/               # Data files
-└── LICENSE             # License file
-```
-
 ## Links
 
-- [Project Website](https://www.digital-finance-msca.com/snsf-narrative-digital-finance)
-- [SNSF Grant Page](https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a)
-- [EU CORDIS](https://cordis.europa.eu/project/id/101119635)
+- [Project Website](https://digital-ai-finance.github.io/Narrative-Digital-Finance/)
+- [SNSF Data Portal](https://data.snf.ch/grants/grant/213370)
+- [BFH Project Page](https://www.bfh.ch/en/research/research-projects/2023-180-022-876/)
+- [COST FinAI Wiki](https://wiki.fin-ai.eu/index.php/SNSF_Narrative_Digital_Finance)
+- [AI-in-Finance.eu](https://www.ai-in-finance.eu/The-Digital-Finance-Research-Programme/Narrative%20Digital%20Finance/)
 
 ## License
 
@@ -96,24 +119,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 *Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or Horizon Europe: Marie Sklodowska-Curie Actions.*
-
-## Description
-
-SNSF Narrative Digital Finance: A tale of structural breaks, bubbles & market narratives - Research Project of the Swiss National Science Foundation
-
-
-## Installation
-
-```bash
-git clone https://github.com/Digital-AI-Finance/Narrative-Digital-Finance.git
-cd Narrative-Digital-Finance
-pip install -r requirements.txt
-```
-
-
-## Usage
-
-See the repository contents for usage examples.
 
 ---
 

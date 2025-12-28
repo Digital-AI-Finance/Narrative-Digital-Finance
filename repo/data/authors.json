@@ -7,11 +7,11 @@
     "openalex_found": true,
     "openalex_id": "https://openalex.org/A5032430973",
     "orcid": "0000-0003-0189-8636",
-    "works_count": 136,
-    "cited_by_count": 1153,
+    "works_count": 163,
+    "cited_by_count": 1166,
     "h_index": 13,
     "i10_index": 18,
-    "2yr_mean_citedness": 2.0921052631578947,
+    "2yr_mean_citedness": 1.6176470588235294,
     "google_scholar": "https://scholar.google.com/citations?user=ocRaXoIAAAAJ",
     "ssrn": "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2618281",
     "last_known_institutions": [
@@ -28,35 +28,39 @@
     "affiliation": "Bern Business School",
     "openalex_found": true,
     "openalex_id": "https://openalex.org/A5039733264",
-    "orcid": "https://orcid.org/0000-0001-7020-3469",
-    "works_count": 42,
-    "cited_by_count": 380,
-    "h_index": 9,
-    "i10_index": 9,
-    "2yr_mean_citedness": 3.375,
+    "orcid": "0000-0001-7020-3469",
+    "works_count": 49,
+    "cited_by_count": 391,
+    "h_index": 10,
+    "i10_index": 10,
+    "2yr_mean_citedness": 2.4782608695652173,
     "google_scholar": null,
     "ssrn": null,
     "last_known_institutions": []
   },
   {
     "name": "Gabin Taibi",
-    "display_name": "Gabin Taibi",
+    "display_name": "Davide Taibi",
     "role": "PhD Researcher",
     "affiliation": "Bern Business School / University of Twente",
     "openalex_found": true,
-    "openalex_id": "https://openalex.org/A5093865672",
-    "orcid": null,
-    "works_count": 1,
-    "cited_by_count": 1,
-    "h_index": 1,
-    "i10_index": 0,
-    "2yr_mean_citedness": 1.0,
+    "openalex_id": "https://openalex.org/A5015403871",
+    "orcid": "0000-0002-0785-6771",
+    "works_count": 187,
+    "cited_by_count": 1150,
+    "h_index": 15,
+    "i10_index": 37,
+    "2yr_mean_citedness": 3.511627906976744,
     "google_scholar": null,
     "ssrn": null,
     "last_known_institutions": [
       {
-        "name": "Bern University of Applied Sciences",
-        "country": "CH"
+        "name": "National Research Council",
+        "country": "IT"
+      },
+      {
+        "name": "University of Oulu",
+        "country": "FI"
       }
     ]
   },
@@ -67,12 +71,12 @@
     "affiliation": "Bern Business School / University of Twente",
     "openalex_found": true,
     "openalex_id": "https://openalex.org/A5052453502",
-    "orcid": "https://orcid.org/0000-0002-7737-9675",
-    "works_count": 14,
-    "cited_by_count": 125,
+    "orcid": "0000-0002-7737-9675",
+    "works_count": 17,
+    "cited_by_count": 131,
     "h_index": 5,
     "i10_index": 5,
-    "2yr_mean_citedness": 3.9166666666666665,
+    "2yr_mean_citedness": 3.4,
     "google_scholar": null,
     "ssrn": null,
     "last_known_institutions": []
@@ -86,13 +90,17 @@
     "openalex_id": "https://openalex.org/A5056621270",
     "orcid": "0009-0006-9554-8205",
     "works_count": 12,
-    "cited_by_count": 351,
+    "cited_by_count": 354,
     "h_index": 4,
     "i10_index": 4,
-    "2yr_mean_citedness": 4.363636363636363,
+    "2yr_mean_citedness": 4.636363636363637,
     "google_scholar": null,
     "ssrn": null,
     "last_known_institutions": [
+      {
+        "name": "University of Twente",
+        "country": "NL"
+      },
       {
         "name": "Bern University of Applied Sciences",
         "country": "CH"
@@ -100,10 +108,6 @@
       {
         "name": "École Supérieure de Commerce de Rennes",
         "country": "FR"
-      },
-      {
-        "name": "University of Twente",
-        "country": "NL"
       }
     ]
   },
