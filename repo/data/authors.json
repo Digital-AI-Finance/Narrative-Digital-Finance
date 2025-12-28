@@ -3,7 +3,7 @@
     "name": "Joerg Osterrieder",
     "display_name": "Joerg Osterrieder",
     "role": "Principal Investigator",
-    "affiliation": "Bern Business School / University of Twente",
+    "affiliation": "Bern University of Applied Sciences / University of Twente",
     "openalex_found": true,
     "openalex_id": "https://openalex.org/A5032430973",
     "orcid": "0000-0003-0189-8636",
@@ -23,27 +23,23 @@
   },
   {
     "name": "Gabin Taibi",
-    "display_name": "Davide Taibi",
+    "display_name": "Gabin Taibi",
     "role": "PhD Researcher",
-    "affiliation": "Bern Business School / University of Twente",
+    "affiliation": "Bern University of Applied Sciences / University of Twente",
     "openalex_found": true,
-    "openalex_id": "https://openalex.org/A5015403871",
+    "openalex_id": "https://openalex.org/A5093865672",
     "orcid": "0000-0002-0785-6771",
-    "works_count": 187,
-    "cited_by_count": 1150,
-    "h_index": 15,
-    "i10_index": 37,
-    "2yr_mean_citedness": 3.511627906976744,
+    "works_count": 1,
+    "cited_by_count": 1,
+    "h_index": 1,
+    "i10_index": 0,
+    "2yr_mean_citedness": 1.0,
     "google_scholar": null,
     "ssrn": null,
     "last_known_institutions": [
       {
-        "name": "National Research Council",
-        "country": "IT"
-      },
-      {
-        "name": "University of Oulu",
-        "country": "FI"
+        "name": "Bern University of Applied Sciences",
+        "country": "CH"
       }
     ]
   },
@@ -51,7 +47,7 @@
     "name": "Lennart John Baals",
     "display_name": "Lennart John Baals",
     "role": "PhD Researcher",
-    "affiliation": "Bern Business School / University of Twente",
+    "affiliation": "Bern University of Applied Sciences / University of Twente",
     "openalex_found": true,
     "openalex_id": "https://openalex.org/A5052453502",
     "orcid": "0000-0002-7737-9675",
@@ -68,7 +64,7 @@
     "name": "Yiting Liu",
     "display_name": "Yiting Liu",
     "role": "PhD Researcher",
-    "affiliation": "Bern Business School / University of Twente",
+    "affiliation": "Bern University of Applied Sciences / University of Twente",
     "openalex_found": true,
     "openalex_id": "https://openalex.org/A5056621270",
     "orcid": "0009-0006-9554-8205",
@@ -97,7 +93,7 @@
   {
     "name": "Marius Jan Klein",
     "role": "Team Member",
-    "affiliation": "Bern Business School",
+    "affiliation": "Bern University of Applied Sciences",
     "openalex_found": false,
     "google_scholar": null,
     "ssrn": null

@@ -4,26 +4,42 @@
 
 This project represents a cooperation between:
 - **University of Twente**, Netherlands
-- **Bern Business School**, Switzerland
+- **Bern University of Applied Sciences (BFH)**, Switzerland
 
 ## Team Members
 
 ### Joerg Osterrieder
 **Principal Investigator**
 
-- Bern Business School, Switzerland
+- Bern University of Applied Sciences, Switzerland
 - University of Twente, Netherlands
+- ORCID: [0000-0003-0189-8636](https://orcid.org/0000-0003-0189-8636)
+
+### Yiting Liu
+**PhD Researcher**
+
+- Bern University of Applied Sciences, Switzerland
+- University of Twente, Netherlands
+- ORCID: [0009-0006-9554-8205](https://orcid.org/0009-0006-9554-8205)
+
+### Lennart John Baals
+**PhD Researcher**
+
+- Bern University of Applied Sciences, Switzerland
+- University of Twente, Netherlands
+- ORCID: [0000-0002-7737-9675](https://orcid.org/0000-0002-7737-9675)
+
+### Gabin Taibi
+**PhD Researcher**
+
+- Bern University of Applied Sciences, Switzerland
+- University of Twente, Netherlands
+- ORCID: [0000-0002-0785-6771](https://orcid.org/0000-0002-0785-6771)
 
 ### Marius Jan Klein
 **Team Member**
 
-- Bern Business School, Switzerland
-
-### Gabin Taibi
-**Team Member**
-
-- Bern Business School, Switzerland
-- University of Twente, Netherlands
+- Bern University of Applied Sciences, Switzerland
 
 ## Collaborations
 

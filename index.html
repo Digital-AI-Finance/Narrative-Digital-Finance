@@ -151,9 +151,9 @@
             <h1>Narrative Digital Finance</h1>
             <p class="sub">A tale of structural breaks, bubbles & market narratives | SNSF Research Project</p>
             <div class="hero-stats">
-                <div class="hero-stat"><div class="hero-stat-val">6</div><div class="hero-stat-lbl">Publications</div></div>
-                <div class="hero-stat"><div class="hero-stat-val">2,056</div><div class="hero-stat-lbl">Citations</div></div>
-                <div class="hero-stat"><div class="hero-stat-val">6</div><div class="hero-stat-lbl">Researchers</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">122</div><div class="hero-stat-lbl">Team Publications</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">1,652</div><div class="hero-stat-lbl">Citations</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">5</div><div class="hero-stat-lbl">Researchers</div></div>
                 <div class="hero-stat"><div class="hero-stat-val">49</div><div class="hero-stat-lbl">Countries</div></div>
                 <div class="hero-stat"><div class="hero-stat-val">CHF 236K</div><div class="hero-stat-lbl">Funding</div></div>
             </div>
@@ -290,13 +290,13 @@
             <section id="results" class="section">
                 <div class="section-title">Output & Results</div>
                 <div class="grid grid-4" style="margin-bottom:6px">
-                    <div class="stat-card"><div class="stat-num">6</div><div class="stat-lbl">Project Publications</div></div>
-                    <div class="stat-card"><div class="stat-num">2,056</div><div class="stat-lbl">Team Citations</div></div>
+                    <div class="stat-card"><div class="stat-num">122</div><div class="stat-lbl">Team Publications</div></div>
+                    <div class="stat-card"><div class="stat-num">1,652</div><div class="stat-lbl">Team Citations</div></div>
                     <div class="stat-card"><div class="stat-num">13</div><div class="stat-lbl">Max h-index</div></div>
                     <div class="stat-card"><div class="stat-num">CHF 236K</div><div class="stat-lbl">SNSF Funding</div></div>
                 </div>
                 <div class="grid grid-5" style="margin-bottom:6px">
-                    <div class="output-card"><div class="output-num">6</div><div class="output-lbl">Direct Pubs</div></div>
+                    <div class="output-card"><div class="output-num">6</div><div class="output-lbl">Project Pubs</div></div>
                     <div class="output-card"><div class="output-num">3</div><div class="output-lbl">Collaborations</div></div>
                     <div class="output-card"><div class="output-num">6+</div><div class="output-lbl">Events</div></div>
                     <div class="output-card"><div class="output-num">49</div><div class="output-lbl">COST Countries</div></div>
@@ -315,10 +315,12 @@
                         <input type="text" class="pub-search" id="pubSearch" placeholder="Search...">
                         <select class="pub-filter" id="yearFilter"><option value="">All Years</option></select>
                         <select class="pub-filter" id="authorFilter"><option value="">All Authors</option></select>
+                        <label style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--color-text-muted);cursor:pointer">
+                            <input type="checkbox" id="projectOnlyFilter" style="cursor:pointer"> Project Only
+                        </label>
                     </div>
                     <div style="display:flex;gap:6px;align-items:center">
                         <span class="pub-count" id="pubCount">Loading...</span>
-                        <button class="refresh-btn" id="refreshBtn" onclick="refreshFromOpenAlex()">Refresh</button>
                     </div>
                 </div>
                 <div style="overflow-x:auto;border:1px solid #e2e8f0;border-radius:5px">
@@ -499,13 +501,22 @@
             document.getElementById('yearFilter').innerHTML='<option value="">All Years</option>'+years.map(y=>`<option value="${y}">${y}</option>`).join('');
             document.getElementById('authorFilter').innerHTML='<option value="">All Authors</option>'+authors.map(a=>`<option value="${a}">${a}</option>`).join('');
         }
+        // Project keywords for filtering (WP1-WP4: NLP, narratives, bubbles, HFT, structural breaks)
+        const PROJECT_KEYWORDS=['narrative','nlp','text','sentiment','bubble','structural break','volatility','hft','high-frequency','trading','microstructure','topic model','bert','speech','central bank','macro','topl','polarity'];
+        function isProjectPublication(p){
+            const title=(p.title||'').toLowerCase();
+            const concepts=(p.concepts||[]).map(c=>c.toLowerCase()).join(' ');
+            return PROJECT_KEYWORDS.some(kw=>title.includes(kw)||concepts.includes(kw));
+        }
         function filterPublications(){
             const search=document.getElementById('pubSearch').value.toLowerCase();
             const year=document.getElementById('yearFilter').value;
             const author=document.getElementById('authorFilter').value;
+            const projectOnly=document.getElementById('projectOnlyFilter').checked;
             let filtered=allPublicationsData.filter(p=>{
                 const matchSearch=!search||(p.title||'').toLowerCase().includes(search)||(p.authors_str||'').toLowerCase().includes(search);
-                return matchSearch&&(!year||p.year==year)&&(!author||p.team_member===author);
+                const matchProject=!projectOnly||isProjectPublication(p);
+                return matchSearch&&(!year||p.year==year)&&(!author||p.team_member===author)&&matchProject;
             });
             publicationsData=filtered;
             renderPublications(filtered);
@@ -553,6 +564,7 @@
         document.getElementById('pubSearch').addEventListener('input',filterPublications);
         document.getElementById('yearFilter').addEventListener('change',filterPublications);
         document.getElementById('authorFilter').addEventListener('change',filterPublications);
+        document.getElementById('projectOnlyFilter').addEventListener('change',filterPublications);
 
         // OpenAlex API - polite pool email (M9)
         const OPENALEX_EMAIL='joerg.osterrieder@bfh.ch';

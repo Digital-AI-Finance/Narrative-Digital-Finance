@@ -90,7 +90,7 @@ The approach involves:
 |----------|-------|
 | Scientific Publications | 5 |
 | Datasets | 3 |
-| Collaborations | 8 |
+| Collaborations | 11 |
 | Academic Events | 6 |
 | Knowledge Transfer Events | 4 |
 
