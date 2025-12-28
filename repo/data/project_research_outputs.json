@@ -146,7 +146,7 @@
         "orcid": "0000-0002-7737-9675",
         "role": "PhD Researcher",
         "affiliation": "University of Twente / Bern Business School",
-        "expertise": ["Credit risk", "P2P lending", "Network analysis", "Graph-based models"],
+        "expertise": ["Digital asset analysis", "Financial econometrics", "Machine Learning"],
         "metrics": {
           "works_count": 14,
           "citations": 125,
@@ -162,7 +162,7 @@
         "orcid": "0009-0006-9554-8205",
         "role": "PhD Researcher",
         "affiliation": "University of Twente / Bern Business School",
-        "expertise": ["P2P lending", "Credit risk modeling", "Network theory", "Digital finance"],
+        "expertise": ["Financial markets", "Machine Learning", "Digital finance"],
         "metrics": {
           "works_count": 12,
           "citations": 351,
@@ -210,35 +210,6 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153",
         "abstract": "This paper presents an advanced conceptual framework for the analysis of textual data in the context of financial securities, hypothesizing that a comprehensive evaluation of events within the broader economic environment, particularly through their descriptions, significantly influences the pricing of financial instruments. Extends beyond traditional NLP by proposing inclusion of non-textual data forms such as images, videos, and audio.",
         "keywords": ["Multimodal NLP", "Financial Instrument Pricing", "Generative AI", "Text Analysis"]
-      },
-      {
-        "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
-        "authors": ["Yiting Liu", "Lennart John Baals", "Joerg Osterrieder", "Branka Hadji Misheva"],
-        "year": 2024,
-        "type": "Journal Article",
-        "venue": "Expert Systems with Applications",
-        "volume": "252",
-        "part": "B",
-        "article_number": "124100",
-        "doi": "10.1016/j.eswa.2024.124100",
-        "ssrn_id": "4726481",
-        "url": "https://www.sciencedirect.com/science/article/pii/S0957417424009667",
-        "abstract": "This study uses Machine Learning (ML) and network analysis for P2P credit default prediction. Developed graph-based models for loan risk assessment and found that model prediction accuracy improved under the use of network centrality features.",
-        "keywords": ["P2P Lending", "Credit Risk", "Network Analysis", "Machine Learning", "Bondora"]
-      },
-      {
-        "title": "Network Centrality and Credit Risk: A Comprehensive Analysis of Peer-to-Peer Lending Dynamics",
-        "authors": ["Yiting Liu", "Lennart John Baals", "Joerg Osterrieder", "Branka Hadji Misheva"],
-        "year": 2024,
-        "type": "Journal Article",
-        "venue": "Finance Research Letters",
-        "volume": "63",
-        "article_number": "105308",
-        "doi": "10.1016/J.FRL.2024.105308",
-        "ssrn_id": "4726490",
-        "url": "https://www.sciencedirect.com/science/article/pii/S1544612324003386",
-        "abstract": "Analyzes credit risk assessment in P2P lending using dataset from Bondora. Combines traditional credit features with network topological features (degree centrality) to showcase the crucial role of a borrower's position and connectivity within the P2P network in determining loan default probabilities.",
-        "keywords": ["Network Centrality", "Credit Risk", "P2P Lending", "Bondora", "Degree Centrality"]
       },
       {
         "title": "Reaction Times to Economic News in High-Frequency Trading: An Analysis of Latency and Informed Trading reacting to Macro-News Announcements",
@@ -291,15 +262,6 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4730470"
       },
       {
-        "title": "Forecasting Commercial Customers Credit Risk Through Early Warning Signals Data: A Machine Learning based Approach",
-        "authors": ["Marcos Machado", "Joerg Osterrieder", "Daniel Chen"],
-        "year": 2024,
-        "venue": "SSRN",
-        "ssrn_id": "4754568",
-        "date": "2024-03-10",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4754568"
-      },
-      {
         "title": "Digital Finance: Reaching New Frontiers",
         "authors": ["Joerg Osterrieder", "Branka Hadji Misheva", "Marcos Machado"],
         "year": 2023,
@@ -337,14 +299,6 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4941279"
       },
       {
-        "title": "What do we Know About Fraud Detection in Peer-to-Peer Lending? A Systematic Literature Review",
-        "authors": ["Marcos Machado", "Ioana Florina Coita", "Karolina Bolesta", "et al.", "Joerg Osterrieder"],
-        "year": 2024,
-        "venue": "SSRN",
-        "ssrn_id": "4948657",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4948657"
-      },
-      {
         "title": "Enhancing Security in Blockchain Networks: Anomalies, Frauds, and Advanced Detection Techniques",
         "authors": ["Joerg Osterrieder", "Stephen Chan", "Jeffrey Chu", "Yuanyuan Zhang", "Branka Hadji Misheva", "Codruta Mare"],
         "year": 2024,
@@ -356,14 +310,6 @@
         "authors": ["Joerg Osterrieder", "Stephen Chan", "Jeffrey Chu", "Yuanyuan Zhang"],
         "year": 2024,
         "venue": "Physica A: Statistical Mechanics and its Applications"
-      },
-      {
-        "title": "Explainable AI in Credit Risk Management",
-        "authors": ["Branka Hadji Misheva", "Ali Hirsa", "Joerg Osterrieder", "Onkar Kulkarni", "Stephen Fung Lin"],
-        "year": 2021,
-        "venue": "SSRN",
-        "ssrn_id": "3795322",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795322"
       }
     ]
   },
@@ -409,11 +355,6 @@
         "organization": "SGH Warsaw School of Economics",
         "country": "Poland",
         "activities": ["Joint research", "PhD training"]
-      },
-      {
-        "organization": "Masaryk University",
-        "country": "Czech Republic",
-        "activities": ["Network-based credit risk project collaboration"]
       }
     ],
     "research_networks": [
@@ -485,12 +426,6 @@
         "event": "Financial Math Seminar",
         "location": "Worcester Polytechnic Institute, USA",
         "type": "Invited Seminar"
-      },
-      {
-        "title": "Network-based credit risk research findings",
-        "event": "16th ERCIM WG Conference",
-        "location": "Berlin, Germany",
-        "date": "December 2023"
       }
     ],
     "workshops": [
@@ -510,17 +445,15 @@
   "datasets_and_code": {
     "datasets_used": [
       {
-        "name": "Bondora P2P Lending Dataset",
-        "description": "Comprehensive dataset from Bondora, a leading European P2P platform. Data from 2009-2020.",
-        "source": "Bondora Public Data",
-        "url": "https://www.bondora.com/en",
-        "ieee_dataport": "https://ieee-dataport.org/open-access/bondora-peer-peer-lending-data",
-        "used_in": ["Network Centrality and Credit Risk paper", "Leveraging Network Topology paper"]
+        "name": "Financial Narratives Corpus",
+        "description": "Collection of financial news, earnings calls, and central bank communications for NLP analysis",
+        "sources": ["Reuters", "Bloomberg", "FOMC", "ECB"]
       },
       {
-        "name": "Lending Club Loan Dataset",
-        "description": "P2P loans issued between 2007-2018 for granting models",
-        "zenodo_url": "https://zenodo.org/records/11295916"
+        "name": "Deutsche Borse HFT Dataset",
+        "description": "Nanosecond-level market microstructure data from Xetra/Eurex for HFT analysis",
+        "source": "Deutsche Borse AG",
+        "collaboration": "Dr. Stefan Schlamp"
       }
     ],
     "code_repositories": [
@@ -538,20 +471,6 @@
     }
   },
   "related_projects": [
-    {
-      "title": "Network-based credit risk models in P2P lending markets",
-      "funder": "SNSF Lead Agency (with Czech Republic)",
-      "funding_amount": {
-        "value": 347836,
-        "currency": "CHF"
-      },
-      "duration": "August 2022 - August 2025",
-      "pi": "Prof. Dr. Branka Hadji Misheva",
-      "co_pi": "Prof. Dr. Joerg Osterrieder",
-      "team": ["Yiting Liu", "Lennart John Baals"],
-      "collaborators": ["E. Baumohl", "S. Lyocsa", "O. Deev", "T. Plihal"],
-      "url": "https://www.digital-finance-msca.com/network-based-credit-risk-models-snsf"
-    },
     {
       "title": "Digital Finance - Reaching New Frontiers",
       "funder": "EU Horizon Europe MSCA",
@@ -586,17 +505,13 @@
     "Asset Bubbles",
     "Structural Breaks",
     "Financial Markets",
-    "Credit Risk",
-    "P2P Lending",
-    "Network Analysis",
     "Sentiment Analysis",
     "Generative AI",
     "High-Frequency Trading",
     "Market Microstructure",
-    "Explainable AI",
+    "BERTopic",
     "Digital Finance",
     "Fintech",
-    "Blockchain",
     "NFT",
     "SNSF",
     "COST Action",
