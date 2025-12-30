@@ -6,40 +6,66 @@
     <title>Page Not Found | Narrative Digital Finance</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; }
-        .navbar { height: 36px; background: #0f172a; display: flex; align-items: center; padding: 0 16px; }
-        .navbar-brand { color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; }
-        .navbar-brand span { color: #3b82f6; margin-right: 4px; }
-        .content { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
+        /* 404-specific styles using CSS variables */
+        .error-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            min-height: calc(100vh - var(--navbar-height));
+            margin-top: var(--navbar-height);
+        }
         .error-box { max-width: 400px; }
-        h1 { font-size: 72px; color: #3b82f6; margin-bottom: 16px; }
-        h2 { font-size: 20px; color: #0f172a; margin-bottom: 12px; }
-        p { color: #64748b; font-size: 14px; margin-bottom: 24px; }
-        .btn { display: inline-block; background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 500; transition: background 0.2s; }
-        .btn:hover { background: #2563eb; }
-        .links { margin-top: 24px; }
-        .links a { color: #3b82f6; text-decoration: none; font-size: 12px; margin: 0 12px; }
-        .links a:hover { text-decoration: underline; }
+        .error-code {
+            font-size: 72px;
+            color: var(--color-primary);
+            margin-bottom: var(--space-lg);
+            font-weight: 700;
+        }
+        .error-title {
+            font-size: 20px;
+            color: var(--color-dark);
+            margin-bottom: var(--space-md);
+        }
+        .error-message {
+            color: var(--color-text-muted);
+            font-size: 14px;
+            margin-bottom: var(--space-xl);
+        }
+        .error-links {
+            margin-top: var(--space-xl);
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        .error-links a {
+            color: var(--color-primary);
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
         <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
     </nav>
-    <div class="content">
+    <main id="main-content" class="error-content">
         <div class="error-box">
-            <h1>404</h1>
-            <h2>Page Not Found</h2>
-            <p>The page you're looking for doesn't exist or has been moved.</p>
-            <a href="index.html" class="btn">Return to Home</a>
-            <div class="links">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
+            <a href="index.html" class="btn btn-primary">Return to Home</a>
+            <div class="error-links">
                 <a href="objectives.html">Research Objectives</a>
                 <a href="report.html">Scientific Report</a>
                 <a href="https://data.snf.ch/grants/grant/213370">SNSF Data</a>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

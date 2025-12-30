@@ -90,8 +90,8 @@
       "keywords": ["narrative finance", "NLP", "machine learning", "asset bubbles", "structural breaks", "fintech", "digital finance"]
     }
     </script>
-    <!-- Chart.js for publication/citation visualizations -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js for publication/citation visualizations (pinned to v4.4.0 for stability) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -108,7 +108,8 @@
                 <li><a href="#research">Research</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#results">Results</a></li>
-                <li><a href="#publications">Publications</a></li>
+                <li><a href="#publications">Project Pubs</a></li>
+                <li><a href="#team-publications">Team Pubs</a></li>
                 <li><a href="#phd-research">PhD Research</a></li>
                 <li><a href="#datasets">Datasets</a></li>
                 <li><a href="#collaborations">Collaborations</a></li>
@@ -310,15 +311,48 @@
             </section>
 
             <section id="publications" class="section">
-                <div class="section-title">Publications (OpenAlex)</div>
+                <div class="section-title">Project Publications (SNSF Grant IZCOZ0_213370)</div>
+                <p style="font-size:11px;color:var(--color-text-muted);margin-bottom:10px">Direct outputs from this research project (WP1-WP4: NLP, narratives, bubbles, HFT)</p>
+                <div class="grid grid-2" style="margin-bottom:10px">
+                    <div class="pub-card">
+                        <h4>TOPol: Capturing and Explaining Multidimensional Semantic Polarity Fields and Vectors</h4>
+                        <p>Taibi, G., Gomez, L. (2025) | <a href="https://arxiv.org/abs/2510.25069" target="_blank">arXiv:2510.25069</a> | <a href="https://osf.io/nr94j/" target="_blank">OSF</a></p>
+                    </div>
+                    <div class="pub-card">
+                        <h4>AI-Enhanced Systematic Literature Review on Financial Narratives</h4>
+                        <p>Taibi, G. et al. (2025) | Under revision at Financial Innovation</p>
+                    </div>
+                </div>
+                <div class="grid grid-2" style="margin-bottom:10px">
+                    <div class="pub-card">
+                        <h4>Nanosecond Microstructure: High-Frequency Traders Participation Stylized Facts</h4>
+                        <p>Taibi, G., Osterrieder, J., Schlamp, S. (2025) | Working Paper</p>
+                    </div>
+                    <div class="pub-card">
+                        <h4>Reaction Times to Economic News in High-Frequency Trading</h4>
+                        <p>Osterrieder, J., Schlamp, S. (2025) | <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295" target="_blank">SSRN 5112295</a></p>
+                    </div>
+                </div>
+                <div class="grid grid-2" style="margin-bottom:10px">
+                    <div class="pub-card">
+                        <h4>Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI</h4>
+                        <p>Bolesta, K., Taibi, G., Mare, C., Osterrieder, J. et al. (2024) | <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153" target="_blank">SSRN 4698153</a></p>
+                    </div>
+                    <div class="pub-card">
+                        <h4>Macro Narrative Index Construction</h4>
+                        <p>BERTopic + PCA-based sentiment analysis of central bank communications | In Progress</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="team-publications" class="section">
+                <div class="section-title">Team Publications (All Members)</div>
+                <p style="font-size:11px;color:var(--color-text-muted);margin-bottom:10px">Complete publication record of all team members via OpenAlex</p>
                 <div class="pub-controls">
                     <div class="pub-filters">
                         <input type="text" class="pub-search" id="pubSearch" placeholder="Search...">
                         <select class="pub-filter" id="yearFilter"><option value="">All Years</option></select>
                         <select class="pub-filter" id="authorFilter"><option value="">All Authors</option></select>
-                        <label style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--color-text-muted);cursor:pointer">
-                            <input type="checkbox" id="projectOnlyFilter" style="cursor:pointer"> Project Only
-                        </label>
                     </div>
                     <div style="display:flex;gap:6px;align-items:center">
                         <span class="pub-count" id="pubCount">Loading...</span>
@@ -502,22 +536,13 @@
             document.getElementById('yearFilter').innerHTML='<option value="">All Years</option>'+years.map(y=>`<option value="${y}">${y}</option>`).join('');
             document.getElementById('authorFilter').innerHTML='<option value="">All Authors</option>'+authors.map(a=>`<option value="${a}">${a}</option>`).join('');
         }
-        // Project keywords for filtering (WP1-WP4: NLP, narratives, bubbles, HFT, structural breaks)
-        const PROJECT_KEYWORDS=['narrative','nlp','text','sentiment','bubble','structural break','volatility','hft','high-frequency','trading','microstructure','topic model','bert','speech','central bank','macro','topl','polarity'];
-        function isProjectPublication(p){
-            const title=(p.title||'').toLowerCase();
-            const concepts=(p.concepts||[]).map(c=>c.toLowerCase()).join(' ');
-            return PROJECT_KEYWORDS.some(kw=>title.includes(kw)||concepts.includes(kw));
-        }
         function filterPublications(){
             const search=document.getElementById('pubSearch').value.toLowerCase();
             const year=document.getElementById('yearFilter').value;
             const author=document.getElementById('authorFilter').value;
-            const projectOnly=document.getElementById('projectOnlyFilter').checked;
             let filtered=allPublicationsData.filter(p=>{
                 const matchSearch=!search||(p.title||'').toLowerCase().includes(search)||(p.authors_str||'').toLowerCase().includes(search);
-                const matchProject=!projectOnly||isProjectPublication(p);
-                return matchSearch&&(!year||p.year==year)&&(!author||p.team_member===author)&&matchProject;
+                return matchSearch&&(!year||p.year==year)&&(!author||p.team_member===author);
             });
             publicationsData=filtered;
             renderPublications(filtered);
@@ -565,7 +590,6 @@
         document.getElementById('pubSearch').addEventListener('input',filterPublications);
         document.getElementById('yearFilter').addEventListener('change',filterPublications);
         document.getElementById('authorFilter').addEventListener('change',filterPublications);
-        document.getElementById('projectOnlyFilter').addEventListener('change',filterPublications);
 
         // OpenAlex API - polite pool email (M9)
         const OPENALEX_EMAIL='joerg.osterrieder@bfh.ch';
