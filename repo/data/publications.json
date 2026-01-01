@@ -50,7 +50,7 @@
       "Computer science",
       "Machine learning"
     ],
-    "pdf_url": "https://doi.org/10.1007/s10203-025-00512-1",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10203-025-00512-1.pdf",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1401,40 +1401,6 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W4403066308",
-    "title": "AI 4 Crowdfunding -&amp;nbsp; A hands-on roadmap to study and understand crowdfunding data using critical thinking AI",
-    "year": 2024,
-    "doi": "10.2139/ssrn.4941279",
-    "doi_url": "https://doi.org/10.2139/ssrn.4941279",
-    "authors": [
-      "Ștefana Belbe",
-      "Lucía Gómez",
-      "Liana Stanca",
-      "Karsten Wenzlaff",
-      "Codruța Mare",
-      "Ramy Elitzur",
-      "Karolina Bolesta",
-      "Xiaohong Huang",
-      "Gokce Nur Yilmaz",
-      "Frédérik Sinan Bernard"
-    ],
-    "authors_str": "Ștefana Belbe, Lucía Gómez, Liana Stanca, Karsten Wenzlaff, Codruța Mare...",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 0,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Living lab",
-      "Critical thinking",
-      "Data science",
-      "Psychology",
-      "Computer science"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.4941279",
-    "team_member": "Joerg Osterrieder"
-  },
-  {
     "id": "https://openalex.org/W4400521487",
     "title": "Ethical Artificial Intelligence, Fintech and Data Protection: A Path Forward for Training in Europe",
     "year": 2024,
@@ -1466,6 +1432,40 @@
       "Computer science"
     ],
     "pdf_url": "http://dx.doi.org/10.2139/ssrn.4885037",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4403066308",
+    "title": "AI 4 Crowdfunding -&amp;nbsp; A hands-on roadmap to study and understand crowdfunding data using critical thinking AI",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4941279",
+    "doi_url": "https://doi.org/10.2139/ssrn.4941279",
+    "authors": [
+      "Ștefana Belbe",
+      "Lucía Gómez",
+      "Liana Stanca",
+      "Karsten Wenzlaff",
+      "Codruța Mare",
+      "Ramy Elitzur",
+      "Karolina Bolesta",
+      "Xiaohong Huang",
+      "Gokce Nur Yilmaz",
+      "Frédérik Sinan Bernard"
+    ],
+    "authors_str": "Ștefana Belbe, Lucía Gómez, Liana Stanca, Karsten Wenzlaff, Codruța Mare...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Living lab",
+      "Critical thinking",
+      "Data science",
+      "Psychology",
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4941279",
     "team_member": "Joerg Osterrieder"
   },
   {
