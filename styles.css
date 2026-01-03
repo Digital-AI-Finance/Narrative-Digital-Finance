@@ -1102,3 +1102,193 @@ textarea:focus-visible,
     padding: var(--space-sm);
   }
 }
+
+/* ===== DMP COMPARISON PAGE ===== */
+.comparison-hero {
+  background: linear-gradient(135deg, var(--color-dark), #1e3a5f);
+  color: var(--color-white);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.comparison-hero h1 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-xs);
+}
+
+.comparison-hero .sub {
+  font-size: var(--font-size-sm);
+  opacity: 0.85;
+}
+
+.comparison-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-md);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.legend-original { background: #fecaca; border: 2px solid #dc2626; }
+.legend-enhanced { background: #bbf7d0; border: 2px solid #16a34a; }
+.legend-addition { background: #dcfce7; }
+.legend-improvement { background: #fef3c7; }
+
+/* Comparison Grid */
+.comparison-section {
+  margin-bottom: var(--space-xl);
+}
+
+.comparison-section-header {
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+  font-size: var(--font-size-md);
+}
+
+.comparison-question {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.comparison-column {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.column-original {
+  border-left: 4px solid #dc2626;
+  background: #fef2f2;
+}
+
+.column-enhanced {
+  border-left: 4px solid #16a34a;
+  background: #f0fdf4;
+}
+
+.column-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.column-original .column-label { color: #dc2626; }
+.column-enhanced .column-label { color: #16a34a; }
+
+/* Diff Highlighting */
+.diff-addition {
+  background: #dcfce7;
+  border-left: 3px solid #16a34a;
+  padding: var(--space-xs) var(--space-sm);
+  margin: var(--space-xs) 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.diff-improvement {
+  background: #fef3c7;
+  border-left: 3px solid #d97706;
+  padding: var(--space-xs) var(--space-sm);
+  margin: var(--space-xs) 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.diff-removed {
+  background: #fee2e2;
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+  padding: var(--space-xs) var(--space-sm);
+  margin: var(--space-xs) 0;
+  border-radius: var(--radius-sm);
+}
+
+/* Data tables in comparison */
+.comparison-column table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-xs);
+  margin: var(--space-sm) 0;
+}
+
+.comparison-column th,
+.comparison-column td {
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.comparison-column th {
+  background: var(--color-bg-alt);
+  font-weight: 600;
+}
+
+.comparison-column ul {
+  margin: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+}
+
+.comparison-column li {
+  margin-bottom: var(--space-xs);
+}
+
+/* Responsive comparison */
+@media (max-width: 900px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-legend {
+    gap: var(--space-md);
+  }
+}
+
+/* Print styles for comparison */
+@media print {
+  .comparison-grid {
+    grid-template-columns: 1fr 1fr;
+    page-break-inside: avoid;
+  }
+
+  .comparison-section {
+    page-break-inside: avoid;
+  }
+
+  .comparison-section-header {
+    page-break-after: avoid;
+  }
+}
