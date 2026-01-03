@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Inventory | Narrative Digital Finance</title>
+    <meta name="description" content="Complete inventory of all publications, datasets, repositories, and evidence for the SNSF Narrative Digital Finance research project.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .inventory-section { margin-bottom: var(--space-xl); }
+        .inventory-section h2 {
+            font-size: var(--font-size-md);
+            color: var(--color-dark);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-primary);
+        }
+        .inventory-table { width: 100%; border-collapse: collapse; font-size: var(--font-size-sm); }
+        .inventory-table th {
+            text-align: left;
+            padding: var(--space-sm);
+            background: var(--color-bg-alt);
+            font-weight: 600;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .inventory-table td {
+            padding: var(--space-sm);
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: top;
+        }
+        .inventory-table tr:hover { background: var(--color-blue-light); }
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: var(--radius-sm);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-paper { background: #dbeafe; color: #1e40af; }
+        .badge-repo { background: #fce7f3; color: #9d174d; }
+        .badge-official { background: #dcfce7; color: #166534; }
+        .badge-profile { background: #fef3c7; color: #92400e; }
+        .badge-dataset { background: #e0e7ff; color: #3730a3; }
+        .badge-event { background: #f3e8ff; color: #6b21a8; }
+        .badge-collab { background: #ccfbf1; color: #115e59; }
+        .status-verified { color: #16a34a; }
+        .status-pending { color: #d97706; }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        .summary-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            text-align: center;
+        }
+        .summary-card .number { font-size: var(--font-size-xl); font-weight: 700; color: var(--color-primary); }
+        .summary-card .label { font-size: var(--font-size-xs); color: var(--color-text-muted); }
+        .wp-tag {
+            display: inline-block;
+            padding: 1px 4px;
+            background: var(--color-bg-alt);
+            border-radius: 3px;
+            font-size: 9px;
+            margin-left: 4px;
+        }
+        .link-icon { margin-right: 4px; }
+        .verified-date {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-lg);
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
+    </nav>
+
+    <aside class="sidebar" aria-label="Main navigation">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Inventory</div>
+            <ul class="sidebar-nav">
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#repositories">Repositories</a></li>
+                <li><a href="#official-pages">Official Pages</a></li>
+                <li><a href="#team-profiles">Team Profiles</a></li>
+                <li><a href="#datasets">Datasets</a></li>
+                <li><a href="#collaborations">Collaborations</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#funding">Funding</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Pages</div>
+            <a href="index.html" class="sidebar-link">Home</a>
+            <a href="objectives.html" class="sidebar-link">Research Objectives</a>
+            <a href="report.html" class="sidebar-link">Final Report</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Official</div>
+            <a href="https://data.snf.ch/grants/grant/213370" class="sidebar-link" target="_blank" rel="noopener noreferrer">SNSF Portal</a>
+            <a href="https://www.bfh.ch/en/research/research-projects/2023-180-022-876/" class="sidebar-link" target="_blank" rel="noopener noreferrer">BFH Project</a>
+        </div>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <header class="page-header">
+            <h1>Evidence Inventory</h1>
+            <p class="subtitle">Complete inventory of all project outputs, publications, and verifiable evidence</p>
+            <p class="verified-date">Last verified: 2026-01-03 | SNSF Grant IZCOZ0_213370</p>
+        </header>
+
+        <!-- Summary Statistics -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="number">6</div>
+                <div class="label">Publications</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">3</div>
+                <div class="label">Repositories</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">6</div>
+                <div class="label">Official Pages</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">4</div>
+                <div class="label">Team ORCIDs</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">2</div>
+                <div class="label">Datasets</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">10+</div>
+                <div class="label">Collaborations</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">6</div>
+                <div class="label">Events</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">39</div>
+                <div class="label">Countries</div>
+            </div>
+        </div>
+
+        <!-- Publications -->
+        <section class="inventory-section" id="publications">
+            <h2>Publications</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Authors</th>
+                        <th>Year</th>
+                        <th>Status</th>
+                        <th>Link</th>
+                        <th>WP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-paper">Paper</span> TOPol: Capturing and Explaining Multidimensional Semantic Polarity Fields</td>
+                        <td>Taibi, Gomez</td>
+                        <td>2025</td>
+                        <td><span class="status-verified">Published</span></td>
+                        <td><a href="https://arxiv.org/abs/2510.25069" target="_blank" rel="noopener noreferrer">arXiv:2510.25069</a> | <a href="https://osf.io/nr94j/" target="_blank" rel="noopener noreferrer">OSF</a></td>
+                        <td><span class="wp-tag">WP1</span><span class="wp-tag">WP3</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-paper">Paper</span> AI-Enhanced Systematic Literature Review on Financial Narratives</td>
+                        <td>Taibi et al.</td>
+                        <td>2025</td>
+                        <td><span class="status-pending">Under Revision</span></td>
+                        <td>Financial Innovation (journal)</td>
+                        <td><span class="wp-tag">WP1</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-paper">Paper</span> Nanosecond Microstructure: High-Frequency Traders Participation Stylized Facts</td>
+                        <td>Taibi, Osterrieder, Schlamp</td>
+                        <td>2025</td>
+                        <td><span class="status-pending">Working Paper</span></td>
+                        <td>In preparation</td>
+                        <td><span class="wp-tag">WP4</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-paper">Paper</span> Reaction Times to Economic News in High-Frequency Trading</td>
+                        <td>Osterrieder, Schlamp</td>
+                        <td>2025</td>
+                        <td><span class="status-verified">Published</span></td>
+                        <td><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295" target="_blank" rel="noopener noreferrer">SSRN 5112295</a></td>
+                        <td><span class="wp-tag">WP4</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-paper">Paper</span> Hypothesizing Multimodal Influence: Textual and Non-Textual Data on Financial Pricing</td>
+                        <td>Bolesta, Taibi, Mare, Osterrieder, Hopp</td>
+                        <td>2024</td>
+                        <td><span class="status-verified">Published</span></td>
+                        <td><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153" target="_blank" rel="noopener noreferrer">SSRN 4698153</a></td>
+                        <td><span class="wp-tag">WP3</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-paper">Paper</span> Mitigating Digital Asset Risks (COST Collaboration)</td>
+                        <td>Teng, Hardle, Osterrieder, Baals et al. (30+ authors)</td>
+                        <td>2023</td>
+                        <td><span class="status-verified">Published</span></td>
+                        <td><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4594467" target="_blank" rel="noopener noreferrer">SSRN 4594467</a></td>
+                        <td><span class="wp-tag">COST</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Repositories -->
+        <section class="inventory-section" id="repositories">
+            <h2>Code Repositories</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Repository</th>
+                        <th>Description</th>
+                        <th>Platform</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-repo">Repo</span> Narrative-Digital-Finance</td>
+                        <td>Project website, documentation, and data files</td>
+                        <td>GitHub</td>
+                        <td><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/" target="_blank" rel="noopener noreferrer">Pages</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-repo">Repo</span> TOPol Code and Data</td>
+                        <td>Semantic polarity fields framework implementation</td>
+                        <td>OSF</td>
+                        <td><a href="https://osf.io/nr94j/" target="_blank" rel="noopener noreferrer">osf.io/nr94j</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-repo">Repo</span> realized-library</td>
+                        <td>Realized volatility estimators and jump detection (Python/C++)</td>
+                        <td>GitHub/PyPI</td>
+                        <td><a href="https://github.com/GabinTB/realized-library" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://pypi.org/project/realized-library/" target="_blank" rel="noopener noreferrer">PyPI</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Official Pages -->
+        <section class="inventory-section" id="official-pages">
+            <h2>Official Project Pages</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Page</th>
+                        <th>Organization</th>
+                        <th>Purpose</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-official">Official</span> SNSF Data Portal</td>
+                        <td>Swiss National Science Foundation</td>
+                        <td>Grant information, outputs, funding details</td>
+                        <td><a href="https://data.snf.ch/grants/grant/213370" target="_blank" rel="noopener noreferrer">data.snf.ch/grants/grant/213370</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-official">Official</span> mySNF Grant</td>
+                        <td>Swiss National Science Foundation</td>
+                        <td>Grant management portal</td>
+                        <td><a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" target="_blank" rel="noopener noreferrer">mysnf.ch</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-official">Official</span> BFH Project Page</td>
+                        <td>Bern University of Applied Sciences</td>
+                        <td>Institutional project listing</td>
+                        <td><a href="https://www.bfh.ch/en/research/research-projects/2023-180-022-876/" target="_blank" rel="noopener noreferrer">bfh.ch</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-official">Official</span> COST Action CA19130</td>
+                        <td>European Cooperation in Science & Technology</td>
+                        <td>FinTech and AI in Finance network</td>
+                        <td><a href="https://www.cost.eu/actions/CA19130/" target="_blank" rel="noopener noreferrer">cost.eu</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-official">Official</span> MSCA Digital Finance</td>
+                        <td>EU Horizon Europe</td>
+                        <td>Industrial Doctoral Network</td>
+                        <td><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance" target="_blank" rel="noopener noreferrer">digital-finance-msca.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-official">Official</span> EU CORDIS</td>
+                        <td>European Commission</td>
+                        <td>EU project results database</td>
+                        <td><a href="https://cordis.europa.eu/project/id/101119635" target="_blank" rel="noopener noreferrer">cordis.europa.eu</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Team Profiles -->
+        <section class="inventory-section" id="team-profiles">
+            <h2>Team Profiles</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>ORCID</th>
+                        <th>Other Profiles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-profile">PI</span> Prof. Dr. Joerg Osterrieder</td>
+                        <td>Principal Investigator</td>
+                        <td><a href="https://orcid.org/0000-0003-0189-8636" target="_blank" rel="noopener noreferrer">0000-0003-0189-8636</a></td>
+                        <td><a href="https://scholar.google.com/citations?user=ocRaXoIAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> | <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2618281" target="_blank" rel="noopener noreferrer">SSRN</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-profile">PhD</span> Gabin Taibi</td>
+                        <td>PhD Researcher</td>
+                        <td><a href="https://orcid.org/0000-0002-0785-6771" target="_blank" rel="noopener noreferrer">0000-0002-0785-6771</a></td>
+                        <td><a href="https://scholar.google.com/citations?user=OhIWH5AAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-profile">PhD</span> Lennart John Baals</td>
+                        <td>PhD Researcher</td>
+                        <td><a href="https://orcid.org/0000-0002-7737-9675" target="_blank" rel="noopener noreferrer">0000-0002-7737-9675</a></td>
+                        <td><a href="https://www.researchgate.net/scientific-contributions/Lennart-John-Baals-2218848188" target="_blank" rel="noopener noreferrer">ResearchGate</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-profile">PhD</span> Yiting Liu</td>
+                        <td>PhD Researcher</td>
+                        <td><a href="https://orcid.org/0009-0006-9554-8205" target="_blank" rel="noopener noreferrer">0009-0006-9554-8205</a></td>
+                        <td><a href="https://people.utwente.nl/yiting.liu" target="_blank" rel="noopener noreferrer">UT Profile</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-profile">Team</span> Marius Jan Klein</td>
+                        <td>Researcher</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Datasets -->
+        <section class="inventory-section" id="datasets">
+            <h2>Datasets</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Dataset</th>
+                        <th>Description</th>
+                        <th>Source</th>
+                        <th>Access</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-dataset">Data</span> Financial Narratives Corpus</td>
+                        <td>1M+ documents from financial news, earnings calls, SEC filings, central bank speeches</td>
+                        <td>RavenPack, LSEG, BIS, SEC EDGAR</td>
+                        <td>Project internal (commercial licenses)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-dataset">Data</span> HFT Market Microstructure Dataset</td>
+                        <td>Nanosecond-level trading data from Deutsche Borse T7 platform (Euro STOXX 50, DAX Futures)</td>
+                        <td>Deutsche Borse AG</td>
+                        <td>Collaboration with Dr. Stefan Schlamp</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-dataset">Data</span> US Macro Strength Index</td>
+                        <td>PCA-based index from FED Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls (1996-2025)</td>
+                        <td>FRED (St. Louis FED)</td>
+                        <td><a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener noreferrer">Public API</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-dataset">Data</span> Fed Banker Speeches</td>
+                        <td>Federal Reserve banker speech transcripts (2004-2010) for 2008 crisis analysis</td>
+                        <td>BIS Gigando</td>
+                        <td><a href="https://www.bis.org/cbspeeches/" target="_blank" rel="noopener noreferrer">BIS Central Bank Speeches</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Collaborations -->
+        <section class="inventory-section" id="collaborations">
+            <h2>Collaborations</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Partner</th>
+                        <th>Type</th>
+                        <th>Contact/Focus</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-collab">Industry</span> Deutsche Borse AG</td>
+                        <td>Data Provider / Research</td>
+                        <td>Dr. Stefan Schlamp (Head of Quantitative Analytics)</td>
+                        <td><a href="https://www.deutsche-boerse.com/" target="_blank" rel="noopener noreferrer">deutsche-boerse.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-collab">Industry</span> Quoniam Asset Management</td>
+                        <td>PhD Supervision</td>
+                        <td>Dr. Axel Gross-Klussmann</td>
+                        <td><a href="https://www.quoniam.com/" target="_blank" rel="noopener noreferrer">quoniam.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-collab">Academic</span> University of Twente</td>
+                        <td>Joint PhD Program</td>
+                        <td>Dual affiliation for PhD researchers</td>
+                        <td><a href="https://www.utwente.nl/" target="_blank" rel="noopener noreferrer">utwente.nl</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-collab">Academic</span> Humboldt-University Berlin</td>
+                        <td>Research Partner</td>
+                        <td>Prof. Dr. Wolfgang Karl Hardle</td>
+                        <td><a href="https://www.hu-berlin.de/" target="_blank" rel="noopener noreferrer">hu-berlin.de</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-collab">Academic</span> Bucharest University of Economic Studies</td>
+                        <td>Research Partner</td>
+                        <td>Prof. Dr. Daniel Traian Pele</td>
+                        <td><a href="https://www.ase.ro/" target="_blank" rel="noopener noreferrer">ase.ro</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-collab">Academic</span> Babes-Bolyai University</td>
+                        <td>Research Partner</td>
+                        <td>Prof. Dr. Codruta Mare</td>
+                        <td><a href="https://www.ubbcluj.ro/" target="_blank" rel="noopener noreferrer">ubbcluj.ro</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-collab">Network</span> COST Action CA19130</td>
+                        <td>Research Network</td>
+                        <td>FinTech and AI in Finance (39 countries, 270+ researchers)</td>
+                        <td><a href="https://www.cost.eu/actions/CA19130/" target="_blank" rel="noopener noreferrer">cost.eu</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-collab">Network</span> MSCA Industrial Doctoral Network</td>
+                        <td>Training Network</td>
+                        <td>Digital Finance (13 institutions, 100+ researchers)</td>
+                        <td><a href="https://www.digital-finance-msca.com/" target="_blank" rel="noopener noreferrer">digital-finance-msca.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Events -->
+        <section class="inventory-section" id="events">
+            <h2>Events Organized</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-event">Conference</span> 7th European COST Conference on AI in Finance</td>
+                        <td>September 2023</td>
+                        <td>Bern, Switzerland</td>
+                        <td><a href="https://www.ai-in-finance.eu/" target="_blank" rel="noopener noreferrer">ai-in-finance.eu</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-event">Conference</span> 8th European COST Conference on AI in Finance</td>
+                        <td>September 2024</td>
+                        <td>Bern, Switzerland</td>
+                        <td><a href="https://www.ai-in-finance.eu/" target="_blank" rel="noopener noreferrer">ai-in-finance.eu</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-event">PhD School</span> COST FinAI PhD School 2024</td>
+                        <td>2024</td>
+                        <td>Treviso, Italy</td>
+                        <td><a href="https://www.digital-finance-msca.com/cost-finai-phd-school-2024" target="_blank" rel="noopener noreferrer">MSCA</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-event">Meeting</span> COST FinAI Meets Istanbul</td>
+                        <td>May 2024</td>
+                        <td>Istanbul, Turkey</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-event">Meeting</span> COST FinAI Meets Brussels</td>
+                        <td>2024</td>
+                        <td>Brussels, Belgium</td>
+                        <td><a href="https://www.digital-finance-msca.com/brussels-meeting-2024" target="_blank" rel="noopener noreferrer">MSCA</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-event">Presentation</span> ERCIM Working Group Conference</td>
+                        <td>December 2023</td>
+                        <td>Berlin, Germany</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Funding -->
+        <section class="inventory-section" id="funding">
+            <h2>Funding</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Grant</th>
+                        <th>Funder</th>
+                        <th>Amount</th>
+                        <th>Duration</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-official">Primary</span> IZCOZ0_213370</td>
+                        <td>Swiss National Science Foundation (SNSF)</td>
+                        <td>CHF 236,118</td>
+                        <td>July 2023 - June 2026</td>
+                        <td><a href="https://data.snf.ch/grants/grant/213370" target="_blank" rel="noopener noreferrer">SNSF Portal</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-official">Related</span> 101119635</td>
+                        <td>EU Horizon Europe (MSCA Industrial Doctoral Network)</td>
+                        <td>EUR 4,500,000</td>
+                        <td>2023 - 2027</td>
+                        <td><a href="https://cordis.europa.eu/project/id/101119635" target="_blank" rel="noopener noreferrer">CORDIS</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-official">Network</span> CA19130</td>
+                        <td>COST Association (H2020 / Horizon Europe)</td>
+                        <td>Network funding</td>
+                        <td>2020 - 2024</td>
+                        <td><a href="https://www.cost.eu/actions/CA19130/" target="_blank" rel="noopener noreferrer">COST</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer class="page-footer">
+            <p>SNSF Grant IZCOZ0_213370 | Narrative Digital Finance | 2023-2026</p>
+            <p>Bern University of Applied Sciences | University of Twente</p>
+        </footer>
+    </main>
+</body>
+</html>
