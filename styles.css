@@ -1292,3 +1292,129 @@ textarea:focus-visible,
     page-break-after: avoid;
   }
 }
+
+/* ===== PhD RESEARCH PAGES ===== */
+
+/* Work Package Tags */
+.wp-tag {
+  display: inline-block;
+  padding: 2px 6px;
+  background: var(--color-blue-light);
+  color: var(--color-blue-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.badge-submitted {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-progress {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-planning {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.badge-review {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
+.badge-published {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* Inventory Table for Research Catalog */
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inventory-table th {
+  background: var(--color-bg-alt);
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.inventory-table tr:hover {
+  background: var(--color-bg);
+}
+
+/* Research Stream Cards */
+.stream-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.stream-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Paper Cards */
+.paper-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.paper-card h3 {
+  font-size: var(--font-size-base);
+  color: var(--color-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.paper-card p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height);
+}
+
+/* Image Gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.02);
+}
