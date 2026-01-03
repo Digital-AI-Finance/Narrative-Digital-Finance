@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Management Plan | Narrative Digital Finance</title>
+    <meta name="description" content="Data Management Plan (DMP) for the SNSF Narrative Digital Finance project (Grant IZCOZ0_213370).">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Times New Roman', serif; font-size: 11pt; line-height: 1.5; max-width: 800px; margin: 0 auto; padding: 20px; color: #000; padding-top: 60px; }
+        h1 { font-size: 16pt; text-align: center; margin-bottom: 20px; }
+        h2 { font-size: 12pt; font-weight: bold; margin: 24px 0 12px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; }
+        h3 { font-size: 11pt; font-weight: bold; margin: 16px 0 8px 0; color: #1e40af; }
+        p { margin: 0 0 12px 0; text-align: justify; }
+        ul { margin: 0 0 12px 0; padding-left: 24px; }
+        li { margin: 4px 0; }
+        .header-info { text-align: center; margin-bottom: 30px; }
+        .header-info p { text-align: center; margin: 4px 0; }
+        a { color: #0000EE; }
+        .section { margin-bottom: 24px; }
+        /* Navigation bar matching main site */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; height: 36px; background: #0f172a; display: flex; align-items: center; padding: 0 16px; z-index: 100; }
+        .navbar-brand { font-family: 'Inter', sans-serif; color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; }
+        .navbar-brand span { color: #3b82f6; margin-right: 4px; }
+        .navbar-nav { display: flex; gap: 16px; margin-left: auto; }
+        .navbar-nav a { font-family: 'Inter', sans-serif; color: #94a3b8; text-decoration: none; font-size: 11px; transition: color 0.2s; }
+        .navbar-nav a:hover { color: #fff; }
+        .navbar-nav a.active { color: #3b82f6; }
+        /* Back to top button */
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #3b82f6; color: #fff; padding: 8px 12px; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 11px; text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }
+        .back-to-top:hover { opacity: 1; color: #fff; }
+        /* Footer */
+        .report-footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #e2e8f0; text-align: center; font-family: 'Inter', sans-serif; font-size: 10px; color: #64748b; }
+        .report-footer a { color: #3b82f6; text-decoration: none; }
+        /* Table of Contents */
+        .toc { background: #f8fafc; padding: 16px 24px; border-radius: 8px; margin-bottom: 24px; }
+        .toc h3 { margin-top: 0; color: #0f172a; }
+        .toc ul { margin: 0; padding-left: 20px; }
+        .toc li { margin: 4px 0; }
+        .toc a { color: #1e40af; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        /* Yes/No badges */
+        .badge-yes { display: inline-block; background: #10b981; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 10pt; font-family: 'Inter', sans-serif; }
+        /* Print styles */
+        @media print {
+            .navbar, .back-to-top { display: none; }
+            body { padding-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
+    <div class="navbar-nav">
+        <a href="index.html">Home</a>
+        <a href="objectives.html">Objectives</a>
+        <a href="report.html">Report</a>
+        <a href="dmp.html" class="active">DMP</a>
+        <a href="https://data.snf.ch/grants/grant/213370" target="_blank">SNSF Data</a>
+    </div>
+</nav>
+
+<h1>Data Management Plan (DMP)</h1>
+
+<div class="header-info">
+    <p><strong>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</strong></p>
+    <p>A tale of structural breaks, bubbles & market narratives</p>
+    <p>Principal Investigator: Prof. Dr. Joerg Osterrieder</p>
+    <p>Institution: Bern University of Applied Sciences / University of Twente</p>
+</div>
+
+<div class="toc">
+    <h3>Contents</h3>
+    <ul>
+        <li><a href="#section-1">1. Data Collection and Documentation</a>
+            <ul>
+                <li><a href="#section-1-1">1.1 Data Types and Sources</a></li>
+                <li><a href="#section-1-2">1.2 Collection and Quality Assurance</a></li>
+                <li><a href="#section-1-3">1.3 Documentation and Metadata</a></li>
+            </ul>
+        </li>
+        <li><a href="#section-2">2. Ethics, Legal and Security Issues</a>
+            <ul>
+                <li><a href="#section-2-1">2.1 Ethical Issues</a></li>
+                <li><a href="#section-2-2">2.2 Data Access and Security</a></li>
+                <li><a href="#section-2-3">2.3 Copyright and IP Rights</a></li>
+            </ul>
+        </li>
+        <li><a href="#section-3">3. Data Storage and Preservation</a>
+            <ul>
+                <li><a href="#section-3-1">3.1 Storage and Backup</a></li>
+                <li><a href="#section-3-2">3.2 Preservation Plan</a></li>
+            </ul>
+        </li>
+        <li><a href="#section-4">4. Data Sharing and Reuse</a>
+            <ul>
+                <li><a href="#section-4-1">4.1 Sharing Methods</a></li>
+                <li><a href="#section-4-2">4.2 Limitations</a></li>
+                <li><a href="#section-4-3">4.3 FAIR Compliance</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="section" id="section-1">
+    <h2>1. Data Collection and Documentation</h2>
+
+    <div id="section-1-1">
+        <h3>1.1 What data will you collect, observe, generate or reuse?</h3>
+        <p>We will use publicly available data on financial markets as well as data from databases which we buy, e.g. from Refinitiv. The data will be in CSV format, approximately 10 GB, consisting of financial data stored as integers and characters.</p>
+    </div>
+
+    <div id="section-1-2">
+        <h3>1.2 How will the data be collected, observed or generated?</h3>
+        <p><strong>Quality Assurance:</strong></p>
+        <ul>
+            <li>The data are checked for consistency and completeness using statistical methods.</li>
+        </ul>
+        <p><strong>Versioning:</strong></p>
+        <ul>
+            <li>The code and the database are versioned with the help of the ZHAW internal tools.</li>
+        </ul>
+        <p>The quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.</p>
+    </div>
+
+    <div id="section-1-3">
+        <h3>1.3 What documentation and metadata will you provide with the data?</h3>
+        <p>The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.</p>
+    </div>
+</div>
+
+<div class="section" id="section-2">
+    <h2>2. Ethics, Legal and Security Issues</h2>
+
+    <div id="section-2-1">
+        <h3>2.1 How will ethical issues be addressed and handled?</h3>
+        <p>No personal data or other sensitive data is used in the project. In this respect, the university internal security standards are applied.</p>
+        <p>The conditions have already been discussed with the data providers. No special security standards are required by the data providers for this data.</p>
+    </div>
+
+    <div id="section-2-2">
+        <h3>2.2 How will data access and security be managed?</h3>
+        <p>Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.</p>
+    </div>
+
+    <div id="section-2-3">
+        <h3>2.3 How will you handle copyright and Intellectual Property Rights issues?</h3>
+        <p>The project is based on data that are largely publicly available. The raw data records may not be published without restriction.</p>
+    </div>
+</div>
+
+<div class="section" id="section-3">
+    <h2>3. Data Storage and Preservation</h2>
+
+    <div id="section-3-1">
+        <h3>3.1 How will your data be stored and backed-up during the research?</h3>
+        <p>The storage capacities are very large, the amount of data remains very limited in the project.</p>
+        <p>The data is managed in the form of databases on the ZHAW internal GitHub. Backups and versions of the data are continuously created.</p>
+    </div>
+
+    <div id="section-3-2">
+        <h3>3.2 What is your data preservation plan?</h3>
+        <p>The data is stored on the ZHAW internal GitHub for a long time and managed by the ZHAW using the existing tools. There is no obligation to destroy the data.</p>
+    </div>
+</div>
+
+<div class="section" id="section-4">
+    <h2>4. Data Sharing and Reuse</h2>
+
+    <div id="section-4-1">
+        <h3>4.1 How and where will the data be shared?</h3>
+        <p>The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.</p>
+    </div>
+
+    <div id="section-4-2">
+        <h3>4.2 Are there any necessary limitations to protect sensitive data?</h3>
+        <p>We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.</p>
+    </div>
+
+    <div id="section-4-3">
+        <h3>4.3 FAIR Compliance and Repository Standards</h3>
+        <p><strong>All digital repositories I will choose are conform to the FAIR Data Principles:</strong> <span class="badge-yes">Yes</span></p>
+        <p><strong>I will choose digital repositories maintained by a non-profit organisation:</strong> <span class="badge-yes">Yes</span></p>
+    </div>
+</div>
+
+<a href="#" class="back-to-top">Back to top</a>
+
+<div class="report-footer">
+    <p><a href="index.html">Narrative Digital Finance</a> | SNSF Grant IZCOZ0_213370 | <a href="https://data.snf.ch/grants/grant/213370" target="_blank">SNSF Data Portal</a></p>
+</div>
+
+</body>
+</html>
