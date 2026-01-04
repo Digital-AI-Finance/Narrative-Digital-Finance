@@ -37,6 +37,19 @@ GENERATED_PAGES = [
     "research-catalog.html"
 ]
 
+# COST Action pages to validate
+COST_PAGES = [
+    "cost-action.html",
+    "cost-network.html",
+    "cost-events.html",
+    "cost-publications.html",
+    "cost-mobility.html",
+    "cost-resources.html"
+]
+
+# All pages to validate
+ALL_PAGES = GENERATED_PAGES + COST_PAGES
+
 # =============================================================================
 # DATA CLASSES
 # =============================================================================
@@ -343,7 +356,7 @@ def validate_links(content: str, page_name: str, repo_dir: Path) -> List[Validat
     for link in analyzer.links:
         href = link['href']
 
-        if not href or href.startswith('#') or href.startswith('javascript:'):
+        if not href or href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:') or href.startswith('tel:'):
             continue
 
         parsed = urlparse(href)
@@ -548,7 +561,8 @@ def validate_json_data(data_dir: Path) -> List[ValidationResult]:
         'file_catalog.json': ['files', 'summary'],
         'thesis.json': ['chapters', 'chapter_count'],
         'collaborators.json': ['collaborators', 'count'],
-        'images.json': ['images', 'total_images']
+        'images.json': ['images', 'total_images'],
+        'cost_summary.json': ['metadata', 'stats', 'working_groups']
     }
 
     for filename, required_keys in json_files.items():
@@ -747,7 +761,7 @@ def validate_cross_page_consistency(pages_data: Dict[str, str], repo_dir: Path) 
 
         for link in analyzer.links:
             href = link['href'].split('#')[0]
-            if href.endswith('.html') and href in GENERATED_PAGES:
+            if href.endswith('.html') and href in ALL_PAGES:
                 if href not in all_pages:
                     results.append(ValidationResult(
                         "Cross-Page Links",
@@ -852,7 +866,7 @@ def run_full_validation() -> ValidationReport:
     print("-" * 40)
 
     pages_data = {}
-    for page_name in GENERATED_PAGES:
+    for page_name in ALL_PAGES:
         page_path = REPO_DIR / page_name
 
         if not page_path.exists():

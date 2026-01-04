@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-01-04T07:00:47.788682",
+  "timestamp": "2026-01-04T07:22:09.984672",
   "summary": {
-    "total_checks": 76,
-    "total_passed": 72,
-    "total_failed": 4
+    "total_checks": 167,
+    "total_passed": 164,
+    "total_failed": 3
   },
   "pages": [
     {
       "name": "gabin-research.html",
-      "file_size_kb": 34.0771484375,
-      "passed": 14,
-      "failed": 1,
+      "file_size_kb": 34.66796875,
+      "passed": 15,
+      "failed": 0,
       "results": [
         {
           "check": "HTML Parsing",
@@ -86,16 +86,10 @@
         },
         {
           "check": "Internal Links",
-          "passed": false,
-          "message": "Found 3 broken internal links out of 26",
-          "severity": "error",
-          "details": {
-            "broken": [
-              "mailto:gabin.taibi@bfh.ch",
-              "mailto:joerg.osterrieder@bfh.ch",
-              "mailto:stefan.schlamp@deutsche-boerse.com"
-            ]
-          }
+          "passed": true,
+          "message": "All 29 internal links valid",
+          "severity": "info",
+          "details": null
         },
         {
           "check": "External Links",
@@ -151,7 +145,7 @@
     },
     {
       "name": "hft-papers.html",
-      "file_size_kb": 32.150390625,
+      "file_size_kb": 25.6435546875,
       "passed": 14,
       "failed": 1,
       "results": [
@@ -219,19 +213,11 @@
         {
           "check": "ARIA Labels",
           "passed": true,
-          "message": "Found 11 ARIA labels",
+          "message": "Found 3 ARIA labels",
           "severity": "info",
           "details": {
             "labels": [
               "Main navigation",
-              "View cancelled.png in full size",
-              "View deep.png in full size",
-              "View llt-metrics.png in full size",
-              "View participation-rates.png in full size",
-              "View snr.png in full size",
-              "View bfh_logo.png in full size",
-              "View Deutsche_Boerse_Logo.png in full size",
-              "View logo-ut.png in full size",
               "Close",
               "Close"
             ]
@@ -240,7 +226,7 @@
         {
           "check": "Internal Links",
           "passed": true,
-          "message": "All 16 internal links valid",
+          "message": "All 22 internal links valid",
           "severity": "info",
           "details": null
         },
@@ -270,35 +256,34 @@
         {
           "check": "Image Files",
           "passed": true,
-          "message": "All 8 local images exist",
+          "message": "All 0 local images exist",
           "severity": "info",
           "details": null
         },
         {
           "check": "Image Alt Text",
           "passed": true,
-          "message": "All 10 images have alt text",
+          "message": "All 2 images have alt text",
           "severity": "info",
           "details": null
         },
         {
           "check": "CSS Classes",
           "passed": false,
-          "message": "Found 11 potentially undefined CSS classes",
+          "message": "Found 10 potentially undefined CSS classes",
           "severity": "info",
           "details": {
             "undefined": [
-              "compare-overlay",
-              "gallery-item",
-              "compare-paper",
-              "lightbox-content",
-              "lightbox-overlay",
-              "compare-content",
               "lightbox-close",
               "compare-btn",
+              "compare-paper",
+              "lightbox-overlay",
+              "pdf-download-btn",
               "compare-close",
+              "compare-overlay",
               "lightbox-caption",
-              "pdf-download-btn"
+              "lightbox-content",
+              "compare-content"
             ]
           }
         },
@@ -313,7 +298,7 @@
     },
     {
       "name": "narratives-papers.html",
-      "file_size_kb": 50.3193359375,
+      "file_size_kb": 36.2265625,
       "passed": 14,
       "failed": 1,
       "results": [
@@ -381,27 +366,11 @@
         {
           "check": "ARIA Labels",
           "passed": true,
-          "message": "Found 19 ARIA labels",
+          "message": "Found 3 ARIA labels",
           "severity": "info",
           "details": {
             "labels": [
               "Main navigation",
-              "View centroid_null_hypo.png in full size",
-              "View cosine_null_hypo.png in full size",
-              "View jaccard_null_hypo.png in full size",
-              "View nb_speeches_timeseries.png in full size",
-              "View PCA1_change_points.png in full size",
-              "View PCA1_PCA2_plot.png in full size",
-              "View pca_loadings.png in full size",
-              "View polarity_null_hypo.png in full size",
-              "View fig_boundaries.png in full size",
-              "View fig_polfield.png in full size",
-              "View xAI_poles.png in full size",
-              "View agglomerative_clustering.png in full size",
-              "View filter_paper_diagram.png in full size",
-              "View filter_paper_diagram_v2.png in full size",
-              "View final_relevance_score_v2.png in full size",
-              "View final_relevance_score_v2_before.png in full size",
               "Close",
               "Close"
             ]
@@ -410,7 +379,7 @@
         {
           "check": "Internal Links",
           "passed": true,
-          "message": "All 16 internal links valid",
+          "message": "All 22 internal links valid",
           "severity": "info",
           "details": null
         },
@@ -440,35 +409,34 @@
         {
           "check": "Image Files",
           "passed": true,
-          "message": "All 16 local images exist",
+          "message": "All 0 local images exist",
           "severity": "info",
           "details": null
         },
         {
           "check": "Image Alt Text",
           "passed": true,
-          "message": "All 18 images have alt text",
+          "message": "All 2 images have alt text",
           "severity": "info",
           "details": null
         },
         {
           "check": "CSS Classes",
           "passed": false,
-          "message": "Found 11 potentially undefined CSS classes",
+          "message": "Found 10 potentially undefined CSS classes",
           "severity": "info",
           "details": {
             "undefined": [
-              "compare-overlay",
-              "gallery-item",
-              "compare-paper",
-              "lightbox-content",
-              "lightbox-overlay",
-              "compare-content",
               "lightbox-close",
               "compare-btn",
+              "compare-paper",
+              "lightbox-overlay",
+              "pdf-download-btn",
               "compare-close",
+              "compare-overlay",
               "lightbox-caption",
-              "pdf-download-btn"
+              "lightbox-content",
+              "compare-content"
             ]
           }
         },
@@ -483,7 +451,7 @@
     },
     {
       "name": "research-catalog.html",
-      "file_size_kb": 101.23046875,
+      "file_size_kb": 101.8212890625,
       "passed": 15,
       "failed": 0,
       "results": [
@@ -562,7 +530,7 @@
         {
           "check": "Internal Links",
           "passed": true,
-          "message": "All 16 internal links valid",
+          "message": "All 22 internal links valid",
           "severity": "info",
           "details": null
         },
@@ -615,6 +583,846 @@
           "details": null
         }
       ]
+    },
+    {
+      "name": "cost-action.html",
+      "file_size_kb": 16.6484375,
+      "passed": 15,
+      "failed": 0,
+      "results": [
+        {
+          "check": "HTML Parsing",
+          "passed": true,
+          "message": "HTML parsed successfully without fatal errors",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Tag Matching",
+          "passed": true,
+          "message": "All HTML tags properly matched",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "DOCTYPE Declaration",
+          "passed": true,
+          "message": "Valid HTML5 DOCTYPE declaration",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Meta Tags",
+          "passed": true,
+          "message": "All 4 essential meta tags present",
+          "severity": "info",
+          "details": {
+            "meta_tags": [
+              "viewport",
+              "description",
+              "keywords",
+              "author",
+              "og:title",
+              "og:description",
+              "og:type",
+              "og:url",
+              "twitter:card"
+            ]
+          }
+        },
+        {
+          "check": "H1 Heading",
+          "passed": true,
+          "message": "Single H1 heading found: 'COST Action CA19130: FinAI Network...'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Skip Link",
+          "passed": true,
+          "message": "Skip to main content link present",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Main Landmark",
+          "passed": true,
+          "message": "Main content landmark found",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "ARIA Labels",
+          "passed": true,
+          "message": "Found 1 ARIA labels",
+          "severity": "info",
+          "details": {
+            "labels": [
+              "Main navigation"
+            ]
+          }
+        },
+        {
+          "check": "Internal Links",
+          "passed": true,
+          "message": "All 31 internal links valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "External Links",
+          "passed": true,
+          "message": "Found 8 external links (not verified)",
+          "severity": "info",
+          "details": {
+            "links": [
+              "https://www.cost.eu/actions/CA19130/",
+              "https://wiki.fin-ai.eu/",
+              "https://www.ai-in-finance.eu/",
+              "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
+              "https://cordis.europa.eu/project/id/101119635",
+              "https://www.cost.eu/actions/CA19130/",
+              "https://data.snf.ch/grants/grant/213370",
+              "https://www.cost.eu/actions/CA19130/"
+            ]
+          }
+        },
+        {
+          "check": "External Link Security",
+          "passed": true,
+          "message": "All external links have proper rel='noopener'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Files",
+          "passed": true,
+          "message": "All 0 local images exist",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Alt Text",
+          "passed": true,
+          "message": "All 2 images have alt text",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "CSS Classes",
+          "passed": true,
+          "message": "All 30 CSS classes appear valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Site Structure Classes",
+          "passed": true,
+          "message": "Using 5/5 critical layout classes: navbar, sidebar, main, container, card",
+          "severity": "info",
+          "details": null
+        }
+      ]
+    },
+    {
+      "name": "cost-network.html",
+      "file_size_kb": 13.0068359375,
+      "passed": 15,
+      "failed": 0,
+      "results": [
+        {
+          "check": "HTML Parsing",
+          "passed": true,
+          "message": "HTML parsed successfully without fatal errors",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Tag Matching",
+          "passed": true,
+          "message": "All HTML tags properly matched",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "DOCTYPE Declaration",
+          "passed": true,
+          "message": "Valid HTML5 DOCTYPE declaration",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Meta Tags",
+          "passed": true,
+          "message": "All 4 essential meta tags present",
+          "severity": "info",
+          "details": {
+            "meta_tags": [
+              "viewport",
+              "description",
+              "keywords",
+              "author",
+              "og:title",
+              "og:description",
+              "og:type",
+              "og:url",
+              "twitter:card"
+            ]
+          }
+        },
+        {
+          "check": "H1 Heading",
+          "passed": true,
+          "message": "Single H1 heading found: 'Global Research Network...'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Skip Link",
+          "passed": true,
+          "message": "Skip to main content link present",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Main Landmark",
+          "passed": true,
+          "message": "Main content landmark found",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "ARIA Labels",
+          "passed": true,
+          "message": "Found 1 ARIA labels",
+          "severity": "info",
+          "details": {
+            "labels": [
+              "Main navigation"
+            ]
+          }
+        },
+        {
+          "check": "Internal Links",
+          "passed": true,
+          "message": "All 27 internal links valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "External Links",
+          "passed": true,
+          "message": "Found 8 external links (not verified)",
+          "severity": "info",
+          "details": {
+            "links": [
+              "https://www.cost.eu/actions/CA19130/",
+              "https://wiki.fin-ai.eu/",
+              "https://www.ai-in-finance.eu/",
+              "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
+              "https://cordis.europa.eu/project/id/101119635",
+              "https://www.cost.eu/actions/CA19130/",
+              "https://data.snf.ch/grants/grant/213370",
+              "https://www.cost.eu/actions/CA19130/"
+            ]
+          }
+        },
+        {
+          "check": "External Link Security",
+          "passed": true,
+          "message": "All external links have proper rel='noopener'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Files",
+          "passed": true,
+          "message": "All 0 local images exist",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Alt Text",
+          "passed": true,
+          "message": "All 2 images have alt text",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "CSS Classes",
+          "passed": true,
+          "message": "All 30 CSS classes appear valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Site Structure Classes",
+          "passed": true,
+          "message": "Using 5/5 critical layout classes: navbar, sidebar, main, container, card",
+          "severity": "info",
+          "details": null
+        }
+      ]
+    },
+    {
+      "name": "cost-events.html",
+      "file_size_kb": 10.5546875,
+      "passed": 15,
+      "failed": 0,
+      "results": [
+        {
+          "check": "HTML Parsing",
+          "passed": true,
+          "message": "HTML parsed successfully without fatal errors",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Tag Matching",
+          "passed": true,
+          "message": "All HTML tags properly matched",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "DOCTYPE Declaration",
+          "passed": true,
+          "message": "Valid HTML5 DOCTYPE declaration",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Meta Tags",
+          "passed": true,
+          "message": "All 4 essential meta tags present",
+          "severity": "info",
+          "details": {
+            "meta_tags": [
+              "viewport",
+              "description",
+              "keywords",
+              "author",
+              "og:title",
+              "og:description",
+              "og:type",
+              "og:url",
+              "twitter:card"
+            ]
+          }
+        },
+        {
+          "check": "H1 Heading",
+          "passed": true,
+          "message": "Single H1 heading found: 'Research Events & Training...'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Skip Link",
+          "passed": true,
+          "message": "Skip to main content link present",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Main Landmark",
+          "passed": true,
+          "message": "Main content landmark found",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "ARIA Labels",
+          "passed": true,
+          "message": "Found 1 ARIA labels",
+          "severity": "info",
+          "details": {
+            "labels": [
+              "Main navigation"
+            ]
+          }
+        },
+        {
+          "check": "Internal Links",
+          "passed": true,
+          "message": "All 27 internal links valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "External Links",
+          "passed": true,
+          "message": "Found 7 external links (not verified)",
+          "severity": "info",
+          "details": {
+            "links": [
+              "https://www.cost.eu/actions/CA19130/",
+              "https://wiki.fin-ai.eu/",
+              "https://www.ai-in-finance.eu/",
+              "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
+              "https://cordis.europa.eu/project/id/101119635",
+              "https://data.snf.ch/grants/grant/213370",
+              "https://www.cost.eu/actions/CA19130/"
+            ]
+          }
+        },
+        {
+          "check": "External Link Security",
+          "passed": true,
+          "message": "All external links have proper rel='noopener'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Files",
+          "passed": true,
+          "message": "All 0 local images exist",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Alt Text",
+          "passed": true,
+          "message": "All 2 images have alt text",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "CSS Classes",
+          "passed": true,
+          "message": "All 30 CSS classes appear valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Site Structure Classes",
+          "passed": true,
+          "message": "Using 5/5 critical layout classes: navbar, sidebar, main, container, card",
+          "severity": "info",
+          "details": null
+        }
+      ]
+    },
+    {
+      "name": "cost-publications.html",
+      "file_size_kb": 9.5283203125,
+      "passed": 15,
+      "failed": 0,
+      "results": [
+        {
+          "check": "HTML Parsing",
+          "passed": true,
+          "message": "HTML parsed successfully without fatal errors",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Tag Matching",
+          "passed": true,
+          "message": "All HTML tags properly matched",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "DOCTYPE Declaration",
+          "passed": true,
+          "message": "Valid HTML5 DOCTYPE declaration",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Meta Tags",
+          "passed": true,
+          "message": "All 4 essential meta tags present",
+          "severity": "info",
+          "details": {
+            "meta_tags": [
+              "viewport",
+              "description",
+              "keywords",
+              "author",
+              "og:title",
+              "og:description",
+              "og:type",
+              "og:url",
+              "twitter:card"
+            ]
+          }
+        },
+        {
+          "check": "H1 Heading",
+          "passed": true,
+          "message": "Single H1 heading found: 'Publication Impact...'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Skip Link",
+          "passed": true,
+          "message": "Skip to main content link present",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Main Landmark",
+          "passed": true,
+          "message": "Main content landmark found",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "ARIA Labels",
+          "passed": true,
+          "message": "Found 1 ARIA labels",
+          "severity": "info",
+          "details": {
+            "labels": [
+              "Main navigation"
+            ]
+          }
+        },
+        {
+          "check": "Internal Links",
+          "passed": true,
+          "message": "All 27 internal links valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "External Links",
+          "passed": true,
+          "message": "Found 8 external links (not verified)",
+          "severity": "info",
+          "details": {
+            "links": [
+              "https://www.cost.eu/actions/CA19130/",
+              "https://wiki.fin-ai.eu/",
+              "https://www.ai-in-finance.eu/",
+              "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
+              "https://cordis.europa.eu/project/id/101119635",
+              "https://wiki.fin-ai.eu/",
+              "https://data.snf.ch/grants/grant/213370",
+              "https://www.cost.eu/actions/CA19130/"
+            ]
+          }
+        },
+        {
+          "check": "External Link Security",
+          "passed": true,
+          "message": "All external links have proper rel='noopener'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Files",
+          "passed": true,
+          "message": "All 0 local images exist",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Alt Text",
+          "passed": true,
+          "message": "All 2 images have alt text",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "CSS Classes",
+          "passed": true,
+          "message": "All 31 CSS classes appear valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Site Structure Classes",
+          "passed": true,
+          "message": "Using 5/5 critical layout classes: navbar, sidebar, main, container, card",
+          "severity": "info",
+          "details": null
+        }
+      ]
+    },
+    {
+      "name": "cost-mobility.html",
+      "file_size_kb": 10.6669921875,
+      "passed": 15,
+      "failed": 0,
+      "results": [
+        {
+          "check": "HTML Parsing",
+          "passed": true,
+          "message": "HTML parsed successfully without fatal errors",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Tag Matching",
+          "passed": true,
+          "message": "All HTML tags properly matched",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "DOCTYPE Declaration",
+          "passed": true,
+          "message": "Valid HTML5 DOCTYPE declaration",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Meta Tags",
+          "passed": true,
+          "message": "All 4 essential meta tags present",
+          "severity": "info",
+          "details": {
+            "meta_tags": [
+              "viewport",
+              "description",
+              "keywords",
+              "author",
+              "og:title",
+              "og:description",
+              "og:type",
+              "og:url",
+              "twitter:card"
+            ]
+          }
+        },
+        {
+          "check": "H1 Heading",
+          "passed": true,
+          "message": "Single H1 heading found: 'Researcher Mobility...'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Skip Link",
+          "passed": true,
+          "message": "Skip to main content link present",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Main Landmark",
+          "passed": true,
+          "message": "Main content landmark found",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "ARIA Labels",
+          "passed": true,
+          "message": "Found 1 ARIA labels",
+          "severity": "info",
+          "details": {
+            "labels": [
+              "Main navigation"
+            ]
+          }
+        },
+        {
+          "check": "Internal Links",
+          "passed": true,
+          "message": "All 27 internal links valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "External Links",
+          "passed": true,
+          "message": "Found 7 external links (not verified)",
+          "severity": "info",
+          "details": {
+            "links": [
+              "https://www.cost.eu/actions/CA19130/",
+              "https://wiki.fin-ai.eu/",
+              "https://www.ai-in-finance.eu/",
+              "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
+              "https://cordis.europa.eu/project/id/101119635",
+              "https://data.snf.ch/grants/grant/213370",
+              "https://www.cost.eu/actions/CA19130/"
+            ]
+          }
+        },
+        {
+          "check": "External Link Security",
+          "passed": true,
+          "message": "All external links have proper rel='noopener'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Files",
+          "passed": true,
+          "message": "All 0 local images exist",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Alt Text",
+          "passed": true,
+          "message": "All 2 images have alt text",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "CSS Classes",
+          "passed": true,
+          "message": "All 30 CSS classes appear valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Site Structure Classes",
+          "passed": true,
+          "message": "Using 5/5 critical layout classes: navbar, sidebar, main, container, card",
+          "severity": "info",
+          "details": null
+        }
+      ]
+    },
+    {
+      "name": "cost-resources.html",
+      "file_size_kb": 10.4521484375,
+      "passed": 15,
+      "failed": 0,
+      "results": [
+        {
+          "check": "HTML Parsing",
+          "passed": true,
+          "message": "HTML parsed successfully without fatal errors",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Tag Matching",
+          "passed": true,
+          "message": "All HTML tags properly matched",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "DOCTYPE Declaration",
+          "passed": true,
+          "message": "Valid HTML5 DOCTYPE declaration",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Meta Tags",
+          "passed": true,
+          "message": "All 4 essential meta tags present",
+          "severity": "info",
+          "details": {
+            "meta_tags": [
+              "viewport",
+              "description",
+              "keywords",
+              "author",
+              "og:title",
+              "og:description",
+              "og:type",
+              "og:url",
+              "twitter:card"
+            ]
+          }
+        },
+        {
+          "check": "H1 Heading",
+          "passed": true,
+          "message": "Single H1 heading found: 'Knowledge Resources...'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Skip Link",
+          "passed": true,
+          "message": "Skip to main content link present",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Main Landmark",
+          "passed": true,
+          "message": "Main content landmark found",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "ARIA Labels",
+          "passed": true,
+          "message": "Found 1 ARIA labels",
+          "severity": "info",
+          "details": {
+            "labels": [
+              "Main navigation"
+            ]
+          }
+        },
+        {
+          "check": "Internal Links",
+          "passed": true,
+          "message": "All 27 internal links valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "External Links",
+          "passed": true,
+          "message": "Found 12 external links (not verified)",
+          "severity": "info",
+          "details": {
+            "links": [
+              "https://www.cost.eu/actions/CA19130/",
+              "https://wiki.fin-ai.eu/",
+              "https://www.ai-in-finance.eu/",
+              "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
+              "https://cordis.europa.eu/project/id/101119635",
+              "https://quantlet.com/",
+              "https://quantinar.com/",
+              "https://explainableaiforfinance.com/",
+              "https://wiki.fin-ai.eu/",
+              "https://www.cost.eu/actions/CA19130/"
+            ]
+          }
+        },
+        {
+          "check": "External Link Security",
+          "passed": true,
+          "message": "All external links have proper rel='noopener'",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Files",
+          "passed": true,
+          "message": "All 0 local images exist",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Image Alt Text",
+          "passed": true,
+          "message": "All 2 images have alt text",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "CSS Classes",
+          "passed": true,
+          "message": "All 27 CSS classes appear valid",
+          "severity": "info",
+          "details": null
+        },
+        {
+          "check": "Site Structure Classes",
+          "passed": true,
+          "message": "Using 5/5 critical layout classes: navbar, sidebar, main, container, card",
+          "severity": "info",
+          "details": null
+        }
+      ]
     }
   ],
   "json_validations": [
@@ -642,6 +1450,11 @@
       "check": "JSON: images.json",
       "passed": true,
       "message": "Valid JSON with {'images': 56, 'total_images': 56}"
+    },
+    {
+      "check": "JSON: cost_summary.json",
+      "passed": true,
+      "message": "Valid JSON with {'metadata': 4, 'stats': 9, 'working_groups': 3}"
     }
   ],
   "image_validations": [
