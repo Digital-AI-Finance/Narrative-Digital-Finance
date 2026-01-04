@@ -1,8 +1,8 @@
 # PhD Research Pages - Quality Assurance Report
 
-**Generated**: 2026-01-03 (v2.0 - Enhanced)
+**Generated**: 2026-01-04 (v3.0 - Advanced)
 **Project**: Narrative Digital Finance (SNSF Grant IZCOZ0_213370)
-**Validation Score**: 93.4% (71/76 checks passed)
+**Validation Score**: 94.7% (72/76 checks passed)
 
 ---
 
@@ -21,9 +21,20 @@ The PhD Research Pages showcase for Gabin Taibi's doctoral research has been suc
 | Research Streams | 5 |
 | Thesis Chapters | 6 |
 | Collaborators | 5 |
-| Validation Pass Rate | 93.4% |
+| Validation Pass Rate | 94.7% |
 
-### New Features (v2.0)
+### New Features (v3.0)
+
+| Feature | Description |
+|---------|-------------|
+| PDF Download Buttons | Direct PDF links for arXiv and SSRN papers |
+| Paper Comparison View | Select 2 papers to compare side-by-side in modal |
+| Research Team Section | Collaborator cards with role badges |
+| ORCID Integration | Clickable ORCID badges linking to profiles |
+| Collaboration Network | SVG visualization of research team connections |
+| Compare Buttons | Added to all paper cards for selection |
+
+### Previous Features (v2.0)
 
 | Feature | Description |
 |---------|-------------|
@@ -56,9 +67,9 @@ The PhD Research Pages showcase for Gabin Taibi's doctoral research has been suc
 
 | File | Size | Description |
 |------|------|-------------|
-| `gabin-research.html` | 25.6 KB | PhD research overview with timeline, thesis chapters, research streams, OpenAlex integration |
-| `hft-papers.html` | 21.6 KB | Deutsche Borse HFT research papers (3 papers) with image lightbox gallery |
-| `narratives-papers.html` | 33.8 KB | Narrative modeling papers (5 papers across 4 streams) with image lightbox gallery |
+| `gabin-research.html` | 34.1 KB | PhD research overview with timeline, thesis chapters, research team, collaboration network |
+| `hft-papers.html` | 32.2 KB | Deutsche Borse HFT research papers (3 papers) with PDF downloads, comparison, lightbox |
+| `narratives-papers.html` | 50.3 KB | Narrative modeling papers (5 papers across 4 streams) with PDF downloads, comparison, lightbox |
 | `research-catalog.html` | 101.2 KB | Complete file inventory (184 files) with search, filter, and sort |
 
 ### JSON Data Files (`repo/data/`)
@@ -225,22 +236,26 @@ python validate_pages.py
 
 ## Future Improvements
 
-All v2.0 improvements have been implemented:
+All v2.0 and v3.0 improvements have been implemented:
 
-| Feature | Status |
-|---------|--------|
-| Search functionality for research-catalog.html | COMPLETED |
-| Image lightbox for figure galleries | COMPLETED |
-| Publication links (SSRN, arXiv, DOI) | COMPLETED |
-| OpenAlex API for citation tracking | COMPLETED |
-| Timeline visualization for thesis progress | COMPLETED |
+| Feature | Status | Version |
+|---------|--------|---------|
+| Search functionality for research-catalog.html | COMPLETED | v2.0 |
+| Image lightbox for figure galleries | COMPLETED | v2.0 |
+| Publication links (SSRN, arXiv, DOI) | COMPLETED | v2.0 |
+| OpenAlex API for citation tracking | COMPLETED | v2.0 |
+| Timeline visualization for thesis progress | COMPLETED | v2.0 |
+| PDF download links for published papers | COMPLETED | v3.0 |
+| Paper comparison view | COMPLETED | v3.0 |
+| Collaboration network visualization | COMPLETED | v3.0 |
+| ORCID integration for author profiles | COMPLETED | v3.0 |
 
 ### Remaining Ideas
 
-1. Add PDF download links for published papers
-2. Implement paper comparison view
-3. Add collaboration network visualization
-4. Integrate with ORCID for author profiles
+1. Add interactive tooltips to collaboration network nodes
+2. Implement citation graph visualization
+3. Add export functionality for paper metadata (BibTeX, JSON)
+4. Create automated paper status updates from publication venues
 
 ---
 
