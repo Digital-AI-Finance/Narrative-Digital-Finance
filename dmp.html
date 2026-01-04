@@ -22,7 +22,6 @@
         .header-info p { margin: 4px 0; color: #fff; }
         .header-info .title { font-size: 11px; opacity: 0.9; }
         .section { background: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        /* Navigation bar */
         .navbar { position: fixed; top: 0; left: 0; right: 0; height: 36px; background: #0f172a; display: flex; align-items: center; padding: 0 16px; z-index: 100; }
         .navbar-brand { font-family: 'Inter', sans-serif; color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; }
         .navbar-brand span { color: #3b82f6; margin-right: 4px; }
@@ -30,29 +29,23 @@
         .navbar-nav a { font-family: 'Inter', sans-serif; color: #94a3b8; text-decoration: none; font-size: 11px; transition: color 0.2s; }
         .navbar-nav a:hover { color: #fff; }
         .navbar-nav a.active { color: #3b82f6; }
-        /* TOC */
         .toc { background: #eff6ff; padding: 14px 18px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #3b82f6; }
         .toc h3 { margin-top: 0; color: #0f172a; font-size: 13px; }
         .toc ul { margin: 8px 0 0 0; padding-left: 18px; }
         .toc li { margin: 3px 0; }
         .toc a { color: #1e40af; font-size: 11px; }
-        /* Badge */
         .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
         .badge-yes { background: #10b981; color: #fff; }
         .badge-no { background: #dc2626; color: #fff; }
-        /* Footer */
         .report-footer { margin-top: 32px; padding: 16px 0; border-top: 1px solid #e2e8f0; text-align: center; font-size: 10px; color: #64748b; }
         .report-footer a { color: #3b82f6; }
-        /* Back to top */
         .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #3b82f6; color: #fff; padding: 8px 12px; border-radius: 4px; font-size: 11px; text-decoration: none; opacity: 0.8; }
         .back-to-top:hover { opacity: 1; color: #fff; }
-        /* Print */
         @media print {
             .navbar, .back-to-top { display: none; }
             body { padding-top: 0; background: #fff; }
             .section { box-shadow: none; border: 1px solid #ccc; }
         }
-        /* Responsive */
         @media (max-width: 600px) {
             body { padding: 10px; padding-top: 50px; }
             .section { padding: 12px; }
@@ -67,10 +60,10 @@
     <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
     <div class="navbar-nav">
         <a href="index.html">Home</a>
-        <a href="gabin-research.html">PhD Research</a>
         <a href="objectives.html">Objectives</a>
         <a href="report.html">Report</a>
-        <a href="inventory.html">Inventory</a>
+        <a href="dmp.html" class="active">DMP</a>
+        <a href="dmp-comparison.html">Compare</a>
     </div>
 </nav>
 
@@ -108,12 +101,12 @@
     <p><strong>Deutsche Borse T7:</strong> Nanosecond-level trading data for FESX and DAX futures. Format: Binary, CSV. Volume: ~50 GB. Time range: January-August 2025.</p>
 
     <p><strong>Public Data Sources:</strong></p>
-    <p><strong>BIS Gigando:</strong> Central bank speeches worldwide. Format: Text, PDF. URL: <a href="https://www.bis.org/cbspeeches/">bis.org/cbspeeches</a></p>
-    <p><strong>SEC EDGAR:</strong> 10-K and 10-Q regulatory filings. Format: HTML, XBRL. URL: <a href="https://www.sec.gov/edgar">sec.gov/edgar</a></p>
-    <p><strong>St. Louis FED FRED:</strong> Macroeconomic indicators (CPI, PPI, GDP, etc.). Format: CSV via API. URL: <a href="https://fred.stlouisfed.org/">fred.stlouisfed.org</a></p>
+    <p><strong>BIS Gigando:</strong> Central bank speeches worldwide. Format: Text, PDF. URL: <a href="https://www.bis.org/cbspeeches/">www.bis.org/cbspeeches/</a></p>
+    <p><strong>SEC EDGAR:</strong> 10-K and 10-Q regulatory filings. Format: HTML, XBRL. URL: <a href="https://www.sec.gov/edgar">www.sec.gov/edgar</a></p>
+    <p><strong>St. Louis FED FRED:</strong> Macroeconomic indicators (CPI, PPI, GDP, etc.). Format: CSV via API. URL: <a href="https://fred.stlouisfed.org/">fred.stlouisfed.org/</a></p>
 
     <p><strong>Generated Data:</strong></p>
-    <p><strong>TOPol Embeddings:</strong> Transformer-based semantic embeddings. Format: NumPy, HDF5. Volume: ~2 GB. Repository: <a href="https://osf.io/nr94j/">osf.io/nr94j</a></p>
+    <p><strong>TOPol Embeddings:</strong> Transformer-based semantic embeddings. Format: NumPy, HDF5. Volume: ~2 GB. Repository: <a href="https://osf.io/nr94j/">osf.io/nr94j/</a>.</p>
     <p><strong>NLP Features:</strong> Sentiment scores, topic models, embeddings. Format: CSV, Parquet. Volume: ~1 GB. Repository: Zenodo (pending).</p>
     <p><strong>Macro Index:</strong> PCA-based US Macro Strength Index. Format: CSV. Volume: less than 100 MB. Repository: GitHub.</p>
 
@@ -121,11 +114,11 @@
 
     <h3 id="section-1-2">1.2 How will the data be collected, observed or generated?</h3>
 
+    <p>The quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.</p>
+
     <p><strong>Quality assurance:</strong> The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.</p>
 
-    <p><strong>Versioning:</strong> The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (<a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a> organization). Data releases receive DOIs via Zenodo integration. Models are tracked using MLflow for experiment tracking and model registry.</p>
-
-    <p>The quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.</p>
+    <p><strong>Versioning:</strong> The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases receive DOIs via Zenodo integration. Models are tracked using MLflow for experiment tracking and model registry.</p>
 
     <p><strong>Data Collection Methods:</strong> API Access via FRED API (Python fredapi), SEC EDGAR XBRL API, and BIS web scraping (Beautiful Soup). Commercial data is accessed via RavenPack SQL access, LSEG API and bulk delivery, and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling.</p>
 
@@ -136,6 +129,7 @@
     <p><strong>Metadata Standards:</strong> Dublin Core for general descriptive metadata. DataCite for DOI registration and citation metadata. JSON Schema for data structure documentation and programmatic access.</p>
 
     <p><strong>Documentation Provided:</strong> Data Dictionaries contain variable names, types, units, and valid ranges, stored in README.md files per folder. Provenance information includes source attribution, collection dates, and processing steps, stored in METADATA.json files. Code Documentation includes inline comments and NumPy-style docstrings in source files. Reproducibility materials include requirements.txt, environment.yml, config files, and random seeds in repository roots.</p>
+
 </div>
 
 <!-- Section 2 -->
@@ -148,27 +142,28 @@
 
     <p><strong>Ethical Considerations:</strong> All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. We maintain transparency in model documentation and perform bias assessment for NLP models. Research outputs are not used for automated trading decisions.</p>
 
-    <p><strong>Data Provider Agreements:</strong> Refinitiv/LSEG operates under an academic research license with no redistribution of raw data. RavenPack operates under a research subscription for academic use only. Deutsche Borse data is used under a research collaboration agreement with Dr. Schlamp for project-specific usage.</p>
+    <p><strong>Data Provider Agreements:</strong> Refinitiv/LSEG operates under academic research license with no redistribution of raw data. RavenPack operates under research subscription with academic use only. Deutsche Borse operates under research collaboration agreement with dr. schlamp with project-specific usage.</p>
 
-    <p><strong>Ethics Approval:</strong> Not required (non-human-subjects research per Swiss SNSF guidelines).</p>
+    <p><strong>Ethics Approval:</strong> Not required (non-human-subjects research per Swiss SNSF guidelines)</p>
 
     <h3 id="section-2-2">2.2 How will data access and security be managed?</h3>
 
     <p>Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.</p>
 
-    <p><strong>Access Control:</strong> Public data (FRED, BIS, SEC) has open access and is stored on GitHub and Zenodo. Commercial data has team-only access and is stored on BFH secure server. Deutsche Borse HFT data has restricted access and is stored in encrypted local storage. Processed features have open access with publication and are stored on OSF and Zenodo.</p>
+    <p><strong>Access Control:</strong> Public data (FRED, BIS, SEC) has open access and is stored on GitHub, Zenodo. Commercial data has team only access and is stored on BFH secure server. Deutsche Borse HFT data has restricted access and is stored on Encrypted local storage. Processed features has open (with publication) access and is stored on OSF, Zenodo.</p>
 
     <p><strong>Security Measures:</strong> BFH IT infrastructure with regular backups and access logging. Encrypted file transfer for commercial data (SFTP, HTTPS). Two-factor authentication for all cloud services. Role-based access control for team members.</p>
 
-    <p><strong>Authorized Team Members:</strong> Prof. Dr. Joerg Osterrieder (Principal Investigator), Gabin Taibi (PhD Researcher), Lennart John Baals (PhD Researcher), Yiting Liu (PhD Researcher), and Marius Jan Klein (Researcher).</p>
+    <p><strong>Authorized Team Members:</strong> Prof. Dr. Joerg Osterrieder (Principal Investigator), Gabin Taibi (PhD Researcher), Lennart John Baals (PhD Researcher), Yiting Liu (PhD Researcher), Marius Jan Klein (Researcher).</p>
 
     <h3 id="section-2-3">2.3 How will you handle copyright and Intellectual Property Rights issues?</h3>
 
     <p>The project is based on data that are largely publicly available. The raw data records may not be published without restriction.</p>
 
-    <p><strong>Copyright Framework:</strong> RavenPack news data is copyrighted by RavenPack Inc. with academic use only rights under a proprietary license. LSEG transcripts are copyrighted by LSEG with academic use only rights under a proprietary license. Deutsche Borse data is copyrighted by Deutsche Borse AG under a research collaboration agreement. BIS speeches are copyrighted by BIS/Speakers with full reuse rights (public, cite required). SEC filings are public domain with full reuse rights. Our code is owned by the project team and released under the MIT License (open source). Our models and data are owned by the project team and released under CC-BY 4.0 (open access).</p>
+    <p><strong>Copyright Framework:</strong> RavenPack news is copyrighted by RavenPack Inc. with academic use only rights under Proprietary. LSEG transcripts is copyrighted by LSEG with academic use only rights under Proprietary. Deutsche Borse data is copyrighted by Deutsche Borse AG with research collaboration rights under Agreement. BIS speeches is copyrighted by BIS/Speakers with full reuse rights under Public (cite). SEC filings is copyrighted by Public domain with full reuse rights under Public domain. Our code is copyrighted by Project team with open source rights under MIT License. Our models/data is copyrighted by Project team with open access rights under CC-BY 4.0.</p>
 
     <p><strong>Publication Rights:</strong> <span class="badge badge-yes">Yes</span> Aggregated statistics and derived features. <span class="badge badge-yes">Yes</span> Code, models, and methodology. <span class="badge badge-no">No</span> Raw commercial data redistribution.</p>
+
 </div>
 
 <!-- Section 3 -->
@@ -181,21 +176,22 @@
 
     <p><strong>Primary Storage:</strong> Location is BFH Institute for Applied Data Science servers. Capacity is 1 TB allocated for the project. Backup schedule is daily incremental with weekly full backup. Retention is project duration plus 10 years minimum.</p>
 
-    <p><strong>Cloud Storage:</strong> GitHub (<a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a>) is used for code repositories. OSF (<a href="https://osf.io/nr94j/">osf.io/nr94j</a>) is used for research materials and preprints. Zenodo is used for archived releases with DOIs, linked via GitHub.</p>
+    <p><strong>Cloud Storage:</strong> GitHub (<a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a>) is used for code repositories. OSF (<a href="https://osf.io/nr94j/">osf.io/nr94j/</a>) is used for research materials and preprints. Zenodo is used for archived releases with dois, Linked via GitHub.</p>
 
-    <p><strong>Backup Strategy:</strong> Code is backed up continuously via Git with permanent retention on GitHub. Processed data is backed up weekly with 10-year retention on BFH and Zenodo. Commercial raw data is backed up daily with project duration retention on BFH (encrypted).</p>
+    <p><strong>Backup Strategy:</strong> Code is backed up continuous (git) with permanent retention on GitHub. Processed data is backed up weekly with 10 years retention on BFH + Zenodo. Commercial raw data is backed up daily with project duration retention on BFH (encrypted).</p>
 
     <h3 id="section-3-2">3.2 What is your data preservation plan?</h3>
 
     <p>The data is stored on GitHub for a long time and managed using existing tools. There is no obligation to destroy the data.</p>
 
-    <p><strong>Repository Selection:</strong> Zenodo is operated by CERN/OpenAIRE (non-profit), offers DOI assignment, FAIR compliance, 20+ year guarantee, and CoreTrustSeal certification. OSF is operated by the Center for Open Science (non-profit), offers preprints, supplementary materials, and version control. arXiv is operated by Cornell University (non-profit), offers preprints and permanent archive.</p>
+    <p><strong>Repository Selection:</strong> Zenodo is operated by CERN/OpenAIRE (non-profit), offers DOI assignment, FAIR compliance, 20+ year guarantee, CoreTrustSeal certification. OSF is operated by Center for Open Science (non-profit), offers Preprints, supplementary materials, version control. arXiv is operated by Cornell University (non-profit), offers Preprints, permanent archive.</p>
 
-    <p><strong>Preservation Timeline:</strong> At paper submission, we archive code and data snapshots with version DOIs via Zenodo. At paper acceptance, we update with the final version and update version DOIs. At project end (August 2026), we create a final comprehensive archive with a concept DOI.</p>
+    <p><strong>Preservation Timeline:</strong> At paper submission, we archive code and data snapshots with Version DOI via Zenodo. At paper acceptance, we update with final version with Version DOI update. At project end (august 2026), we final comprehensive archive with Concept DOI.</p>
 
-    <p><strong>Archival File Formats (Open Standards):</strong> Data in CSV, Parquet, and HDF5 (machine-readable, open formats). Documentation in Markdown and PDF/A (long-term readable). Code in Python (plain text, version-controlled). Images in PNG and SVG (lossless, open formats).</p>
+    <p><strong>Archival File Formats (Open Standards):</strong> Data in CSV, Parquet, HDF5 (machine-readable, open formats). Documentation in Markdown, PDF/A (long-term readable). Code in Python (plain text, version-controlled). Images in PNG, SVG (lossless, open formats).</p>
 
-    <p><strong>Retention Period:</strong> Minimum 10 years post-project (per SNSF Open Research Data policy).</p>
+    <p><strong>Retention Period:</strong> Minimum 10 years post-project (per SNSF Open Research Data policy)</p>
+
 </div>
 
 <!-- Section 4 -->
@@ -206,11 +202,11 @@
 
     <p>The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.</p>
 
-    <p><strong>Current Outputs (Available Now):</strong> TOPol Framework is published on OSF at <a href="https://osf.io/nr94j/">osf.io/nr94j</a>. Project Website is live on GitHub Pages at <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">digital-ai-finance.github.io/Narrative-Digital-Finance</a>. Realized-library is published on PyPI and GitHub (pip install realized).</p>
+    <p><strong>Current Outputs (Available Now):</strong> TOPol Framework is published on OSF at <a href="https://osf.io/nr94j/">osf.io/nr94j/</a>. Project Website is live on GitHub Pages at <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">digital-ai-finance.github.io/Narrative-Digital-Finance/</a>.</p>
 
-    <p><strong>Upcoming Deposits:</strong> SLR Methodology and Data will be deposited on Zenodo with Financial Innovation acceptance. HFT Analysis Code will be deposited on GitHub and Zenodo in Q2 2025. Macro Narrative Index will be deposited on OSF in Q4 2025. Final Project Archive will be deposited on Zenodo in August 2026.</p>
+    <p><strong>Upcoming Deposits:</strong> SLR Methodology and Data will be deposited on Zenodo Upon paper acceptance. HFT Analysis Code will be deposited on GitHub + Zenodo Planned. Macro Narrative Index will be deposited on OSF Planned. Final Project Archive will be deposited on Zenodo Project end (August 2026).</p>
 
-    <p><strong>Sharing by Data Type:</strong> FRED, BIS, and SEC data: <span class="badge badge-yes">Yes</span> shareable (public domain / open access). RavenPack raw data: <span class="badge badge-no">No</span> (license restriction). LSEG transcripts: <span class="badge badge-no">No</span> (license restriction). Deutsche Borse T7: <span class="badge badge-no">No</span> (collaboration agreement). Derived features: <span class="badge badge-yes">Yes</span> shareable (our work product). All code: <span class="badge badge-yes">Yes</span> shareable (MIT License).</p>
+    <p><strong>Sharing by Data Type:</strong> FRED, BIS, SEC: <span class="badge badge-yes">Yes</span> (Public domain / open access). RavenPack raw data: <span class="badge badge-no">No</span> (License restriction). LSEG transcripts: <span class="badge badge-no">No</span> (License restriction). Deutsche Borse T7: <span class="badge badge-no">No</span> (Collaboration agreement). Derived features: <span class="badge badge-yes">Yes</span> (Our work product). All code: <span class="badge badge-yes">Yes</span> (MIT License).</p>
 
     <h3 id="section-4-2">4.2 Are there any necessary limitations to protect sensitive data?</h3>
 
@@ -234,7 +230,8 @@
 
     <p><span class="badge badge-yes">Yes</span></p>
 
-    <p><strong>Repository Certification:</strong> Zenodo is operated by CERN/OpenAIRE, a non-profit organization with CoreTrustSeal certification. OSF is operated by the Center for Open Science, a non-profit organization and COS Registered Reports partner. arXiv is operated by Cornell University, a non-profit organization with a permanent archive.</p>
+    <p><strong>Repository Certification:</strong> Zenodo is operated by CERN/OpenAIRE, Non-profit, CoreTrustSeal certified. OSF is operated by Center for Open Science, Non-profit, COS Registered Reports partner. arXiv is operated by Cornell University, Non-profit, permanent archive.</p>
+
 </div>
 
 <a href="#main-content" class="back-to-top">Back to top</a>
