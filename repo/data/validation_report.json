@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-01-03T18:57:52.230840",
+  "timestamp": "2026-01-04T07:00:47.788682",
   "summary": {
     "total_checks": 76,
-    "total_passed": 71,
-    "total_failed": 5
+    "total_passed": 72,
+    "total_failed": 4
   },
   "pages": [
     {
       "name": "gabin-research.html",
-      "file_size_kb": 25.6201171875,
-      "passed": 15,
-      "failed": 0,
+      "file_size_kb": 34.0771484375,
+      "passed": 14,
+      "failed": 1,
       "results": [
         {
           "check": "HTML Parsing",
@@ -86,21 +86,29 @@
         },
         {
           "check": "Internal Links",
-          "passed": true,
-          "message": "All 23 internal links valid",
-          "severity": "info",
-          "details": null
+          "passed": false,
+          "message": "Found 3 broken internal links out of 26",
+          "severity": "error",
+          "details": {
+            "broken": [
+              "mailto:gabin.taibi@bfh.ch",
+              "mailto:joerg.osterrieder@bfh.ch",
+              "mailto:stefan.schlamp@deutsche-boerse.com"
+            ]
+          }
         },
         {
           "check": "External Links",
           "passed": true,
-          "message": "Found 3 external links (not verified)",
+          "message": "Found 5 external links (not verified)",
           "severity": "info",
           "details": {
             "links": [
               "https://data.snf.ch/grants/grant/213370",
               "https://www.bfh.ch/en/research/research-projects/2023-180-022-876/",
-              "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"
+              "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
+              "https://orcid.org/0000-0002-0785-6771",
+              "https://orcid.org/0000-0003-0189-8636"
             ]
           }
         },
@@ -121,7 +129,7 @@
         {
           "check": "Image Alt Text",
           "passed": true,
-          "message": "All 1 images have alt text",
+          "message": "All 3 images have alt text",
           "severity": "info",
           "details": null
         },
@@ -143,9 +151,9 @@
     },
     {
       "name": "hft-papers.html",
-      "file_size_kb": 21.5537109375,
-      "passed": 13,
-      "failed": 2,
+      "file_size_kb": 32.150390625,
+      "passed": 14,
+      "failed": 1,
       "results": [
         {
           "check": "HTML Parsing",
@@ -211,7 +219,7 @@
         {
           "check": "ARIA Labels",
           "passed": true,
-          "message": "Found 10 ARIA labels",
+          "message": "Found 11 ARIA labels",
           "severity": "info",
           "details": {
             "labels": [
@@ -224,6 +232,7 @@
               "View bfh_logo.png in full size",
               "View Deutsche_Boerse_Logo.png in full size",
               "View logo-ut.png in full size",
+              "Close",
               "Close"
             ]
           }
@@ -238,7 +247,7 @@
         {
           "check": "External Links",
           "passed": true,
-          "message": "Found 5 external links (not verified)",
+          "message": "Found 6 external links (not verified)",
           "severity": "info",
           "details": {
             "links": [
@@ -246,15 +255,16 @@
               "https://www.bfh.ch/en/research/research-projects/2023-180-022-876/",
               "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
               "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153",
-              "https://doi.org/10.2139/ssrn.4698153"
+              "https://doi.org/10.2139/ssrn.4698153",
+              "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID4698153.pdf"
             ]
           }
         },
         {
           "check": "External Link Security",
-          "passed": false,
-          "message": "2 external links missing rel='noopener'",
-          "severity": "warning",
+          "passed": true,
+          "message": "All external links have proper rel='noopener'",
+          "severity": "info",
           "details": null
         },
         {
@@ -274,15 +284,21 @@
         {
           "check": "CSS Classes",
           "passed": false,
-          "message": "Found 5 potentially undefined CSS classes",
+          "message": "Found 11 potentially undefined CSS classes",
           "severity": "info",
           "details": {
             "undefined": [
-              "lightbox-overlay",
+              "compare-overlay",
               "gallery-item",
+              "compare-paper",
               "lightbox-content",
+              "lightbox-overlay",
+              "compare-content",
+              "lightbox-close",
+              "compare-btn",
+              "compare-close",
               "lightbox-caption",
-              "lightbox-close"
+              "pdf-download-btn"
             ]
           }
         },
@@ -297,9 +313,9 @@
     },
     {
       "name": "narratives-papers.html",
-      "file_size_kb": 33.791015625,
-      "passed": 13,
-      "failed": 2,
+      "file_size_kb": 50.3193359375,
+      "passed": 14,
+      "failed": 1,
       "results": [
         {
           "check": "HTML Parsing",
@@ -365,7 +381,7 @@
         {
           "check": "ARIA Labels",
           "passed": true,
-          "message": "Found 18 ARIA labels",
+          "message": "Found 19 ARIA labels",
           "severity": "info",
           "details": {
             "labels": [
@@ -386,6 +402,7 @@
               "View filter_paper_diagram_v2.png in full size",
               "View final_relevance_score_v2.png in full size",
               "View final_relevance_score_v2_before.png in full size",
+              "Close",
               "Close"
             ]
           }
@@ -400,7 +417,7 @@
         {
           "check": "External Links",
           "passed": true,
-          "message": "Found 5 external links (not verified)",
+          "message": "Found 6 external links (not verified)",
           "severity": "info",
           "details": {
             "links": [
@@ -408,15 +425,16 @@
               "https://www.bfh.ch/en/research/research-projects/2023-180-022-876/",
               "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
               "https://arxiv.org/abs/2510.25069",
-              "https://doi.org/10.48550/arXiv.2510.25069"
+              "https://doi.org/10.48550/arXiv.2510.25069",
+              "https://arxiv.org/pdf/2510.25069.pdf"
             ]
           }
         },
         {
           "check": "External Link Security",
-          "passed": false,
-          "message": "2 external links missing rel='noopener'",
-          "severity": "warning",
+          "passed": true,
+          "message": "All external links have proper rel='noopener'",
+          "severity": "info",
           "details": null
         },
         {
@@ -436,15 +454,21 @@
         {
           "check": "CSS Classes",
           "passed": false,
-          "message": "Found 5 potentially undefined CSS classes",
+          "message": "Found 11 potentially undefined CSS classes",
           "severity": "info",
           "details": {
             "undefined": [
-              "lightbox-overlay",
+              "compare-overlay",
               "gallery-item",
+              "compare-paper",
               "lightbox-content",
+              "lightbox-overlay",
+              "compare-content",
+              "lightbox-close",
+              "compare-btn",
+              "compare-close",
               "lightbox-caption",
-              "lightbox-close"
+              "pdf-download-btn"
             ]
           }
         },

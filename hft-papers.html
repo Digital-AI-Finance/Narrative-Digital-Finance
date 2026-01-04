@@ -92,9 +92,11 @@
             <p style="font-size: 11px; color: var(--color-text); margin-bottom: 8px;">
                 This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As t...
             </p>
-            <div style="display: flex; gap: 8px; align-items: center;">
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
                 <span class="wp-tag" style="font-size: 10px;">WP4</span>
-                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153" target="_blank" style="font-size: 10px;">SSRN</a> | <a href="https://doi.org/10.2139/ssrn.4698153" target="_blank" style="font-size: 10px;">DOI</a>
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153" target="_blank" rel="noopener noreferrer" style="font-size: 10px;">SSRN</a> | <a href="https://doi.org/10.2139/ssrn.4698153" target="_blank" rel="noopener noreferrer" style="font-size: 10px;">DOI</a>
+                <a href="https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID4698153.pdf" target="_blank" rel="noopener noreferrer" class="pdf-download-btn" style="display: inline-flex; align-items: center; gap: 4px; font-size: 10px; background: var(--color-accent); color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-left: 8px;">PDF</a>
+                <button class="compare-btn" onclick="toggleCompare('Market_Participants_Classification', this)">Compare</button>
             </div>
             <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px;"><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Financial Markets</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Ultra-Fast Trading</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">High-Frequency Trading</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Price Formation</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Information Share</span></div>
         </div>
@@ -112,9 +114,11 @@
             <p style="font-size: 11px; color: var(--color-text); margin-bottom: 8px;">
                 The advent of ultra-fast (UFT) and high-frequency trading (HFT) has fundamentally transformed financial markets, sparking intense debate about their impact on market quality and stability. This study ...
             </p>
-            <div style="display: flex; gap: 8px; align-items: center;">
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
                 <span class="wp-tag" style="font-size: 10px;">WP4</span>
                 
+                
+                <button class="compare-btn" onclick="toggleCompare('UFT-HFT_Market_Impact', this)">Compare</button>
             </div>
             <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px;"><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Financial Markets</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Ultra-Fast Trading</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">High-Frequency Trading</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Price Information</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Information Share</span></div>
         </div>
@@ -132,9 +136,11 @@
             <p style="font-size: 11px; color: var(--color-text); margin-bottom: 8px;">
                 
             </p>
-            <div style="display: flex; gap: 8px; align-items: center;">
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
                 <span class="wp-tag" style="font-size: 10px;">WP4</span>
                 
+                
+                <button class="compare-btn" onclick="toggleCompare('TBD', this)">Compare</button>
             </div>
             <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px;"><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Financial Markets</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Ultra-Fast Trading</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">High-Frequency Trading</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Price Information</span><span style="font-size: 9px; background: var(--color-bg-alt); padding: 2px 6px; border-radius: 3px;">Information Share</span></div>
         </div>
@@ -269,7 +275,7 @@
             SNSF Grant IZCOZ0_213370 | Narrative Digital Finance | 2023-2026
             <br>
             <span style="font-size: 10px; color: var(--color-text-light);">
-                PhD Research pages generated on 2026-01-03
+                PhD Research pages generated on 2026-01-04
             </span>
         </div>
     </div>
@@ -373,6 +379,133 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeLightbox();
     }
+});
+</script>
+
+        
+<!-- Paper Comparison Modal -->
+<div id="compare-modal" class="compare-overlay" style="display: none;">
+    <div class="compare-content" style="background: white; border-radius: 8px; max-width: 95%; max-height: 90%; overflow: auto; padding: 20px; position: relative;">
+        <button class="compare-close" onclick="closeComparison()" aria-label="Close" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+        <h3 style="font-size: 16px; margin-bottom: 16px; color: var(--color-dark);">Compare Papers</h3>
+        <div id="compare-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div id="compare-left" class="compare-paper"></div>
+            <div id="compare-right" class="compare-paper"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Compare Selection Bar -->
+<div id="compare-bar" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--color-dark); color: white; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; display: none; align-items: center; gap: 12px;">
+    <span id="compare-count">0 papers selected</span>
+    <button onclick="showComparison()" style="background: var(--color-accent); color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 11px;">Compare</button>
+    <button onclick="clearSelection()" style="background: transparent; color: white; border: 1px solid white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 11px;">Clear</button>
+</div>
+
+<style>
+.compare-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.compare-paper {
+    background: var(--color-bg-alt);
+    padding: 16px;
+    border-radius: 6px;
+}
+.compare-btn {
+    font-size: 9px;
+    padding: 2px 6px;
+    border: 1px solid var(--color-primary);
+    background: white;
+    color: var(--color-primary);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.compare-btn.selected {
+    background: var(--color-primary);
+    color: white;
+}
+</style>
+
+<script>
+const allPapers = [{"id": "Market_Participants_Classification", "title": "Decoding the Flash: A Data-Driven Approach to Measuring Ultra-Fast and High-Frequency Traders Activity", "authors": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder", "abstract": "This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As technological advancements continue to reshape trading landscapes, accurately identifying and categorizing traders becomes crucial for understanding market dynamics and informing regulatory decisions. We analyze high-precision data from Deutsche B\u00f6rse, focusing on post-trade event latencies to distinguish between ultra-fast traders (UFTs) using field-programmable gate arrays (FPGAs), high-frequency traders (HFTs), and other conventional participants. Our classification approach utilizes nanosecond-level latency thresholds and examines various metrics including total participation, aggressive and passive participation, cancellation rate, deep orderbook participation, liquidity adding and removing participation, and signal and noise value. We apply this methodology to a comprehensive dataset encompassing multiple markets and instruments, on a period spanning from January 2021 to January 2024. We conclude by discussing the limitations of our approach, including potential misclassification issues, and outlining future research directions aimed at refining classification accuracy and further exploring the impact of different trader categories on price formation and liquidity provision.", "status": "SUBMITTED", "venue": "SSRN", "year": 2024, "stream": "hft", "work_package": "WP4", "keywords": ["Financial Markets", "Ultra-Fast Trading", "High-Frequency Trading", "Price Formation", "Information Share", "Market Efficiency", "Orderbook Liquidity", "Market Micro structures"]}, {"id": "UFT-HFT_Market_Impact", "title": "Nanoseconds traders: How Ultra-Fast and High-Frequency Traders Reshape Market Microstructure", "authors": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder", "abstract": "The advent of ultra-fast (UFT) and high-frequency trading (HFT) has fundamentally transformed financial markets, sparking intense debate about their impact on market quality and stability. This study provides a comprehensive empirical analysis of UFT and HFT effects on market microstructure, addressing critical questions about efficiency, liquidity, and volatility in modern electronic markets. Utilizing high-precision timestamp data from Deutsche B\u00f6rse's Eurex and Xetra platforms, we employ a novel classification methodology to categorize market participants based on their reaction latencies, distinguishing between FPGA-enabled ultra-fast traders, high-frequency traders, and conventional participants. Our analysis encompasses a diverse range of instruments, including futures, equities, and ETFs, focusing on the most liquid assets to capture the full spectrum of trading behavior. We introduce a combination of eight metrics to quantify market quality, including effective spread, mid price, micro price, and trade price realized kernels for volatility estimation, alongside traditional measures such as volume, spread, depth and order imbalance ratio. A key contribution is our methodology for classifying trading activities as either \"noise\" or \"signal,\" allowing for a nuanced examination of different trader categories' market impact. This research contributes to the ongoing debate on market efficiency in the age of algorithmic trading, providing empirical evidence that both supports and refutes common criticisms of ultra-fast trading. Our findings have significant implications for market regulation, suggesting the need for more granular and adaptive oversight mechanisms to address the evolving landscape of electronic trading.", "status": "IN_PROGRESS", "venue": "Physica A", "year": 2025, "stream": "hft", "work_package": "WP4", "keywords": ["Financial Markets", "Ultra-Fast Trading", "High-Frequency Trading", "Price Information", "Information Share", "Market Efficiency", "Orderbook Liquidity", "Market Micro structures", "[specific models or methodologies]"]}, {"id": "TBD", "title": "Identifying Market Signals: A Statistical/Machine Learning Approach", "authors": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder", "abstract": "", "status": "PLANNING", "venue": "Top Journal TBD", "year": 2026, "stream": "hft", "work_package": "WP4", "keywords": ["Financial Markets", "Ultra-Fast Trading", "High-Frequency Trading", "Price Information", "Information Share", "Market Efficiency", "Orderbook Liquidity", "Market Micro structures", "[specific models or methodologies]"]}];
+let selectedPapers = [];
+
+function toggleCompare(paperId, btn) {
+    const idx = selectedPapers.indexOf(paperId);
+    if (idx === -1) {
+        if (selectedPapers.length < 2) {
+            selectedPapers.push(paperId);
+            btn.classList.add('selected');
+            btn.textContent = 'Selected';
+        }
+    } else {
+        selectedPapers.splice(idx, 1);
+        btn.classList.remove('selected');
+        btn.textContent = 'Compare';
+    }
+    updateCompareBar();
+}
+
+function updateCompareBar() {
+    const bar = document.getElementById('compare-bar');
+    const count = document.getElementById('compare-count');
+    if (selectedPapers.length > 0) {
+        bar.style.display = 'flex';
+        count.textContent = selectedPapers.length + ' paper(s) selected';
+    } else {
+        bar.style.display = 'none';
+    }
+}
+
+function showComparison() {
+    if (selectedPapers.length < 2) {
+        alert('Please select 2 papers to compare');
+        return;
+    }
+    const p1 = allPapers.find(p => p.id === selectedPapers[0]);
+    const p2 = allPapers.find(p => p.id === selectedPapers[1]);
+
+    document.getElementById('compare-left').innerHTML = buildPaperCard(p1);
+    document.getElementById('compare-right').innerHTML = buildPaperCard(p2);
+    document.getElementById('compare-modal').style.display = 'flex';
+}
+
+function buildPaperCard(p) {
+    const keywords = (p.keywords || []).slice(0, 5).map(k => '<span style="font-size:9px;background:#f3f4f6;padding:2px 4px;border-radius:2px;">' + k + '</span>').join(' ');
+    return '<h4 style="font-size:13px;color:var(--color-dark);margin-bottom:8px;">' + p.title + '</h4>' +
+           '<p style="font-size:10px;color:var(--color-text-muted);margin-bottom:6px;">' + p.authors + '</p>' +
+           '<p style="font-size:10px;margin-bottom:6px;"><strong>Venue:</strong> ' + p.venue + ' (' + p.year + ')</p>' +
+           '<p style="font-size:10px;margin-bottom:6px;"><strong>Status:</strong> ' + p.status + '</p>' +
+           '<p style="font-size:10px;margin-bottom:6px;"><strong>Stream:</strong> ' + p.stream + ' | <strong>WP:</strong> ' + p.work_package + '</p>' +
+           '<p style="font-size:11px;margin-bottom:8px;">' + (p.abstract || '').substring(0, 300) + '...</p>' +
+           '<div style="display:flex;gap:4px;flex-wrap:wrap;">' + keywords + '</div>';
+}
+
+function closeComparison() {
+    document.getElementById('compare-modal').style.display = 'none';
+}
+
+function clearSelection() {
+    selectedPapers = [];
+    document.querySelectorAll('.compare-btn').forEach(btn => {
+        btn.classList.remove('selected');
+        btn.textContent = 'Compare';
+    });
+    updateCompareBar();
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeComparison();
 });
 </script>
 

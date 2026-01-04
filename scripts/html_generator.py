@@ -21,7 +21,8 @@ from config import (
     RESEARCH_STREAMS,
     THESIS_CHAPTERS,
     STATUS_CONFIG,
-    PAGES_TO_GENERATE
+    PAGES_TO_GENERATE,
+    COLLABORATORS
 )
 
 logger = logging.getLogger(__name__)
@@ -136,6 +137,153 @@ def get_footer() -> str:
         </div>
     </div>
 </footer>'''
+
+def get_paper_comparison_html(papers: List[Dict]) -> str:
+    """Generate paper comparison modal and scripts."""
+    if not papers:
+        return ""
+
+    # Build paper data for JavaScript
+    papers_json = json.dumps([{
+        'id': p.get('id', ''),
+        'title': p.get('title', 'Untitled'),
+        'authors': p.get('authors_string', ''),
+        'abstract': p.get('abstract', ''),
+        'status': p.get('status', ''),
+        'venue': p.get('venue', ''),
+        'year': p.get('year', ''),
+        'stream': p.get('stream', ''),
+        'work_package': p.get('work_package', ''),
+        'keywords': p.get('keywords', [])
+    } for p in papers])
+
+    return f'''
+<!-- Paper Comparison Modal -->
+<div id="compare-modal" class="compare-overlay" style="display: none;">
+    <div class="compare-content" style="background: white; border-radius: 8px; max-width: 95%; max-height: 90%; overflow: auto; padding: 20px; position: relative;">
+        <button class="compare-close" onclick="closeComparison()" aria-label="Close" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+        <h3 style="font-size: 16px; margin-bottom: 16px; color: var(--color-dark);">Compare Papers</h3>
+        <div id="compare-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div id="compare-left" class="compare-paper"></div>
+            <div id="compare-right" class="compare-paper"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Compare Selection Bar -->
+<div id="compare-bar" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--color-dark); color: white; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; display: none; align-items: center; gap: 12px;">
+    <span id="compare-count">0 papers selected</span>
+    <button onclick="showComparison()" style="background: var(--color-accent); color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 11px;">Compare</button>
+    <button onclick="clearSelection()" style="background: transparent; color: white; border: 1px solid white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 11px;">Clear</button>
+</div>
+
+<style>
+.compare-overlay {{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}}
+.compare-paper {{
+    background: var(--color-bg-alt);
+    padding: 16px;
+    border-radius: 6px;
+}}
+.compare-btn {{
+    font-size: 9px;
+    padding: 2px 6px;
+    border: 1px solid var(--color-primary);
+    background: white;
+    color: var(--color-primary);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+}}
+.compare-btn.selected {{
+    background: var(--color-primary);
+    color: white;
+}}
+</style>
+
+<script>
+const allPapers = {papers_json};
+let selectedPapers = [];
+
+function toggleCompare(paperId, btn) {{
+    const idx = selectedPapers.indexOf(paperId);
+    if (idx === -1) {{
+        if (selectedPapers.length < 2) {{
+            selectedPapers.push(paperId);
+            btn.classList.add('selected');
+            btn.textContent = 'Selected';
+        }}
+    }} else {{
+        selectedPapers.splice(idx, 1);
+        btn.classList.remove('selected');
+        btn.textContent = 'Compare';
+    }}
+    updateCompareBar();
+}}
+
+function updateCompareBar() {{
+    const bar = document.getElementById('compare-bar');
+    const count = document.getElementById('compare-count');
+    if (selectedPapers.length > 0) {{
+        bar.style.display = 'flex';
+        count.textContent = selectedPapers.length + ' paper(s) selected';
+    }} else {{
+        bar.style.display = 'none';
+    }}
+}}
+
+function showComparison() {{
+    if (selectedPapers.length < 2) {{
+        alert('Please select 2 papers to compare');
+        return;
+    }}
+    const p1 = allPapers.find(p => p.id === selectedPapers[0]);
+    const p2 = allPapers.find(p => p.id === selectedPapers[1]);
+
+    document.getElementById('compare-left').innerHTML = buildPaperCard(p1);
+    document.getElementById('compare-right').innerHTML = buildPaperCard(p2);
+    document.getElementById('compare-modal').style.display = 'flex';
+}}
+
+function buildPaperCard(p) {{
+    const keywords = (p.keywords || []).slice(0, 5).map(k => '<span style="font-size:9px;background:#f3f4f6;padding:2px 4px;border-radius:2px;">' + k + '</span>').join(' ');
+    return '<h4 style="font-size:13px;color:var(--color-dark);margin-bottom:8px;">' + p.title + '</h4>' +
+           '<p style="font-size:10px;color:var(--color-text-muted);margin-bottom:6px;">' + p.authors + '</p>' +
+           '<p style="font-size:10px;margin-bottom:6px;"><strong>Venue:</strong> ' + p.venue + ' (' + p.year + ')</p>' +
+           '<p style="font-size:10px;margin-bottom:6px;"><strong>Status:</strong> ' + p.status + '</p>' +
+           '<p style="font-size:10px;margin-bottom:6px;"><strong>Stream:</strong> ' + p.stream + ' | <strong>WP:</strong> ' + p.work_package + '</p>' +
+           '<p style="font-size:11px;margin-bottom:8px;">' + (p.abstract || '').substring(0, 300) + '...</p>' +
+           '<div style="display:flex;gap:4px;flex-wrap:wrap;">' + keywords + '</div>';
+}}
+
+function closeComparison() {{
+    document.getElementById('compare-modal').style.display = 'none';
+}}
+
+function clearSelection() {{
+    selectedPapers = [];
+    document.querySelectorAll('.compare-btn').forEach(btn => {{
+        btn.classList.remove('selected');
+        btn.textContent = 'Compare';
+    }});
+    updateCompareBar();
+}}
+
+document.addEventListener('keydown', function(e) {{
+    if (e.key === 'Escape') closeComparison();
+}});
+</script>
+'''
 
 def get_lightbox_html() -> str:
     """Generate lightbox modal for image viewing."""
@@ -292,6 +440,12 @@ def generate_research_overview_page(research_data: Dict, image_data: Optional[Di
     # Build papers summary HTML
     papers_html = build_papers_summary_html(research_data)
 
+    # Build collaborators section
+    collaborators_html = build_collaborators_html()
+
+    # Build collaboration network
+    network_html = build_collaboration_network_html()
+
     # Build OpenAlex integration script
     openalex_script = build_openalex_script(research_data)
 
@@ -352,6 +506,20 @@ def generate_research_overview_page(research_data: Dict, image_data: Optional[Di
                     Papers Overview
                 </div>
                 {papers_html}
+            </section>
+
+            <section class="section" id="team" style="margin-bottom: 32px;">
+                <div class="section-title" style="font-size: 15px; font-weight: 600; color: var(--color-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-purple);">
+                    Research Team
+                </div>
+                {collaborators_html}
+            </section>
+
+            <section class="section" id="network" style="margin-bottom: 32px;">
+                <div class="section-title" style="font-size: 15px; font-weight: 600; color: var(--color-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-cyan);">
+                    Collaboration Network
+                </div>
+                {network_html}
             </section>
 
             <section class="section" id="links" style="margin-bottom: 32px;">
@@ -547,6 +715,111 @@ def build_papers_summary_html(research_data: Dict) -> str:
         {"".join(items)}
     </div>'''
 
+def build_collaborators_html() -> str:
+    """Build HTML for collaborators with ORCID badges."""
+    cards = []
+
+    for collab in COLLABORATORS:
+        # ORCID badge
+        orcid_html = ""
+        if collab.get('orcid'):
+            orcid_html = f'''
+            <a href="https://orcid.org/{collab['orcid']}" target="_blank" rel="noopener noreferrer"
+               style="display: inline-flex; align-items: center; gap: 4px; font-size: 10px; color: #a6ce39; text-decoration: none;">
+                <img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID" style="width: 14px; height: 14px;">
+                {collab['orcid']}
+            </a>'''
+
+        # Email link
+        email_html = ""
+        if collab.get('email'):
+            email_html = f'<a href="mailto:{collab["email"]}" style="font-size: 10px; color: var(--color-primary);">{collab["email"]}</a>'
+
+        # Role badge color
+        role_colors = {
+            'PhD Researcher': 'var(--color-accent)',
+            'Principal Investigator': 'var(--color-primary)',
+            'Industry Collaborator': 'var(--color-green)',
+            'Researcher': 'var(--color-purple)'
+        }
+        role_color = role_colors.get(collab['role'], 'var(--color-text-muted)')
+
+        cards.append(f'''
+        <div class="card" style="padding: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                <h4 style="font-size: 12px; color: var(--color-dark); margin: 0;">{html.escape(collab['name'])}</h4>
+                <span style="font-size: 9px; background: {role_color}; color: white; padding: 2px 6px; border-radius: 3px;">{collab['role']}</span>
+            </div>
+            <p style="font-size: 10px; color: var(--color-text-muted); margin-bottom: 6px;">
+                {', '.join(collab['affiliations'])}
+            </p>
+            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                {orcid_html}
+                {email_html}
+            </div>
+        </div>''')
+
+    return f'''<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px;">
+        {"".join(cards)}
+    </div>'''
+
+def build_collaboration_network_html() -> str:
+    """Build SVG collaboration network visualization."""
+    # Define node positions and connections
+    # Center: Gabin Taibi, connected to all
+    # Top: Joerg Osterrieder (PI)
+    # Left: Stefan Schlamp (DB), Right: Axel Gross-Klussmann (Quoniam)
+    # Bottom: Lucia Gomez Teijeiro
+
+    nodes = [
+        {"id": "gabin", "name": "Gabin Taibi", "role": "PhD", "x": 200, "y": 150, "color": "#d97706"},
+        {"id": "joerg", "name": "J. Osterrieder", "role": "PI", "x": 200, "y": 50, "color": "#3b82f6"},
+        {"id": "stefan", "name": "S. Schlamp", "role": "DB", "x": 80, "y": 120, "color": "#10b981"},
+        {"id": "axel", "name": "A. Gross-Klussmann", "role": "Quoniam", "x": 320, "y": 120, "color": "#10b981"},
+        {"id": "lucia", "name": "L. Gomez Teijeiro", "role": "UT", "x": 200, "y": 250, "color": "#8b5cf6"},
+    ]
+
+    edges = [
+        ("gabin", "joerg"),
+        ("gabin", "stefan"),
+        ("gabin", "axel"),
+        ("gabin", "lucia"),
+        ("joerg", "stefan"),
+        ("joerg", "lucia"),
+    ]
+
+    # Build SVG
+    node_dict = {n["id"]: n for n in nodes}
+
+    lines_svg = []
+    for src, dst in edges:
+        n1, n2 = node_dict[src], node_dict[dst]
+        lines_svg.append(f'<line x1="{n1["x"]}" y1="{n1["y"]}" x2="{n2["x"]}" y2="{n2["y"]}" stroke="#e5e7eb" stroke-width="2"/>')
+
+    nodes_svg = []
+    for n in nodes:
+        nodes_svg.append(f'''
+        <g transform="translate({n["x"]}, {n["y"]})">
+            <circle r="25" fill="{n["color"]}" opacity="0.9"/>
+            <text y="4" text-anchor="middle" fill="white" font-size="9" font-weight="600">{n["role"]}</text>
+        </g>
+        <text x="{n["x"]}" y="{n["y"] + 40}" text-anchor="middle" fill="#374151" font-size="10">{n["name"]}</text>
+        ''')
+
+    return f'''
+    <div style="display: flex; justify-content: center;">
+        <svg width="400" height="300" viewBox="0 0 400 300" style="max-width: 100%;">
+            <!-- Edges -->
+            {"".join(lines_svg)}
+            <!-- Nodes -->
+            {"".join(nodes_svg)}
+        </svg>
+    </div>
+    <p style="font-size: 10px; color: var(--color-text-muted); text-align: center; margin-top: 8px;">
+        Research collaboration network: PhD Researcher (orange), PI (blue), Industry (green), Academic (purple)
+    </p>
+    '''
+
 def generate_hft_papers_page(research_data: Dict, image_data: Optional[Dict] = None) -> str:
     """
     Generate hft-papers.html with Deutsche Borse research.
@@ -572,6 +845,9 @@ def generate_hft_papers_page(research_data: Dict, image_data: Optional[Dict] = N
 
     # Build images gallery
     images_html = build_image_gallery_html(image_data, "hft") if image_data else ""
+
+    # Build comparison modal
+    comparison_html = get_paper_comparison_html(hft_papers)
 
     return f'''{head}
 <body>
@@ -613,6 +889,7 @@ def generate_hft_papers_page(research_data: Dict, image_data: Optional[Dict] = N
 
         {get_footer()}
         {get_lightbox_html()}
+        {comparison_html}
     </main>
 </body>
 </html>'''
@@ -671,6 +948,9 @@ def generate_narratives_papers_page(research_data: Dict, image_data: Optional[Di
         if narrative_images:
             images_html = build_image_gallery_html(image_data, narrative_streams)
 
+    # Build comparison modal for all narrative papers
+    comparison_html = get_paper_comparison_html(all_papers)
+
     return f'''{head}
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -698,6 +978,7 @@ def generate_narratives_papers_page(research_data: Dict, image_data: Optional[Di
 
         {get_footer()}
         {get_lightbox_html()}
+        {comparison_html}
     </main>
 </body>
 </html>'''
@@ -937,13 +1218,28 @@ def build_papers_detail_html(papers: List[Dict], stream: str) -> str:
         # Build links
         links = []
         if paper.get('ssrn_url'):
-            links.append(f'<a href="{paper["ssrn_url"]}" target="_blank" style="font-size: 10px;">SSRN</a>')
+            links.append(f'<a href="{paper["ssrn_url"]}" target="_blank" rel="noopener noreferrer" style="font-size: 10px;">SSRN</a>')
         if paper.get('arxiv_url'):
-            links.append(f'<a href="{paper["arxiv_url"]}" target="_blank" style="font-size: 10px;">arXiv</a>')
+            links.append(f'<a href="{paper["arxiv_url"]}" target="_blank" rel="noopener noreferrer" style="font-size: 10px;">arXiv</a>')
         if paper.get('doi'):
-            links.append(f'<a href="https://doi.org/{paper["doi"]}" target="_blank" style="font-size: 10px;">DOI</a>')
+            links.append(f'<a href="https://doi.org/{paper["doi"]}" target="_blank" rel="noopener noreferrer" style="font-size: 10px;">DOI</a>')
 
         links_html = " | ".join(links) if links else ""
+
+        # PDF download button
+        pdf_html = ""
+        if paper.get('arxiv_url'):
+            # arXiv: convert /abs/ to /pdf/
+            pdf_url = paper['arxiv_url'].replace('/abs/', '/pdf/') + '.pdf'
+            pdf_html = f'<a href="{pdf_url}" target="_blank" rel="noopener noreferrer" class="pdf-download-btn" style="display: inline-flex; align-items: center; gap: 4px; font-size: 10px; background: var(--color-accent); color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-left: 8px;">PDF</a>'
+        elif paper.get('ssrn_url') and 'abstract_id=' in paper['ssrn_url']:
+            # SSRN: extract ID and build download URL
+            import re
+            ssrn_match = re.search(r'abstract_id=(\d+)', paper['ssrn_url'])
+            if ssrn_match:
+                ssrn_id = ssrn_match.group(1)
+                pdf_url = f"https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID{ssrn_id}.pdf"
+                pdf_html = f'<a href="{pdf_url}" target="_blank" rel="noopener noreferrer" class="pdf-download-btn" style="display: inline-flex; align-items: center; gap: 4px; font-size: 10px; background: var(--color-accent); color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-left: 8px;">PDF</a>'
 
         # Keywords
         keywords_html = ""
@@ -966,9 +1262,11 @@ def build_papers_detail_html(papers: List[Dict], stream: str) -> str:
             <p style="font-size: 11px; color: var(--color-text); margin-bottom: 8px;">
                 {html.escape(paper.get('abstract_short', ''))}
             </p>
-            <div style="display: flex; gap: 8px; align-items: center;">
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
                 <span class="wp-tag" style="font-size: 10px;">{paper.get('work_package', '')}</span>
                 {links_html}
+                {pdf_html}
+                <button class="compare-btn" onclick="toggleCompare('{paper.get('id', '')}', this)">Compare</button>
             </div>
             {keywords_html}
         </div>''')

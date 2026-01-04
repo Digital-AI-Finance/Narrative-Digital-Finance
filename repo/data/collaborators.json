@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-03T18:57:40.463213",
+  "generated_at": "2026-01-04T07:00:28.262301",
   "generator": "PhD Research Pages Generator",
   "version": "1.0.0",
   "source_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance-Gabin-Research",
@@ -55,9 +55,9 @@
   ],
   "count": 5,
   "institutions": [
-    "University of Twente",
-    "Quoniam Asset Management",
     "Deutsche Borse",
-    "Bern University of Applied Sciences"
+    "Bern University of Applied Sciences",
+    "Quoniam Asset Management",
+    "University of Twente"
   ]
 }
