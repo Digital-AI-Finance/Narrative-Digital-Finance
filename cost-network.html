@@ -73,6 +73,293 @@
     <main class="main" id="main-content">
         <div class="breadcrumb"><a href="index.html">Home</a> / <a href="cost-action.html">COST Action</a> / Network</div>
 
+
+    <!-- Network Map Section -->
+    <section class="section" id="network-map" style="margin-bottom: 24px;">
+        <div class="section-title" style="font-size: 15px; font-weight: 600; color: var(--color-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-primary);">
+            Interactive Network Map
+        </div>
+
+        <div style="display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="width: 16px; height: 16px; background: #3b82f6; border-radius: 50%;"></div>
+                <span style="font-size: 11px;">Non-ITC Countries (16)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="width: 16px; height: 16px; background: #10b981; border-radius: 50%;"></div>
+                <span style="font-size: 11px;">ITC Countries (20)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 11px; color: #64748b;">Circle size = participant count</span>
+            </div>
+        </div>
+
+        <div id="map-container" style="position: relative; width: 100%; height: 450px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 8px; overflow: hidden;">
+            <svg id="network-map-svg" viewBox="-30 25 100 55" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;">
+                <!-- Grid lines -->
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#cbd5e1" stroke-width="0.1"/>
+                    </pattern>
+                </defs>
+                <rect x="-30" y="25" width="100" height="55" fill="url(#grid)"/>
+
+                <!-- Connection lines to Switzerland (hub) -->
+                <g id="connections" opacity="0.3">
+                    <line x1="8.2" y1="43.2" x2="24.9" y2="44.0" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="12.6" y2="48.1" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="20.0" y2="49.0" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="35.2" y2="51.0" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="21.7" y2="48.5" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="5.3" y2="37.9" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="10.4" y2="38.8" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="-8.2" y2="36.6" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="19.1" y2="38.1" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="14.5" y2="40.2" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="21.8" y2="50.9" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="19.7" y2="41.3" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="2.2" y2="43.8" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="-3.4" y2="34.6" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="20.9" y2="47.4" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="23.9" y2="34.8" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="-3.7" y2="49.6" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="19.5" y2="42.8" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="15.2" y2="44.9" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="-19.0" y2="25.0" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="-8.2" y2="50.6" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="24.6" y2="33.1" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="31.2" y2="41.6" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="-95.7" y2="52.9" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="8.5" y2="29.5" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="33.4" y2="54.9" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="13.3" y2="42.5" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="35.0" y2="58.5" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="9.6" y2="42.8" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="4.4" y2="39.2" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="25.5" y2="47.3" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="25.7" y2="28.1" stroke="#3b82f6" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="21.0" y2="46.0" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="25.0" y2="31.4" stroke="#10b981" stroke-width="0.15"/>
+                    <line x1="8.2" y1="43.2" x2="17.8" y2="46.1" stroke="#10b981" stroke-width="0.15"/>
+                </g>
+
+                <!-- Country circles -->
+                <g id="countries">
+                    <g class="country-node" data-country="RO" data-name="Romania" data-participants="23" data-total="71345" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="24.9" cy="44.0" r="4.6" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="24.9" y="44.5" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">RO</text>
+                    </g>
+                    <g class="country-node" data-country="CH" data-name="Switzerland" data-participants="19" data-total="41967" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="8.2" cy="43.2" r="3.8" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="8.2" y="43.7" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">CH</text>
+                    </g>
+                    <g class="country-node" data-country="IT" data-name="Italy" data-participants="17" data-total="35880" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="12.6" cy="48.1" r="3.4" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="12.6" y="48.6" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">IT</text>
+                    </g>
+                    <g class="country-node" data-country="AL" data-name="Albania" data-participants="17" data-total="22311" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="20.0" cy="49.0" r="3.4" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="20.0" y="49.5" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">AL</text>
+                    </g>
+                    <g class="country-node" data-country="TR" data-name="Turkey" data-participants="13" data-total="24593" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="35.2" cy="51.0" r="2.6" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="35.2" y="51.5" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">TR</text>
+                    </g>
+                    <g class="country-node" data-country="MK" data-name="North Macedonia" data-participants="11" data-total="18640" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="21.7" cy="48.5" r="2.2" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="21.7" y="49.0" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">MK</text>
+                    </g>
+                    <g class="country-node" data-country="NL" data-name="Netherlands" data-participants="10" data-total="20351" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="5.3" cy="37.9" r="2.0" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="5.3" y="38.4" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">NL</text>
+                    </g>
+                    <g class="country-node" data-country="DE" data-name="Germany" data-participants="10" data-total="19517" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="10.4" cy="38.8" r="2.0" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="10.4" y="39.3" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">DE</text>
+                    </g>
+                    <g class="country-node" data-country="IE" data-name="Ireland" data-participants="10" data-total="16962" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="-8.2" cy="36.6" r="2.0" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="-8.2" y="37.1" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">IE</text>
+                    </g>
+                    <g class="country-node" data-country="PL" data-name="Poland" data-participants="7" data-total="24975" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="19.1" cy="38.1" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="19.1" y="38.6" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">PL</text>
+                    </g>
+                    <g class="country-node" data-country="CZ" data-name="Czechia" data-participants="6" data-total="11296" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="14.5" cy="40.2" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="14.5" y="40.7" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">CZ</text>
+                    </g>
+                    <g class="country-node" data-country="GR" data-name="Greece" data-participants="5" data-total="15564" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="21.8" cy="50.9" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="21.8" y="51.4" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">GR</text>
+                    </g>
+                    <g class="country-node" data-country="SK" data-name="Slovakia" data-participants="5" data-total="5524" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="19.7" cy="41.3" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="19.7" y="41.8" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">SK</text>
+                    </g>
+                    <g class="country-node" data-country="FR" data-name="France" data-participants="4" data-total="11664" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="2.2" cy="43.8" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="2.2" y="44.3" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">FR</text>
+                    </g>
+                    <g class="country-node" data-country="GB" data-name="United Kingdom" data-participants="4" data-total="3237" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="-3.4" cy="34.6" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="-3.4" y="35.1" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">GB</text>
+                    </g>
+                    <g class="country-node" data-country="XK" data-name="Kosovo" data-participants="3" data-total="8265" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="20.9" cy="47.4" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="20.9" y="47.9" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">XK</text>
+                    </g>
+                    <g class="country-node" data-country="LT" data-name="Lithuania" data-participants="3" data-total="3805" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="23.9" cy="34.8" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="23.9" y="35.3" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">LT</text>
+                    </g>
+                    <g class="country-node" data-country="ES" data-name="Spain" data-participants="3" data-total="3164" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="-3.7" cy="49.6" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="-3.7" y="50.1" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">ES</text>
+                    </g>
+                    <g class="country-node" data-country="HU" data-name="Hungary" data-participants="3" data-total="2670" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="19.5" cy="42.8" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="19.5" y="43.3" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">HU</text>
+                    </g>
+                    <g class="country-node" data-country="HR" data-name="Croatia" data-participants="3" data-total="1182" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="15.2" cy="44.9" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="15.2" y="45.4" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">HR</text>
+                    </g>
+                    <g class="country-node" data-country="IS" data-name="Iceland" data-participants="2" data-total="5564" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="-19.0" cy="25.0" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="-19.0" y="25.5" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">IS</text>
+                    </g>
+                    <g class="country-node" data-country="PT" data-name="Portugal" data-participants="2" data-total="2468" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="-8.2" cy="50.6" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="-8.2" y="51.1" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">PT</text>
+                    </g>
+                    <g class="country-node" data-country="LV" data-name="Latvia" data-participants="2" data-total="2231" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="24.6" cy="33.1" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="24.6" y="33.6" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">LV</text>
+                    </g>
+                    <g class="country-node" data-country="UA" data-name="Ukraine" data-participants="2" data-total="1440" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="31.2" cy="41.6" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="31.2" y="42.1" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">UA</text>
+                    </g>
+                    <g class="country-node" data-country="US" data-name="United States" data-participants="2" data-total="1325" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="-95.7" cy="52.9" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="-95.7" y="53.4" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">US</text>
+                    </g>
+                    <g class="country-node" data-country="NO" data-name="Norway" data-participants="2" data-total="598" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="8.5" cy="29.5" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="8.5" y="30.0" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">NO</text>
+                    </g>
+                    <g class="country-node" data-country="CY" data-name="Cyprus" data-participants="2" data-total="406" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="33.4" cy="54.9" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="33.4" y="55.4" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">CY</text>
+                    </g>
+                    <g class="country-node" data-country="AT" data-name="Austria" data-participants="1" data-total="1467" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="13.3" cy="42.5" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="13.3" y="43.0" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">AT</text>
+                    </g>
+                    <g class="country-node" data-country="IL" data-name="Israel" data-participants="1" data-total="867" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="35.0" cy="58.5" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="35.0" y="59.0" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">IL</text>
+                    </g>
+                    <g class="country-node" data-country="LI" data-name="Liechtenstein" data-participants="1" data-total="442" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="9.6" cy="42.8" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="9.6" y="43.3" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">LI</text>
+                    </g>
+                    <g class="country-node" data-country="BE" data-name="Belgium" data-participants="1" data-total="308" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="4.4" cy="39.2" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="4.4" y="39.7" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">BE</text>
+                    </g>
+                    <g class="country-node" data-country="BG" data-name="Bulgaria" data-participants="1" data-total="197" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="25.5" cy="47.3" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="25.5" y="47.8" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">BG</text>
+                    </g>
+                    <g class="country-node" data-country="FI" data-name="Finland" data-participants="1" data-total="166" data-itc="Non-ITC" style="cursor: pointer;">
+                        <circle cx="25.7" cy="28.1" r="1.5" fill="#3b82f6" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="25.7" y="28.6" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">FI</text>
+                    </g>
+                    <g class="country-node" data-country="RS" data-name="Serbia" data-participants="1" data-total="129" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="21.0" cy="46.0" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="21.0" y="46.5" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">RS</text>
+                    </g>
+                    <g class="country-node" data-country="EE" data-name="Estonia" data-participants="1" data-total="83" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="25.0" cy="31.4" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="25.0" y="31.9" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">EE</text>
+                    </g>
+                    <g class="country-node" data-country="BA" data-name="Bosnia and Herzegovina" data-participants="1" data-total="14" data-itc="ITC" style="cursor: pointer;">
+                        <circle cx="17.8" cy="46.1" r="1.5" fill="#10b981" opacity="0.8" stroke="white" stroke-width="0.3"/>
+                        <text x="17.8" y="46.6" text-anchor="middle" font-size="1.5" fill="white" font-weight="bold" pointer-events="none">BA</text>
+                    </g>
+                </g>
+
+                <!-- Switzerland highlight -->
+                <g id="hub-marker">
+                    <circle cx="8.2" cy="43.2" r="6" fill="none" stroke="#f59e0b" stroke-width="0.4" stroke-dasharray="1"/>
+                    <text x="8.2" y="38" text-anchor="middle" font-size="2" fill="#f59e0b" font-weight="bold">SNSF Hub</text>
+                </g>
+            </svg>
+
+            <!-- Tooltip -->
+            <div id="map-tooltip" style="display: none; position: absolute; background: white; padding: 12px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); pointer-events: none; z-index: 100; min-width: 180px;">
+                <div id="tooltip-name" style="font-weight: 600; font-size: 14px; margin-bottom: 8px;"></div>
+                <div id="tooltip-content" style="font-size: 12px; color: #475569;"></div>
+            </div>
+        </div>
+
+        <p style="font-size: 10px; color: #64748b; margin-top: 12px; text-align: center;">
+            Hover over countries to see details. Switzerland (SNSF Hub) shown with amber ring. ITC = Inclusiveness Target Countries.
+        </p>
+    </section>
+
+    <script>
+    (function() {
+        const tooltip = document.getElementById('map-tooltip');
+        const tooltipName = document.getElementById('tooltip-name');
+        const tooltipContent = document.getElementById('tooltip-content');
+        const container = document.getElementById('map-container');
+
+        document.querySelectorAll('.country-node').forEach(node => {
+            node.addEventListener('mouseenter', function(e) {
+                const name = this.dataset.name;
+                const participants = this.dataset.participants;
+                const total = parseFloat(this.dataset.total).toLocaleString('en-US', {style: 'currency', currency: 'EUR', maximumFractionDigits: 0});
+                const itc = this.dataset.itc;
+
+                tooltipName.textContent = name + ' (' + this.dataset.country + ')';
+                tooltipContent.innerHTML =
+                    '<div style="margin-bottom: 4px;"><strong>Participants:</strong> ' + participants + '</div>' +
+                    '<div style="margin-bottom: 4px;"><strong>Total funding:</strong> ' + total + '</div>' +
+                    '<div><strong>Status:</strong> ' + itc + '</div>';
+
+                tooltip.style.display = 'block';
+
+                // Highlight
+                this.querySelector('circle').setAttribute('opacity', '1');
+                this.querySelector('circle').setAttribute('stroke-width', '0.6');
+            });
+
+            node.addEventListener('mouseleave', function() {
+                tooltip.style.display = 'none';
+                this.querySelector('circle').setAttribute('opacity', '0.8');
+                this.querySelector('circle').setAttribute('stroke-width', '0.3');
+            });
+
+            node.addEventListener('mousemove', function(e) {
+                const rect = container.getBoundingClientRect();
+                let x = e.clientX - rect.left + 15;
+                let y = e.clientY - rect.top + 15;
+
+                // Keep tooltip in bounds
+                if (x + 200 > rect.width) x = e.clientX - rect.left - 195;
+                if (y + 100 > rect.height) y = e.clientY - rect.top - 105;
+
+                tooltip.style.left = x + 'px';
+                tooltip.style.top = y + 'px';
+            });
+        });
+    })();
+    </script>
+
+
         <div class="hero" style="background: var(--color-purple); padding: 24px; text-align: center; color: white; border-radius: 8px; margin-bottom: 20px;">
             <h1 style="font-size: 24px; margin-bottom: 8px;">Global Research Network</h1>
             <p style="font-size: 13px; opacity: 0.9;">420+ Researchers | 55 Countries | 39 COST Countries</p>
