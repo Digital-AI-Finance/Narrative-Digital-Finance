@@ -17,7 +17,7 @@
           "title": "What data will you collect, observe, generate or reuse?",
           "original": "We will use publicly available data on financial markets as well data from databases which we buy, e.g. from Refinitiv. The data will be in csv format, about 10 GB, the data type are financial data, stored as integers and characters.",
           "enhanced": {
-            "intro": "We will use publicly available data on financial markets as well as data from databases which we buy. The data will be in various formats including CSV, JSON, and Parquet, totaling approximately 65 GB. The data types are financial data, stored as integers, floats, and characters.",
+            "intro": "We use publicly available data from financial markets (accessed via original source URLs) and commercial databases (accessed via provider APIs). Public data is not re-stored by us. Commercial data remains on provider infrastructure per license agreements. Only project-generated code and outputs are stored on GitHub.",
             "commercial_sources": [
               {"name": "Refinitiv/LSEG", "description": "Earnings call transcripts, financial news, market data", "format": "JSON, CSV", "volume": "~5 GB", "time_range": "2010-2025"},
               {"name": "RavenPack", "description": "News headlines with sentiment scores", "format": "CSV, Parquet", "volume": "~3 GB", "time_range": "2000-2025"},
@@ -29,11 +29,9 @@
               {"name": "St. Louis FED FRED", "description": "Macroeconomic indicators (CPI, PPI, GDP, etc.)", "format": "CSV via API", "url": "https://fred.stlouisfed.org/"}
             ],
             "generated_data": [
-              {"name": "TOPol Embeddings", "description": "Transformer-based semantic embeddings", "format": "NumPy, HDF5", "volume": "~2 GB", "repository": "https://osf.io/nr94j/"},
-              {"name": "NLP Features", "description": "Sentiment scores, topic models, embeddings", "format": "CSV, Parquet", "volume": "~1 GB", "repository": "Zenodo (pending)"},
-              {"name": "Macro Index", "description": "PCA-based US Macro Strength Index", "format": "CSV", "volume": "less than 100 MB", "repository": "GitHub"}
+              {"name": "Project code", "description": "Analysis scripts and methods", "format": "Python", "volume": "minimal", "repository": "https://github.com/Digital-AI-Finance"}
             ],
-            "total_volume": "~65 GB"
+            "storage_note": "Public data accessed via original URLs. Commercial data on provider servers. Code on GitHub."
           }
         },
         {
@@ -85,12 +83,11 @@
           "enhanced": {
             "original_paragraph": "Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.",
             "access_control": [
-              {"category": "Public data (FRED, BIS, SEC)", "access": "Open", "storage": "GitHub, Zenodo"},
-              {"category": "Commercial data", "access": "Team only", "storage": "BFH secure server"},
-              {"category": "Deutsche Borse HFT data", "access": "Restricted", "storage": "Encrypted local storage"},
-              {"category": "Processed features", "access": "Open (with publication)", "storage": "OSF, Zenodo"}
+              {"category": "Public data (FRED, BIS, SEC)", "access": "Open", "storage": "Original source URLs (not re-stored by us)"},
+              {"category": "Commercial data", "access": "Provider access only", "storage": "Provider cloud infrastructure (not redistributable)"},
+              {"category": "Project code", "access": "Open", "storage": "GitHub"}
             ],
-            "security_measures": "BFH IT infrastructure with standard institutional security measures. Encrypted file transfer for commercial data where required.",
+            "security_measures": "Commercial data remains on provider infrastructure per license agreements. Project code is public on GitHub.",
             "team_members": [
               {"name": "Prof. Dr. Joerg Osterrieder", "role": "Principal Investigator"},
               {"name": "Gabin Taibi", "role": "PhD Researcher"},
@@ -134,21 +131,12 @@
           "enhanced": {
             "original_paragraph": "The storage capacities are very large, the amount of data remains very limited in the project. The data is managed in the form of databases on GitHub. Backups and versions of the data are continuously created.",
             "primary_storage": {
-              "location": "BFH servers",
-              "capacity": "Sufficient storage allocated",
-              "backup": "Regular backups per BFH IT policy",
-              "retention": "As long as technically feasible"
+              "location": "GitHub repositories",
+              "capacity": "Unlimited (code only)",
+              "backup": "Git version control",
+              "retention": "As long as GitHub available"
             },
-            "cloud_storage": [
-              {"platform": "GitHub", "purpose": "Code repositories", "url": "https://github.com/Digital-AI-Finance"},
-              {"platform": "OSF", "purpose": "Research materials and preprints", "url": "https://osf.io/nr94j/"},
-              {"platform": "Zenodo", "purpose": "Archived releases with DOIs", "url": "Linked via GitHub"}
-            ],
-            "backup_strategy": [
-              {"type": "Code", "frequency": "Continuous (Git)", "retention": "As long as GitHub available", "location": "GitHub"},
-              {"type": "Processed data", "frequency": "Periodic", "retention": "As long as feasible", "location": "BFH + Zenodo"},
-              {"type": "Commercial raw data", "frequency": "Per BFH policy", "retention": "Project duration", "location": "BFH"}
-            ]
+            "storage_rationale": "Public data accessed via original URLs (not re-stored). Commercial data remains on provider servers (not redistributable). Only project code stored on GitHub."
           }
         },
         {
@@ -158,20 +146,9 @@
           "enhanced": {
             "original_paragraph": "The data is stored on GitHub for a long time and managed using existing tools. There is no obligation to destroy the data.",
             "repository_selection": [
-              {"name": "Zenodo", "organization": "CERN/OpenAIRE (non-profit)", "features": "DOI assignment, long-term storage"},
-              {"name": "OSF", "organization": "Center for Open Science (non-profit)", "features": "Research materials"},
-              {"name": "arXiv", "organization": "Cornell University (non-profit)", "features": "Preprints"}
+              {"name": "GitHub", "organization": "Microsoft (public platform)", "features": "code hosting and version control"}
             ],
-            "preservation_timeline": [
-              {"milestone": "Project end (August 2026)", "action": "Archive code and shareable outputs", "doi": "DOI via Zenodo if applicable"}
-            ],
-            "archival_formats": {
-              "data": "CSV, Parquet, HDF5 (machine-readable, open formats)",
-              "documentation": "Markdown, PDF/A (long-term readable)",
-              "code": "Python (plain text, version-controlled)",
-              "images": "PNG, SVG (lossless, open formats)"
-            },
-            "retention_period": "As long as technically feasible"
+            "retention_period": "As long as GitHub available. Note: Public data remains at original sources. Commercial data is provider responsibility."
           }
         }
       ]
@@ -187,20 +164,12 @@
           "enhanced": {
             "original_paragraph": "The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.",
             "current_outputs": [
-              {"name": "TOPol Framework", "repository": "OSF", "url": "https://osf.io/nr94j/", "status": "Published"},
               {"name": "Project Website", "repository": "GitHub Pages", "url": "https://digital-ai-finance.github.io/Narrative-Digital-Finance/", "status": "Live"}
             ],
-            "upcoming_deposits": [
-              {"name": "Code and derived outputs", "repository": "GitHub + Zenodo", "timeline": "Subject to publication"},
-              {"name": "Additional materials", "repository": "Zenodo or OSF", "timeline": "If applicable"}
-            ],
             "sharing_by_type": [
-              {"data": "FRED, BIS, SEC", "shareable": true, "reason": "Public domain / open access"},
-              {"data": "RavenPack raw data", "shareable": false, "reason": "License restriction"},
-              {"data": "LSEG transcripts", "shareable": false, "reason": "License restriction"},
-              {"data": "Deutsche Borse T7", "shareable": false, "reason": "Collaboration agreement"},
-              {"data": "Derived features", "shareable": true, "reason": "Our work product"},
-              {"data": "All code", "shareable": true, "reason": "MIT License"}
+              {"data": "Public data (FRED, BIS, SEC)", "shareable": "N/A", "reason": "Available at original sources - we do not re-distribute"},
+              {"data": "Commercial data (RavenPack, LSEG, Deutsche Borse)", "shareable": false, "reason": "License restrictions - remains on provider servers"},
+              {"data": "Project code", "shareable": true, "reason": "GitHub (MIT License)"}
             ]
           }
         },
@@ -210,21 +179,12 @@
           "original": "We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.",
           "enhanced": {
             "original_paragraph": "We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.",
-            "unrestricted": [
-              "All code developed by the project (MIT License)",
-              "Derived features, embeddings, and processed outputs (CC-BY 4.0)",
-              "Documentation, methodology, and research materials",
-              "Public source data (FRED, BIS, SEC)"
+            "what_we_share": [
+              "Project code (MIT License on GitHub)"
             ],
-            "restricted": [
-              "Raw RavenPack news data (license prohibits redistribution)",
-              "Raw LSEG/Refinitiv transcripts (license prohibits redistribution)",
-              "Raw Deutsche Borse T7 data (collaboration agreement restriction)"
-            ],
-            "reuse_conditions": [
-              "Citation required (BibTeX provided in repositories)",
-              "License compliance: MIT for code, CC-BY 4.0 for data/models",
-              "Academic and commercial use permitted for our outputs"
+            "what_we_do_not_store_or_share": [
+              "Public data - available at original sources (FRED, BIS, SEC URLs provided)",
+              "Commercial data - remains on provider infrastructure per license agreements"
             ],
             "access_requests": "joerg.osterrieder@bfh.ch"
           }
@@ -236,10 +196,10 @@
           "enhanced": {
             "answer": true,
             "fair_implementation": {
-              "findable": "DOIs via Zenodo where applicable",
-              "accessible": "Open repositories (Zenodo, OSF, GitHub) with standard protocols",
-              "interoperable": "Standard formats (CSV, JSON, Parquet)",
-              "reusable": "CC-BY license for project outputs, README files"
+              "findable": "Code on GitHub (public repository)",
+              "accessible": "GitHub with standard HTTPS access",
+              "interoperable": "Python code with standard libraries",
+              "reusable": "MIT License, README files"
             }
           }
         },
@@ -249,11 +209,7 @@
           "original": "Yes",
           "enhanced": {
             "answer": true,
-            "repository_certification": [
-              {"name": "Zenodo", "organization": "CERN/OpenAIRE", "certification": "Non-profit, CoreTrustSeal certified"},
-              {"name": "OSF", "organization": "Center for Open Science", "certification": "Non-profit, COS Registered Reports partner"},
-              {"name": "arXiv", "organization": "Cornell University", "certification": "Non-profit, permanent archive"}
-            ]
+            "repository_note": "GitHub is used for code storage. While GitHub (Microsoft) is not a non-profit, it is the standard platform for open-source code hosting. The project does not store research data that would require a non-profit repository - public data is accessed via original sources, commercial data remains with providers."
           }
         }
       ]

@@ -94,7 +94,7 @@
 
     <h3 id="section-1-1">1.1 What data will you collect, observe, generate or reuse?</h3>
 
-    <p>We will use publicly available data on financial markets as well as data from databases which we buy. The data will be in various formats including CSV, JSON, and Parquet, totaling approximately 65 GB. The data types are financial data, stored as integers, floats, and characters.</p>
+    <p>We use publicly available data from financial markets (accessed via original source URLs) and commercial databases (accessed via provider APIs). Public data is not re-stored by us. Commercial data remains on provider infrastructure per license agreements. Only project-generated code and outputs are stored on GitHub.</p>
 
     <p><strong>Commercial Data Sources (Licensed):</strong></p>
     <p><strong>Refinitiv/LSEG:</strong> Earnings call transcripts, financial news, market data. Format: JSON, CSV. Volume: ~5 GB. Time range: 2010-2025.</p>
@@ -107,11 +107,7 @@
     <p><strong>St. Louis FED FRED:</strong> Macroeconomic indicators (CPI, PPI, GDP, etc.). Format: CSV via API. URL: <a href="https://fred.stlouisfed.org/">fred.stlouisfed.org/</a></p>
 
     <p><strong>Generated Data:</strong></p>
-    <p><strong>TOPol Embeddings:</strong> Transformer-based semantic embeddings. Format: NumPy, HDF5. Volume: ~2 GB. Repository: <a href="https://osf.io/nr94j/">osf.io/nr94j/</a>.</p>
-    <p><strong>NLP Features:</strong> Sentiment scores, topic models, embeddings. Format: CSV, Parquet. Volume: ~1 GB. Repository: Zenodo (pending).</p>
-    <p><strong>Macro Index:</strong> PCA-based US Macro Strength Index. Format: CSV. Volume: less than 100 MB. Repository: GitHub.</p>
-
-    <p><strong>Total estimated data volume: ~65 GB</strong></p>
+    <p><strong>Project code:</strong> Analysis scripts and methods. Format: Python. Volume: minimal. Repository: <a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a>.</p>
 
     <h3 id="section-1-2">1.2 How will the data be collected, observed or generated?</h3>
 
@@ -151,9 +147,9 @@
 
     <p>Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.</p>
 
-    <p><strong>Access Control:</strong> Public data (FRED, BIS, SEC) has open access and is stored on GitHub, Zenodo. Commercial data has team only access and is stored on BFH secure server. Deutsche Borse HFT data has restricted access and is stored on Encrypted local storage. Processed features has open (with publication) access and is stored on OSF, Zenodo.</p>
+    <p><strong>Access Control:</strong> Public data (FRED, BIS, SEC) has open access and is stored on Original source URLs (not re-stored by us). Commercial data has provider access only access and is stored on Provider cloud infrastructure (not redistributable). Project code has open access and is stored on GitHub.</p>
 
-    <p><strong>Security Measures:</strong> BFH IT infrastructure with standard institutional security measures. Encrypted file transfer for commercial data where required.</p>
+    <p><strong>Security Measures:</strong> Commercial data remains on provider infrastructure per license agreements. Project code is public on GitHub.</p>
 
     <p><strong>Authorized Team Members:</strong> Prof. Dr. Joerg Osterrieder (Principal Investigator), Gabin Taibi (PhD Researcher), Lennart John Baals (PhD Researcher), Yiting Liu (PhD Researcher), Marius Jan Klein (Researcher).</p>
 
@@ -175,23 +171,15 @@
 
     <p>The storage capacities are very large, the amount of data remains very limited in the project. The data is managed in the form of databases on GitHub. Backups and versions of the data are continuously created.</p>
 
-    <p><strong>Primary Storage:</strong> Location is BFH servers. Capacity is Sufficient storage allocated. Backup schedule is regular backups per bfh it policy. Retention is as long as technically feasible.</p>
-
-    <p><strong>Cloud Storage:</strong> GitHub (<a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a>) is used for code repositories. OSF (<a href="https://osf.io/nr94j/">osf.io/nr94j/</a>) is used for research materials and preprints. Zenodo is used for archived releases with dois, Linked via GitHub.</p>
-
-    <p><strong>Backup Strategy:</strong> Code is backed up continuous (git) with as long as github available retention on GitHub. Processed data is backed up periodic with as long as feasible retention on BFH + Zenodo. Commercial raw data is backed up per bfh policy with project duration retention on BFH.</p>
+    <p><strong>Primary Storage:</strong> Location is GitHub repositories. Capacity is Unlimited (code only). Backup schedule is git version control. Retention is as long as github available.</p>
 
     <h3 id="section-3-2">3.2 What is your data preservation plan?</h3>
 
     <p>The data is stored on GitHub for a long time and managed using existing tools. There is no obligation to destroy the data.</p>
 
-    <p><strong>Repository Selection:</strong> Zenodo is operated by CERN/OpenAIRE (non-profit), offers DOI assignment, long-term storage. OSF is operated by Center for Open Science (non-profit), offers Research materials. arXiv is operated by Cornell University (non-profit), offers Preprints.</p>
+    <p><strong>Repository Selection:</strong> GitHub is operated by Microsoft (public platform), offers code hosting and version control.</p>
 
-    <p><strong>Preservation Timeline:</strong> At project end (august 2026), we archive code and shareable outputs with DOI via Zenodo if applicable.</p>
-
-    <p><strong>Archival File Formats (Open Standards):</strong> Data in CSV, Parquet, HDF5 (machine-readable, open formats). Documentation in Markdown, PDF/A (long-term readable). Code in Python (plain text, version-controlled). Images in PNG, SVG (lossless, open formats).</p>
-
-    <p><strong>Retention Period:</strong> As long as technically feasible</p>
+    <p><strong>Retention Period:</strong> As long as GitHub available. Note: Public data remains at original sources. Commercial data is provider responsibility.</p>
 
 </div>
 
@@ -203,21 +191,13 @@
 
     <p>The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.</p>
 
-    <p><strong>Current Outputs (Available Now):</strong> TOPol Framework is published on OSF at <a href="https://osf.io/nr94j/">osf.io/nr94j/</a>. Project Website is live on GitHub Pages at <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">digital-ai-finance.github.io/Narrative-Digital-Finance/</a>.</p>
+    <p><strong>Current Outputs (Available Now):</strong> Project Website is live on GitHub Pages at <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">digital-ai-finance.github.io/Narrative-Digital-Finance/</a>.</p>
 
-    <p><strong>Upcoming Deposits:</strong> Code and derived outputs will be deposited on GitHub + Zenodo Subject to publication. Additional materials will be deposited on Zenodo or OSF If applicable.</p>
-
-    <p><strong>Sharing by Data Type:</strong> FRED, BIS, SEC: <span class="badge badge-yes">Yes</span> (Public domain / open access). RavenPack raw data: <span class="badge badge-no">No</span> (License restriction). LSEG transcripts: <span class="badge badge-no">No</span> (License restriction). Deutsche Borse T7: <span class="badge badge-no">No</span> (Collaboration agreement). Derived features: <span class="badge badge-yes">Yes</span> (Our work product). All code: <span class="badge badge-yes">Yes</span> (MIT License).</p>
+    <p><strong>Sharing by Data Type:</strong> Public data (FRED, BIS, SEC): <span class="badge badge-yes">Yes</span> (Available at original sources - we do not re-distribute). Commercial data (RavenPack, LSEG, Deutsche Borse): <span class="badge badge-no">No</span> (License restrictions - remains on provider servers). Project code: <span class="badge badge-yes">Yes</span> (GitHub (MIT License)).</p>
 
     <h3 id="section-4-2">4.2 Are there any necessary limitations to protect sensitive data?</h3>
 
     <p>We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.</p>
-
-    <p><strong>Unrestricted (Open Access):</strong> All code developed by the project (MIT License). Derived features, embeddings, and processed outputs (CC-BY 4.0). Documentation, methodology, and research materials. Public source data (FRED, BIS, SEC).</p>
-
-    <p><strong>Restricted (Cannot Share):</strong> Raw RavenPack news data (license prohibits redistribution). Raw LSEG/Refinitiv transcripts (license prohibits redistribution). Raw Deutsche Borse T7 data (collaboration agreement restriction).</p>
-
-    <p><strong>Reuse Conditions:</strong> Citation required (BibTeX provided in repositories). License compliance: MIT for code, CC-BY 4.0 for data/models. Academic and commercial use permitted for our outputs.</p>
 
     <p><strong>Access Requests:</strong> For restricted data, contact <a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a> - we can facilitate contact with original data providers.</p>
 
@@ -225,13 +205,11 @@
 
     <p><span class="badge badge-yes">Yes</span></p>
 
-    <p><strong>FAIR Data Principles Implementation:</strong> <strong>Findable:</strong> DOIs via Zenodo where applicable. <strong>Accessible:</strong> Open repositories (Zenodo, OSF, GitHub) with standard protocols. <strong>Interoperable:</strong> Standard formats (CSV, JSON, Parquet). <strong>Reusable:</strong> CC-BY license for project outputs, README files.</p>
+    <p><strong>FAIR Data Principles Implementation:</strong> <strong>Findable:</strong> Code on GitHub (public repository). <strong>Accessible:</strong> GitHub with standard HTTPS access. <strong>Interoperable:</strong> Python code with standard libraries. <strong>Reusable:</strong> MIT License, README files.</p>
 
     <h3 id="section-4-4">4.4 I will choose digital repositories maintained by a non-profit organisation.</h3>
 
     <p><span class="badge badge-yes">Yes</span></p>
-
-    <p><strong>Repository Certification:</strong> Zenodo is operated by CERN/OpenAIRE, Non-profit, CoreTrustSeal certified. OSF is operated by Center for Open Science, Non-profit, COS Registered Reports partner. arXiv is operated by Cornell University, Non-profit, permanent archive.</p>
 
 </div>
 
