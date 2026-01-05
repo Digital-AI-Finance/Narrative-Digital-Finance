@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproducibility - NarrativeBreak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        .code-block { background: #1e293b; color: #e2e8f0; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Monaco', 'Menlo', monospace; font-size: 0.9rem; margin: 20px 0; }
+        .code-block code { color: #e2e8f0; }
+        .code-comment { color: #64748b; }
+        .code-string { color: #a5d6ff; }
+        .code-keyword { color: #ff7b72; }
+        .step-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; margin: 20px 0; }
+        .step-number { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #3b82f6; color: white; border-radius: 50%; font-weight: 700; margin-right: 12px; }
+        .step-title { font-size: 1.25rem; font-weight: 600; color: #1e293b; display: flex; align-items: center; margin-bottom: 12px; }
+        .requirements-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .requirements-table th, .requirements-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        .requirements-table th { background: #f1f5f9; font-weight: 600; }
+        .verify-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .verify-table th, .verify-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        .verify-table th { background: #f1f5f9; }
+        .badge-ok { background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; }
+        .accordion { border: 1px solid #e2e8f0; border-radius: 8px; margin: 10px 0; }
+        .accordion-header { padding: 16px; background: #f8fafc; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-content { padding: 16px; display: none; border-top: 1px solid #e2e8f0; }
+        .accordion.open .accordion-content { display: block; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Narrative Digital Finance</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="paper.html">Paper</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="results.html">Results</a>
+                <a href="reproducibility.html" class="active">Reproducibility</a>
+                <a href="data.html">Data</a>
+                <a href="charts.html">Charts</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero" style="padding: 60px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Reproducibility Guide</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Step-by-step instructions to reproduce all paper results</p>
+            </div>
+        </section>
+
+        <section style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+            <h2>Quick Start</h2>
+            <div class="code-block">
+                <code><span class="code-comment"># Clone and run (2 commands)</span>
+git clone https://github.com/Digital-AI-Finance/NarrativeBreak.git
+cd NarrativeBreak && python run_full_pipeline.py --seed 42</code>
+            </div>
+
+            <h2>System Requirements</h2>
+            <table class="requirements-table">
+                <thead>
+                    <tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Python</td><td>3.9+</td><td>3.10</td></tr>
+                    <tr><td>RAM</td><td>8 GB</td><td>16 GB</td></tr>
+                    <tr><td>Disk</td><td>2 GB</td><td>5 GB</td></tr>
+                    <tr><td>CPU</td><td>4 cores</td><td>8 cores</td></tr>
+                    <tr><td>GPU</td><td>Optional</td><td>NVIDIA T4+</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Detailed Steps</h2>
+
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">1</span>Clone Repository</div>
+                <div class="code-block">
+                    <code>git clone https://github.com/Digital-AI-Finance/NarrativeBreak.git
+cd NarrativeBreak</code>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">2</span>Create Virtual Environment</div>
+                <div class="code-block">
+                    <code><span class="code-comment"># Linux/Mac</span>
+python -m venv venv
+source venv/bin/activate
+
+<span class="code-comment"># Windows</span>
+python -m venv venv
+.\venv\Scripts\activate</code>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">3</span>Install Dependencies</div>
+                <div class="code-block">
+                    <code>pip install -r requirements.txt</code>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">4</span>Run Full Pipeline</div>
+                <div class="code-block">
+                    <code>python run_full_pipeline.py --seed 42</code>
+                </div>
+                <p style="margin-top: 12px; color: #64748b;">This runs 6 stages: Experiments, LaTeX Tables, Paper, Charts, Compile, Validate</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-title"><span class="step-number">5</span>Verify Results</div>
+                <div class="code-block">
+                    <code>python paper/verify_paper_claims.py --strict</code>
+                </div>
+                <p style="margin-top: 12px; color: #64748b;">Expected: "All 84 paper statistics verified"</p>
+            </div>
+
+            <h2>Expected Results</h2>
+            <table class="verify-table">
+                <thead>
+                    <tr><th>Statistic</th><th>Expected</th><th>Source</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>NarrativeBreak Sharpe</td><td>-0.14</td><td>Table 1</td></tr>
+                    <tr><td>Equal Weight Sharpe</td><td>-0.84</td><td>Table 1</td></tr>
+                    <tr><td>Sharpe Improvement</td><td>83%</td><td>Abstract</td></tr>
+                    <tr><td>Max DD Reduction</td><td>26.0%</td><td>Abstract</td></tr>
+                    <tr><td>Lead Time</td><td>5.7 days</td><td>Abstract</td></tr>
+                    <tr><td>FinBERT Accuracy</td><td>62.0%</td><td>Table 4</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Docker Alternative</h2>
+            <div class="code-block">
+                <code><span class="code-comment"># Build container</span>
+docker build -t narrativebreak .
+
+<span class="code-comment"># Run with output volume</span>
+docker run --rm -v $(pwd)/output:/app/output narrativebreak</code>
+            </div>
+
+            <h2>Troubleshooting</h2>
+
+            <div class="accordion" onclick="this.classList.toggle('open')">
+                <div class="accordion-header">ModuleNotFoundError: No module named 'experiments' <span>+</span></div>
+                <div class="accordion-content">
+                    <p>Ensure you're running from the project root directory:</p>
+                    <div class="code-block"><code>cd NarrativeBreak  # not a subdirectory</code></div>
+                </div>
+            </div>
+
+            <div class="accordion" onclick="this.classList.toggle('open')">
+                <div class="accordion-header">LaTeX compilation fails <span>+</span></div>
+                <div class="accordion-content">
+                    <p>Install full texlive:</p>
+                    <div class="code-block"><code># Ubuntu/Debian
+sudo apt install texlive-full
+
+# Windows: Download from tug.org/texlive</code></div>
+                </div>
+            </div>
+
+            <div class="accordion" onclick="this.classList.toggle('open')">
+                <div class="accordion-header">Results differ slightly <span>+</span></div>
+                <div class="accordion-content">
+                    <p>Verify seed is set to 42. Floating-point differences < 0.01 are expected across platforms due to different numerical implementations.</p>
+                </div>
+            </div>
+
+            <h2>Reproducibility Guarantees</h2>
+            <ul style="line-height: 2;">
+                <li><strong>Deterministic:</strong> Same seed (42) produces identical results</li>
+                <li><strong>Platform-independent:</strong> Tested on Linux, Mac, Windows</li>
+                <li><strong>Version-pinned:</strong> All dependencies locked in requirements.txt</li>
+                <li><strong>Verified:</strong> Automated tests check all 84 paper statistics</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer style="background: #1e293b; color: white; padding: 40px 20px; text-align: center;">
+        <p>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">Bern University of Applied Sciences | University of Twente</p>
+    </footer>
+</body>
+</html>

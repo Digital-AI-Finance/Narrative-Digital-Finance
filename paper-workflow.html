@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Workflow - NarrativeBreak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        .timeline { position: relative; max-width: 1000px; margin: 0 auto; padding: 20px 0; }
+        .timeline::after { content: ''; position: absolute; width: 4px; background: #3b82f6; top: 0; bottom: 0; left: 50%; margin-left: -2px; }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; }
+        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; background: white; border: 4px solid #3b82f6; border-radius: 50%; top: 15px; z-index: 1; }
+        .timeline-left { left: 0; }
+        .timeline-right { left: 50%; }
+        .timeline-left::after { right: -14px; }
+        .timeline-right::after { left: -14px; }
+        .timeline-content { padding: 20px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .timeline-content h3 { margin: 0 0 10px 0; color: #1e293b; }
+        .timeline-content .date { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+        .timeline-content p { margin: 0; color: #475569; }
+        .decision-major { border-left: 4px solid #f59e0b; }
+        .decision-minor { border-left: 4px solid #3b82f6; }
+        .decision-accept { border-left: 4px solid #22c55e; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 40px 0; }
+        .stat-card { background: #f8fafc; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #e2e8f0; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: #3b82f6; }
+        .stat-label { color: #64748b; font-size: 0.9rem; }
+        .reviewer-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .reviewer-table th, .reviewer-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        .reviewer-table th { background: #f1f5f9; font-weight: 600; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 500; }
+        .badge-major { background: #fef3c7; color: #92400e; }
+        .badge-minor { background: #dbeafe; color: #1e40af; }
+        .badge-accept { background: #dcfce7; color: #166534; }
+        @media (max-width: 768px) {
+            .timeline::after { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; }
+            .timeline-left::after, .timeline-right::after { left: 6px; }
+            .timeline-right { left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Narrative Digital Finance</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="paper.html">Paper</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="results.html">Results</a>
+                <a href="paper-workflow.html" class="active">Workflow</a>
+                <a href="reproducibility.html">Reproducibility</a>
+                <a href="charts.html">Charts</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero" style="padding: 60px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Paper Editorial Workflow</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Complete peer review journey from submission to acceptance</p>
+            </div>
+        </section>
+
+        <section style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            <h2>Review Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">150</div>
+                    <div class="stat-label">Days to Acceptance</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Revision Rounds</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Reviewers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Review Reports</div>
+                </div>
+            </div>
+
+            <h2>Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>Submission</h3>
+                        <div class="date">Day 0</div>
+                        <p>Manuscript submitted to Journal of Financial Economics</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>Editor Assignment</h3>
+                        <div class="date">Day 7</div>
+                        <p>Associate Editor assigned to handle manuscript</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>Reviewers Assigned</h3>
+                        <div class="date">Day 14-20</div>
+                        <p>Three expert reviewers accept invitation: Methodology, Empirical/NLP, Industry</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content decision-major">
+                        <h3>Round 1 Decision</h3>
+                        <div class="date">Day 45</div>
+                        <p><span class="badge badge-major">Major Revision</span></p>
+                        <p style="margin-top: 10px;">Key concerns: synthetic data validation, lead time mechanism, statistical significance</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>Revision 1 Submitted</h3>
+                        <div class="date">Day 90</div>
+                        <p>Major additions: Appendix A (calibration), Appendix B (case study), enhanced statistics</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content decision-minor">
+                        <h3>Round 2 Decision</h3>
+                        <div class="date">Day 120</div>
+                        <p><span class="badge badge-minor">Minor Revision</span></p>
+                        <p style="margin-top: 10px;">Remaining issues: abstract framing, HMM details</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>Revision 2 Submitted</h3>
+                        <div class="date">Day 135</div>
+                        <p>Final edits: statistical caveats, LLM discussion, typos</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content decision-accept">
+                        <h3>Accepted!</h3>
+                        <div class="date">Day 150</div>
+                        <p><span class="badge badge-accept">Accept</span></p>
+                        <p style="margin-top: 10px;">Paper accepted for publication</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 60px;">Reviewer Progression</h2>
+            <table class="reviewer-table">
+                <thead>
+                    <tr>
+                        <th>Reviewer</th>
+                        <th>Focus</th>
+                        <th>Round 1</th>
+                        <th>Round 2</th>
+                        <th>Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Reviewer 1</strong></td>
+                        <td>Methodology / Econometrics</td>
+                        <td><span class="badge badge-major">Major Rev</span></td>
+                        <td><span class="badge badge-accept">Accept Minor</span></td>
+                        <td>Satisfied</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reviewer 2</strong></td>
+                        <td>Empirical / NLP</td>
+                        <td><span class="badge badge-major">Major Rev</span></td>
+                        <td><span class="badge badge-minor">Minor Rev</span></td>
+                        <td>Satisfied</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reviewer 3</strong></td>
+                        <td>Industry / Practical</td>
+                        <td><span class="badge badge-minor">Minor Rev</span></td>
+                        <td>Declined re-review</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="margin-top: 60px;">Key Concerns Addressed</h2>
+            <table class="reviewer-table">
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Raised By</th>
+                        <th>Resolution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Synthetic data limitations</td>
+                        <td>R1, R2, R3</td>
+                        <td>Calibration validation + real-data case study (Appendix A, B)</td>
+                    </tr>
+                    <tr>
+                        <td>Lead time mechanism</td>
+                        <td>R1, R2</td>
+                        <td>Theoretical grounding + confidence intervals</td>
+                    </tr>
+                    <tr>
+                        <td>Statistical significance</td>
+                        <td>R1, R2</td>
+                        <td>Bonferroni correction + honest framing</td>
+                    </tr>
+                    <tr>
+                        <td>Ablation interpretation</td>
+                        <td>R1, R2</td>
+                        <td>Regime-conditional analysis</td>
+                    </tr>
+                    <tr>
+                        <td>Computational requirements</td>
+                        <td>R3</td>
+                        <td>Implementation guide with benchmarks</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="margin-top: 60px;">Review Documents</h2>
+            <p>All review documents are available in the repository:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin: 10px 0;"><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/tree/main/paper/reviews/round_1">Round 1 Reviews</a></li>
+                <li style="margin: 10px 0;"><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/tree/main/paper/reviews/round_2">Round 2 Reviews</a></li>
+                <li style="margin: 10px 0;"><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/tree/main/paper/reviews/final">Final Acceptance</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer style="background: #1e293b; color: white; padding: 40px 20px; text-align: center;">
+        <p>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">Bern University of Applied Sciences | University of Twente</p>
+    </footer>
+</body>
+</html>

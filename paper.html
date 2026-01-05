@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper - NarrativeBreak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        .pdf-container { width: 100%; height: 800px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; margin: 20px 0; }
+        .pdf-embed { width: 100%; height: 100%; border: none; }
+        .download-section { display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0; }
+        .download-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.2s; }
+        .download-btn-primary { background: #3b82f6; color: white; }
+        .download-btn-primary:hover { background: #2563eb; }
+        .download-btn-secondary { background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0; }
+        .download-btn-secondary:hover { background: #e2e8f0; }
+        .paper-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .info-card { background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .info-label { font-size: 0.85rem; color: #64748b; margin-bottom: 4px; }
+        .info-value { font-size: 1.1rem; font-weight: 600; color: #1e293b; }
+        .abstract-box { background: #f8fafc; padding: 24px; border-radius: 8px; border-left: 4px solid #3b82f6; margin: 30px 0; }
+        .abstract-box h3 { margin: 0 0 12px 0; color: #1e293b; }
+        .abstract-box p { margin: 0; color: #475569; line-height: 1.7; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Narrative Digital Finance</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="paper.html" class="active">Paper</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="results.html">Results</a>
+                <a href="reproducibility.html">Reproducibility</a>
+                <a href="data.html">Data</a>
+                <a href="charts.html">Charts</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero" style="padding: 60px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
+                <h1 style="font-size: 2rem; margin-bottom: 20px;">NarrativeBreak: Integrating Structural Break Detection with Multi-Source NLP Signals for Dynamic Portfolio Optimization</h1>
+                <p style="font-size: 1.1rem; opacity: 0.9;">Prof. Dr. Joerg Osterrieder | Bern University of Applied Sciences | University of Twente</p>
+            </div>
+        </section>
+
+        <section style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            <div class="download-section">
+                <a href="docs/NarrativeBreak-paper.pdf" class="download-btn download-btn-primary" download>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z"/></svg>
+                    Download PDF
+                </a>
+                <a href="https://github.com/Digital-AI-Finance/NarrativeBreak" class="download-btn download-btn-secondary" target="_blank">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0110 4.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.137 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                    View Code
+                </a>
+                <a href="paper-workflow.html" class="download-btn download-btn-secondary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+                    Review History
+                </a>
+            </div>
+
+            <div class="paper-info">
+                <div class="info-card">
+                    <div class="info-label">Journal</div>
+                    <div class="info-value">Journal of Financial Economics</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Status</div>
+                    <div class="info-value" style="color: #16a34a;">Accepted</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Pages</div>
+                    <div class="info-value">10 + Appendices</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">References</div>
+                    <div class="info-value">43</div>
+                </div>
+            </div>
+
+            <div class="abstract-box">
+                <h3>Abstract</h3>
+                <p>Traditional portfolio optimization methods ignore valuable textual information that shapes market narratives. We introduce <strong>NarrativeBreak</strong>, a novel framework that integrates structural break detection with multi-source NLP signals for dynamic asset allocation. Unlike prior work that treats sentiment as static features, our approach detects narrative regime changes that precede price regime shifts by 5.7 trading days (95% CI: 1.2-10.2). We contribute: (1) a hierarchical sentiment aggregation scheme introducing "narrative beta"; (2) confidence-calibrated Black-Litterman views from ensemble model disagreement; (3) the first systematic comparison of lexicon, transformer, and LLM methods for portfolio performance. On a multi-asset universe spanning 2010-2023, NarrativeBreak achieves a Sharpe ratio improvement of 83% over equal-weight portfolios, with 26% lower maximum drawdown. While these improvements are economically meaningful, statistical significance is marginal after multiple testing correction (Bonferroni-adjusted p = 0.17).</p>
+            </div>
+
+            <h2>Paper Preview</h2>
+            <div class="pdf-container">
+                <iframe class="pdf-embed" src="docs/NarrativeBreak-paper.pdf" type="application/pdf">
+                    <p>Your browser does not support PDF embedding. <a href="docs/NarrativeBreak-paper.pdf">Download the PDF</a> instead.</p>
+                </iframe>
+            </div>
+
+            <h2>Key Contributions</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div class="info-card">
+                    <h4 style="margin: 0 0 8px 0; color: #3b82f6;">1. NarrativeBreak Framework</h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.95rem;">First unified framework integrating structural break detection with NLP signals, detecting narrative regime changes 5.7 days before price-based methods.</p>
+                </div>
+                <div class="info-card">
+                    <h4 style="margin: 0 0 8px 0; color: #3b82f6;">2. Hierarchical Sentiment</h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.95rem;">Three-level aggregation (asset to sector to market) introducing "narrative beta" - measuring sensitivity to market-wide narrative shifts.</p>
+                </div>
+                <div class="info-card">
+                    <h4 style="margin: 0 0 8px 0; color: #3b82f6;">3. Confidence Calibration</h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.95rem;">Principled uncertainty quantification using ensemble disagreement for Black-Litterman integration.</p>
+                </div>
+                <div class="info-card">
+                    <h4 style="margin: 0 0 8px 0; color: #3b82f6;">4. NLP Benchmark</h4>
+                    <p style="margin: 0; color: #475569; font-size: 0.95rem;">First systematic comparison of VADER, FinBERT, and LM Dictionary for portfolio performance on 40,072 samples.</p>
+                </div>
+            </div>
+
+            <h2>Citation</h2>
+            <div style="background: #1e293b; color: #e2e8f0; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 0.9rem; overflow-x: auto;">
+@article{osterrieder2026narrativebreak,<br>
+&nbsp;&nbsp;title={NarrativeBreak: Integrating Structural Break Detection with<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multi-Source NLP Signals for Dynamic Portfolio Optimization},<br>
+&nbsp;&nbsp;author={Osterrieder, Joerg},<br>
+&nbsp;&nbsp;journal={Journal of Financial Economics},<br>
+&nbsp;&nbsp;year={2026},<br>
+&nbsp;&nbsp;note={SNSF Grant IZCOZ0\_213370}<br>
+}
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #1e293b; color: white; padding: 40px 20px; text-align: center;">
+        <p>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">Bern University of Applied Sciences | University of Twente</p>
+    </footer>
+</body>
+</html>

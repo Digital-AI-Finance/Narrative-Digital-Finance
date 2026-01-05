@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - NarrativeBreak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 30px 0; }
+        .result-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .result-card h3 { margin: 0 0 16px 0; color: #1e293b; font-size: 1.1rem; }
+        .metric-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
+        .metric-row:last-child { border-bottom: none; }
+        .metric-label { color: #64748b; }
+        .metric-value { font-weight: 600; color: #1e293b; }
+        .metric-value.positive { color: #16a34a; }
+        .metric-value.negative { color: #dc2626; }
+        .highlight-card { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; }
+        .highlight-card h3, .highlight-card .metric-label, .highlight-card .metric-value { color: white; }
+        .highlight-card .metric-row { border-color: rgba(255,255,255,0.2); }
+        .table-container { overflow-x: auto; margin: 20px 0; }
+        .results-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        .results-table th, .results-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        .results-table th { background: #f8fafc; font-weight: 600; color: #1e293b; }
+        .results-table tr:hover { background: #f8fafc; }
+        .results-table .best { background: #dcfce7; font-weight: 600; }
+        .chart-preview { background: #f8fafc; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center; }
+        .chart-preview img { max-width: 100%; height: auto; border-radius: 4px; }
+        .stats-banner { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; background: #f8fafc; padding: 24px; border-radius: 12px; margin: 30px 0; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: 700; color: #3b82f6; }
+        .stat-desc { font-size: 0.85rem; color: #64748b; }
+        .significance-note { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 16px; margin: 20px 0; }
+        .significance-note h4 { margin: 0 0 8px 0; color: #92400e; }
+        .significance-note p { margin: 0; color: #78350f; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Narrative Digital Finance</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="paper.html">Paper</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="results.html" class="active">Results</a>
+                <a href="reproducibility.html">Reproducibility</a>
+                <a href="data.html">Data</a>
+                <a href="charts.html">Charts</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero" style="padding: 60px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Experimental Results</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Key findings from NarrativeBreak experiments (2020-2023 test period)</p>
+            </div>
+        </section>
+
+        <section style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+
+            <div class="stats-banner">
+                <div class="stat-item">
+                    <div class="stat-number">83%</div>
+                    <div class="stat-desc">Sharpe Improvement</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">26%</div>
+                    <div class="stat-desc">Drawdown Reduction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5.7</div>
+                    <div class="stat-desc">Days Lead Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">62%</div>
+                    <div class="stat-desc">FinBERT Accuracy</div>
+                </div>
+            </div>
+
+            <h2>Main Results (Table 1)</h2>
+            <p>Portfolio performance comparison across strategies during the test period (2020-2023), which includes the COVID-19 crash, recovery, and 2022 bear market.</p>
+
+            <div class="table-container">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Strategy</th>
+                            <th>Sharpe Ratio</th>
+                            <th>Max Drawdown</th>
+                            <th>Ann. Return</th>
+                            <th>Volatility</th>
+                            <th>Turnover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Equal Weight</td>
+                            <td>-0.84</td>
+                            <td>-54.8%</td>
+                            <td>-15.6%</td>
+                            <td>18.6%</td>
+                            <td>47%</td>
+                        </tr>
+                        <tr>
+                            <td>Mean-Variance (MVO)</td>
+                            <td>-1.42</td>
+                            <td>-57.9%</td>
+                            <td>-24.8%</td>
+                            <td>17.5%</td>
+                            <td>738%</td>
+                        </tr>
+                        <tr>
+                            <td>Black-Litterman</td>
+                            <td>-0.52</td>
+                            <td>-54.0%</td>
+                            <td>-11.9%</td>
+                            <td>22.9%</td>
+                            <td>65%</td>
+                        </tr>
+                        <tr>
+                            <td>VADER Sentiment</td>
+                            <td>-0.50</td>
+                            <td>-53.1%</td>
+                            <td>-9.6%</td>
+                            <td>19.2%</td>
+                            <td>2946%</td>
+                        </tr>
+                        <tr>
+                            <td>FinBERT Sentiment</td>
+                            <td>-0.33</td>
+                            <td>-55.6%</td>
+                            <td>-6.7%</td>
+                            <td>20.3%</td>
+                            <td>2322%</td>
+                        </tr>
+                        <tr class="best">
+                            <td><strong>NarrativeBreak</strong></td>
+                            <td><strong>-0.14</strong></td>
+                            <td><strong>-40.5%</strong></td>
+                            <td><strong>-1.8%</strong></td>
+                            <td><strong>12.6%</strong></td>
+                            <td>473%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="significance-note">
+                <h4>Statistical Significance Note</h4>
+                <p>While NarrativeBreak shows economically meaningful improvements, the Ledoit-Wolf bootstrap test yields p = 0.034 (raw) and p = 0.17 after Bonferroni correction for 6 comparisons. We characterize these findings as "suggestive evidence" warranting further validation.</p>
+            </div>
+
+            <h2>Key Performance Metrics</h2>
+            <div class="results-grid">
+                <div class="result-card highlight-card">
+                    <h3>NarrativeBreak Performance</h3>
+                    <div class="metric-row">
+                        <span class="metric-label">Sharpe Ratio</span>
+                        <span class="metric-value">-0.14</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Max Drawdown</span>
+                        <span class="metric-value">-40.5%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Volatility</span>
+                        <span class="metric-value">12.6%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Sortino Ratio</span>
+                        <span class="metric-value">-0.20</span>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Improvement vs Equal Weight</h3>
+                    <div class="metric-row">
+                        <span class="metric-label">Sharpe Improvement</span>
+                        <span class="metric-value positive">+83%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Drawdown Reduction</span>
+                        <span class="metric-value positive">-26.0%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Volatility Reduction</span>
+                        <span class="metric-value positive">-32%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Lead Time Advantage</span>
+                        <span class="metric-value positive">5.7 days</span>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Risk Metrics</h3>
+                    <div class="metric-row">
+                        <span class="metric-label">VaR (95%)</span>
+                        <span class="metric-value">-1.37%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">CVaR (95%)</span>
+                        <span class="metric-value">-1.89%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Calmar Ratio</span>
+                        <span class="metric-value">-0.01</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Turnover</span>
+                        <span class="metric-value">473%</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>NLP Method Comparison (Table 4)</h2>
+            <p>Classification accuracy on financial sentiment (n = 40,072 samples).</p>
+
+            <div class="table-container">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Accuracy</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>F1 Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VADER</td>
+                            <td>36.1%</td>
+                            <td>32.6%</td>
+                            <td>52.0%</td>
+                            <td>0.40</td>
+                        </tr>
+                        <tr>
+                            <td>Loughran-McDonald</td>
+                            <td>38.3%</td>
+                            <td>33.3%</td>
+                            <td>51.4%</td>
+                            <td>0.40</td>
+                        </tr>
+                        <tr class="best">
+                            <td><strong>FinBERT</strong></td>
+                            <td><strong>61.5%</strong></td>
+                            <td><strong>58.4%</strong></td>
+                            <td><strong>69.2%</strong></td>
+                            <td><strong>0.63</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Ablation Study (Table 3)</h2>
+            <p>Contribution of each framework component.</p>
+
+            <div class="table-container">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Configuration</th>
+                            <th>Sharpe</th>
+                            <th>Delta</th>
+                            <th>Max DD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="best">
+                            <td><strong>Full Model</strong></td>
+                            <td><strong>-0.14</strong></td>
+                            <td>---</td>
+                            <td><strong>-40.5%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>- Regime Detection</td>
+                            <td>-0.22</td>
+                            <td class="negative">-0.07</td>
+                            <td>-39.9%</td>
+                        </tr>
+                        <tr>
+                            <td>- Confidence Calibration</td>
+                            <td>-0.18</td>
+                            <td class="negative">-0.03</td>
+                            <td>-42.8%</td>
+                        </tr>
+                        <tr>
+                            <td>- Multi-Source Ensemble</td>
+                            <td>0.03</td>
+                            <td class="positive">+0.17</td>
+                            <td>-39.7%</td>
+                        </tr>
+                        <tr>
+                            <td>- Hierarchical Aggregation</td>
+                            <td>-0.11</td>
+                            <td class="positive">+0.04</td>
+                            <td>-40.4%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Lead Time Analysis</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>Overall Lead Time</h3>
+                    <div class="metric-row">
+                        <span class="metric-label">Mean</span>
+                        <span class="metric-value">5.7 days</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">95% CI</span>
+                        <span class="metric-value">[1.2, 10.2]</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Change Points Detected</span>
+                        <span class="metric-value">23</span>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <h3>By Regime</h3>
+                    <div class="metric-row">
+                        <span class="metric-label">Bull Market</span>
+                        <span class="metric-value">4.2 days</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Bear Market</span>
+                        <span class="metric-value">7.8 days</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Neutral</span>
+                        <span class="metric-value">5.1 days</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Download Results</h2>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0;">
+                <a href="data/results_latest.json" class="download-btn download-btn-primary" download style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; background: #3b82f6; color: white;">
+                    Download Results JSON
+                </a>
+                <a href="data/paper_statistics.json" class="download-btn download-btn-secondary" download style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0;">
+                    Download Paper Statistics
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #1e293b; color: white; padding: 40px 20px; text-align: center;">
+        <p>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">Bern University of Applied Sciences | University of Twente</p>
+    </footer>
+</body>
+</html>

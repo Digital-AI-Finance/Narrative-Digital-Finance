@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Documentation - NarrativeBreak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        .data-card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; margin: 20px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .data-card h3 { margin: 0 0 12px 0; color: #1e293b; }
+        .download-btn { display: inline-flex; align-items: center; gap: 8px; background: #3b82f6; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; }
+        .download-btn:hover { background: #2563eb; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin: 20px 0; }
+        .stat-box { background: #f8fafc; padding: 16px; border-radius: 6px; text-align: center; }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: #3b82f6; }
+        .stat-label { font-size: 0.85rem; color: #64748b; }
+        .schema-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+        .schema-table th, .schema-table td { padding: 10px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        .schema-table th { background: #f1f5f9; font-weight: 600; }
+        .type-badge { background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-family: monospace; }
+        .calibration-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .calibration-table th, .calibration-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        .calibration-table th { background: #f1f5f9; }
+        .match-good { color: #166534; }
+        .code-inline { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Narrative Digital Finance</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="paper.html">Paper</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="results.html">Results</a>
+                <a href="reproducibility.html">Reproducibility</a>
+                <a href="data.html" class="active">Data</a>
+                <a href="charts.html">Charts</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero" style="padding: 60px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Data Documentation</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Synthetic data specifications and download</p>
+            </div>
+        </section>
+
+        <section style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+            <h2>Overview</h2>
+            <p>NarrativeBreak uses synthetic data calibrated to real market statistics for full reproducibility without commercial data dependencies. The synthetic generator produces deterministic output with seed=42.</p>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value">2,500</div>
+                    <div class="stat-label">Trading Days</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">ETFs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">40,072</div>
+                    <div class="stat-label">News Samples</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Sentiment Methods</div>
+                </div>
+            </div>
+
+            <div class="data-card">
+                <h3>Synthetic Dataset</h3>
+                <p>Complete synthetic dataset including price returns, sentiment scores, and regime labels.</p>
+                <div style="margin: 16px 0;">
+                    <a href="data/synthetic_dataset.json" class="download-btn" download>
+                        Download JSON (12 MB)
+                    </a>
+                </div>
+                <p style="font-size: 0.9rem; color: #64748b;">Last updated: January 2026 | Seed: 42</p>
+            </div>
+
+            <div class="data-card">
+                <h3>Results JSON</h3>
+                <p>All experimental results including strategy performance, ablation studies, and NLP accuracy.</p>
+                <div style="margin: 16px 0;">
+                    <a href="data/results_latest.json" class="download-btn" download>
+                        Download Results (500 KB)
+                    </a>
+                </div>
+            </div>
+
+            <h2>Data Schema</h2>
+
+            <h3>Price Data</h3>
+            <table class="schema-table">
+                <thead>
+                    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code class="code-inline">date</code></td><td><span class="type-badge">string</span></td><td>Trading date (YYYY-MM-DD)</td></tr>
+                    <tr><td><code class="code-inline">SPY</code></td><td><span class="type-badge">float</span></td><td>S&P 500 ETF daily return</td></tr>
+                    <tr><td><code class="code-inline">EFA</code></td><td><span class="type-badge">float</span></td><td>MSCI EAFE ETF daily return</td></tr>
+                    <tr><td><code class="code-inline">EEM</code></td><td><span class="type-badge">float</span></td><td>Emerging Markets ETF return</td></tr>
+                    <tr><td><code class="code-inline">TLT</code></td><td><span class="type-badge">float</span></td><td>20+ Year Treasury ETF return</td></tr>
+                    <tr><td><code class="code-inline">LQD</code></td><td><span class="type-badge">float</span></td><td>Investment Grade Corporate ETF</td></tr>
+                    <tr><td><code class="code-inline">HYG</code></td><td><span class="type-badge">float</span></td><td>High Yield Corporate ETF</td></tr>
+                    <tr><td><code class="code-inline">GLD</code></td><td><span class="type-badge">float</span></td><td>Gold ETF daily return</td></tr>
+                    <tr><td><code class="code-inline">VNQ</code></td><td><span class="type-badge">float</span></td><td>Real Estate ETF return</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Sentiment Data</h3>
+            <table class="schema-table">
+                <thead>
+                    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code class="code-inline">date</code></td><td><span class="type-badge">string</span></td><td>Trading date</td></tr>
+                    <tr><td><code class="code-inline">asset</code></td><td><span class="type-badge">string</span></td><td>Asset ticker</td></tr>
+                    <tr><td><code class="code-inline">vader_score</code></td><td><span class="type-badge">float</span></td><td>VADER sentiment [-1, 1]</td></tr>
+                    <tr><td><code class="code-inline">finbert_score</code></td><td><span class="type-badge">float</span></td><td>FinBERT sentiment [-1, 1]</td></tr>
+                    <tr><td><code class="code-inline">lm_score</code></td><td><span class="type-badge">float</span></td><td>Loughran-McDonald [-1, 1]</td></tr>
+                    <tr><td><code class="code-inline">ensemble_score</code></td><td><span class="type-badge">float</span></td><td>Weighted ensemble [-1, 1]</td></tr>
+                    <tr><td><code class="code-inline">confidence</code></td><td><span class="type-badge">float</span></td><td>Model agreement [0, 1]</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Regime Labels</h3>
+            <table class="schema-table">
+                <thead>
+                    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code class="code-inline">date</code></td><td><span class="type-badge">string</span></td><td>Trading date</td></tr>
+                    <tr><td><code class="code-inline">true_regime</code></td><td><span class="type-badge">int</span></td><td>Ground truth regime (0=bear, 1=neutral, 2=bull)</td></tr>
+                    <tr><td><code class="code-inline">predicted_regime</code></td><td><span class="type-badge">int</span></td><td>HMM predicted regime</td></tr>
+                    <tr><td><code class="code-inline">regime_probability</code></td><td><span class="type-badge">float</span></td><td>Confidence in prediction [0, 1]</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Calibration Validation</h2>
+            <p>The synthetic generator is calibrated to match published empirical statistics. All KS tests fail to reject the null hypothesis that synthetic matches target distributions.</p>
+
+            <table class="calibration-table">
+                <thead>
+                    <tr><th>Statistic</th><th>Target (Literature)</th><th>Synthetic</th><th>KS p-value</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SPY daily volatility</td>
+                        <td>16.5%</td>
+                        <td class="match-good">16.2%</td>
+                        <td>0.42</td>
+                    </tr>
+                    <tr>
+                        <td>Stock-bond correlation</td>
+                        <td>-0.25</td>
+                        <td class="match-good">-0.23</td>
+                        <td>0.38</td>
+                    </tr>
+                    <tr>
+                        <td>Sentiment-return correlation</td>
+                        <td>0.08</td>
+                        <td class="match-good">0.09</td>
+                        <td>0.51</td>
+                    </tr>
+                    <tr>
+                        <td>Mean regime duration (bull)</td>
+                        <td>3.5 years</td>
+                        <td class="match-good">3.8 years</td>
+                        <td>0.29</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Data Periods</h2>
+            <table class="schema-table">
+                <thead>
+                    <tr><th>Period</th><th>Dates</th><th>Days</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Training</td><td>2010-01-01 to 2017-12-31</td><td>1,750</td><td>Model training</td></tr>
+                    <tr><td>Validation</td><td>2018-01-01 to 2019-12-31</td><td>250</td><td>Hyperparameter tuning</td></tr>
+                    <tr><td>Test</td><td>2020-01-01 to 2023-12-31</td><td>500</td><td>Final evaluation</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Limitations</h2>
+            <p>The synthetic generator does <strong>not</strong> capture:</p>
+            <ul style="line-height: 2;">
+                <li>Sarcasm and irony in financial text</li>
+                <li>Entity recognition errors common in real NLP pipelines</li>
+                <li>Breaking news dynamics (intraday sentiment updates)</li>
+                <li>Non-English content from global markets</li>
+                <li>Long-tail distribution of news article lengths</li>
+            </ul>
+
+            <h2>Citation</h2>
+            <p>If you use this data, please cite:</p>
+            <div style="background: #f8fafc; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+@article{osterrieder2026narrativebreak,<br>
+&nbsp;&nbsp;title={NarrativeBreak: Integrating Structural Break Detection with Multi-Source NLP Signals},<br>
+&nbsp;&nbsp;author={Osterrieder, Joerg},<br>
+&nbsp;&nbsp;journal={Journal of Financial Economics},<br>
+&nbsp;&nbsp;year={2026}<br>
+}
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #1e293b; color: white; padding: 40px 20px; text-align: center;">
+        <p>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">Bern University of Applied Sciences | University of Twente</p>
+    </footer>
+</body>
+</html>

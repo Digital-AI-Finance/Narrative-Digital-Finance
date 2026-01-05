@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Gallery - NarrativeBreak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px; margin: 40px 0; }
+        .chart-card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .chart-image { width: 100%; height: 280px; object-fit: contain; background: #f8fafc; padding: 16px; box-sizing: border-box; }
+        .chart-info { padding: 16px; }
+        .chart-title { font-size: 1.1rem; font-weight: 600; color: #1e293b; margin: 0 0 8px 0; }
+        .chart-desc { color: #64748b; font-size: 0.9rem; margin: 0 0 12px 0; }
+        .chart-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-tag { background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; }
+        .code-link { color: #3b82f6; text-decoration: none; font-size: 0.9rem; }
+        .code-link:hover { text-decoration: underline; }
+        .filter-bar { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
+        .filter-btn { padding: 8px 16px; border: 1px solid #e2e8f0; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem; }
+        .filter-btn.active { background: #3b82f6; color: white; border-color: #3b82f6; }
+        .figure-ref { font-family: monospace; font-size: 0.85rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Narrative Digital Finance</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="paper.html">Paper</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="results.html">Results</a>
+                <a href="reproducibility.html">Reproducibility</a>
+                <a href="data.html">Data</a>
+                <a href="charts.html" class="active">Charts</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero" style="padding: 60px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Chart Gallery</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">All visualizations from the NarrativeBreak paper</p>
+            </div>
+        </section>
+
+        <section style="max-width: 1400px; margin: 0 auto; padding: 40px 20px;">
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterCharts('all')">All Charts</button>
+                <button class="filter-btn" onclick="filterCharts('performance')">Performance</button>
+                <button class="filter-btn" onclick="filterCharts('sentiment')">Sentiment</button>
+                <button class="filter-btn" onclick="filterCharts('regime')">Regime Detection</button>
+            </div>
+
+            <div class="chart-grid">
+                <!-- Chart 1 -->
+                <div class="chart-card" data-category="sentiment">
+                    <img src="images/charts/01_sentiment_price_correlation.png" alt="Sentiment-Price Correlation" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Sentiment-Price Correlation</h3>
+                        <p class="chart-desc">Rolling correlation between aggregate sentiment scores and market returns over time.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Sentiment</span>
+                            <span class="figure-ref">Fig. A1</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/01_sentiment_price_correlation" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 2 -->
+                <div class="chart-card" data-category="sentiment">
+                    <img src="images/charts/02_finbert_vs_vader.png" alt="FinBERT vs VADER" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">FinBERT vs VADER Comparison</h3>
+                        <p class="chart-desc">Accuracy comparison between transformer (FinBERT) and lexicon (VADER) sentiment methods.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Sentiment</span>
+                            <span class="figure-ref">Figure 5</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/02_finbert_vs_vader_comparison" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 3 -->
+                <div class="chart-card" data-category="performance">
+                    <img src="images/charts/03_cumulative_returns.png" alt="Cumulative Returns" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Portfolio Cumulative Returns</h3>
+                        <p class="chart-desc">Cumulative returns comparison across all strategies during the test period (2020-2023).</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Performance</span>
+                            <span class="figure-ref">Figure 2</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/03_portfolio_cumulative_returns" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 4 -->
+                <div class="chart-card" data-category="performance">
+                    <img src="images/charts/04_efficient_frontier.png" alt="Sentiment-Weighted Frontier" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Sentiment-Weighted Frontier</h3>
+                        <p class="chart-desc">Efficient frontier comparison with and without sentiment-based views.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Performance</span>
+                            <span class="figure-ref">Fig. A2</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/04_sentiment_weighted_frontier" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 5 -->
+                <div class="chart-card" data-category="regime">
+                    <img src="images/charts/05_regime_timeline.png" alt="Regime Detection Timeline" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Regime Detection Timeline</h3>
+                        <p class="chart-desc">HMM-based narrative regime detection alongside price evolution.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Regime</span>
+                            <span class="figure-ref">Figure 1</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/05_regime_detection_timeline" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 6 -->
+                <div class="chart-card" data-category="sentiment">
+                    <img src="images/charts/06_narrative_heatmap.png" alt="Narrative Intensity Heatmap" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Narrative Intensity Heatmap</h3>
+                        <p class="chart-desc">Cross-asset sentiment intensity visualization over time.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Sentiment</span>
+                            <span class="figure-ref">Fig. A3</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/06_narrative_intensity_heatmap" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 7 -->
+                <div class="chart-card" data-category="performance">
+                    <img src="images/charts/07_backtest_performance.png" alt="Backtest Performance" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Backtest Performance</h3>
+                        <p class="chart-desc">Strategy performance metrics across training and test periods.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Performance</span>
+                            <span class="figure-ref">Fig. A4</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/07_backtest_performance" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 8 -->
+                <div class="chart-card" data-category="sentiment">
+                    <img src="images/charts/08_rolling_sentiment.png" alt="Rolling Window Sentiment" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Sentiment Rolling Window</h3>
+                        <p class="chart-desc">Rolling sentiment scores with confidence bands.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Sentiment</span>
+                            <span class="figure-ref">Fig. A5</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/08_sentiment_rolling_window" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 9 -->
+                <div class="chart-card" data-category="regime">
+                    <img src="images/charts/09_change_point.png" alt="Change Point Detection" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Change Point Detection</h3>
+                        <p class="chart-desc">Comparison of narrative-based vs price-based structural break detection.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Regime</span>
+                            <span class="figure-ref">Figure 4</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/09_change_point_detection" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 10 -->
+                <div class="chart-card" data-category="sentiment">
+                    <img src="images/charts/10_factor_loading.png" alt="Factor Loading" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Factor Loading (Narrative Beta)</h3>
+                        <p class="chart-desc">Asset sensitivities to the market narrative factor.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Sentiment</span>
+                            <span class="figure-ref">Fig. A6</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/10_factor_loading_sentiment" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 11 -->
+                <div class="chart-card" data-category="performance">
+                    <img src="images/charts/11_drawdown.png" alt="Drawdown Analysis" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Drawdown Analysis</h3>
+                        <p class="chart-desc">Underwater equity curves showing drawdown depth and recovery.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Performance</span>
+                            <span class="figure-ref">Figure 3</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/11_drawdown_analysis" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 12 -->
+                <div class="chart-card" data-category="sentiment">
+                    <img src="images/charts/12_sector_sentiment.png" alt="Sector Sentiment" class="chart-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23f8fafc%22 width=%22400%22 height=%22280%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22>Chart Preview</text></svg>'">
+                    <div class="chart-info">
+                        <h3 class="chart-title">Sector Sentiment Comparison</h3>
+                        <p class="chart-desc">Cross-sector sentiment dynamics and hierarchical aggregation.</p>
+                        <div class="chart-meta">
+                            <span class="meta-tag">Sentiment</span>
+                            <span class="figure-ref">Fig. A7</span>
+                        </div>
+                        <div style="margin-top: 12px;">
+                            <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/charts/12_sector_sentiment_comparison" class="code-link">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Generating Charts</h2>
+            <p>All charts can be regenerated from source code:</p>
+            <div style="background: #1e293b; color: #e2e8f0; padding: 20px; border-radius: 8px; font-family: monospace; margin: 20px 0;">
+                <code># Generate all charts<br>
+python run_full_pipeline.py --seed 42<br><br>
+# Or run individual chart<br>
+cd charts/03_portfolio_cumulative_returns<br>
+python chart.py</code>
+            </div>
+
+            <h2>Chart Standards</h2>
+            <ul style="line-height: 2;">
+                <li><strong>Figure size:</strong> 10 x 6 inches (standard)</li>
+                <li><strong>Font size:</strong> Minimum 9pt (scaled for 0.55-0.65 textwidth)</li>
+                <li><strong>Color palette:</strong> Colorblind-friendly (tested with Coblis)</li>
+                <li><strong>Format:</strong> PDF (vector) for paper, PNG for web</li>
+                <li><strong>DPI:</strong> 300 for print quality</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer style="background: #1e293b; color: white; padding: 40px 20px; text-align: center;">
+        <p>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">Bern University of Applied Sciences | University of Twente</p>
+    </footer>
+
+    <script>
+        function filterCharts(category) {
+            const cards = document.querySelectorAll('.chart-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
