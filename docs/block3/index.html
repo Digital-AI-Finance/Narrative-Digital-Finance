@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block 3: Narratives for Structural Breaks - Narrative Digital Finance</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --accent: #f59e0b;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 2rem; margin-bottom: 10px; font-weight: 700; }
+        header p { opacity: 0.9; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 15px 5px 0;
+        }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        main { padding: 40px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.5rem; }
+        h3 { margin: 20px 0 10px; font-size: 1.15rem; color: var(--primary); }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-box .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-box .label {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 5px;
+        }
+        .rq-card {
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8fafc;
+            border-radius: 0 8px 8px 0;
+        }
+        .rq-card h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .rq-card .rq-num {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .result-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        .result-badge.strong {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .result-badge.suggestive {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Block 3: Narratives for Structural Breaks</h1>
+            <p>Prediction, Detection, and Persuasion in Financial Markets</p>
+            <span class="badge">SNSF IZCOZ0_213370</span>
+            <span class="badge">Journal of Financial Economics</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Project Home</a></li>
+            <li><a href="./">Block 3</a></li>
+            <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h2>Paper Overview</h2>
+            <p><strong>Title:</strong> Narratives for Structural Breaks in Financial Markets: Prediction, Detection, and Persuasion</p>
+            <p><strong>Authors:</strong> Jorg Osterrieder</p>
+            <p><strong>Target:</strong> Journal of Financial Economics (10 pages)</p>
+
+            <div style="margin-top: 25px;">
+                <a href="paper.pdf" class="btn">Download Paper (PDF)</a>
+                <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance" class="btn btn-outline">View Repository</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Key Metrics</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="value">9</div>
+                    <div class="label">Pages</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">83</div>
+                    <div class="label">Validated Values</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">0.91</div>
+                    <div class="label">Detection AUC</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">100%</div>
+                    <div class="label">Reproducible</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Research Questions & Findings</h2>
+
+            <div class="rq-card">
+                <h3><span class="rq-num">1</span> Prediction</h3>
+                <p><strong>Question:</strong> Can market narratives predict financial market bubbles and structural breaks?</p>
+                <p><strong>Method:</strong> Granger causality, VAR analysis, variance decomposition</p>
+                <span class="result-badge suggestive">Suggestive Evidence</span>
+                <p style="margin-top: 10px;">Granger p = 0.480 (not significant at optimal lag), but 35.5% variance contribution at 12-month horizon. Diebold-Mariano test (p = 0.85) does not reject equal forecast accuracy.</p>
+            </div>
+
+            <div class="rq-card">
+                <h3><span class="rq-num">2</span> Detection</h3>
+                <p><strong>Question:</strong> Can market narratives detect financial market bubbles in real-time?</p>
+                <p><strong>Method:</strong> GSADF bubble detection + TOPol narrative polarity framework</p>
+                <span class="result-badge strong">Strong Evidence</span>
+                <p style="margin-top: 10px;">TOPol+GSADF achieves 0.91 AUC (+26.4% improvement over GSADF-only baseline of 0.72). Narrative features substantially improve bubble regime classification.</p>
+            </div>
+
+            <div class="rq-card">
+                <h3><span class="rq-num">3</span> Persuasion</h3>
+                <p><strong>Question:</strong> Can narratives causally sway investment opinions?</p>
+                <p><strong>Method:</strong> 2x2 factorial experiment, causally sufficient embeddings, matching + IPW</p>
+                <span class="result-badge strong">Strong Evidence</span>
+                <p style="margin-top: 10px;">Narrative effect: +11.89 pp (t = 7.11, p < 0.001). ATE via matching: 10.05 pp [95% CI: 8.30, 11.80]. Low-literacy investors more susceptible (13.56 pp vs 8.24 pp).</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Methodology Highlights</h2>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><strong>TOPol Framework</strong></td>
+                    <td>Transformer-based polarity vector fields for narrative shift detection using sentence embeddings (all-MiniLM-L6-v2)</td>
+                </tr>
+                <tr>
+                    <td><strong>GSADF Test</strong></td>
+                    <td>Phillips, Shi, Yu (2015) generalized sup ADF test for bubble detection</td>
+                </tr>
+                <tr>
+                    <td><strong>Causal Inference</strong></td>
+                    <td>Veitch et al. (2020) causally sufficient embeddings with text matching and IPW estimators</td>
+                </tr>
+                <tr>
+                    <td><strong>Experimental Design</strong></td>
+                    <td>2x2 factorial: Narrative Presence x Emotionality Level (400 synthetic participants)</td>
+                </tr>
+                <tr>
+                    <td><strong>Validation</strong></td>
+                    <td>All 83 numerical claims validated against computed_values.json via Python script</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Reproducibility</h2>
+            <p>This paper uses 100% synthetic data for full reproducibility:</p>
+            <ul style="margin: 15px 0 15px 20px;">
+                <li>Regime-switching corpus (4 regimes: Normal, Pre-Bubble, Bubble, Crash)</li>
+                <li>GARCH(1,1) synthetic returns with regime-dependent volatility</li>
+                <li>All numerical claims backed by <code>computed_values.json</code></li>
+                <li>Python validation script ensures .tex matches computed values</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Validation:</strong> <code>python scripts/validate_all_claims.py --strict</code> returns 0 failures.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Block 3: Narratives for Structural Breaks | Narrative Digital Finance</p>
+        <p>SNSF Grant IZCOZ0_213370 | University of Zurich | FHGR</p>
+    </footer>
+</body>
+</html>
