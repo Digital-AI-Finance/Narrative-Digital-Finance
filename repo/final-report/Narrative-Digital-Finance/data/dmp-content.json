@@ -42,7 +42,7 @@
           "original": "Quality assurance\n- The data are checked for consistency and completeness using statistical methods.\nVersioning\n- The code and the database are versioned with the help of the ZHAW internal tools.\n\nThe quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.",
           "enhanced": {
             "quality_assurance": "The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.",
-            "versioning": "The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases receive DOIs via Zenodo integration. Models are tracked using MLflow for experiment tracking and model registry.",
+            "versioning": "The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases may receive DOIs via Zenodo integration.",
             "original_paragraph": "The quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.",
             "collection_methods": "API Access via FRED API (Python fredapi), SEC EDGAR XBRL API, and BIS web scraping (Beautiful Soup). Commercial data is accessed via RavenPack SQL access, LSEG API and bulk delivery, and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling."
           }
@@ -53,8 +53,8 @@
           "original": "The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.",
           "enhanced": {
             "original_paragraph": "The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.",
-            "metadata_standards": "Dublin Core for general descriptive metadata. DataCite for DOI registration and citation metadata. JSON Schema for data structure documentation and programmatic access.",
-            "documentation": "Data Dictionaries contain variable names, types, units, and valid ranges, stored in README.md files per folder. Provenance information includes source attribution, collection dates, and processing steps, stored in METADATA.json files. Code Documentation includes inline comments and NumPy-style docstrings in source files. Reproducibility materials include requirements.txt, environment.yml, config files, and random seeds in repository roots."
+            "metadata_standards": "Standard README documentation with variable descriptions and usage instructions.",
+            "documentation": "Data Dictionaries contain variable names, types, and descriptions in README.md files. Code includes inline comments where helpful. Dependency files (requirements.txt) are provided where applicable."
           }
         }
       ]
@@ -69,7 +69,7 @@
           "original": "No personal data or other sensitive data is used in the project. In this respect, the university internal security standards are applied.\n\nThe conditions have already been discussed with the data providers. No special security standards are required by the data providers for this data.",
           "enhanced": {
             "original_paragraph": "No personal data or other sensitive data is used in the project. In this respect, the university internal security standards are applied. The conditions have already been discussed with the data providers. No special security standards are required by the data providers for this data.",
-            "ethical_considerations": "All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. We maintain transparency in model documentation and perform bias assessment for NLP models. Research outputs are not used for automated trading decisions.",
+            "ethical_considerations": "All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. Research outputs are intended for academic purposes.",
             "data_provider_agreements": [
               {"provider": "Refinitiv/LSEG", "terms": "Academic research license", "restrictions": "No redistribution of raw data"},
               {"provider": "RavenPack", "terms": "Research subscription", "restrictions": "Academic use only"},
@@ -90,7 +90,7 @@
               {"category": "Deutsche Borse HFT data", "access": "Restricted", "storage": "Encrypted local storage"},
               {"category": "Processed features", "access": "Open (with publication)", "storage": "OSF, Zenodo"}
             ],
-            "security_measures": "BFH IT infrastructure with regular backups and access logging. Encrypted file transfer for commercial data (SFTP, HTTPS). Two-factor authentication for all cloud services. Role-based access control for team members.",
+            "security_measures": "BFH IT infrastructure with standard institutional security measures. Encrypted file transfer for commercial data where required.",
             "team_members": [
               {"name": "Prof. Dr. Joerg Osterrieder", "role": "Principal Investigator"},
               {"name": "Gabin Taibi", "role": "PhD Researcher"},
@@ -134,10 +134,10 @@
           "enhanced": {
             "original_paragraph": "The storage capacities are very large, the amount of data remains very limited in the project. The data is managed in the form of databases on GitHub. Backups and versions of the data are continuously created.",
             "primary_storage": {
-              "location": "BFH Institute for Applied Data Science servers",
-              "capacity": "1 TB allocated for the project",
-              "backup": "Daily incremental with weekly full backup",
-              "retention": "Project duration plus 10 years minimum"
+              "location": "BFH servers",
+              "capacity": "Sufficient storage allocated",
+              "backup": "Regular backups per BFH IT policy",
+              "retention": "As long as technically feasible"
             },
             "cloud_storage": [
               {"platform": "GitHub", "purpose": "Code repositories", "url": "https://github.com/Digital-AI-Finance"},
@@ -145,9 +145,9 @@
               {"platform": "Zenodo", "purpose": "Archived releases with DOIs", "url": "Linked via GitHub"}
             ],
             "backup_strategy": [
-              {"type": "Code", "frequency": "Continuous (Git)", "retention": "Permanent", "location": "GitHub"},
-              {"type": "Processed data", "frequency": "Weekly", "retention": "10 years", "location": "BFH + Zenodo"},
-              {"type": "Commercial raw data", "frequency": "Daily", "retention": "Project duration", "location": "BFH (encrypted)"}
+              {"type": "Code", "frequency": "Continuous (Git)", "retention": "As long as GitHub available", "location": "GitHub"},
+              {"type": "Processed data", "frequency": "Periodic", "retention": "As long as feasible", "location": "BFH + Zenodo"},
+              {"type": "Commercial raw data", "frequency": "Per BFH policy", "retention": "Project duration", "location": "BFH"}
             ]
           }
         },
@@ -158,14 +158,12 @@
           "enhanced": {
             "original_paragraph": "The data is stored on GitHub for a long time and managed using existing tools. There is no obligation to destroy the data.",
             "repository_selection": [
-              {"name": "Zenodo", "organization": "CERN/OpenAIRE (non-profit)", "features": "DOI assignment, FAIR compliance, 20+ year guarantee, CoreTrustSeal certification"},
-              {"name": "OSF", "organization": "Center for Open Science (non-profit)", "features": "Preprints, supplementary materials, version control"},
-              {"name": "arXiv", "organization": "Cornell University (non-profit)", "features": "Preprints, permanent archive"}
+              {"name": "Zenodo", "organization": "CERN/OpenAIRE (non-profit)", "features": "DOI assignment, long-term storage"},
+              {"name": "OSF", "organization": "Center for Open Science (non-profit)", "features": "Research materials"},
+              {"name": "arXiv", "organization": "Cornell University (non-profit)", "features": "Preprints"}
             ],
             "preservation_timeline": [
-              {"milestone": "Paper submission", "action": "Archive code and data snapshots", "doi": "Version DOI via Zenodo"},
-              {"milestone": "Paper acceptance", "action": "Update with final version", "doi": "Version DOI update"},
-              {"milestone": "Project end (August 2026)", "action": "Final comprehensive archive", "doi": "Concept DOI"}
+              {"milestone": "Project end (August 2026)", "action": "Archive code and shareable outputs", "doi": "DOI via Zenodo if applicable"}
             ],
             "archival_formats": {
               "data": "CSV, Parquet, HDF5 (machine-readable, open formats)",
@@ -173,7 +171,7 @@
               "code": "Python (plain text, version-controlled)",
               "images": "PNG, SVG (lossless, open formats)"
             },
-            "retention_period": "Minimum 10 years post-project (per SNSF Open Research Data policy)"
+            "retention_period": "As long as technically feasible"
           }
         }
       ]
@@ -193,10 +191,8 @@
               {"name": "Project Website", "repository": "GitHub Pages", "url": "https://digital-ai-finance.github.io/Narrative-Digital-Finance/", "status": "Live"}
             ],
             "upcoming_deposits": [
-              {"name": "SLR Methodology and Data", "repository": "Zenodo", "timeline": "Upon paper acceptance"},
-              {"name": "HFT Analysis Code", "repository": "GitHub + Zenodo", "timeline": "Planned"},
-              {"name": "Macro Narrative Index", "repository": "OSF", "timeline": "Planned"},
-              {"name": "Final Project Archive", "repository": "Zenodo", "timeline": "Project end (August 2026)"}
+              {"name": "Code and derived outputs", "repository": "GitHub + Zenodo", "timeline": "Subject to publication"},
+              {"name": "Additional materials", "repository": "Zenodo or OSF", "timeline": "If applicable"}
             ],
             "sharing_by_type": [
               {"data": "FRED, BIS, SEC", "shareable": true, "reason": "Public domain / open access"},
@@ -240,10 +236,10 @@
           "enhanced": {
             "answer": true,
             "fair_implementation": {
-              "findable": "DOIs via Zenodo, indexed in OpenAlex, DataCite, and Google Dataset Search",
-              "accessible": "Open repositories (Zenodo, OSF, GitHub) with standard protocols (HTTPS)",
-              "interoperable": "Standard formats (CSV, JSON, Parquet), documented schemas, and Python APIs",
-              "reusable": "CC-BY license, comprehensive metadata, README files, and example notebooks"
+              "findable": "DOIs via Zenodo where applicable",
+              "accessible": "Open repositories (Zenodo, OSF, GitHub) with standard protocols",
+              "interoperable": "Standard formats (CSV, JSON, Parquet)",
+              "reusable": "CC-BY license for project outputs, README files"
             }
           }
         },

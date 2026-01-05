@@ -118,7 +118,7 @@
 
     <p><strong>Quality assurance:</strong> The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.</p>
 
-    <p><strong>Versioning:</strong> The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases receive DOIs via Zenodo integration. Models are tracked using MLflow for experiment tracking and model registry.</p>
+    <p><strong>Versioning:</strong> The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases may receive DOIs via Zenodo integration.</p>
 
     <p><strong>Data Collection Methods:</strong> API Access via FRED API (Python fredapi), SEC EDGAR XBRL API, and BIS web scraping (Beautiful Soup). Commercial data is accessed via RavenPack SQL access, LSEG API and bulk delivery, and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling.</p>
 
@@ -126,9 +126,9 @@
 
     <p>The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.</p>
 
-    <p><strong>Metadata Standards:</strong> Dublin Core for general descriptive metadata. DataCite for DOI registration and citation metadata. JSON Schema for data structure documentation and programmatic access.</p>
+    <p><strong>Metadata Standards:</strong> Standard README documentation with variable descriptions and usage instructions.</p>
 
-    <p><strong>Documentation Provided:</strong> Data Dictionaries contain variable names, types, units, and valid ranges, stored in README.md files per folder. Provenance information includes source attribution, collection dates, and processing steps, stored in METADATA.json files. Code Documentation includes inline comments and NumPy-style docstrings in source files. Reproducibility materials include requirements.txt, environment.yml, config files, and random seeds in repository roots.</p>
+    <p><strong>Documentation Provided:</strong> Data Dictionaries contain variable names, types, and descriptions in README.md files. Code includes inline comments where helpful. Dependency files (requirements.txt) are provided where applicable.</p>
 
 </div>
 
@@ -140,7 +140,7 @@
 
     <p>No personal data or other sensitive data is used in the project. In this respect, the university internal security standards are applied. The conditions have already been discussed with the data providers. No special security standards are required by the data providers for this data.</p>
 
-    <p><strong>Ethical Considerations:</strong> All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. We maintain transparency in model documentation and perform bias assessment for NLP models. Research outputs are not used for automated trading decisions.</p>
+    <p><strong>Ethical Considerations:</strong> All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. Research outputs are intended for academic purposes.</p>
 
     <p><strong>Data Provider Agreements:</strong> Refinitiv/LSEG operates under academic research license with no redistribution of raw data. RavenPack operates under research subscription with academic use only. Deutsche Borse operates under research collaboration agreement with dr. schlamp with project-specific usage.</p>
 
@@ -152,7 +152,7 @@
 
     <p><strong>Access Control:</strong> Public data (FRED, BIS, SEC) has open access and is stored on GitHub, Zenodo. Commercial data has team only access and is stored on BFH secure server. Deutsche Borse HFT data has restricted access and is stored on Encrypted local storage. Processed features has open (with publication) access and is stored on OSF, Zenodo.</p>
 
-    <p><strong>Security Measures:</strong> BFH IT infrastructure with regular backups and access logging. Encrypted file transfer for commercial data (SFTP, HTTPS). Two-factor authentication for all cloud services. Role-based access control for team members.</p>
+    <p><strong>Security Measures:</strong> BFH IT infrastructure with standard institutional security measures. Encrypted file transfer for commercial data where required.</p>
 
     <p><strong>Authorized Team Members:</strong> Prof. Dr. Joerg Osterrieder (Principal Investigator), Gabin Taibi (PhD Researcher), Lennart John Baals (PhD Researcher), Yiting Liu (PhD Researcher), Marius Jan Klein (Researcher).</p>
 
@@ -174,23 +174,23 @@
 
     <p>The storage capacities are very large, the amount of data remains very limited in the project. The data is managed in the form of databases on GitHub. Backups and versions of the data are continuously created.</p>
 
-    <p><strong>Primary Storage:</strong> Location is BFH Institute for Applied Data Science servers. Capacity is 1 TB allocated for the project. Backup schedule is daily incremental with weekly full backup. Retention is project duration plus 10 years minimum.</p>
+    <p><strong>Primary Storage:</strong> Location is BFH servers. Capacity is Sufficient storage allocated. Backup schedule is regular backups per bfh it policy. Retention is as long as technically feasible.</p>
 
     <p><strong>Cloud Storage:</strong> GitHub (<a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a>) is used for code repositories. OSF (<a href="https://osf.io/nr94j/">osf.io/nr94j/</a>) is used for research materials and preprints. Zenodo is used for archived releases with dois, Linked via GitHub.</p>
 
-    <p><strong>Backup Strategy:</strong> Code is backed up continuous (git) with permanent retention on GitHub. Processed data is backed up weekly with 10 years retention on BFH + Zenodo. Commercial raw data is backed up daily with project duration retention on BFH (encrypted).</p>
+    <p><strong>Backup Strategy:</strong> Code is backed up continuous (git) with as long as github available retention on GitHub. Processed data is backed up periodic with as long as feasible retention on BFH + Zenodo. Commercial raw data is backed up per bfh policy with project duration retention on BFH.</p>
 
     <h3 id="section-3-2">3.2 What is your data preservation plan?</h3>
 
     <p>The data is stored on GitHub for a long time and managed using existing tools. There is no obligation to destroy the data.</p>
 
-    <p><strong>Repository Selection:</strong> Zenodo is operated by CERN/OpenAIRE (non-profit), offers DOI assignment, FAIR compliance, 20+ year guarantee, CoreTrustSeal certification. OSF is operated by Center for Open Science (non-profit), offers Preprints, supplementary materials, version control. arXiv is operated by Cornell University (non-profit), offers Preprints, permanent archive.</p>
+    <p><strong>Repository Selection:</strong> Zenodo is operated by CERN/OpenAIRE (non-profit), offers DOI assignment, long-term storage. OSF is operated by Center for Open Science (non-profit), offers Research materials. arXiv is operated by Cornell University (non-profit), offers Preprints.</p>
 
-    <p><strong>Preservation Timeline:</strong> At paper submission, we archive code and data snapshots with Version DOI via Zenodo. At paper acceptance, we update with final version with Version DOI update. At project end (august 2026), we final comprehensive archive with Concept DOI.</p>
+    <p><strong>Preservation Timeline:</strong> At project end (august 2026), we archive code and shareable outputs with DOI via Zenodo if applicable.</p>
 
     <p><strong>Archival File Formats (Open Standards):</strong> Data in CSV, Parquet, HDF5 (machine-readable, open formats). Documentation in Markdown, PDF/A (long-term readable). Code in Python (plain text, version-controlled). Images in PNG, SVG (lossless, open formats).</p>
 
-    <p><strong>Retention Period:</strong> Minimum 10 years post-project (per SNSF Open Research Data policy)</p>
+    <p><strong>Retention Period:</strong> As long as technically feasible</p>
 
 </div>
 
@@ -204,7 +204,7 @@
 
     <p><strong>Current Outputs (Available Now):</strong> TOPol Framework is published on OSF at <a href="https://osf.io/nr94j/">osf.io/nr94j/</a>. Project Website is live on GitHub Pages at <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">digital-ai-finance.github.io/Narrative-Digital-Finance/</a>.</p>
 
-    <p><strong>Upcoming Deposits:</strong> SLR Methodology and Data will be deposited on Zenodo Upon paper acceptance. HFT Analysis Code will be deposited on GitHub + Zenodo Planned. Macro Narrative Index will be deposited on OSF Planned. Final Project Archive will be deposited on Zenodo Project end (August 2026).</p>
+    <p><strong>Upcoming Deposits:</strong> Code and derived outputs will be deposited on GitHub + Zenodo Subject to publication. Additional materials will be deposited on Zenodo or OSF If applicable.</p>
 
     <p><strong>Sharing by Data Type:</strong> FRED, BIS, SEC: <span class="badge badge-yes">Yes</span> (Public domain / open access). RavenPack raw data: <span class="badge badge-no">No</span> (License restriction). LSEG transcripts: <span class="badge badge-no">No</span> (License restriction). Deutsche Borse T7: <span class="badge badge-no">No</span> (Collaboration agreement). Derived features: <span class="badge badge-yes">Yes</span> (Our work product). All code: <span class="badge badge-yes">Yes</span> (MIT License).</p>
 
@@ -224,7 +224,7 @@
 
     <p><span class="badge badge-yes">Yes</span></p>
 
-    <p><strong>FAIR Data Principles Implementation:</strong> <strong>Findable:</strong> DOIs via Zenodo, indexed in OpenAlex, DataCite, and Google Dataset Search. <strong>Accessible:</strong> Open repositories (Zenodo, OSF, GitHub) with standard protocols (HTTPS). <strong>Interoperable:</strong> Standard formats (CSV, JSON, Parquet), documented schemas, and Python APIs. <strong>Reusable:</strong> CC-BY license, comprehensive metadata, README files, and example notebooks.</p>
+    <p><strong>FAIR Data Principles Implementation:</strong> <strong>Findable:</strong> DOIs via Zenodo where applicable. <strong>Accessible:</strong> Open repositories (Zenodo, OSF, GitHub) with standard protocols. <strong>Interoperable:</strong> Standard formats (CSV, JSON, Parquet). <strong>Reusable:</strong> CC-BY license for project outputs, README files.</p>
 
     <h3 id="section-4-4">4.4 I will choose digital repositories maintained by a non-profit organisation.</h3>
 

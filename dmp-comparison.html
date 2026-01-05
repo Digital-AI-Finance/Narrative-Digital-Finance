@@ -50,16 +50,6 @@
             <a href="dmp.html" class="sidebar-link">Full DMP</a>
             <a href="index.html#datasets" class="sidebar-link">Datasets</a>
         </div>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-section">
-            <div class="sidebar-title">COST Action</div>
-            <a href="cost-action.html" class="sidebar-link">SNSF Integration</a>
-            <a href="cost-network.html" class="sidebar-link">Network (420+)</a>
-            <a href="cost-events.html" class="sidebar-link">Events (150+)</a>
-            <a href="cost-publications.html" class="sidebar-link">Publications</a>
-            <a href="cost-mobility.html" class="sidebar-link">Mobility Grants</a>
-            <a href="cost-resources.html" class="sidebar-link">Resources</a>
-        </div>
     </aside>
 
     <main class="main" id="main-content">
@@ -143,7 +133,7 @@
                             <div class="diff-improvement"><strong>Quality Assurance:</strong></div>
                             <p>The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.</p>
                             <div class="diff-improvement"><strong>Versioning:</strong></div>
-                            <p>The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases receive DOIs via Zenodo integration. Models are tracked using MLflow for experiment tracking and model registry.</p>
+                            <p>The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases may receive DOIs via Zenodo integration.</p>
                         </div>
                     </div>
                 </div>
@@ -159,9 +149,9 @@
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
                             <div class="diff-addition"><strong>Metadata Standards:</strong></div>
-                            <p>Dublin Core for general descriptive metadata. DataCite for DOI registration and citation metadata. JSON Schema for data structure documentation and programmatic access.</p>
+                            <p>Standard README documentation with variable descriptions and usage instructions.</p>
                             <div class="diff-addition"><strong>Documentation Provided:</strong></div>
-                            <p>Data Dictionaries contain variable names, types, units, and valid ranges, stored in README.md files per folder. Provenance information includes source attribution, collection dates, and processing steps, stored in METADATA.json files. Code Documentation includes inline comments and NumPy-style docstrings in source files. Reproducibility materials include requirements.txt, environment.yml, config files, and random seeds in repository roots.</p>
+                            <p>Data Dictionaries contain variable names, types, and descriptions in README.md files. Code includes inline comments where helpful. Dependency files (requirements.txt) are provided where applicable.</p>
                         </div>
                     </div>
                 </div>
@@ -183,7 +173,7 @@
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
                             <div class="diff-improvement"><strong>Ethical Considerations:</strong></div>
-                            <p>All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. We maintain transparency in model documentation and perform bias assessment for NLP models. Research outputs are not used for automated trading decisions.</p>
+                            <p>All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. Research outputs are intended for academic purposes.</p>
                             <div class="diff-addition"><strong>Data Provider Agreements:</strong></div>
                             <table>
                                 <tr><th>Provider</th><th>Terms</th></tr>
@@ -215,7 +205,7 @@
                                 <tr><td>Processed features</td><td>Open (with publication)</td><td>OSF, Zenodo</td></tr>
                             </table>
                             <div class="diff-addition"><strong>Security Measures:</strong></div>
-                            <p>BFH IT infrastructure with regular backups and access logging. Encrypted file transfer for commercial data (SFTP, HTTPS). Two-factor authentication for all cloud services. Role-based access control for team members.</p>
+                            <p>BFH IT infrastructure with standard institutional security measures. Encrypted file transfer for commercial data where required.</p>
                             <div class="diff-addition"><strong>Authorized Team:</strong></div>
                             <ul>
                                 <li>Prof. Dr. Joerg Osterrieder (Principal Investigator)</li>
@@ -277,9 +267,9 @@
                             <div class="column-label">Enhanced</div>
                             <div class="diff-improvement"><strong>Primary Storage:</strong></div>
                             <ul>
-                                <li><strong>Location:</strong> BFH Institute for Applied Data Science servers</li>
-                                <li><strong>Capacity:</strong> 1 TB allocated for the project</li>
-                                <li><strong>Retention:</strong> Project duration plus 10 years minimum</li>
+                                <li><strong>Location:</strong> BFH servers</li>
+                                <li><strong>Capacity:</strong> Sufficient storage allocated</li>
+                                <li><strong>Retention:</strong> As long as technically feasible</li>
                             </ul>
                             <div class="diff-addition"><strong>Cloud Storage:</strong></div>
                             <ul>
@@ -290,9 +280,9 @@
                             <div class="diff-addition"><strong>Backup Strategy:</strong></div>
                             <table>
                                 <tr><th>Type</th><th>Frequency</th><th>Retention</th></tr>
-                                <tr><td>Code</td><td>Continuous (Git)</td><td>Permanent (GitHub)</td></tr>
-                                <tr><td>Processed data</td><td>Weekly</td><td>10 years (BFH + Zenodo)</td></tr>
-                                <tr><td>Commercial raw data</td><td>Daily</td><td>Project duration (BFH (encrypted))</td></tr>
+                                <tr><td>Code</td><td>Continuous (Git)</td><td>As long as GitHub available (GitHub)</td></tr>
+                                <tr><td>Processed data</td><td>Periodic</td><td>As long as feasible (BFH + Zenodo)</td></tr>
+                                <tr><td>Commercial raw data</td><td>Per BFH policy</td><td>Project duration (BFH)</td></tr>
                             </table>
                         </div>
                     </div>
@@ -310,16 +300,14 @@
                             <div class="column-label">Enhanced</div>
                             <div class="diff-addition"><strong>Repository Selection:</strong></div>
                             <ul>
-                                <li><strong>Zenodo (CERN/OpenAIRE (non-profit)):</strong> DOI assignment, FAIR compliance, 20+ year guarantee, CoreTrustSeal certification</li>
-                                <li><strong>OSF (Center for Open Science (non-profit)):</strong> Preprints, supplementary materials, version control</li>
-                                <li><strong>arXiv (Cornell University (non-profit)):</strong> Preprints, permanent archive</li>
+                                <li><strong>Zenodo (CERN/OpenAIRE (non-profit)):</strong> DOI assignment, long-term storage</li>
+                                <li><strong>OSF (Center for Open Science (non-profit)):</strong> Research materials</li>
+                                <li><strong>arXiv (Cornell University (non-profit)):</strong> Preprints</li>
                             </ul>
                             <div class="diff-addition"><strong>Preservation Timeline:</strong></div>
                             <table>
                                 <tr><th>Milestone</th><th>Action</th></tr>
-                                <tr><td>Paper submission</td><td>Archive code and data snapshots (Version DOI via Zenodo)</td></tr>
-                                <tr><td>Paper acceptance</td><td>Update with final version (Version DOI update)</td></tr>
-                                <tr><td>Project end (August 2026)</td><td>Final comprehensive archive (Concept DOI)</td></tr>
+                                <tr><td>Project end (August 2026)</td><td>Archive code and shareable outputs (DOI via Zenodo if applicable)</td></tr>
                             </table>
                             <div class="diff-addition"><strong>Archival File Formats:</strong></div>
                             <ul>
@@ -328,7 +316,7 @@
                                 <li>Code: Python (plain text, version-controlled)</li>
                                 <li>Images: PNG, SVG (lossless, open formats)</li>
                             </ul>
-                            <div class="diff-improvement"><strong>Retention:</strong> Minimum 10 years post-project (per SNSF Open Research Data policy)</div>
+                            <div class="diff-improvement"><strong>Retention:</strong> As long as technically feasible</div>
                         </div>
                     </div>
                 </div>
@@ -358,10 +346,8 @@
                             <div class="diff-addition"><strong>Upcoming Deposits:</strong></div>
                             <table>
                                 <tr><th>Output</th><th>Timeline</th></tr>
-                                <tr><td>SLR Methodology and Data</td><td>Upon paper acceptance</td></tr>
-                                <tr><td>HFT Analysis Code</td><td>Planned</td></tr>
-                                <tr><td>Macro Narrative Index</td><td>Planned</td></tr>
-                                <tr><td>Final Project Archive</td><td>Project end (August 2026)</td></tr>
+                                <tr><td>Code and derived outputs</td><td>Subject to publication</td></tr>
+                                <tr><td>Additional materials</td><td>If applicable</td></tr>
                             </table>
                             <div class="diff-addition"><strong>Sharing Restrictions:</strong></div>
                             <table>
@@ -425,10 +411,10 @@
                             <div class="diff-addition"><strong>FAIR Compliance Matrix:</strong></div>
                             <table>
                                 <tr><th>Principle</th><th>Implementation</th></tr>
-                                <tr><td><strong>Findable</strong></td><td>DOIs via Zenodo, indexed in OpenAlex, DataCite, and Google Dataset Search</td></tr>
-                                <tr><td><strong>Accessible</strong></td><td>Open repositories (Zenodo, OSF, GitHub) with standard protocols (HTTPS)</td></tr>
-                                <tr><td><strong>Interoperable</strong></td><td>Standard formats (CSV, JSON, Parquet), documented schemas, and Python APIs</td></tr>
-                                <tr><td><strong>Reusable</strong></td><td>CC-BY license, comprehensive metadata, README files, and example notebooks</td></tr>
+                                <tr><td><strong>Findable</strong></td><td>DOIs via Zenodo where applicable</td></tr>
+                                <tr><td><strong>Accessible</strong></td><td>Open repositories (Zenodo, OSF, GitHub) with standard protocols</td></tr>
+                                <tr><td><strong>Interoperable</strong></td><td>Standard formats (CSV, JSON, Parquet)</td></tr>
+                                <tr><td><strong>Reusable</strong></td><td>CC-BY license for project outputs, README files</td></tr>
                             </table>
                         </div>
                     </div>
