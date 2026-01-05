@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Papers | Narrative Digital Finance</title>
+    <meta name="description" content="Academic papers from the SNSF Narrative Digital Finance research project covering structural breaks, asset bubbles, and NLP augmentation.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .paper-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .paper-card.complete {
+            border-left: 4px solid var(--accent);
+        }
+        .paper-card.upcoming {
+            border-left: 4px solid #718096;
+            opacity: 0.8;
+        }
+        .paper-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .paper-status.complete {
+            background: rgba(72, 187, 120, 0.2);
+            color: #38a169;
+        }
+        .paper-status.upcoming {
+            background: rgba(113, 128, 150, 0.2);
+            color: #718096;
+        }
+        .paper-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        .paper-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .paper-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .paper-link:hover {
+            background: var(--accent-dark);
+        }
+        .paper-link.secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+        .paper-link.secondary:hover {
+            background: var(--hover-bg);
+        }
+        .key-finding {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .key-finding h3 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .download-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .download-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .download-table th,
+        .download-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .download-table th {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
+        <div class="navbar-nav">
+            <a href="../index.html">Home</a>
+            <a href="index.html" class="active">Papers</a>
+            <a href="../objectives.html">Objectives</a>
+            <a href="../report.html">Report</a>
+            <a href="../inventory.html">Inventory</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar" aria-label="Main navigation">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Papers</div>
+            <ul class="sidebar-nav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#block2">Block 2</a></li>
+                <li><a href="#block1">Block 1</a></li>
+                <li><a href="#block3">Block 3</a></li>
+                <li><a href="#block4">Block 4</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Quick Downloads</div>
+            <a href="block2-conference.pdf" class="sidebar-link">Block 2 (8 pages)</a>
+            <a href="block2-full.pdf" class="sidebar-link">Block 2 Full (23 pages)</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Back to Project</div>
+            <a href="../index.html" class="sidebar-link">Home</a>
+            <a href="../objectives.html" class="sidebar-link">Objectives</a>
+            <a href="../report.html" class="sidebar-link">Final Report</a>
+        </div>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <header class="page-header">
+            <h1>Research Papers</h1>
+            <p class="lead">Academic publications from the SNSF Narrative Digital Finance project</p>
+        </header>
+
+        <section id="overview">
+            <h2>Project Overview</h2>
+            <p>The <strong>Narrative Digital Finance</strong> project (SNSF Grant IZCOZ0_213370) investigates the intersection of natural language processing and quantitative finance across four research blocks.</p>
+
+            <div class="key-finding">
+                <h3>Central Finding (Block 2)</h3>
+                <p><strong>Sentiment LAGS structural breaks by 5 days</strong> - contradicting the conventional assumption that sentiment leads market movements. This finding has significant implications for sentiment-based trading strategies.</p>
+            </div>
+        </section>
+
+        <section id="papers">
+            <h2>Research Blocks</h2>
+
+            <div class="papers-grid">
+                <div class="paper-card complete" id="block2">
+                    <span class="paper-status complete">Complete</span>
+                    <h3 class="paper-title">Block 2: Structural Breaks & Bubbles</h3>
+                    <p class="paper-subtitle">Detection of structural breaks and asset price bubbles with NLP augmentation</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">0.84</div>
+                            <div class="stat-label">PELT F1</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">-5d</div>
+                            <div class="stat-label">Sentiment Lag</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">30%</div>
+                            <div class="stat-label">FP Reduction</div>
+                        </div>
+                    </div>
+                    <div class="paper-links">
+                        <a href="block2-conference.pdf" class="paper-link">Conference (8p)</a>
+                        <a href="block2-full.pdf" class="paper-link">Full Survey (23p)</a>
+                        <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-2" class="paper-link secondary">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="paper-card upcoming" id="block1">
+                    <span class="paper-status upcoming">In Progress</span>
+                    <h3 class="paper-title">Block 1: Narrative Extraction</h3>
+                    <p class="paper-subtitle">Extracting financial narratives from text data using advanced NLP techniques</p>
+                    <div class="paper-links">
+                        <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-1" class="paper-link secondary">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="paper-card upcoming" id="block3">
+                    <span class="paper-status upcoming">Planned</span>
+                    <h3 class="paper-title">Block 3: Real-time Monitoring</h3>
+                    <p class="paper-subtitle">Real-time market monitoring systems using narrative signals</p>
+                    <div class="paper-links">
+                        <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-3" class="paper-link secondary">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="paper-card upcoming" id="block4">
+                    <span class="paper-status upcoming">Planned</span>
+                    <h3 class="paper-title">Block 4: Integration & Applications</h3>
+                    <p class="paper-subtitle">Integrated framework combining all blocks for practical applications</p>
+                    <div class="paper-links">
+                        <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-4" class="paper-link secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="block2-detail">
+            <h2>Block 2: Conference Paper</h2>
+            <p>8-page condensed version suitable for NeurIPS-style venues.</p>
+
+            <embed src="block2-conference.pdf" type="application/pdf" class="pdf-viewer" />
+            <p><em>If the PDF does not display, <a href="block2-conference.pdf">click here to download</a>.</em></p>
+        </section>
+
+        <section id="downloads">
+            <h2>All Downloads</h2>
+
+            <div class="download-section">
+                <table class="download-table">
+                    <thead>
+                        <tr>
+                            <th>Block</th>
+                            <th>Title</th>
+                            <th>Conference Paper</th>
+                            <th>Full Paper</th>
+                            <th>Repository</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Block 2</strong></td>
+                            <td>Structural Breaks Detection</td>
+                            <td><a href="block2-conference.pdf">PDF (8 pages)</a></td>
+                            <td><a href="block2-full.pdf">PDF (23 pages)</a></td>
+                            <td><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-2">GitHub</a></td>
+                        </tr>
+                        <tr>
+                            <td>Block 1</td>
+                            <td>Narrative Extraction</td>
+                            <td><em>Coming soon</em></td>
+                            <td><em>Coming soon</em></td>
+                            <td><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-1">GitHub</a></td>
+                        </tr>
+                        <tr>
+                            <td>Block 3</td>
+                            <td>Real-time Monitoring</td>
+                            <td><em>Coming soon</em></td>
+                            <td><em>Coming soon</em></td>
+                            <td><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-3">GitHub</a></td>
+                        </tr>
+                        <tr>
+                            <td>Block 4</td>
+                            <td>Integration & Applications</td>
+                            <td><em>Coming soon</em></td>
+                            <td><em>Coming soon</em></td>
+                            <td><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-4">GitHub</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="citation">
+            <h2>Citation</h2>
+            <pre><code>@article{osterrieder2025structural,
+  title={Structural Breaks Detection in Financial Markets:
+         NLP Augmentation Reveals Sentiment Lags, Not Leads},
+  author={Osterrieder, Joerg},
+  year={2025},
+  note={SNSF Grant IZCOZ0\_213370}
+}</code></pre>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <strong>Narrative Digital Finance</strong><br>
+                SNSF Grant IZCOZ0_213370<br>
+                CHF 236,118 | July 2023 - June 2026
+            </div>
+            <div class="footer-section">
+                <strong>Principal Investigator</strong><br>
+                Prof. Dr. Joerg Osterrieder<br>
+                <a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a>
+            </div>
+            <div class="footer-section">
+                <strong>Institutions</strong><br>
+                Bern University of Applied Sciences<br>
+                University of Twente
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
