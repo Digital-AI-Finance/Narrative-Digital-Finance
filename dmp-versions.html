@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMP Version Comparison | Narrative Digital Finance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #64748b;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --v1-color: #94a3b8;
+            --v2-color: #f59e0b;
+            --v3-color: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            font-size: 13px;
+        }
+
+        .navbar {
+            background: var(--dark);
+            color: white;
+            padding: 0.75rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .navbar-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .navbar-links a:hover {
+            color: white;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 4rem 1rem 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .version-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .version-badge.v1 {
+            background: rgba(148, 163, 184, 0.15);
+            color: var(--v1-color);
+            border: 1px solid var(--v1-color);
+        }
+
+        .version-badge.v2 {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--v2-color);
+            border: 1px solid var(--v2-color);
+        }
+
+        .version-badge.v3 {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--v3-color);
+            border: 1px solid var(--v3-color);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .version-column {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .version-header {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .version-column.v1 .version-header {
+            background: var(--v1-color);
+            color: white;
+        }
+
+        .version-column.v2 .version-header {
+            background: var(--v2-color);
+            color: white;
+        }
+
+        .version-column.v3 .version-header {
+            background: var(--v3-color);
+            color: white;
+        }
+
+        .version-meta {
+            padding: 0.75rem 1rem;
+            background: rgba(0,0,0,0.02);
+            border-bottom: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--secondary);
+        }
+
+        .version-content {
+            padding: 1rem;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark);
+            padding: 0.5rem 0;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 0.75rem;
+        }
+
+        .question {
+            margin-bottom: 1rem;
+        }
+
+        .question-id {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .question-title {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .question-content {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            line-height: 1.5;
+        }
+
+        .question-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        .data-table {
+            width: 100%;
+            font-size: 0.75rem;
+            border-collapse: collapse;
+            margin: 0.5rem 0;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 0.4rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        .data-table th {
+            background: rgba(0,0,0,0.03);
+            font-weight: 500;
+        }
+
+        .highlight {
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        .highlight-new {
+            background: rgba(34, 197, 94, 0.1);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin: 0.1rem;
+        }
+
+        .tag-yes {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--success);
+        }
+
+        .tag-no {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+        }
+
+        .tag-na {
+            background: rgba(100, 116, 139, 0.15);
+            color: var(--secondary);
+        }
+
+        ul {
+            margin: 0.5rem 0;
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.25rem;
+        }
+
+        .diff-removed {
+            text-decoration: line-through;
+            color: var(--danger);
+            opacity: 0.7;
+        }
+
+        .diff-added {
+            color: var(--success);
+            font-weight: 500;
+        }
+
+        @media (max-width: 1200px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .version-column {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Narrative Digital Finance</h1>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="dmp.html">DMP</a>
+            <a href="dmp-comparison.html">Original vs Enhanced</a>
+            <a href="dmp-versions.html">All Versions</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Data Management Plan - Version Comparison</h1>
+            <p>Grant IZCOZ0_213370 | Prof. Dr. Joerg Osterrieder | CHF 236,118</p>
+            <div class="version-legend">
+                <span class="version-badge v1">v1.0 Original (Aug 2023)</span>
+                <span class="version-badge v2">v2.0 Enhanced (Jan 2026)</span>
+                <span class="version-badge v3">v3.0 Minimal (Jan 2026)</span>
+            </div>
+        </div>
+
+        <div class="comparison-grid">
+            <!-- VERSION 1.0 - ORIGINAL -->
+            <div class="version-column v1">
+                <div class="version-header">v1.0 - Original SNSF Submission</div>
+                <div class="version-meta">August 2023 | As submitted to SNSF</div>
+                <div class="version-content">
+
+                    <div class="section">
+                        <div class="section-title">1. Data Collection and Documentation</div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.1</div>
+                            <div class="question-title">What data will you collect?</div>
+                            <div class="question-content">
+                                <p>We will use publicly available data on financial markets as well data from databases which we buy, e.g. from Refinitiv.</p>
+                                <p><strong>Format:</strong> CSV</p>
+                                <p><strong>Volume:</strong> ~10 GB</p>
+                                <p><strong>Types:</strong> Financial data (integers, characters)</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.2</div>
+                            <div class="question-title">How will data be collected?</div>
+                            <div class="question-content">
+                                <p><strong>Quality:</strong> Statistical methods for consistency/completeness</p>
+                                <p><strong>Versioning:</strong> ZHAW internal tools</p>
+                                <p>Quality checked during first work package.</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.3</div>
+                            <div class="question-title">Documentation and metadata?</div>
+                            <div class="question-content">
+                                <p>Data sources and processes documented in detail. Information available to university employees.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">2. Ethics, Legal and Security</div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.1</div>
+                            <div class="question-title">Ethical issues?</div>
+                            <div class="question-content">
+                                <p>No personal or sensitive data used. University internal security standards applied.</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.2</div>
+                            <div class="question-title">Data access and security?</div>
+                            <div class="question-content">
+                                <p>Access only to team members. University IT service guarantees security.</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.3</div>
+                            <div class="question-title">Copyright and IP?</div>
+                            <div class="question-content">
+                                <p>Project based on largely publicly available data. Raw data may not be published without restriction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">3. Storage and Preservation</div>
+
+                        <div class="question">
+                            <div class="question-id">Q3.1</div>
+                            <div class="question-title">Storage and backup?</div>
+                            <div class="question-content">
+                                <p>Storage capacities very large, data limited.</p>
+                                <p><strong>Location:</strong> ZHAW internal GitHub</p>
+                                <p><strong>Backup:</strong> Continuous versioning</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q3.2</div>
+                            <div class="question-title">Preservation plan?</div>
+                            <div class="question-content">
+                                <p>Stored on ZHAW GitHub long-term. Managed using existing tools. No obligation to destroy.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">4. Sharing and Reuse</div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.1</div>
+                            <div class="question-title">How shared?</div>
+                            <div class="question-content">
+                                <p>Code on GitHub with documentation. Data archiving through Zenodo (CERN Data Centre).</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.2</div>
+                            <div class="question-title">Limitations?</div>
+                            <div class="question-content">
+                                <p>No sensitive data. Data from conventional providers, originally public sources.</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.3</div>
+                            <div class="question-title">FAIR compliant?</div>
+                            <div class="question-content">
+                                <span class="tag tag-yes">YES</span>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.4</div>
+                            <div class="question-title">Non-profit repos?</div>
+                            <div class="question-content">
+                                <span class="tag tag-yes">YES</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- VERSION 2.0 - ENHANCED -->
+            <div class="version-column v2">
+                <div class="version-header">v2.0 - Enhanced Version</div>
+                <div class="version-meta">January 2026 | Conservative revision, removed aspirational claims</div>
+                <div class="version-content">
+
+                    <div class="section">
+                        <div class="section-title">1. Data Collection and Documentation</div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.1</div>
+                            <div class="question-title">What data will you collect?</div>
+                            <div class="question-content">
+                                <p><strong>Total Volume:</strong> <span class="highlight">~65 GB</span></p>
+
+                                <p><strong>Commercial Sources:</strong></p>
+                                <table class="data-table">
+                                    <tr><th>Source</th><th>Volume</th></tr>
+                                    <tr><td>Refinitiv/LSEG</td><td>~5 GB</td></tr>
+                                    <tr><td>RavenPack</td><td>~3 GB</td></tr>
+                                    <tr><td>Deutsche Borse T7</td><td>~50 GB</td></tr>
+                                </table>
+
+                                <p><strong>Public Sources:</strong> BIS, SEC EDGAR, FRED</p>
+
+                                <p><strong>Generated:</strong></p>
+                                <ul>
+                                    <li>TOPol Embeddings (~2 GB)</li>
+                                    <li>NLP Features (~1 GB)</li>
+                                    <li>Macro Index (&lt;100 MB)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.2</div>
+                            <div class="question-title">How will data be collected?</div>
+                            <div class="question-content">
+                                <p><strong>Quality:</strong> Statistical methods + automated validation scripts</p>
+                                <p><strong>Versioning:</strong> <span class="highlight">Git + GitHub</span></p>
+                                <p><strong>APIs:</strong> FRED, SEC EDGAR, BIS scraping</p>
+                                <p><strong>NLP:</strong> HuggingFace, BERT/FinBERT</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.3</div>
+                            <div class="question-title">Documentation and metadata?</div>
+                            <div class="question-content">
+                                <p><strong>Standards:</strong> README documentation</p>
+                                <p><strong>Docs:</strong> Data dictionaries, inline comments, requirements.txt</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">2. Ethics, Legal and Security</div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.1</div>
+                            <div class="question-title">Ethical issues?</div>
+                            <div class="question-content">
+                                <p>No personal data. Aggregated market data only.</p>
+                                <p><strong>Provider Agreements:</strong></p>
+                                <ul>
+                                    <li>Refinitiv: Academic license</li>
+                                    <li>RavenPack: Research subscription</li>
+                                    <li>Deutsche Borse: Dr. Schlamp agreement</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.2</div>
+                            <div class="question-title">Data access and security?</div>
+                            <div class="question-content">
+                                <p><strong>Storage:</strong></p>
+                                <ul>
+                                    <li>Public data: <span class="highlight">GitHub, Zenodo</span></li>
+                                    <li>Commercial: <span class="highlight">BFH secure server</span></li>
+                                    <li>HFT data: Encrypted local</li>
+                                    <li>Processed: OSF, Zenodo</li>
+                                </ul>
+                                <p><strong>Team:</strong> 5 named members</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.3</div>
+                            <div class="question-title">Copyright and IP?</div>
+                            <div class="question-content">
+                                <p><strong>Licenses:</strong></p>
+                                <ul>
+                                    <li>Our code: <span class="highlight">MIT License</span></li>
+                                    <li>Our data: <span class="highlight">CC-BY 4.0</span></li>
+                                </ul>
+                                <p>Commercial data: No redistribution</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">3. Storage and Preservation</div>
+
+                        <div class="question">
+                            <div class="question-id">Q3.1</div>
+                            <div class="question-title">Storage and backup?</div>
+                            <div class="question-content">
+                                <p><strong>Primary:</strong> <span class="highlight">BFH servers</span></p>
+                                <p><strong>Capacity:</strong> Sufficient allocated</p>
+                                <p><strong>Backup:</strong> Per BFH IT policy</p>
+                                <p><strong>Cloud:</strong> GitHub, OSF, Zenodo</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q3.2</div>
+                            <div class="question-title">Preservation plan?</div>
+                            <div class="question-content">
+                                <p><strong>Repositories:</strong></p>
+                                <ul>
+                                    <li>Zenodo (CERN/OpenAIRE)</li>
+                                    <li>OSF (Center for Open Science)</li>
+                                    <li>arXiv (Cornell)</li>
+                                </ul>
+                                <p><strong>Retention:</strong> As long as feasible</p>
+                                <p><strong>Formats:</strong> CSV, Parquet, HDF5, Markdown</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">4. Sharing and Reuse</div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.1</div>
+                            <div class="question-title">How shared?</div>
+                            <div class="question-content">
+                                <p><strong>Live:</strong></p>
+                                <ul>
+                                    <li>TOPol on OSF</li>
+                                    <li>Project website</li>
+                                </ul>
+                                <p><strong>Planned:</strong> Code + outputs on GitHub/Zenodo</p>
+                                <p><strong>Shareable:</strong> FRED, BIS, SEC, derived features, code</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.2</div>
+                            <div class="question-title">Limitations?</div>
+                            <div class="question-content">
+                                <p><strong>Unrestricted:</strong> Code, derived outputs, docs</p>
+                                <p><strong>Restricted:</strong> Commercial raw data</p>
+                                <p><strong>Contact:</strong> joerg.osterrieder@bfh.ch</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.3</div>
+                            <div class="question-title">FAIR compliant?</div>
+                            <div class="question-content">
+                                <span class="tag tag-yes">YES</span>
+                                <table class="data-table">
+                                    <tr><td>Findable</td><td>DOIs via Zenodo</td></tr>
+                                    <tr><td>Accessible</td><td>Open repos (HTTPS)</td></tr>
+                                    <tr><td>Interoperable</td><td>Standard formats</td></tr>
+                                    <tr><td>Reusable</td><td>CC-BY, README</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.4</div>
+                            <div class="question-title">Non-profit repos?</div>
+                            <div class="question-content">
+                                <span class="tag tag-yes">YES</span>
+                                <p>Zenodo (CERN), OSF (COS), arXiv (Cornell)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- VERSION 3.0 - MINIMAL -->
+            <div class="version-column v3">
+                <div class="version-header">v3.0 - Minimal Storage Approach</div>
+                <div class="version-meta">January 2026 | GitHub only, no data re-storage</div>
+                <div class="version-content">
+
+                    <div class="section">
+                        <div class="section-title">1. Data Collection and Documentation</div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.1</div>
+                            <div class="question-title">What data will you collect?</div>
+                            <div class="question-content">
+                                <p class="highlight-new"><strong>Storage Policy:</strong> Public data NOT re-stored. Commercial data on provider servers. Code on GitHub only.</p>
+
+                                <p><strong>Commercial Sources:</strong> (on provider servers)</p>
+                                <table class="data-table">
+                                    <tr><th>Source</th><th>Volume</th></tr>
+                                    <tr><td>Refinitiv/LSEG</td><td>~5 GB</td></tr>
+                                    <tr><td>RavenPack</td><td>~3 GB</td></tr>
+                                    <tr><td>Deutsche Borse T7</td><td>~50 GB</td></tr>
+                                </table>
+
+                                <p><strong>Public Sources:</strong> <span class="highlight-new">URLs only (not re-stored)</span></p>
+                                <ul>
+                                    <li>BIS: bis.org/cbspeeches/</li>
+                                    <li>SEC: sec.gov/edgar</li>
+                                    <li>FRED: fred.stlouisfed.org</li>
+                                </ul>
+
+                                <p><strong>Generated:</strong></p>
+                                <ul>
+                                    <li><span class="highlight-new">Project code only</span> (minimal)</li>
+                                    <li class="diff-removed">TOPol Embeddings</li>
+                                    <li class="diff-removed">NLP Features</li>
+                                    <li class="diff-removed">Macro Index</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.2</div>
+                            <div class="question-title">How will data be collected?</div>
+                            <div class="question-content">
+                                <p><strong>Quality:</strong> Statistical methods + validation scripts</p>
+                                <p><strong>Versioning:</strong> Git + GitHub</p>
+                                <p><strong>DOIs:</strong> <span class="highlight-new">May receive via Zenodo</span></p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q1.3</div>
+                            <div class="question-title">Documentation and metadata?</div>
+                            <div class="question-content">
+                                <p><strong>Standards:</strong> README documentation</p>
+                                <p><strong>Docs:</strong> README.md, comments, requirements.txt</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">2. Ethics, Legal and Security</div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.1</div>
+                            <div class="question-title">Ethical issues?</div>
+                            <div class="question-content">
+                                <p>No personal data. Aggregated market data.</p>
+                                <p><strong>Providers:</strong> Same agreements</p>
+                                <p><strong>Ethics:</strong> Not required (SNSF)</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.2</div>
+                            <div class="question-title">Data access and security?</div>
+                            <div class="question-content">
+                                <p><strong>Storage:</strong></p>
+                                <ul>
+                                    <li>Public: <span class="highlight-new">Original URLs (not re-stored)</span></li>
+                                    <li>Commercial: <span class="highlight-new">Provider cloud (not redistributable)</span></li>
+                                    <li>Code: <span class="highlight-new">GitHub</span></li>
+                                </ul>
+                                <p class="diff-removed">BFH secure server</p>
+                                <p><strong>Security:</strong> Commercial data on provider infrastructure</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q2.3</div>
+                            <div class="question-title">Copyright and IP?</div>
+                            <div class="question-content">
+                                <p><strong>Licenses:</strong></p>
+                                <ul>
+                                    <li>Our code: MIT License</li>
+                                    <li>Our data: CC-BY 4.0</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">3. Storage and Preservation</div>
+
+                        <div class="question">
+                            <div class="question-id">Q3.1</div>
+                            <div class="question-title">Storage and backup?</div>
+                            <div class="question-content">
+                                <p><strong>Primary:</strong> <span class="highlight-new">GitHub repositories</span></p>
+                                <p class="diff-removed">BFH servers</p>
+                                <p><strong>Capacity:</strong> <span class="highlight-new">Unlimited (code only)</span></p>
+                                <p><strong>Backup:</strong> <span class="highlight-new">Git version control</span></p>
+                                <p class="diff-removed">BFH IT policy</p>
+                                <p><strong>Retention:</strong> <span class="highlight-new">As long as GitHub available</span></p>
+                                <p><strong>Rationale:</strong> Public data via URLs. Commercial on provider servers. Code on GitHub.</p>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q3.2</div>
+                            <div class="question-title">Preservation plan?</div>
+                            <div class="question-content">
+                                <p><strong>Repository:</strong></p>
+                                <ul>
+                                    <li><span class="highlight-new">GitHub (Microsoft)</span></li>
+                                </ul>
+                                <p class="diff-removed">Zenodo, OSF, arXiv</p>
+                                <p><strong>Retention:</strong> <span class="highlight-new">As long as GitHub available</span></p>
+                                <p><strong>Note:</strong> Public data at original sources. Commercial data is provider responsibility.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">4. Sharing and Reuse</div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.1</div>
+                            <div class="question-title">How shared?</div>
+                            <div class="question-content">
+                                <p><strong>Live:</strong> Project Website (GitHub Pages)</p>
+
+                                <p><strong>Sharing by Type:</strong></p>
+                                <table class="data-table">
+                                    <tr><th>Data</th><th>Shareable</th></tr>
+                                    <tr><td>Public (FRED, BIS, SEC)</td><td><span class="tag tag-na">N/A</span> at original sources</td></tr>
+                                    <tr><td>Commercial</td><td><span class="tag tag-no">NO</span> license restrictions</td></tr>
+                                    <tr><td>Project code</td><td><span class="tag tag-yes">YES</span> GitHub (MIT)</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.2</div>
+                            <div class="question-title">Limitations?</div>
+                            <div class="question-content">
+                                <p><strong>What we share:</strong></p>
+                                <ul>
+                                    <li>Project code (MIT on GitHub)</li>
+                                </ul>
+                                <p><strong>What we do NOT store/share:</strong></p>
+                                <ul>
+                                    <li><span class="highlight-new">Public data - available at original sources</span></li>
+                                    <li><span class="highlight-new">Commercial data - on provider infrastructure</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.3</div>
+                            <div class="question-title">FAIR compliant?</div>
+                            <div class="question-content">
+                                <span class="tag tag-yes">YES</span>
+                                <table class="data-table">
+                                    <tr><td>Findable</td><td><span class="highlight-new">Code on GitHub (public)</span></td></tr>
+                                    <tr><td>Accessible</td><td><span class="highlight-new">GitHub HTTPS</span></td></tr>
+                                    <tr><td>Interoperable</td><td><span class="highlight-new">Python, standard libs</span></td></tr>
+                                    <tr><td>Reusable</td><td><span class="highlight-new">MIT License, README</span></td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-id">Q4.4</div>
+                            <div class="question-title">Non-profit repos?</div>
+                            <div class="question-content">
+                                <span class="tag tag-yes">YES</span>
+                                <p class="highlight-new">GitHub (Microsoft) for code. Not a non-profit, but standard for open-source.</p>
+                                <p><span class="highlight-new">Project does not store data requiring non-profit repo.</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="header" style="margin-top: 2rem;">
+            <h2 style="font-size: 1.2rem; margin-bottom: 1rem;">Key Changes Summary</h2>
+            <table class="data-table" style="max-width: 900px; margin: 0 auto; font-size: 0.85rem;">
+                <tr>
+                    <th style="width: 20%;">Aspect</th>
+                    <th style="width: 25%;">v1.0 Original</th>
+                    <th style="width: 25%;">v2.0 Enhanced</th>
+                    <th style="width: 30%;">v3.0 Minimal</th>
+                </tr>
+                <tr>
+                    <td><strong>Data Volume</strong></td>
+                    <td>~10 GB</td>
+                    <td>~65 GB</td>
+                    <td>Code only (minimal)</td>
+                </tr>
+                <tr>
+                    <td><strong>Public Data</strong></td>
+                    <td>Not specified</td>
+                    <td>Stored on GitHub/Zenodo</td>
+                    <td>NOT stored - URLs only</td>
+                </tr>
+                <tr>
+                    <td><strong>Commercial Data</strong></td>
+                    <td>Refinitiv mentioned</td>
+                    <td>BFH secure server</td>
+                    <td>Provider servers only</td>
+                </tr>
+                <tr>
+                    <td><strong>Primary Storage</strong></td>
+                    <td>ZHAW GitHub</td>
+                    <td>BFH servers</td>
+                    <td>GitHub only</td>
+                </tr>
+                <tr>
+                    <td><strong>Backup</strong></td>
+                    <td>Continuous versioning</td>
+                    <td>BFH IT policy</td>
+                    <td>Git version control</td>
+                </tr>
+                <tr>
+                    <td><strong>Repositories</strong></td>
+                    <td>GitHub, Zenodo</td>
+                    <td>GitHub, Zenodo, OSF, arXiv</td>
+                    <td>GitHub only</td>
+                </tr>
+                <tr>
+                    <td><strong>Generated Outputs</strong></td>
+                    <td>Not specified</td>
+                    <td>TOPol, NLP, Macro Index</td>
+                    <td>Project code only</td>
+                </tr>
+                <tr>
+                    <td><strong>SNSF Compliance</strong></td>
+                    <td>Basic</td>
+                    <td>Enhanced</td>
+                    <td>Minimal but compliant</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>Grant IZCOZ0_213370 | <a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a></p>
+            <p>Generated January 2026 | <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>
