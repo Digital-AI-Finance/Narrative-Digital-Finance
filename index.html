@@ -500,53 +500,208 @@
             margin-top: 0.25rem;
         }
 
-        /* Publication */
-        .pub-card {
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            background: var(--lighter);
-            transition: all 0.3s;
+        /* Publication Table */
+        .pub-table-container {
+            overflow-x: auto;
+            margin-top: 1.5rem;
         }
-        .pub-card:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: var(--secondary);
+        .pub-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            min-width: 800px;
         }
-        .pub-label {
-            display: inline-block;
+        .pub-table th {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 0.5rem;
+            text-align: left;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+        }
+        .pub-table th:hover {
+            background: var(--primary-light);
+        }
+        .pub-table th .sort-icon {
+            margin-left: 0.25rem;
+            opacity: 0.5;
+        }
+        .pub-table td {
+            padding: 0.75rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .pub-table tr:hover {
+            background: var(--light);
+        }
+        .pub-table .title-cell {
+            max-width: 350px;
+        }
+        .pub-table .title-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .pub-table .title-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        .pub-table .authors-cell {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            max-width: 200px;
+        }
+        .pub-table .venue-cell {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        .pub-table .citations-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: var(--light);
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .pub-table .citations-badge.high {
             background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
             color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
+        }
+        .pub-table .doi-link {
+            color: var(--secondary);
+            text-decoration: none;
             font-size: 0.75rem;
+        }
+        .pub-table .doi-link:hover {
+            text-decoration: underline;
+        }
+        .pub-table .oa-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.125rem 0.375rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
             font-weight: 600;
+        }
+        .pub-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
             margin-bottom: 1rem;
         }
-        .pub-card h4 {
-            color: var(--primary);
-            font-size: 1.15rem;
-            line-height: 1.5;
-            margin-bottom: 0.75rem;
+        .pub-search {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 250px;
+            transition: border-color 0.2s;
         }
-        .pub-card .authors {
+        .pub-search:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        .pub-count {
             color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
         }
-        .pub-card .venue {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.9rem;
+        .refresh-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
         }
-        .pub-card .abstract {
-            margin-top: 1.25rem;
-            padding-top: 1.25rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.9rem;
+        .refresh-btn:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+        .refresh-btn.loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .refresh-btn .spinner {
+            display: none;
+            width: 14px;
+            height: 14px;
+            border: 2px solid currentColor;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        .refresh-btn.loading .spinner {
+            display: inline-block;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Team Metrics */
+        .team-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .team-metric {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            background: var(--lighter);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        .team-metric-value {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+        .team-metric-label {
+            font-size: 0.65rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+        .team-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+        .team-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--light);
+            border-radius: 4px;
+            font-size: 0.7rem;
             color: var(--text);
-            line-height: 1.7;
+            text-decoration: none;
+            transition: all 0.2s;
         }
-        .pub-card .links { margin-top: 1.5rem; }
+        .team-link:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        .team-link img {
+            height: 14px;
+        }
 
         /* Timeline */
         .timeline { position: relative; padding-left: 2rem; }
@@ -846,12 +1001,70 @@
                         <p class="section-subtitle">University of Twente & Bern Business School</p>
                     </div>
                 </div>
-                <div class="grid">
+                <div class="grid" id="teamGrid">
                     <div class="card team-card">
                         <div class="team-avatar">JO</div>
                         <h4>Joerg Osterrieder</h4>
                         <p class="role">Principal Investigator</p>
                         <p class="affiliation">Bern Business School<br>University of Twente</p>
+                        <div class="team-metrics">
+                            <div class="team-metric">
+                                <span class="team-metric-value">136</span>
+                                <span class="team-metric-label">Works</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">1,153</span>
+                                <span class="team-metric-label">Citations</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">13</span>
+                                <span class="team-metric-label">h-index</span>
+                            </div>
+                        </div>
+                        <div class="team-links">
+                            <a href="https://orcid.org/0000-0003-0189-8636" target="_blank" class="team-link">ORCID</a>
+                            <a href="https://scholar.google.com/citations?user=ocRaXoIAAAAJ" target="_blank" class="team-link">Scholar</a>
+                            <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2618281" target="_blank" class="team-link">SSRN</a>
+                        </div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-avatar">BH</div>
+                        <h4>Branka Hadji Misheva</h4>
+                        <p class="role">Team Member</p>
+                        <p class="affiliation">Bern Business School</p>
+                        <div class="team-metrics">
+                            <div class="team-metric">
+                                <span class="team-metric-value">42</span>
+                                <span class="team-metric-label">Works</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">380</span>
+                                <span class="team-metric-label">Citations</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">9</span>
+                                <span class="team-metric-label">h-index</span>
+                            </div>
+                        </div>
+                        <div class="team-links">
+                            <a href="https://orcid.org/0000-0001-7020-3469" target="_blank" class="team-link">ORCID</a>
+                        </div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-avatar">GT</div>
+                        <h4>Gabin Taibi</h4>
+                        <p class="role">PhD Researcher</p>
+                        <p class="affiliation">Bern Business School<br>University of Twente</p>
+                        <div class="team-metrics">
+                            <div class="team-metric">
+                                <span class="team-metric-value">1</span>
+                                <span class="team-metric-label">Works</span>
+                            </div>
+                            <div class="team-metric">
+                                <span class="team-metric-value">1</span>
+                                <span class="team-metric-label">Citations</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="card team-card">
                         <div class="team-avatar">MK</div>
@@ -859,19 +1072,10 @@
                         <p class="role">Team Member</p>
                         <p class="affiliation">Bern Business School</p>
                     </div>
-                    <div class="card team-card">
-                        <div class="team-avatar">BH</div>
-                        <h4>Branka Hadji Misheva</h4>
-                        <p class="role">Team Member</p>
-                        <p class="affiliation">Bern Business School</p>
-                    </div>
-                    <div class="card team-card">
-                        <div class="team-avatar">GT</div>
-                        <h4>Gabin Taibi</h4>
-                        <p class="role">Team Member</p>
-                        <p class="affiliation">Bern Business School<br>University of Twente</p>
-                    </div>
                 </div>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-light);">
+                    Metrics from <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a>
+                </p>
             </section>
 
             <!-- Methods -->
@@ -908,20 +1112,28 @@
                         <p class="section-subtitle">Project impact and deliverables</p>
                     </div>
                 </div>
-                <div class="stats-grid">
+                <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
                     <div class="stat-card">
-                        <div class="stat-number">1</div>
+                        <div class="stat-number">119</div>
                         <div class="stat-label">Publications</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Datasets</div>
+                        <div class="stat-number">1,534</div>
+                        <div class="stat-label">Total Citations</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Collaborations</div>
+                        <div class="stat-number">13</div>
+                        <div class="stat-label">h-index (PI)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">CHF 236K</div>
+                        <div class="stat-label">SNSF Funding</div>
                     </div>
                 </div>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-light);">
+                    Publication metrics from <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a> |
+                    Project: Aug 2023 - Aug 2026
+                </p>
             </section>
 
             <!-- Publications -->
@@ -930,22 +1142,40 @@
                     <div class="section-icon">&#9998;</div>
                     <div>
                         <h2>Publications</h2>
-                        <p class="section-subtitle">Our research contributions</p>
+                        <p class="section-subtitle">Team research contributions from OpenAlex</p>
                     </div>
                 </div>
-                <div class="pub-card">
-                    <span class="pub-label">Research Paper</span>
-                    <h4>Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI</h4>
-                    <p class="authors">Bolesta, K., Taibi, G., Codruta, M., Osterrieder, J., Hadji-Misheva, B. & Hopp, C.</p>
-                    <p class="venue">SSRN, 2024</p>
-                    <div class="abstract">
-                        <p>This paper presents an advanced conceptual framework for the analysis of textual data in the context of financial securities. We hypothesize that a comprehensive evaluation of events within the broader economic environment significantly influences the pricing of financial instruments.</p>
-                        <p style="margin-top: 0.75rem;">The research extends beyond traditional NLP by proposing the inclusion of non-textual data forms such as images, videos, and audio. We leverage recent developments in Generative AI to expand the breadth of textual analysis through varied textual datasets.</p>
+                <div class="pub-controls">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <input type="text" class="pub-search" id="pubSearch" placeholder="Search publications...">
+                        <span class="pub-count" id="pubCount">Loading...</span>
                     </div>
-                    <div class="links">
-                        <a href="#" class="btn btn-outline btn-sm">Read Paper</a>
-                    </div>
+                    <button class="refresh-btn" id="refreshBtn" onclick="refreshFromOpenAlex()">
+                        <span class="spinner"></span>
+                        Refresh from OpenAlex
+                    </button>
                 </div>
+                <div class="pub-table-container">
+                    <table class="pub-table" id="pubTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)" style="width: 60px;">Year <span class="sort-icon">&#8597;</span></th>
+                                <th onclick="sortTable(1)">Title <span class="sort-icon">&#8597;</span></th>
+                                <th onclick="sortTable(2)" style="width: 180px;">Authors <span class="sort-icon">&#8597;</span></th>
+                                <th onclick="sortTable(3)" style="width: 150px;">Venue <span class="sort-icon">&#8597;</span></th>
+                                <th onclick="sortTable(4)" style="width: 80px;">Citations <span class="sort-icon">&#8597;</span></th>
+                                <th style="width: 80px;">Links</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pubTableBody">
+                            <tr><td colspan="6" style="text-align: center; padding: 2rem;">Loading publications...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-light);">
+                    Data source: <a href="https://openalex.org" target="_blank" style="color: var(--secondary);">OpenAlex</a> -
+                    Open catalog of scholarly works
+                </p>
             </section>
 
             <!-- Collaborations -->
@@ -1100,6 +1330,10 @@
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">&#8593;</button>
 
     <script>
+        // Global publications data
+        let publicationsData = [];
+        let sortDirection = {};
+
         function toggleMenu() {
             document.getElementById('navMenu').classList.toggle('show');
             document.getElementById('sidebar').classList.toggle('open');
@@ -1146,6 +1380,161 @@
             el.style.transition = 'all 0.6s ease-out';
             observer.observe(el);
         });
+
+        // Publications functionality
+        async function loadPublications() {
+            try {
+                const response = await fetch('data/publications.json');
+                publicationsData = await response.json();
+                renderPublications(publicationsData);
+            } catch (error) {
+                console.error('Error loading publications:', error);
+                document.getElementById('pubTableBody').innerHTML =
+                    '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-light);">Unable to load publications. Try refreshing from OpenAlex.</td></tr>';
+                document.getElementById('pubCount').textContent = '0 publications';
+            }
+        }
+
+        function renderPublications(pubs) {
+            const tbody = document.getElementById('pubTableBody');
+            const countEl = document.getElementById('pubCount');
+
+            if (!pubs || pubs.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem;">No publications found.</td></tr>';
+                countEl.textContent = '0 publications';
+                return;
+            }
+
+            countEl.textContent = `${pubs.length} publications`;
+
+            tbody.innerHTML = pubs.map(pub => {
+                const citationClass = pub.cited_by_count >= 10 ? 'high' : '';
+                const doiLink = pub.doi_url ? `<a href="${pub.doi_url}" target="_blank" class="doi-link">DOI</a>` : '';
+                const oaBadge = pub.open_access ? '<span class="oa-badge">OA</span>' : '';
+                const titleLink = pub.doi_url
+                    ? `<a href="${pub.doi_url}" target="_blank" class="title-link">${pub.title || 'Untitled'}</a>`
+                    : (pub.title || 'Untitled');
+
+                return `<tr>
+                    <td>${pub.year || '-'}</td>
+                    <td class="title-cell">${titleLink}</td>
+                    <td class="authors-cell">${pub.authors_str || '-'}</td>
+                    <td class="venue-cell">${pub.venue || '-'}</td>
+                    <td><span class="citations-badge ${citationClass}">${pub.cited_by_count || 0}</span></td>
+                    <td>${doiLink} ${oaBadge}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function sortTable(columnIndex) {
+            const dir = sortDirection[columnIndex] === 'asc' ? 'desc' : 'asc';
+            sortDirection[columnIndex] = dir;
+
+            const sortedData = [...publicationsData].sort((a, b) => {
+                let valA, valB;
+                switch(columnIndex) {
+                    case 0: valA = a.year || 0; valB = b.year || 0; break;
+                    case 1: valA = (a.title || '').toLowerCase(); valB = (b.title || '').toLowerCase(); break;
+                    case 2: valA = (a.authors_str || '').toLowerCase(); valB = (b.authors_str || '').toLowerCase(); break;
+                    case 3: valA = (a.venue || '').toLowerCase(); valB = (b.venue || '').toLowerCase(); break;
+                    case 4: valA = a.cited_by_count || 0; valB = b.cited_by_count || 0; break;
+                    default: return 0;
+                }
+                if (typeof valA === 'number') {
+                    return dir === 'asc' ? valA - valB : valB - valA;
+                }
+                return dir === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+            });
+            renderPublications(sortedData);
+        }
+
+        // Search functionality
+        document.getElementById('pubSearch').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const filtered = publicationsData.filter(pub =>
+                (pub.title || '').toLowerCase().includes(query) ||
+                (pub.authors_str || '').toLowerCase().includes(query) ||
+                (pub.venue || '').toLowerCase().includes(query) ||
+                String(pub.year || '').includes(query)
+            );
+            renderPublications(filtered);
+        });
+
+        // OpenAlex API endpoints
+        const OPENALEX_AUTHORS = [
+            { name: 'Joerg Osterrieder', search: 'Joerg Osterrieder', minWorks: 100 },
+            { name: 'Branka Hadji Misheva', search: 'Branka Hadji Misheva' },
+            { name: 'Gabin Taibi', search: 'Gabin Taibi' }
+        ];
+
+        async function refreshFromOpenAlex() {
+            const btn = document.getElementById('refreshBtn');
+            btn.classList.add('loading');
+            document.getElementById('pubTableBody').innerHTML =
+                '<tr><td colspan="6" style="text-align: center; padding: 2rem;">Fetching from OpenAlex API...</td></tr>';
+
+            try {
+                const allWorks = [];
+                const seenIds = new Set();
+
+                for (const author of OPENALEX_AUTHORS) {
+                    // Search for author
+                    let url = `https://api.openalex.org/authors?search=${encodeURIComponent(author.search)}&per_page=5&mailto=web@example.com`;
+                    if (author.minWorks) {
+                        url += `&filter=works_count:>${author.minWorks}`;
+                    }
+
+                    const authorRes = await fetch(url);
+                    const authorData = await authorRes.json();
+
+                    if (authorData.results && authorData.results.length > 0) {
+                        const authorId = authorData.results[0].id;
+
+                        // Fetch works
+                        const worksRes = await fetch(
+                            `https://api.openalex.org/works?filter=authorships.author.id:${authorId}&per_page=100&sort=publication_year:desc&mailto=web@example.com`
+                        );
+                        const worksData = await worksRes.json();
+
+                        if (worksData.results) {
+                            for (const work of worksData.results) {
+                                if (!seenIds.has(work.id)) {
+                                    seenIds.add(work.id);
+                                    allWorks.push({
+                                        id: work.id,
+                                        title: work.title,
+                                        year: work.publication_year,
+                                        doi: work.doi ? work.doi.replace('https://doi.org/', '') : null,
+                                        doi_url: work.doi,
+                                        authors_str: work.authorships?.slice(0, 5).map(a => a.author?.display_name).join(', ') + (work.authorships?.length > 5 ? '...' : ''),
+                                        venue: work.primary_location?.source?.display_name || '',
+                                        cited_by_count: work.cited_by_count || 0,
+                                        open_access: work.open_access?.is_oa || false,
+                                        team_member: author.name
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Sort by year desc
+                allWorks.sort((a, b) => (b.year || 0) - (a.year || 0));
+
+                publicationsData = allWorks;
+                renderPublications(publicationsData);
+
+            } catch (error) {
+                console.error('Error fetching from OpenAlex:', error);
+                document.getElementById('pubTableBody').innerHTML =
+                    '<tr><td colspan="6" style="text-align: center; padding: 2rem; color: red;">Error fetching from OpenAlex. Please try again.</td></tr>';
+            } finally {
+                btn.classList.remove('loading');
+            }
+        }
+
+        // Load publications on page load
+        document.addEventListener('DOMContentLoaded', loadPublications);
     </script>
 </body>
 </html>

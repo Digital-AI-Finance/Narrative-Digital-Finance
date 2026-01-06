@@ -12,7 +12,7 @@
     ],
     "authors_str": "Marcos Machado, Daniel Chen, Joerg Osterrieder",
     "venue": "Decision Analytics Journal",
-    "cited_by_count": 5,
+    "cited_by_count": 3,
     "type": "article",
     "open_access": true,
     "abstract": "",
@@ -39,7 +39,7 @@
     ],
     "authors_str": "Luca L. Kozian, Marcos Machado, Joerg Osterrieder",
     "venue": "Decisions in Economics and Finance",
-    "cited_by_count": 4,
+    "cited_by_count": 3,
     "type": "article",
     "open_access": true,
     "abstract": "Abstract In this study, we explore the efficacy of various methodologies and co-movement measures for modeling the co-movement of cross-commodity prices, using macroeconomic variables. Applying Vector Autoregression (VAR), VAR with exogenous variables (VARX), multiple regressions, and Random Forest regressions, alongside Pearson correlations and Gerber statistics, we analyze the price co-movement of 20 key commodities over the period from mid-2003 to early 2023. Our results reveal that VAR and V...",
@@ -50,7 +50,7 @@
       "Computer science",
       "Machine learning"
     ],
-    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10203-025-00512-1.pdf",
+    "pdf_url": "https://doi.org/10.1007/s10203-025-00512-1",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -131,82 +131,6 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W4416312522",
-    "title": "NLP - Neural Language Models",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.72",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.72",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416311543",
-    "title": "NLP_TransformersTraining",
-    "year": 2025,
-    "doi": "10.24818/ida-ql/2025.220",
-    "doi_url": "https://doi.org/10.24818/ida-ql/2025.220",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416311387",
-    "title": "NLP_TokenJourney",
-    "year": 2025,
-    "doi": "10.24818/ida-ql/2025.223",
-    "doi_url": "https://doi.org/10.24818/ida-ql/2025.223",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312495",
-    "title": "NLP - Decoding Strategies",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.78",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.78",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
     "id": "https://openalex.org/W4406329469",
     "title": "Implementation of Share Buybacks and Their Impact on Corporate Governance",
     "year": 2025,
@@ -230,120 +154,6 @@
       "Accounting"
     ],
     "pdf_url": "https://doi.org/10.2139/ssrn.5019696",
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312455",
-    "title": "NLP - The Transformer Revolution",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.83",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.83",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416311457",
-    "title": "NLP_Ngrams",
-    "year": 2025,
-    "doi": "10.24818/ida-ql/2025.224",
-    "doi_url": "https://doi.org/10.24818/ida-ql/2025.224",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312488",
-    "title": "NLP - Tokenization and Subword Models",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.77",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.77",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312527",
-    "title": "NLP - Recurrent Neural Networks",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.73",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.73",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416311503",
-    "title": "NLP_Embeddings",
-    "year": 2025,
-    "doi": "10.24818/ida-ql/2025.226",
-    "doi_url": "https://doi.org/10.24818/ida-ql/2025.226",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416311532",
-    "title": "NLP_TransformersSimple",
-    "year": 2025,
-    "doi": "10.24818/ida-ql/2025.221",
-    "doi_url": "https://doi.org/10.24818/ida-ql/2025.221",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -376,120 +186,6 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W4416312517",
-    "title": "Foundations and Statistical Language Models",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.71",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.71",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312435",
-    "title": "NLP - Fine-tuning and Prompt Engineering",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.79",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.79",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416311473",
-    "title": "NLP_Neural",
-    "year": 2025,
-    "doi": "10.24818/ida-ql/2025.225",
-    "doi_url": "https://doi.org/10.24818/ida-ql/2025.225",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416311495",
-    "title": "NLP_Transformers3D",
-    "year": 2025,
-    "doi": "10.24818/ida-ql/2025.222",
-    "doi_url": "https://doi.org/10.24818/ida-ql/2025.222",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312481",
-    "title": "NLP - Efficiency and Deployment",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.80",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.80",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312503",
-    "title": "NLP - Sequence-to-Sequence Models",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.74",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.74",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
     "id": "https://openalex.org/W4413850493",
     "title": "State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending",
     "year": 2025,
@@ -514,44 +210,6 @@
       "Monetary economics"
     ],
     "pdf_url": "https://doi.org/10.2139/ssrn.5421207",
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312378",
-    "title": "NLP - Predicting the next word",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.84",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.84",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416312432",
-    "title": "NLP - Advanced Transformers",
-    "year": 2025,
-    "doi": "10.24818/ida-cl/2025.82",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2025.82",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -581,202 +239,26 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W7117150537",
-    "title": "World Central Banker Speech Transcripts and Metadata",
+    "id": "https://openalex.org/W4416074989",
+    "title": "TransClean: Finding False Positives in Multi-Source Entity Matching under Real-World Conditions via Transitive Consistency",
     "year": 2025,
-    "doi": "10.5281/zenodo.18034730",
-    "doi_url": "https://doi.org/10.5281/zenodo.18034730",
+    "doi": "10.48550/arxiv.2506.04006",
+    "doi_url": "https://doi.org/10.48550/arxiv.2506.04006",
     "authors": [
-      "Gabin Taibi"
-    ],
-    "authors_str": "Gabin Taibi",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": true,
-    "abstract": "The BIS publishes select speeches delivered by central bank Governors and policy relevant speeches by senior central bankers. Speeches are chosen for publication where they focus on core central banking topics and are of relevance to a global audience. Translations are provided by the central banks and most original texts are available on the central bank websites. This extract doesn't include 875 speeches (accessible directly from BIS CB Speeches webpage) that haven't been added on the API yet....",
-    "concepts": [
-      "Central bank",
-      "Metadata",
-      "World Wide Web",
-      "Computer science",
-      "Focus (optics)"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.18034730",
-    "team_member": "Gabin Taibi"
-  },
-  {
-    "id": "https://openalex.org/W7117115718",
-    "title": "World Central Banker Speech Transcripts and Metadata",
-    "year": 2025,
-    "doi": "10.5281/zenodo.18034729",
-    "doi_url": "https://doi.org/10.5281/zenodo.18034729",
-    "authors": [
-      "Gabin Taibi"
-    ],
-    "authors_str": "Gabin Taibi",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "dataset",
-    "open_access": true,
-    "abstract": "The BIS publishes select speeches delivered by central bank Governors and policy relevant speeches by senior central bankers. Speeches are chosen for publication where they focus on core central banking topics and are of relevance to a global audience. Translations are provided by the central banks and most original texts are available on the central bank websites. This extract doesn't include 875 speeches (accessible directly from BIS CB Speeches webpage) that haven't been added on the API yet....",
-    "concepts": [
-      "Central bank",
-      "Metadata",
-      "World Wide Web",
-      "Computer science",
-      "Focus (optics)"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.18034729",
-    "team_member": "Gabin Taibi"
-  },
-  {
-    "id": "https://openalex.org/W7116273130",
-    "title": "State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending",
-    "year": 2025,
-    "doi": "10.5281/zenodo.17990398",
-    "doi_url": "https://doi.org/10.5281/zenodo.17990398",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit provides the materials required to reproduce the empirical workflow and figures of the study: “State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending.” The study is part of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” (Chapter 5) by Lennart John Baals. The repository contains (i) the LaTeX source of the manuscript / chapter, (ii) the Python implementation of the macro-factor extraction and reg...",
-    "concepts": [
-      "Workflow",
-      "Python (programming language)",
-      "Computer science",
-      "Macro",
-      "Pipeline (software)"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17990398",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116495997",
-    "title": "State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending",
-    "year": 2025,
-    "doi": "10.5281/zenodo.17990397",
-    "doi_url": "https://doi.org/10.5281/zenodo.17990397",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit provides the materials required to reproduce the empirical workflow and figures of the study: “State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending.” The study is part of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” (Chapter 5) by Lennart John Baals. The repository contains (i) the LaTeX source of the manuscript / chapter, (ii) the Python implementation of the macro-factor extraction and reg...",
-    "concepts": [
-      "Workflow",
-      "Python (programming language)",
-      "Computer science",
-      "Macro",
-      "Pipeline (software)"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17990397",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116387789",
-    "title": "Network Evidence on Credit-Risk Pricing in P2P Lending",
-    "year": 2025,
-    "doi": "10.5281/zenodo.17990873",
-    "doi_url": "https://doi.org/10.5281/zenodo.17990873",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit provides the materials required to reproduce the analysis workflow, figures, and manuscript source for the study: “Network Evidence on Credit-Risk Pricing in P2P Lending.” The study forms Chapter 4 of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals. The deposit contains (i) the LaTeX source for the chapter / paper, (ii) the computational scripts and notebooks used to construct similarity-...",
-    "concepts": [
-      "Computer science",
-      "Workflow",
-      "Scripting language",
-      "Construct (python library)",
-      "Key (lock)"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17990873",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116425142",
-    "title": "Network Evidence on Credit-Risk Pricing in P2P Lending",
-    "year": 2025,
-    "doi": "10.5281/zenodo.17990872",
-    "doi_url": "https://doi.org/10.5281/zenodo.17990872",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit provides the materials required to reproduce the analysis workflow, figures, and manuscript source for the study: “Network Evidence on Credit-Risk Pricing in P2P Lending.” The study forms Chapter 4 of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals. The deposit contains (i) the LaTeX source for the chapter / paper, (ii) the computational scripts and notebooks used to construct similarity-...",
-    "concepts": [
-      "Computer science",
-      "Workflow",
-      "Scripting language",
-      "Construct (python library)",
-      "Key (lock)"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17990872",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7117129838",
-    "title": "Network Evidence on Credit-Risk Pricing in P2P Lending",
-    "year": 2025,
-    "doi": "10.2139/ssrn.5952776",
-    "doi_url": "https://doi.org/10.2139/ssrn.5952776",
-    "authors": [
-      "Lennart John Baals",
-      "Joerg Osterrieder",
+      "Fernando de Meer Pardo",
       "Branka Hadji Misheva",
-      "Y. Wang"
+      "Martín Braschler",
+      "Kurt Stockinger"
     ],
-    "authors_str": "Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva, Y. Wang",
-    "venue": "SSRN Electronic Journal",
+    "authors_str": "Fernando de Meer Pardo, Branka Hadji Misheva, Martín Braschler, Kurt Stockinger",
+    "venue": "arXiv (Cornell University)",
     "cited_by_count": 0,
-    "type": "article",
+    "type": "preprint",
     "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Business",
-      "Economics",
-      "Computer science",
-      "Finance",
-      "Payment"
-    ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.5952776",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W4417077516",
-    "title": "State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending",
-    "year": 2025,
-    "doi": "10.2139/ssrn.5875004",
-    "doi_url": "https://doi.org/10.2139/ssrn.5875004",
-    "authors": [
-      "Lennart John Baals",
-      "Ali Hirsa"
-    ],
-    "authors_str": "Lennart John Baals, Ali Hirsa",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "",
+    "abstract": "We present TransClean, a method for detecting false positive predictions of entity matching algorithms under real-world conditions characterized by large-scale, noisy, and unlabeled multi-source datasets that undergo distributional shifts. TransClean is explicitly designed to operate with multiple data sources in an efficient, robust and fast manner while accounting for edge cases and requiring limited manual labeling. TransClean leverages the Transitive Consistency of a matching, a measure of t...",
     "concepts": [],
-    "pdf_url": "https://doi.org/10.2139/ssrn.5875004",
-    "team_member": "Lennart John Baals"
+    "pdf_url": "https://arxiv.org/pdf/2506.04006",
+    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W4396699123",
@@ -877,7 +359,7 @@
     "cited_by_count": 6,
     "type": "article",
     "open_access": true,
-    "abstract": "This research aims to enhance the predictability of creditworthiness among marginalized consumers affected by the widespread adoption of AI frameworks. We utilize ensemble methods to handle the imbalanced dataset used for evaluating the credit risk of consumers with sparse or non-existent credit histories. To promote fairness in the Machine Learning (ML) model, we employed the disparate impact remover—a recognized bias mitigation tool to minimize group bias. Three strategies were employed to tac...",
+    "abstract": "",
     "concepts": [
       "Information processing",
       "Business",
@@ -907,15 +389,15 @@
     "venue": "Physica A Statistical Mechanics and its Applications",
     "cited_by_count": 6,
     "type": "article",
-    "open_access": true,
-    "abstract": "Non-Fungible Tokens (NFTs) within the metaverse represent a rapidly emerging sector in the digital asset space. This paper provides a comprehensive review of the metaverse's history and an analysis of the stylized facts of five metaverse NFTs: Axie Infinity, Decentraland, Enjin Coin, Theta Network, and The Sandbox. We examine market efficiency, volatility clustering, leverage effects, and the return-volume relationship. Our key findings show that all NFT returns exhibit kurtosis values significa...",
+    "open_access": false,
+    "abstract": "",
     "concepts": [
       "Stylized fact",
       "Computer science",
       "Economics",
       "Keynesian economics"
     ],
-    "pdf_url": "https://research.utwente.nl/en/publications/766ab33e-43a7-4574-a5c4-58c95388cacc",
+    "pdf_url": null,
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -934,7 +416,7 @@
     "cited_by_count": 5,
     "type": "article",
     "open_access": true,
-    "abstract": "Predicting credit defaults is crucial for financial institutions to assess risk and make informed lending decisions. One of the most recent strategies banks and financial institutions have been testing to minimize losses that arise from credit default is the deployment of Early Warning Systems (EWS). By nature, this technique was primarily proposed and explored for commercial customers. However, this study proposes a comprehensive data-driven approach to model Early Warning Systems (EWS) for ret...",
+    "abstract": "",
     "concepts": [
       "Business",
       "Warning system",
@@ -957,7 +439,7 @@
       "Jeffrey Chu",
       "Yuanyuan Zhang",
       "Branka Hadji Misheva",
-      "Codruța Mare"
+      "Codruţa Mare"
     ],
     "authors_str": "Joerg Osterrieder, Stephen Chan, Jeffrey Chu, Yuanyuan Zhang, Branka Hadji Misheva...",
     "venue": "arXiv (Cornell University)",
@@ -1087,7 +569,7 @@
       "Computer science",
       "Business"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4726490",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4726490",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1115,7 +597,7 @@
       "Peer-to-peer",
       "Credit risk"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4706619",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4706619",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1143,7 +625,7 @@
       "Artificial intelligence",
       "Through-the-lens metering"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4726481",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4726481",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1173,7 +655,7 @@
       "Linguistics",
       "Computer science"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4698153",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4698153",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1200,8 +682,40 @@
       "Early warning system",
       "Marketing"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4730470",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4730470",
     "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4400018270",
+    "title": "GraLMatch: Matching Groups of Entities with Graphs and Language Models",
+    "year": 2024,
+    "doi": "10.48550/arxiv.2406.15015",
+    "doi_url": "https://doi.org/10.48550/arxiv.2406.15015",
+    "authors": [
+      "Fernando De Meer Pardo",
+      "Claude Lehmann",
+      "Dennis Gehrig",
+      "Andrea Nagy",
+      "Stefano Nicoli",
+      "Branka Hadji Misheva",
+      "Martín Braschler",
+      "Kurt Stockinger"
+    ],
+    "authors_str": "Fernando De Meer Pardo, Claude Lehmann, Dennis Gehrig, Andrea Nagy, Stefano Nicoli...",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 1,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "In this paper, we present an end-to-end multi-source Entity Matching problem, which we call entity group matching, where the goal is to assign to the same group, records originating from multiple data sources but representing the same real-world entity. We focus on the effects of transitively matched records, i.e. the records connected by paths in the graph G = (V,E) whose nodes and edges represent the records and whether they are a match or not. We present a real-world instance of this problem,...",
+    "concepts": [
+      "Matching (statistics)",
+      "Computer science",
+      "Natural language processing",
+      "Linguistics",
+      "Mathematics"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2406.15015",
+    "team_member": "Branka Hadji Misheva"
   },
   {
     "id": "https://openalex.org/W4390663031",
@@ -1255,7 +769,7 @@
       "Computer science",
       "Finance"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4730474",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4730474",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1401,40 +915,6 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W4400521487",
-    "title": "Ethical Artificial Intelligence, Fintech and Data Protection: A Path Forward for Training in Europe",
-    "year": 2024,
-    "doi": "10.2139/ssrn.4885037",
-    "doi_url": "https://doi.org/10.2139/ssrn.4885037",
-    "authors": [
-      "Maria Moloney",
-      "Ioana Florina Coita",
-      "Eleftheria G. Paschalidou",
-      "Ekaterina Svetlova",
-      "Codruța Mare",
-      "Liana Stanca",
-      "Galena Pisoni",
-      "Karolina Bolesta",
-      "Olivija Filipovska",
-      "Valerio Potì"
-    ],
-    "authors_str": "Maria Moloney, Ioana Florina Coita, Eleftheria G. Paschalidou, Ekaterina Svetlova, Codruța Mare...",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 0,
-    "type": "preprint",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Training (meteorology)",
-      "Path (computing)",
-      "Business",
-      "Artificial intelligence",
-      "Computer science"
-    ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4885037",
-    "team_member": "Joerg Osterrieder"
-  },
-  {
     "id": "https://openalex.org/W4403066308",
     "title": "AI 4 Crowdfunding -&amp;nbsp; A hands-on roadmap to study and understand crowdfunding data using critical thinking AI",
     "year": 2024,
@@ -1445,14 +925,14 @@
       "Lucía Gómez",
       "Liana Stanca",
       "Karsten Wenzlaff",
-      "Codruța Mare",
+      "Codruţa Mare",
       "Ramy Elitzur",
       "Karolina Bolesta",
       "Xiaohong Huang",
       "Gokce Nur Yilmaz",
       "Frédérik Sinan Bernard"
     ],
-    "authors_str": "Ștefana Belbe, Lucía Gómez, Liana Stanca, Karsten Wenzlaff, Codruța Mare...",
+    "authors_str": "Ștefana Belbe, Lucía Gómez, Liana Stanca, Karsten Wenzlaff, Codruţa Mare...",
     "venue": "SSRN Electronic Journal",
     "cited_by_count": 0,
     "type": "preprint",
@@ -1466,6 +946,40 @@
       "Computer science"
     ],
     "pdf_url": "https://doi.org/10.2139/ssrn.4941279",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4400521487",
+    "title": "Ethical Artificial Intelligence, Fintech and Data Protection: A Path Forward for Training in Europe",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4885037",
+    "doi_url": "https://doi.org/10.2139/ssrn.4885037",
+    "authors": [
+      "Maria Moloney",
+      "Ioana Florina Coita",
+      "Eleftheria G. Paschalidou",
+      "Ekaterina Svetlova",
+      "Codruţa Mare",
+      "Liana Stanca",
+      "Galena Pisoni",
+      "Karolina Bolesta",
+      "Olivija Filipovska",
+      "Valerio Potì"
+    ],
+    "authors_str": "Maria Moloney, Ioana Florina Coita, Eleftheria G. Paschalidou, Ekaterina Svetlova, Codruţa Mare...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Training (meteorology)",
+      "Path (computing)",
+      "Business",
+      "Artificial intelligence",
+      "Computer science"
+    ],
+    "pdf_url": "http://doi.org/10.2139/ssrn.4885037",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1492,7 +1006,7 @@
       "Computer science",
       "Political science"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4730479",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4730479",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1573,7 +1087,7 @@
       "Early warning system",
       "Business"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4754568",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4754568",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -1607,176 +1121,6 @@
     ],
     "pdf_url": "https://doi.org/10.2139/ssrn.4948657",
     "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W7116345182",
-    "title": "A Systematic Literature Review on Graph-Based Models in Credit Risk Assessment",
-    "year": 2024,
-    "doi": "10.5281/zenodo.17992321",
-    "doi_url": "https://doi.org/10.5281/zenodo.17992321",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit archives the conference presentation materials for a talk delivered at the 4th International Symposium on Big Data and Artificial Intelligence (Hong Kong) on 17 December 2024. The presentation reports a systematic literature review (SLR) on graph-based models for credit risk assessment, with emphasis on applications in banking networks and peer-to-peer (P2P) lending. The talk synthesizes how network/graph methodologies (e.g., centrality-based scoring, community/latent factor...",
-    "concepts": [
-      "Computer science",
-      "Systematic review",
-      "Scopus",
-      "Presentation (obstetrics)",
-      "Data extraction"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17992321",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116406295",
-    "title": "A Systematic Literature Review on Graph-Based Models in Credit Risk Assessment",
-    "year": 2024,
-    "doi": "10.5281/zenodo.17992322",
-    "doi_url": "https://doi.org/10.5281/zenodo.17992322",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit archives the conference presentation materials for a talk delivered at the 4th International Symposium on Big Data and Artificial Intelligence (Hong Kong) on 17 December 2024. The presentation reports a systematic literature review (SLR) on graph-based models for credit risk assessment, with emphasis on applications in banking networks and peer-to-peer (P2P) lending. The talk synthesizes how network/graph methodologies (e.g., centrality-based scoring, community/latent factor...",
-    "concepts": [
-      "Computer science",
-      "Systematic review",
-      "Scopus",
-      "Presentation (obstetrics)",
-      "Data extraction"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17992322",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116306108",
-    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
-    "year": 2024,
-    "doi": "10.5281/zenodo.17991107",
-    "doi_url": "https://doi.org/10.5281/zenodo.17991107",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit provides the materials required to reproduce the empirical workflow, figures, and manuscript source for the study: “Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning.” The study forms Chapter 3 of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals and is published as: Liu, Y., Baals, L. J., Osterrieder, J., & Hadji-M...",
-    "concepts": [
-      "Network topology",
-      "Computer science",
-      "Feature (linguistics)",
-      "Artificial intelligence",
-      "Machine learning"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17991107",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116379154",
-    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
-    "year": 2024,
-    "doi": "10.5281/zenodo.17991106",
-    "doi_url": "https://doi.org/10.5281/zenodo.17991106",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit provides the materials required to reproduce the empirical workflow, figures, and manuscript source for the study: “Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning.” The study forms Chapter 3 of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals and is published as: Liu, Y., Baals, L. J., Osterrieder, J., & Hadji-M...",
-    "concepts": [
-      "Network topology",
-      "Computer science",
-      "Feature (linguistics)",
-      "Artificial intelligence",
-      "Machine learning"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17991106",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116302181",
-    "title": "PhD Qualifier Report and Presentation delivered by Lennart John Baals at the University of Twente",
-    "year": 2024,
-    "doi": "10.5281/zenodo.17992214",
-    "doi_url": "https://doi.org/10.5281/zenodo.17992214",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit archives the written report and slide deck submitted and presented for my PhD Qualifier / PhD confirmation milestone at the University of Twente. The qualifier forms part of the formal doctoral trajectory and documents the research motivation, scope, methodological plan, and intended dissertation structure at the time of admission into the PhD programme. The deposit includes both the compiled PDFs and the corresponding LaTeX source files (including all graphics required to r...",
-    "concepts": [
-      "Presentation (obstetrics)",
-      "Context (archaeology)",
-      "Framing (construction)",
-      "Library science",
-      "Computer science"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17992214",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116319964",
-    "title": "PhD Qualifier Report and Presentation delivered by Lennart John Baals at the University of Twente",
-    "year": 2024,
-    "doi": "10.5281/zenodo.17992215",
-    "doi_url": "https://doi.org/10.5281/zenodo.17992215",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit archives the written report and slide deck submitted and presented for my PhD Qualifier / PhD confirmation milestone at the University of Twente. The qualifier forms part of the formal doctoral trajectory and documents the research motivation, scope, methodological plan, and intended dissertation structure at the time of admission into the PhD programme. The deposit includes both the compiled PDFs and the corresponding LaTeX source files (including all graphics required to r...",
-    "concepts": [
-      "Presentation (obstetrics)",
-      "Context (archaeology)",
-      "Framing (construction)",
-      "Library science",
-      "Computer science"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17992215",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W4416312882",
-    "title": "MVA Theory of the multinormal",
-    "year": 2024,
-    "doi": "10.24818/ida-cl/2024.89",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2024.89",
-    "authors": [
-      "Lennart John Baals",
-      "Matthias R. Fengler"
-    ],
-    "authors_str": "Lennart John Baals, Matthias R. Fengler",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Lennart John Baals"
   },
   {
     "id": "https://openalex.org/W4313481730",
@@ -1819,7 +1163,7 @@
     ],
     "authors_str": "Yiting Liu, Joerg Osterrieder, Branka Hadji Misheva, Nicole Koenigstein, Lennart John Baals",
     "venue": "Open Research Europe",
-    "cited_by_count": 13,
+    "cited_by_count": 12,
     "type": "article",
     "open_access": true,
     "abstract": "<ns3:p>This white paper explores the construction of a reliable Environmental, Social, and Governance (ESG) scoring engine, with a focus on the importance of data sources and quality, selection of ESG indicators, weighting and aggregation methodologies, and the necessary validation and benchmarking procedures. The current challenges in ESG scoring and the importance of a robust ESG scoring system are addressed, citing its increasing relevance to stakeholders. Furthermore, different data types, n...",
@@ -1935,7 +1279,7 @@
       "Finance",
       "Financial economics"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4511992",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4511992",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2020,7 +1364,7 @@
       "Actuarial science",
       "Psychology"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4511382",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4511382",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2121,7 +1465,7 @@
     "cited_by_count": 2,
     "type": "article",
     "open_access": true,
-    "abstract": "",
+    "abstract": "This literature review thoroughly examines the prevailing research on share repurchase executions, with a particular emphasis on identifying and elucidating the substantial knowledge gap present in this field. With companies repurchasing trillions of dollars worth of their own shares, understanding the mechanisms and impact of these transactions is of paramount importance for the global economy. The paper provides a comprehensive discussion of share repurchase mechanisms and motivations, laying ...",
     "concepts": [
       "Business",
       "Share repurchase",
@@ -2154,7 +1498,7 @@
       "Computer science",
       "Business"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4475651",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4475651",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2256,7 +1600,7 @@
       "Econometrics",
       "Economics"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4539559",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4539559",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2306,7 +1650,7 @@
       "Computer science",
       "Algorithm"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4539768",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4539768",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2332,7 +1676,7 @@
       "Computer science",
       "Business"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4525781",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4525781",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2358,7 +1702,7 @@
       "Decoding methods",
       "Accounting"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4499366",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4499366",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2384,7 +1728,7 @@
       "Algorithm",
       "Finance"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4539469",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4539469",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2410,7 +1754,7 @@
       "Economics",
       "Commerce"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4539767",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4539767",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2436,7 +1780,7 @@
       "Economics",
       "Microeconomics"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4526098",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4526098",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2462,7 +1806,7 @@
       "Modernization theory",
       "Financial system"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4537835",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4537835",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2519,25 +1863,6 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W4416313087",
-    "title": "Asset Management",
-    "year": 2023,
-    "doi": "10.24818/ida-cl/2023.174",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2023.174",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
     "id": "https://openalex.org/W4386186193",
     "title": "Leveraging Network Topology for Credit Risk Assessment in P2p Lending: A Comparative Study Under the Lens of Machine Learning",
     "year": 2023,
@@ -2562,52 +1887,7 @@
       "Network topology",
       "Topology (electrical circuits)"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4550985",
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416313096",
-    "title": "Deep Learning",
-    "year": 2023,
-    "doi": "10.24818/ida-cl/2023.170",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2023.170",
-    "authors": [
-      "Branka Hadji Misheva",
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4313702924",
-    "title": "A Primer on Time Series Analysis with R",
-    "year": 2023,
-    "doi": "10.2139/ssrn.4316960",
-    "doi_url": "https://doi.org/10.2139/ssrn.4316960",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "",
-    "concepts": [
-      "Series (stratigraphy)",
-      "Primer (cosmetics)",
-      "Computer science",
-      "Mathematics",
-      "Chemistry"
-    ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4316960",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4550985",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2632,7 +1912,32 @@
       "Business",
       "Linguistics"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4324860",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4324860",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4313702924",
+    "title": "A Primer on Time Series Analysis with R",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4316960",
+    "doi_url": "https://doi.org/10.2139/ssrn.4316960",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Series (stratigraphy)",
+      "Primer (cosmetics)",
+      "Computer science",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4316960",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2658,26 +1963,7 @@
       "Financial economics",
       "Economics"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4526100",
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416313042",
-    "title": "Generative Adversarial Networks",
-    "year": 2023,
-    "doi": "10.24818/ida-cl/2023.172",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2023.172",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
+    "pdf_url": "https://doi.org/10.2139/ssrn.4526100",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2703,26 +1989,7 @@
       "Empirical research",
       "Econometrics"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4625594",
-    "team_member": "Joerg Osterrieder"
-  },
-  {
-    "id": "https://openalex.org/W4416313113",
-    "title": "Artificial Intelligence Intro",
-    "year": 2023,
-    "doi": "10.24818/ida-cl/2023.168",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2023.168",
-    "authors": [
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
+    "pdf_url": "https://doi.org/10.2139/ssrn.4625594",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2747,7 +2014,7 @@
       "Econometrics",
       "Economics"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4525779",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4525779",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2772,7 +2039,7 @@
       "Diversification (marketing strategy)",
       "Computer science"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4420127",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4420127",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2805,7 +2072,7 @@
       "Computer science",
       "Library science"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4616662",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4616662",
     "team_member": "Joerg Osterrieder"
   },
   {
@@ -2839,26 +2106,6 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W4416312385",
-    "title": "Deep Reinforcement Learning",
-    "year": 2023,
-    "doi": "10.24818/ida-cl/2023.171",
-    "doi_url": "https://doi.org/10.24818/ida-cl/2023.171",
-    "authors": [
-      "Branka Hadji Misheva",
-      "Joerg Osterrieder"
-    ],
-    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder",
-    "venue": "",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": false,
-    "abstract": "",
-    "concepts": [],
-    "pdf_url": null,
-    "team_member": "Joerg Osterrieder"
-  },
-  {
     "id": "https://openalex.org/W4319592800",
     "title": "A Primer on Information Systems for the Financial Services Industry",
     "year": 2023,
@@ -2880,165 +2127,247 @@
       "Information system",
       "Finance"
     ],
-    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4348941",
+    "pdf_url": "https://doi.org/10.2139/ssrn.4348941",
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W7116298566",
-    "title": "Identifying Mispriced Loans through Interest Rate-Based Network Analysis and Clustering in P2P Lending Markets",
-    "year": 2023,
-    "doi": "10.5281/zenodo.17992590",
-    "doi_url": "https://doi.org/10.5281/zenodo.17992590",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit archives the presentation materials for a talk delivered at a doctoral seminar at the Bern University of Applied Sciences (BFH) on 29 November 2023. The presentation documents early foundational work that later developed into my doctoral research on network-based identification of interest-rate mispricing in P2P lending, forming the basis for the subsequent thesis chapter on credit-risk pricing and mispricing in primary-market P2P loans. The talk introduces a practical metho...",
-    "concepts": [
-      "Loan",
-      "Computer science",
-      "Categorical variable",
-      "Similarity (geometry)",
-      "Outlier"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17992590",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116418087",
-    "title": "Identifying Mispriced Loans through Interest Rate-Based Network Analysis and Clustering in P2P Lending Markets",
-    "year": 2023,
-    "doi": "10.5281/zenodo.17992591",
-    "doi_url": "https://doi.org/10.5281/zenodo.17992591",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit archives the presentation materials for a talk delivered at a doctoral seminar at the Bern University of Applied Sciences (BFH) on 29 November 2023. The presentation documents early foundational work that later developed into my doctoral research on network-based identification of interest-rate mispricing in P2P lending, forming the basis for the subsequent thesis chapter on credit-risk pricing and mispricing in primary-market P2P loans. The talk introduces a practical metho...",
-    "concepts": [
-      "Loan",
-      "Computer science",
-      "Categorical variable",
-      "Similarity (geometry)",
-      "Outlier"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17992591",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116431081",
-    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
-    "year": 2023,
-    "doi": "10.5281/zenodo.17992483",
-    "doi_url": "https://doi.org/10.5281/zenodo.17992483",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit archives the conference presentation materials for a talk delivered at a research event in Bern (2023). The presentation summarizes the core ideas, methodology, and empirical results of my doctoral research on network-enhanced credit risk modelling in peer-to-peer (P2P) lending, corresponding to Chapter 3 of the dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals. The talk focuses on how graph-based repre...",
-    "concepts": [
-      "Benchmarking",
-      "Interpretability",
-      "Computer science",
-      "Machine learning",
-      "Artificial intelligence"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17992483",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W7116409692",
-    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
-    "year": 2023,
-    "doi": "10.5281/zenodo.17992484",
-    "doi_url": "https://doi.org/10.5281/zenodo.17992484",
-    "authors": [
-      "Lennart John Baals"
-    ],
-    "authors_str": "Lennart John Baals",
-    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-    "cited_by_count": 0,
-    "type": "article",
-    "open_access": true,
-    "abstract": "OverviewThis deposit archives the conference presentation materials for a talk delivered at a research event in Bern (2023). The presentation summarizes the core ideas, methodology, and empirical results of my doctoral research on network-enhanced credit risk modelling in peer-to-peer (P2P) lending, corresponding to Chapter 3 of the dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals. The talk focuses on how graph-based repre...",
-    "concepts": [
-      "Benchmarking",
-      "Interpretability",
-      "Computer science",
-      "Machine learning",
-      "Artificial intelligence"
-    ],
-    "pdf_url": "https://doi.org/10.5281/zenodo.17992484",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W4307893842",
-    "title": "Bubbles all the way down? Detecting and date-stamping bubble behaviours in NFT and DeFi markets",
+    "id": "https://openalex.org/W4223538073",
+    "title": "Default or profit scoring credit systems? Evidence from European and US peer-to-peer lending markets",
     "year": 2022,
-    "doi": "10.1080/14765284.2022.2138161",
-    "doi_url": "https://doi.org/10.1080/14765284.2022.2138161",
+    "doi": "10.1186/s40854-022-00338-5",
+    "doi_url": "https://doi.org/10.1186/s40854-022-00338-5",
     "authors": [
-      "Yizhi Wang",
-      "Florian Horky",
-      "Lennart John Baals",
-      "Brian M. Lucey",
-      "Samuel A. Vigne"
+      "Štefan Lyócsa",
+      "Petra Vašaničová",
+      "Branka Hadji Misheva",
+      "Marko Dávid Vateha"
     ],
-    "authors_str": "Yizhi Wang, Florian Horky, Lennart John Baals, Brian M. Lucey, Samuel A. Vigne",
-    "venue": "Journal of Chinese Economic and Business Studies",
-    "cited_by_count": 66,
-    "type": "article",
-    "open_access": true,
-    "abstract": "Amid surging market values and widespread regulatory discussion, NFT and DeFi markets are widely perceived as being simply speculative in nature. This paper detects the existence and dates of price bubbles in the NFT and DeFi markets by applying SADF and GSADF tests. We document that NFT and DeFi markets both exhibit speculative bubbles, with NFT bubbles being more recurrent and having higher average explosive magnitudes than DeFi bubbles. The price bubbles in the NFT and DeFi markets are highly...",
-    "concepts": [
-      "Bubble",
-      "Stamping",
-      "Economics",
-      "Business",
-      "Engineering"
-    ],
-    "pdf_url": "https://www.tandfonline.com/doi/epdf/10.1080/14765284.2022.2138161?needAccess=true&role=button",
-    "team_member": "Lennart John Baals"
-  },
-  {
-    "id": "https://openalex.org/W4225690437",
-    "title": "Towards a Research Agenda on the Financial Economics of NFT’s",
-    "year": 2022,
-    "doi": "10.2139/ssrn.4070710",
-    "doi_url": "https://doi.org/10.2139/ssrn.4070710",
-    "authors": [
-      "Lennart John Baals",
-      "Brian M. Lucey",
-      "Samuel A. Vigne",
-      "Suwan Long"
-    ],
-    "authors_str": "Lennart John Baals, Brian M. Lucey, Samuel A. Vigne, Suwan Long",
-    "venue": "SSRN Electronic Journal",
-    "cited_by_count": 14,
+    "authors_str": "Štefan Lyócsa, Petra Vašaničová, Branka Hadji Misheva, Marko Dávid Vateha",
+    "venue": "Financial Innovation",
+    "cited_by_count": 36,
     "type": "article",
     "open_access": true,
     "abstract": "",
     "concepts": [
-      "Parallels",
-      "Perspective (graphical)",
-      "Behavioral economics",
-      "Social studies of finance",
-      "Dissent"
+      "Profitability index",
+      "Random forest",
+      "Credit risk",
+      "Credit history",
+      "Profit (economics)"
     ],
-    "pdf_url": "https://doi.org/10.2139/ssrn.4070710",
-    "team_member": "Lennart John Baals"
+    "pdf_url": "https://jfin-swufe.springeropen.com/track/pdf/10.1186/s40854-022-00338-5",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W3134447554",
+    "title": "eXplainable AI in Credit Risk Management",
+    "year": 2022,
+    "doi": "10.24818/ida-cl/2022.35",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2022.35",
+    "authors": [
+      "Branka Hadji Misheva",
+      "Joerg Osterrieder",
+      "Ali Hirsa",
+      "Onkar Kulkarni",
+      "Stephen Fung Lin"
+    ],
+    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder, Ali Hirsa, Onkar Kulkarni, Stephen Fung Lin",
+    "venue": "",
+    "cited_by_count": 8,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Artificial Intelligence (AI) has created the single biggest technology revolution the world has ever seen. For the finance sector, it provides great opportunities to enhance customer experience, democratize financial services, ensure consumer protection and significantly improve risk management. While it is easier than ever to run state-of-the-art machine learning models, designing and implementing systems that support real-world finance applications have been challenging. In large part because ...",
+    "concepts": [
+      "Computer science",
+      "Transparency (behavior)",
+      "Financial services",
+      "Artificial intelligence",
+      "Credit risk"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3795322",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4229014297",
+    "title": "Editorial: Explainable, Trustworthy, and Responsible AI for the Financial Service Industry",
+    "year": 2022,
+    "doi": "10.3389/frai.2022.902519",
+    "doi_url": "https://doi.org/10.3389/frai.2022.902519",
+    "authors": [
+      "Branka Hadji Misheva",
+      "Jochen Papenbrock"
+    ],
+    "authors_str": "Branka Hadji Misheva, Jochen Papenbrock",
+    "venue": "Frontiers in Artificial Intelligence",
+    "cited_by_count": 5,
+    "type": "editorial",
+    "open_access": true,
+    "abstract": "EDITORIAL article Front. Artif. Intell., 05 May 2022Sec. Artificial Intelligence in Finance https://doi.org/10.3389/frai.2022.902519",
+    "concepts": [
+      "Trustworthiness",
+      "Service (business)",
+      "Financial services",
+      "Front (military)",
+      "Business"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2022.902519/pdf",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W4295066518",
+    "title": "Editorial: Artificial intelligence in finance and industry: Highlights from 6 European COST conferences",
+    "year": 2022,
+    "doi": "10.3389/frai.2022.1007074",
+    "doi_url": "https://doi.org/10.3389/frai.2022.1007074",
+    "authors": [
+      "Andreas Henrici",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Andreas Henrici, Joerg Osterrieder",
+    "venue": "Frontiers in Artificial Intelligence",
+    "cited_by_count": 3,
+    "type": "editorial",
+    "open_access": true,
+    "abstract": "EDITORIAL article Front. Artif. Intell., 09 September 2022Sec. Artificial Intelligence in Finance https://doi.org/10.3389/frai.2022.1007074",
+    "concepts": [
+      "Front (military)",
+      "Finance",
+      "Engineering",
+      "Management",
+      "Business"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2022.1007074/pdf",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4312605210",
+    "title": "Digital Finance - Reaching New Frontiers",
+    "year": 2022,
+    "doi": "10.2139/ssrn.4292504",
+    "doi_url": "https://doi.org/10.2139/ssrn.4292504",
+    "authors": [
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Marcos Machado"
+    ],
+    "authors_str": "Joerg Osterrieder, Branka Hadji Misheva, Marcos Machado",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Economics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4292504",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4283808649",
+    "title": "Simulating financial time series using attention",
+    "year": 2022,
+    "doi": "10.48550/arxiv.2207.00493",
+    "doi_url": "https://doi.org/10.48550/arxiv.2207.00493",
+    "authors": [
+      "Weilong Fu",
+      "Ali Hirsa",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Weilong Fu, Ali Hirsa, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 1,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Financial time series simulation is a central topic since it extends the limited real data for training and evaluation of trading strategies. It is also challenging because of the complex statistical properties of the real financial data. We introduce two generative adversarial networks (GANs), which utilize the convolutional networks with attention and the transformers, for financial time series simulation. The GANs learn the statistical properties in a data-driven manner and the attention mech...",
+    "concepts": [
+      "Stylized fact",
+      "Autocorrelation",
+      "Computer science",
+      "Replicate",
+      "Series (stratigraphy)"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2207.00493",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4283747621",
+    "title": "Applications of Reinforcement Learning in Finance -- Trading with a Double Deep Q-Network",
+    "year": 2022,
+    "doi": "10.48550/arxiv.2206.14267",
+    "doi_url": "https://doi.org/10.48550/arxiv.2206.14267",
+    "authors": [
+      "Frensi Zejnullahu",
+      "Maurice Moser",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Frensi Zejnullahu, Maurice Moser, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 1,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "This paper presents a Double Deep Q-Network algorithm for trading single assets, namely the E-mini S&amp;P 500 continuous futures contract. We use a proven setup as the foundation for our environment with multiple extensions. The features of our trading agent are constantly being expanded to include additional assets such as commodities, resulting in four models. We also respond to environmental conditions, including costs and crises. Our trading agent is first trained for a specific time period...",
+    "concepts": [
+      "Futures contract",
+      "Benchmark (surveying)",
+      "Reinforcement learning",
+      "Position (finance)",
+      "Computer science"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2206.14267",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4292122205",
+    "title": "AI for trading strategies",
+    "year": 2022,
+    "doi": "10.48550/arxiv.2208.07168",
+    "doi_url": "https://doi.org/10.48550/arxiv.2208.07168",
+    "authors": [
+      "Danijel Jevtic",
+      "Romain Deleze",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Danijel Jevtic, Romain Deleze, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 1,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "In this bachelor thesis, we show how four different machine learning methods (Long Short-Term Memory, Random Forest, Support Vector Machine Regression, and k-Nearest Neighbor) perform compared to already successfully applied trading strategies such as Cross Signal Trading and a conventional statistical time series model ARMA-GARCH. The aim is to show that machine learning methods perform better than conventional methods in the crude oil market when used correctly. A more detailed performance ana...",
+    "concepts": [
+      "Trading strategy",
+      "Random forest",
+      "Support vector machine",
+      "Volatility (finance)",
+      "Robustness (evolution)"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2208.07168",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4285123766",
+    "title": "High-Frequency Causality in the VIX Index and Its Derivatives: Empirical Evidence",
+    "year": 2022,
+    "doi": "10.2139/ssrn.4087569",
+    "doi_url": "https://doi.org/10.2139/ssrn.4087569",
+    "authors": [
+      "Kia Farokhnia",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Kia Farokhnia, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Econometrics",
+      "Series (stratigraphy)",
+      "Stochastic volatility",
+      "Volatility (finance)",
+      "Time series"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4087569",
+    "team_member": "Joerg Osterrieder"
   },
   {
     "id": "https://openalex.org/W4298183600",
@@ -3067,30 +2396,848 @@
     "team_member": "Joerg Osterrieder"
   },
   {
-    "id": "https://openalex.org/W2115681644",
-    "title": "BMP-2 liberated from biomimetic implant coatings induces and sustains direct ossification in an ectopic rat model",
-    "year": 2005,
-    "doi": "10.1016/j.bone.2005.02.005",
-    "doi_url": "https://doi.org/10.1016/j.bone.2005.02.005",
+    "id": "https://openalex.org/W4294275952",
+    "title": "Discussion on: “Programmable money: next generation blockchain based conditional payments” by Ingo Weber and Mark Staples",
+    "year": 2022,
+    "doi": "10.1007/s42521-022-00063-9",
+    "doi_url": "https://doi.org/10.1007/s42521-022-00063-9",
     "authors": [
-      "Yiting Liu",
-      "K DeGroot",
-      "Ernst B. Hunziker"
+      "Joerg Osterrieder"
     ],
-    "authors_str": "Yiting Liu, K DeGroot, Ernst B. Hunziker",
-    "venue": "Bone",
-    "cited_by_count": 303,
+    "authors_str": "Joerg Osterrieder",
+    "venue": "Digital Finance",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Blockchain",
+      "Payment",
+      "Economics",
+      "Keynesian economics",
+      "Monetary economics"
+    ],
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s42521-022-00063-9.pdf",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4283706217",
+    "title": "High-Frequency Causality in the VIX Index and its derivatives: Empirical Evidence",
+    "year": 2022,
+    "doi": "10.48550/arxiv.2206.13138",
+    "doi_url": "https://doi.org/10.48550/arxiv.2206.13138",
+    "authors": [
+      "Kia Farokhnia",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Kia Farokhnia, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "In February 2018, the VIX index has seen its largest ever increase and has lead to significant losses for some major volatility related products. Despite many efforts, the precise underlying reasons are yet to be discovered. We study the role of linear causality in the VIX index and its derivatives during January and February 2018. Due to the shortcomings of statistical inferences for stochastic volatility models, the dynamics of the volatility expectation index VIX remain controversial. Leverag...",
+    "concepts": [
+      "Econometrics",
+      "Volatility (finance)",
+      "Economics",
+      "Forward volatility",
+      "Index (typography)"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2206.13138",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4292121323",
+    "title": "The Efficient Market Hypothesis for Bitcoin in the context of neural networks",
+    "year": 2022,
+    "doi": "10.48550/arxiv.2208.07254",
+    "doi_url": "https://doi.org/10.48550/arxiv.2208.07254",
+    "authors": [
+      "Mike Kraehenbuehl",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Mike Kraehenbuehl, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "This study examines the weak form of the efficient market hypothesis for Bitcoin using a feedforward neural network. Due to the increasing popularity of cryptocurrencies in recent years, the question has arisen, as to whether market inefficiencies could be exploited in Bitcoin. Several studies we refer to here discuss this topic in the context of Bitcoin using either statistical tests or machine learning methods, mostly relying exclusively on data from Bitcoin itself. Results regarding market ef...",
+    "concepts": [
+      "Artificial neural network",
+      "Cryptocurrency",
+      "Feature (linguistics)",
+      "Context (archaeology)",
+      "Stock market"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2208.07254",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4310884036",
+    "title": "A Time Series Approach to Explainability for Neural Nets with Applications to Risk-Management and Fraud Detection",
+    "year": 2022,
+    "doi": "10.48550/arxiv.2212.02906",
+    "doi_url": "https://doi.org/10.48550/arxiv.2212.02906",
+    "authors": [
+      "Marc Wildi",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Marc Wildi, Branka Hadji Misheva",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Artificial intelligence is creating one of the biggest revolution across technology driven application fields. For the finance sector, it offers many opportunities for significant market innovation and yet broad adoption of AI systems heavily relies on our trust in their outputs. Trust in technology is enabled by understanding the rationale behind the predictions made. To this end, the concept of eXplainable AI emerged introducing a suite of techniques attempting to explain to users how complex ...",
+    "concepts": [
+      "Suite",
+      "Exploit",
+      "Computer science",
+      "Artificial neural network",
+      "Artificial intelligence"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2212.02906",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W4394513826",
+    "title": "Additional file 1 of Default or profit scoring credit systems? Evidence from European and US peer-to-peer lending markets",
+    "year": 2022,
+    "doi": "10.6084/m9.figshare.19581894",
+    "doi_url": "https://doi.org/10.6084/m9.figshare.19581894",
+    "authors": [
+      "Štefan Lyócsa",
+      "Petra Vašaničová",
+      "Branka Hadji Misheva",
+      "Marko Dávid Vateha"
+    ],
+    "authors_str": "Štefan Lyócsa, Petra Vašaničová, Branka Hadji Misheva, Marko Dávid Vateha",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": true,
+    "abstract": "Additional file 1. Data and scripts performing the predictions and evaluation of loans in R.",
+    "concepts": [
+      "Peer-to-peer",
+      "Business",
+      "Profit (economics)",
+      "Financial system",
+      "Monetary economics"
+    ],
+    "pdf_url": "https://doi.org/10.6084/m9.figshare.19581894",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W4287319433",
+    "title": "Explainable AI in Credit Risk Management",
+    "year": 2021,
+    "doi": "10.48550/arxiv.2103.00949",
+    "doi_url": "https://doi.org/10.48550/arxiv.2103.00949",
+    "authors": [
+      "Branka Hadji Misheva",
+      "Joerg Osterrieder",
+      "Ali Hirsa",
+      "Onkar Kulkarni",
+      "Stephen Fung Lin"
+    ],
+    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder, Ali Hirsa, Onkar Kulkarni, Stephen Fung Lin",
+    "venue": "Data Archiving and Networked Services (DANS)",
+    "cited_by_count": 6,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Artificial Intelligence (AI) has created the single biggest technology revolution the world has ever seen. For the finance sector, it provides great opportunities to enhance customer experience, democratize financial services, ensure consumer protection and significantly improve risk management. While it is easier than ever to run state-of-the-art machine learning models, designing and implementing systems that support real-world finance applications have been challenging. In large part because ...",
+    "concepts": [
+      "Computer science",
+      "Transparency (behavior)",
+      "Financial services",
+      "Artificial intelligence",
+      "State (computer science)"
+    ],
+    "pdf_url": "https://research.utwente.nl/en/publications/c01c619f-b3d8-4513-8c4e-e046defdc322",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3172372614",
+    "title": "The Applicability of Self-Play Algorithms to Trading and Forecasting Financial Markets",
+    "year": 2021,
+    "doi": "10.3389/frai.2021.668465",
+    "doi_url": "https://doi.org/10.3389/frai.2021.668465",
+    "authors": [
+      "Jan-Alexander Posth",
+      "Piotr Kotlarz",
+      "Branka Hadji Misheva",
+      "Joerg Osterrieder",
+      "Peter Schwendner"
+    ],
+    "authors_str": "Jan-Alexander Posth, Piotr Kotlarz, Branka Hadji Misheva, Joerg Osterrieder, Peter Schwendner",
+    "venue": "Frontiers in Artificial Intelligence",
+    "cited_by_count": 5,
+    "type": "review",
+    "open_access": true,
+    "abstract": "The central research question to answer in this study is whether the AI methodology of Self-Play can be applied to financial markets. In typical use-cases of Self-Play, two AI agents play against each other in a particular game, e.g., chess or Go. By repeatedly playing the game, they learn its rules as well as possible winning strategies. When considering financial markets, however, we usually have one player—the trader—that does not face one individual adversary but competes against a vast univ...",
+    "concepts": [
+      "Financial market",
+      "Adversary",
+      "Computational finance",
+      "Prediction market",
+      "Stock (firearms)"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2021.668465/pdf",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4200133817",
+    "title": "Audience-Dependent Explanations for AI-Based Risk Management Tools: A Survey",
+    "year": 2021,
+    "doi": "10.3389/frai.2021.794996",
+    "doi_url": "https://doi.org/10.3389/frai.2021.794996",
+    "authors": [
+      "Branka Hadji Misheva",
+      "David Jaggi",
+      "Jan-Alexander Posth",
+      "Thomas Gramespacher",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Branka Hadji Misheva, David Jaggi, Jan-Alexander Posth, Thomas Gramespacher, Joerg Osterrieder",
+    "venue": "Frontiers in Artificial Intelligence",
+    "cited_by_count": 4,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Artificial Intelligence (AI) is one of the most sought-after innovations in the financial industry. However, with its growing popularity, there also is the call for AI-based models to be understandable and transparent. However, understandably explaining the inner mechanism of the algorithms and their interpretation is entirely audience-dependent. The established literature fails to match the increasing number of explainable AI (XAI) methods with the different stakeholders’ explainability needs. ...",
+    "concepts": [
+      "Psychology",
+      "Computer science",
+      "Data science"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2021.794996/pdf",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3177703093",
+    "title": "Wasserstein GAN: Deep Generation applied on Bitcoins financial time series",
+    "year": 2021,
+    "doi": "10.48550/arxiv.2107.06008",
+    "doi_url": "https://doi.org/10.48550/arxiv.2107.06008",
+    "authors": [
+      "Samuel Rikli",
+      "Daniel Nico Bigler",
+      "Moritz Pfenninger",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Samuel Rikli, Daniel Nico Bigler, Moritz Pfenninger, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 4,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Modeling financial time series is challenging due to their high volatility and unexpected happenings on the market. Most financial models and algorithms trying to fill the lack of historical financial time series struggle to perform and are highly vulnerable to overfitting. As an alternative, we introduce in this paper a deep neural network called the WGAN-GP, a data-driven model that focuses on sample generation. The WGAN-GP consists of a generator and discriminator function which utilize an LS...",
+    "concepts": [
+      "Computer science",
+      "Overfitting",
+      "Volatility (finance)",
+      "Discriminator",
+      "Series (stratigraphy)"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2107.06008",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3171896753",
+    "title": "Generative Adversarial Networks in finance: an overview",
+    "year": 2021,
+    "doi": "10.2139/ssrn.3864965",
+    "doi_url": "https://doi.org/10.2139/ssrn.3864965",
+    "authors": [
+      "Florian Eckerli",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Florian Eckerli, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 4,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science",
+      "Generative grammar",
+      "Field (mathematics)",
+      "Adversarial system",
+      "Task (project management)"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3864965",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3128852300",
+    "title": "The VIX Index Under Scrutiny of Machine Learning Techniques and Neural Networks",
+    "year": 2021,
+    "doi": "10.2139/ssrn.3796351",
+    "doi_url": "https://doi.org/10.2139/ssrn.3796351",
+    "authors": [
+      "Ali Hirsa",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Wenxin Cao",
+      "Yiwen Fu",
+      "Hanze Sun",
+      "Kin Wai Wong"
+    ],
+    "authors_str": "Ali Hirsa, Joerg Osterrieder, Branka Hadji Misheva, Wenxin Cao, Yiwen Fu...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 3,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Index (typography)",
+      "Replicate",
+      "Artificial neural network",
+      "Volatility (finance)",
+      "Econometrics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3796351",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3173966041",
+    "title": "Deep Reinforcement Learning for Finance and the Efficient Market Hypothesis",
+    "year": 2021,
+    "doi": "10.2139/ssrn.3865019",
+    "doi_url": "https://doi.org/10.2139/ssrn.3865019",
+    "authors": [
+      "Leander Odermatt",
+      "Jetmir Beqiraj",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Leander Odermatt, Jetmir Beqiraj, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 3,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Reinforcement learning",
+      "Reinforcement",
+      "Efficient-market hypothesis",
+      "Artificial intelligence",
+      "Economics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3865019",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4285553811",
+    "title": "Wasserstein GAN: Deep Generation Applied on Financial Time Series",
+    "year": 2021,
+    "doi": "10.2139/ssrn.3885659",
+    "doi_url": "https://doi.org/10.2139/ssrn.3885659",
+    "authors": [
+      "Moritz Pfenninger",
+      "Daniel Nico Bigler",
+      "Samuel Rikli",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Moritz Pfenninger, Daniel Nico Bigler, Samuel Rikli, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Series (stratigraphy)",
+      "Time series",
+      "Business",
+      "Finance",
+      "Financial system"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3885659",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4251457061",
+    "title": "Analyzing Deep Generated Financial Time Series for Various Asset Classes",
+    "year": 2021,
+    "doi": "10.2139/ssrn.3898792",
+    "doi_url": "https://doi.org/10.2139/ssrn.3898792",
+    "authors": [
+      "Antonio Rosolia",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Antonio Rosolia, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science",
+      "Futures contract",
+      "Asset (computer security)",
+      "Variety (cybernetics)",
+      "Series (stratigraphy)"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3898792",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4287332385",
+    "title": "The VIX index under scrutiny of machine learning techniques and neural\\n networks",
+    "year": 2021,
+    "doi": "10.48550/arxiv.2102.02119",
+    "doi_url": "https://doi.org/10.48550/arxiv.2102.02119",
+    "authors": [
+      "Ali Hirsa",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Wenxin Cao",
+      "Yiwen Fu",
+      "Hanze Sun",
+      "Kin Wai Wong"
+    ],
+    "authors_str": "Ali Hirsa, Joerg Osterrieder, Branka Hadji Misheva, Wenxin Cao, Yiwen Fu...",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "The CBOE Volatility Index, known by its ticker symbol VIX, is a popular\\nmeasure of the market's expected volatility on the SP 500 Index, calculated and\\npublished by the Chicago Board Options Exchange (CBOE). It is also often\\nreferred to as the fear index or the fear gauge. The current VIX index value\\nquotes the expected annualized change in the SP 500 index over the following 30\\ndays, based on options-based theory and current options-market data. Despite\\nits theoretical foundation in optio...",
+    "concepts": [
+      "Index (typography)",
+      "Replicate",
+      "Artificial neural network",
+      "Perceptron",
+      "Futures contract"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2102.02119",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3168060176",
+    "title": "Deep reinforcement learning on a multi-asset environment for trading",
+    "year": 2021,
+    "doi": "10.21256/zhaw-22850",
+    "doi_url": "https://doi.org/10.21256/zhaw-22850",
+    "authors": [
+      "Ali Hirsa",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Jan-Alexander Posth"
+    ],
+    "authors_str": "Ali Hirsa, Joerg Osterrieder, Branka Hadji Misheva, Jan-Alexander Posth",
+    "venue": "Zürcher Hochschule für Angewandte Wissenschaften digital collection (Zurich University of Applied Sciences)",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Financial trading has been widely analyzed for decades with market\\nparticipants and academics always looking for advanced methods to improve\\ntrading performance. Deep reinforcement learning (DRL), a recently\\nreinvigorated method with significant success in multiple domains, still has to\\nshow its benefit in the financial markets. We use a deep Q-network (DQN) to\\ndesign long-short trading strategies for futures contracts. The state space\\nconsists of volatility-normalized daily returns, with ...",
+    "concepts": [
+      "Reinforcement learning",
+      "Futures contract",
+      "Volatility (finance)",
+      "Trading strategy",
+      "Benchmark (surveying)"
+    ],
+    "pdf_url": "https://arxiv.org/abs/2106.08437",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3166857228",
+    "title": "Risk Parity for Multi-Asset Futures Allocation – A Practical Analysis of the Equal Risk Contribution Portfolio",
+    "year": 2021,
+    "doi": "10.2139/ssrn.3858730",
+    "doi_url": "https://doi.org/10.2139/ssrn.3858730",
+    "authors": [
+      "Chris Bucher",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Chris Bucher, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Futures contract",
+      "Asset allocation",
+      "Portfolio",
+      "Economics",
+      "Modern portfolio theory"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3858730",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W3175484143",
+    "title": "Deep Reinforcement Learning on a Multi-Asset Environment for Trading",
+    "year": 2021,
+    "doi": "10.2139/ssrn.3867800",
+    "doi_url": "https://doi.org/10.2139/ssrn.3867800",
+    "authors": [
+      "Ali Hirsa",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Jan-Alexander Posth"
+    ],
+    "authors_str": "Ali Hirsa, Joerg Osterrieder, Branka Hadji Misheva, Jan-Alexander Posth",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Reinforcement learning",
+      "Futures contract",
+      "Volatility (finance)",
+      "Trading strategy",
+      "Benchmark (surveying)"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3867800",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W2997058569",
+    "title": "Lead Behaviour in Bitcoin Markets",
+    "year": 2020,
+    "doi": "10.3390/risks8010004",
+    "doi_url": "https://doi.org/10.3390/risks8010004",
+    "authors": [
+      "Ying Chen",
+      "Paolo Giudici",
+      "Branka Hadji Misheva",
+      "Simon Trimborn"
+    ],
+    "authors_str": "Ying Chen, Paolo Giudici, Branka Hadji Misheva, Simon Trimborn",
+    "venue": "Risks",
+    "cited_by_count": 10,
+    "type": "article",
+    "open_access": true,
+    "abstract": "We aim to understand the dynamics of Bitcoin blockchain trading volumes and, specifically, how different trading groups, in different geographic areas, interact with each other. To achieve this aim, we propose an extended Vector Autoregressive model, aimed at explaining the evolution of trading volumes, both in time and in space. The extension is based on network models, which improve pure autoregressive models, introducing a contemporaneous contagion component that describes contagion effects b...",
+    "concepts": [
+      "Autoregressive model",
+      "Econometrics",
+      "Component (thermodynamics)",
+      "Financial economics",
+      "Computer science"
+    ],
+    "pdf_url": "https://www.mdpi.com/2227-9091/8/1/4/pdf?version=1578553915",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W3135824988",
+    "title": "The Applicability of Self-Play Algorithms to Trading and Forecasting Financial Markets: A Feasibility Study",
+    "year": 2020,
+    "doi": "10.2139/ssrn.3737714",
+    "doi_url": "https://doi.org/10.2139/ssrn.3737714",
+    "authors": [
+      "Piotr Kotlarz",
+      "Branka Hadji Misheva",
+      "Jan-Alexander Posth",
+      "Joerg Osterrieder",
+      "Peter Schwendner"
+    ],
+    "authors_str": "Piotr Kotlarz, Branka Hadji Misheva, Jan-Alexander Posth, Joerg Osterrieder, Peter Schwendner",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Algorithmic trading",
+      "Trading strategy",
+      "Computer science",
+      "Finance",
+      "Financial market"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3737714",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W3098886510",
+    "title": "Measuring Financial Risks: The Application of Network Theory in Fintech Risk Management",
+    "year": 2020,
+    "doi": null,
+    "doi_url": null,
+    "authors": [
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Branka Hadji Misheva",
+    "venue": "",
+    "cited_by_count": 0,
     "type": "article",
     "open_access": false,
     "abstract": "",
     "concepts": [
-      "Implant",
-      "Ossification",
-      "Calcium",
-      "Bone morphogenetic protein 2",
-      "Chemistry"
+      "Risk management",
+      "Business",
+      "Risk analysis (engineering)",
+      "Actuarial science",
+      "Financial risk"
     ],
     "pdf_url": null,
-    "team_member": "Yiting Liu"
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W2985066636",
+    "title": "Network based credit risk models",
+    "year": 2019,
+    "doi": "10.1080/08982112.2019.1655159",
+    "doi_url": "https://doi.org/10.1080/08982112.2019.1655159",
+    "authors": [
+      "Paolo Giudici",
+      "Branka Hadji Misheva",
+      "Alessandro Spelta"
+    ],
+    "authors_str": "Paolo Giudici, Branka Hadji Misheva, Alessandro Spelta",
+    "venue": "Quality Engineering",
+    "cited_by_count": 100,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Peer-to-Peer lending platforms may lead to cost reduction, and to an improved user experience. These improvements may come at the price of inaccurate credit risk measurements, which can hamper lenders and endanger the stability of a financial system. In the article, we propose how to improve credit risk accuracy of peer to peer platforms and, specifically, of those who lend to small and medium enterprises. To achieve this goal, we propose toaugment traditional credit scoring methods with “altern...",
+    "concepts": [
+      "Credit risk",
+      "Business",
+      "Actuarial science",
+      "Econometrics",
+      "Computer science"
+    ],
+    "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/08982112.2019.1655159?needAccess=true",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W2911448996",
+    "title": "Latent factor models for credit scoring in P2P systems",
+    "year": 2019,
+    "doi": "10.1016/j.physa.2019.01.130",
+    "doi_url": "https://doi.org/10.1016/j.physa.2019.01.130",
+    "authors": [
+      "Daniel Felix Ahelegbey",
+      "Paolo Giudici",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
+    "venue": "Physica A Statistical Mechanics and its Applications",
+    "cited_by_count": 63,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Position (finance)",
+      "Computer science",
+      "Credit risk",
+      "Order (exchange)",
+      "FinTech"
+    ],
+    "pdf_url": "https://mpra.ub.uni-muenchen.de/92636/1/MPRA_paper_92636.pdf",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W2944958951",
+    "title": "Network Based Scoring Models to Improve Credit Risk Management in Peer to Peer Lending Platforms",
+    "year": 2019,
+    "doi": "10.3389/frai.2019.00003",
+    "doi_url": "https://doi.org/10.3389/frai.2019.00003",
+    "authors": [
+      "Paolo Giudici",
+      "Branka Hadji Misheva",
+      "Alessandro Spelta"
+    ],
+    "authors_str": "Paolo Giudici, Branka Hadji Misheva, Alessandro Spelta",
+    "venue": "Frontiers in Artificial Intelligence",
+    "cited_by_count": 47,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Financial intermediation has changed extensively over the course of the last two decades. One of the most significant change has been the emergence of FinTech. In the context of credit services, fintech peer to peer lenders have introduced many opportunities, among which improved speed, better customer experience, and reduced costs. However, peer-to-peer lending platforms lead to higher risks, among which higher credit risk: not owned by the lenders, and systemic risks: due to the high interconn...",
+    "concepts": [
+      "Credit risk",
+      "Credit score",
+      "Context (archaeology)",
+      "Peer-to-peer",
+      "Business"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2019.00003/pdf",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W2941654445",
+    "title": "Factorial Network Models to Improve P2P Credit Risk Management",
+    "year": 2019,
+    "doi": "10.3389/frai.2019.00008",
+    "doi_url": "https://doi.org/10.3389/frai.2019.00008",
+    "authors": [
+      "Daniel Felix Ahelegbey",
+      "Paolo Giudici",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
+    "venue": "Frontiers in Artificial Intelligence",
+    "cited_by_count": 20,
+    "type": "article",
+    "open_access": true,
+    "abstract": "This paper investigates how to improve statistical-based credit scoring of SMEs involved in P2P lending. The methodology discussed in the paper is a factor network-based segmentation for credit score modeling. The approach first constructs a network of SMEs where links emerge from comovement of latent factors, which allows us to segment the heterogeneous population into clusters. We then build a credit score model for each cluster via lasso-type regularization logistic regression. We compare our...",
+    "concepts": [
+      "Logistic regression",
+      "Credit risk",
+      "Segmentation",
+      "Computer science",
+      "Lasso (programming language)"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2019.00008/pdf",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W3122127378",
+    "title": "Factorial Network Models To Improve P2P Credit Risk Management",
+    "year": 2019,
+    "doi": "10.2139/ssrn.3349001",
+    "doi_url": "https://doi.org/10.2139/ssrn.3349001",
+    "authors": [
+      "Daniel Felix Ahelegbey",
+      "Paolo Giudici",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Credit risk",
+      "Risk management",
+      "Business",
+      "Actuarial science",
+      "Risk analysis (engineering)"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3349001",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W2934208943",
+    "title": "Latent Factor Models for Credit Scoring in P2P Systems",
+    "year": 2019,
+    "doi": "10.2139/ssrn.3325231",
+    "doi_url": "https://doi.org/10.2139/ssrn.3325231",
+    "authors": [
+      "Daniel Felix Ahelegbey",
+      "Paolo Giudici",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Position (finance)",
+      "Credit risk",
+      "Computer science",
+      "Order (exchange)",
+      "Peer-to-peer"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.3325231",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W3124138210",
+    "title": "Factorial Network Models to Improve P2P Credit Risk Management",
+    "year": 2019,
+    "doi": "10.24451/arbor.17302",
+    "doi_url": "https://doi.org/10.24451/arbor.17302",
+    "authors": [
+      "Daniel Felix Ahelegbey",
+      "Paolo Giudici",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Daniel Felix Ahelegbey, Paolo Giudici, Branka Hadji Misheva",
+    "venue": "Munich Personal RePEc Archive (Ludwig Maximilian University of Munich)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "This paper investigates how to improve statistical-based credit scoring of SMEs involved in P2P lending. The methodology discussed in the paper is a factor network-based segmentation for credit score modeling. The approach first constructs a network of SMEs where links emerge from comovement of latent factors, which allows us to segment the heterogeneous population into clusters. We then build a credit score model for each cluster via lasso-type regularization logistic regression. We compare our...",
+    "concepts": [
+      "Logistic regression",
+      "Credit risk",
+      "Computer science",
+      "Segmentation",
+      "Lasso (programming language)"
+    ],
+    "pdf_url": "https://arbor.bfh.ch/17302/",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W2787112035",
+    "title": "P2P lending scoring models: Do they predict default?",
+    "year": 2018,
+    "doi": "10.69554/kcrx5150",
+    "doi_url": "https://doi.org/10.69554/kcrx5150",
+    "authors": [
+      "Paolo Giudici",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Paolo Giudici, Branka Hadji Misheva",
+    "venue": "Journal of digital banking.",
+    "cited_by_count": 7,
+    "type": "article",
+    "open_access": false,
+    "abstract": "Due to technological advancement, peer-to-peer (P2P) platforms have allowed significant cost reductions in lending. This improved allocation, however, comes at a higher credit risk. In this paper, the authors investigate the effectiveness of credit scoring models employed by P2P platforms with respect to loan default prediction. They argue that because of differences in risk ownership with respect to traditional lenders, the rating grades obtained from P2P scoring models may not be the best pred...",
+    "concepts": [
+      "Computer science",
+      "Econometrics",
+      "Economics"
+    ],
+    "pdf_url": null,
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W2912851430",
+    "title": "Network-Based Models to Improve Credit Scoring Accuracy",
+    "year": 2018,
+    "doi": "10.1109/dsaa.2018.00080",
+    "doi_url": "https://doi.org/10.1109/dsaa.2018.00080",
+    "authors": [
+      "Branka Hadji Misheva",
+      "Paolo Giudici",
+      "Valentino Pediroda"
+    ],
+    "authors_str": "Branka Hadji Misheva, Paolo Giudici, Valentino Pediroda",
+    "venue": "",
+    "cited_by_count": 4,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Technological advancements have prompted the&#13;\\nemergence of peer-to-peer credit services which improve user&#13;\\nexperience and offer significant reductions in costs. These advantages&#13;\\nmay be offset by a higher credit risk, due to disintermediation&#13;\\nand information asymmetries. We postulate that networkbased&#13;\\ninformation can be employed as a tool for reducing risks&#13;\\nthrough an improved credit scoring model that increases the&#13;\\naccuracy of default predictions. Our res...",
+    "concepts": [
+      "Computer science",
+      "Disintermediation",
+      "Credit risk",
+      "Logistic regression",
+      "Offset (computer science)"
+    ],
+    "pdf_url": "https://ieeexplore.ieee.org/document/8631481",
+    "team_member": "Branka Hadji Misheva"
+  },
+  {
+    "id": "https://openalex.org/W3180585540",
+    "title": "",
+    "year": null,
+    "doi": null,
+    "doi_url": null,
+    "authors": [
+      "Ali Hirsa",
+      "Branka Hadji Misheva",
+      "Joerg Osterrieder",
+      "Jan-Alexander Posth"
+    ],
+    "authors_str": "Ali Hirsa, Branka Hadji Misheva, Joerg Osterrieder, Jan-Alexander Posth",
+    "venue": "",
+    "cited_by_count": 10,
+    "type": "article",
+    "open_access": false,
+    "abstract": "Financial trading has been widely analyzed for decades with market participants and academics always looking for advanced methods to improve trading performance. Deep reinforcement learning (DRL), a recently reinvigorated method with significant success in multiple domains, still has to show its benefit in the financial markets. We use a deep Q-network (DQN) to design long-short trading strategies for futures contracts. The state space consists of volatility-normalized daily returns, with buying...",
+    "concepts": [
+      "Reinforcement learning",
+      "Reinforcement",
+      "Asset (computer security)",
+      "Computer science",
+      "Financial economics"
+    ],
+    "pdf_url": null,
+    "team_member": "Branka Hadji Misheva"
   }
 ]
