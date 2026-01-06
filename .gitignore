@@ -38,6 +38,5 @@ dist/
 build/
 .eggs/
 
-# Large data files (GitHub 100MB limit)
-*.parquet
-research_effects_of_policy_makers_on_macroeconomy_environment/
+# Large data files handled by Git LFS
+# *.parquet - now tracked via LFS
