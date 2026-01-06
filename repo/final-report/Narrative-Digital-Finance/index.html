@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative Digital Finance | SNSF Research Project</title>
+    <meta name="description" content="SNSF-funded research project developing ML and NLP frameworks to predict market outcomes, detect asset price bubbles, and identify structural breaks using financial data and narrative content.">
+    <meta name="keywords" content="narrative finance, NLP, machine learning, asset bubbles, structural breaks, fintech, SNSF, digital finance">
+    <meta name="author" content="Prof. Dr. Joerg Osterrieder">
+    <link rel="canonical" href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">
+    <meta property="og:title" content="Narrative Digital Finance | SNSF Research Project">
+    <meta property="og:description" content="SNSF-funded research on ML and NLP for financial market prediction, bubble detection, and structural breaks analysis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchProject",
+      "name": "Narrative Digital Finance",
+      "alternateName": "SNSF Grant IZCOZ0_213370",
+      "description": "A tale of structural breaks, bubbles & market narratives. SNSF-funded research project developing ML and NLP frameworks to predict market outcomes, detect asset price bubbles, and identify structural breaks in financial markets.",
+      "url": "https://digital-ai-finance.github.io/Narrative-Digital-Finance/",
+      "startDate": "2023-07-01",
+      "endDate": "2026-06-30",
+      "funder": [
+        {
+          "@type": "Organization",
+          "name": "Swiss National Science Foundation",
+          "alternateName": "SNSF",
+          "url": "https://www.snf.ch"
+        },
+        {
+          "@type": "Organization",
+          "name": "European Union Horizon Europe",
+          "url": "https://cordis.europa.eu/project/id/101119635"
+        }
+      ],
+      "member": [
+        {
+          "@type": "Person",
+          "name": "Joerg Osterrieder",
+          "jobTitle": "Principal Investigator",
+          "affiliation": [
+            {"@type": "Organization", "name": "Bern University of Applied Sciences"},
+            {"@type": "Organization", "name": "University of Twente"}
+          ],
+          "sameAs": "https://orcid.org/0000-0003-0189-8636"
+        },
+        {
+          "@type": "Person",
+          "name": "Gabin Taibi",
+          "jobTitle": "PhD Researcher",
+          "affiliation": [
+            {"@type": "Organization", "name": "Bern University of Applied Sciences"},
+            {"@type": "Organization", "name": "University of Twente"}
+          ],
+          "sameAs": "https://orcid.org/0000-0002-0785-6771"
+        },
+        {
+          "@type": "Person",
+          "name": "Yiting Liu",
+          "jobTitle": "PhD Researcher",
+          "affiliation": [
+            {"@type": "Organization", "name": "Bern University of Applied Sciences"},
+            {"@type": "Organization", "name": "University of Twente"}
+          ],
+          "sameAs": "https://orcid.org/0009-0006-9554-8205"
+        },
+        {
+          "@type": "Person",
+          "name": "Lennart John Baals",
+          "jobTitle": "PhD Researcher",
+          "affiliation": [
+            {"@type": "Organization", "name": "Bern University of Applied Sciences"},
+            {"@type": "Organization", "name": "University of Twente"}
+          ],
+          "sameAs": "https://orcid.org/0000-0002-7737-9675"
+        },
+        {
+          "@type": "Person",
+          "name": "Marius Jan Klein",
+          "jobTitle": "Researcher",
+          "affiliation": {"@type": "Organization", "name": "Bern University of Applied Sciences"}
+        }
+      ],
+      "keywords": ["narrative finance", "NLP", "machine learning", "asset bubbles", "structural breaks", "fintech", "digital finance"]
+    }
+    </script>
+    <!-- Chart.js for publication/citation visualizations (pinned to v4.4.0 for stability) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
+        <div class="navbar-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="gabin-research.html">PhD Research</a>
+            <a href="objectives.html">Objectives</a>
+            <a href="report.html">Report</a>
+            <a href="inventory.html">Inventory</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar" aria-label="Main navigation">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Navigation</div>
+            <ul class="sidebar-nav" id="sidebarNav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#publications">Project Pubs</a></li>
+                <li><a href="#team-publications">Team Pubs</a></li>
+                <li><a href="#phd-research">PhD Research</a></li>
+                <li><a href="#datasets">Datasets</a></li>
+                <li><a href="#collaborations">Collaborations</a></li>
+                <li><a href="#funding">Funding</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">PhD Research</div>
+            <a href="gabin-research.html" class="sidebar-link">Overview</a>
+            <a href="hft-papers.html" class="sidebar-link">HFT Papers</a>
+            <a href="narratives-papers.html" class="sidebar-link">Narratives Papers</a>
+            <a href="research-catalog.html" class="sidebar-link">File Catalog</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Project Pages</div>
+            <a href="objectives.html" class="sidebar-link">Research Objectives</a>
+            <a href="report.html" class="sidebar-link">Final Report</a>
+            <a href="inventory.html" class="sidebar-link">Evidence Inventory</a>
+            <a href="dmp.html" class="sidebar-link">Data Management Plan</a>
+            <a href="dmp-comparison.html" class="sidebar-link">DMP Comparison</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">COST Action</div>
+            <a href="cost-action.html" class="sidebar-link">SNSF Integration</a>
+            <a href="cost-network.html" class="sidebar-link">Network (420+)</a>
+            <a href="cost-events.html" class="sidebar-link">Events (150+)</a>
+            <a href="cost-publications.html" class="sidebar-link">Publications</a>
+            <a href="cost-mobility.html" class="sidebar-link">Mobility Grants</a>
+            <a href="cost-resources.html" class="sidebar-link">Resources</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Links</div>
+            <a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance" class="sidebar-link" target="_blank" rel="noopener noreferrer">MSCA Project</a>
+            <a href="https://www.ai-in-finance.eu/The-Digital-Finance-Research-Programme/Narrative%20Digital%20Finance/" class="sidebar-link" target="_blank" rel="noopener noreferrer">AI-in-Finance</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Official Pages</div>
+            <a href="https://data.snf.ch/grants/grant/213370" class="sidebar-link" target="_blank" rel="noopener noreferrer">SNSF Data Portal</a>
+            <a href="https://www.bfh.ch/en/research/research-projects/2023-180-022-876/" class="sidebar-link" target="_blank" rel="noopener noreferrer">BFH Project</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Funding</div>
+            <div class="sidebar-badge">
+                <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/SNSF-red?style=flat-square" alt="SNSF"></a>
+                <a href="https://cordis.europa.eu/project/id/101119635" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/EU-blue?style=flat-square" alt="EU"></a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main" id="main-content">
+        <div class="hero">
+            <h1>Narrative Digital Finance</h1>
+            <p class="sub">A tale of structural breaks, bubbles & market narratives | SNSF Research Project</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-val">122</div><div class="hero-stat-lbl">Team Publications</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">1,652</div><div class="hero-stat-lbl">Citations</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">5</div><div class="hero-stat-lbl">Researchers</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">49</div><div class="hero-stat-lbl">Countries</div></div>
+                <div class="hero-stat"><div class="hero-stat-val">CHF 236K</div><div class="hero-stat-lbl">Funding</div></div>
+            </div>
+            <div class="hero-badges">
+                <a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"><img src="https://img.shields.io/badge/SNSF-red?style=flat-square" alt="SNSF"></a>
+                <a href="https://cordis.europa.eu/project/id/101119635"><img src="https://img.shields.io/badge/EU-Horizon-blue?style=flat-square" alt="EU"></a>
+                <img src="https://img.shields.io/badge/2023--2026-Active-green?style=flat-square" alt="Active">
+            </div>
+            <div class="hero-btns">
+                <a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance" class="btn btn-primary">Project Site</a>
+                <a href="https://data.snf.ch/grants/grant/213370" class="btn btn-secondary">SNSF Data</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <section id="overview" class="section">
+                <div class="section-title">Project Overview</div>
+                <p style="margin-bottom:6px">This project develops a comprehensive framework using advanced ML and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks in financial markets.</p>
+                <div class="topics">
+                    <span class="topic lg">Machine Learning</span>
+                    <span class="topic lg">NLP</span>
+                    <span class="topic lg">Financial Markets</span>
+                    <span class="topic">Sentiment Analysis</span>
+                    <span class="topic">Deep Learning</span>
+                    <span class="topic">Bubble Detection</span>
+                    <span class="topic">Structural Breaks</span>
+                    <span class="topic">Market Microstructure</span>
+                    <span class="topic">HFT</span>
+                    <span class="topic">XAI</span>
+                </div>
+            </section>
+
+            <section id="highlights" class="section">
+                <div class="section-title">Key Publications</div>
+                <div class="highlight">
+                    <h4>Featured: TOPol: Semantic Polarity Fields (2025)</h4>
+                    <p>Taibi, Gomez - Semi-unsupervised framework for multidimensional narrative polarity using transformer embeddings. <a href="https://osf.io/nr94j/" target="_blank" rel="noopener noreferrer">OSF Repository</a></p>
+                </div>
+                <div class="grid grid-2" style="margin-bottom:6px">
+                    <div class="card"><h4>SLR on Financial Narratives (2025)</h4><p>Taibi et al. - AI-enhanced systematic literature review on financial narrative modeling. Under revision at Financial Innovation.</p></div>
+                    <div class="card"><h4>Nanosecond Microstructure (2025)</h4><p>Taibi, Osterrieder, Schlamp - UFT/HFT classification using Deutsche Borse nanosecond-level data.</p></div>
+                </div>
+                <div class="grid grid-2" style="margin-bottom:6px">
+                    <div class="card"><h4>HFT Reaction Times (2025)</h4><p>Osterrieder, Schlamp (Deutsche Borse) - Reaction times to macro-news announcements. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295" target="_blank" rel="noopener noreferrer">SSRN</a></p></div>
+                    <div class="card"><h4>Multimodal Influence (2024)</h4><p>Bolesta, Taibi et al. - NLP and Generative AI for financial instrument pricing. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153" target="_blank" rel="noopener noreferrer">SSRN</a></p></div>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card"><h4>Macro Narratives & Fed Communication (2025)</h4><p>Taibi - PCA-based macro index with BERTopic narrative shift detection around 2008 crisis.</p></div>
+                    <div class="card"><h4>A Primer on Narrative Finance (2023)</h4><p>Osterrieder - Foundation paper on narratives shaping financial markets. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4324860" target="_blank" rel="noopener noreferrer">SSRN</a></p></div>
+                </div>
+            </section>
+
+            <section id="research" class="section">
+                <div class="section-title">Research Description</div>
+                <div class="card" style="margin-bottom:8px">
+                    <h4>Background</h4>
+                    <p style="font-size:10px;color:#334155">Large fluctuations, instabilities, trends and uncertainty of financial markets constitute a substantial challenge for asset management companies, pension funds and regulators. Nowadays, most asset management companies and financial institutions follow a systematic trading approach in their investment decisions. However, automated or rules-based trading activities bring certain risks for market participants and the whole financial market. In times of increased market volatility or market sell-offs, investors applying similar trading rules might undertake the same actions, escalating and increasing systemic market risk.</p>
+                </div>
+                <div class="card" style="margin-bottom:8px">
+                    <h4>Rationale</h4>
+                    <p style="font-size:10px;color:#334155">Despite advancements in econometric methods, the detection of asset price bubbles and structural breaks remains uncertain and underexplored, particularly in the context of classic financial assets. Recent research underscores the powerful role of narratives in financial decision-making, suggesting that integrating textual analysis could enhance market understanding and prediction accuracy.</p>
+                </div>
+                <div class="grid grid-3" style="margin-bottom:8px">
+                    <div class="card"><h4>Aim 1: Econometric Validation</h4><p>Validate and refine existing econometric models using real-world financial data</p></div>
+                    <div class="card"><h4>Aim 2: Narrative Analysis</h4><p>Integrate narrative analysis to understand and predict market behaviors and asset price dynamics</p></div>
+                    <div class="card"><h4>Aim 3: AI/ML Framework</h4><p>Create a multidimensional AI and ML framework that enhances detection of market anomalies</p></div>
+                </div>
+                <div class="card">
+                    <h4>Methods</h4>
+                    <p style="font-size:10px;color:#334155">The approach involves collecting and processing a wide range of data, including stock prices, macroeconomic indicators, and textual content from the web. We employ text mining and NLP techniques to analyze sentiment, narrative structures, and their impact on market movements. Developing and testing new AI models that combine traditional financial analysis with narrative insights to predict market changes and detect structural breaks.</p>
+                </div>
+                <p style="margin-top:8px;font-size:10px;text-align:right"><a href="objectives.html">View detailed research objectives and work packages &rarr;</a></p>
+            </section>
+
+            <section id="team" class="section">
+                <div class="section-title">Team (University of Twente & BFH)</div>
+                <div class="grid grid-6">
+                    <div class="card team-card">
+                        <div class="team-avatar">JO</div>
+                        <h4>Joerg Osterrieder</h4>
+                        <p class="role">Principal Investigator</p>
+                        <p class="aff">BFH / UT</p>
+                        <div class="team-metrics">
+                            <div class="team-metric"><span class="team-metric-val">163</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">1166</span><span class="team-metric-lbl">Cites</span></div>
+                            <div class="team-metric"><span class="team-metric-val">13</span><span class="team-metric-lbl">h</span></div>
+                        </div>
+                        <div class="team-links"><a href="https://orcid.org/0000-0003-0189-8636" class="team-link">ORCID</a><a href="https://scholar.google.com/citations?user=ocRaXoIAAAAJ" class="team-link">Scholar</a></div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6)">GT</div>
+                        <h4>Gabin Taibi</h4>
+                        <p class="role">PhD Researcher</p>
+                        <p class="aff">BFH / UT</p>
+                        <div class="team-metrics">
+                            <div class="team-metric"><span class="team-metric-val">1</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">1</span><span class="team-metric-lbl">Cites</span></div>
+                            <div class="team-metric"><span class="team-metric-val">1</span><span class="team-metric-lbl">h</span></div>
+                        </div>
+                        <div class="team-links"><a href="https://orcid.org/0000-0002-0785-6771" class="team-link">ORCID</a></div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#f59e0b,#ec4899)">LB</div>
+                        <h4>Lennart John Baals</h4>
+                        <p class="role">PhD Researcher</p>
+                        <p class="aff">BFH / UT</p>
+                        <div class="team-metrics">
+                            <div class="team-metric"><span class="team-metric-val">17</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">131</span><span class="team-metric-lbl">Cites</span></div>
+                            <div class="team-metric"><span class="team-metric-val">5</span><span class="team-metric-lbl">h</span></div>
+                        </div>
+                        <div class="team-links"><a href="https://orcid.org/0000-0002-7737-9675" class="team-link">ORCID</a><a href="https://www.linkedin.com/in/lennart-john-baals-a621aa193/" class="team-link">LinkedIn</a></div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)">YL</div>
+                        <h4>Yiting Liu</h4>
+                        <p class="role">PhD Researcher</p>
+                        <p class="aff">BFH / UT</p>
+                        <div class="team-metrics">
+                            <div class="team-metric"><span class="team-metric-val">12</span><span class="team-metric-lbl">Works</span></div>
+                            <div class="team-metric"><span class="team-metric-val">354</span><span class="team-metric-lbl">Cites</span></div>
+                            <div class="team-metric"><span class="team-metric-val">4</span><span class="team-metric-lbl">h</span></div>
+                        </div>
+                        <div class="team-links"><a href="https://orcid.org/0009-0006-9554-8205" class="team-link">ORCID</a></div>
+                    </div>
+                    <div class="card team-card">
+                        <div class="team-avatar" style="background:linear-gradient(135deg,#64748b,#0f172a)">MK</div>
+                        <h4>Marius Jan Klein</h4>
+                        <p class="role">Team Member</p>
+                        <p class="aff">BFH</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="results" class="section">
+                <div class="section-title">Output & Results</div>
+                <div class="grid grid-4" style="margin-bottom:6px">
+                    <div class="stat-card"><div class="stat-num">122</div><div class="stat-lbl">Team Publications</div></div>
+                    <div class="stat-card"><div class="stat-num">1,652</div><div class="stat-lbl">Team Citations</div></div>
+                    <div class="stat-card"><div class="stat-num">13</div><div class="stat-lbl">Max h-index</div></div>
+                    <div class="stat-card"><div class="stat-num">CHF 236K</div><div class="stat-lbl">SNSF Funding</div></div>
+                </div>
+                <div class="grid grid-5" style="margin-bottom:6px">
+                    <div class="output-card"><div class="output-num">6</div><div class="output-lbl">Project Pubs</div></div>
+                    <div class="output-card"><div class="output-num">3</div><div class="output-lbl">Collaborations</div></div>
+                    <div class="output-card"><div class="output-num">6+</div><div class="output-lbl">Events</div></div>
+                    <div class="output-card"><div class="output-num">49</div><div class="output-lbl">COST Countries</div></div>
+                    <div class="output-card"><div class="output-num">270+</div><div class="output-lbl">Network Researchers</div></div>
+                </div>
+                <div class="grid grid-2">
+                    <div class="chart-box"><div class="chart-title">Publications by Year</div><canvas id="pubsByYearChart" height="100"></canvas></div>
+                    <div class="chart-box"><div class="chart-title">Citations by Year</div><canvas id="citationsByYearChart" height="100"></canvas></div>
+                </div>
+            </section>
+
+            <section id="publications" class="section">
+                <div class="section-title">Project Publications (SNSF Grant IZCOZ0_213370)</div>
+                <p style="font-size:11px;color:var(--color-text-muted);margin-bottom:10px">Direct outputs from this research project (WP1-WP4: NLP, narratives, bubbles, HFT)</p>
+                <div class="grid grid-2" style="margin-bottom:10px">
+                    <div class="pub-card">
+                        <h4>TOPol: Capturing and Explaining Multidimensional Semantic Polarity Fields and Vectors</h4>
+                        <p>Taibi, G., Gomez, L. (2025) | <a href="https://arxiv.org/abs/2510.25069" target="_blank" rel="noopener noreferrer">arXiv:2510.25069</a> | <a href="https://osf.io/nr94j/" target="_blank" rel="noopener noreferrer">OSF</a></p>
+                    </div>
+                    <div class="pub-card">
+                        <h4>AI-Enhanced Systematic Literature Review on Financial Narratives</h4>
+                        <p>Taibi, G. et al. (2025) | Under revision at Financial Innovation</p>
+                    </div>
+                </div>
+                <div class="grid grid-2" style="margin-bottom:10px">
+                    <div class="pub-card">
+                        <h4>Nanosecond Microstructure: High-Frequency Traders Participation Stylized Facts</h4>
+                        <p>Taibi, G., Osterrieder, J., Schlamp, S. (2025) | Working Paper</p>
+                    </div>
+                    <div class="pub-card">
+                        <h4>Reaction Times to Economic News in High-Frequency Trading</h4>
+                        <p>Osterrieder, J., Schlamp, S. (2025) | <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295" target="_blank" rel="noopener noreferrer">SSRN 5112295</a></p>
+                    </div>
+                </div>
+                <div class="grid grid-2" style="margin-bottom:10px">
+                    <div class="pub-card">
+                        <h4>Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI</h4>
+                        <p>Bolesta, K., Taibi, G., Mare, C., Osterrieder, J. et al. (2024) | <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153" target="_blank" rel="noopener noreferrer">SSRN 4698153</a></p>
+                    </div>
+                    <div class="pub-card">
+                        <h4>Macro Narrative Index Construction</h4>
+                        <p>BERTopic + PCA-based sentiment analysis of central bank communications | In Progress</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="team-publications" class="section">
+                <div class="section-title">Team Publications (All Members)</div>
+                <p style="font-size:11px;color:var(--color-text-muted);margin-bottom:10px">Complete publication record of all team members via OpenAlex</p>
+                <div class="pub-controls">
+                    <div class="pub-filters">
+                        <input type="text" class="pub-search" id="pubSearch" placeholder="Search...">
+                        <select class="pub-filter" id="yearFilter"><option value="">All Years</option></select>
+                        <select class="pub-filter" id="authorFilter"><option value="">All Authors</option></select>
+                    </div>
+                    <div style="display:flex;gap:6px;align-items:center">
+                        <span class="pub-count" id="pubCount">Loading...</span>
+                    </div>
+                </div>
+                <div style="overflow-x:auto;border:1px solid #e2e8f0;border-radius:5px">
+                    <table class="pub-table" id="pubTable">
+                        <thead><tr>
+                            <th onclick="sortTable(0)" style="width:45px">Year</th>
+                            <th onclick="sortTable(1)">Title</th>
+                            <th onclick="sortTable(2)" style="width:130px">Authors</th>
+                            <th onclick="sortTable(3)" style="width:110px">Venue</th>
+                            <th onclick="sortTable(4)" style="width:50px">Cites</th>
+                            <th style="width:45px">Links</th>
+                        </tr></thead>
+                        <tbody id="pubTableBody"><tr><td colspan="6" style="text-align:center;padding:10px">Loading...</td></tr></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="phd-research" class="section">
+                <div class="section-title">PhD Research: Narrative-Volatility Dynamics</div>
+                <div class="highlight" style="margin-bottom:6px">
+                    <h4>Gabin Taibi - University of Twente / BFH (Dec 2023 - Nov 2027)</h4>
+                    <p>Thesis: Modeling Narrative Dynamics for Volatility Regime Detection in Financial Markets</p>
+                </div>
+                <div class="grid grid-5" style="margin-bottom:6px">
+                    <div class="card"><h4>Stage 1</h4><p style="font-size:9px">Data Collection & SLR</p><p style="font-size:8px;color:#10b981">Completed</p></div>
+                    <div class="card"><h4>Stage 2</h4><p style="font-size:9px">Narrative Detection (TOPol)</p><p style="font-size:8px;color:#3b82f6">In Progress</p></div>
+                    <div class="card"><h4>Stage 3</h4><p style="font-size:9px">Volatility Estimation</p><p style="font-size:8px;color:#64748b">2026</p></div>
+                    <div class="card"><h4>Stage 4</h4><p style="font-size:9px">Narrative-Volatility Integration</p><p style="font-size:8px;color:#64748b">2026-27</p></div>
+                    <div class="card"><h4>Stage 5</h4><p style="font-size:9px">Thesis Synthesis</p><p style="font-size:8px;color:#64748b">2027</p></div>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card"><h4>Research Question</h4><p style="font-size:10px">How do forms of narratives influence volatility and regime changes in financial markets?</p></div>
+                    <div class="card"><h4>Key Outputs</h4><p style="font-size:10px">TOPol framework, SLR on financial narratives, HFT microstructure analysis, realized-library (Python/C++)</p></div>
+                </div>
+            </section>
+
+            <section id="datasets" class="section">
+                <div class="section-title">Research Datasets</div>
+                <div class="grid grid-3" style="margin-bottom:6px">
+                    <div class="card"><h4>RavenPack</h4><p style="font-size:10px">News headlines for sentiment analysis</p></div>
+                    <div class="card"><h4>LSEG (Refinitiv)</h4><p style="font-size:10px">Earnings call transcripts for corporate narratives</p></div>
+                    <div class="card"><h4>BIS Gigando</h4><p style="font-size:10px">Worldwide central bank speeches</p></div>
+                </div>
+                <div class="grid grid-3">
+                    <div class="card"><h4>SEC EDGAR</h4><p style="font-size:10px">10-K and 10-Q filings for regulatory text</p></div>
+                    <div class="card"><h4>Deutsche Borse</h4><p style="font-size:10px">Nanosecond-level Xetra/Eurex trading data</p></div>
+                    <div class="card"><h4>St. Louis FED FRED</h4><p style="font-size:10px">Macroeconomic indicators (CPI, GDP, Unemployment)</p></div>
+                </div>
+            </section>
+
+            <section id="collaborations" class="section">
+                <div class="section-title">Collaborations & Networks</div>
+                <div class="highlight" style="margin-bottom:6px">
+                    <h4>COST Action CA19130 - Fintech and AI in Finance (2020-2024)</h4>
+                    <p>Chair: J. Osterrieder | 49 countries | 270+ researchers | EU H2020 & Horizon Europe funded | Successfully concluded October 2024</p>
+                </div>
+                <div class="grid grid-2" style="margin-bottom:6px">
+                    <div class="card"><h4>Deutsche Borse AG</h4><p>Dr. Stefan Schlamp, Head of Quantitative Analytics - HFT, Market Microstructure. Joint SSRN publication 2025.</p></div>
+                    <div class="card"><h4>MSCA Digital Finance Network</h4><p>Coordinator: J. Osterrieder | 4.5M EUR | 13 institutions | 100+ researchers</p></div>
+                </div>
+                <div class="grid grid-3" style="margin-bottom:6px">
+                    <div class="card"><h4>Humboldt-University Berlin</h4><p>Financial econometrics, joint publications</p></div>
+                    <div class="card"><h4>American University of Sharjah</h4><p>Keynote presentation May 2024, blockchain & NFT research</p></div>
+                    <div class="card"><h4>Babes-Bolyai University</h4><p>Romania - PhD training, joint research</p></div>
+                </div>
+                <div class="grid grid-3">
+                    <div class="card"><h4>Masaryk University</h4><p>Czech Republic - Quantitative finance research collaboration</p></div>
+                    <div class="card"><h4>SGH Warsaw</h4><p>Poland - PhD training, fintech research</p></div>
+                    <div class="card"><h4>Quoniam Asset Management</h4><p>Germany - PhD internship, quantitative strategies research</p></div>
+                </div>
+            </section>
+
+            <section id="funding" class="section">
+                <div class="section-title">Funding</div>
+                <div class="grid grid-2" style="margin-bottom:6px">
+                    <div class="card"><h4>SNSF - Narrative Digital Finance (Main)</h4><p>Grant: IZCOZ0_213370 | CHF 236,118 | August 2023 - August 2026</p></div>
+                    <div class="card"><h4>EU Horizon Europe MSCA</h4><p>Digital Finance Network | Grant 101119635 | 4.5M EUR</p></div>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card"><h4>EU COST Action CA19130</h4><p>Fintech and AI in Finance | Chair: Osterrieder | 49 countries | 2020-2024 (concluded)</p></div>
+                    <div class="card"><h4>BFH Institute for Applied Data Science</h4><p>Host institution providing research infrastructure and support</p></div>
+                </div>
+            </section>
+
+            <section id="events" class="section">
+                <div class="section-title">Events & Conferences</div>
+                <div class="grid grid-2" style="margin-bottom:6px">
+                    <div class="card"><h4>9th European Conference on AI in Finance (Planned)</h4><p>2025 | Location TBD | Post-COST continuation</p></div>
+                    <div class="card"><h4>Final Project Dissemination</h4><p>August 2026 | Project concludes with final report</p></div>
+                </div>
+                <div class="grid grid-2" style="margin-bottom:6px">
+                    <div class="card"><h4>8th European COST Conference on AI in Finance</h4><p>Sep 2024 | Bern, Switzerland | BFH</p></div>
+                    <div class="card"><h4>COST FinAI PhD School 2024</h4><p>2024 | Treviso, Italy | GenAI, Chatbots, LLMs in Finance</p></div>
+                </div>
+                <div class="grid grid-3" style="margin-bottom:6px">
+                    <div class="card"><h4>COST FinAI Meets Istanbul</h4><p>May 2024 | Turkey</p></div>
+                    <div class="card"><h4>COST FinAI Meets Brussels</h4><p>2024 | Belgium</p></div>
+                    <div class="card"><h4>AUS Keynote</h4><p>May 2024 | UAE | Data Science in Finance</p></div>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card"><h4>7th European COST Conference</h4><p>Sep 2023 | Bern, Switzerland</p></div>
+                    <div class="card"><h4>16th ERCIM WG Conference</h4><p>Dec 2023 | Berlin, Germany</p></div>
+                </div>
+            </section>
+
+            <section id="news" class="section">
+                <div class="section-title">News & Updates</div>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-date">Dec 2025</div><h4>Website Ultra-Deep Review</h4><p>Comprehensive content audit and improvements to GitHub Pages site</p></div>
+                    <div class="timeline-item"><div class="timeline-date">2025</div><h4>TOPol Framework Released</h4><p>Taibi & Gomez publish semi-unsupervised framework for narrative polarity fields on OSF</p></div>
+                    <div class="timeline-item"><div class="timeline-date">2025</div><h4>SLR Under Revision</h4><p>AI-enhanced systematic literature review paper under revision at Financial Innovation</p></div>
+                    <div class="timeline-item"><div class="timeline-date">2025</div><h4>HFT Stylized Facts Paper</h4><p>Taibi, Osterrieder, Schlamp complete HFT market microstructure analysis with Deutsche Borse data</p></div>
+                    <div class="timeline-item"><div class="timeline-date">Jan 2025</div><h4>HFT Reaction Times Paper</h4><p>Osterrieder & Schlamp publish on SSRN: Reaction Times to Economic News</p></div>
+                    <div class="timeline-item"><div class="timeline-date">Dec 2024</div><h4>Final Year Milestone</h4><p>Entering final year with 6 project publications; project concludes August 2026</p></div>
+                    <div class="timeline-item"><div class="timeline-date">Sep 2024</div><h4>8th COST Conference Bern</h4><p>Annual AI in Finance conference hosted at BFH</p></div>
+                    <div class="timeline-item"><div class="timeline-date">Jan 2024</div><h4>Multimodal Influence Paper</h4><p>Bolesta, Taibi et al. on NLP and GenAI for financial pricing (SSRN)</p></div>
+                    <div class="timeline-item"><div class="timeline-date">Jan 2024</div><h4>Deutsche Borse Collaboration</h4><p>Partnership with Dr. Stefan Schlamp begins for HFT microstructure research</p></div>
+                    <div class="timeline-item"><div class="timeline-date">Jul 2023</div><h4>Project Launch</h4><p>SNSF funding started - CHF 236,118</p></div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="section-title">Contact</div>
+                <div class="contact-grid">
+                    <div class="contact-card"><h4>Principal Investigator</h4><p>Prof. Dr. Joerg Osterrieder<br>Bern University of Applied Sciences<br>University of Twente<br><a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a></p></div>
+                    <div class="contact-card"><h4>Project Website</h4><p><a href="https://www.digital-finance-msca.com/snsf-narrative-digital-finance">digital-finance-msca.com</a></p></div>
+                    <div class="contact-card"><h4>SNSF Grant</h4><p>IZCOZ0_213370<br><a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a><br>August 2023 - August 2026</p></div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div><h5>Project</h5><a href="#overview">Overview</a><a href="#results">Results</a></div>
+                    <div><h5>Team</h5><a href="#team">Members</a><a href="#collaborations">Collaborations</a></div>
+                    <div><h5>Resources</h5><a href="#publications">Publications</a><a href="report.html">Report</a></div>
+                    <div><h5>Funding</h5><a href="https://data.snf.ch/grants/grant/213370">SNSF Data</a><a href="https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a">mySNF</a><a href="https://cordis.europa.eu/project/id/101119635">EU CORDIS</a></div>
+                </div>
+                <div class="footer-bottom">Funded by EU (Grant No. 101119635) and SNSF (Grant IZCOZ0_213370) | 2023-2026 Narrative Digital Finance</div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        let publicationsData=[],allPublicationsData=[],sortDirection={};
+        let pubsByYearChart,citationsByYearChart;
+
+        // Debounce utility
+        function debounce(fn,wait){let t;return function(...args){clearTimeout(t);t=setTimeout(()=>fn.apply(this,args),wait)};}
+
+        // Sidebar active state (debounced for performance - H6)
+        const sections=document.querySelectorAll('section[id]');
+        const navLinks=document.querySelectorAll('.sidebar-nav a');
+        function updateActiveNav(){
+            let current='';
+            sections.forEach(s=>{if(window.scrollY>=s.offsetTop-60)current=s.id});
+            navLinks.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+current)a.classList.add('active')});
+        }
+        window.addEventListener('scroll',debounce(updateActiveNav,50));
+        updateActiveNav();
+
+        function initCharts(pubs){
+            const yearCounts={},citationsByYear={};
+            pubs.forEach(p=>{const y=p.year||'Unknown';yearCounts[y]=(yearCounts[y]||0)+1;citationsByYear[y]=(citationsByYear[y]||0)+(p.cited_by_count||0)});
+            const years=Object.keys(yearCounts).filter(y=>y!=='Unknown').sort();
+            const counts=years.map(y=>yearCounts[y]),citations=years.map(y=>citationsByYear[y]);
+            const ctx1=document.getElementById('pubsByYearChart').getContext('2d');
+            if(pubsByYearChart)pubsByYearChart.destroy();
+            pubsByYearChart=new Chart(ctx1,{type:'bar',data:{labels:years,datasets:[{data:counts,backgroundColor:'rgba(59,130,246,0.8)',borderRadius:3}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.05)'}},x:{grid:{display:false}}}}});
+            const ctx2=document.getElementById('citationsByYearChart').getContext('2d');
+            if(citationsByYearChart)citationsByYearChart.destroy();
+            citationsByYearChart=new Chart(ctx2,{type:'line',data:{labels:years,datasets:[{data:citations,borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,0.1)',fill:true,tension:0.4,pointRadius:2}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.05)'}},x:{grid:{display:false}}}}});
+        }
+        function populateFilters(pubs){
+            const years=[...new Set(pubs.map(p=>p.year).filter(y=>y))].sort((a,b)=>b-a);
+            const authors=[...new Set(pubs.flatMap(p=>p.team_member?[p.team_member]:[]))].sort();
+            document.getElementById('yearFilter').innerHTML='<option value="">All Years</option>'+years.map(y=>`<option value="${y}">${y}</option>`).join('');
+            document.getElementById('authorFilter').innerHTML='<option value="">All Authors</option>'+authors.map(a=>`<option value="${a}">${a}</option>`).join('');
+        }
+        function filterPublications(){
+            const search=document.getElementById('pubSearch').value.toLowerCase();
+            const year=document.getElementById('yearFilter').value;
+            const author=document.getElementById('authorFilter').value;
+            let filtered=allPublicationsData.filter(p=>{
+                const matchSearch=!search||(p.title||'').toLowerCase().includes(search)||(p.authors_str||'').toLowerCase().includes(search);
+                return matchSearch&&(!year||p.year==year)&&(!author||p.team_member===author);
+            });
+            publicationsData=filtered;
+            renderPublications(filtered);
+        }
+        async function loadPublications(){
+            try{
+                const res=await fetch('data/publications.json');
+                if(!res.ok)throw new Error('HTTP '+res.status);
+                const data=await res.json();
+                if(!Array.isArray(data))throw new Error('Invalid data format');
+                allPublicationsData=data;
+                publicationsData=[...allPublicationsData];
+                renderPublications(publicationsData);
+                initCharts(publicationsData);
+                populateFilters(allPublicationsData);
+            }catch(e){
+                console.error('Failed to load publications:',e);
+                document.getElementById('pubTableBody').innerHTML='<tr><td colspan="6" style="text-align:center;padding:10px">Unable to load publications. <button class="refresh-btn" onclick="loadPublications()">Retry</button></td></tr>';
+                document.getElementById('pubCount').textContent='Error';
+            }
+        }
+        function renderPublications(pubs){
+            const tbody=document.getElementById('pubTableBody');
+            document.getElementById('pubCount').textContent=pubs.length+' pubs';
+            if(!pubs.length){tbody.innerHTML='<tr><td colspan="6" style="text-align:center;padding:10px">No results</td></tr>';return}
+            tbody.innerHTML=pubs.map(p=>{
+                const citeCls=p.cited_by_count>=10?'high':'';
+                const doi=p.doi_url?`<a href="${p.doi_url}" class="doi-link" target="_blank" rel="noopener noreferrer">DOI</a>`:'';
+                const oa=p.open_access?'<span class="oa-badge">OA</span>':'';
+                const title=p.doi_url?`<a href="${p.doi_url}" class="title-link" target="_blank" rel="noopener noreferrer">${p.title||'Untitled'}</a>`:(p.title||'Untitled');
+                return `<tr><td>${p.year||'-'}</td><td>${title}</td><td class="authors">${p.authors_str||'-'}</td><td class="venue">${p.venue||'-'}</td><td><span class="citations-badge ${citeCls}">${p.cited_by_count||0}</span></td><td>${doi} ${oa}</td></tr>`;
+            }).join('');
+        }
+        function sortTable(col){
+            const dir=sortDirection[col]==='asc'?'desc':'asc';
+            sortDirection[col]=dir;
+            const sorted=[...publicationsData].sort((a,b)=>{
+                let va,vb;
+                switch(col){case 0:va=a.year||0;vb=b.year||0;break;case 1:va=(a.title||'').toLowerCase();vb=(b.title||'').toLowerCase();break;case 2:va=(a.authors_str||'').toLowerCase();vb=(b.authors_str||'').toLowerCase();break;case 3:va=(a.venue||'').toLowerCase();vb=(b.venue||'').toLowerCase();break;case 4:va=a.cited_by_count||0;vb=b.cited_by_count||0;break;default:return 0}
+                if(typeof va==='number')return dir==='asc'?va-vb:vb-va;
+                return dir==='asc'?va.localeCompare(vb):vb.localeCompare(va);
+            });
+            renderPublications(sorted);
+        }
+        document.getElementById('pubSearch').addEventListener('input',filterPublications);
+        document.getElementById('yearFilter').addEventListener('change',filterPublications);
+        document.getElementById('authorFilter').addEventListener('change',filterPublications);
+
+        // OpenAlex API - polite pool email (M9)
+        const OPENALEX_EMAIL='joerg.osterrieder@bfh.ch';
+        const CORS_PROXY='https://corsproxy.io/?';
+        const AUTHORS=[{name:'Joerg Osterrieder',search:'Joerg Osterrieder',minWorks:100},{name:'Gabin Taibi',search:'Gabin Taibi'},{name:'Lennart John Baals',search:'Lennart Baals'},{name:'Yiting Liu',search:'Yiting Liu'}];
+        async function refreshFromOpenAlex(){
+            const btn=document.getElementById('refreshBtn');
+            btn.disabled=true;btn.textContent='Loading...';
+            document.getElementById('pubTableBody').innerHTML='<tr><td colspan="6" style="text-align:center;padding:10px">Fetching from OpenAlex...</td></tr>';
+            try{
+                const allWorks=[],seenIds=new Set();
+                for(const author of AUTHORS){
+                    let url=`https://api.openalex.org/authors?search=${encodeURIComponent(author.search)}&per_page=5&mailto=${OPENALEX_EMAIL}`;
+                    if(author.minWorks)url+=`&filter=works_count:>${author.minWorks}`;
+                    const aRes=await fetch(CORS_PROXY+url);
+                    if(!aRes.ok){console.warn('OpenAlex author search failed for',author.name);continue;}
+                    const aData=await aRes.json();
+                    if(aData.results?.length){
+                        const wRes=await fetch(CORS_PROXY+`https://api.openalex.org/works?filter=authorships.author.id:${aData.results[0].id}&per_page=100&sort=publication_year:desc&mailto=${OPENALEX_EMAIL}`);
+                        if(!wRes.ok){console.warn('OpenAlex works fetch failed for',author.name);continue;}
+                        const wData=await wRes.json();
+                        if(wData.results)for(const w of wData.results)if(!seenIds.has(w.id)){seenIds.add(w.id);allWorks.push({id:w.id,title:w.title,year:w.publication_year,doi_url:w.doi,authors_str:w.authorships?.slice(0,5).map(a=>a.author?.display_name).join(', ')+(w.authorships?.length>5?'...':''),venue:w.primary_location?.source?.display_name||'',cited_by_count:w.cited_by_count||0,open_access:w.open_access?.is_oa||false,team_member:author.name})}
+                    }
+                }
+                if(!allWorks.length)throw new Error('No publications found');
+                allWorks.sort((a,b)=>(b.year||0)-(a.year||0));
+                allPublicationsData=allWorks;publicationsData=[...allWorks];
+                renderPublications(publicationsData);initCharts(publicationsData);populateFilters(allPublicationsData);
+            }catch(e){
+                console.error('OpenAlex refresh failed:',e);
+                document.getElementById('pubTableBody').innerHTML='<tr><td colspan="6" style="text-align:center;padding:10px;color:#dc2626">Failed to fetch from OpenAlex. CORS may block direct API calls - use server-side fetch instead.</td></tr>';
+            }
+            btn.disabled=false;btn.textContent='Refresh';
+        }
+        document.addEventListener('DOMContentLoaded',loadPublications);
+    </script>
+
+<!-- Analytics Tracking (async - H7) -->
+<script async>
+(function(){
+  var img = new Image();
+  img.src = 'https://analytics-narrative-digital-finance.digital-ai-finance.workers.dev/t?p=' + encodeURIComponent(location.pathname) + '&r=' + encodeURIComponent(document.referrer);
+})();
+</script>
+<div class="copyright-footer">(c) Prof. Dr. Joerg Osterrieder 2025</div>
+</body>
+</html>

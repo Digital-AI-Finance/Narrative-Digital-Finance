@@ -1,0 +1,290 @@
+\documentclass[preprint,12pt]{elsarticle}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+
+\begin{document}
+\begin{frontmatter}
+
+\title{Decoding the Flash: A Data-Driven Approach to Measuring Ultra-Fast and High-Frequency Traders Activity}
+
+\author[1,2,3]{Gabin Taibi\corref{cor1}}
+\ead{gabin.taibi@bfh.ch}
+
+\author[3]{Stefan Schlamp\corref{cor1}}
+\ead{stefan.schlamp@deutsche-boerse.com}
+
+\author[1,2]{Joerg Osterrieder\corref{cor1}}
+\ead{joerg.osterrieder@bfh.ch}
+
+\address[1]{Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland}
+\address[2]{Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands}
+\address[3]{Market Data and Services, Deutsche Börse, Eschborn, Germany}
+
+\begin{abstract}
+This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As technological advancements continue to reshape trading landscapes, accurately identifying and categorizing traders becomes crucial for understanding market dynamics and informing regulatory decisions. We analyze high-precision data from Deutsche Börse, focusing on post-trade event latencies to distinguish between ultra-fast traders (UFTs) using field-programmable gate arrays (FPGAs), high-frequency traders (HFTs), and other conventional participants.
+
+Our classification approach utilizes nanosecond-level latency thresholds and examines various metrics including total participation, aggressive and passive participation, cancellation rate, deep orderbook participation, liquidity adding and removing participation, and signal and noise value. We apply this methodology to a comprehensive dataset encompassing multiple markets and instruments, on a period spanning from January 2021 to January 2024.
+
+%This research contributes to the growing body of literature on modern market microstructure by providing a more granular understanding of participant behavior in ultra-low latency environments. Our findings have important implications for market regulation, monitoring practices, and the ongoing debate surrounding the effects of high-speed trading on market quality and stability.
+We conclude by discussing the limitations of our approach, including potential misclassification issues, and outlining future research directions aimed at refining classification accuracy and further exploring the impact of different trader categories on price formation and liquidity provision.
+\end{abstract}
+
+\begin{keyword}
+Financial Markets \sep Ultra-Fast Trading \sep High-Frequency Trading \sep Price Formation \sep Information Share \sep Market Efficiency \sep Orderbook Liquidity \sep Market Micro structures
+\end{keyword}
+
+\end{frontmatter}
+
+
+\newpage
+\tableofcontents
+
+
+\newpage
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{Context of the study}
+The rapid advancement of electronic markets has reshaped the financial landscape, driven by technological innovations such as ultra-low-latency trading systems, high-performance computing, and FPGA (Field-Programmable Gate Arrays) technology. These technological developments have enabled the rise of Ultra-Fast and High-Frequency Traders (UFT and HFT), who leverage ultra-fast reaction times to gain a competitive edge in the financial markets.
+
+In modern financial markets, a variety of participants operate with different objectives and strategies, including market makers, speculators, hedgers, etc. Each group contributes to market liquidity and efficiency in distinct ways, yet the precise classification of these participants is critical to understanding their impact on price formation, market dynamics, and liquidity. Particularly, UFTs and HFTs, who are equipped with cutting-edge technological infrastructures, stand out due to their ability to react to market signals within micro or even nanoseconds, distinguishing them from conventional participants.
+
+\subsection{Research Purposes}
+This paper aims to classify market participants based on their reaction times, focusing specifically on Ultra-Fast Traders (UFT), High-Frequency Traders (HFT), and other market participants. The classification is made by analyzing the reaction time to market events, measured by the difference between a trade trigger event and a reaction order time. Then, the emphasis is put on various metrics to analyze the information share to price and liquidity formation attributable to each market participant. The present study was carried out utilizing Euro STOXX 50 and Euro-Bunds Futures (Eurex), Tesla stock, as well as MSCI World and S\&P 500 iShares ETFs (Xetra).
+
+By providing a detailed analysis of participant reaction times and their trading behaviors, this study contributes to a deeper understanding of the role of UFTs and HFTs in financial markets, their participation rates, and the implications for market structure and regulation. The remainder of this paper is organized as follows: Section 2 discusses the technological infrastructure that supports UFTs and HFTs, while Section 3 outlines the methodology used for participant classification. In Section 4, we present the empirical results, followed by a discussion of the findings. Finally, Section 5 concludes the paper with key takeaways and suggestions for future research.
+
+\section{Literature Review}
+The following section delves into the literature review of key concepts and research relevant to understanding the mechanisms driving ultra-fast trading in modern financial markets. We begin by exploring the foundational role of Limit Order Books (LOBs) and the broader market microstructure in shaping price formation and liquidity dynamics. Next, we examine the rise of UFTS and HFTs, focusing on their strategies and the technologies that enable them to operate within these high-speed environments. Finally, we address the nanoseconds races, where competition to minimize latency has intensified, giving certain participants a critical edge in trade execution and market impact.
+
+
+\subsection{Limit Orderbooks and Market Microstructures}
+Lorem Ipsum.
+
+\subsection{UFTs, HFTs and their Strategies}
+Lorem Ipsum.
+
+\subsection{The Nanoseconds Races}
+Lorem Ipsum.
+
+\section{Technological Infrastructure and Market Participants}
+The evolution of financial markets has been closely tied to advancements in computational power and data management technologies. In recent years, innovations such as Field-Programmable Gate Arrays (FPGAs), enhanced data storage capabilities, and collocation services have driven a fundamental shift in how market participants, particularly High-Frequency Traders (HFTs) and Ultra-Fast Traders (UFTs), interact with the market. These participants benefit from ultra-low latency systems, which enable them to process and react to market events in fractions of a nanoseconds for the fastest.
+
+\subsection{Technological Improvements in Financial Markets}
+Over the last decade, the concept of latency—specifically the time taken to receive and act upon market data—has been pushed to its physical limits. Over the last years, the time horizons within which market participants are expected to operate has considerably decrease, from more than 30 nanoseconds in 2018 to around 2 to 5 nanoseconds in 2023 \cite{2_is_new_5}. What was once considered fast at 30 microseconds is now outpaced by systems capable of completing transactions in as little as a few nanos now, especially with the advent of FPGA-based trading systems. These systems allow traders to bypass traditional software-based trading algorithms, replacing them with hardware-optimized solutions that can respond to market conditions at a speed unattainable by software optimization alone.
+
+Collocation services further enhance this speed advantage by allowing market participants to place their servers in close physical proximity to exchange servers. This reduces the time it takes for data to travel between the exchange and the participant, effectively minimizing the latency between order execution and market data reception, as the distances to the exchange servers are a a few meters of cable. Additionally, large-scale data lakes, which allow for massive storage and real-time access to historical and current market data, provide participants with the analytical tools needed to identify and exploit fleeting market opportunities.
+
+\subsection{The T7 Infrastructure}
+Deutsche Börse, one of the world’s leading financial  organizations, offers a robust technological infrastructure to support a wide range of market participants, from traditional investors to cutting-edge HFT and UFT participants. The T7 trading platform is designed with an emphasis on ultra-low-latency performance, providing high-speed data feeds and connectivity options tailored to meet the demands of modern high-speed trading environments. 
+
+\subsubsection{Eurex}
+Eurex, one of the largest derivatives exchanges in the world, operates under Deutsche Börse’s T7 infrastructure. Eurex’s trading system is specifically optimized for derivatives, offering ultra-low-latency execution for a wide range of products, including futures and options. Eurex’s deep liquidity pools, combined with the high-speed performance of the T7 infrastructure, attract a significant portion of volume and high-frequency trading activity.
+
+\subsubsection{Xetra}
+The Xetra platform, which operates Deutsche Börse’s electronic trading system for equities, also leverages the T7 infrastructure to ensure high-speed execution of trades. Xetra is responsible for a large portion of stock market liquidity in Germany and across Europe, offering a wide array of financial instruments ranging from equities to ETFs. Xetra’s ultra-low-latency system allows for rapid order execution in high-demand securities.
+
+\subsubsection{Trading engine overview}
+At the heart of the T7 platform lies the matching engine, a high-performance system responsible for executing trades by matching buy and sell orders. The matching engine operates at incredible speeds, processing vast volumes of orders in a matter of microseconds. This performance is essential for UFTs and HFTs, whose trading strategies depend on the ability to execute orders in the shortest time possible. The engine’s architecture is optimized for both speed and scalability, ensuring that it can handle the intense order flow generated by high-frequency trading without delays.
+
+The High-Performance Timestamp (HPT) and HPT All (HPTA) files are integral to facilitating ultra-fast trading activities, providing granular transaction data that allows market participants to refine their trading strategies. These datasets capture the detailed timing of market orders and trades, and are crucial for clients who rely on precision to gain a competitive edge. The data feed captures every event received in the system, from order entry to execution, following the strict price-time priority mechanism in the T7 matching engine.
+
+Indeed, in the T7 system’s LOB, orders are prioritized first by price—where better-priced orders are executed first—and then by time, where the earliest order at a given price level takes priority. This makes precise timestamping critical, as any small delay in order receipt or execution can directly affect whether a trade is executed or missed. The HPT and HPTA files track these priority dynamics in detail, allowing market participants to analyze order flow and refine their strategies accordingly. Timestamps are synchronized using advanced systems like White Rabbit and Precision Time Protocol (PTP), ensuring high accuracy with minimal drift, often within a few nanoseconds, to maintain the integrity of execution timing.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Paper 1 (SSRN)/images/DBAG_matching_engine.png}
+    \caption{Timestamps collection workflow in Deutsche Börse T7}
+    \label{fig:deutsche-boerse-system}
+\end{figure}
+
+The figure \ref{fig:deutsche-boerse-system} illustrates the workflow and points where timestamps are captured within the Deutsche Börse T7 trading system. The HPT file includes several important time markers:
+
+\begin{itemize}
+    \item RequestTime (t\_3a): The time a request for order or quote arrived in the Access Network layer.
+    \item RequestTime (t\_3n): The time a request for order or quote was sent to T7.
+    \item AggressorTime (t\_5): The time at which the aggressive order was processed by the system.
+    \item ExecID (t\_7): The execution identifier timestamp, marking the precise moment of trade execution.
+    \item TransactTime (t\_9): The time when the transaction is recorded.
+    \item EOBICaptTime (t\_9d): The time at which the update is publicly sent to all market participants.
+\end{itemize}
+
+The detailed timestamp data provided by the HPT and HPTA files enable market participants to make informed decisions by analyzing the exact timing and sequence of orders within the T7 system. By leveraging this precise information, traders can refine their strategies to better align with their specific objectives. As each participant type interacts with the market differently, understanding their roles in providing or taking liquidity becomes critical. The following section will explore these various market participants' objectives and how they shape their trading behavior within the context of ultra-fast trading environments.
+
+%\subsection{Roles of Market Participants}
+%The financial market ecosystem is comprised of a diverse range of participants, each with specific roles and objectives. These participants include:
+
+%\begin{itemize}
+%    \item Market Makers: Entities that provide liquidity by continuously quoting buy and sell prices. Their primary goal is to facilitate trading, ensuring smooth market operations while earning profits through bid-ask spreads.
+%    \item Arbitragers: Participants who seek to exploit price inefficiencies across different markets or financial instruments. They rely heavily on low-latency technology to capture fleeting opportunities before other traders can act.
+%    \item Speculators: Traders who take directional positions based on their predictions of future price movements. Unlike market makers or arbitragers, speculators are typically not concerned with providing liquidity or exploiting pricing inefficiencies but rather with capitalizing on expected price trends.
+%    \item Hedgers: These participants use financial instruments to mitigate their exposure to risk. Hedgers often have a longer-term focus than speculators or arbitragers and may not be as reliant on ultra-fast technologies.
+%\end{itemize}
+
+\subsection{Market Participants Objectives}
+In financial markets, participants operate with a variety of functions and objectives that directly influence their trading behavior. Some participants, such as market makers, focus on supplying continuous buy and sell quotes to capture profits from the bid-ask spread. Others, like hedgers, aim to mitigate risk by taking offsetting positions in related markets. Meanwhile, speculators seek to capitalize on price movements, hoping to profit from predicting market trends. These varying objectives lead to different approaches when accessing the market—some participants may aggressively seek liquidity through immediate trade execution, while others contribute liquidity more passively by placing limit orders. The diversity in trading styles and intentions creates a broad spectrum of market impact, which is why we distinguish between market makers and market takers based on their roles in providing or consuming liquidity.
+
+\subsubsection{Market Makers}
+Market makers are crucial to maintaining liquidity in financial markets by placing limit orders at various price levels, thereby allowing other participants to buy or sell assets without causing significant price fluctuations. By consistently quoting both buy and sell prices, market makers ensure a continuous and orderly flow of trades, helping stabilize the market and prevent sudden volatility. Their role is fundamental in narrowing the bid-ask spread, providing the necessary liquidity on both sides of the order book.
+
+Most market-making strategies profit from the bid-ask spread by executing trades on both sides of the order book. However, more advanced strategies such as statistical arbitrage, market-neutral strategies, or pairs trading also play an important role in market-making activities. These strategies rely on identifying and exploiting price inefficiencies between related assets or over time, which requires sophisticated models and the ability to predict short-term price movements.
+
+For these advanced strategies, the probability of order execution, or fill probability, becomes a critical factor that determines profitability. In these strategies, the next bid or ask quote is as important as the latency of execution. Market makers operating under these models must anticipate future market conditions while minimizing the risk of holding unwanted inventory. Speed plays a pivotal role in their success, as it enables them to adjust their quotes efficiently and maintain competitiveness in the order book, thereby optimizing their inventory management and minimizing exposure to adverse price movements.
+
+\subsubsection{Market Takers}
+Market takers, on the other hand, remove liquidity from the market by executing trades against existing orders. This is typically done through market orders, where the trade is executed at the best available bid or ask price, but it could also involve aggressive limit orders that cross the spread. In such cases, the order is placed at a price that ensures immediate execution by matching or exceeding the current best quote. This method is frequently used to guarantee quick execution, although it may result in less favorable pricing if the market depth is shallow.
+
+For larger market participants, such as institutional investors, market orders can be risky. Executing a large trade via a market order may "sweep" several levels of the order book, resulting in what's known as a "fat finger" event, where the final execution price deviates significantly from the initial best bid or ask. To avoid such occurrences, these participants often rely on algorithms to break up large orders into smaller chunks, minimizing market impact while still executing aggressively when necessary.
+
+UFTs and HFTs engage in both market-making and market-taking roles but operate under the principle of minimizing latency. Their trading infrastructure is designed to allow for immediate reactions to market events, capturing favorable prices before other market participants have a chance to react. In the case of market makers, speed is critical to continuously adjust and update quotes in response to new information, ensuring that they remain competitive while managing inventory risk. For market takers, quick execution is equally important as it allows them to take advantage of fleeting arbitrage opportunities or react to significant price changes faster than others.
+
+\subsection{Information Asymetry in low-latency trading}
+In low-latency trading environments, information asymmetry can significantly impact market dynamics. Informed traders, often those with superior access to market data or faster technology, can exploit this asymmetry by executing trades based on new information before the rest of the market has time to adjust. This is particularly concerning for other market participants, as it can lead to what's known as toxic order flow. Toxic order flow occurs when uninformed participants unknowingly trade at unfavorable prices due to the presence of informed traders who are acting on superior information.
+
+This need for fast reaction times has become a defining characteristic of low-latency trading. Traders with superior access to information and the technological infrastructure to act quickly can capitalize on even the slightest inefficiencies in the market, leaving slower participants at a disadvantage. In this environment, the distinction between informed and uninformed traders becomes critical, and the ability to process and react to information faster than others creates significant advantages. Consequently, high-speed trading infrastructures, such as those employed by UFTs and HFTs, are designed to minimize latency to ensure the quickest possible response to market signals.
+
+UFTs and HFTs are generally among the most informed market participants. Their advanced infrastructures, which rely on state-of-the-art technology and algorithmic models, allow them to react to market events almost instantaneously. They often have access to high-quality, real-time data feeds and colocation services, which enable them to receive and process information faster than most other market participants. This technological edge allows them to act on new information—such as large market orders, news events, or price anomalies—before the rest of the market can respond. Their speed allows them to either initiate trades based on informed decisions or adjust their quotes rapidly, ensuring that they maintain a competitive edge in providing liquidity or taking advantage of favorable prices.
+
+However, the presence of highly informed traders can have a mixed impact on the market. On one hand, their participation enhances market efficiency by correcting price discrepancies more rapidly. On the other hand, their dominance in low-latency trading can exacerbate information asymmetry, leading to situations where slower or less informed participants are systematically disadvantaged. This can result in increased volatility, particularly in response to sudden market events, as UFTs and HFTs aggressively adjust their positions in reaction to new information.
+
+In such a competitive environment, even small differences in latency and information access can have a profound impact on profitability. As a result, UFTs and HFTs continuously invest in reducing latency and improving the speed at which they process data to maintain their informational advantage. This has led to a technological arms race in financial markets, where the ability to react milliseconds—or even microseconds—faster than competitors can translate into significant gains.
+
+\section{Classification Methodology}
+\label{sec:classification}
+The methodology used in this study is designed to classify market participants into three primary groups: Ultra-Fast Traders (UFTs), High-Frequency Traders (HFTs), and conventional or non-HFT participants. The classification is based on the reaction times to market events, specifically the time it takes participants to respond to recent trades by placing new orders. This section provides a detailed explanation of the data used, the classification process, and the metrics employed to analyze participant behavior.
+
+\subsection{Data Description}
+The study leverages a comprehensive dataset that includes transactions from multiple financial products across both the Eurex and Xetra trading platforms. The specific instruments analyzed in this study are:
+
+\begin{itemize}
+    \item DAX and Euro STOXX 50 Futures (Eurex): These highly liquid futures contracts are widely traded, making them ideal for studying high-speed trading behavior.
+    \item Tesla stock: As one of the most traded and volatile equities, Tesla stock provides a clear view into participant activity in individual equity markets.
+    \item MSCI and S\&P 500 iShares ETFs (Xetra): These ETFs are key instruments for institutional investors, offering exposure to large baskets of global equities.
+\end{itemize}
+
+The data spans from January 1, 2021 to September 1, 2024, covering a period characterized by both significant market volatility and relatively stable phases. This allows for a robust analysis of participant behavior across different market conditions. The dataset includes high-frequency trading data, specifically post-trade events such as order executions, cancellations, and modifications, provided by Deutsche Börse’s HPT and HPTA Files systems.
+
+As previously mentioned, HPT and HPTA files contain...
+
+In addition, the Deutsche Börse A7 Analytics Platform provide a detailed view of...
+
+\subsection{Post-Trade Events Reaction Time Calculation}
+The classification of market participants in this study hinges on the concept of reaction latency, which refers to the time it takes for a participant to react to a market event, such as a trade or an order book update. For each new reaction order, the system measures the time difference between the triggering event and the receipt of the reaction order by the exchange.
+
+The calculation of reaction times is based on post-trade events, which include any modification in the order book—whether due to a trade, cancellation, or order addition. For each reaction order, we track the most recent market event that triggered the response, typically a trade. The reaction time is then measured as the time difference between the timestamp of the trigger event and the moment the reaction order is received by the exchange.
+
+Additionally, the concept of signal and noise event...
+
+\subsection{Reaction Latencies and Classification Criteria}
+
+To classify participants, the study considers the reaction latency as a proxy for technological capabilities. Lower reaction latencies are indicative of faster, more sophisticated trading systems. Based on this measure, we establish the following classification thresholds:
+
+\begin{itemize}
+    \item Noise: Negative reaction latencies are considered as noise.
+    \item Ultra-Fast Traders (UFT): Reaction latency from 0 to 1 µs. These participants, typically equipped with FPGA technology, are able to respond to market events nearly instantaneously.
+    \item High-Frequency Traders (HFT): Reaction latency between 1 µs and 10 µs. HFTs rely on high-speed systems but are generally not as fast as UFTs.
+    \item Conventional (non-HFT) Participants: Reaction latency greater than 10 µs. These participants include institutional investors and traditional market makers who do not engage in ultra-fast trading.
+\end{itemize}
+
+These thresholds reflect the technological divide between different market participants, particularly the gap between those utilizing FPGA-based systems and those reliant on conventional trading infrastructures. The classification thresholds were chosen based on an extensive analysis of reaction times across multiple market instruments and conditio
+
+\subsection{Participation Metrics}
+Once participants are classified, several key metrics are employed to analyze their behavior in the markets. These metrics provide insights into the extent of each participant's involvement in trading activities and their overall impact on market dynamics. For this study, the following metrics are calculated as a percentage of the total quote currency volume:
+
+\begin{itemize}
+    \item Latency: The time taken by each participant to react to market events, as discussed in the classification process. Latency is measured in nanoseconds for greater precision.
+    \item Aggressive Participation Volume \%: This metric represents the proportion of aggressive orders, which are essentially trades that consume liquidity. It reflects the level of market-taking activity.
+    \item Passive Participation Volume \%: This metric captures the share of passive orders, which correspond to order book updates that provide liquidity. Passive participants, typically market makers, are essential for maintaining market stability.
+    \item Deep Participation Volume \%: This metric measures the volume of orders placed deeper in the order book (i.e., on levels greater than 1). Deep orders are essentially noise as most of the competition is done on the first order book level.
+    \item Canceled Participation Volume \%: This metric tracks the percentage of total volume that was represented by canceled orders. A high cancellation rate is often associated with fast-trading participants who frequently update their quotes without executing trades, which can lead to increased market noise.
+    \item Adding Liquidity Participation Volume \%: This metric reflects the percentage of orders that add liquidity to the market, typically through order book updates where new orders are placed. Adding liquidity is a crucial function performed by market makers and passive traders.
+    \item Removing Liquidity Participation Volume \%: This metric measures the proportion of volume attributed to liquidity consuming, which includes both canceled orders and trades. Participants removing liquidity are generally more aggressive and opportunistic, seeking to capitalize on immediate price movements.
+    \item Signal and Noise values: This value is the signal (resp: noise) value of a reaction event, given the current micro price and the markout (t\_7 + 1 second) price. If the reaction order/trade pushes the micro price  toward markout value, it is considered as signal; if it pushes the micro price away markout value, it considered as noise; if the reaction event overshoots markout value, then it is considered both as signal and noise. As a pseudo-code is worth a thousand words, we give the pseudo-code to calculate the signal/noise value for a reaction event.
+\end{itemize}
+
+The pseudo code to calculate signal and noise value is given bellow:
+
+\begin{algorithm}
+\caption{signal-to-noise-algo}
+\label{alg:signal_noise}
+\begin{algorithmic}
+    \STATE trigger\_mp = trigger\_trade.microprice()
+    \STATE reaction\_mp = reaction\_event.microprice()
+    \STATE markout\_mp = markout\_event.microprice()
+    
+    \IF {trigger\_mp $\leq$ reaction\_mp $\leq$ markout\_mp \OR trigger\_mp $\geq$ reaction\_mp $\geq$ markout\_mp}
+        \STATE signal = abs(reaction\_mp - trigger\_mp)
+        \STATE noise = 0
+    \ELSIF {reaction\_mp $\leq$ trigger\_mp $\leq$ markout\_mp \OR reaction\_mp $\geq$ trigger\_mp $\geq$ markout\_mp}
+        \STATE signal = 0
+        \STATE noise = abs(reaction\_mp - trigger\_mp)
+    \ELSIF {trigger\_mp $\leq$ markout\_mp $\leq$ reaction\_mp \OR reaction\_mp $\leq$ markout\_mp $\leq$ trigger\_mp}
+        \STATE signal = abs(markout\_mp - trigger\_mp)
+        \STATE noise = abs(reaction\_mp - markout\_mp)
+    \ENDIF
+    \RETURN signal / reaction\_mp, noise / reaction\_mp
+\end{algorithmic}
+\end{algorithm}
+
+The micro price is simply the mid price adjusted by order imbalance ratio weighted half a tick. The formula is given bellow:
+
+\[
+microprice = \frac{p_B + p_A}{2} + ticksize \times \frac{1}{2} \times \frac{q_B - q_A}{q_B + q_A}
+\]
+where $p_B$ (resp. $p_A$) is the the best bid price (resp. best ask price) and $q_B$ (resp. $q_A$) is the best bid (resp. best ask) quantity.
+
+Each of these metrics allows us to evaluate the role and impact of UFTs, HFTs, and conventional participants on market liquidity, price discovery, and trading efficiency. The results from this analysis provide the foundation for the empirical findings discussed in the next section.
+
+\section{Empirical Results}
+\label{sec:results}
+This section presents the empirical findings from the analysis of UFTs, HFTs, and conventional participants across the following financial instruments: Euro-Bund and Euro STOXX 50 Futures, Tesla stock, and MSCA World and S\&P 500 iShares ETFs. The results focus on participant behavior, particularly in terms of their participation and order execution patterns. By examining the previously mentioned metrics we gain insights into the distinct roles these participants play in the market and their overall influence on price discovery and market dynamics.
+
+\subsection{Total participation and Average Latency}
+Lorem ipsum.
+
+\subsection{Aggressive and Passive Participation}
+Lorem ipsum.
+
+\subsection{Liquidity Adding and Removing Participation}
+Lorem ipsum.
+
+\subsection{Cancellation Rate and Deep Orderbook Participation}
+Lorem ipsum.
+
+\section{Conclusion}
+\label{sec:conclusion}
+This study has provided an in-depth analysis of Ultra-Fast Traders (UFTs) and High-Frequency Traders (HFTs) in modern financial markets, utilizing data from Deutsche Börse's HPT systems and the A7 Analytics Platform. By classifying market participants based on their reaction times to market events, we were able to distinguish UFTs, HFTs, and conventional participants, offering a clearer picture of their respective roles and behaviors.
+
+One of the key findings is that UFTs, with reaction times below 1 microsecond, are approaching the physical limits of speed in electronic trading. These participants, often employing FPGA-based systems, are able to leverage their ultra-low latency to gain a competitive edge, particularly in highly liquid instruments such as Euro STOXX 50 Futures and DAX Futures. High-Frequency Traders, with reaction times between 1 and 10 microseconds, continue to play a significant role in liquidity provision and market-making, but they are outpaced by UFTs in terms of reaction speed.
+
+The analysis also highlighted the varied participation rates of UFTs and HFTs across different instruments and market conditions. In particular, the aggressive participation of UFTs in high-volatility environments contrasts with the more passive, liquidity-providing role of conventional participants. However, one of the main critiques of UFT and HFT activity is the high cancellation rate of their orders, which can introduce noise and volatility into the market without significantly contributing to price discovery.
+
+From a regulatory and market-structure perspective, the findings underscore the need for continued monitoring of UFT and HFT activities. The ultra-fast nature of these participants challenges traditional market oversight frameworks, particularly regarding the detection of market manipulation and the prevention of systemic risks.
+
+While this study provides valuable insights into the classification and behavior of fast market participants, several limitations must be acknowledged. The reliance on reaction time as the primary classification metric may lead to misclassifications in certain cases, especially where participants adopt hybrid trading strategies that blur the lines between UFT, HFT, and conventional activity. Additionally, the study does not fully explore the impact of UFT and HFT participation on market liquidity and price formation, which should be a focus of future research.
+
+Looking ahead, further refinements to classification methodologies are necessary to improve accuracy, particularly in distinguishing participants that operate near the boundaries of defined latency thresholds. Additionally, future research should investigate the broader impact of UFT and HFT activity on price discovery, liquidity provision, and market stability, particularly as technological advancements continue to push the limits of trading speed.
+
+\section*{Acknowledgements}
+\label{sec:acknowledgement}
+The author gratefully acknowledges:
+\begin{itemize}
+    \item The Deutsche Börse for hosting the PhD internship, particularly the Quantitative Analytics teams and Dr. Stefan Schlamp for supervision during the internship.
+    \item The Swiss National Science Foundation (SNSF) for funding the PhD research project "Narrative Digital Finance: a tale of structural breaks, bubbles \& market narratives" (grant number 213370).
+    \item Bern University of Applied Sciences, the author's employer as a PhD student, and PhD supervisors Prof. Dr. Jörg Osterrieder and Prof. Dr. Branka Hadji Misheva.
+    \item University of Twente, the host university awarding the PhD degree, and PhD promotor Prof. Dr. Martijn Mes.
+    \item The COST Action 19130 FinAI for providing exposure to an important research network of researchers and industry members.
+    \item The MSCA Digital Network on Digital Finance for offering access to leading industry partners and a vast network of researchers, professionals, and students.
+\end{itemize}
+
+
+\section*{References}
+\bibliographystyle{elsarticle-num}
+\bibliography{HFT_Activity_and_Market_Microstructures.bib}
+
+\end{document}
+

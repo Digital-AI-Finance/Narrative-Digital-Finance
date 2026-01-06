@@ -1,0 +1,213 @@
+\documentclass[12pt]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Language and formatting
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+
+% Links
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+% Math and symbols
+\usepackage{amsmath, amssymb, amsfonts}
+
+% Bibliography
+\usepackage[backend=biber, style=apa,natbib=true]{biblatex}
+\addbibresource{SLR_references.bib}
+
+% Figures and tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{tikz}
+
+% Code
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Other
+\usepackage{lipsum}
+\usepackage{pdflscape}
+\usepackage{authblk}
+
+% Keywords handling command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+% Variables
+\renewcommand\Authfont{\normalsize}
+\renewcommand\Affilfont{\small}
+\newcommand{\nbpapersinitial}{288} % Initial query
+\newcommand{\nbpapersfilters}{142} % Additional filters
+\newcommand{\nbpapersjournalareas}{125} % Journal area filter
+\newcommand{\nbpapersalgo}{24} % Algorithmic filtering
+\newcommand{\nbpapersavailable}{20} % Only available papers
+\newcommand{\nbpapersworkshops}{16} % No workshop proceeds
+\newcommand{\conditionnumber}{370}
+\newcommand{\kmoscore}{0.815}
+
+% Figure design
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\tikzstyle{database} = [cylinder, shape border rotate=90, aspect=0.25, draw, minimum height=1.2cm, text width=2cm, align=center]
+\tikzstyle{process} = [rectangle, draw, minimum height=1.2cm, minimum width=4.5cm, text width=4.3cm, align=center]
+\tikzstyle{phase} = [draw=none, text width=1cm, align=center]
+\tikzstyle{decision} = [diamond, draw, aspect=2, minimum width=3.5cm, minimum height=1.2cm, text width=3.3cm, align=center]
+\tikzstyle{arrow} = [thick, -{Stealth}]
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\title{Strategic Narratives during Economic Turning Points: An AI Framework for Monitoring U.S. Central Bank Communications}
+
+% Authors
+\author[1, 2]{Gabin Taibi}
+\author[1, 3]{Lucia Gomez Teijeiro}
+
+% Affiliations
+\affil[1]{University of Twente, Industrial Engineering and Business Information Systems, AE Enschede, Netherlands}
+\affil[2]{Bern University of Applied Sciences, Business School, Bern, Switzerland}
+\affil[3]{University of Geneva, Geneva School of Economics and Management, Geneva, Switzerland}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+Central bank communication plays a critical role in shaping expectations during macroeconomic transitions, yet empirical understanding of how narrative strategies evolve around economic turning points remains limited. This study leverages large language models to analyze U.S. Federal Reserve public speeches made from 1996 to 2025, focusing on those occurring during economic turning points. By combining macroeconomic indicators and communication materials, we here identify key strategic communication patterns systematically preceding these economic inflection points and announcing transitions. Our findings demonstrate that macroeconomic regimes and associated policy narratives strategies can be identified and predicted in an unsupervised manner, with statistical evidences of topic and tone shifts aligned with macroeconomic transitions. This work extends emerging research unveiling central bank transparency, and the proposed framework bridges macroeconomic signal detection with large-scale textual analysis and offers a practical tool for policy monitoring and narrative tracking. Future efforts aim at generalize the framework to emerging breakpoints, expand model explainability, and exploring causal links to market reactions.
+\end{abstract}
+
+\keywords{Macroeconomy, Central Bank Speeches, Dimensionality Reduction, Natural Language Processing, Topic Modeling}
+
+
+% #######################################################
+
+
+\section{Introduction}
+\label{sec:introduction}
+
+KEPT YOUR GUIDING BULLET POINTS AT THE END OF THE SECTION
+
+Modern central banking operates in an environment where shaping expectations is as critical as adjusting policy rates. In the aftermath of the global financial crisis and more recently the COVID-19 pandemic and inflation resurgence, traditional policy levers, such as interest rates and balance sheet operations, have often reached their limits or required greater forward planning. In such contexts, communication has become a key channel for influencing economic behavior by guiding the expectations of households, firms, and financial markets about future policy actions, inflation, and growth (Woodford, 2005). This evolution marks a broader shift in macroeconomic management, where credibility, transparency, and the strategic use of language are essential components of monetary policy transmission. By articulating their views on the economic outlook and policy stance, central banks aim to reduce uncertainty and align private sector expectations with policy objectives, thereby enhancing the effectiveness of their decisions without necessarily enacting immediate rate changes (Blinder et al., 2008; Coibion et al., 2022). This function becomes particularly salient during periods of macroeconomic transition, when uncertainty is high and the clarity of central bank narratives can serve as a stabilizing force (Campbell et al., 2012; Haldane and McMahon, 2018). 
+
+The role of communication is particularly crucial during macroeconomic turning points — periods of heightened uncertainty when economic narratives become instrumental in restoring confidence or preparing markets for structural change. While past research has shown that central bank communication affects asset prices, expectations, and volatility (Gürkaynak, Sack, Swanson, 2005; Schmeling and Wagner, 2019), empirical studies have largely focused on short-term market reactions to scheduled announcements (e.g., FOMC statements or press conferences). These studies often neglect the longer-term strategic evolution of narratives across macroeconomic regimes. Moreover, few studies systematically align narrative content with objectively identified economic turning points.
+
+This study makes three central contributions towards bridging the critical literature gap between macroeconomic monitoring and strategic narrative analysis: A) It introduces a scalable framework combining unsupervised macroeconomic regime detection with high-resolution textual analysis of central bank communication; B) It offers new empirical evidence that central bank narratives evolve in anticipation of, and alignment with, economic turning points, suggesting an active signaling role; and C) It lays the groundwork for further exploration into the causal relationship between narrative shifts and market behavior, with implications for transparency, accountability, and monetary policy effectiveness.
+
+- Motivation: macroeconomic shocks and narrative uncertainty\\
+- Gap: little is known about communication shifts during macro regime changes\\
+- Contribution: AI-enhanced method linking macro index + narrative tracking\\
+- Structure of the paper
+
+
+% #######################################################
+
+
+\section{Related Work}
+\label{sec:related_work}
+
+- Macro regime detection via PCA and structural models\\
+
+ We apply changepoint detection in a principal component analysis (PCA) space of a composite index of macroeconomic indicators, allowing for unsupervised and timely detection of macroeconomic regime shifts. This approach builds on recent statistical methods for structural break detection in multivariate time series (Matteson and James, 2014; Fryzlewicz, 2020).
+ 
+- Central bank speech analysis (topic modeling, sentiment, NLP)\\
+
+We investigate how the narratives in Federal Reserve speeches evolve across macroeconomic turning points using transformer-based language models across large-scale communications data. 
+
+Using a corpus of U.S. Federal Reserve public speeches from 1996 to 2025 (Gingado dataset), our empirical analysis shows that the structure, topic composition, and tone of policy narratives change systematically around macroeconomic turning points—and, crucially, often precede them. This suggests that the Fed’s communication may not only reflect economic conditions but also act as a forward-looking signal of transition.
+
+- AI and LLMs in economic narrative modeling\\
+- Positioning against Brave et al. (2019), Feldkircher et al. (2022), Ahrens et al. (2024)
+
+
+% #######################################################
+
+
+\section{Methodology}
+\label{sec:methodology}
+
+ we construct an unsupervised Macro Strength Index using Principal Component Analysis (PCA) combining key monthly indicators—such as inflation, growth, labor, and policy rates—from 1996 to 2025. Unsupervised change point detection is then applied to identify structural breaks in economic conditions.
+
+ Focusing on the 2008 financial crisis, we analyze how the Federal Reserve’s public discourse adapted around a data-driven breakpoint. We apply BERTopic to central bank speeches and quantify semantic shifts using polarity drift, embedding centroid movement, cosine similarity, and Jaccard keyword overlap. A null hypothesis framework confirms that these narrative changes are statistically significant.
+
+\subsection{Macro Strength Index}
+\label{sec:macro_index}
+- Data: macro indicators from St. Louis FED FRED datasets\\\\
+- Preprocessing: 12-month Z-score\\
+- PCA, interpretation of PC1\\
+- Change point detection via PELT (rbf, penalty=5)
+
+\subsection{Narrative Shift Detection}
+\label{sec:text_analysis}
+- Dataset: BIS Gigando speeches\\
+- Preprocessing: GPT-4o NER, FinBERT sentiment, OpenAI embeddings\\
+- Topic modeling with BERTopic\\
+- Metrics: polarity drift, centroid drift, cosine similarity, Jaccard
+
+\subsection{Null Hypothesis testing}
+\label{sec:null_hypothesis}
+- Randomized date assignment\\
+- Repetition and p-value estimation for each metric
+
+
+% #######################################################
+
+
+\section{Case Study: The 2008 Financial Crisis}
+\label{sec:case_study}
+- Focus on break at 2007-05-01\\
+- Visualization of macro index and breakpoints\\
+- Word cloud comparison\\
+- Drift metric results vs. null distribution
+
+
+% #######################################################
+
+
+\section{Discussion and Future Work}
+\label{sec:discussion}
+- Apply framework to COVID-19, 2022–2023 inflation\\
+- Cross-country comparison (ECB, BoE, emerging markets)\\
+- Use regime-switching models (e.g., HMM) for macro index\\
+- Causal testing between narrative shift and market reactions\\
+- Compare Transformer-based narrative embeddings across LLM providers
+
+
+% #######################################################
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+- Summary of methods and contributions\\
+- Relevance for policy, academia, and financial markets\\
+- Outlook for narrative-aware macroeconomic AI
+
+
+% #######################################################
+
+
+\newpage
+\printbibliography
+
+
+% #######################################################
+
+
+\end{document}

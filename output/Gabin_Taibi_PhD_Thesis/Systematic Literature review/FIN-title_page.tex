@@ -1,0 +1,120 @@
+\documentclass{article}[a4paper]
+\usepackage{hyperref} 
+\usepackage{geometry}
+\usepackage{ulem} % for underline
+\geometry{top=2cm, left=2cm, right=2cm, bottom=2cm}
+\usepackage{calligra} % calligraphy font package
+\newcommand{\XSignature}{\calligra{Gabin Taibi}\normalfont} % replace with your name
+\usepackage{parskip}
+
+\begin{document}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\title{An Algorithmic Framework for Systematic Literature Reviews: A Case Study for Financial Narratives}
+\date{\today}
+\maketitle
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section*{Authors’ Information}
+
+Corresponding Author name: Gabin Taibi Affiliation: Bern University of Applied Sciences -- Email address: gabin.taibi@bfh.ch
+
+Author name: Prof. Dr. Joerg Osterrieder Affiliation: Bern University of Applied Sciences -- Email address: joerg.osterrieder@bfh.ch
+
+% #############################################
+
+\subsection*{Authors’ Bio}
+
+\emph{Gabin Taibi} is a PhD student at Bern University of Applied Sciences, focusing on the intersection of financial markets and artificial intelligence. He holds an engineering degree in mathematics and data science, complemented by a Master Grande École in management. Gabin's academic background are enhanced by his broad industry experiences, including a data scientist role at Atos, project manager assistant at BNP Paribas, and quantitative analyst at Deutsche Börse.
+
+Currently, Gabin is part of a SNF funded project, "Narrative Digital Finance: a tale of structural breaks, bubbles \& market narratives" (Project No. 213370). This project studies the impact of narratives on financial markets dynamics, specifically their role in influencing market behaviors, structural breaks, and bubbles.
+
+In addition to his PhD work, Gabin has been involved in two major European research networks: the COST Action 19130 on Fintech and Artificial Intelligence in Finance, which concluded in 2024, and the MSCA Industrial Doctoral Network on Digital Finance. These experiences have broadened his exposure to international research collaborations and innovative methodologies in digital finance.
+
+\emph{Joerg Osterrieder} is currently an Associate Professor of Finance and Artificial Intelligence at the University of Twente, Netherlands, and a Professor of Sustainable Finance at Bern Business School, Switzerland. He also holds an advisory position on Artificial Intelligence in the ING Group's Global Data Analytics Team. With over 15 years of experience, his expertise spans across financial statistics, quantitative finance, algorithmic trading, and financial digitization.
+
+He is the Chair of the European COST Action 19130 Fintech and Artificial Intelligence in Finance, a vast interdisciplinary network of over 270 researchers from 49 countries. As the director of the executive education course "Blockchain, Machine Learning, and Data Science in Finance," he guides learners in exploring the digital transformation of finance. Joerg is also a prime mover in annual research conferences on Artificial Intelligence in Finance.
+
+Joerg is also the Coordinator of the Marie Slodowska-Curie Action for an Industrial Doctoral Network on Digital Finance, funded by the European Research Agency.
+
+In the academic realm, Joerg is a founding associate editor of Digital Finance, editor of Frontiers Artificial Intelligence in Finance, and an esteemed reviewer for numerous top-tier academic journals. He extends his expertise to the European Commission as an expert reviewer for the "Executive Agency for Small and Medium-Sized Enterprises" and "European Innovation Council Accelerator Pilot" programs.
+
+Joerg's impactful collaborations with the Finance industry have led to his leadership or co-leadership in over thirty national and international research projects. These projects span a broad range of quantitative, data-driven topics.
+
+Before his academic career, Joerg held prominent roles in the industry. He served as an executive director at Goldman Sachs and Merrill Lynch, a quantitative analyst at AHL, and a member of the senior management at Credit Suisse Group. His current endeavors involve working at the intersection of academia and industry, with a focus on implementing research findings in the financial services industry.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section*{Declarations}
+
+% #############################################
+
+\subsection*{Availability of data and materials}
+Not applicable.
+
+% #############################################
+
+\subsection*{Competing interests}
+The authors declares that they have no competing interests.
+
+% #############################################
+
+\subsection*{Funding}
+
+This research has been supported by several institutions through funding and collaborative efforts.
+
+First, this work is based on research from COST Action CA19130, for which the second author serves as Action Chair, and COST Action CA21163, both funded by COST (European Cooperation in Science and Technology). COST Actions support collaboration and knowledge exchange among researchers across Europe.
+
+The second author, as Principal Investigator of multiple projects funded by the Swiss National Science Foundation (SNF), acknowledges financial support from the following grants:
+\begin{itemize}
+    \item Mathematics and Fintech (IZCNZ0-174853) – Investigating the digital transformation of financial systems.
+    \item Anomaly and Fraud Detection in Blockchain Networks (IZSEZ0-211195) – Researching fraud detection and network anomalies in decentralized finance.
+    \item Narrative Digital Finance (IZCOZ0-213370) – Analyzing market narratives, structural breaks, and financial bubbles.
+    \item Network-Based Credit Risk Models in P2P Lending (100018E\_205487) – Developing network-based approaches for credit risk assessment.
+\end{itemize}
+
+The first author acknowledges financial support from the Narrative Digital Finance project (IZCOZ0-213370), funded by SNF.
+
+Additionally, funding has been provided by the Leading House Asia 2023 Call for Applied Research Partnership Grants for the project Graph-Theoretic Analysis for Consumer Credit Risk Assessment in Personal Lending (ARPG\_112023\_8).
+
+The second author also acknowledges the support of the Marie Skłodowska-Curie Actions (MSCA) through the European Union’s Horizon Europe research and innovation program, specifically for the Industrial Doctoral Network on Digital Finance (DIGITAL, Project No. 101119635), for which he is the Coordinator. This support has contributed to research efforts in digital finance at a European level.
+
+Further support has been provided by the European Union’s Horizon 2020 research and innovation program under Grant Agreement No. 825215 for the FIN-TECH project, which focuses on financial supervision and regulatory compliance through technology-driven training initiatives.
+
+We also acknowledge the collaboration between ING Group and the University of Twente, which has contributed to research in artificial intelligence applications in finance. Moreover, support from the International Advanced Fellowship-UBB program, funded by Babeș-Bolyai University (contract nr. 21PFE/30.12.2021, ID: PFE-550-UBB), has played a role in expanding the scope of this research.
+
+For the purpose of Open Access, a CC BY public copyright license applies to any Author Accepted Manuscript (AAM) version arising from this submission.
+
+% #############################################
+
+\subsection*{Authors' Contributions}
+
+The research presented in this manuscript is a result of collaborative efforts between the authors, with each contributing specialized knowledge and skills. Their specific contributions are as follows:
+
+Gabin Taibi (GT): GT focused on the ideation and implementation of the project and the writing of the paper.
+
+Joerg Osterrieder (JO): JO focused on the conceptual setup, the review and the overall project.
+
+Both authors have agreed to be accountable for all aspects of the work in ensuring that questions related to the accuracy or integrity of any part of the work are appropriately investigated and resolved. Both authors have read and approved the final manuscript.
+
+% #############################################
+
+\subsection*{Acknowledgements}
+
+We would like to acknowledge the members of the European Industrial Doctoral Network on Digital Finance, as part of the Marie Skłodowska-Curie Action funded by the European Research Agency. Our heartfelt thanks go out to the COST Action CA 19130 Management Committee and Working Group members. Their invaluable input and critical discussions have significantly enhanced the quality of our work. Furthermore, we express our gratitude to our funding sources, whose support made this research possible. Any errors or omissions found within this work are solely the responsibility of the authors."
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\newpage
+
+\end{document}

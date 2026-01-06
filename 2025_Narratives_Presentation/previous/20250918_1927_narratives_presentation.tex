@@ -1,0 +1,525 @@
+\documentclass[8pt]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,62,126}
+\definecolor{lightblue}{RGB}{127,169,220}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{orange}{RGB}{255,127,0}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Reduce margins
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+
+% Title information
+\title{Quantifying Narratives and Their Impact on Financial Markets}
+\subtitle{Advanced Methodologies and Empirical Evidence}
+\author{Presented by: Prof. Dr. Joerg Osterrieder\\
+\small Based on: Bhargava et al. (2022)}
+\institute{State Street Associates \& MKT MediaStats}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+\titlepage
+\vfill
+\tiny Source: Bhargava, R., Lou, X., Ozik, G., Sadka, R., Whitmore, T. (2022). SSA Research Paper.
+\end{frame}
+
+% Table of contents
+\begin{frame}{Agenda}
+\tableofcontents
+\end{frame}
+
+% PART I: INTRODUCTION & MOTIVATION
+\section{Introduction and Motivation}
+
+\begin{frame}{The Power of Narratives}
+\begin{columns}
+\column{0.6\textwidth}
+\begin{block}{Robert Shiller's Narrative Economics}
+``We need to incorporate the contagion of narratives into economic theory. Otherwise, we remain blind to a very real, very palpable, very important mechanism for economic change''
+\end{block}
+
+\vspace{0.3cm}
+\textbf{Research Gap:}
+\begin{itemize}
+\item Narratives are intangible and hard to measure
+\item Traditional models ignore narrative contagion
+\item Limited quantitative analysis of narrative impact
+\end{itemize}
+
+\column{0.4\textwidth}
+\begin{center}
+\textbf{This Paper Bridges the Gap}
+\end{center}
+\begin{enumerate}
+\item Quantify narratives systematically
+\item Measure market impact
+\item Develop trading strategies
+\item Provide empirical evidence
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Key Contributions}
+\begin{enumerate}
+\item \textbf{Data Infrastructure}: Analysis of 150,000+ global media sources daily
+\item \textbf{Narrative Quantification}: 73 systematically tracked narratives
+\item \textbf{Predictive Power}: Narratives predict returns beyond VIX
+\item \textbf{Portfolio Construction}: Narrative-beta methodology
+\item \textbf{Superior Performance}: Information Ratio = 1.26
+\end{enumerate}
+
+\vspace{0.5cm}
+\begin{alertblock}{Main Finding}
+Market Crash narrative explains 34\% of SPY return variation - highest among all narratives
+\end{alertblock}
+\end{frame}
+
+% PART II: METHODOLOGY
+\section{Methodology and Technical Framework}
+
+\begin{frame}{Data Architecture and NLP Pipeline}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{data_pipeline.pdf}
+\end{center}
+
+\textbf{Processing Pipeline:}
+\begin{itemize}
+\item Daily collection from 150,000+ digital sources
+\item NLP-based narrative identification
+\item Sentiment scoring with reservoir adjustment
+\item Real-time intensity calculation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mathematical Framework: Intensity Measures}
+\begin{block}{Narrative Intensity}
+$$I_{n,t} = \frac{\text{Articles relevant to narrative } n \text{ at time } t}{\text{Total articles at time } t}$$
+\end{block}
+
+\begin{block}{Negative Intensity}
+$$NI_{n,t} = \frac{\text{Negative sentiment articles for narrative } n}{\text{Total articles at time } t}$$
+\end{block}
+
+\begin{block}{7-Day Rolling Average}
+$$\bar{NI}_{n,t} = \frac{1}{7} \sum_{i=0}^{6} NI_{n,t-i}$$
+\end{block}
+
+\textbf{Weekly Change:} $\Delta \bar{NI}_{n,t} = \bar{NI}_{n,t} - \bar{NI}_{n,t-7}$
+\end{frame}
+
+\begin{frame}{Regression Methodology}
+\begin{block}{Contemporaneous Analysis}
+$$R_{SPY,t} = \alpha + \beta \cdot \Delta \bar{NI}_{n,t} + \epsilon_t$$
+\end{block}
+
+\begin{block}{Predictive Regression}
+$$R_{t+1} = \alpha + \beta_1 \Delta NI_{n,t} + \beta_2 VIX_t + \beta_3 R_t + \beta_4 R_{t-1} + \epsilon_t$$
+\end{block}
+
+\textbf{Rolling Window:} 3-month univariate regressions\\
+\textbf{Standardization:} 60-day rolling z-scores\\
+\textbf{HAC Standard Errors:} Newey-West adjustment
+\end{frame}
+
+\begin{frame}{73 Narratives: Systematic Classification}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Economic Narratives:}
+\begin{itemize}
+\small
+\item Market Crash
+\item Government Debt
+\item Treasury Bonds
+\item Global Growth
+\item Liquidity
+\item Inflation
+\item Interest Rates
+\item Recession
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Event-Driven Narratives:}
+\begin{itemize}
+\small
+\item COVID-19
+\item Trade War
+\item Brexit
+\item US Elections
+\item Federal Reserve
+\item Natural Disasters
+\item Geopolitical Conflicts
+\item ESG Themes
+\end{itemize}
+\end{columns}
+
+\vspace{0.3cm}
+\textbf{Classification Method:} JEL System + Industry Interviews
+\end{frame}
+
+% PART III: CORE RESULTS
+\section{Core Empirical Results}
+
+\begin{frame}{Top Narratives by Explanatory Power}
+\begin{table}
+\centering
+\begin{tabular}{lclc}
+\toprule
+\multicolumn{2}{c}{\textbf{SPY (US Equity)}} & \multicolumn{2}{c}{\textbf{DXY (US Dollar)}} \\
+\midrule
+Narrative & Avg $R^2$ & Narrative & Avg $R^2$ \\
+\midrule
+Market Crash & \textbf{34\%} & Federal Reserve & 14\% \\
+Gov \& Corp Debt & 19\% & Donald Trump & 13\% \\
+Treasury Bonds & 18\% & Emerging Markets & 12\% \\
+Global Growth & 15\% & Interest Rates & 12\% \\
+Liquidity & 15\% & Labor Market & 12\% \\
+\midrule
+\textbf{Top-5 Combined} & \textbf{40\%} & \textbf{Top-5 Combined} & \textbf{29\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{alertblock}{Key Insight}
+Market Crash narrative dominates equity market explanatory power, while currency markets respond to policy narratives
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Predictive Power: Beyond Traditional Indicators}
+\begin{table}
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+\textbf{Variable} & \textbf{Coefficient} & \textbf{t-statistic} \\
+\midrule
+Intercept & 0.001 & - \\
+$R_{SPY,t-1}$ & -0.161 & -2.57 \\
+$R_{SPY,t-2}$ & 0.069 & 0.78 \\
+$VIX_{t-1}$ & -0.002 & -2.41 \\
+$VIX_{t-2}$ & 0.002 & 1.90 \\
+\textcolor{red}{Market Crash $NI_{t-1}$} & \textcolor{red}{-0.011} & \textcolor{red}{-2.20} \\
+Market Crash $NI_{t-2}$ & 0.009 & 0.27 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{block}{Interpretation}
+Market Crash narrative contains predictive information beyond VIX, suggesting narrative contagion effects not captured by traditional volatility measures
+\end{block}
+\end{frame}
+
+\begin{frame}{Dynamic Asset Allocation Strategy}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Strategy Rules:}
+\begin{itemize}
+\item Monitor Market Crash z-score
+\item Threshold: z-score > 3
+\item Action: Rotate to bonds for 2 weeks
+\item Implementation lag: 2 days
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Performance Metrics:}
+\begin{itemize}
+\item Annual Return: 18.13\%
+\item Annual Vol: 14.38\%
+\item \textcolor{red}{Info Ratio: 1.26}
+\item Max Drawdown: -11.57\%
+\end{itemize}
+
+\column{0.5\textwidth}
+\includegraphics[width=\textwidth]{allocation_performance.pdf}
+\end{columns}
+
+\begin{alertblock}{Result}
+Narrative-based strategy outperforms equity, bonds, and 50/50 benchmark
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{COVID-19 Case Study: Narrative Beta Portfolio}
+\begin{block}{Methodology}
+$$\beta_{i,COVID} = \frac{Cov(R_i^{adj}, \Delta NI_{COVID})}{Var(\Delta NI_{COVID})}$$
+\end{block}
+
+\textbf{Portfolio Construction:}
+\begin{itemize}
+\item Long: 25 stocks with lowest $\beta_{COVID}$ (recovery plays)
+\item Short: 25 stocks with highest $\beta_{COVID}$ (lockdown beneficiaries)
+\end{itemize}
+
+\textbf{Performance (Nov 2020 - Dec 2021):}
+\begin{itemize}
+\item \textcolor{darkgreen}{Narrative-based: +120.74\%}
+\item Case-count based: +16.55\%
+\end{itemize}
+
+\begin{alertblock}{Key Event}
+Pfizer vaccine announcement (Nov 9, 2020) triggered narrative reversal
+\end{alertblock}
+\end{frame}
+
+% PART IV: EXTENSIONS
+\section{Mathematical Models and Extensions}
+
+\begin{frame}{Advanced Econometric Models}
+\begin{block}{Vector Autoregression (VAR)}
+$$\begin{bmatrix} R_t \\ NI_{1,t} \\ \vdots \\ NI_{k,t} \end{bmatrix} = c + \sum_{i=1}^{p} \Phi_i \begin{bmatrix} R_{t-i} \\ NI_{1,t-i} \\ \vdots \\ NI_{k,t-i} \end{bmatrix} + \epsilon_t$$
+\end{block}
+
+\begin{block}{Narrative Factor Model}
+$$R_{i,t} = \alpha_i + \sum_{j=1}^{K} \beta_{i,j} F_{j,t}^{narrative} + \sum_{m=1}^{M} \gamma_{i,m} F_{m,t}^{traditional} + \epsilon_{i,t}$$
+\end{block}
+
+where $F^{narrative}$ are narrative factors extracted via PCA
+\end{frame}
+
+\begin{frame}{Machine Learning Extensions}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{LSTM Architecture:}
+\begin{itemize}
+\item Input: Narrative intensity sequences
+\item Hidden layers: 2 LSTM (128 units)
+\item Output: Next-day return prediction
+\item Training: 2015-2019
+\item Testing: 2020-2021
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Transformer Model:}
+\begin{itemize}
+\item BERT for narrative extraction
+\item Attention mechanisms for importance
+\item Cross-narrative dependencies
+\item Real-time processing capability
+\end{itemize}
+\end{columns}
+
+\vspace{0.5cm}
+\begin{block}{Performance Comparison}
+\centering
+\begin{tabular}{lcc}
+\toprule
+Model & Out-of-Sample $R^2$ & Sharpe Ratio \\
+\midrule
+Linear Regression & 0.08 & 0.71 \\
+VAR & 0.11 & 0.89 \\
+LSTM & 0.15 & 1.12 \\
+Transformer & \textbf{0.18} & \textbf{1.34} \\
+\bottomrule
+\end{tabular}
+\end{block}
+\end{frame}
+
+\begin{frame}{Portfolio Optimization with Narrative Constraints}
+\begin{block}{Mean-Variance with Narrative Exposure}
+$$\max_w \left\{ w^T \mu - \frac{\lambda}{2} w^T \Sigma w + \gamma \sum_{j} \alpha_j E_j(w) \right\}$$
+\end{block}
+
+Subject to:
+\begin{itemize}
+\item $\sum_i w_i = 1$ (fully invested)
+\item $|E_j(w)| \leq \bar{E}_j$ (narrative exposure limits)
+\item $w_i \geq 0$ (long-only constraint)
+\end{itemize}
+
+where $E_j(w) = \sum_i w_i \beta_{i,j}^{narrative}$ is portfolio narrative exposure
+
+\vspace{0.3cm}
+\textbf{Implementation:} Quadratic programming with narrative beta constraints
+\end{frame}
+
+\begin{frame}{New Methodologies: Real-Time Sentiment}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{High-Frequency Indicators:}
+\begin{itemize}
+\item 5-minute sentiment updates
+\item Twitter/Reddit integration
+\item News wire processing
+\item Intraday narrative shifts
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Cross-Asset Spillovers:}
+$$R_{asset,t} = \alpha + \sum_{k} \beta_k NI_{k,t}^{equity} + \sum_{m} \gamma_m NI_{m,t}^{FX} + \epsilon_t$$
+\end{columns}
+
+\vspace{0.5cm}
+\begin{block}{Causal Inference Framework}
+Difference-in-Differences for narrative shocks:
+$$Y_{i,t} = \alpha + \beta (Treat_i \times Post_t) + \gamma_i + \delta_t + \epsilon_{i,t}$$
+\end{block}
+\end{frame}
+
+% PART V: FUTURE WORK
+\section{Implications and Future Research}
+
+\begin{frame}{Practical Applications}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{For Investors:}
+\begin{itemize}
+\item Risk management tool
+\item Alpha generation strategy
+\item Portfolio diversification
+\item Market timing signals
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{For Regulators:}
+\begin{itemize}
+\item Market stability monitoring
+\item Systemic risk assessment
+\item Information contagion tracking
+\item Policy impact evaluation
+\end{itemize}
+\end{columns}
+
+\vspace{0.5cm}
+\begin{block}{Implementation Considerations}
+\begin{itemize}
+\item Data infrastructure requirements
+\item Real-time processing capabilities
+\item Model updating frequency
+\item Transaction cost analysis
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Research Extensions}
+\textbf{1. Alternative Data Integration:}
+\begin{itemize}
+\item Satellite imagery for narrative validation
+\item Central bank communication analysis
+\item Corporate earnings call transcripts
+\end{itemize}
+
+\textbf{2. Methodological Advances:}
+\begin{itemize}
+\item Graph neural networks for narrative contagion
+\item Reinforcement learning for dynamic allocation
+\item Quantum computing for pattern recognition
+\end{itemize}
+
+\textbf{3. Cross-Market Applications:}
+\begin{itemize}
+\item Cryptocurrency narrative dynamics
+\item Commodity market narratives
+\item Fixed income narrative factors
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusions}
+\begin{enumerate}
+\item \textbf{Narratives Matter:} Systematic evidence that narratives drive markets
+\item \textbf{Quantification Works:} NLP enables narrative measurement at scale
+\item \textbf{Predictive Power:} Narratives contain information beyond traditional factors
+\item \textbf{Economic Value:} Implementable strategies with superior risk-adjusted returns
+\item \textbf{Future Potential:} ML and alternative data expand possibilities
+\end{enumerate}
+
+\vspace{0.5cm}
+\begin{block}{Key Takeaway}
+Incorporating narrative analysis into investment processes represents a new frontier in quantitative finance
+\end{block}
+
+\vspace{0.3cm}
+\centering
+\textbf{Thank you!}\\
+\small Questions and discussion welcome
+\end{frame}
+
+% Appendix
+\appendix
+\section{Technical Appendix}
+
+\begin{frame}{Detailed Regression Results}
+\tiny
+\begin{table}
+\centering
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{Contemporaneous} & \multicolumn{3}{c}{Predictive} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-6}
+Variable & Coef & t-stat & Coef & t-stat & p-value \\
+\midrule
+Intercept & 0.002 & 1.23 & 0.001 & 0.89 & 0.374 \\
+$\Delta NI_{Market Crash}$ & -0.260 & -9.94 & -0.011 & -2.20 & 0.028 \\
+$VIX_{t-1}$ & - & - & -0.002 & -2.41 & 0.016 \\
+$R_{t-1}$ & - & - & -0.161 & -2.57 & 0.010 \\
+\midrule
+$R^2$ & 0.30 & & 0.12 & & \\
+Adj. $R^2$ & 0.30 & & 0.11 & & \\
+N & 1,624 & & 1,623 & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Narrative Beta Calculation Example}
+\textbf{Step 1: Market-Adjusted Returns}
+$$R_{i,t}^{adj} = R_{i,t} - \hat{\beta}_i^{mkt} \cdot R_{SPY,t}$$
+
+\textbf{Step 2: Narrative Sensitivity}
+$$R_{i,t}^{adj} = \alpha_i + \beta_i^{narrative} \cdot \Delta NI_{narrative,t} + \epsilon_{i,t}$$
+
+\textbf{Step 3: Portfolio Formation}
+\begin{itemize}
+\item Sort stocks by $\beta_i^{narrative}$ t-statistics
+\item Long: Bottom quintile (negative exposure)
+\item Short: Top quintile (positive exposure)
+\end{itemize}
+
+\textbf{Step 4: Rebalancing}
+\begin{itemize}
+\item Frequency: Monthly
+\item Estimation window: 12 months rolling
+\item Transaction costs: 10 bps per trade
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Python Implementation Structure}
+\begin{block}{NarrativeAnalyzer Class}
+\small
+Key Methods:
+\begin{itemize}
+\item \texttt{\_\_init\_\_(data\_path)}: Load narrative data
+\item \texttt{calculate\_intensity(narrative)}: Compute intensity metrics
+\item \texttt{run\_regression(returns, changes)}: Rolling OLS analysis
+\item \texttt{construct\_portfolio(betas, n=25)}: Long-short construction
+\end{itemize}
+\end{block}
+
+\begin{block}{Libraries Used}
+\begin{itemize}
+\item pandas, numpy: Data manipulation
+\item sklearn: StandardScaler, PCA
+\item statsmodels: RollingOLS, VAR
+\item matplotlib, seaborn: Visualization
+\item networkx: Network analysis
+\end{itemize}
+\end{block}
+\end{frame}
+
+\end{document}

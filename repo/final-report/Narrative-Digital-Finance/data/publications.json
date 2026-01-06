@@ -1,0 +1,3096 @@
+[
+  {
+    "id": "https://openalex.org/W4412450521",
+    "title": "An analytical approach to credit risk assessment using machine learning models",
+    "year": 2025,
+    "doi": "10.1016/j.dajour.2025.100605",
+    "doi_url": "https://doi.org/10.1016/j.dajour.2025.100605",
+    "authors": [
+      "Marcos Machado",
+      "Daniel Chen",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Marcos Machado, Daniel Chen, Joerg Osterrieder",
+    "venue": "Decision Analytics Journal",
+    "cited_by_count": 5,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science",
+      "Credit risk",
+      "Machine learning",
+      "Artificial intelligence",
+      "Actuarial science"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.dajour.2025.100605",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4407070070",
+    "title": "Modeling commodity price co-movement: building on traditional time series models and exploring applications of machine learning algorithms",
+    "year": 2025,
+    "doi": "10.1007/s10203-025-00512-1",
+    "doi_url": "https://doi.org/10.1007/s10203-025-00512-1",
+    "authors": [
+      "Luca L. Kozian",
+      "Marcos Machado",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Luca L. Kozian, Marcos Machado, Joerg Osterrieder",
+    "venue": "Decisions in Economics and Finance",
+    "cited_by_count": 4,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Abstract In this study, we explore the efficacy of various methodologies and co-movement measures for modeling the co-movement of cross-commodity prices, using macroeconomic variables. Applying Vector Autoregression (VAR), VAR with exogenous variables (VARX), multiple regressions, and Random Forest regressions, alongside Pearson correlations and Gerber statistics, we analyze the price co-movement of 20 key commodities over the period from mid-2003 to early 2023. Our results reveal that VAR and V...",
+    "concepts": [
+      "Movement (music)",
+      "Series (stratigraphy)",
+      "Commodity",
+      "Computer science",
+      "Machine learning"
+    ],
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10203-025-00512-1.pdf",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4415376695",
+    "title": "Editorial: Applications of AI and machine learning in finance and economics",
+    "year": 2025,
+    "doi": "10.3389/frai.2025.1715929",
+    "doi_url": "https://doi.org/10.3389/frai.2025.1715929",
+    "authors": [
+      "Alessia Paccagnini",
+      "Maria Iannario",
+      "Joerg Osterrieder",
+      "Adamaria Perrotta",
+      "Fabio Parla",
+      "Hanna Kristín Skaftadóttir"
+    ],
+    "authors_str": "Alessia Paccagnini, Maria Iannario, Joerg Osterrieder, Adamaria Perrotta, Fabio Parla...",
+    "venue": "Frontiers in Artificial Intelligence",
+    "cited_by_count": 0,
+    "type": "editorial",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1715929/pdf",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4414257412",
+    "title": "Anatomy of Peer-to-Peer (P2P) Lending Fraud: A Review with Managerial Implications",
+    "year": 2025,
+    "doi": "10.20944/preprints202509.1144.v1",
+    "doi_url": "https://doi.org/10.20944/preprints202509.1144.v1",
+    "authors": [
+      "Ioana Florina Coita",
+      "Marcos Machado",
+      "Lucía Gómez",
+      "Karsten Wenzlaff",
+      "Wouter van Heeswijk",
+      "Frédérik Sinan Bernard",
+      "Marius Vlad Pop",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Ioana Florina Coita, Marcos Machado, Lucía Gómez, Karsten Wenzlaff, Wouter van Heeswijk...",
+    "venue": "Preprints.org",
+    "cited_by_count": 0,
+    "type": "review",
+    "open_access": true,
+    "abstract": "Peer-to-peer (P2P) lending platforms have transformed the financial technology sector by facilitating direct interactions between borrowers and lenders, eliminating the need for traditional financial intermediaries. While this innovation enhances financial inclusion and efficiency, it is subject to significant fraud risks such as identity theft, misrepresentation, predatory lending, and Ponzi schemes. These fraudulent activities undermine platform integrity and erode user trust. This paper prese...",
+    "concepts": [],
+    "pdf_url": "https://www.preprints.org/frontend/manuscript/dfa0ca0d61fbee128842facdffe1a242/download_pub",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4412609461",
+    "title": "Advancing credit risk assessment in the retail banking industry: A hybrid approach using time series and supervised learning models",
+    "year": 2025,
+    "doi": "10.1016/j.datak.2025.102490",
+    "doi_url": "https://doi.org/10.1016/j.datak.2025.102490",
+    "authors": [
+      "Sebastian H. Goldmann",
+      "Marcos Machado",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Sebastian H. Goldmann, Marcos Machado, Joerg Osterrieder",
+    "venue": "Data & Knowledge Engineering",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Banking industry",
+      "Credit risk",
+      "Series (stratigraphy)",
+      "Business",
+      "Time series"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.datak.2025.102490",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312522",
+    "title": "NLP - Neural Language Models",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.72",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.72",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416311543",
+    "title": "NLP_TransformersTraining",
+    "year": 2025,
+    "doi": "10.24818/ida-ql/2025.220",
+    "doi_url": "https://doi.org/10.24818/ida-ql/2025.220",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416311387",
+    "title": "NLP_TokenJourney",
+    "year": 2025,
+    "doi": "10.24818/ida-ql/2025.223",
+    "doi_url": "https://doi.org/10.24818/ida-ql/2025.223",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312495",
+    "title": "NLP - Decoding Strategies",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.78",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.78",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4406329469",
+    "title": "Implementation of Share Buybacks and Their Impact on Corporate Governance",
+    "year": 2025,
+    "doi": "10.2139/ssrn.5019696",
+    "doi_url": "https://doi.org/10.2139/ssrn.5019696",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Corporate governance",
+      "Business",
+      "Industrial organization",
+      "Monetary economics",
+      "Accounting"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5019696",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312455",
+    "title": "NLP - The Transformer Revolution",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.83",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.83",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416311457",
+    "title": "NLP_Ngrams",
+    "year": 2025,
+    "doi": "10.24818/ida-ql/2025.224",
+    "doi_url": "https://doi.org/10.24818/ida-ql/2025.224",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312488",
+    "title": "NLP - Tokenization and Subword Models",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.77",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.77",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312527",
+    "title": "NLP - Recurrent Neural Networks",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.73",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.73",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416311503",
+    "title": "NLP_Embeddings",
+    "year": 2025,
+    "doi": "10.24818/ida-ql/2025.226",
+    "doi_url": "https://doi.org/10.24818/ida-ql/2025.226",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416311532",
+    "title": "NLP_TransformersSimple",
+    "year": 2025,
+    "doi": "10.24818/ida-ql/2025.221",
+    "doi_url": "https://doi.org/10.24818/ida-ql/2025.221",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4410879769",
+    "title": "Network Evidence on Credit-Risk Pricing in P2p Lending",
+    "year": 2025,
+    "doi": "10.2139/ssrn.5276337",
+    "doi_url": "https://doi.org/10.2139/ssrn.5276337",
+    "authors": [
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Lucía Gómez",
+      "Yizhi Wang"
+    ],
+    "authors_str": "Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva, Lucía Gómez, Yizhi Wang",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Credit risk",
+      "Economics",
+      "Actuarial science",
+      "Monetary economics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5276337",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312517",
+    "title": "Foundations and Statistical Language Models",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.71",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.71",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312435",
+    "title": "NLP - Fine-tuning and Prompt Engineering",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.79",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.79",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416311473",
+    "title": "NLP_Neural",
+    "year": 2025,
+    "doi": "10.24818/ida-ql/2025.225",
+    "doi_url": "https://doi.org/10.24818/ida-ql/2025.225",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416311495",
+    "title": "NLP_Transformers3D",
+    "year": 2025,
+    "doi": "10.24818/ida-ql/2025.222",
+    "doi_url": "https://doi.org/10.24818/ida-ql/2025.222",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312481",
+    "title": "NLP - Efficiency and Deployment",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.80",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.80",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312503",
+    "title": "NLP - Sequence-to-Sequence Models",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.74",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.74",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4413850493",
+    "title": "State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending",
+    "year": 2025,
+    "doi": "10.2139/ssrn.5421207",
+    "doi_url": "https://doi.org/10.2139/ssrn.5421207",
+    "authors": [
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Ali Hirsa"
+    ],
+    "authors_str": "Lennart John Baals, Joerg Osterrieder, Ali Hirsa",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "State (computer science)",
+      "State dependent",
+      "Financial system",
+      "Monetary economics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5421207",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312378",
+    "title": "NLP - Predicting the next word",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.84",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.84",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312432",
+    "title": "NLP - Advanced Transformers",
+    "year": 2025,
+    "doi": "10.24818/ida-cl/2025.82",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2025.82",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4406842556",
+    "title": "&lt;div&gt; Reaction Times to Economic News in High-Frequency Trading:&amp;nbsp;&lt;span&gt;An Analysis of Latency and Informed Trading Ahead of Macro-News Announcements&lt;/span&gt;&lt;/div&gt;",
+    "year": 2025,
+    "doi": "10.2139/ssrn.5112295",
+    "doi_url": "https://doi.org/10.2139/ssrn.5112295",
+    "authors": [
+      "Joerg Osterrieder",
+      "Stefan Schlamp"
+    ],
+    "authors_str": "Joerg Osterrieder, Stefan Schlamp",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Span (engineering)",
+      "Macro",
+      "Latency (audio)",
+      "Economics",
+      "Political science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5112295",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W7117150537",
+    "title": "World Central Banker Speech Transcripts and Metadata",
+    "year": 2025,
+    "doi": "10.5281/zenodo.18034730",
+    "doi_url": "https://doi.org/10.5281/zenodo.18034730",
+    "authors": [
+      "Gabin Taibi"
+    ],
+    "authors_str": "Gabin Taibi",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": true,
+    "abstract": "The BIS publishes select speeches delivered by central bank Governors and policy relevant speeches by senior central bankers. Speeches are chosen for publication where they focus on core central banking topics and are of relevance to a global audience. Translations are provided by the central banks and most original texts are available on the central bank websites. This extract doesn't include 875 speeches (accessible directly from BIS CB Speeches webpage) that haven't been added on the API yet....",
+    "concepts": [
+      "Central bank",
+      "Metadata",
+      "World Wide Web",
+      "Computer science",
+      "Focus (optics)"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.18034730",
+    "team_member": "Gabin Taibi"
+  },
+  {
+    "id": "https://openalex.org/W7117115718",
+    "title": "World Central Banker Speech Transcripts and Metadata",
+    "year": 2025,
+    "doi": "10.5281/zenodo.18034729",
+    "doi_url": "https://doi.org/10.5281/zenodo.18034729",
+    "authors": [
+      "Gabin Taibi"
+    ],
+    "authors_str": "Gabin Taibi",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "dataset",
+    "open_access": true,
+    "abstract": "The BIS publishes select speeches delivered by central bank Governors and policy relevant speeches by senior central bankers. Speeches are chosen for publication where they focus on core central banking topics and are of relevance to a global audience. Translations are provided by the central banks and most original texts are available on the central bank websites. This extract doesn't include 875 speeches (accessible directly from BIS CB Speeches webpage) that haven't been added on the API yet....",
+    "concepts": [
+      "Central bank",
+      "Metadata",
+      "World Wide Web",
+      "Computer science",
+      "Focus (optics)"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.18034729",
+    "team_member": "Gabin Taibi"
+  },
+  {
+    "id": "https://openalex.org/W7116273130",
+    "title": "State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending",
+    "year": 2025,
+    "doi": "10.5281/zenodo.17990398",
+    "doi_url": "https://doi.org/10.5281/zenodo.17990398",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit provides the materials required to reproduce the empirical workflow and figures of the study: “State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending.” The study is part of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” (Chapter 5) by Lennart John Baals. The repository contains (i) the LaTeX source of the manuscript / chapter, (ii) the Python implementation of the macro-factor extraction and reg...",
+    "concepts": [
+      "Workflow",
+      "Python (programming language)",
+      "Computer science",
+      "Macro",
+      "Pipeline (software)"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17990398",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116495997",
+    "title": "State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending",
+    "year": 2025,
+    "doi": "10.5281/zenodo.17990397",
+    "doi_url": "https://doi.org/10.5281/zenodo.17990397",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit provides the materials required to reproduce the empirical workflow and figures of the study: “State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending.” The study is part of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” (Chapter 5) by Lennart John Baals. The repository contains (i) the LaTeX source of the manuscript / chapter, (ii) the Python implementation of the macro-factor extraction and reg...",
+    "concepts": [
+      "Workflow",
+      "Python (programming language)",
+      "Computer science",
+      "Macro",
+      "Pipeline (software)"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17990397",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116387789",
+    "title": "Network Evidence on Credit-Risk Pricing in P2P Lending",
+    "year": 2025,
+    "doi": "10.5281/zenodo.17990873",
+    "doi_url": "https://doi.org/10.5281/zenodo.17990873",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit provides the materials required to reproduce the analysis workflow, figures, and manuscript source for the study: “Network Evidence on Credit-Risk Pricing in P2P Lending.” The study forms Chapter 4 of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals. The deposit contains (i) the LaTeX source for the chapter / paper, (ii) the computational scripts and notebooks used to construct similarity-...",
+    "concepts": [
+      "Computer science",
+      "Workflow",
+      "Scripting language",
+      "Construct (python library)",
+      "Key (lock)"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17990873",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116425142",
+    "title": "Network Evidence on Credit-Risk Pricing in P2P Lending",
+    "year": 2025,
+    "doi": "10.5281/zenodo.17990872",
+    "doi_url": "https://doi.org/10.5281/zenodo.17990872",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit provides the materials required to reproduce the analysis workflow, figures, and manuscript source for the study: “Network Evidence on Credit-Risk Pricing in P2P Lending.” The study forms Chapter 4 of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals. The deposit contains (i) the LaTeX source for the chapter / paper, (ii) the computational scripts and notebooks used to construct similarity-...",
+    "concepts": [
+      "Computer science",
+      "Workflow",
+      "Scripting language",
+      "Construct (python library)",
+      "Key (lock)"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17990872",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7117129838",
+    "title": "Network Evidence on Credit-Risk Pricing in P2P Lending",
+    "year": 2025,
+    "doi": "10.2139/ssrn.5952776",
+    "doi_url": "https://doi.org/10.2139/ssrn.5952776",
+    "authors": [
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Y. Wang"
+    ],
+    "authors_str": "Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva, Y. Wang",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Economics",
+      "Computer science",
+      "Finance",
+      "Payment"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5952776",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W4417077516",
+    "title": "State-Dependent Pricing in FinTech Credit: Evidence from P2P Lending",
+    "year": 2025,
+    "doi": "10.2139/ssrn.5875004",
+    "doi_url": "https://doi.org/10.2139/ssrn.5875004",
+    "authors": [
+      "Lennart John Baals",
+      "Ali Hirsa"
+    ],
+    "authors_str": "Lennart John Baals, Ali Hirsa",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5875004",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W4396699123",
+    "title": "Leveraging network topology for credit risk assessment in P2P lending: A comparative study under the lens of machine learning",
+    "year": 2024,
+    "doi": "10.1016/j.eswa.2024.124100",
+    "doi_url": "https://doi.org/10.1016/j.eswa.2024.124100",
+    "authors": [
+      "Yiting Liu",
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Yiting Liu, Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva",
+    "venue": "Expert Systems with Applications",
+    "cited_by_count": 17,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Peer-to-Peer (P2P) lending markets have witnessed remarkable growth, revolutionizing the way borrowers and lenders interact. Despite their increasing popularity, P2P lending poses significant challenges related to credit risk assessment and default prediction with meaningful implications for financial stability. Traditional credit risk models have been widely employed in the field of P2P lending; however, they may not be capable to capture latent factor information inherent to a loan network bas...",
+    "concepts": [
+      "Computer science",
+      "Lens (geology)",
+      "Network topology",
+      "Topology (electrical circuits)",
+      "Through-the-lens metering"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.eswa.2024.124100",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4394813939",
+    "title": "How can artificial intelligence help customer intelligence for credit portfolio management? A systematic literature review",
+    "year": 2024,
+    "doi": "10.1016/j.jjimei.2024.100234",
+    "doi_url": "https://doi.org/10.1016/j.jjimei.2024.100234",
+    "authors": [
+      "Alessandra Amato",
+      "Joerg Osterrieder",
+      "Marcos Machado"
+    ],
+    "authors_str": "Alessandra Amato, Joerg Osterrieder, Marcos Machado",
+    "venue": "International Journal of Information Management Data Insights",
+    "cited_by_count": 11,
+    "type": "article",
+    "open_access": true,
+    "abstract": "In this era of Big Data and the advancement of sophisticated analytical techniques, the financial industry has the capacity to implement innovative technologies within their systems to derive crucial insights about their clientele and vigilantly monitor their activities. This landscape has seen the emergence and rise of two significant applications, namely, customer segmentation systems and early warning systems. Therefore, this study presents a systematic literature review on the automation of ...",
+    "concepts": [
+      "Portfolio",
+      "Financial services",
+      "Business",
+      "Warning system",
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.jjimei.2024.100234",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4393180944",
+    "title": "Network centrality and credit risk: A comprehensive analysis of peer-to-peer lending dynamics",
+    "year": 2024,
+    "doi": "10.1016/j.frl.2024.105308",
+    "doi_url": "https://doi.org/10.1016/j.frl.2024.105308",
+    "authors": [
+      "Yiting Liu",
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Yiting Liu, Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva",
+    "venue": "Finance research letters",
+    "cited_by_count": 11,
+    "type": "article",
+    "open_access": true,
+    "abstract": "This letter analyzes credit risk assessment within the Peer-to-Peer (P2P) lending domain by leveraging a comprehensive dataset from Bondora, a leading European P2P platform. Through combining traditional credit features with network topological features, namely the degree centrality, we showcase the crucial role of a borrower's position and connectivity within the P2P network in determining loan default probabilities. Our findings are bolstered by robustness checks using shuffled centrality feat...",
+    "concepts": [
+      "Centrality",
+      "Loan",
+      "Robustness (evolution)",
+      "Peer-to-peer",
+      "Credit risk"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.frl.2024.105308",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4404632218",
+    "title": "How can consumers without credit history benefit from the use of information processing and machine learning tools by financial institutions?",
+    "year": 2024,
+    "doi": "10.1016/j.ipm.2024.103972",
+    "doi_url": "https://doi.org/10.1016/j.ipm.2024.103972",
+    "authors": [
+      "Bjorn van Braak",
+      "Joerg Osterrieder",
+      "Marcos Machado"
+    ],
+    "authors_str": "Bjorn van Braak, Joerg Osterrieder, Marcos Machado",
+    "venue": "Information Processing & Management",
+    "cited_by_count": 6,
+    "type": "article",
+    "open_access": true,
+    "abstract": "This research aims to enhance the predictability of creditworthiness among marginalized consumers affected by the widespread adoption of AI frameworks. We utilize ensemble methods to handle the imbalanced dataset used for evaluating the credit risk of consumers with sparse or non-existent credit histories. To promote fairness in the Machine Learning (ML) model, we employed the disparate impact remover—a recognized bias mitigation tool to minimize group bias. Three strategies were employed to tac...",
+    "concepts": [
+      "Information processing",
+      "Business",
+      "Finance",
+      "Computer science",
+      "Marketing"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.ipm.2024.103972",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4402527136",
+    "title": "Stylized facts of metaverse non-fungible tokens",
+    "year": 2024,
+    "doi": "10.1016/j.physa.2024.130103",
+    "doi_url": "https://doi.org/10.1016/j.physa.2024.130103",
+    "authors": [
+      "Stephen Chan",
+      "Durga Chandrashekhar",
+      "Ward Almazloum",
+      "Yuanyuan Zhang",
+      "Nicholas Lord",
+      "Joerg Osterrieder",
+      "Jeffrey Chu"
+    ],
+    "authors_str": "Stephen Chan, Durga Chandrashekhar, Ward Almazloum, Yuanyuan Zhang, Nicholas Lord...",
+    "venue": "Physica A Statistical Mechanics and its Applications",
+    "cited_by_count": 6,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Non-Fungible Tokens (NFTs) within the metaverse represent a rapidly emerging sector in the digital asset space. This paper provides a comprehensive review of the metaverse's history and an analysis of the stylized facts of five metaverse NFTs: Axie Infinity, Decentraland, Enjin Coin, Theta Network, and The Sandbox. We examine market efficiency, volatility clustering, leverage effects, and the return-volume relationship. Our key findings show that all NFT returns exhibit kurtosis values significa...",
+    "concepts": [
+      "Stylized fact",
+      "Computer science",
+      "Economics",
+      "Keynesian economics"
+    ],
+    "pdf_url": "https://research.utwente.nl/en/publications/766ab33e-43a7-4574-a5c4-58c95388cacc",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4403463602",
+    "title": "Predicting retail customers' distress in the finance industry: An early warning system approach",
+    "year": 2024,
+    "doi": "10.1016/j.jretconser.2024.104101",
+    "doi_url": "https://doi.org/10.1016/j.jretconser.2024.104101",
+    "authors": [
+      "Jaap Beltman",
+      "Marcos Machado",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Jaap Beltman, Marcos Machado, Joerg Osterrieder",
+    "venue": "Journal of Retailing and Consumer Services",
+    "cited_by_count": 5,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Predicting credit defaults is crucial for financial institutions to assess risk and make informed lending decisions. One of the most recent strategies banks and financial institutions have been testing to minimize losses that arise from credit default is the deployment of Early Warning Systems (EWS). By nature, this technique was primarily proposed and explored for commercial customers. However, this study proposes a comprehensive data-driven approach to model Early Warning Systems (EWS) for ret...",
+    "concepts": [
+      "Business",
+      "Warning system",
+      "Retail industry",
+      "Marketing",
+      "Distress"
+    ],
+    "pdf_url": "https://doi.org/10.1016/j.jretconser.2024.104101",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4392011536",
+    "title": "Enhancing Security in Blockchain Networks: Anomalies, Frauds, and Advanced Detection Techniques",
+    "year": 2024,
+    "doi": "10.48550/arxiv.2402.11231",
+    "doi_url": "https://doi.org/10.48550/arxiv.2402.11231",
+    "authors": [
+      "Joerg Osterrieder",
+      "Stephen Chan",
+      "Jeffrey Chu",
+      "Yuanyuan Zhang",
+      "Branka Hadji Misheva",
+      "Codruța Mare"
+    ],
+    "authors_str": "Joerg Osterrieder, Stephen Chan, Jeffrey Chu, Yuanyuan Zhang, Branka Hadji Misheva...",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 4,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Blockchain technology, a foundational distributed ledger system, enables secure and transparent multi-party transactions. Despite its advantages, blockchain networks are susceptible to anomalies and frauds, posing significant risks to their integrity and security. This paper offers a detailed examination of blockchain's key definitions and properties, alongside a thorough analysis of the various anomalies and frauds that undermine these networks. It describes an array of detection and prevention...",
+    "concepts": [
+      "Blockchain",
+      "Computer security",
+      "Computer science"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2402.11231",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4393141759",
+    "title": "Metaverse Non Fungible Tokens",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4733153",
+    "doi_url": "https://doi.org/10.2139/ssrn.4733153",
+    "authors": [
+      "Joerg Osterrieder",
+      "Stephen Chan",
+      "Jeffrey Chu",
+      "Yuanyuan Zhang"
+    ],
+    "authors_str": "Joerg Osterrieder, Stephen Chan, Jeffrey Chu, Yuanyuan Zhang",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 3,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4733153",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4403298820",
+    "title": "&lt;div&gt; Crowdfunding Fraud Detection: A Systematic Review Highlights AI and&amp;nbsp;&lt;span&gt;Blockchain using Topic Modeling&lt;/span&gt;&lt;/div&gt;",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4948895",
+    "doi_url": "https://doi.org/10.2139/ssrn.4948895",
+    "authors": [
+      "Marcos Machado",
+      "Ioana Florina Coita",
+      "Lucía Gómez",
+      "Karsten Wenzlaff",
+      "Andreas Gregoriades",
+      "Christos Themistocleous",
+      "Wouter van Heeswijk",
+      "Frédérik Sinan Bernard",
+      "José Antonio Muñiz",
+      "Karolina Bolesta"
+    ],
+    "authors_str": "Marcos Machado, Ioana Florina Coita, Lucía Gómez, Karsten Wenzlaff, Andreas Gregoriades...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "review",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Span (engineering)",
+      "Blockchain",
+      "Life span",
+      "Computational biology",
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4948895",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4400729802",
+    "title": "A discussion paper for possible approaches to building a statistically valid backtesting framework",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4893677",
+    "doi_url": "https://doi.org/10.2139/ssrn.4893677",
+    "authors": [
+      "Veni Arakelian",
+      "Karolina Bolesta",
+      "Silvija Vlah Jerić",
+      "Yiting Liu",
+      "Joerg Osterrieder",
+      "Valerio Potì",
+      "Peter Schwendner",
+      "Kristina Šutienė",
+      "Abraham Itzhak Weinberg"
+    ],
+    "authors_str": "Veni Arakelian, Karolina Bolesta, Silvija Vlah Jerić, Yiting Liu, Joerg Osterrieder...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science",
+      "Econometrics",
+      "Economics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4893677",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4392720652",
+    "title": "Network Centrality and Credit Risk: A Comprehensive Analysis of Peer-to-Peer Lending Dynamics",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4726490",
+    "doi_url": "https://doi.org/10.2139/ssrn.4726490",
+    "authors": [
+      "Yiting Liu",
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Yiting Liu, Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Centrality",
+      "Dynamics (music)",
+      "Peer-to-peer",
+      "Computer science",
+      "Business"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4726490",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4391218623",
+    "title": "Network Centrality and Credit Risk: A Comprehensive Analysis of Peer-to-Peer Lending Dynamics",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4706619",
+    "doi_url": "https://doi.org/10.2139/ssrn.4706619",
+    "authors": [
+      "Yiting Liu",
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Yiting Liu, Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Centrality",
+      "Loan",
+      "Robustness (evolution)",
+      "Peer-to-peer",
+      "Credit risk"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4706619",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4392720551",
+    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4726481",
+    "doi_url": "https://doi.org/10.2139/ssrn.4726481",
+    "authors": [
+      "Yiting Liu",
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Yiting Liu, Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science",
+      "Network topology",
+      "Lens (geology)",
+      "Artificial intelligence",
+      "Through-the-lens metering"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4726481",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4391548116",
+    "title": "Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4698153",
+    "doi_url": "https://doi.org/10.2139/ssrn.4698153",
+    "authors": [
+      "Karolina Bolesta",
+      "Gabin Taibi",
+      "Codruța Mare",
+      "Branka Hadji Misheva",
+      "Christian Hopp",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Karolina Bolesta, Gabin Taibi, Codruța Mare, Branka Hadji Misheva, Christian Hopp...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Generative grammar",
+      "Natural language processing",
+      "Artificial intelligence",
+      "Linguistics",
+      "Computer science"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4698153",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4392626702",
+    "title": "Predicting Retail Customers' Distress: Early Warning Systems and Machine Learning Applications",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4730470",
+    "doi_url": "https://doi.org/10.2139/ssrn.4730470",
+    "authors": [
+      "Jaap Beltman",
+      "Joerg Osterrieder",
+      "Marcos Machado"
+    ],
+    "authors_str": "Jaap Beltman, Joerg Osterrieder, Marcos Machado",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Warning system",
+      "Business",
+      "Distress",
+      "Early warning system",
+      "Marketing"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4730470",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4390663031",
+    "title": "Towards a new PhD Curriculum for Digital Finance",
+    "year": 2024,
+    "doi": "10.12688/openreseurope.16513.1",
+    "doi_url": "https://doi.org/10.12688/openreseurope.16513.1",
+    "authors": [
+      "Lennart John Baals",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Yiting Liu"
+    ],
+    "authors_str": "Lennart John Baals, Joerg Osterrieder, Branka Hadji Misheva, Yiting Liu",
+    "venue": "Open Research Europe",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "<ns3:p>The rapidly evolving field of Digital Finance necessitates a new, interdisciplinary approach to doctoral training. This manuscript presents a comprehensive curriculum designed to equip early-stage researchers with the skills and knowledge required to navigate the complexities of modern finance. The curriculum is structured around four pillars: Training through Research and Mandatory Scientific Training, Advanced Scientific Training, Transferable Skills Training, and Training through Secon...",
+    "concepts": [
+      "Curriculum",
+      "Soft skills",
+      "Relevance (law)",
+      "Economic shortage",
+      "Quality (philosophy)"
+    ],
+    "pdf_url": "https://doi.org/10.12688/openreseurope.16513.1",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4392607122",
+    "title": "Modeling Commodity Price Co-Movement: Building on Traditional Methods &amp;amp; Exploring Applications of Machine Learning Models",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4730474",
+    "doi_url": "https://doi.org/10.2139/ssrn.4730474",
+    "authors": [
+      "Luca L. Kozian",
+      "Joerg Osterrieder",
+      "Marcos Machado"
+    ],
+    "authors_str": "Luca L. Kozian, Joerg Osterrieder, Marcos Machado",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Movement (music)",
+      "Commodity",
+      "Economics",
+      "Computer science",
+      "Finance"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4730474",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4403595775",
+    "title": "Generative Artificial Intelligence for Finance Professionals",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4956387",
+    "doi_url": "https://doi.org/10.2139/ssrn.4956387",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Generative grammar",
+      "Business",
+      "Artificial intelligence",
+      "Computer science",
+      "Finance"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4956387",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4403179674",
+    "title": "AI-Driven Failed Trials in Investment Strategies: A Network Data Analysis Approach",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4944243",
+    "doi_url": "https://doi.org/10.2139/ssrn.4944243",
+    "authors": [
+      "Karolina Bolesta",
+      "Mutlu Akar",
+      "Ioana Florina Coita",
+      "Claudia Tarantola",
+      "Maria Iannario",
+      "Joerg Osterrieder",
+      "Ciprian Șipoș",
+      "Peter Schwendner",
+      "Barbara Będowska-Sójka",
+      "Galena Pisoni"
+    ],
+    "authors_str": "Karolina Bolesta, Mutlu Akar, Ioana Florina Coita, Claudia Tarantola, Maria Iannario...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Investment (military)",
+      "Economics",
+      "Data science",
+      "Computer science",
+      "Political science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4944243",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4405363657",
+    "title": "Boards’ Dilemma: The Compounding Problem Hidden in Share Buyback Execution Products",
+    "year": 2024,
+    "doi": "10.2139/ssrn.5019706",
+    "doi_url": "https://doi.org/10.2139/ssrn.5019706",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Compounding",
+      "Dilemma",
+      "Business",
+      "Computer science",
+      "Commerce"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.5019706",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4394828508",
+    "title": "Integrating Early Warning Systems with Customer Segmentation: An Information Management Approach to Identifying Business Opportunities for Commercial Customers in the Financial Industry",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4779632",
+    "doi_url": "https://doi.org/10.2139/ssrn.4779632",
+    "authors": [
+      "Marcos Machado",
+      "Joerg Osterrieder",
+      "Alessandra Amato"
+    ],
+    "authors_str": "Marcos Machado, Joerg Osterrieder, Alessandra Amato",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Download",
+      "Business",
+      "Warning system",
+      "Computer science",
+      "Segmentation"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4779632",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4403810595",
+    "title": "Stylized Facts of Metaverse Non-Fungible Tokens",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4959727",
+    "doi_url": "https://doi.org/10.2139/ssrn.4959727",
+    "authors": [
+      "Stephen Chan",
+      "Durga Chandrashekhar",
+      "Ward Almazloum",
+      "Yuanyuan Zhang",
+      "Nicholas Lord",
+      "Joerg Osterrieder",
+      "Jeffrey Chu"
+    ],
+    "authors_str": "Stephen Chan, Durga Chandrashekhar, Ward Almazloum, Yuanyuan Zhang, Nicholas Lord...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Stylized fact",
+      "Computer science",
+      "Economics",
+      "Keynesian economics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4959727",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4400521487",
+    "title": "Ethical Artificial Intelligence, Fintech and Data Protection: A Path Forward for Training in Europe",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4885037",
+    "doi_url": "https://doi.org/10.2139/ssrn.4885037",
+    "authors": [
+      "Maria Moloney",
+      "Ioana Florina Coita",
+      "Eleftheria G. Paschalidou",
+      "Ekaterina Svetlova",
+      "Codruța Mare",
+      "Liana Stanca",
+      "Galena Pisoni",
+      "Karolina Bolesta",
+      "Olivija Filipovska",
+      "Valerio Potì"
+    ],
+    "authors_str": "Maria Moloney, Ioana Florina Coita, Eleftheria G. Paschalidou, Ekaterina Svetlova, Codruța Mare...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Training (meteorology)",
+      "Path (computing)",
+      "Business",
+      "Artificial intelligence",
+      "Computer science"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4885037",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4403066308",
+    "title": "AI 4 Crowdfunding -&amp;nbsp; A hands-on roadmap to study and understand crowdfunding data using critical thinking AI",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4941279",
+    "doi_url": "https://doi.org/10.2139/ssrn.4941279",
+    "authors": [
+      "Ștefana Belbe",
+      "Lucía Gómez",
+      "Liana Stanca",
+      "Karsten Wenzlaff",
+      "Codruța Mare",
+      "Ramy Elitzur",
+      "Karolina Bolesta",
+      "Xiaohong Huang",
+      "Gokce Nur Yilmaz",
+      "Frédérik Sinan Bernard"
+    ],
+    "authors_str": "Ștefana Belbe, Lucía Gómez, Liana Stanca, Karsten Wenzlaff, Codruța Mare...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Living lab",
+      "Critical thinking",
+      "Data science",
+      "Psychology",
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4941279",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4392606005",
+    "title": "Integration of Early Warning Systems and Customer Segmentation Methods in the Financial Industry - A Systematic Literature Review",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4730479",
+    "doi_url": "https://doi.org/10.2139/ssrn.4730479",
+    "authors": [
+      "Alessandro Amato",
+      "Joerg Osterrieder",
+      "Marcos Machado"
+    ],
+    "authors_str": "Alessandro Amato, Joerg Osterrieder, Marcos Machado",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Warning system",
+      "Systematic review",
+      "Computer science",
+      "Political science"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4730479",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4392607116",
+    "title": "How can Consumers Without Credit History Benefit from the Use of Information Processing and Machine Learning Tools by Financial Institutions?",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4730445",
+    "doi_url": "https://doi.org/10.2139/ssrn.4730445",
+    "authors": [
+      "Marcos Machado",
+      "Joerg Osterrieder",
+      "Bjoern van Braak"
+    ],
+    "authors_str": "Marcos Machado, Joerg Osterrieder, Bjoern van Braak",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Finance",
+      "Credit history",
+      "Marketing"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4730445",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4405312606",
+    "title": "Integrating Early Warning Systems with Customer Segmentation: An Information Management Approach to Identifying Business Opportunities for Commercial Customers in the Financial Industry",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4989541",
+    "doi_url": "https://doi.org/10.2139/ssrn.4989541",
+    "authors": [
+      "Alessandro Amato",
+      "Marcos Machado",
+      "João B. Moreira",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Alessandro Amato, Marcos Machado, João B. Moreira, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Warning system",
+      "Marketing",
+      "Customer relationship management",
+      "Finance"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4989541",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4394594362",
+    "title": "Forecasting Commercial Customers Credit Risk Through Early Warning Signals Data: A Machine Learning based Approach",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4754568",
+    "doi_url": "https://doi.org/10.2139/ssrn.4754568",
+    "authors": [
+      "Marcos Machado",
+      "Joerg Osterrieder",
+      "Daniel Chen"
+    ],
+    "authors_str": "Marcos Machado, Joerg Osterrieder, Daniel Chen",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Warning system",
+      "Computer science",
+      "Credit risk",
+      "Early warning system",
+      "Business"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4754568",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4403244389",
+    "title": "What do we Know About Fraud Detection in Peer-to-Peer Lending? A Systematic Literature Review",
+    "year": 2024,
+    "doi": "10.2139/ssrn.4948657",
+    "doi_url": "https://doi.org/10.2139/ssrn.4948657",
+    "authors": [
+      "Marcos Machado",
+      "Ioana Florina Coita",
+      "Karolina Bolesta",
+      "Olivija Filipovska",
+      "Wouter van Heeswijk",
+      "José Antonio Muñiz",
+      "Frédérik Sinan Bernard",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Marcos Machado, Ioana Florina Coita, Karolina Bolesta, Olivija Filipovska, Wouter van Heeswijk...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Peer review",
+      "Systematic review",
+      "Peer-to-peer",
+      "Systematic error",
+      "Psychology"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4948657",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W7116345182",
+    "title": "A Systematic Literature Review on Graph-Based Models in Credit Risk Assessment",
+    "year": 2024,
+    "doi": "10.5281/zenodo.17992321",
+    "doi_url": "https://doi.org/10.5281/zenodo.17992321",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit archives the conference presentation materials for a talk delivered at the 4th International Symposium on Big Data and Artificial Intelligence (Hong Kong) on 17 December 2024. The presentation reports a systematic literature review (SLR) on graph-based models for credit risk assessment, with emphasis on applications in banking networks and peer-to-peer (P2P) lending. The talk synthesizes how network/graph methodologies (e.g., centrality-based scoring, community/latent factor...",
+    "concepts": [
+      "Computer science",
+      "Systematic review",
+      "Scopus",
+      "Presentation (obstetrics)",
+      "Data extraction"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17992321",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116406295",
+    "title": "A Systematic Literature Review on Graph-Based Models in Credit Risk Assessment",
+    "year": 2024,
+    "doi": "10.5281/zenodo.17992322",
+    "doi_url": "https://doi.org/10.5281/zenodo.17992322",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit archives the conference presentation materials for a talk delivered at the 4th International Symposium on Big Data and Artificial Intelligence (Hong Kong) on 17 December 2024. The presentation reports a systematic literature review (SLR) on graph-based models for credit risk assessment, with emphasis on applications in banking networks and peer-to-peer (P2P) lending. The talk synthesizes how network/graph methodologies (e.g., centrality-based scoring, community/latent factor...",
+    "concepts": [
+      "Computer science",
+      "Systematic review",
+      "Scopus",
+      "Presentation (obstetrics)",
+      "Data extraction"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17992322",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116306108",
+    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
+    "year": 2024,
+    "doi": "10.5281/zenodo.17991107",
+    "doi_url": "https://doi.org/10.5281/zenodo.17991107",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit provides the materials required to reproduce the empirical workflow, figures, and manuscript source for the study: “Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning.” The study forms Chapter 3 of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals and is published as: Liu, Y., Baals, L. J., Osterrieder, J., & Hadji-M...",
+    "concepts": [
+      "Network topology",
+      "Computer science",
+      "Feature (linguistics)",
+      "Artificial intelligence",
+      "Machine learning"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17991107",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116379154",
+    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
+    "year": 2024,
+    "doi": "10.5281/zenodo.17991106",
+    "doi_url": "https://doi.org/10.5281/zenodo.17991106",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit provides the materials required to reproduce the empirical workflow, figures, and manuscript source for the study: “Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning.” The study forms Chapter 3 of the doctoral dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals and is published as: Liu, Y., Baals, L. J., Osterrieder, J., & Hadji-M...",
+    "concepts": [
+      "Network topology",
+      "Computer science",
+      "Feature (linguistics)",
+      "Artificial intelligence",
+      "Machine learning"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17991106",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116302181",
+    "title": "PhD Qualifier Report and Presentation delivered by Lennart John Baals at the University of Twente",
+    "year": 2024,
+    "doi": "10.5281/zenodo.17992214",
+    "doi_url": "https://doi.org/10.5281/zenodo.17992214",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit archives the written report and slide deck submitted and presented for my PhD Qualifier / PhD confirmation milestone at the University of Twente. The qualifier forms part of the formal doctoral trajectory and documents the research motivation, scope, methodological plan, and intended dissertation structure at the time of admission into the PhD programme. The deposit includes both the compiled PDFs and the corresponding LaTeX source files (including all graphics required to r...",
+    "concepts": [
+      "Presentation (obstetrics)",
+      "Context (archaeology)",
+      "Framing (construction)",
+      "Library science",
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17992214",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116319964",
+    "title": "PhD Qualifier Report and Presentation delivered by Lennart John Baals at the University of Twente",
+    "year": 2024,
+    "doi": "10.5281/zenodo.17992215",
+    "doi_url": "https://doi.org/10.5281/zenodo.17992215",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit archives the written report and slide deck submitted and presented for my PhD Qualifier / PhD confirmation milestone at the University of Twente. The qualifier forms part of the formal doctoral trajectory and documents the research motivation, scope, methodological plan, and intended dissertation structure at the time of admission into the PhD programme. The deposit includes both the compiled PDFs and the corresponding LaTeX source files (including all graphics required to r...",
+    "concepts": [
+      "Presentation (obstetrics)",
+      "Context (archaeology)",
+      "Framing (construction)",
+      "Library science",
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17992215",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W4416312882",
+    "title": "MVA Theory of the multinormal",
+    "year": 2024,
+    "doi": "10.24818/ida-cl/2024.89",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2024.89",
+    "authors": [
+      "Lennart John Baals",
+      "Matthias R. Fengler"
+    ],
+    "authors_str": "Lennart John Baals, Matthias R. Fengler",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W4313481730",
+    "title": "A Primer on Deep Reinforcement Learning for Finance",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4316650",
+    "doi_url": "https://doi.org/10.2139/ssrn.4316650",
+    "authors": [
+      "Joerg Osterrieder",
+      "Chat GPT"
+    ],
+    "authors_str": "Joerg Osterrieder, Chat GPT",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 14,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Primer (cosmetics)",
+      "Reinforcement learning",
+      "Reinforcement",
+      "Artificial intelligence",
+      "Business"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4316650",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385277083",
+    "title": "Navigating the Environmental, Social, and Governance (ESG) landscape: constructing a robust and reliable scoring engine - insights into Data Source Selection, Indicator Determination, Weighting and Aggregation Techniques, and Validation Processes for Comprehensive ESG Scoring Systems",
+    "year": 2023,
+    "doi": "10.12688/openreseurope.16278.1",
+    "doi_url": "https://doi.org/10.12688/openreseurope.16278.1",
+    "authors": [
+      "Yiting Liu",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Nicole Koenigstein",
+      "Lennart John Baals"
+    ],
+    "authors_str": "Yiting Liu, Joerg Osterrieder, Branka Hadji Misheva, Nicole Koenigstein, Lennart John Baals",
+    "venue": "Open Research Europe",
+    "cited_by_count": 13,
+    "type": "article",
+    "open_access": true,
+    "abstract": "<ns3:p>This white paper explores the construction of a reliable Environmental, Social, and Governance (ESG) scoring engine, with a focus on the importance of data sources and quality, selection of ESG indicators, weighting and aggregation methodologies, and the necessary validation and benchmarking procedures. The current challenges in ESG scoring and the importance of a robust ESG scoring system are addressed, citing its increasing relevance to stakeholders. Furthermore, different data types, n...",
+    "concepts": [
+      "Weighting",
+      "Benchmarking",
+      "Robustness (evolution)",
+      "Computer science",
+      "Corporate governance"
+    ],
+    "pdf_url": "https://doi.org/10.12688/openreseurope.16278.1",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4313680321",
+    "title": "A Primer on Natural Language Processing for Finance",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4317320",
+    "doi_url": "https://doi.org/10.2139/ssrn.4317320",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 8,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Primer (cosmetics)",
+      "Computer science",
+      "Finance",
+      "Natural language processing",
+      "Linguistics"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4317320",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4319592075",
+    "title": "A Primer on Artificial Intelligence and Machine Learning for the Financial Services Industry",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4349078",
+    "doi_url": "https://doi.org/10.2139/ssrn.4349078",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 5,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Financial services",
+      "Primer (cosmetics)",
+      "Business",
+      "Artificial intelligence",
+      "Engineering"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4349078",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4387232416",
+    "title": "Modelling taxpayers’ behaviour based on prediction of trust using sentiment analysis",
+    "year": 2023,
+    "doi": "10.1016/j.frl.2023.104549",
+    "doi_url": "https://doi.org/10.1016/j.frl.2023.104549",
+    "authors": [
+      "Ioana-Florina Coita",
+      "Ștefana Belbe",
+      "Codruța Mare",
+      "Joerg Osterrieder",
+      "Christian Hopp"
+    ],
+    "authors_str": "Ioana-Florina Coita, Ștefana Belbe, Codruța Mare, Joerg Osterrieder, Christian Hopp",
+    "venue": "Finance research letters",
+    "cited_by_count": 4,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Taxpayer",
+      "Sentiment analysis",
+      "Perception",
+      "Diversity (politics)",
+      "Word (group theory)"
+    ],
+    "pdf_url": "https://www.sciencedirect.com/science/article/pii/S1544612323009212",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385190919",
+    "title": "Unraveling Market Mysteries: A Comprehensive Review of Financial Anomalies and Puzzles",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4511992",
+    "doi_url": "https://doi.org/10.2139/ssrn.4511992",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 4,
+    "type": "review",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Financial market",
+      "Business",
+      "Economics",
+      "Finance",
+      "Financial economics"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4511992",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4388584837",
+    "title": "Mitigating Digital Asset Risks",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4594467",
+    "doi_url": "https://doi.org/10.2139/ssrn.4594467",
+    "authors": [
+      "Huei-Wen Teng",
+      "Wolfgang Karl Härdle",
+      "Joerg Osterrieder",
+      "Lennart John Baals",
+      "Vassilios G. Papavassiliou",
+      "Karolina Bolesta",
+      "Audrius Kabašinskas",
+      "Olivija Filipovska",
+      "Nikolaos S. Thomaidis",
+      "Alexios Ioannis Moukas"
+    ],
+    "authors_str": "Huei-Wen Teng, Wolfgang Karl Härdle, Joerg Osterrieder, Lennart John Baals, Vassilios G. Papavassiliou...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 4,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Asset (computer security)",
+      "Risk analysis (engineering)",
+      "Computer science",
+      "Computer security"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4594467",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4386077763",
+    "title": "Examining Share Repurchase Executions: Insights and Synthesis from the Existing Literature",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4548038",
+    "doi_url": "https://doi.org/10.2139/ssrn.4548038",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 4,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Share repurchase",
+      "Benchmark (surveying)",
+      "Field (mathematics)",
+      "Marketing"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4548038",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385793067",
+    "title": "The Mysteries of Share Buyback Execution: Trading Anomalies, Benchmarks, and Psychological Misconceptions",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4511382",
+    "doi_url": "https://doi.org/10.2139/ssrn.4511382",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 4,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Financial economics",
+      "Economics",
+      "Actuarial science",
+      "Psychology"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4511382",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4384918655",
+    "title": "The Great Deception: A Comprehensive Study of Execution Strategies in Corporate Share Buy-Backs",
+    "year": 2023,
+    "doi": "10.48550/arxiv.2307.09617",
+    "doi_url": "https://doi.org/10.48550/arxiv.2307.09617",
+    "authors": [
+      "Michael Seigne",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Michael Seigne, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 3,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "We delve into the intricate world of share buy-backs, a strategic corporate capital allocation tool that has gained significant prominence over the past few decades. Despite being the subject of extensive research and debate, the execution phase of these transactions remains an underexplored area. This lack of research into the execution phase is surprising, especially when compared to the extensive literature on other capital allocation decisions, such as acquisition pricing. We aim to shed lig...",
+    "concepts": [
+      "Transparency (behavior)",
+      "Business",
+      "Deception",
+      "Capital market",
+      "Competitor analysis"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2307.09617",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4388901089",
+    "title": "An Overview - Stress Test Designs for the Evaluation of AI and ML Models Under Shifting Financial Conditions to Improve the Robustness of Models",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4634266",
+    "doi_url": "https://doi.org/10.2139/ssrn.4634266",
+    "authors": [
+      "Joerg Osterrieder",
+      "Veni Arakelian",
+      "Ioana Florina Coita",
+      "Branka Hadji Misheva",
+      "Audrius Kabašinskas",
+      "Marcos Machado",
+      "Codruța Mare"
+    ],
+    "authors_str": "Joerg Osterrieder, Veni Arakelian, Ioana Florina Coita, Branka Hadji Misheva, Audrius Kabašinskas...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 3,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Robustness (evolution)",
+      "Stress testing (software)",
+      "Corporate governance",
+      "Model risk",
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4634266",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4387577844",
+    "title": "Unraveling market mysteries: a comprehensive review of financial anomalies and puzzles",
+    "year": 2023,
+    "doi": "10.12688/openreseurope.16436.1",
+    "doi_url": "https://doi.org/10.12688/openreseurope.16436.1",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "Open Research Europe",
+    "cited_by_count": 2,
+    "type": "review",
+    "open_access": true,
+    "abstract": "<ns3:p>This comprehensive literature review consolidates various market anomalies and puzzles, providing an aggregated perspective to understand these complex dynamics that challenge the traditional Efficient Market Hypothesis. We examined numerous academic works to reveal insights into long-term return irregularities, earnings management influence on equity offerings, and information uncertainty’s impact on stock returns.</ns3:p><ns3:p> The review delves into unique phenomena like persistent mu...",
+    "concepts": [
+      "Financial economics",
+      "Behavioral economics",
+      "Capital asset pricing model",
+      "Stock market",
+      "Economics"
+    ],
+    "pdf_url": "https://doi.org/10.12688/openreseurope.16436.1",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385247723",
+    "title": "Examining Share Repurchase Executions: Insights and Synthesis from the Existing Literature",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4512729",
+    "doi_url": "https://doi.org/10.2139/ssrn.4512729",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Share repurchase",
+      "Computer science",
+      "Finance",
+      "Corporate governance"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4512729",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4381111168",
+    "title": "Navigating the ESG Landscape: Constructing a Robust and Reliable Scoring Engine",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4475651",
+    "doi_url": "https://doi.org/10.2139/ssrn.4475651",
+    "authors": [
+      "Yiting Liu",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Lennart John Baals"
+    ],
+    "authors_str": "Yiting Liu, Joerg Osterrieder, Branka Hadji Misheva, Lennart John Baals",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 2,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science",
+      "Business"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4475651",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4388685694",
+    "title": "A Hypothesis on Good Practices for AI-based Systems for Financial Time Series Forecasting: Towards Domain-Driven XAI Methods",
+    "year": 2023,
+    "doi": "10.48550/arxiv.2311.07513",
+    "doi_url": "https://doi.org/10.48550/arxiv.2311.07513",
+    "authors": [
+      "Branka Hadji Misheva",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 1,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "Machine learning and deep learning have become increasingly prevalent in financial prediction and forecasting tasks, offering advantages such as enhanced customer experience, democratising financial services, improving consumer protection, and enhancing risk management. However, these complex models often lack transparency and interpretability, making them challenging to use in sensitive domains like finance. This has led to the rise of eXplainable Artificial Intelligence (XAI) methods aimed at ...",
+    "concepts": [
+      "Interpretability",
+      "Transparency (behavior)",
+      "Computer science",
+      "Financial services",
+      "Context (archaeology)"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2311.07513",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4388294010",
+    "title": "Share buybacks: a theoretical exploration of genetic algorithms and mathematical optionality",
+    "year": 2023,
+    "doi": "10.3389/frai.2023.1276804",
+    "doi_url": "https://doi.org/10.3389/frai.2023.1276804",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "Frontiers in Artificial Intelligence",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "This article exclusively formulates and presents three innovative hypotheses related to the execution of share buybacks, employing Genetic Algorithms (GAs) and mathematical optimization techniques. Drawing on the foundational contributions of scholars such as Osterrieder, Seigne, Masters, and Guéant, we articulate hypotheses that aim to bring a fresh perspective to share buyback strategies. The first hypothesis examines the potential of GAs to mimic trading schedules, the second posits the optim...",
+    "concepts": [
+      "Perspective (graphical)",
+      "Set (abstract data type)",
+      "Computer science",
+      "Genetic algorithm",
+      "Artificial intelligence"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frai.2023.1276804/pdf?isPublishedV2=False",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4389711970",
+    "title": "Machine Learning for Asset Management",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4638186",
+    "doi_url": "https://doi.org/10.2139/ssrn.4638186",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Asset management",
+      "Asset (computer security)",
+      "Business",
+      "Computer science",
+      "Artificial intelligence"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4638186",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385789910",
+    "title": "Rethinking Share Buyback Execution: Insights into Temporal Optionality and Empirical Anomalies",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4539559",
+    "doi_url": "https://doi.org/10.2139/ssrn.4539559",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Empirical research",
+      "Computer science",
+      "Business",
+      "Econometrics",
+      "Economics"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4539559",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4313680464",
+    "title": "A Primer on Anomaly and Fraud Detection in Blockchain Networks",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4317520",
+    "doi_url": "https://doi.org/10.2139/ssrn.4317520",
+    "authors": [
+      "Joerg Osterrieder",
+      "Stephen Chan",
+      "Jeffrey Chu",
+      "Yuanyuan Zhang"
+    ],
+    "authors_str": "Joerg Osterrieder, Stephen Chan, Jeffrey Chu, Yuanyuan Zhang",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Blockchain",
+      "Anomaly detection",
+      "Primer (cosmetics)",
+      "Anomaly (physics)",
+      "Computer science"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4317520",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385790115",
+    "title": "Share Buybacks: A Theoretical Exploration of Genetic Algorithms and Mathematical Optionality",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4539768",
+    "doi_url": "https://doi.org/10.2139/ssrn.4539768",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "This article exclusively formulates and presents three innovative hypotheses related to the execution of share buybacks, employing Genetic Algorithms (GAs) and mathematical optimization techniques. Drawing on the foundational contributions of scholars such as Osterrieder, Seigne, Masters, and Gu√©ant, we articulate hypotheses that aim to bring a fresh perspective to share buyback strategies. The first hypothesis examines the potential of GAs to mimic trading schedules, the second posits the opti...",
+    "concepts": [
+      "Computer science",
+      "Algorithm"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4539768",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385790464",
+    "title": "Temporal Optionality in Share Buyback Execution: An Empirical Anomaly and Value Optimization Approach",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4525781",
+    "doi_url": "https://doi.org/10.2139/ssrn.4525781",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Anomaly (physics)",
+      "Value (mathematics)",
+      "Empirical research",
+      "Computer science",
+      "Business"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4525781",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4384134573",
+    "title": "The Great Deception: A Comprehensive Study of Execution Strategies in Corporate Share Buy-Backs - Decoding the Enigma of Equity Repurchases and their Disproportionate Cost Structures",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4499366",
+    "doi_url": "https://doi.org/10.2139/ssrn.4499366",
+    "authors": [
+      "Michael Seigne",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Michael Seigne, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Deception",
+      "Equity (law)",
+      "Business",
+      "Decoding methods",
+      "Accounting"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4499366",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385789912",
+    "title": "Navigating Share Buyback Programs: A Genetic Algorithm Approach to Outperform the Buyback Benchmark",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4539469",
+    "doi_url": "https://doi.org/10.2139/ssrn.4539469",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Benchmark (surveying)",
+      "Genetic algorithm",
+      "Computer science",
+      "Algorithm",
+      "Finance"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4539469",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385896028",
+    "title": "A Free Lunch for Share Buybacks",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4539767",
+    "doi_url": "https://doi.org/10.2139/ssrn.4539767",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Monetary economics",
+      "Advertising",
+      "Economics",
+      "Commerce"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4539767",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385447887",
+    "title": "A Free Lunch Hypothesis for Share Buybacks",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4526098",
+    "doi_url": "https://doi.org/10.2139/ssrn.4526098",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Business",
+      "Monetary economics",
+      "Free riding",
+      "Economics",
+      "Microeconomics"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4526098",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4386108729",
+    "title": "The Hidden Impact of the SEC's Share Repurchasing Disclosure Modernization on Corporate Governance",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4537835",
+    "doi_url": "https://doi.org/10.2139/ssrn.4537835",
+    "authors": [
+      "Michael Seigne",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Michael Seigne, Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 1,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Corporate governance",
+      "Business",
+      "Accounting",
+      "Modernization theory",
+      "Financial system"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4537835",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4388523841",
+    "title": "Examining share repurchase executions: insights and synthesis from the existing literature",
+    "year": 2023,
+    "doi": "10.3389/fams.2023.1265254",
+    "doi_url": "https://doi.org/10.3389/fams.2023.1265254",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "Frontiers in Applied Mathematics and Statistics",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "This literature review aims to address the critical knowledge gap in the field of share repurchase executions, a financial activity involving companies repurchasing trillions of dollars' worth of their own shares. The significance of understanding these mechanisms and their impact is underscored by their potential influence on the global economy. The paper employs a comprehensive analysis of existing literature, focusing on share repurchase mechanisms and motivations. It scrutinizes both open-ma...",
+    "concepts": [
+      "Share repurchase",
+      "Benchmark (surveying)",
+      "Business",
+      "Market share",
+      "Field (mathematics)"
+    ],
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/fams.2023.1265254/pdf?isPublishedV2=False",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4321614542",
+    "title": "Digital Finance: Reaching New Frontiers",
+    "year": 2023,
+    "doi": "10.12688/openreseurope.15386.1",
+    "doi_url": "https://doi.org/10.12688/openreseurope.15386.1",
+    "authors": [
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva",
+      "Marcos Machado"
+    ],
+    "authors_str": "Joerg Osterrieder, Branka Hadji Misheva, Marcos Machado",
+    "venue": "Open Research Europe",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "<ns3:p>Digital Finance must become the center of academic research in finance if the European financial industry is to remain competitive in the future. We argue that the new interdisciplinary field of Digital Finance should be prioritized based on the strategic priorities of the European Union, the needs of the finance industry, and the academic research gaps. Digital Finance as an interdisciplinary field will contribute to the strategic priorities of the European Union, such as financing for g...",
+    "concepts": [
+      "Finance",
+      "European union",
+      "Access to finance",
+      "Geography of finance",
+      "Financial services"
+    ],
+    "pdf_url": "https://doi.org/10.12688/openreseurope.15386.1",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416313087",
+    "title": "Asset Management",
+    "year": 2023,
+    "doi": "10.24818/ida-cl/2023.174",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2023.174",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4386186193",
+    "title": "Leveraging Network Topology for Credit Risk Assessment in P2p Lending: A Comparative Study Under the Lens of Machine Learning",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4550985",
+    "doi_url": "https://doi.org/10.2139/ssrn.4550985",
+    "authors": [
+      "Lennart John Baals",
+      "Yiting Liu",
+      "Joerg Osterrieder",
+      "Branka Hadji Misheva"
+    ],
+    "authors_str": "Lennart John Baals, Yiting Liu, Joerg Osterrieder, Branka Hadji Misheva",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science",
+      "Lens (geology)",
+      "Through-the-lens metering",
+      "Network topology",
+      "Topology (electrical circuits)"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4550985",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416313096",
+    "title": "Deep Learning",
+    "year": 2023,
+    "doi": "10.24818/ida-cl/2023.170",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2023.170",
+    "authors": [
+      "Branka Hadji Misheva",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4313702924",
+    "title": "A Primer on Time Series Analysis with R",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4316960",
+    "doi_url": "https://doi.org/10.2139/ssrn.4316960",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Series (stratigraphy)",
+      "Primer (cosmetics)",
+      "Computer science",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4316960",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4319997715",
+    "title": "A Primer on Narrative Finance",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4324860",
+    "doi_url": "https://doi.org/10.2139/ssrn.4324860",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Narrative",
+      "Primer (cosmetics)",
+      "Finance",
+      "Business",
+      "Linguistics"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4324860",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385654229",
+    "title": "Temporal Optionality in Share Buybacks: Hypothesizing an Inevitable Brokerage Outperformance",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4526100",
+    "doi_url": "https://doi.org/10.2139/ssrn.4526100",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Scrutiny",
+      "Monetary economics",
+      "Realm",
+      "Financial economics",
+      "Economics"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4526100",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416313042",
+    "title": "Generative Adversarial Networks",
+    "year": 2023,
+    "doi": "10.24818/ida-cl/2023.172",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2023.172",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4388671222",
+    "title": "Temporal Optionality in Share Buyback Execution: An Empirical Anomaly and Value Optimization Approach",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4625594",
+    "doi_url": "https://doi.org/10.2139/ssrn.4625594",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Anomaly (physics)",
+      "Value (mathematics)",
+      "Computer science",
+      "Empirical research",
+      "Econometrics"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4625594",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416313113",
+    "title": "Artificial Intelligence Intro",
+    "year": 2023,
+    "doi": "10.24818/ida-cl/2023.168",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2023.168",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4385793050",
+    "title": "Rethinking Share Buyback Execution: Insights into Temporal Optionality and Empirical Anomalies",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4525779",
+    "doi_url": "https://doi.org/10.2139/ssrn.4525779",
+    "authors": [
+      "Joerg Osterrieder",
+      "Michael Seigne"
+    ],
+    "authors_str": "Joerg Osterrieder, Michael Seigne",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Computer science",
+      "Business",
+      "Econometrics",
+      "Economics"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4525779",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4367358330",
+    "title": "The Art of Portfolio Management - Lecture Notes",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4420127",
+    "doi_url": "https://doi.org/10.2139/ssrn.4420127",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Application portfolio management",
+      "Modern portfolio theory",
+      "Portfolio",
+      "Diversification (marketing strategy)",
+      "Computer science"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4420127",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4389104312",
+    "title": "Exploring Research Visibility of the FinAI COST Action Members: a Bibliometric Analysis of Topics",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4616662",
+    "doi_url": "https://doi.org/10.2139/ssrn.4616662",
+    "authors": [
+      "Piotr Wójcik",
+      "Maciej Świtała",
+      "Wolfgang Karl Härdle",
+      "Codruța Mare",
+      "Daniel Traian Pele",
+      "Raul Cristian Bag",
+      "Joerg Osterrieder",
+      "Alla Petukhina",
+      "Daniele Marazzina"
+    ],
+    "authors_str": "Piotr Wójcik, Maciej Świtała, Wolfgang Karl Härdle, Codruța Mare, Daniel Traian Pele...",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Visibility",
+      "Action (physics)",
+      "Data science",
+      "Computer science",
+      "Library science"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4616662",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4367460746",
+    "title": "Enterprise Applications, Markets and Services in the Finance Industry",
+    "year": 2023,
+    "doi": "10.1007/978-3-031-31671-5",
+    "doi_url": "https://doi.org/10.1007/978-3-031-31671-5",
+    "authors": [
+      "Jos van Hillegersberg",
+      "Joerg Osterrieder",
+      "Fethi Rabhi",
+      "Abhishta Abhishta",
+      "Vijay Marisetty",
+      "Xiaohong Huang"
+    ],
+    "authors_str": "Jos van Hillegersberg, Joerg Osterrieder, Fethi Rabhi, Abhishta Abhishta, Vijay Marisetty...",
+    "venue": "Lecture notes in business information processing",
+    "cited_by_count": 0,
+    "type": "book",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [
+      "Financial services",
+      "Business",
+      "Finance",
+      "Commerce",
+      "Industrial organization"
+    ],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4416312385",
+    "title": "Deep Reinforcement Learning",
+    "year": 2023,
+    "doi": "10.24818/ida-cl/2023.171",
+    "doi_url": "https://doi.org/10.24818/ida-cl/2023.171",
+    "authors": [
+      "Branka Hadji Misheva",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Branka Hadji Misheva, Joerg Osterrieder",
+    "venue": "",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [],
+    "pdf_url": null,
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W4319592800",
+    "title": "A Primer on Information Systems for the Financial Services Industry",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4348941",
+    "doi_url": "https://doi.org/10.2139/ssrn.4348941",
+    "authors": [
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Joerg Osterrieder",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Financial services",
+      "Business",
+      "Primer (cosmetics)",
+      "Information system",
+      "Finance"
+    ],
+    "pdf_url": "http://dx.doi.org/10.2139/ssrn.4348941",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W7116298566",
+    "title": "Identifying Mispriced Loans through Interest Rate-Based Network Analysis and Clustering in P2P Lending Markets",
+    "year": 2023,
+    "doi": "10.5281/zenodo.17992590",
+    "doi_url": "https://doi.org/10.5281/zenodo.17992590",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit archives the presentation materials for a talk delivered at a doctoral seminar at the Bern University of Applied Sciences (BFH) on 29 November 2023. The presentation documents early foundational work that later developed into my doctoral research on network-based identification of interest-rate mispricing in P2P lending, forming the basis for the subsequent thesis chapter on credit-risk pricing and mispricing in primary-market P2P loans. The talk introduces a practical metho...",
+    "concepts": [
+      "Loan",
+      "Computer science",
+      "Categorical variable",
+      "Similarity (geometry)",
+      "Outlier"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17992590",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116418087",
+    "title": "Identifying Mispriced Loans through Interest Rate-Based Network Analysis and Clustering in P2P Lending Markets",
+    "year": 2023,
+    "doi": "10.5281/zenodo.17992591",
+    "doi_url": "https://doi.org/10.5281/zenodo.17992591",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit archives the presentation materials for a talk delivered at a doctoral seminar at the Bern University of Applied Sciences (BFH) on 29 November 2023. The presentation documents early foundational work that later developed into my doctoral research on network-based identification of interest-rate mispricing in P2P lending, forming the basis for the subsequent thesis chapter on credit-risk pricing and mispricing in primary-market P2P loans. The talk introduces a practical metho...",
+    "concepts": [
+      "Loan",
+      "Computer science",
+      "Categorical variable",
+      "Similarity (geometry)",
+      "Outlier"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17992591",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116431081",
+    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
+    "year": 2023,
+    "doi": "10.5281/zenodo.17992483",
+    "doi_url": "https://doi.org/10.5281/zenodo.17992483",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit archives the conference presentation materials for a talk delivered at a research event in Bern (2023). The presentation summarizes the core ideas, methodology, and empirical results of my doctoral research on network-enhanced credit risk modelling in peer-to-peer (P2P) lending, corresponding to Chapter 3 of the dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals. The talk focuses on how graph-based repre...",
+    "concepts": [
+      "Benchmarking",
+      "Interpretability",
+      "Computer science",
+      "Machine learning",
+      "Artificial intelligence"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17992483",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W7116409692",
+    "title": "Leveraging Network Topology for Credit Risk Assessment in P2P Lending: A Comparative Study under the Lens of Machine Learning",
+    "year": 2023,
+    "doi": "10.5281/zenodo.17992484",
+    "doi_url": "https://doi.org/10.5281/zenodo.17992484",
+    "authors": [
+      "Lennart John Baals"
+    ],
+    "authors_str": "Lennart John Baals",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "cited_by_count": 0,
+    "type": "article",
+    "open_access": true,
+    "abstract": "OverviewThis deposit archives the conference presentation materials for a talk delivered at a research event in Bern (2023). The presentation summarizes the core ideas, methodology, and empirical results of my doctoral research on network-enhanced credit risk modelling in peer-to-peer (P2P) lending, corresponding to Chapter 3 of the dissertation “Risk Management in Digital Finance: Assessment and Pricing in an Emerging Fintech Era” by Lennart John Baals. The talk focuses on how graph-based repre...",
+    "concepts": [
+      "Benchmarking",
+      "Interpretability",
+      "Computer science",
+      "Machine learning",
+      "Artificial intelligence"
+    ],
+    "pdf_url": "https://doi.org/10.5281/zenodo.17992484",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W4307893842",
+    "title": "Bubbles all the way down? Detecting and date-stamping bubble behaviours in NFT and DeFi markets",
+    "year": 2022,
+    "doi": "10.1080/14765284.2022.2138161",
+    "doi_url": "https://doi.org/10.1080/14765284.2022.2138161",
+    "authors": [
+      "Yizhi Wang",
+      "Florian Horky",
+      "Lennart John Baals",
+      "Brian M. Lucey",
+      "Samuel A. Vigne"
+    ],
+    "authors_str": "Yizhi Wang, Florian Horky, Lennart John Baals, Brian M. Lucey, Samuel A. Vigne",
+    "venue": "Journal of Chinese Economic and Business Studies",
+    "cited_by_count": 66,
+    "type": "article",
+    "open_access": true,
+    "abstract": "Amid surging market values and widespread regulatory discussion, NFT and DeFi markets are widely perceived as being simply speculative in nature. This paper detects the existence and dates of price bubbles in the NFT and DeFi markets by applying SADF and GSADF tests. We document that NFT and DeFi markets both exhibit speculative bubbles, with NFT bubbles being more recurrent and having higher average explosive magnitudes than DeFi bubbles. The price bubbles in the NFT and DeFi markets are highly...",
+    "concepts": [
+      "Bubble",
+      "Stamping",
+      "Economics",
+      "Business",
+      "Engineering"
+    ],
+    "pdf_url": "https://www.tandfonline.com/doi/epdf/10.1080/14765284.2022.2138161?needAccess=true&role=button",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W4225690437",
+    "title": "Towards a Research Agenda on the Financial Economics of NFT’s",
+    "year": 2022,
+    "doi": "10.2139/ssrn.4070710",
+    "doi_url": "https://doi.org/10.2139/ssrn.4070710",
+    "authors": [
+      "Lennart John Baals",
+      "Brian M. Lucey",
+      "Samuel A. Vigne",
+      "Suwan Long"
+    ],
+    "authors_str": "Lennart John Baals, Brian M. Lucey, Samuel A. Vigne, Suwan Long",
+    "venue": "SSRN Electronic Journal",
+    "cited_by_count": 14,
+    "type": "article",
+    "open_access": true,
+    "abstract": "",
+    "concepts": [
+      "Parallels",
+      "Perspective (graphical)",
+      "Behavioral economics",
+      "Social studies of finance",
+      "Dissent"
+    ],
+    "pdf_url": "https://doi.org/10.2139/ssrn.4070710",
+    "team_member": "Lennart John Baals"
+  },
+  {
+    "id": "https://openalex.org/W4298183600",
+    "title": "Feature Selection via the Intervened Interpolative Decomposition and its Application in Diversifying Quantitative Strategies",
+    "year": 2022,
+    "doi": "10.48550/arxiv.2209.14532",
+    "doi_url": "https://doi.org/10.48550/arxiv.2209.14532",
+    "authors": [
+      "Jun Lü",
+      "Joerg Osterrieder"
+    ],
+    "authors_str": "Jun Lü, Joerg Osterrieder",
+    "venue": "arXiv (Cornell University)",
+    "cited_by_count": 0,
+    "type": "preprint",
+    "open_access": true,
+    "abstract": "In this paper, we propose a probabilistic model for computing an interpolative decomposition (ID) in which each column of the observed matrix has its own priority or importance, so that the end result of the decomposition finds a set of features that are representative of the entire set of features, and the selected features also have higher priority than others. This approach is commonly used for low-rank approximation, feature selection, and extracting hidden patterns in data, where the matrix...",
+    "concepts": [
+      "Feature selection",
+      "Gibbs sampling",
+      "Computer science",
+      "Decomposition",
+      "Bayesian probability"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2209.14532",
+    "team_member": "Joerg Osterrieder"
+  },
+  {
+    "id": "https://openalex.org/W2115681644",
+    "title": "BMP-2 liberated from biomimetic implant coatings induces and sustains direct ossification in an ectopic rat model",
+    "year": 2005,
+    "doi": "10.1016/j.bone.2005.02.005",
+    "doi_url": "https://doi.org/10.1016/j.bone.2005.02.005",
+    "authors": [
+      "Yiting Liu",
+      "K DeGroot",
+      "Ernst B. Hunziker"
+    ],
+    "authors_str": "Yiting Liu, K DeGroot, Ernst B. Hunziker",
+    "venue": "Bone",
+    "cited_by_count": 303,
+    "type": "article",
+    "open_access": false,
+    "abstract": "",
+    "concepts": [
+      "Implant",
+      "Ossification",
+      "Calcium",
+      "Bone morphogenetic protein 2",
+      "Chemistry"
+    ],
+    "pdf_url": null,
+    "team_member": "Yiting Liu"
+  }
+]

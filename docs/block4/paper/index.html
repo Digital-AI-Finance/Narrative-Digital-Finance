@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper - NDF Block 4</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 0.95rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 20px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 5px;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-secondary { background: var(--secondary); }
+        .pdf-container {
+            width: 100%;
+            height: 85vh;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #525659;
+        }
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .pdf-fallback {
+            padding: 40px;
+            text-align: center;
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+        .info-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .meta { font-size: 0.9rem; color: #666; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            nav ul { flex-direction: column; align-items: center; gap: 10px; }
+            .info-bar { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Integrated ML Framework for Structural Break Detection</h1>
+            <p>Physica A: Statistical Mechanics and its Applications</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Project Home</a></li>
+            <li><a href="../">Block 4</a></li>
+            <li><a href="./" class="active">Paper</a></li>
+            <li><a href="../figures/">Figures</a></li>
+            <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-4">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <div class="info-bar">
+                <div class="meta">
+                    <strong>Authors:</strong> Joerg Osterrieder, Gabin Taibi |
+                    <strong>Pages:</strong> 12 (10 content + 2 refs) |
+                    <strong>Citations:</strong> 22
+                </div>
+                <div>
+                    <a href="main.pdf" class="btn btn-secondary" download>Download PDF</a>
+                    <a href="main.pdf" class="btn" target="_blank">Open in New Tab</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pdf-container">
+            <iframe src="main.pdf" type="application/pdf">
+                <div class="pdf-fallback">
+                    <h2>PDF Viewer Not Available</h2>
+                    <p>Your browser does not support embedded PDF viewing.</p>
+                    <p style="margin-top: 15px;">
+                        <a href="main.pdf" class="btn btn-secondary" download>Download PDF</a>
+                        <a href="main.pdf" class="btn" target="_blank">Open PDF</a>
+                    </p>
+                </div>
+            </iframe>
+        </div>
+
+        <div class="card" style="margin-top: 20px;">
+            <h2>Abstract</h2>
+            <p>We present an integrated machine learning framework for ex-ante detection of structural breaks in financial markets, combining natural language processing (NLP), traditional change point detection methods, and ensemble learning. Our approach addresses two key research questions: (1) Can a combined ML approach outperform single methods? (2) Do complex ensemble methods outperform simple forecast combinations?</p>
+            <p style="margin-top: 10px;">Results demonstrate that the stacking ensemble achieves an AUC-ROC of 0.712, significantly outperforming the best single-stream model (0.632) and simple averaging (0.654). The ensemble also reduces detection delay by 67% compared to break-signal-only approaches.</p>
+        </div>
+
+        <div class="card">
+            <h2>Citation</h2>
+            <pre style="background: #f5f5f5; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem;">@article{osterrieder2026integrated,
+  title={Integrated Machine Learning Framework for Ex-Ante Detection of
+         Structural Breaks: Combining NLP, Change Point Detection,
+         and Ensemble Methods},
+  author={Osterrieder, Joerg and Taibi, Gabin},
+  journal={Physica A: Statistical Mechanics and its Applications},
+  year={2026},
+  note={SNSF Grant IZCOZ0\_213370}
+}</pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>NDF Block 4 - Narrative Digital Finance | SNSF Grant IZCOZ0_213370</p>
+    </footer>
+</body>
+</html>

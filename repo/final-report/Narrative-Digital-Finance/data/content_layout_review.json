@@ -1,0 +1,281 @@
+{
+  "review_metadata": {
+    "review_date": "2025-12-22",
+    "review_type": "content_and_layout",
+    "reviewer": "Claude Code",
+    "pages_reviewed": [
+      "index.html",
+      "objectives.html",
+      "report.html"
+    ],
+    "total_issues": 43,
+    "summary": {
+      "critical": 7,
+      "high": 12,
+      "medium": 17,
+      "low": 7
+    }
+  },
+  "visual_consistency_scores": {
+    "color_palette": {"score": 9, "max": 10, "notes": "Consistent, professional color scheme across all pages"},
+    "typography": {"score": 6, "max": 10, "notes": "Too many font sizes (14 distinct values), inconsistent hero sizes"},
+    "spacing": {"score": 5, "max": 10, "notes": "Chaotic spacing system, no clear 8px base scale"},
+    "border_radius": {"score": 5, "max": 10, "notes": "Too many values (2px-8px range), no standardization"},
+    "card_consistency": {"score": 6, "max": 10, "notes": "Different padding and font sizes across pages"},
+    "navbar_consistency": {"score": 4, "max": 10, "notes": "Completely different designs (sidebar vs inline nav)"},
+    "footer_consistency": {"score": 4, "max": 10, "notes": "Grid structure vs simple paragraphs"},
+    "responsive_design": {"score": 6, "max": 10, "notes": "Different breakpoints per page (600/768/900px)"},
+    "touch_friendly": {"score": 4, "max": 10, "notes": "Hit areas below 44px minimum"},
+    "accessibility": {"score": 5, "max": 10, "notes": "Missing ARIA labels, improper heading hierarchy"},
+    "overall": {"score": 5.4, "max": 10, "notes": "Functional but needs significant work for consistency"}
+  },
+  "cross_page_comparison": {
+    "layout_elements": {
+      "navbar_type": {"index": "Sidebar (160px fixed)", "objectives": "Inline navbar-nav", "report": "Inline navbar-nav", "consistent": false},
+      "footer_type": {"index": "Grid (4-column)", "objectives": "Simple paragraphs", "report": "Simple paragraphs", "consistent": false},
+      "main_layout": {"index": "160px sidebar offset", "objectives": "Centered max-width 900px", "report": "Centered max-width 900px", "consistent": false},
+      "hero_padding": {"index": "16px", "objectives": "24px", "report": "24px", "consistent": false},
+      "hero_h1_size": {"index": "22px", "objectives": "24px", "report": "24px", "consistent": false}
+    },
+    "typography": {
+      "body_font_size": {"index": "13px", "objectives": "13px", "report": "13px", "consistent": true, "target": "13px"},
+      "line_height": {"index": "1.4", "objectives": "1.5", "report": "1.5", "consistent": false, "target": "1.5"},
+      "section_title": {"index": "13px", "objectives": "15px", "report": "15px", "consistent": false, "target": "15px"},
+      "card_h4": {"index": "11px", "objectives": "12px", "report": "12px", "consistent": false, "target": "12px"},
+      "card_p": {"index": "10px", "objectives": "11px", "report": "11px", "consistent": false, "target": "11px"}
+    },
+    "css_values": {
+      "card_padding": {"index": "8px", "objectives": "12px", "report": "12px", "consistent": false, "target": "10px"},
+      "mobile_breakpoint": {"index": "600px", "objectives": "768px", "report": "768px", "consistent": false, "target": "768px"},
+      "tablet_breakpoint": {"index": "900px", "objectives": "none", "report": "none", "consistent": false, "target": "1024px"}
+    },
+    "seo_meta_tags": {
+      "title": {"index": true, "objectives": true, "report": true},
+      "description": {"index": true, "objectives": true, "report": true},
+      "keywords": {"index": true, "objectives": true, "report": true},
+      "canonical": {"index": true, "objectives": true, "report": true},
+      "og_title": {"index": true, "objectives": true, "report": true},
+      "og_description": {"index": true, "objectives": true, "report": true},
+      "og_image": {"index": true, "objectives": false, "report": false},
+      "twitter_card": {"index": true, "objectives": true, "report": true}
+    }
+  },
+  "issues_by_category": {
+    "layout": [
+      {"id": "C1", "priority": "critical", "page": "all", "issue": "Navbar design completely different across pages", "details": "index.html uses fixed left sidebar (160px), objectives.html and report.html use inline navbar-nav", "recommendation": "Standardize: either add navbar-nav to index.html OR use sidebar navigation on all pages", "lines": {"index": "27-38, 132-170", "objectives": "22-27, 65-74", "report": "22-27, 83-91"}},
+      {"id": "C2", "priority": "critical", "page": "all", "issue": "Footer structure completely different", "details": "index.html has grid-based 4-column footer, objectives.html and report.html have simple paragraph footers", "recommendation": "Use index.html footer structure on all pages for consistency", "lines": {"index": "118-122, 445-455", "objectives": "59-60, 205-208", "report": "77-78, 295-300"}},
+      {"id": "H1", "priority": "high", "page": "all", "issue": "Card styling mismatch", "details": "index.html uses 8px padding, 11px h4, 10px p; subpages use 12px padding, 12px h4, 11px p", "recommendation": "Standardize to 10px padding, 12px h4, 11px p across all pages", "lines": {"index": "63-65", "objectives": "43-45", "report": "48-50"}},
+      {"id": "H2", "priority": "high", "page": "all", "issue": "Section title size inconsistent", "details": "index.html uses 13px, objectives.html and report.html use 15px", "recommendation": "Use 15px on all pages for better visual hierarchy", "lines": {"index": "61", "objectives": "35", "report": "39"}},
+      {"id": "H3", "priority": "high", "page": "all", "issue": "Line height varies across pages", "details": "index.html uses 1.4, subpages use 1.5", "recommendation": "Use 1.5 on all pages for better readability", "lines": {"index": "21", "objectives": "19", "report": "19"}},
+      {"id": "H4", "priority": "high", "page": "all", "issue": "Touch targets too small", "details": "Buttons and inputs have padding <44px minimum recommended for touch", "recommendation": "Increase button/input padding to at least 10px vertical, 16px horizontal", "lines": {"index": "85-86, 93-94", "objectives": "n/a", "report": "n/a"}},
+      {"id": "H8", "priority": "high", "page": "all", "issue": "Hero title size differs", "details": "index.html uses 22px, objectives.html and report.html use 24px", "recommendation": "Standardize to 24px on all pages", "lines": {"index": "41", "objectives": "30", "report": "30"}},
+      {"id": "H9", "priority": "high", "page": "all", "issue": "Card h4/p font sizes differ", "details": "index.html: 11px/10px, subpages: 12px/11px", "recommendation": "Standardize: h4=12px, p=11px across all", "lines": {"index": "64-65", "objectives": "44-45", "report": "49-50"}},
+      {"id": "M5", "priority": "medium", "page": "all", "issue": "Hero padding differs", "details": "index.html uses 16px, subpages use 24px", "recommendation": "Standardize to 20px on all pages", "lines": {"index": "40", "objectives": "29", "report": "29"}},
+      {"id": "M6", "priority": "medium", "page": "index.html", "issue": "Duplicate card classes with same styles", "details": ".card and .stat-card have nearly identical styles", "recommendation": "Consolidate into single .card class with modifiers", "lines": {"index": "63-65, 77-79"}},
+      {"id": "M13", "priority": "medium", "page": "all", "issue": "Grid classes inconsistent", "details": "index.html has grid-2 through grid-6, subpages only grid-2 and grid-3", "recommendation": "Document grid system and ensure consistent availability", "lines": {"index": "54-57", "objectives": "46-47", "report": "51-52"}},
+      {"id": "M15", "priority": "medium", "page": "objectives.html", "issue": "Missing link to report.html in footer", "details": "Footer only links to SNSF Data Portal and main page", "recommendation": "Add link to report.html in footer for better navigation", "lines": {"objectives": "206"}},
+      {"id": "L6", "priority": "low", "page": "all", "issue": "Very small sidebar nav padding", "details": "Sidebar nav items use only 5px padding, difficult to click", "recommendation": "Increase to 8px vertical padding for easier clicking", "lines": {"index": "31"}},
+      {"id": "L7", "priority": "low", "page": "index.html", "issue": "Team-links gap too tight", "details": "Team card links use 3px gap, very cramped", "recommendation": "Increase gap to 6px for better spacing", "lines": {"index": "75"}}
+    ],
+    "content": [
+      {"id": "H5", "priority": "high", "page": "index vs report", "issue": "Publication title discrepancy", "details": "index.html: 'Network Centrality and Credit Risk (2024)', report.html: 'Network Centrality and Credit Risk: A Comprehensive Analysis of P2P Lending Dynamics (2024)'", "recommendation": "Verify correct title from source and use full title on both pages", "lines": {"index": "225", "report": "135-137"}},
+      {"id": "M7", "priority": "medium", "page": "index.html", "issue": "Completed badge but project runs to Dec 2025", "details": "Badge shows '2023-2025-Completed' but project timeline is August 2023 - December 2025", "recommendation": "Update badge to '2023-2025' without 'Completed' or add accurate status", "lines": {"index": "186"}},
+      {"id": "M8", "priority": "medium", "page": "index.html", "issue": "CHF formatting inconsistency", "details": "Hero shows 'CHF 236K', funding section shows 'CHF 236,118'", "recommendation": "Standardize to 'CHF 236,118' for precision", "lines": {"index": "181, 396"}},
+      {"id": "M16", "priority": "medium", "page": "all", "issue": "Copyright format varies", "details": "index.html: '(c) Joerg Osterrieder 2025', objectives.html: '(c) Prof. Dr. Joerg Osterrieder 2025', report.html: 'Prof. Dr. Joerg Osterrieder | Bern Business School...'", "recommendation": "Standardize to '(c) Prof. Dr. Joerg Osterrieder 2025'", "lines": {"index": "456", "objectives": "207", "report": "298"}},
+      {"id": "L4", "priority": "low", "page": "index.html", "issue": "Analytics endpoint uses external workers.dev domain", "details": "Tracking goes to analytics-narrative-digital-finance.digital-ai-finance.workers.dev", "recommendation": "Document in privacy notice or consider first-party hosting", "lines": {"index": "572"}}
+    ],
+    "css": [
+      {"id": "C3", "priority": "critical", "page": "all", "issue": "45-50% CSS duplication across files", "details": "Common CSS (navbar, footer, cards, grids) duplicated in each HTML file", "recommendation": "Extract common CSS to shared styles.css file, reduce each page by ~40%", "lines": {"index": "19-125", "objectives": "17-62", "report": "17-80"}},
+      {"id": "C4", "priority": "critical", "page": "all", "issue": "Different responsive breakpoints", "details": "index.html: 600px/900px, objectives.html: 768px, report.html: 768px", "recommendation": "Standardize: 768px for mobile, 1024px for tablet", "lines": {"index": "123-124", "objectives": "61", "report": "79"}},
+      {"id": "M1", "priority": "medium", "page": "all", "issue": "No CSS variables for maintainability", "details": "Colors, fonts, spacing are hardcoded throughout", "recommendation": "Add :root variables for colors, font sizes, spacing scale", "lines": {"all": "style blocks"}},
+      {"id": "M2", "priority": "medium", "page": "all", "issue": "14 distinct font sizes used", "details": "Font sizes range from 7px to 24px with many intermediate values", "recommendation": "Reduce to 6-8 sizes: 10px, 11px, 12px, 13px, 15px, 18px, 24px", "lines": {"all": "multiple"}},
+      {"id": "M3", "priority": "medium", "page": "all", "issue": "Border radius values chaotic", "details": "Values range from 2px to 8px with no clear system", "recommendation": "Standardize to 3 values: 4px (small), 6px (medium), 8px (large)", "lines": {"all": "multiple"}},
+      {"id": "M4", "priority": "medium", "page": "all", "issue": "Spacing system chaotic", "details": "Padding/margin values vary widely with no clear base scale", "recommendation": "Use 8px base scale: 4px, 8px, 12px, 16px, 24px, 32px", "lines": {"all": "multiple"}},
+      {"id": "M17", "priority": "medium", "page": "index.html", "issue": "Inline gradient styles on team avatars", "details": "Each team card has inline style for background gradient", "recommendation": "Move to CSS classes: .avatar-gradient-1, .avatar-gradient-2, etc.", "lines": {"index": "268, 280, 290, 302, 314"}},
+      {"id": "L1", "priority": "low", "page": "all", "issue": "No box shadows for depth", "details": "Flat design with no shadows, limits visual hierarchy", "recommendation": "Consider subtle shadows: box-shadow: 0 1px 3px rgba(0,0,0,0.1)", "lines": {"all": "card classes"}}
+    ],
+    "technical": [
+      {"id": "C5", "priority": "critical", "page": "index.html", "issue": "OpenAlex API CORS issues in browser", "details": "Direct API calls from browser may fail due to CORS restrictions", "recommendation": "Implement server-side proxy or add robust error handling with user feedback", "lines": {"index": "543-564"}},
+      {"id": "C6", "priority": "critical", "page": "index.html", "issue": "Missing data/publications.json error handling", "details": "Fetch has minimal error handling, fails silently", "recommendation": "Add proper try/catch with user-friendly error messages and retry option", "lines": {"index": "502-514"}},
+      {"id": "H6", "priority": "high", "page": "index.html", "issue": "No scroll event debouncing", "details": "updateActiveNav() fires on every scroll event, impacts performance", "recommendation": "Add requestAnimationFrame or throttle (16ms minimum)", "lines": {"index": "465-471"}},
+      {"id": "H7", "priority": "high", "page": "index.html", "issue": "Analytics may block page load", "details": "Analytics image request could delay page rendering if endpoint is slow", "recommendation": "Use async loading, defer, or navigator.sendBeacon", "lines": {"index": "570-573"}},
+      {"id": "H12", "priority": "high", "page": "index.html", "issue": "Google Fonts missing display=swap", "details": "Font loading may cause FOIT (flash of invisible text)", "recommendation": "Add &display=swap to Google Fonts URL", "lines": {"index": "17"}},
+      {"id": "M9", "priority": "medium", "page": "index.html", "issue": "OpenAlex uses placeholder email", "details": "API calls use 'web@example.com' as mailto parameter", "recommendation": "Use real project email: joerg.osterrieder@bfh.ch", "lines": {"index": "550"}},
+      {"id": "M10", "priority": "medium", "page": "index.html", "issue": "Chart.js CDN has no fallback", "details": "If CDN fails, charts won't render with no error message", "recommendation": "Add error handling or local fallback", "lines": {"index": "18"}},
+      {"id": "M14", "priority": "medium", "page": "index.html", "issue": "Unminified CSS/JS", "details": "CSS and JS could be minified to reduce file size ~15%", "recommendation": "Consider minification for production", "lines": {"index": "19-125, 458-566"}},
+      {"id": "L2", "priority": "low", "page": "index.html", "issue": "Table overflow on mobile", "details": "Publications table may overflow on small screens", "recommendation": "Add overflow-x: auto wrapper for horizontal scroll", "lines": {"index": "97-101"}},
+      {"id": "L3", "priority": "low", "page": "all", "issue": "Google Fonts loaded externally", "details": "Privacy implications of loading from Google servers", "recommendation": "Consider self-hosting fonts for GDPR compliance", "lines": {"all": "line 17"}},
+      {"id": "L5", "priority": "low", "page": "index.html", "issue": "Chart.js from CDN dependency", "details": "External dependency, no offline support", "recommendation": "Consider local copy for offline functionality", "lines": {"index": "18"}}
+    ],
+    "accessibility": [
+      {"id": "C7", "priority": "critical", "page": "objectives/report", "issue": "Missing og:image meta tags", "details": "index.html has og:image, subpages do not", "recommendation": "Add og:image to objectives.html and report.html matching index.html", "lines": {"objectives": "14-15", "report": "14-15"}},
+      {"id": "H10", "priority": "high", "page": "all", "issue": "Improper semantic heading hierarchy", "details": "All section headings use h4, skipping h2 and h3", "recommendation": "Use proper h1>h2>h3>h4 hierarchy: h2 for sections, h3 for subsections", "lines": {"all": "section-title classes use div, card titles use h4"}},
+      {"id": "H11", "priority": "high", "page": "index.html", "issue": "Sidebar lacks aria-labels", "details": "Sidebar navigation has no aria-label or role attributes", "recommendation": "Add aria-label='Main navigation' to aside element", "lines": {"index": "132"}},
+      {"id": "M11", "priority": "medium", "page": "all", "issue": "No skip-to-content link", "details": "Keyboard users cannot skip navigation", "recommendation": "Add visually hidden skip link at top of body: <a href='#main' class='skip-link'>Skip to content</a>", "lines": {"all": "after body tag"}},
+      {"id": "M12", "priority": "medium", "page": "all", "issue": "Some badge images may lack proper alt text", "details": "Shield.io badges should have descriptive alt text", "recommendation": "Audit all img tags and ensure descriptive alt attributes", "lines": {"index": "184-186"}}
+    ]
+  },
+  "issues_by_page": {
+    "index.html": [
+      {"id": "C1", "category": "layout", "priority": "critical", "issue": "Uses sidebar navigation while subpages use inline navbar"},
+      {"id": "C2", "category": "layout", "priority": "critical", "issue": "Uses grid footer while subpages use paragraph footer"},
+      {"id": "C3", "category": "css", "priority": "critical", "issue": "Contains duplicated CSS that should be extracted"},
+      {"id": "C4", "category": "css", "priority": "critical", "issue": "Uses 600px/900px breakpoints vs 768px on other pages"},
+      {"id": "C5", "category": "technical", "priority": "critical", "issue": "OpenAlex API CORS issues"},
+      {"id": "C6", "category": "technical", "priority": "critical", "issue": "Missing publications.json error handling"},
+      {"id": "H1", "category": "layout", "priority": "high", "issue": "Card padding 8px vs 12px on subpages"},
+      {"id": "H2", "category": "layout", "priority": "high", "issue": "Section title 13px vs 15px on subpages"},
+      {"id": "H3", "category": "layout", "priority": "high", "issue": "Line height 1.4 vs 1.5 on subpages"},
+      {"id": "H4", "category": "layout", "priority": "high", "issue": "Touch targets too small (<44px)"},
+      {"id": "H5", "category": "content", "priority": "high", "issue": "Publication title shorter than report.html"},
+      {"id": "H6", "category": "technical", "priority": "high", "issue": "No scroll event debouncing"},
+      {"id": "H7", "category": "technical", "priority": "high", "issue": "Analytics may block page load"},
+      {"id": "H8", "category": "layout", "priority": "high", "issue": "Hero h1 22px vs 24px on subpages"},
+      {"id": "H9", "category": "layout", "priority": "high", "issue": "Card fonts 11px/10px vs 12px/11px"},
+      {"id": "H10", "category": "accessibility", "priority": "high", "issue": "All h4, no h2/h3 hierarchy"},
+      {"id": "H11", "category": "accessibility", "priority": "high", "issue": "Sidebar lacks aria-labels"},
+      {"id": "H12", "category": "technical", "priority": "high", "issue": "Google Fonts missing display=swap"},
+      {"id": "M1", "category": "css", "priority": "medium", "issue": "No CSS variables"},
+      {"id": "M2", "category": "css", "priority": "medium", "issue": "14 distinct font sizes"},
+      {"id": "M3", "category": "css", "priority": "medium", "issue": "Border radius chaos"},
+      {"id": "M4", "category": "css", "priority": "medium", "issue": "Spacing system chaotic"},
+      {"id": "M5", "category": "layout", "priority": "medium", "issue": "Hero padding 16px vs 24px"},
+      {"id": "M6", "category": "layout", "priority": "medium", "issue": "Duplicate card classes"},
+      {"id": "M7", "category": "content", "priority": "medium", "issue": "Completed badge premature"},
+      {"id": "M8", "category": "content", "priority": "medium", "issue": "CHF 236K vs 236,118"},
+      {"id": "M9", "category": "technical", "priority": "medium", "issue": "Placeholder email in OpenAlex"},
+      {"id": "M10", "category": "technical", "priority": "medium", "issue": "Chart.js no fallback"},
+      {"id": "M11", "category": "accessibility", "priority": "medium", "issue": "No skip-to-content link"},
+      {"id": "M12", "category": "accessibility", "priority": "medium", "issue": "Badge alt text audit needed"},
+      {"id": "M14", "category": "technical", "priority": "medium", "issue": "Unminified CSS/JS"},
+      {"id": "M16", "category": "content", "priority": "medium", "issue": "Copyright format differs"},
+      {"id": "M17", "category": "css", "priority": "medium", "issue": "Inline gradient styles"},
+      {"id": "L1", "category": "css", "priority": "low", "issue": "No box shadows"},
+      {"id": "L2", "category": "technical", "priority": "low", "issue": "Table mobile overflow"},
+      {"id": "L3", "category": "technical", "priority": "low", "issue": "External Google Fonts"},
+      {"id": "L4", "category": "content", "priority": "low", "issue": "External analytics domain"},
+      {"id": "L5", "category": "technical", "priority": "low", "issue": "Chart.js from CDN"},
+      {"id": "L6", "category": "layout", "priority": "low", "issue": "Small sidebar nav padding"},
+      {"id": "L7", "category": "layout", "priority": "low", "issue": "Team-links gap too tight"}
+    ],
+    "objectives.html": [
+      {"id": "C1", "category": "layout", "priority": "critical", "issue": "Uses inline navbar while index.html uses sidebar"},
+      {"id": "C2", "category": "layout", "priority": "critical", "issue": "Uses paragraph footer while index.html uses grid"},
+      {"id": "C3", "category": "css", "priority": "critical", "issue": "Contains duplicated CSS"},
+      {"id": "C4", "category": "css", "priority": "critical", "issue": "Uses 768px breakpoint only"},
+      {"id": "C7", "category": "accessibility", "priority": "critical", "issue": "Missing og:image meta tag"},
+      {"id": "H1", "category": "layout", "priority": "high", "issue": "Card padding 12px vs 8px on index"},
+      {"id": "H2", "category": "layout", "priority": "high", "issue": "Section title 15px vs 13px on index"},
+      {"id": "H3", "category": "layout", "priority": "high", "issue": "Line height 1.5 vs 1.4 on index"},
+      {"id": "H8", "category": "layout", "priority": "high", "issue": "Hero h1 24px vs 22px on index"},
+      {"id": "H9", "category": "layout", "priority": "high", "issue": "Card fonts 12px/11px vs 11px/10px"},
+      {"id": "H10", "category": "accessibility", "priority": "high", "issue": "Improper heading hierarchy"},
+      {"id": "M1", "category": "css", "priority": "medium", "issue": "No CSS variables"},
+      {"id": "M2", "category": "css", "priority": "medium", "issue": "Multiple font sizes"},
+      {"id": "M3", "category": "css", "priority": "medium", "issue": "Border radius inconsistent"},
+      {"id": "M4", "category": "css", "priority": "medium", "issue": "Spacing inconsistent"},
+      {"id": "M5", "category": "layout", "priority": "medium", "issue": "Hero padding 24px vs 16px"},
+      {"id": "M11", "category": "accessibility", "priority": "medium", "issue": "No skip-to-content link"},
+      {"id": "M15", "category": "layout", "priority": "medium", "issue": "Missing report.html link in footer"},
+      {"id": "M16", "category": "content", "priority": "medium", "issue": "Copyright format differs"},
+      {"id": "L1", "category": "css", "priority": "low", "issue": "No box shadows"},
+      {"id": "L3", "category": "technical", "priority": "low", "issue": "External Google Fonts"}
+    ],
+    "report.html": [
+      {"id": "C1", "category": "layout", "priority": "critical", "issue": "Uses inline navbar while index.html uses sidebar"},
+      {"id": "C2", "category": "layout", "priority": "critical", "issue": "Uses paragraph footer while index.html uses grid"},
+      {"id": "C3", "category": "css", "priority": "critical", "issue": "Contains duplicated CSS"},
+      {"id": "C4", "category": "css", "priority": "critical", "issue": "Uses 768px breakpoint only"},
+      {"id": "C7", "category": "accessibility", "priority": "critical", "issue": "Missing og:image meta tag"},
+      {"id": "H1", "category": "layout", "priority": "high", "issue": "Card padding 12px vs 8px on index"},
+      {"id": "H2", "category": "layout", "priority": "high", "issue": "Section title 15px vs 13px on index"},
+      {"id": "H3", "category": "layout", "priority": "high", "issue": "Line height 1.5 vs 1.4 on index"},
+      {"id": "H5", "category": "content", "priority": "high", "issue": "Publication title fuller than index.html"},
+      {"id": "H8", "category": "layout", "priority": "high", "issue": "Hero h1 24px vs 22px on index"},
+      {"id": "H9", "category": "layout", "priority": "high", "issue": "Card fonts 12px/11px vs 11px/10px"},
+      {"id": "H10", "category": "accessibility", "priority": "high", "issue": "Improper heading hierarchy"},
+      {"id": "M1", "category": "css", "priority": "medium", "issue": "No CSS variables"},
+      {"id": "M2", "category": "css", "priority": "medium", "issue": "Multiple font sizes"},
+      {"id": "M3", "category": "css", "priority": "medium", "issue": "Border radius inconsistent"},
+      {"id": "M4", "category": "css", "priority": "medium", "issue": "Spacing inconsistent"},
+      {"id": "M5", "category": "layout", "priority": "medium", "issue": "Hero padding 24px vs 16px"},
+      {"id": "M11", "category": "accessibility", "priority": "medium", "issue": "No skip-to-content link"},
+      {"id": "M16", "category": "content", "priority": "medium", "issue": "Copyright format differs"},
+      {"id": "L1", "category": "css", "priority": "low", "issue": "No box shadows"},
+      {"id": "L3", "category": "technical", "priority": "low", "issue": "External Google Fonts"}
+    ],
+    "all_pages": [
+      {"id": "C1", "category": "layout", "priority": "critical", "issue": "Navbar design inconsistent across pages"},
+      {"id": "C2", "category": "layout", "priority": "critical", "issue": "Footer structure inconsistent across pages"},
+      {"id": "C3", "category": "css", "priority": "critical", "issue": "45-50% CSS duplicated across all files"},
+      {"id": "C4", "category": "css", "priority": "critical", "issue": "Different responsive breakpoints per page"},
+      {"id": "H1", "category": "layout", "priority": "high", "issue": "Card padding inconsistent"},
+      {"id": "H2", "category": "layout", "priority": "high", "issue": "Section title size inconsistent"},
+      {"id": "H3", "category": "layout", "priority": "high", "issue": "Line height inconsistent"},
+      {"id": "H8", "category": "layout", "priority": "high", "issue": "Hero title size inconsistent"},
+      {"id": "H9", "category": "layout", "priority": "high", "issue": "Card typography inconsistent"},
+      {"id": "H10", "category": "accessibility", "priority": "high", "issue": "Improper heading hierarchy on all pages"},
+      {"id": "M1", "category": "css", "priority": "medium", "issue": "No CSS variables on any page"},
+      {"id": "M2", "category": "css", "priority": "medium", "issue": "Too many font sizes used"},
+      {"id": "M3", "category": "css", "priority": "medium", "issue": "Border radius not standardized"},
+      {"id": "M4", "category": "css", "priority": "medium", "issue": "Spacing system not standardized"},
+      {"id": "M5", "category": "layout", "priority": "medium", "issue": "Hero padding not standardized"},
+      {"id": "M11", "category": "accessibility", "priority": "medium", "issue": "No skip-to-content link on any page"},
+      {"id": "M16", "category": "content", "priority": "medium", "issue": "Copyright format varies"},
+      {"id": "L1", "category": "css", "priority": "low", "issue": "No box shadows on any page"},
+      {"id": "L3", "category": "technical", "priority": "low", "issue": "Google Fonts loaded externally on all pages"}
+    ]
+  },
+  "recommendations": {
+    "immediate": [
+      {"action": "Add og:image to objectives.html and report.html", "impact": "SEO/Social sharing", "effort": "5 min"},
+      {"action": "Fix Google Fonts URL with display=swap", "impact": "Performance", "effort": "2 min"},
+      {"action": "Add aria-label to sidebar navigation", "impact": "Accessibility", "effort": "5 min"},
+      {"action": "Update placeholder email in OpenAlex calls", "impact": "Data accuracy", "effort": "2 min"}
+    ],
+    "short_term": [
+      {"action": "Standardize typography across pages (line height, section titles, card fonts)", "impact": "Visual consistency", "effort": "30 min"},
+      {"action": "Standardize card padding to 10px", "impact": "Visual consistency", "effort": "15 min"},
+      {"action": "Standardize responsive breakpoints to 768px/1024px", "impact": "Mobile experience", "effort": "30 min"},
+      {"action": "Add skip-to-content link to all pages", "impact": "Accessibility", "effort": "15 min"},
+      {"action": "Fix heading hierarchy (h2 for sections, h3 for cards)", "impact": "Accessibility/SEO", "effort": "45 min"},
+      {"action": "Add scroll event debouncing", "impact": "Performance", "effort": "15 min"},
+      {"action": "Standardize footer structure across pages", "impact": "Visual consistency", "effort": "45 min"}
+    ],
+    "long_term": [
+      {"action": "Extract common CSS to shared styles.css", "impact": "Maintainability, file size -40%", "effort": "2 hours"},
+      {"action": "Add CSS variables for colors, fonts, spacing", "impact": "Maintainability", "effort": "1 hour"},
+      {"action": "Standardize navbar pattern (decide sidebar vs inline)", "impact": "UX consistency", "effort": "2 hours"},
+      {"action": "Self-host Google Fonts for GDPR", "impact": "Privacy compliance", "effort": "30 min"},
+      {"action": "Add OpenAlex server-side proxy", "impact": "Reliability", "effort": "4 hours"},
+      {"action": "Implement proper touch targets (44px minimum)", "impact": "Mobile UX", "effort": "1 hour"}
+    ]
+  },
+  "color_palette_extracted": {
+    "primary": [
+      {"hex": "#0f172a", "name": "Dark Navy", "usage": "Navbar, footer, dark backgrounds"},
+      {"hex": "#3b82f6", "name": "Blue", "usage": "Primary accent, links, buttons"},
+      {"hex": "#f59e0b", "name": "Amber", "usage": "Highlights, branding accent"},
+      {"hex": "#8b5cf6", "name": "Purple", "usage": "Gradients, secondary accent"}
+    ],
+    "neutral": [
+      {"hex": "#f8fafc", "name": "Light Gray", "usage": "Card backgrounds, page background"},
+      {"hex": "#e2e8f0", "name": "Border Gray", "usage": "Borders, dividers"},
+      {"hex": "#334155", "name": "Text Dark", "usage": "Primary text"},
+      {"hex": "#64748b", "name": "Text Medium", "usage": "Secondary text"},
+      {"hex": "#475569", "name": "Text Alt", "usage": "Card paragraph text"}
+    ],
+    "accent": [
+      {"hex": "#10b981", "name": "Green", "usage": "Success, indicators"},
+      {"hex": "#06b6d4", "name": "Cyan", "usage": "Avatar gradients"},
+      {"hex": "#ec4899", "name": "Pink", "usage": "Avatar gradients"},
+      {"hex": "#1e40af", "name": "Dark Blue", "usage": "Research question backgrounds"},
+      {"hex": "#eff6ff", "name": "Light Blue", "usage": "Highlight backgrounds"}
+    ]
+  },
+  "font_sizes_extracted": {
+    "sizes_used": ["7px", "8px", "9px", "10px", "11px", "12px", "13px", "14px", "15px", "16px", "18px", "20px", "22px", "24px"],
+    "recommended_scale": ["10px", "11px", "12px", "13px", "15px", "18px", "24px"],
+    "reduction": "14 sizes to 7 sizes (-50%)"
+  }
+}

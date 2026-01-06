@@ -1,0 +1,52 @@
+\documentclass[preprint,12pt]{elsarticle}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+\begin{document}
+
+\section{Introduction}
+\label{sec:intro}
+\begin{itemize}
+    \item Overview of electronic markets and technological advancements
+    \item Market Participants (market makers, arbitragers, speculators, hedgers)
+    \item Importance of classifying market participants
+    \item Objectives and structure of the paper
+\end{itemize}
+
+\section{Technological Infrastructure and Market Participants}
+\begin{itemize}
+    \item Technological improvements ("2 is the new 5"): computational power, data lakes, collocation, FPGA
+    \item Overview of Deutsche Börse AG and its systems
+    \item Roles of arbitragers, hedgers, speculators, market makers
+    \item Distinctions between market makers and market takers
+\end{itemize}
+
+\section{Classification Methodology}
+\begin{itemize}
+    \item Description of data: public data, periods of volatility, HPT files, markets/instruments
+    \item Post-trade events (orders/trades) latencies
+    \item Thresholds for classifying FPGA, HFT, and non-HFT participants
+    \item Metrics: latency (nanoseconds), total participation rates (quote currency volume \%), aggressive/passive participation rates (quote currency volume \%), signal/noise participation rates (quote currency volume \%), adding/cancellation/trades rate (quote currency volume \%)
+\end{itemize}
+
+\section{Empirical Results}
+\label{sec:results}
+\begin{itemize}
+    \item Classification results and analysis
+    \item Participation rates and market behavior
+    \item Main critic: high cancellation rate
+\end{itemize}
+
+\section{Conclusion}
+\label{sec:conclusion}
+\begin{itemize}
+    \item Summary of key findings and interpretations
+    \item UFTs approach physical limits in reaction time
+    \item Implications for market regulation and monitoring
+    \item Limitations and potential misclassification issues
+    \item Future research directions: improving classification accuracy, studying participants' impact on price and liquidity
+\end{itemize}
+
+\end{document}

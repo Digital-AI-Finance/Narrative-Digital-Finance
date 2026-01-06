@@ -1,0 +1,508 @@
+\documentclass[12pt]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Language and formatting
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+
+% Links
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+% Math and symbols
+\usepackage{amsmath, amssymb, amsfonts}
+
+% Bibliography
+\usepackage[backend=biber, style=apa,natbib=true]{biblatex}
+% \addbibresource{Gabin/Systematic Literature review/SLR_references.bib}
+\addbibresource{SLR_references.bib}
+
+
+% Figures and tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+
+% Code
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Other
+\usepackage{lipsum}
+\usepackage{pdflscape}
+\usepackage{authblk}
+
+% Keywords handling command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+% First page's elements size
+\renewcommand\Authfont{\normalsize}
+\renewcommand\Affilfont{\small}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\title{An Algorithmic Framework for Systematic Literature Reviews: A Case Study for Financial Narratives}
+
+% Authors
+\author[1, 2]{Gabin Taibi}
+\author[1, 2]{Joerg Osterrieder}
+
+% Affiliations
+\affil[1]{University of Twente, Industrial Engineering and Business Information Systems, AE Enschede, Netherlands}
+\affil[2]{Bern University of Applied Sciences, Business School, Bern, Switzerland}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In recent years, narratives have emerged as a critical factor shaping financial markets, influencing investor behavior, market dynamics, and ultimately asset price movements. In social science, narratives refer to structured accounts or interpretations of events, ideas, or phenomena that emerge from individuals, groups, or institutions. More specifically, financial narratives are emergent and structured set of expectations about financial markets, assets, or economic events that form through the convergence of individual narratives created by market participants. They are sense-making stories that shape perceptions and influence decision, based on available information, market conditions, personal experiences, and social interactions. Advancements in data processing methods, particularly in Natural Language Processing (NLP), have enhanced the modeling and analysis of textual data on a large scale, opening new directions for a deeper and more advanced understanding of narratives. This systematic literature review explores the intersection of narratives and financial markets, focusing on the development and application of computational techniques for text mining, textual analysis, and financial narrative modeling.
+ 
+Additionally, this study will not only provide an overview of existing research but also proposes and implements an algorithmic framework for systematic literature reviews, enhancing efficiency, reproducibility, and selection quality assessments. Drawing from the Scopus \footnote{\url{https://www.scopus.com/}} abstract and citation database of peer-reviewed literature, we highlight that research approaches focus on defining narratives, extracting them, or quantifying narratives to assess their influence on financial markets or forecast market dynamics.
+The review identifies various narrative definition and methodologies to uncover them, ranging from manual analysis to most advanced NLP and machine learning techniques. Our findings suggest that the concept of narratives in finance lacks a unified and comprehensive definition, often being either oversimplified to sentiment analysis (the measurement of emotional tone in text) and topic modeling (which identifies latent themes within large corpora), or a combination of both. Furthermore, the review highlights that while both concepts are extensively applied to explain financial markets dynamics such as returns, volatility or macroeconomics variables, the integration of these methods with structural breaks, tail-events, and bubbles detection, remains under-explored.
+\end{abstract}
+
+\keywords{Algorithmic Literature Review, Textual Analysis, Natural Language Processing, Financial Narrative Modeling, Financial Market Dynamics}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\newpage
+\tableofcontents
+\newpage
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Introduction}
+\label{sec:intro}
+
+% We explain that narratives is not precisely defined in financial market
+The influence of narratives on financial markets has recently become a prominent area of study in both economics and finance. The analysis of narrative includes understanding how stories evolve, spread, and impact financial markets over time. By examining the mechanisms through which they form and propagate, researchers aim to uncover their role in shaping expectations, driving investor coordination, and drive market cycles. %Despite a growing interest the concept of a narrative in economics and, thus, in financial markets, remains unclear and not precisely defined. \textcite{roos_narratives_2024} notes that the term "narrative" is used inconsistently across the economic literature, with varying interpretations regarding its formation, transmission, and impact. To illustrate this ambiguity, they refer to \textcite{shiller_popular_2020}, who defines economic narratives as “stories that offer interpretations of economic events, or morals, or hints of theories about the economy.” However, this definition remains vague, using the undefined notion of “story” and leaving its causal structure implicit.
+
+
+% Here, he highlights that narrative is a broad concept that arised from social science research
+In Social Science, narratives are structured accounts or interpretive frameworks through which people understand and act in the social world. The work of \textcite{somers_narrative_1994} advances that they are not simply representations but ontological structures: social life itself is storied. Narratives constitute social identities, guide actions, and embed individuals in relational settings over time and space. People locate themselves within public and ontological narratives that are rarely of their own making, shaped by broader cultural, institutional, and symbolic forces. These narratives are constituted through emplotment (causal linking of events), selective appropriation, and their temporal and spatial connectivity.
+
+% We focus now on narrative definition in economics
+In economics, narratives are studied under the term Narrative Economics, a field focusing on how economic agents use stories to navigate and make sense of complex environments. \textcite{shiller_narrative_2019} argues that economic fluctuations cannot be fully understood through quantitative models alone, as narratives play a critical role in shaping market movements. Thus, \textcite{shiller_popular_2020} describe economic narratives as “stories that offer interpretations of economic events,” while \citet{roos_narratives_2024} go further by characterizing Collective Economic Narratives as sense-making stories about economically relevant topics, shared by group members, emerging and proliferating through social interaction, and suggesting specific actions. \textcite{tuckett_role_2017} highlights that conviction narratives—coherent and emotionally compelling stories—enable investors to act with confidence despite uncertainty, reinforcing collective behaviors in markets.
+
+% Finally propose an hollistic financial narrative definition
+We extend this concept by focusing on financial narratives, a subset of economic narratives, which we define as structured interpretations or explanatory frameworks concerning financial markets or economic events, based on available information. Still, the notion of perfect market efficiency has been challenged by \textcite{grossman_impossibility_1980}, who argue that if all information were instantly reflected in prices, investors would have no incentive to acquire costly private information. This critique aligns more closely with the semi-strong form of the Efficient Market Hypothesis, which allows for delayed information diffusion. Furthermore, individual market participants do not perceive and process information uniformly, as their interpretations are shaped by personal expectations and objectives, contextual knowledge, and prior experience, leading them to adopt or reject specific perspectives selectively. Yet, we observe that, over time, these individual interpretations eventually converge into dominant narratives that influence collective beliefs which, in turn, shape market behavior.
+
+% We explain that financial narratives impact financial markets
+The relationship between narratives and market movements is well-documented in empirical research. News media, for example, plays a significant role in amplifying financial narratives. \textcite{gan_sensitivity_2020} finds that shifts in media sentiment can influence stock returns and, consequently, volatility. Beyond traditional media, the growth of social media has accelerated the dissemination and outreach of financial narratives, enabling decentralized actors—including retail investors—to affect market discourse. The COVID-19 pandemic provided an important example of this phenomenon, as narratives surrounding economic uncertainty, government responses, and financial stability rapidly went viral and spread across social platforms \parencite{chen_covid_2022}, influencing both retail and institutional trading behaviors. Similarly, the GameStop short squeeze, driven by collective action on Reddit's r/WallStreetBets, demonstrated how retail-driven narratives can amplify market volatility \parencite{anand_role_2022, mancini_self-induced_2022}. In these cases, narratives functioned as coordination mechanisms, aligning investor expectations and reinforcing feedback loops that drove asset prices.
+
+% Now we explain that NLP techniques have evolved to explore large amount textual data
+Advancements in NLP have enabled researchers to analyze narratives more systematically by extracting insights from large textual datasets. Early approaches relied on rule-based methods and dictionaries, such as bag-of-words and sentiment lexicons, which treated words independently and failed to capture semantic or structural nuance. The field then moved toward statistical models—like Hidden Markov Models, n-grams, and Conditional Random Fields—which improved flexibility but struggled with long-range dependencies. With growing computational power and corpora, machine learning approaches gained traction. Vector space models such as Word2Vec and GloVe allowed words to be represented in continuous embeddings, enabling better similarity and analogy detection. These were followed by RNNs, LSTMs, and gated architectures that improved sequential modeling but remained limited in parallelization and handling long context. Transformer-based models, such as BERT and GPT, introduced self-attention mechanisms that marked a major shift, allowing for deep contextual understanding. These models now support a wide range of NLP tasks—sentiment analysis, entity recognition, topic modeling—with greater robustness and adaptability, even in domain-specific contexts. This progress has opened the door to large-scale modeling of financial narratives using text data, enabling researchers to study how narratives form, spread, and influence markets.
+
+% We explain the relevance of the study
+The relevance of this research lies in both its methodological and theoretical contributions. Methodologically, it advances automated knowledge discovery by applying Transformer-based models to systematically identify, evaluate, and extract relevant academic literature. This approach contributes to the development of scalable, data-driven techniques for literature synthesis and lays the groundwork for more reproducible research. On the theoretical side, it provides a structured review of literature covering financial narratives and their influence on market dynamics. In particular, the study addresses the following research questions:
+\begin{enumerate}
+    \item How can NLP and textual analysis techniques be used to quantify and model financial narratives?
+    \item Can financial narratives modeling enhance financial market dynamics understanding?  
+\end{enumerate}
+
+This literature review focuses on financial narratives and, more specifically, how they are modeled using NLP techniques, with a particular emphasis on the integration of machine learning in recent approaches, and how they can be used to understand financial market dynamics. The proposed framework combines Transformer-based models with machine learning techniques to automate and refine the inclusion/exclusion process. It incorporates sentence embedding, dimensionality reduction, and clustering to evaluate relevance against pre-defined research criteria. By integrating these components, the framework not only enables a more systematic and reproducible literature review process, but also improves the assessment of selection quality, ensuring that the selected studies align closely with the research questions. Furthermore, textual analysis is employed to provide researchers with a structured understanding of the remaining publications, thus facilitating the organization and synthesis of findings, as well as the assessment of the thematic relevance and quality of the selected studies.
+
+The review is structured as follows: Section~\ref{sec:methodology} presents the methodology, detailing the selection process, the algorithmic selection framework, and the quality assessment processes. Section~\ref{sec:results} identifies the predominant themes in the literature, such as macroeconomic narratives, narrative fragmentation, and their impact on financial market forecasting. Section~\ref{sec:discussions} explores the role of NLP in financial narratives, focusing on the defintions of narratives, data sources, and relevant text mining techniques. Finally, Section~\ref{sec:conclusion} discusses the study’s implications and outlines future research directions.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Methodology}
+\label{sec:methodology}
+
+Our approach in this literature review is inspired by the work of \textcite{amato_how_2024}, who structured the review process into eight distinct steps: defining the research question, developing and implementing the review methodology, conducting literature exploration and analysis, applying selection criteria (inclusion/exclusion), assessing the quality of selected studies, extracting relevant data, synthesizing findings, and reporting insights. This structured framework itself is based on \textcite{s_how_2024}. We begin by defining the research problem and formulating clear research questions. A structured review methodology is then developed to guide literature search and analysis, followed by a comprehensive data extraction to establish a holistic understanding of the topic. Thus, specific inclusion criteria are applied to filter studies and assess their relevance and quality. Once the final set of papers is selected, key information is extracted and synthesized to generate meaningful insights, organized and presented in a structured report.
+
+However, because each step of the current methodology depends heavily on the researcher’s judgment, the overall process remains subjective, difficult to replicate, and prone to bias. To address this, we extend the framework by integrating Transformer-based models to automate and refine the selection phase, improving the consistency of inclusion decisions and the assessment of study relevance. This enhancement strengthens quality control and supports a more scalable and reproducible review. In this section, we detail the selection process illustrated in Figure~\ref{fig:selection_criteria}, from the initial research problem definition to the data extraction phase.
+
+
+\subsection{Initial research sourcing}
+
+The first phase involves defining the research context and the type of information we aim to extract from the literature. Using Python, this review sources the publications from the Scopus database, specifically retrieving basic information from the results through the API and scraping the abstract, authors and keywords from Scopus URLs. We also use the same programming language to get the journal ranking and journal information from SCImago Journal Ranking website \footnote{\url{https://www.scimagojr.com/journalrank.php}}.
+
+As this study focuses on narrative modeling using NLP techniques to better understand financial market dynamics, we are particularly interested in literature that addresses both the methodological development of narrative modeling from large textual corpora and the application of NLP—both traditional and recent approaches—in finance. This leads us to formulate two research questions: How can NLP and textual analysis techniques be used to quantify and model financial narratives? Can financial narrative modeling improve our understanding of financial market dynamics? Accordingly, we seek to identify rigorous and relevant academic work across three main themes: theoretical discussions of narratives in finance and economics (financial narratives theory), the use of NLP and text analysis to extract narratives in financial contexts (financial narratives processing), and more specifically, the quantification and tracking of narratives for financial applications (financial narratives modeling). Ideally, the selected studies will mainly include empirical research that leverages narrative modeling for forecasting or explaining financial market behavior, rather than purely theoretical contributions. 
+
+To initiate the selection process, we designed a targeted search query using the advanced search function of the Scopus database. We experimented with various combinations of keywords in an effort to construct a query that is both broad enough to capture relevant research and narrow enough to exclude unrelated domains. The number of papers retrieved at this stage already provides an initial indication of the query’s effectiveness. For example, when the query was formulated using very general terms, it returned over 6,000 papers—many of which were outside the scope of this study. Conversely, when restricted to highly specific expressions related to narrative modeling, the results dropped to fewer than 70 papers, leading to the exclusion of potentially relevant studies.
+
+We believe we reached a balance: the final query—provided in Appendix~\ref{appendixC}, Query~\ref{lst:search_query_1}—captures a wide range of pertinent literature, though we noticed it still includes some irrelevant papers, such as those focused on narratives in health or psychology. The query was constructed to retrieve publications related to narratives, NLP, and financial markets. The inclusion of the term “narrative(s)” is central, as it ensures thematic relevance to our research focus. We prioritized papers that explicitly mention “financial narrative(s)” or “economic narrative(s)” in the title, abstract, or keywords. Additionally, to broaden the scope while maintaining relevance, we formulated a more inclusive search strategy targeting titles and keywords (but not abstracts because they tend to be more descriptive and often mention broader methodological or contextual terms that may not reflect the core focus of the paper), combining “narrative(s)” with terms related to text analysis or NLP, and with terms referring to financial markets. This first phase results in 285 results.
+
+The second phase involves applying additional filters to refine the search and ensure greater homogeneity in the retrieved literature, and remove duplicates entries. In our case, we extended the initial query by restricting the publication year to 2010 or later, limiting the results to peer-reviewed journal articles, and including only English-language publications, resulting in 141 papers. The complete version of this refined query is provided in Appendix~\ref{appendixC}, Query~\ref{lst:search_query_2}. Furthermore, to eliminate papers clearly outside the financial or economic domains, we automatically excluded publications that appeared in journals associated with fields unrelated to the topic. These were manually identified by subject areas such as 'Arts and Humanities', 'Medicine', 'Health Professions', 'Earth and Planetary Sciences', 'Environmental Science', 'Agricultural and Biological Sciences', 'Biochemistry, Genetics and Molecular Biology', and 'Energy'. However, we chose not to exclude papers from journals listed as 'Engineering', 'Social Sciences', 'Multidisciplinary', or with no assigned category, as their relevance is evaluated during later stages of the selection process, resulting in 125 remaining entries.
+
+
+\subsection{Algorithmic selection framework}
+
+This section presents the third phase, consisting in an algorithmic process used to filter research papers based on their relevance. The selection framework leverages NLP and machine learning techniques to classify papers into three categories: high, low, and eventually medium relevance. The process consists of three main stages: textual analysis, dimensionality reduction, and clustering. %An optional manual review step may be performed for papers classified as medium relevance to refine the selection. If the high-relevance category contains a sufficient number of papers, only those may be retained.
+
+%To assess selection quality at each stage, [Complete here: coherence score + mean relevance score]. Data extraction is performed manually using a structured reporting framework.
+
+% For validation, a parallel manual selection process was conducted after the first phase, and the results were compared to those obtained through the algorithmic selection. The two methods produced similar outcomes, confirming the effectiveness of the automated approach.
+
+\subsubsection{Textual analysis: research properties statements}
+
+The selection methodology relies on a statement similarity approach, in which the user defines key statements that describe the criteria that selected papers should meet. In our case, the statements respectively reflect the research focus, research type, context, methodology, data sources, and research questions:
+\begin{itemize}
+    \item The research discusses Financial Narrative Processing, Financial Narrative Modeling or the use of textual data to understand financial markets;
+    \item The research is highly relevant in the context of financial markets, including: equities, foreign exchange, cryptocurrencies, bonds, commodities, or real estate;
+    \item The research is a empirical study showcasing the use of textual data to model narratives and understand financial markets dynamics;
+    \item The research methodologies include: textual analysis, text mining or Natural Language Processing techniques such as topic modeling, emotion analysis, sentiment analysis, word embeddings or Transformer-based models;
+    \item The research leverages the following data: large textual datasets, including financial reports, news articles, social media posts, audio or video transcripts, or any other form of financial textual data;
+    \item The research helps answering the research question(s): How can NLP and textual analysis techniques be used to quantify and model financial narratives? Can financial narratives modeling enhance financial market dynamics understanding?
+\end{itemize}
+
+These statements define the inclusion criteria for selecting relevant studies, ensuring that only research focused on financial narrative modeling, NLP-based textual analysis, and their impact on financial markets is considered.  
+
+To evaluate how well each paper aligns with the research statements, two Transformer-based sentence embedding models were tested. The first is \texttt{intfloat/multilingual-e5-large-instruct}, an open-source model designed for multilingual tasks \cite{wang_multilingual_2024} and implemented using the HuggingFace SentenceTransformer\footnote{\url{https://huggingface.co/sentence-transformers}} library in Python. The second is OpenAI’s proprietary \texttt{text-embedding-3-small}, also implemented with the Python API library. While \texttt{multilingual-e5-large-instruct} offers the advantage of being open-source and lightweight in terms of computational requirements, OpenAI’s \texttt{text-embedding-3-small} demonstrates better performance in terms of semantic relevance and alignment accuracy.
+
+Rather than embedding the six statements directly, we use the chat completion capabilities of OpenAI’s API to generate five close paraphrases for each statement, reducing sensitivity to specific wording. Each set of six paraphrases (the original plus five variations) is embedded individually, and their mean vector is computed to obtain a single representative embedding per statement. In parallel, we concatenate the title, abstract, and keywords of each paper into a single textual input and generate embeddings for these as well. The cosine similarity between each paper embedding and each of the six statement embeddings is then computed, resulting in six similarity scores per paper. Finally, the average of these six scores is computed to represent the paper’s overall relevance score.
+
+\subsubsection{Data preparation}
+
+Before proceeding with the clustering step, the $125 \times 6$ matrix of similarity scores (125 papers × 6 statements) is Z-score standardized for each of the six dimensions. This process ensures that all similarity scores are centered around zero and have unit variance, allowing each dimension to contribute equally to the clustering algorithm. 
+
+The next step is to reduce the dimensionality of the data while preserving its most informative components, in the case where we observe high correlation between relevance features. This is achieved using Principal Component Analysis (PCA), which transforms the five-dimensional similarity space into a lower-dimensional representation by identifying the most important variance-explaining components.
+
+We use the Kaiser-Meyer-Olkin (KMO) score—which assesses the adequacy of the data for factor analysis by measuring sampling adequacy—and the Condition Number (CN), which evaluates multicollinearity by measuring the sensitivity of a matrix to numerical inversion. These two indicators guide our decision on whether to apply PCA. Specifically, if the KMO score is below 0.5, PCA is not recommended due to poor sampling adequacy. If the KMO score exceeds 0.7, PCA is considered appropriate. If the KMO score falls between 0.5 and 0.7, we additionally check the CN: if it is greater than 100, indicating severe multicollinearity, PCA is applied; otherwise, it is not. In our case, the KMO score is 0.816, indicating strong sampling adequacy, and the CN is 363, which further confirms significant multicollinearity. Both indicators suggest that PCA is well suited for this dataset. We therefore apply PCA and retain the number of components that together explain 99\% of the variance, resulting in four components for use in subsequent analysis.
+
+This lower-dimensional representation enhances the efficiency of the subsequent clustering process by eliminating noise and redundancy. Papers that initially shared similar similarity profiles across multiple research statements are now grouped based on their principal components, which encapsulate the most distinguishing features of their textual content. This transformation should refine the classification process, ensuring that only the most relevant dimensions contribute to the selection framework. Ultimately, mapping research papers into this optimized space improves interpretability and strengthens the robustness of clustering results.
+
+\subsubsection{Research clustering}
+
+After reducing the dimensionality of the similarity scores, the next step in the selection process involves clustering the papers into distinct relevance groups. This classification is performed using three clustering methods: K-means, Gaussian Mixture Models (GMM), and Agglomerative Clustering (AC). These methods were selected for their flexibility and their ability to explicitly control the number of output clusters, which is essential for our relevance-based filtering. K-means partitions the data into a fixed number of clusters by minimizing the within-cluster variance, assigning each point to the nearest cluster centroid. Gaussian Mixture Models extend this approach by assuming that the data is generated from a mixture of Gaussian distributions, allowing for probabilistic cluster assignments and more flexibility in capturing ellipsoidal shapes in the data. Agglomerative Clustering is a hierarchical method that builds clusters by iteratively merging the closest pairs based on a linkage criterion, producing a dendrogram from which a desired number of clusters can be extracted. The clustering is performed in the four-dimensional space obtained from the PCA transformation, ensuring that the algorithm operates on uncorrelated, variance-preserving components and reducing the influence of noise or redundancy in the data.
+
+Given the diversity in methodologies, objectives, and data sources within the dataset, we adopted a three-cluster approach to categorize papers into high, medium, and low relevance. This method provides a more granular classification, where high-relevance papers strongly align with the systematic review criteria, low-relevance papers are largely unrelated, and medium-relevance papers share some relevant characteristics but require further evaluation. The medium-relevance group can be manually reviewed to refine the selection, ensuring that no important studies are overlooked. If the number of retrieved papers is excessive, a stricter filtering approach may be applied by focusing solely on high-relevance studies.
+
+A two-cluster approach was also considered, classifying papers into only high and low relevance groups. While this method simplifies selection, it proved insufficient given the methodological diversity in the dataset. The risk of misclassifying borderline studies was higher, as some papers that were not strictly high relevance still contained useful insights. 
+Our initial search queried a large number of papers with diverse methodologies, objectives, and data sources. Given this heterogeneity, we adopted a three-cluster approach but ultimately retained only the high-relevance category. This strategy ensures that the final selection consists of studies that closely align with the research objectives while minimizing the inclusion of marginally relevant literature, improving both the focus and quality of the systematic review.
+
+We compare the results of each clustering method based on three main evaluation criteria computed on the high-relevance cluster: the average relevance score, the Silhouette score, and the number of papers retained. The Silhouette score measures how well each sample fits within its assigned cluster, balancing cohesion (similarity within the cluster) and separation (dissimilarity with other clusters); higher values indicate more distinct and well-separated clusters. The objective is to maximize all three metrics to ensure that the high-relevance cluster is both coherent and substantial in size. For K-means, GMM, and AC, we obtained average relevance scores of 0.507, 0.510, and 0.480; Silhouette scores of 0.363, 0.288, and 0.400; and retained paper counts of 23, 16, and 50, respectively. To identify the most suitable method, we computed a composite score by standardizing each metric (Z-score scaling) and assigning weights of 50\% to the average relevance score, 20\% to the Silhouette score, and 30\% to the number of papers. Based on this weighted composite score, K-means was selected as the most appropriate clustering method, resulting in a final set of 22 papers in the high-relevance group.
+
+
+\subsection{Data cleaning and extraction}
+
+Once the final set of papers was selected, the next step was to systematically extract relevant information through manual review. The initial dataset included studies retrieved from various academic sources; however, some papers were excluded from the analysis because their full text was not accessible—either not freely available or not accessible through institutional access to common repositories such as Elsevier, ArXiv, or SSRN. Additionally, several documents retrieved from the initial selection were workshop proceedings, which compile a large number of individual research contributions. While such sources are valuable from a research perspective, including them would introduce a significant volume of data to analyze manually. In our case, four workshop papers contained over 100 individual studies, many of which may not align closely with the research topic. Given the uncertainty about their thematic relevance and the impracticality of processing them at scale within the scope of this study, we decided to exclude them. This final manual filtering phase reduced the dataset to 16 papers.
+
+To structure the extraction process, a reporting framework was designed to capture key aspects of each study. This framework includes details on the research purpose, methodology, data sources, dataset characteristics, main findings, and practical implications. The purpose of this step is to document how each study contributes to the understanding of financial narratives, particularly in terms of narrative modeling techniques, data sources, and the integration of NLP methodologies. While the current extraction process remains manual, future work will explore the possibility of automating parts of the extraction using NLP techniques. Automation could improve efficiency and scalability, allowing for the rapid processing of a larger number of studies.
+
+The temporal distribution of the selected research spans from 2014 to 2025. A significant concentration of studies is observed in recent years, with only one paper published in 2014 while the rest has been published between 2020 and 2025. This distribution suggests a growing interest in the application of NLP techniques to financial narrative analysis, particularly in the last five years.
+
+The selected papers originate from journals covering multiple academic disciplines, including 'Economics, Econometrics and Finance', 'Social Sciences', 'Business, Management and Accounting', 'Computer Science', 'Mathematics', 'Psychology', and 'Decision Sciences'. The ranking of the journals, obtained from the Scientific Journal Ranking (SJR) website, reveals that 6 papers were published in Q1 journals, also 6 in Q2 journals, and 5 papers published in journals that do not have a ranking. More details on the distribution of journal rankings are provided in Figure \ref{fig:paper_temporal_distribution}.
+
+%To further assess the quality of the selected literature, [COMPLETE HERE]
+
+The final selection of papers was categorized based on their research focus and methodological approach. Three distinct types of studies were identified: theoretical narrative study, research focused on modeling narratives, and studies that model financial narratives. A summary of the methods, data sources, and research objectives of the selected papers is presented in Table \ref{tab:selection_summary}, with further details provided in the subsequent sections.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Results}
+\label{sec:results}
+
+This section presents the findings of our systematic literature review, structured around two core categories identified through inductive classification: narrative understanding and narrative modeling. The first group includes papers that aim to define, annotate, or structure the concept of narrative in financial contexts. The second group covers approaches that use narrative information for forecasting, risk analysis, or market prediction.
+
+
+\subsection{Narrative Understanding}
+
+\textcite{roos_narratives_2024} offer a foundational theoretical contribution, defining collective economic narratives as socially shared, temporally structured, sense-making stories that imply economic action. They argue that the lack of definitional clarity in economics impedes empirical advances, and propose five criteria to distinguish narratives from mere topics.
+
+\textcite{hu_annotation_2021} introduce a detailed annotation framework for financial texts grounded in Appraisal Theory. By labeling opinion expressions, targets, and sentiment types in documents like 10-K filings, central bank reports, and tweets, they create a corpus that captures intra-sentence evaluative structures. This enables the training of more precise sentiment models.
+
+\textcite{sy_fine-grained_2023} explore argumentative sentiment in earnings calls. They apply an ensemble of transformer models to classify claim-premise units and detect argumentative relations (e.g., support, attack). Their approach shows that financial sentiment often relies on implicit rhetorical structures rather than standalone opinions.
+
+\textcite{liu_beyond_2024} propose a Financial-STS benchmark for detecting semantic shifts in financial narratives. Using GPT-generated sentence triplets and fine-tuned BERT models, they identify subtle changes in corporate disclosures that would be overlooked by general semantic similarity systems.
+
+\textcite{zmandar_cofif_2022} present the CoFiF Plus corpus, a large-scale French dataset for financial narrative summarization. Through heuristic extraction and manual annotation of report highlights, they provide training data for summarization systems that support interpretability in financial reporting.
+
+
+\subsection{Narrative Modeling}
+
+This group encompasses studies that use narratives—derived from text, media, or surveys—as predictive signals for financial variables like asset returns, volatility, inflation, or systemic risk.
+
+\textcite{stander_news_2024} constructs a FinBERT-based news sentiment index and shows that it predicts systemic risk indicators and credit impairments under IFRS 9. The index captures forward-looking sentiment from economic news and outperforms traditional business cycle indicators.
+
+\textcite{zhu_sentiment_2023} analyze 1.9 million Sina Weibo posts on housing markets, classifying sentences by temporality and sentiment using LSTM models. Their future sentiment index outperforms past sentiment and predicts house prices and stock performance of real estate firms.
+
+\textcite{chen_covid_2022} combine topic modeling, sentiment, virality (SIR models), and causality analysis to study COVID-era narratives. While COVID narratives were dominant, a separate perennial risk narrative better explained market volatility and downturns.
+
+\textcite{hong_forecasting_2025} extract 180 topics from over 880,000 WSJ articles to forecast U.S. inflation using machine learning. Narrative-based predictors outperform traditional macroeconomic variables, especially during recessions and at longer horizons.
+
+\textcite{ma_stock_2024} introduce a narrative energy index (NEG) derived from WSJ articles and show it predicts returns in the energy sector and beyond. The index beats EPU, VIX, and macro variables in both in-sample and out-of-sample performance.
+
+\textcite{borup_quantifying_2023} use open-ended daily investor surveys during COVID-19 and apply LDA to extract narrative prevalence. These survey-based narratives predict asset returns and exhibit politically polarized framing, offering insights not captured by media narratives.
+
+\textcite{miori_narratives_2024} use GPT-3.5 to extract co-mentioned entities from WSJ articles and form weekly narrative graphs. Network features like entropy and modularity are significantly linked to financial market dislocations, showing the structural role of narrative complexity.
+
+\textcite{agarwal_investor_2024} measure investor emotions during two Chinese stock market bubbles using emotional keyword dictionaries in Chinese and English media. They find that strong emotions (e.g., excitement, anxiety) predict returns and volatility.
+
+\textcite{taffler_narrative_nodate} construct emotion-specific dictionaries and apply them to media during three crises (dot-com, GFC, COVID-19). Their emotional indices explain up to 67\% of uncertainty measures and are consistent across crises.
+
+\textcite{la_quatra_end--end_2020} develop BERT-based models for extractive summarization of financial reports, using sentence-level ROUGE-based supervision. Their models rank highly in the FNS 2020 competition and support automation in financial communication.
+
+\textcite{hsu_narrative_2021} analyze narratives in 1930s China using textual frequency from Shanghai newspapers and link them to macro variables like silver prices and the wholesale price index. Their findings challenge existing views by showing narrative causality with prices.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Discussion}
+\label{sec:discussions}
+
+This section synthesizes the insights from the reviewed literature, responding to our guiding research questions: (i) How can NLP and textual analysis techniques be used to quantify and model financial narratives? (ii) Can financial narratives modeling enhance the understanding of financial market dynamics? We organize the discussion into five subsections reflecting conceptual, methodological, and practical dimensions.
+
+
+\subsection{Toward a Shared Understanding of Financial Narratives}
+
+One of the key challenges in the literature is the lack of a unified definition of what constitutes a "financial narrative." \textcite{roos_narratives_2024} address this conceptual gap by proposing the notion of collective economic narratives—temporally structured, socially shared, sense-making stories that suggest economic action. Their interdisciplinary synthesis helps distinguish narratives from isolated topics or mere opinions, establishing a foundation for empirical operationalization.
+
+Beyond theoretical proposals, empirical studies have explored structural and semantic dimensions of narratives. \textcite{hu_annotation_2021} and \textcite{sy_fine-grained_2023} focus on the rhetorical and argumentative components embedded in financial discourse, showing how opinions and sentiments are linked to specific syntactic and logical structures (e.g., claims, premises, and their relations). These works illustrate that narratives are not simply aggregations of keywords or topics but are built through evaluative and argumentative sequences.
+
+\textcite{liu_beyond_2024} add to this understanding by highlighting how subtle semantic shifts in corporate disclosures convey meaningful updates to investors, which standard similarity metrics often fail to capture. Their Financial-STS task defines a new benchmark for quantifying such shifts. Similarly, \textcite{zmandar_cofif_2022} provide a large annotated corpus for French financial reports, supporting the summarization of narrative intent in corporate communication.
+
+Taken together, these studies demonstrate a growing consensus that financial narratives involve temporality, emotion, evaluation, and action-oriented framing, all of which require careful linguistic and computational representation.
+
+
+\subsection{Methodological Advances in Narrative Quantification}
+
+A diverse range of NLP methods have been adapted to extract and quantify financial narratives. Topic modeling techniques, especially Latent Dirichlet Allocation (LDA), remain foundational for identifying narrative structures in both survey responses \parencite{borup_quantifying_2023} and historical media \parencite{hsu_narrative_2021}. LDA is often combined with time-series econometrics, enabling dynamic tracking of narrative prevalence and its effect on macro-financial variables.
+
+Sentiment analysis also plays a central role. \textcite{stander_news_2024} and \textcite{zhu_sentiment_2023} apply FinBERT and LSTM models, respectively, to derive forward-looking sentiment indices from economic news and social media. These indices not only capture expectations but also serve as timely, interpretable indicators of economic outlook.
+
+Incorporating structural information, \textcite{miori_narratives_2023} use GPT to extract co-mentioned entities and construct network graphs of narrative relationships. Centrality, modularity, and entropy metrics from these graphs are then linked to financial market dislocations, marking a novel contribution in combining language models with graph theory for narrative analysis.
+
+Other innovations include the use of emotion-specific dictionaries to capture affective content. \textcite{agarwal_investor_2024} and \textcite{taffler_narrative_nodate} measure narrative emotions during financial crises and show that they significantly explain variations in returns, volatility, and trading volume. These emotion indices are interpreted as behavioral signals linked to the intensity and direction of market sentiment.
+
+
+\subsection{Narratives as Forecasting Tools and Behavioral Signals}
+
+A central theme in the modeling-oriented literature is the predictive power of narrative features. \textcite{hong_forecasting_2025} show that topic-based narrative features outperform standard macroeconomic models in forecasting inflation, particularly during recessions and long horizons. Similarly, \textcite{ma_stock_2024} propose a narrative index tailored to the energy sector that predicts returns, volatility, and risk measures more effectively than traditional predictors.
+
+Survey-based studies like \textcite{borup_quantifying_2023} illustrate how investor-generated narratives reflect real-time behavioral shifts, often with higher explanatory power than media narratives. These findings support the notion that narratives are not merely epiphenomenal but encode expectations, biases, and reactions that influence market dynamics.
+
+Crucially, narratives are shown to be effective in extreme environments. \textcite{chen_covid_2022} and \textcite{taffler2024narrative} provide evidence that narrative structure and emotion explain variance in market indicators during crises, complementing traditional measures of uncertainty and systemic risk. \textcite{liu_beyond_2024} and \textcite{stander_news_2024} demonstrate that even minor variations in narrative tone or content can lead to significant changes in financial interpretation and regulatory decision-making.
+
+
+\subsection{Addressing the Research Questions}
+
+The first research question—how NLP and textual analysis techniques can be used to quantify and model financial narratives—is answered through a variety of approaches:
+
+\begin{itemize}
+    \item \textbf{Extraction:} Topic modeling (LDA), sentiment models (FinBERT, LSTM), keyword dictionaries, and GPT-based entity extraction are used to derive narrative content from large corpora.
+    \item \textbf{Structuring:} Narratives are framed temporally, emotionally, or structurally through annotation models, argumentative unit detection, graph-based representations, and semantic shift analysis.
+    \item \textbf{Quantification:} Time-series of narrative features are constructed using prevalence scores, sentiment shifts, entropy measures, and network metrics.
+    \item \textbf{Modeling:} These features are linked to financial outcomes using regressions, VARs, Granger causality, machine learning models, and forecast combination methods.
+\end{itemize}
+
+Regarding the second research question—whether narrative modeling enhances our understanding of financial markets—the evidence is affirmative. Narratives capture forward-looking beliefs, investor emotion, and complex expectations often missed by price or volume data. Their use enhances interpretability, supports early-warning systems, and helps uncover hidden behavioral dynamics, particularly in periods of uncertainty.
+
+
+\subsection{Limitations and Possible Improvements}
+
+While progress has been significant, several limitations remain. First, many narrative extraction models depend on predefined taxonomies or dictionaries, limiting adaptability across domains and languages. Though language models like GPT offer promising flexibility, their outputs require validation to ensure reliability in financial contexts.
+
+Second, interpretability remains a challenge. While LDA and sentiment indices are relatively transparent, models based on embeddings or neural networks may lack explainability, which is crucial for regulatory or financial decision-making.
+
+Third, most studies rely on historical data and evaluate predictive power ex post. Real-time narrative monitoring systems, integrating high-frequency financial and media data, remain underdeveloped.
+
+Finally, cross-linguistic and cross-market generalization remains limited. Few studies explore narratives outside of U.S. or Chinese contexts. Building multilingual and cross-sector narrative corpora—such as \textcite{zmandar_cofif_2022} for French—is essential to extend the robustness and applicability of findings.
+
+Future research could focus on developing multilingual benchmark datasets, integrating narrative metrics into agent-based and structural models of market behavior, and exploring causal inference techniques to isolate the effect of narrative shifts from confounding market dynamics.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper introduces a systematic literature review framework that combines algorithmic paper selection with structured data extraction to investigate how financial narratives are conceptualized, quantified, and used in financial market analysis. Leveraging NLP and machine learning tools, the review process refined an initial dataset of 171 papers down to 16 core contributions, classified into two main categories: narrative understanding and narrative modeling. This binary typology reflects a maturing field that oscillates between defining what financial narratives are and modeling what they do.
+
+The classification reveals two complementary research streams. Studies under narrative understanding primarily seek to establish the theoretical, semantic, and rhetorical boundaries of financial narratives. They offer annotation schemes, linguistic typologies, and structural representations that frame narratives as evaluative, temporal, and action-oriented discourses. These works contribute essential groundwork for developing more robust computational models. However, their operationalization in empirical finance remains limited, calling for tighter integration with market-based applications.
+
+On the other hand, the narrative modeling stream treats narratives as predictive signals. These studies use narrative-derived features—such as sentiment, topic prevalence, emotion, and semantic structure—to forecast inflation, returns, systemic risk, and investor behavior. They demonstrate that narratives can improve both the explanatory and predictive power of econometric and machine learning models, particularly during periods of market dislocation or heightened uncertainty. Importantly, many of these contributions go beyond traditional sentiment or topic analysis by incorporating structural and behavioral dimensions, such as narrative virality, emotional polarity, and semantic shift.
+
+The review identifies four key methodological pillars: topic modeling, sentiment analysis, emotion and rhetorical framing, and narrative network structures. These approaches have matured significantly, especially through the integration of contextualized language models (e.g., FinBERT, LSTM, GPT) and the use of co-occurrence or semantic networks to capture narrative evolution and intensity. Additionally, narratives reveal dimensions of investor expectations, emotional dynamics, and macroeconomic perceptions that traditional models fail to capture. They are particularly effective in forecasting during crises, where standard indicators often lag. Models based on narrative features not only outperform traditional benchmarks but also offer greater interpretability, especially when linked to qualitative drivers like central bank communication, geopolitical tension, or pandemic-related uncertainty.
+
+Nevertheless, several gaps persist. Conceptual clarity is still needed—despite theoretical advances like the collective narrative framework by \textcite{roos_narratives_2024}—and many empirical studies reduce narratives to simplified sentiment indices or static topic proportions. Furthermore, only a handful of works leverage the full potential of modern NLP architectures such as Transformers or apply multi-modal techniques combining text with price, order book, or behavioral data. The field remains overly reliant on LDA, bag-of-words, and keyword-based methods, which are poorly suited for capturing narrative coherence, temporal progression, or contextual meaning.
+
+This review contributes both a replicable methodology for literature analysis and a conceptual map of financial narrative research. Future directions should prioritize:
+\begin{enumerate}
+    \item Developing standardized, testable definitions of financial narratives that bridge linguistic theory and empirical finance;
+    \item Scaling up the use of advanced deep learning models (e.g., BERT, GPT, LLaMA) and graph-based techniques for dynamic narrative representation;
+    \item Investigating underexplored narrative dimensions—such as narrative coherence, causal framing, and temporal intensity—through hybrid approaches combining textual and quantitative modeling.
+\end{enumerate}
+
+By integrating computational linguistics with financial modeling, future research can better capture the narrative forces that shape markets, sentiment, and risk perception. Financial narratives are not just stories told about markets—they are part of how markets move. Modeling them with precision, structure, and interpretability is therefore not only a scientific goal but a practical necessity in an era of information-driven trading and policy uncertainty.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\newpage
+
+\section*{Acknowledgements}
+\label{sec:acknowledgements}
+
+This research has been supported by several institutions through funding and collaborative efforts.
+
+First, this work is based on research from COST Action CA19130, for which the second author serves as Action Chair, and COST Action CA21163, both funded by COST (European Cooperation in Science and Technology). COST Actions support collaboration and knowledge exchange among researchers across Europe.
+
+The second author, as Principal Investigator of multiple projects funded by the Swiss National Science Foundation (SNF), acknowledges financial support from the following grants:
+\begin{itemize}
+    \item Mathematics and Fintech (IZCNZ0-174853) – Investigating the digital transformation of financial systems.
+    \item Anomaly and Fraud Detection in Blockchain Networks (IZSEZ0-211195) – Researching fraud detection and network anomalies in decentralized finance.
+    \item Narrative Digital Finance (IZCOZ0-213370) – Analyzing market narratives, structural breaks, and financial bubbles.
+    \item Network-Based Credit Risk Models in P2P Lending (100018E\_205487) – Developing network-based approaches for credit risk assessment.
+\end{itemize}
+
+The first author acknowledges financial support from the Narrative Digital Finance project (IZCOZ0-213370), funded by SNF.
+
+Additionally, funding has been provided by the Leading House Asia 2023 Call for Applied Research Partnership Grants for the project Graph-Theoretic Analysis for Consumer Credit Risk Assessment in Personal Lending (ARPG\_112023\_8).
+
+The second author also acknowledges the support of the Marie Skłodowska-Curie Actions (MSCA) through the European Union’s Horizon Europe research and innovation program, specifically for the Industrial Doctoral Network on Digital Finance (DIGITAL, Project No. 101119635), for which he is the Coordinator. This support has contributed to research efforts in digital finance at a European level.
+
+Further support has been provided by the European Union’s Horizon 2020 research and innovation program under Grant Agreement No. 825215 for the FIN-TECH project, which focuses on financial supervision and regulatory compliance through technology-driven training initiatives.
+
+We also acknowledge the collaboration between ING Group and the University of Twente, which has contributed to research in artificial intelligence applications in finance. Moreover, support from the International Advanced Fellowship-UBB program, funded by Babeș-Bolyai University (contract nr. 21PFE/30.12.2021, ID: PFE-550-UBB), has played a role in expanding the scope of this research.
+
+For the purpose of Open Access, a CC BY public copyright license applies to any Author Accepted Manuscript (AAM) version arising from this submission.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\newpage
+
+\printbibliography
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\newpage
+
+\section*{Appendix A - Figures}
+\label{appendixA}
+
+\begin{figure}[h]
+    \centering
+    \label{fig:selection_criteria}
+    \includegraphics[width=0.55\textwidth]{images/filter_paper_diagram.png}
+    \caption{Paper selection diagram.}
+    \label{fig:paper_selection_diagram}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/paper_temporal_quantile_distribution.png}
+    \caption{Temporal distributions of selected research papers.}
+    \label{fig:paper_temporal_distribution}
+\end{figure}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\begin{landscape}
+
+\section*{Appendix B - Tables}
+\label{appendixB}
+
+\begin{table}[h]
+    \centering
+    \caption{Summary of article selection criteria.}
+    \label{tab:selection_criteria}
+    \begin{tabular}{p{10cm} c} % Adjust column widths if needed
+        \toprule
+        \textbf{Criteria} & \textbf{Decision} \\
+        \midrule
+        Inclusion of pre-defined keywords in title, abstract, or keyword list & Inclusion \\
+        Article publication in a scientific journal & Inclusion \\
+        Article written in English & Inclusion \\
+        Article published before 2010 & Exclusion \\
+        Duplicates & Exclusion \\
+        Algorithmic Relevance Classification & Exclusion \\
+        Unavailability of the article online & Exclusion \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{longtable}{p{5cm} p{4cm} p{4cm} p{4cm} p{4cm}}
+    \caption{Summary of the data extraction phase.}
+    \label{tab:data_extraction_table} \\
+    \toprule
+    \textbf{Paper} & \textbf{Label} & \textbf{Purpose} & \textbf{Method} & \textbf{Narrative} \\
+    \midrule
+    \endfirsthead
+    
+    \toprule
+    \textbf{Paper} & \textbf{Label} & \textbf{Purpose} & \textbf{Method} & \textbf{Narrative} \\
+    \midrule
+    \endhead
+    
+    \bottomrule
+    \endfoot
+    
+    \textcite{stander_news_2024} & narrative modeling & Construct a news sentiment index to act as an early warning for systemic risk and credit impairments. & FinBERT sentiment scoring, PCA on macro indicators, rolling regressions, aspect-based sentiment. & FinBERT sentiment, topic-based aspect analysis, PCA and regressions to link to macro risk. \\
+    \textcite{zhu_sentiment_2023} & narrative modeling & Build a future-oriented sentiment index from Weibo posts on housing. & LSTM sentence classification into temporal/sentiment classes, using Word2Vec. & Narrative sentiment split by temporal framing and learned via deep LSTM classifier. \\
+    \textcite{hu_annotation_2021} & narrative understanding & Develop a corpus and model for detecting opinion and emotion in financial narratives. & Manual + SpaCy annotation using appraisal theory; dependency parsing, syntactic tagging. & Appraisal-based annotations, intra-sentence pairings of opinion and targets. \\
+    \textcite{liu_beyond_2024} & narrative understanding & Detect subtle semantic shifts in firm narratives using new financial-STS task. & Triplet-based contrastive learning with GPT-labeled sentence triplets. & Triplet embedding training for narrative similarity under financial framing. \\
+    \textcite{zmandar_cofif_2022} & narrative understanding & Create a large-scale French corpus for summarizing financial reports. & Heuristic + CamemBERT + manual summary extraction. & Summary-level mappings from report sections; NER for entity highlights. \\
+    \textcite{chen_covid_2022} & narrative modeling & Assess narrative influence during COVID on market variables using causal testing. & LDA, LM sentiment, Word2Vec, SIR virality, VAR and Granger causality. & Narratives via LDA, semantic shift, and virality scoring, linked to econometric causality. \\
+    \textcite{sy_fine-grained_2023} & narrative understanding & Improve financial sentiment analysis via argumentative unit detection. & BERT ensemble for argument classification and relation detection. & Pairwise relation classification and claim-premise detection with BERT ensemble. \\
+    \textcite{hong_forecasting_2025} & narrative modeling & Forecast U.S. inflation using WSJ-derived narrative features. & LDA for topic modeling, ML regressors (LASSO, ENet, RF, PLS). & LDA narrative topics as ML features in out-of-sample inflation prediction. \\
+    \textcite{agarwal_investor_2024} & narrative modeling & Measure investor emotions from media during market bubbles and link them to returns, volatility, and volume. & Emotion keyword dictionaries; regression on market variables during two Chinese stock bubbles. & Emotion frequency indices (8 emotions), strong vs. weak emotion separation, applied in regression models. \\
+    \textcite{hsu_narrative_2021} & narrative modeling & Assess how narrative topics in newspaper articles relate to macroeconomic indicators in 1930s China. & Keyword frequency tracking, Ridge/LASSO/Elastic Net regressions, VAR, IRF, Granger causality. & Manual keyword selection and normalized frequency analysis linked to time series regression models. \\
+    \textcite{taffler_narrative_nodate} & narrative modeling & Analyze emotional content of narratives during market crises and its explanatory power over returns and uncertainty. & Keyword-based emotion indices; regression with returns, VIX, volume, EPU during three crises. & Context-specific emotion dictionary applied to financial articles; emotion score time series regressed on market indicators. \\
+    \textcite{miori_narratives_2023} & narrative modeling & Use GPT + graph theory to extract narrative structure from news and link to market dislocations. & Entity extraction via GPT; co-occurrence graphs; community detection; regress network features on volatility shocks. & GPT-ranked entities + graph metrics (modularity, entropy); topic communities track narrative complexity. \\
+    \textcite{roos_narratives_2024} & narrative understanding & Review and define the concept of collective economic narratives in economics. & Theoretical review of 436 papers; derive five defining narrative features. & Defines narratives as temporal, socially emergent, sense-making, and action-suggesting story structures. \\
+    \textcite{borup_quantifying_2023} & narrative modeling & Analyze investor narratives via open-ended surveys during COVID and assess predictive value for markets. & LDA on survey texts; Elastic Net VARs; comparison with media narratives. & LDA-derived narrative topics tracked daily and linked to market behavior via econometric models. \\
+    \textcite{ma_stock_2024} & narrative modeling & Use WSJ-derived narrative index (NEG) to forecast stock returns in the energy sector and beyond. & LDA on WSJ energy topics; predictive regressions; Sharpe/CE utility evaluation. & NEG index from topic attention on WSJ news, tracked as monthly time series and forecast factor. \\
+    \textcite{tuckett_tracking_2014} & narrative modeling & Track evolution of emotionally charged financial narratives (phantastic objects) before crises. & Emotion keyword dictionaries, sentiment shift scoring, network analysis of sender-receiver patterns. & Excitement vs. anxiety sentiment index + social network clustering reveal narrative divergence before collapse. \\
+\end{longtable}
+
+\end{landscape}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section*{Appendix C - Queries}
+\label{appendixC}
+
+\begin{lstlisting}[caption={Full Search Query for Literature Selection}, label={lst:search_query}, breaklines=true]
+TITLE-ABS-KEY("financial narrative" OR "financial narratives" OR "economic narrative" OR "economic narratives")
+OR TITLE(narrative* AND ("language processing" OR nlp OR "language understanding" OR nlu OR "text mining" OR "textual analysis" OR "text analysis" OR "text processing" OR lexicon OR sentiment OR "topic modeling" OR "topic extraction" OR "word embedding" OR "word embeddings" OR "entity recognition" OR "narrative processing" OR "narrative modeling") AND (macroeconomic* OR "financial market" OR "financial markets" OR "market dynamics" OR "market movements" OR "price dynamics" OR "price movements" OR "financial forecasting" OR "stock markets" OR "equity markets" OR "foreign exchange" OR commodit* OR bond* OR "asset prices" OR "price returns" OR "asset returns" OR "market returns" OR volatility OR "risk management" OR "portfolio management"))
+OR KEY(narrative* AND ("language processing" OR nlp OR "language understanding" OR nlu OR "text mining" OR "textual analysis" OR "text analysis" OR "text processing" OR lexicon OR sentiment OR "topic modeling" OR "topic extraction" OR "word embedding" OR "word embeddings" OR "entity recognition" OR "narrative processing" OR "narrative modeling") AND (macroeconomic* OR "financial market" OR "financial markets" OR "market dynamics" OR "market movements" OR "price dynamics" OR "price movements" OR "financial forecasting" OR "stock markets" OR "equity markets" OR "foreign exchange" OR commodit* OR bond* OR "asset prices" OR "price returns" OR "asset returns" OR "market returns" OR volatility OR "risk management" OR "portfolio management"))
+AND PUBYEAR > 2010
+AND LANGUAGE(english)
+AND DOCTYPE(ar)
+\end{lstlisting}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\end{document}

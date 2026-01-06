@@ -1,0 +1,155 @@
+Reviewer #1: This manuscript presents a novel and methodologically rigorous framework for conducting algorithmic systematic literature reviews (SLRs), applied to the emerging field of financial narratives. The integration of transformer-based NLP models, clustering algorithms, and interpretability tools demonstrates both technical sophistication and practical utility. The use of a real-world case study focused on financial narratives adds strong empirical grounding to the proposed method.
+
+The paper is clearly written, well-structured, and offers significant contributions to both literature review methodology and financial economics. The distinction between narrative understanding and narrative modeling in the results section is particularly insightful, and the authors effectively highlight the conceptual and methodological fragmentation in current research.
+
+Strengths:
+
+Strong methodological innovation through the use of embedding models and clustering.
+
+Clear and well-executed application to a topical subject area in finance.
+
+Good balance between technical detail and conceptual analysis.
+
+Suggestions for Improvement:
+
+Consider including a more explicit comparison with traditional manual SLRs to better highlight the advantages of the algorithmic approach.
+
+It would be helpful to further elaborate on potential limitations of the method, such as the exclusion of gray literature or papers without accessible full texts.
+
+Consider elaborating on the practical challenges of implementing this pipeline at scale (e.g., computational cost, access to full texts).
+
+Overall, this is an impressive and timely contribution. I recommend minor revisions to enhance clarity and breadth of impact.
+
+
+
+Reviewer #2:
+1. Introduction and Overall Assessment
+This manuscript presents a semi-automated framework for conducting systematic literature reviews (SLRs) using NLP tools such as transformer-based embeddings, cosine similarity scoring, PCA, and clustering. The authors apply this methodology to financial narratives to address two research questions.
+1.	How can NLP and textual analysis techniques be used to quantify and model financial narratives
+2.	Can financial narrative modeling enhance the understanding of financial market dynamics?
+Although the technical framework for literature selection is well-structured, there is a fundamental misalignment between the stated research questions and the actual methodology and data. This study does not extract or analyze real-world financial narratives, instead relying solely on Scopus-indexed academic publications discussing the topic.
+Consequently, the second research question was not empirically examined, and the case study did not generate new evidence on financial market dynamics. Given Financial Innovation’s emphasis on original empirical and methodological contributions, the manuscript does not meet the journal’s expectations in its present form.
+
+2. Contribution
+•	Potential Value: The proposed NLP-based pipeline for automating SLRs is a promising tool for bibliometric studies and can be applied across multiple domains.
+•	Limitations of the contribution:
+o	This study does not provide original insights into financial narratives as behavioral economic phenomena.
+o	The dataset (titles, abstracts, and keywords from Scopus articles) is meta-level discourse, not primary narrative content from financial markets.
+o	The paper’s framing suggests direct narrative modeling, which was not performed.
+•	Missed Opportunity: Applying the framework to genuine financial textual data (e.g., news, earnings calls, social media) could yield meaningful results aligned with the research questions.
+
+3. Execution
+•	Strengths:
+o	A clear explanation of each stage in the SLR pipeline.
+o	Integration of modern NLP techniques (embedding models, dimensionality reduction, and clustering).
+o	Transparent keyword search and inclusion/exclusion criteria.
+•	Methodological Issues:
+1.	Research Question 2 Not Directly Addressed: The enhancement of market dynamics understanding is only discussed via prior literature and not tested with original modeling.
+2.	Data–Object Mismatch: Financial narratives are not retrieved or modeled; instead, academic discussions about them are analyzed.
+3.	Single-Source Limitation: Exclusive reliance on Scopus may omit key works from SSRN, NBER, arXiv, and other sources.
+4.	Subjectivity in Inclusion Criteria: Relevance scoring is based on researcher-defined statements; no validation set or robustness check was provided.
+5.	Exclusion of Medium-Relevance Papers: Potentially useful studies may have been omitted for the sake of automation.
+•	Implication: These issues cannot be solved with minor edits; the manuscript requires a substantial redesign with a new dataset of actual financial narratives to fulfill its stated aims.
+
+4. Exposition
+•	Clarity: The paper is well written, logically structured, and easy to follow. The workflow is effectively illustrated, and the tables and figures are informative.
+•	Framing Issues: The title, abstract, and research questions suggest empirical modeling of narratives, which is misleading, given the data and methods used.
+•	Recommendations for Improvement:
+o	Clearly distinguish between financial narratives and the scholarly literature on financial narratives.
+o	Reframe the case study to reflect its true scope (meta-analysis of the literature) or redesign the study to analyze primary financial narrative data.
+o	Explicitly acknowledge the limitations of using Scopus-only academic data to answer behavioral finance questions.
+
+Recommendation: Reject and Encourage Resubmission After Redesign
+The methodology is promising for literature review automation; however, in its current application, it does not address the stated research questions. A future version applying this framework to genuine financial narratives and empirically testing their relationship with market dynamics would be far more suitable for Financial Innovation.
+
+
+
+
+Reviewer #3: This manuscript, "An Algorithmic Framework for Systematic Literature Reviews: A Case Study for Financial Narratives" proposes a methodological pipeline for SLRs that combines NLP sentence embeddings, dimensionality reduction, clustering, and interpretability, and applies it to the emerging "financial narratives" literature; it frames two clear research questions on how NLP can quantify/model narratives and whether such modeling improves understanding of market dynamics. The methods include the comparison of multilingual-e5 vs. OpenAI embeddings and a three-stage selection workflow.
+However, multiple problems presently obscure the paper's contribution and warrant substantial revisions:
+
+1. There is a real aim mismatch in introduction section. The "Introduction" foregrounds narratives' role in investor behavior/market dynamics (a domain claim) but the core contribution is an algorithmic SLR framework applied to papers about narratives (a methods claim). That's not fatal, but it needs alignment. Author/s should (1) Reframe the opening as brief background (why narratives matter) and immediately pivot to the SLR problem the paper solves; (2) State the primary contribution plainly ("a reproducible, automated SLR pipeline") and the secondary; (3) Bridge research questions, methods, results in a short "Contribution & Scope" paragraph so readers don't expect new decision-making evidence.
+
+2. Author/s seem that they used AI to prepare their literature review and it seems that they even did not read those papers. It also seems that they also made use of AI heavily (at least Sections 3.2, 3.3 and abstract are detected as AI):
+
+a. P1-line 56: Although there are many highly cited articles on the criticisms of efficient market hypothesis, they only mentioned one of them, which was "Grossman (1980)". But the problem is that Grossman and Stiglitz developed this article and then they published the latest version as "Grossman & Stiglitz (1980), "On the Impossibility of Informationally Efficient Markets", American Economic Review, 70(3):393-408. Furthermore, author/s suggests Grossman (1980) "aligns more closely with the semi-strong EMH … allowing delayed diffusion." Actually, Grossman and Stiglitz argue that perfectly informationally efficient markets cannot exist because costly information must be rewarded. This is a paradox against fully revealing efficiency, not an endorsement of semi-strong EMH. That is why authors should rephrase this sentence as "Grossman-Stiglitz (1980) show that prices cannot be perfectly informationally efficient when information is costly".
+
+b. P2-Line 59: they cite Varsha et. al. (2024) article as "S et. al. (2024)" both in the text and in references.
+
+c. There are important, highly-cited papers on (economic/financial) narratives not in your references that they should add: (i) Shiller (2017), American Economic Review (Papers & Proceedings) — "Narrative Economics." Canonical framing that virtually all later empirical "financial narratives" papers reference. ; (ii) Bybee, Kelly & Su (2023), Review of Financial Studies — "Narrative Asset Pricing: Interpretable Systematic Risk Factors from News Text." ; (iii) Bybee, Kelly, Manela & Xiu (2024), Journal of Finance — "Business News and Business Cycles." ; Flynn & Sastry (2024), NBER Working Paper — "The Macroeconomics of Narratives." Formalizes viral, belief-altering narratives in a business-cycle model and measures narratives in firms' 10-Ks.
+
+d. Because of these reasons, as a reviewer it is very difficult to decide which is AI written and which is a contribution to the relevant literature. Author/s definitely read cited articles in their manuscript and make sure that they are relevant ones, citations and contents are correct.
+
+3. P2-Line 4-6: that sentence is a big causal chain stated as fact and it appears without an inline citation in the manuscript: "Yet, we observe that … individual interpretations eventually converge into dominant narratives … shape financial market behavior." It asserts three linked mechanisms: (1) micro interpretations → convergence, (2) convergence → dominant/collective narratives, and (3) narratives → market outcomes. Each step is contestable and should be grounded in prior work. Therefore, authers should add Solid citations for each mechanism.
+
+4. P4- Line 7-38: there's a concrete syntax error right in the printed Scopus query block, plus a minor year-filter inconsistency. Dangling term + mismatched parentheses in the KEY() part. Year filter doesn't match the text: You state "2010 or later," but the filter is AND PUBYEAR > 2010, which excludes 2010.
+
+5. Author/s argue that "their paper introduces an algorithmic framework for conducting systematic literature reviews (SLRs), designed to improve efficiency, reproducibility, and selection quality assessment in the literature review process". The proposed "algorithmic framework" follows a very standard, off-the-shelf semantic screening in some parts, but it also add important algorithmic steps such as PCA, clustering pipeline and bibliometric filtering. But the exact contribution of the paper over and above the existing SLRs were not discussed, not clear. These points should be clarified and should be explained through which channels and how improvements suggested in the paper affect efficiency, reproducibility, and selection quality assessment in the literature review process. It is very difficult to understand the methodological advances proposed and used in the paper.
+
+6. See more compact algorithm is given by Oliveira, Otávio & da Silva, Fabio & Juliani, Fernando & Ferreira, Luis & Nunhes, Thaís. (2019). Bibliometric Method for Mapping the State-of-the-Art and Identifying Research Gaps and Trends in Literature: An Essential Instrument to Support the Development of Scientific Projects. 10.5772/intechopen.85856.
+
+7. "Section 4. Discussion" doesn't read like a tight, academic discussion, its content and framing need work. The section opens with broad statements and a three-bucket structure (conceptual/methodological/practical) but doesn't explicitly answer the two research questions or synthesize concrete takeaways, which is what editors expect in a Discussion. Additionally, this section reads like extended results/theory, not a discussion. Much of 4.1-4.2 reiterates themes ("holistic perspective… dynamic frameworks," "levels—micro/meso/macro…") without tying them to your corpus evidence or to implications/limitations. Furthermore, a strong Discussion should include: (i) answers to research questions, (ii) implications (theory/method/practice), (iii) limitations & threats to validity (selection bias, transformer drift, Scopus coverage), and (iv) future research that follows directly from your findings. Right now, (ii)-(iv) are thin or implicit.
+In sum, even though several aspects of the manuscript obscure its contribution, I confirm that the paper make a methodological contribution to the financial narratives' literature. Addressing the points made above would substantially improve clarity and rigor of the paper.
+
+
+
+Reviewer #4: Abstract
+
+Is good.
+Introduction
+
+Strengths
+
+The introduction situates financial narratives within economics and finance, citing foundational works (Somers 1994, Shiller 2019, Tuckett & Nikolic 2017).
+It highlights the gap between theoretical recognition of narratives and the methodological fragmentation in how they are measured.
+The link to systematic literature review (SLR) methodology is stated the need to automate and make reviews more reproducible.
+Points that could be improved/clarify
+
+1. Conceptual Clarity
+
+"…financial narratives, a subset of economic narratives, which we define as structured interpretations or explanatory frameworks concerning financial markets or economic events…"
+This definition seems is too broad and overlaps with sentiment indices or topic models. The introduction risks conflating "narrative," "theme," and "sentiment."
+Providing a sharper boundary, could draw more explicitly from narrative theory.
+
+2. Theoretical Anchoring.
+
+The introduction frames narratives mostly as a data science task but does not fully develop the economic or social stakes (e.g., why narratives matter for price formation, bubbles, contagion).
+
+3. Research Questions
+
+"This study addresses the following research questions: (i) How can NLP and textual analysis techniques be used to quantify and model financial narratives? (ii) Can financial narratives modeling enhance financial market dynamics understanding?"
+While good, these are method-driven and narrow. They do not engage with broader gaps such as conceptual definitions, methodological consistency, or cross-disciplinary perspectives.
+Adding how are financial narratives conceptually defined in the literature? Could be good.
+
+Methodology
+
+1. Database Choice
+
+"Using Python, this review sources the publications from the Scopus database…"
+Why only Scopus? Did you test or compare with other databases such as Web of Science? justify it.
+
+2. Embedding Models
+
+"…multilingual-e5-large-instruct offers the advantage of being open-source… OpenAI's text-embedding-3-small demonstrates better performance… and is therefore selected for the study."
+Did you just test the open-source model and then remove it?
+
+If its only advantage is openness and efficiency rather than accuracy, why include it at all?
+
+3. PCA Retention Rule
+
+"…we apply PCA and retain the number of components that together explain 99% of the variance."
+Why such a high threshold? This may indicate multicollinearity and defeats the purpose of reduction. Why not Use conventional thresholds (80-90%) or justify it. Consider UMAP/t-SNE as alternatives.
+
+4. Clustering Strategy
+
+"…we adopted a three-cluster approach… but removed the medium- and low-relevance ones because manual review would reintroduce subjectivity."
+Why remove all medium-relevance papers? Isn't this over-restricts the corpus and may bias results?
+
+5. AI Usage
+
+The paper relies heavily on AI-style language and generic terms, which blurs its academic precision. Phrases such as "financial market dynamics", "automated knowledge discovery", exaggerated terms like "in fact", and the overuse of connectors like "particularly," "specifically," and "—s" make the text read more like promotional writing than scholarly argument. Humanized it.
+
+Overall, the paper is strong and presents a robust methodology. However, the issues noted above should be addressed to improve clarity, precision.
+
+
+There is additional documentation related to this decision letter. To access the file(s), please click the link below. You may also login to the system and click the 'View Attachments' link in the Action column.

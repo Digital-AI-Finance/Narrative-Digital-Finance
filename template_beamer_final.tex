@@ -1,0 +1,959 @@
+\documentclass[8pt,aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Color definitions
+\definecolor{mlblue}{RGB}{0,102,204}
+\definecolor{mlpurple}{RGB}{51,51,178}
+\definecolor{mllavender}{RGB}{173,173,224}
+\definecolor{mllavender2}{RGB}{193,193,232}
+\definecolor{mllavender3}{RGB}{204,204,235}
+\definecolor{mllavender4}{RGB}{214,214,239}
+\definecolor{mlorange}{RGB}{255, 127, 14}
+\definecolor{mlgreen}{RGB}{44, 160, 44}
+\definecolor{mlred}{RGB}{214, 39, 40}
+\definecolor{mlgray}{RGB}{127, 127, 127}
+
+% Additional colors for template compatibility
+\definecolor{lightgray}{RGB}{240, 240, 240}
+\definecolor{midgray}{RGB}{180, 180, 180}
+
+% Apply custom colors to Madrid theme
+\setbeamercolor{palette primary}{bg=mllavender3,fg=mlpurple}
+\setbeamercolor{palette secondary}{bg=mllavender2,fg=mlpurple}
+\setbeamercolor{palette tertiary}{bg=mllavender,fg=white}
+\setbeamercolor{palette quaternary}{bg=mlpurple,fg=white}
+
+\setbeamercolor{structure}{fg=mlpurple}
+\setbeamercolor{section in toc}{fg=mlpurple}
+\setbeamercolor{subsection in toc}{fg=mlblue}
+\setbeamercolor{title}{fg=mlpurple}
+\setbeamercolor{frametitle}{fg=mlpurple,bg=mllavender3}
+\setbeamercolor{block title}{bg=mllavender2,fg=mlpurple}
+\setbeamercolor{block body}{bg=mllavender4,fg=black}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Clean itemize/enumerate
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+
+% Reduce margins for more content space
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+
+% Command for bottom annotation (Madrid-style)
+\newcommand{\bottomnote}[1]{%
+\vfill
+\vspace{-2mm}
+\textcolor{mllavender2}{\rule{\textwidth}{0.4pt}}
+\vspace{1mm}
+\footnotesize
+\textbf{#1}
+}
+
+% Command for compact list spacing
+\newcommand{\compactlist}{%
+\setlength{\itemsep}{0pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+
+% Command for chart placeholder with safe sizing
+\newcommand{\chartplaceholder}[2][5cm]{%
+\begin{center}
+\begin{adjustbox}{max width=0.95\textwidth, max height=#1}
+\framebox[\textwidth][c]{%
+\rule{0pt}{#1}%
+\textcolor{midgray}{[#2]}%
+}
+\end{adjustbox}
+\end{center}
+}
+
+\title{Beamer Template Collection}
+\subtitle{28 Professional Slide Layouts with Madrid Theme}
+\author{Template System}
+\institute{Academic \& Professional Presentations}
+\date{\today}
+
+\begin{document}
+
+% ==================== LAYOUT 1: PLAIN TITLE ====================
+\begin{frame}[plain]
+\vspace{2cm}
+\begin{center}
+{\Huge Main Title}\\[0.5cm]
+{\Large Subtitle or Description}\\[2cm]
+{\normalsize Additional Information}
+\end{center}
+\end{frame}
+
+% ==================== LAYOUT 2: STANDARD TITLE ====================
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+% ==================== TABLE OF CONTENTS ====================
+\begin{frame}[t]{Template Overview}
+\tableofcontents
+\end{frame}
+
+% ==================== SECTION: CONTENT LAYOUTS ====================
+\section{Content Layouts}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Content Layouts\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+% ==================== LAYOUT 3: TWO COLUMNS TEXT (FIXED) ====================
+\begin{frame}[t]{Two Column Layout - Text}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Left Column Header}
+
+Main content for the left side.
+
+Key points:
+\begin{itemize}
+\item First key point
+\item Second key point
+\item Third key point
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Right Column Header}
+
+Supporting content for the right side.
+
+\begin{center}
+\framebox[0.85\columnwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Supporting Visual]}
+}
+\end{center}
+\end{columns}
+
+\bottomnote{Key takeaway in one sentence}
+\end{frame}
+
+% ==================== LAYOUT 4: TWO COLUMNS WITH MATH ====================
+\begin{frame}[t]{Two Column Layout - Mathematics}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Definition}
+
+A mathematical concept defined:
+$$f(x) = ax^2 + bx + c$$
+
+Properties:
+\begin{itemize}
+\item Property: $a \neq 0$
+\item Vertex: $x = -\frac{b}{2a}$
+\item Discriminant: $\Delta = b^2 - 4ac$
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Example}
+
+Specific instance:
+$$f(x) = 2x^2 + 3x + 1$$
+
+Result: Minimum at $x = -\frac{3}{4}$
+
+\begin{center}
+\framebox[0.85\columnwidth][c]{
+\rule{0pt}{3.5cm}
+\textcolor{midgray}{[Parabola Graph]}
+}
+\end{center}
+\end{columns}
+
+\bottomnote{Theory paired with visual example}
+\end{frame}
+
+% ==================== LAYOUT 5: VISUAL COMPARISON (REDESIGNED) ====================
+\begin{frame}[t]{Visual Comparison}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Approach A}
+
+\begin{center}
+\framebox[0.9\columnwidth][c]{
+\rule{0pt}{4.5cm}
+\textcolor{midgray}{[Visual: Method A]}
+}
+\end{center}
+
+\begin{itemize}
+\item Key characteristic 1
+\item Key characteristic 2
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Approach B}
+
+\begin{center}
+\framebox[0.9\columnwidth][c]{
+\rule{0pt}{4.5cm}
+\textcolor{midgray}{[Visual: Method B]}
+}
+\end{center}
+
+\begin{itemize}
+\item Key characteristic 1
+\item Key characteristic 2
+\end{itemize}
+\end{columns}
+
+\bottomnote{Use visuals to show differences}
+\end{frame}
+
+% ==================== LAYOUT 6: THREE COLUMN VISUAL (REDESIGNED) ====================
+\begin{frame}[t]{Three-Way Visual Comparison}
+\begin{columns}[T]
+\column{0.31\textwidth}
+\begin{center}
+\textbf{Category A}
+\vspace{0.3em}
+
+\framebox[0.95\columnwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Chart A]}
+}
+\end{center}
+
+\begin{itemize}
+\item Point 1
+\item Point 2
+\end{itemize}
+
+\column{0.31\textwidth}
+\begin{center}
+\textbf{Category B}
+\vspace{0.3em}
+
+\framebox[0.95\columnwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Chart B]}
+}
+\end{center}
+
+\begin{itemize}
+\item Point 1
+\item Point 2
+\end{itemize}
+
+\column{0.31\textwidth}
+\begin{center}
+\textbf{Category C}
+\vspace{0.3em}
+
+\framebox[0.95\columnwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Chart C]}
+}
+\end{center}
+
+\begin{itemize}
+\item Point 1
+\item Point 2
+\end{itemize}
+\end{columns}
+
+\bottomnote{Three-way comparisons need strong visuals}
+\end{frame}
+
+% ==================== SECTION: VISUAL LAYOUTS ====================
+\section{Visual Layouts}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Visual Layouts\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+% ==================== LAYOUT 7: FULL WIDTH WITH IMAGE ====================
+\begin{frame}[t]{Full Width Content with Image}
+\textbf{Main Topic Introduction}
+
+Key concepts:
+\begin{itemize}
+\item Concept one with brief explanation
+\item Concept two with additional details
+\end{itemize}
+
+\begin{center}
+\framebox[0.9\textwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Image/Chart Placeholder]}
+}
+\end{center}
+
+\bottomnote{Visuals complement textual content}
+\end{frame}
+
+% ==================== LAYOUT 8: COLUMNS WITH IMAGE (FIXED) ====================
+\begin{frame}[t,shrink=10]{Mixed Media Layout}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Text Content}
+
+Explanation of concept.
+
+Important points:
+\begin{itemize}
+\item First observation
+\item Second observation
+\item Third observation
+\end{itemize}
+
+Formula: $E = mc^2$
+
+\column{0.48\textwidth}
+\begin{center}
+\framebox[0.9\columnwidth][c]{
+\rule{0pt}{5.5cm}
+\textcolor{midgray}{[Visual Element]}
+}
+\end{center}
+\end{columns}
+
+\bottomnote{Combine text and visuals}
+\end{frame}
+
+% ==================== SECTION: COMPARISONS AND ANALYSIS ====================
+\section{Comparisons and Analysis}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Comparisons and Analysis\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+% ==================== LAYOUT 9: DEFINITION-EXAMPLE (SIMPLIFIED) ====================
+\begin{frame}[t]{Definition and Example}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Definition}
+
+Formal statement of concept.
+
+\textbf{Key Properties}
+\begin{itemize}
+\item Essential property 1
+\item Essential property 2
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Visual Example}
+
+\begin{center}
+\framebox[0.9\columnwidth][c]{
+\rule{0pt}{5cm}
+\textcolor{midgray}{[Diagram/Example]}
+}
+\end{center}
+
+Result: \textcolor{mlgreen}{Verified}
+\end{columns}
+
+\bottomnote{One clear example beats multiple confusing ones}
+\end{frame}
+
+% ==================== LAYOUT 10: COMPARISON (SIMPLIFIED) ====================
+\begin{frame}[t]{Method Comparison}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Method A}
+
+\begin{center}
+\framebox[0.85\columnwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Method A Visual]}
+}
+\end{center}
+
+\textbf{Strengths}
+\begin{itemize}
+\item Top advantage 1
+\item Top advantage 2
+\end{itemize}
+
+\textbf{Limitation:} Key constraint
+
+\column{0.48\textwidth}
+\textbf{Method B}
+
+\begin{center}
+\framebox[0.85\columnwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Method B Visual]}
+}
+\end{center}
+
+\textbf{Strengths}
+\begin{itemize}
+\item Top advantage 1
+\item Top advantage 2
+\end{itemize}
+
+\textbf{Limitation:} Key constraint
+\end{columns}
+
+\bottomnote{Focus on the most important trade-off}
+\end{frame}
+
+% ==================== LAYOUT 11: PROCESS FLOW (VISUAL-FIRST) ====================
+\begin{frame}[t]{Process Flow}
+\begin{center}
+\framebox[0.95\textwidth][c]{
+\rule{0pt}{4.5cm}
+\textcolor{midgray}{[Process Flow Diagram: Input -> Step 1 -> Step 2 -> Output]}
+}
+\end{center}
+
+\begin{columns}[T]
+\column{0.31\textwidth}
+\textbf{Input:} Data source
+
+\column{0.31\textwidth}
+\textbf{Process:} Main action
+
+\column{0.31\textwidth}
+\textbf{Output:} Result
+\end{columns}
+
+\bottomnote{Process flows must be visual}
+\end{frame}
+
+% ==================== LAYOUT 12: FORMULA REFERENCE ====================
+\begin{frame}[t]{Formula Reference}
+\begin{columns}[T]
+\column{0.31\textwidth}
+\textbf{Category 1}
+
+$$a + b = c$$
+$$x^2 + y^2 = r^2$$
+
+\column{0.31\textwidth}
+\textbf{Category 2}
+
+$$\int_a^b f(x)\,dx$$
+$$\sum_{i=1}^n i = \frac{n(n+1)}{2}$$
+
+\column{0.31\textwidth}
+\textbf{Category 3}
+
+$$\nabla \times \vec{F} = 0$$
+$$E = \hbar\omega$$
+\end{columns}
+
+\vspace{0.5em}
+\begin{center}
+\framebox[0.8\textwidth][c]{
+\rule{0pt}{3.5cm}
+\textcolor{midgray}{[Formula Visualization/Diagram]}
+}
+\end{center}
+
+\bottomnote{Quick reference formulas by category}
+\end{frame}
+
+% ==================== LAYOUT 13: SUMMARY (SIMPLIFIED) ====================
+\begin{frame}[t,shrink=10]{Summary Layout}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Key Concepts}
+\begin{itemize}
+\item Main idea 1
+\item Main idea 2
+\item Main idea 3
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Applications}
+\begin{itemize}
+\item Real-world use 1
+\item Real-world use 2
+\item Next steps / Further reading
+\end{itemize}
+\end{columns}
+
+\vspace{0.5em}
+\begin{center}
+\framebox[0.95\textwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Summary Dashboard]}
+}
+\end{center}
+
+\bottomnote{Summaries consolidate learning}
+\end{frame}
+
+% ==================== SECTION: SPECIALIZED FORMATS ====================
+\section{Specialized Formats}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Specialized Formats\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+% ==================== LAYOUT 14: Q&A STYLE ====================
+\begin{frame}[t]{Question and Answer Format}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textit{Q1: What is the main purpose?}
+
+Answer explaining the primary goal.
+
+\vspace{0.5em}
+\textit{Q2: How does it work?}
+
+Brief explanation of the mechanism.
+
+\column{0.48\textwidth}
+\textit{Q3: When should it be used?}
+
+Scenarios for application.
+
+\vspace{0.5em}
+\begin{center}
+\framebox[0.9\columnwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[FAQ Diagram]}
+}
+\end{center}
+\end{columns}
+
+\bottomnote{Anticipating questions improves comprehension}
+\end{frame}
+
+% ==================== LAYOUT 15: CLOSING SLIDE ====================
+\begin{frame}[plain]
+\vspace{3cm}
+\begin{center}
+{\Large Thank you}\\[2cm]
+{\normalsize Questions?}\\[1cm]
+{\small contact@example.com}
+\end{center}
+\end{frame}
+
+% ==================== LAYOUT 16: COURSE ROADMAP (VISUAL-FIRST) ====================
+\begin{frame}[t]{Course Roadmap}
+\begin{center}
+\framebox[0.95\textwidth][c]{
+\rule{0pt}{4.5cm}
+\textcolor{midgray}{[Visual Roadmap: Foundations -> Intermediate -> Advanced -> Applications]}
+}
+\end{center}
+
+\begin{columns}[T]
+\column{0.23\textwidth}
+\textbf{Part 1:} Foundations
+
+\column{0.23\textwidth}
+\textbf{Part 2:} Intermediate
+
+\column{0.23\textwidth}
+\textbf{Part 3:} Advanced
+
+\column{0.23\textwidth}
+\textbf{Part 4:} Applications
+\end{columns}
+
+\bottomnote{Roadmaps should be visual journeys}
+\end{frame}
+
+% ==================== LAYOUT 17: CODE EXAMPLE (SIMPLIFIED) ====================
+\begin{frame}[t]{Code Example Layout}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Input Code}
+
+\texttt{def function(x):}\\
+\texttt{~~~~if x > 0:}\\
+\texttt{~~~~~~~~return x * 2}\\
+\texttt{~~~~else:}\\
+\texttt{~~~~~~~~return -x}
+
+\vspace{0.5em}
+\textbf{Explanation}
+
+Doubles positive, negates negative.
+
+\column{0.48\textwidth}
+\textbf{Output}: \texttt{10}
+
+\textbf{Examples}
+\begin{itemize}
+\item $f(5) = 10$
+\item $f(-4) = 4$
+\item $f(0) = 0$
+\end{itemize}
+
+\begin{center}
+\framebox[0.85\columnwidth][c]{
+\rule{0pt}{3cm}
+\textcolor{midgray}{[Function Plot]}
+}
+\end{center}
+\end{columns}
+
+\bottomnote{Code with visual output}
+\end{frame}
+
+% ==================== LAYOUT 18: TRADE-OFFS (SIMPLIFIED) ====================
+\begin{frame}[t]{Key Trade-offs}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Strengths}
+\begin{itemize}
+\item[\textcolor{mlgreen}{+}] Most important benefit
+\item[\textcolor{mlgreen}{+}] Second key benefit
+\item[\textcolor{mlgreen}{+}] Third key benefit
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Limitations}
+\begin{itemize}
+\item[\textcolor{mlorange}{-}] Most important drawback
+\item[\textcolor{mlorange}{-}] Second key drawback
+\item[\textcolor{mlorange}{-}] Third key drawback
+\end{itemize}
+\end{columns}
+
+\vspace{0.5em}
+\begin{center}
+\framebox[0.7\textwidth][c]{
+\rule{0pt}{4cm}
+\textcolor{midgray}{[Trade-off Visualization]}
+}
+\end{center}
+
+\bottomnote{Recommendation: One sentence guidance}
+\end{frame}
+
+% ==================== LAYOUT 19: TIMELINE (VISUAL-FIRST) ====================
+\begin{frame}[t]{Project Timeline}
+\begin{center}
+\framebox[0.95\textwidth][c]{
+\rule{0pt}{6cm}
+\textcolor{midgray}{[Gantt Chart: Phases 1-4 with milestones]}
+}
+\end{center}
+
+\vspace{0.5em}
+\textbf{Key Milestones:} Prototype (Week 6), Beta (Week 15), Launch (Week 18)
+
+\bottomnote{Generate timeline charts using Python}
+\end{frame}
+
+% ==================== LAYOUT 20: REFERENCES (SIMPLIFIED) ====================
+\begin{frame}[t,shrink=10]{References and Resources}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Primary Sources}
+\begin{itemize}
+\item Author (2024): \textit{Main Title}
+\item Researcher (2023): \textit{Key Paper}
+\item Expert (2023): \textit{Foundation}
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Online Resources}
+\begin{itemize}
+\item Official documentation
+\item Video tutorials
+\item Community forums
+\end{itemize}
+\end{columns}
+
+\vspace{0.5em}
+\begin{center}
+\framebox[0.6\textwidth][c]{
+\rule{0pt}{3cm}
+\textcolor{midgray}{[QR Code to Resources]}
+}
+\end{center}
+
+\bottomnote{Curated resources accelerate learning}
+\end{frame}
+
+% ==================== SECTION: DATA VISUALIZATION ====================
+\section{Data Visualization}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Data Visualization\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+% ==================== LAYOUT 21: FULL-SIZE CHART (FIXED) ====================
+\begin{frame}[t]{Full-Size Chart Layout}
+\begin{center}
+\framebox[0.95\textwidth][c]{
+\rule{0pt}{6cm}
+\textcolor{midgray}{[Full-Size Chart/Visualization]}
+}
+\end{center}
+
+\bottomnote{Key insight from the visualization}
+\end{frame}
+
+% ==================== LAYOUT 22: CHART WITH EXPLANATIONS ====================
+\begin{frame}[t]{Chart with Bottom Explanations}
+\begin{center}
+\framebox[0.95\textwidth][c]{
+\rule{0pt}{5cm}
+\textcolor{midgray}{[Main Chart/Visualization]}
+}
+\end{center}
+
+\vspace{0.5em}
+\textbf{Key Observations:}
+\begin{itemize}
+\item Trend 1: First pattern or insight
+\item Trend 2: Second pattern or insight
+\item Trend 3: Third pattern or insight
+\end{itemize}
+
+\bottomnote{Methodology notes about the data}
+\end{frame}
+
+% ==================== NEW SECTION: MULTI-CHART LAYOUTS ====================
+\section{Multi-Chart Layouts}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Multi-Chart Layouts\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+% ==================== LAYOUT 23: DUAL CHARTS SIDE-BY-SIDE ====================
+\begin{frame}[t]{Dual Chart Comparison}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{center}
+\textbf{Chart A Title}\\[0.3em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{5.5cm}
+\textcolor{midgray}{[Chart A]}
+}
+\end{center}
+
+\column{0.48\textwidth}
+\begin{center}
+\textbf{Chart B Title}\\[0.3em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{5.5cm}
+\textcolor{midgray}{[Chart B]}
+}
+\end{center}
+\end{columns}
+
+\bottomnote{Direct visual comparison of two related visualizations}
+\end{frame}
+
+% ==================== LAYOUT 24: 2x2 CHART GRID ====================
+\begin{frame}[t]{Multi-Panel Chart Grid}
+\vspace{-0.5em}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{center}
+\textbf{Panel A}\\[0.1em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{2.6cm}
+\textcolor{midgray}{[Chart A]}
+}
+\end{center}
+
+\vspace{0.1em}
+\begin{center}
+\textbf{Panel C}\\[0.1em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{2.6cm}
+\textcolor{midgray}{[Chart C]}
+}
+\end{center}
+
+\column{0.48\textwidth}
+\begin{center}
+\textbf{Panel B}\\[0.1em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{2.6cm}
+\textcolor{midgray}{[Chart B]}
+}
+\end{center}
+
+\vspace{0.1em}
+\begin{center}
+\textbf{Panel D}\\[0.1em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{2.6cm}
+\textcolor{midgray}{[Chart D]}
+}
+\end{center}
+\end{columns}
+
+\bottomnote{Small multiples pattern for comprehensive overview}
+\end{frame}
+
+% ==================== LAYOUT 25: VERTICAL STACKED CHARTS ====================
+\begin{frame}[t]{Vertical Chart Sequence}
+\vspace{-0.5em}
+\begin{center}
+\textbf{Top: Overview Metric}\\[0.1em]
+\framebox[0.9\textwidth][c]{
+\rule{0pt}{2.8cm}
+\textcolor{midgray}{[Chart 1: Primary Visualization]}
+}
+\end{center}
+
+\vspace{0.1em}
+
+\begin{center}
+\textbf{Bottom: Detail Breakdown}\\[0.1em]
+\framebox[0.9\textwidth][c]{
+\rule{0pt}{2.8cm}
+\textcolor{midgray}{[Chart 2: Detailed Analysis]}
+}
+\end{center}
+
+\bottomnote{Hierarchical: overview followed by detail}
+\end{frame}
+
+% ==================== LAYOUT 26: CHART WITH SIDE TABLE ====================
+\begin{frame}[t]{Chart with Supporting Data}
+\begin{columns}[T]
+\column{0.65\textwidth}
+\begin{center}
+\framebox[\columnwidth][c]{
+\rule{0pt}{6cm}
+\textcolor{midgray}{[Main Visualization]}
+}
+\end{center}
+
+\column{0.31\textwidth}
+\textbf{Key Statistics}
+
+\begin{table}[h]
+\footnotesize
+\begin{tabular}{lr}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Mean & 42.5 \\
+Median & 41.2 \\
+StdDev & 8.3 \\
+N & 1,250 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3em}
+\textbf{Legend}
+\begin{itemize}
+\item[\textcolor{mlblue}{$\blacksquare$}] Series A
+\item[\textcolor{mlorange}{$\blacksquare$}] Series B
+\end{itemize}
+\end{columns}
+
+\bottomnote{Combine visualization with quantitative summary}
+\end{frame}
+
+% ==================== LAYOUT 27: TRIPLE CHART HORIZONTAL ====================
+\begin{frame}[t]{Three-Way Visual Comparison}
+\begin{columns}[T]
+\column{0.31\textwidth}
+\begin{center}
+\textbf{Scenario 1}\\[0.2em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{5cm}
+\textcolor{midgray}{[Chart 1]}
+}
+\end{center}
+
+\column{0.31\textwidth}
+\begin{center}
+\textbf{Scenario 2}\\[0.2em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{5cm}
+\textcolor{midgray}{[Chart 2]}
+}
+\end{center}
+
+\column{0.31\textwidth}
+\begin{center}
+\textbf{Scenario 3}\\[0.2em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{5cm}
+\textcolor{midgray}{[Chart 3]}
+}
+\end{center}
+\end{columns}
+
+\vspace{0.3em}
+\textbf{Insight:} Key differences across scenarios
+
+\bottomnote{Side-by-side enables pattern recognition}
+\end{frame}
+
+% ==================== LAYOUT 28: BEFORE/AFTER COMPARISON ====================
+\begin{frame}[t]{Before/After Analysis}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{center}
+\textbf{Before: Baseline}\\[0.3em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{5cm}
+\textcolor{midgray}{[Before State]}
+}
+\end{center}
+
+Metric A: 45.2\\
+Metric B: 23.8
+
+\column{0.48\textwidth}
+\begin{center}
+\textbf{After: Post-Intervention}\\[0.3em]
+\framebox[\columnwidth][c]{
+\rule{0pt}{5cm}
+\textcolor{midgray}{[After State]}
+}
+\end{center}
+
+Metric A: 52.7 \textcolor{mlgreen}{(+16.6\%)}\\
+Metric B: 19.3 \textcolor{mlgreen}{(-18.9\%)}
+\end{columns}
+
+\bottomnote{Visualizing change reveals intervention effectiveness}
+\end{frame}
+
+\end{document}

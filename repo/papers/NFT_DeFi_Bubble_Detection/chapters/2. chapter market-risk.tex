@@ -1,0 +1,927 @@
+% !TEX root = ../main.tex
+%
+%************************************************
+% Title of chapter Model
+%************************************************
+% \chapter \section \subsection \subsubsection \paragraph
+\chapter{Detecting Price Bubble Formation in NFT and DeFi Markets}
+\label{sec:chapter2}
+
+
+\begin{chapterabstract}
+Digital asset markets, including those for non-fungible tokens (NFTs) and decentralized finance (DeFi) instruments, have expanded rapidly and are commonly viewed as highly speculative. This chapter examines the extent and timing of price bubbles in these markets. Using daily USD prices for two capitalization-weighted benchmarks (the NFT Index and the DeFi Pulse Index), alongside major infrastructure coins and DeFi-related tokens, we apply the supremum augmented Dickey--Fuller (SADF) and generalized SADF (GSADF) tests to detect and date-stamp mildly explosive episodes. A log-periodic power-law singularity (LPPLS) framework is used as a robustness check. All assets considered display recurrent bubble regimes, but with cross-sectional differences. The DeFi index spends more time in bubble states than the NFT index, but NFT-related benchmarks and cryptocurrency tokens exhibit stronger and larger average intra-bubble price swings. Exuberant periods cluster around three phases: the “DeFi Summer” of 2020, the broad crypto and DeFi boom in early 2021, and an NFT-centered bull run in late 2021. Co-occurrence patterns and a simple liquidity analysis indicate that bubbles coincide with elevated trading activity and show synchronized exuberance. We also document extended intervals with no explosive price behavior.
+\end{chapterabstract}
+
+
+\begin{chaptercredit}
+This chapter is based on and extends work from: Wang, Y., Horky, F., Baals, L. J., Lucey, B. M., \& Vigne, S. A. (2022). Bubbles all the way down? Detecting and date-stamping bubble behaviours in NFT and DeFi markets. \emph{Journal of Chinese Economic and Business Studies}, 20(4), 415--436.
+\end{chaptercredit}
+
+\clearpage
+
+\section{Introduction}
+\label{Introduction_chp2}
+
+Episodes of sharp price run-ups followed by abrupt collapses are a recurring phenomenon in financial history. Although investors do not intend to be the marginal buyer at the peak of a boom phase, the interactions between market narratives, leverage, and herding routinely generate speculative cycles. In recent years, these dynamics have increasingly migrated into digital asset markets. NFTs and DeFi instruments, in particular, have grown from niche experiments into sizable market segments, with periods of explosive growth in capitalization and trading activity. This prompts the question of whether these markets are characterized by recurrent speculative bubbles and, if so, how these bubbles compare across segments and over time.\par
+
+NFTs and DeFi tokens occupy distinct, albeit closely connected, positions within the digital asset ecosystem. NFTs are noninterchangeable claims recorded on blockchains and are typically linked to digital artwork, collectibles, virtual land, or other tokenized objects. DeFi tokens, in contrast, are fungible instruments that represent claims on, or governance rights over, protocols that perform lending, trading, and other financial services via smart contracts.\footnote{For detailed discussions of the technological and economic underpinnings of NFTs and DeFi, see \citet{Lucey2021,wang_volatility_2022}.} Both markets build on existing cryptocurrency infrastructures---most prominently Ethereum (ETH)---but differ in their cash-flow characteristics, user bases, and microstructure. NFTs are thinly traded, highly heterogeneous assets, whereas DeFi tokens trade on continuous markets and are often used as collateral or liquidity-provision instruments. These differences suggest that speculative regimes may manifest in distinct ways in the NFT and DeFi segments, even if they are exposed to common macroeconomic and crypto-specific shocks.\par
+
+A large body of empirical literature has documented bubble-like behavior in conventional cryptocurrencies using right-tailed unit-root tests and related techniques \citep[see, among many others,][]{Corbet201881,bouri_co-explosivity_2019,geuder_cryptocurrencies_2019,kyriazis2020,wang_revisit_2022}. In comparison, systematic evidence for NFT and DeFi markets is relatively sparse. Existing contributions typically focus on short windows around the COVID-19 pandemic or on small sets of representative assets. \citet{maouchi_understanding_2022}, for example, apply the GSADF framework to selected DeFi tokens and NFTs and report bubble episodes around the “DeFi Summer” of 2020. \citet{dowling_fertile_2022} and \citet{karim_examining_2022} examine pricing inefficiencies and spillovers in metaverse and DeFi tokens, whereas \citet{guo_bubbles_2025} extend GSADF tests to a range of NFT collections and subsegments. These studies suggest that NFT and DeFi markets are prone to speculative episodes, but they typically rely on handpicked assets, cover relatively short sample periods, and do not model the joint evolution of bubble regimes across segments, their magnitudes, and their interaction with market liquidity.\par
+
+This chapter presents a comprehensive analysis of price explosivity in markets for NFTs and DeFi instruments over an extended sample period from each token's inception up to October 2025. To represent the two segments at an aggregate level, we employ the NFT Index (NFTI) and the DeFi Pulse Index (DPI), which are both capitalization-weighted composites of major NFTs and DeFi-related tokens. To capture the behavior of bubbles at a more granular level, we further include four large smart-contract platforms that host a substantial share of NFT and DeFi activity---ETH, Binance Coin (BNB), Solana (SOL), and Cardano (ADA)---as well as four major DeFi-linked tokens, namely, Uniswap (UNI), Avalanche (AVAX), Wrapped Bitcoin (WBTC), and Chainlink (LINK). All series are sampled at a daily frequency in USD from their inception dates up to late 2025, which allows us to study several boom--bust cycles, including the 2020--2021 DeFi/NFT expansion, the subsequent corrections, and later phases of renewed exuberance.\par
+
+Methodologically, the analysis is anchored in the recursive right-tailed unit-root frameworks of \citet{phillips_explosive_2011,phillips_testing_2015}, hereafter referred to as the PWY and PSY frameworks, respectively. For each asset, we compute SADF and GSADF statistics using finite-sample critical values obtained by Monte Carlo simulation under a random-walk null with an asymptotically negligible drift. The associated date-stamping procedures deliver sequences of bubble intervals. To focus on robust episodes of explosiveness, we retain only those periods for which the SADF and GSADF procedures overlap for at least seven consecutive trading days; we treat the intersection as a joint bubble indicator. Building on these joint episodes, we document the frequency, durations, and magnitudes of bubbles across all assets, construct measures of co-occurrence that quantify how often exuberant regimes arise simultaneously across pairs of series, and analyze the temporal clustering of such joint bubbles.\par
+
+An important contribution of this chapter is linking bubble regimes to market liquidity. Using daily trading volumes, we construct simple liquidity proxies based on $\log(1+\text{volume})$ and examine how they behave inside and outside the identified joint bubble intervals. Price--volume panels for NFTI, DPI, and the major cryptocurrencies, together with formal mean-comparison tests, show that bubble periods are systematically associated with surges in trading activity, rather than arising in thin or illiquid markets. We also investigate whether bubble regimes tend to occur in isolation or as part of broader market-wide waves of exuberance. For this, we study the co-explosivity patterns between NFT/DeFi benchmarks and the main infrastructure-related cryptocurrency tokens.\par
+
+To assess the robustness of the PSY-based results, we complement the SADF and GSADF diagnostics with a structurally distinct bubble model, the LPPLS specification. This framework is estimated on rolling windows of logarithmic prices, and the resulting ensemble of local fits is summarized in the form of positive and negative LPPLS confidence indicators. These yield an independent set of positive (run-up) and negative (crash) bubble intervals. Comparing the time periods identified using LPPLS with the joint SADF--GSADF episodes shows that the strongest PSY bubbles coincide with periods characterized by high LPPLS confidence, both during the DeFi/NFT boom of 2020--2021 and in later cycles. The alignment between these two conceptually distinct approaches provides strong evidence that NFT and DeFi markets experience phases of recurrent price bubbles.\par
+
+The findings of this chapter are relevant for several categories of stakeholders. For investors and risk managers, the evidence that NFT and DeFi segments exhibit recurrent and sometimes synchronized bubble episodes, often accompanied by sharp increases in trading activity, implies that it is important to monitor regime shifts when designing allocation, leverage, and collateral policies. For regulators and policymakers, particularly in jurisdictions where digital assets are increasingly accessible to retail investors or used in cross-border payments, identified emerging price bubbles can be publicized to foster macroprudential discussions. This is of particular interest for developing economies, where the rapid adoption of digital financial technologies coincides with less developed supervisory frameworks and where boom--bust cycles in speculative markets can spill over more easily into the real economy.\par
+
+This chapter proceeds as follows. Section~\ref{Literature_review_chp2} reviews the literature on speculative bubbles in financial and digital asset markets and outlines the main research hypothesis. Section~\ref{Data_chp2} describes the data and the construction of the indices and asset series. Section~\ref{Methodology_chp2} sets out the econometric framework for bubble detection and robustness analysis. Section~\ref{Results_and_Discussion_chp2} presents the empirical results on the frequency, timing, magnitude, and liquidity of bubble episodes, together with the LPPLS robustness checks. Section~\ref{Conclusion_chp2} summarizes the main findings and discusses their implications for investors and policymakers.\par
+
+\section{Literature Review and Hypothesis Development}
+\label{Literature_review_chp2}
+
+The study of speculative bubbles has a long tradition in financial economics. Early contributions link deviations of asset prices from their discounted cash flows to violations of present-value relations and variance bounds \citep{leroy_present-value_1981,west1987specification}, whereas rational bubble models show how prices can exhibit explosive dynamics even when agents follow rational expectations \citep{tirole_possibility_1982,tirole_asset_1985}. Historical accounts document recurring booms and crashes across centuries and asset classes \citep{ferguson2008ascent,kindleberger2011manias}, and empirical work has identified bubble episodes in markets for equities \citep{pastor2009,phillips_explosive_2011}, housing \citep{jorda2015,sharma2018identifying}, and commodities such as oil and precious metals \citep{ozgur_detecting_2021,caspi_date_2018}, as well as broad stock indices \citep{Zhang2016126}. These strands of research have motivated formal econometric tests for explosive behavior and crash timing, ranging from Markov-switching unit-root frameworks \citep{hall1999detecting} to LPPLS specifications for critical points \citep{johansen2000crashes,Zhou2003543,filimonov_modified_2017}.\par 
+
+With the emergence of cryptocurrencies, these methods have increasingly been applied to digital assets, whose fundamentals are often perceived as opaque or evolving. Early work on Bitcoin documents feedback loops between socioeconomic signals and price dynamics \citep{Garcia2014} and finds that price swings are amplified by changes in sentiment, as proxied, for instance, by implied volatility indices \citep{macdonell_popping_2014}. \citet{cheah_speculative_2015} argue that dramatic price run-ups in Bitcoin are difficult to reconcile with fundamentals and that its intrinsic value may be close to zero, whereas \citet{urquhart_inefficiency_2016} points to substantial deviations from market efficiency that gradually diminish as the market matures. Nonetheless, equilibrium-based analyses show that even when transactional benefits are explicitly modeled, a sizable fraction of cryptocurrency price variation can be attributed to extrinsic volatility or sunspots \citep{biais_equilibrium_2023}. 
+From a market-structure perspective, both long-run coin-mining costs \citep{kristoufek_bitcoin_2020} and the mechanics of proof-of-work protocols \citep{lambrecht_does_2025} have been shown to interact with prices in ways that can fuel exuberant price dynamics, especially when mining capacity is concentrated.\par
+
+Several empirical studies focus on identifying and dating bubble episodes in cryptocurrency prices using right-tailed unit-root tests and LPPLS-type models. 
+The GSADF and related SADF procedures \citep{phillips_testing_2015,phillips_explosive_2011} have become accepted methods for detecting multiple explosive episodes and providing associated date stamps of price bubbles. Applying this framework, researchers find recurrent exuberance in Bitcoin and other major coins such as ETH, Litecoin, and Ripple \citep{Su201856,jacobs_detection_2023,kong_comparative_2024,yamaguchi_detecting_2025,Cagli2019398,wang_revisit_2022,Waters2022207}. Complementary studies combine GSADF diagnostics with LPPLS crash modeling to examine whether the timing and shape of major corrections are consistent with speculative bubble regimes \citep{yao_study_2021,shu_real-time_2020,song_2020_2022,zhang_cryptocurrency_2024}. In the context of Bitcoin, several scholars document a rich multiscale bubble history for Bitcoin between 2012 and 2018, consisting of several long- and short-lived episodes of explosiveness \citep{gerlach2019dissection, geuder_cryptocurrencies_2019}. \citet{bouri_co-explosivity_2019} focus on co-explosivity patterns among highly capitalized cryptocurrencies. A recent systematic review concludes that multiple bubble phases have occurred across major digital currencies and that augmented Dickey--Fuller (ADF) and LPPLS methods dominate empirical practice in this field \citep{kyriazis2020}.\par
+
+More recent contributions obtain a deeper understanding of the drivers and consequences of these bubble phases. Sentiment-based econometric frameworks show that speculative regimes in cryptocurrency indices can be linked to shifts in investor mood and news flow \citep{chen2019} and that social media or attention proxies often precede explosive price behavior \citep{shahzad_price_2022}. \citet{ben_osman_are_2024} combine GSADF tests with wavelet-based co-movement analysis to show that bubble periods in Bitcoin, ETH, DPI, and the CRIX crypto index frequently coincide with phases of heightened sentiment in equity, gold, and crypto markets, with fear--greed indices for cryptocurrencies exerting a particularly strong influence. \citet{kong_comparative_2024} demonstrate that Bitcoin exhibits more frequent and longer-lasting bubble episodes than several of its forked coins, whereas \citet{yamaguchi_detecting_2025} documents asset-specific structural breaks in Bitcoin, ETH, and DeFi-related tokens using GSADF tests on high-frequency data. From a risk-management perspective, \citet{jacobs_detection_2023} shows that bubble regimes can materially inflate value-at-risk measures and amplify model risk, implying that cryptocurrencies may act as \emph{anti}-diversifiers in stressed market conditions. These findings are synthesized in a broader review by \citet{jheng_cryptocurrencies_2025} that places digital assets within the evolving financial landscape and discusses their implications for asset allocation, index construction, and valuation.\par
+
+NFTs and DeFi assets represent a newer layer of the digital ecosystem. NFTs tokenize digital or physical items and trade on specialized marketplaces, whereas DeFi protocols provide lending, trading, and other financial services via smart contracts. Both segments share technological foundations with cryptocurrencies, but they differ markedly in their cash-flow structures, user bases, and market microstructures. Recent empirical work examines basic market properties such as liquidity, pricing determinants, and interlinkages with the broader crypto universe. \citet{Nadini2021} map NFT trade networks and market concentration, and \citet{dowling_fertile_2022,fridgen_pricing_2025} consider the role of liquidity, trading volume, and artist or collection ``superstar'' effects in NFT pricing. Wavelet and connectedness analyses suggest that NFTs and DeFi tokens are only partially integrated with major cryptocurrencies and traditional assets \citep{gunay_frequency_2023,ko_non-fungible_2024}, often providing diversification benefits in extreme market conditions. However, several studies point to pronounced herding behavior in these markets \citep{bouri2019,youssef2022,bao_herding_2023,fridgen_pricing_2025}, with event-driven inflows of inexperienced investors and ETH price increases acting as catalysts for coordinated trading in particular NFT collections \citep{bao_herding_2023}. In related work,  \citet{wang_index_2022,wang_volatility_2022} construct indices of crypto uncertainty and environmental attention to capture broader risk perceptions surrounding digital assets.\par 
+
+Only a small subset of this emerging literature explicitly studies price bubbles in NFT and DeFi markets. \citet{maouchi_understanding_2022} analyze DeFi tokens and NFTs during the COVID-19 pandemic and report digital bubbles whose timing and magnitude differ from those observed in major cryptocurrencies, whereas \citet{dowling_fertile_2022} provides early evidence of pricing inefficiencies and bubble-like behavior in metaverse-related land NFTs. \citet{corbet_are_2023} apply GSADF tests to both conventional and DeFi-focused cryptocurrencies and find multiple bubble episodes across assets, but with comparatively more stable prices in DeFi-oriented tokens and spillover patterns that are more tightly linked to ETH than to Bitcoin. More recently, \citet{guo_bubbles_2025} employ the GSADF framework to identify bubbles across NFT market indices, subsegments, and related cryptocurrencies, showing that NFT bubbles are strongly synchronized with cryptocurrencies in several periods and that sentiment indicators such as the Chicago Board Options Exchange Volatility Index (VIX), global economic policy uncertainty, and Google Trends have heterogeneous effects on NFT exuberance. Taken together, the evidence suggests that NFT and DeFi markets are prone to speculative regimes, shaped by their market structures as well as cross-asset linkages and sentiment, but there are few studies that systematically date-stamp and compare bubble episodes across these segments. Most contributions focus either on specific collections, protocol tokens, short time windows, or broader diversification or connectedness analyses.\par
+
+This chapter seeks to contribute to the literature along two dimensions. First, we extend the application of recursive right-tailed unit-root tests and LPPLS-type diagnostics from major cryptocurrencies to NFT and DeFi markets, allowing for a systematic detection and date-stamping of speculative episodes across multiple indices and representative assets. Second, by comparing the frequency, durations, and magnitudes of bubble periods across NFT and DeFi token markets and relating them to well-known boom--bust episodes in digital finance, we provide new evidence on the extent to which these markets exhibit distinct speculative regimes or share common drivers with the broader crypto sector. In line with the emerging empirical findings summarized above, we propose the following research hypothesis:
+\begin{quotation}
+\noindent $H_{1}$: Phases of exuberance and price bubble formation do exist in NFT and DeFi markets, as well as infrastructure-related cryptocurrencies.
+\end{quotation}
+
+\clearpage
+
+\section{Data}
+\label{Data_chp2}
+
+We utilize two market indices, NFTI\footnote{NFTI summarizes the overall performance of the NFT market: Its constituents, which are major NFT-related projects, are weighted according to their market capitalization.} and DPI,\footnote{DPI tracks the financial performance of highly capitalized DeFi instruments, weighted by market value.} to mirror markets related to NFTs and DeFi tokens, respectively. These indices provide sufficient coverage of the respective markets for a thorough analysis of price explosiveness. In addition, several major tokens linked to DeFi and to the broader NFT/DeFi infrastructure are included to study bubble behavior at a more granular level. Following market capitalization and trading-activity criteria---UNI, AVAX, WBTC, and LINK---are selected as representative DeFi assets. Moreover, four large smart-contract platforms whose blockchains host a substantial share of NFT and DeFi activity are included: ETH, BNB, SOL, and ADA\@. These assets provide the base-layer infrastructure and various ecosystem services (such as settlement, execution, and transaction fee tokens) that underpin the NFT and DeFi markets. The resulting sample therefore covers two composite indices (NFTI, DPI), four DeFi tokens (UNI, AVAX, WBTC, LINK), and four infrastructure-related cryptocurrencies (ETH, BNB, SOL, ADA). Daily USD price series for NFTI are obtained from WorldCoinIndex\footnote{\url{https://www.worldcoinindex.com}}, whereas DPI and the individual DeFi instruments, as well as infrastructure cryptocurrencies, are retrieved from CoinGecko\footnote{\url{https://www.coingecko.com}}.\par
+
+All assets are priced in USD and observed daily. For each asset, the sample period starts at the earliest available observation in the database and runs up to 31 October 2025 to capture the full set of price episodes over the life of these instruments. When a common time span across assets is required in the empirical analysis, the data are restricted to the corresponding overlapping period. The econometric tests for price bubbles are applied directly to the level series $p_t$. Because the SADF and GSADF procedures require that the tested series behaves as an I(1) process under the null and becomes mildly explosive under the alternative, this specification is valid if the prices themselves follow such dynamics.\footnote{Formally, the PWY and PSY frameworks are defined for a generic series $y_t$ that is I(1) under the null \citep{phillips_dating_2011,phillips_testing_2015}.} In addition to prices, daily trading volumes (in USD) are collected from the same sources and later used as simple liquidity proxies when comparing market conditions inside and outside identified bubble periods.\par
+
+Descriptive statistics for all series are reported in \autoref{Descriptive statistics}. All the asset prices follow distributions characterized by high unconditional volatility, pronounced skewness, and substantial excess kurtosis. Ljung--Box statistics indicate strong serial dependence, and Jarque--Bera tests reject normality in all cases. These features are in line with the behavior typically documented for crypto-asset markets and justify the use of methods designed to detect episodes of mild explosiveness in otherwise highly volatile price paths.\par
+
+
+%\begin{center}
+%[PLEASE INSERT \autoref{Descriptive statistics} HERE]
+%\end{center}
+
+\begin{table}[htb]
+\renewcommand\arraystretch{1}
+\caption{Descriptive statistics}
+\label{Descriptive statistics}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c c c c c c}
+\hline \hline
+\textbf{Panel A: NFT and crypto assets} & & & &\\
+\hline
+& NFTI & ETH & BNB & ADA & SOL\\
+\hline
+Start point & 2021-03-07 & 2015-08-07 & 2017-09-16 & 2017-10-18 & 2020-04-11 \\
+
+Observations & 1,700 & 3,738 & 2,966 & 2,936 & 2,030\\
+
+Mean & 645.87 & 1,305.04 & 269.12 & 0.50 & 84.65\\
+
+Minimum & 79.04 & 0.43 & 0.04 & 0.02 & 0.51\\
+
+Maximum & 4,452.82 & 4,829.23 & 1,311.71 & 2.97 & 262.56\\
+
+Range & 4,373.79 & 4,828.79 & 1,311.67 & 2.95 & 262.05\\
+
+Standard deviation & 721.99 & 1,318.45 & 263.27 & 0.52 & 74.73\\
+
+Mean absolute deviation & 321.90 & 1,011.79 & 339.33 & 0.41 & 65.38\\
+
+Skewness & 2.33 & 0.75 & 0.79 & 1.79 & 0.50\\
+
+Kurtosis & 8.46 & 2.32 & 3.05 & 6.62 & 1.82\\
+
+Standard error & 17.51 & 21.56 & 4.83 & 0.01 & 1.66\\
+
+Ljung--Box statistic & 16,371.95$^{***}$ & 36,547.57$^{***}$ & 28,708.38$^{***}$ & 28,430.39$^{***}$ & 19,603.84$^{***}$\\
+
+Jarque--Bera statistic & 3,654.55$^{***}$ & 419.45$^{***}$ & 312.75$^{***}$ & 3,173.34$^{***}$ & 199.98$^{***}$\\
+\hline
+\textbf{Panel B: DeFi assets} & & & &\\
+\hline
+& DPI & UNI & AVAX & WBTC & LINK\\
+\hline
+Start point & 2020-09-14 & 2020-09-17 & 2020-09-22 & 2019-02-01 & 2017-11-09 \\
+
+Observations & 1,874 & 1,871 & 1,866 & 2,465 & 2,914\\
+
+Mean & 149.83 & 10.53 & 30.21 & 40,666.17 & 10.64\\
+
+Minimum & 53.83 & 1.93 & 2.91 & 3,139.17 & 0.15\\
+
+Maximum & 628.52 & 42.88 & 134.47 & 124,798.90 & 51.85\\
+
+Range & 574.69 & 40.96 & 131.56 & 121,659.70 & 51.70\\
+
+Standard deviation & 115.77 & 7.76 & 23.32 & 31,507.62 & 9.22\\
+
+Mean absolute deviation & 36.32 & 3.08 & 14.38 & 31,024.32 & 9.88\\
+
+Skewness & 1.74 & 1.76 & 1.75 & 0.92 & 0.91\\
+
+Kurtosis & 5.08 & 5.51 & 5.93 & 2.89 & 3.55\\
+
+Standard error & 2.67 & 0.18 & 0.54 & 634.61 & 0.17\\
+ 
+Ljung--Box statistic & 17,979.59$^{***}$ & 17,704.31$^{***}$ & 17,525.07$^{***}$ & 24,136.28$^{***}$ & 27,861.68$^{***}$\\
+
+Jarque--Bera statistic & 1,288.20$^{***}$ & 1,458.08$^{***}$ & 1,613.15$^{***}$ & 346.45$^{***}$ & 439.24$^{***}$\\
+\hline \hline
+\end{tabular}}
+\begin{tablenotes}
+\footnotesize
+\item Notes: The Ljung--Box statistics are the results of a portmanteau test of the joint null hypothesis of no serial correlation in the series. The Jarque--Bera statistics are the results of an omnibus test for departures from normality based on skewness and kurtosis. $^{*}p<0.1$. $^{**}p<0.05$. $^{***}p<0.01$. 
+\end{tablenotes}
+\end{table}
+\FloatBarrier
+
+\section{Methods}
+\label{Methodology_chp2}
+
+Empirical models for detecting asset price bubbles typically start from a standard asset pricing relation, which can be written as follows:
+\begin{equation}
+    \label{Asset pricing equation}
+    P_{t} = \sum^{\infty}_{i=0} \left(\frac{1}{1 + r_{f}} \right)^{i} \mathbb{E}_{t} \left(D_{t+i} + U_{t+i} \right) + B_{t},
+\end{equation}
+where $P_{t}$ denotes the ex-dividend price of the asset, $r_{f}$ is the risk-free rate, $\mathbb{E}_{t}(\cdot)$ is the expectation conditional on information at time $t$, $D_{t}$ is the payoff from holding the asset, and $U_{t}$ represents unobservable fundamental components. The term $B_{t}$ captures the bubble component and is assumed to satisfy the submartingale condition, $\mathbb{E}_{t}\!\left(B_{t+1}\right) = \left(1+r_{f}\right) B_{t}$. The corresponding fundamental price is then given by $P^{f}_{t} = P_{t} - B_{t}$.\par
+
+Under this decomposition, given the submartingale property of $B_{t}$, the degree of nonstationarity in prices is governed by the behavior of $D_{t}$ and $U_{t}$. When $U_{t}$ is at most I(1) and $D_{t}$ becomes stationary after differencing, the fundamental component $P^{f}_{t}$ is at most I(1). In contrast, the presence of a nonzero $B_{t}$ implies that the observed price $P_{t}$ (or, equivalently, the price--dividend ratio) displays explosive dynamics. A wide range of econometric approaches has been proposed to identify such explosive behavior and to infer the bubble term in \autoref{Asset pricing equation} \citep[see, e.g.,][]{hall1999detecting,cochrane2005asset,fry_negative_2016,Cretarola2021459,ben_osman_are_2024}. However, as outlined by \citet{phillips_limit_2007}, irrespective of the specific modeling framework, explosive or mildly explosive behavior in asset prices can be seen as a key empirical characteristic of bubbles. In particular, recursive right-tailed unit-root tests provide an effective way to detect such episodes of exuberance and to date-stamp their occurrence in financial time series \citep{phillips_explosive_2011}.\par
+
+In accordance with PWY \citep{phillips_explosive_2011} and PSY \citep{phillips_testing_2015}, we adopt as the null hypothesis a martingale model for prices with an asymptotically negligible drift, which allows for a small deterministic component without affecting the order of magnitude of the process. This null can be written as
+\begin{equation}
+    \label{Asymptotically negligible drift}
+    y_{t} = dT^{-\eta} + \theta y_{t-1} + \varepsilon_{t}, \qquad \varepsilon_{t} \sim^\text{iid} (0, \sigma^{2}), \quad \theta = 1,
+\end{equation}
+where $d$ is a constant, $T$ is the sample size, and $\eta$ is a parameter that governs how quickly the drift and intercept vanish as $T$ grows. We impose the restriction $\eta > 1/2$ so that the deterministic component $dT^{-\eta}$ is asymptotically negligible relative to the stochastic trend. In particular, it does not affect the unit-root asymptotics, and the limiting distribution of the associated right-tailed ADF statistics is the same as under a driftless random-walk null. The disturbance $\varepsilon_{t}$ is an innovation term with constant variance.\par
+
+To operationalize bubble detection, we estimate a sequence of ADF regressions on rolling subsamples of the price series. The empirical ADF specification takes the form
+\begin{equation}
+\label{Empirical rolling window standard ADF regression}
+\Delta y_t = \alpha + \beta_{T} + \gamma y_{t-1} + \delta_{1} \Delta y_{t-1} + \dots + \delta_{p-1} \Delta y_{t-p+1} + \varepsilon_{t},
+\end{equation}
+where $\alpha$ is an intercept, $\beta_{T}$ collects the deterministic trend component over the sample, $\gamma$ is the coefficient on the lagged level, and $\delta_{1},\dots,\delta_{p-1}$ capture short-run autoregressive dynamics up to lag order $p$. The error term $\varepsilon_{t}$ is assumed to be covariance stationary. The test is conducted against a right-tailed alternative, with null and alternative hypotheses
+\begin{quotation}
+\noindent $H_{0}$: $\gamma = 1$
+\end{quotation}
+and
+\begin{quotation}
+\noindent $H_\text{A}$: $\gamma > 1$,
+\end{quotation}
+so that rejection of $H_{0}$ in favor of $H_\text{A}$ is interpreted as evidence of (mildly) explosive behavior in the price process.\par
+
+To describe the PWY and PSY testing methods more precisely, we first introduce some notation. Let $T$ denote the sample size, and let us normalize time such that the sample spans the interval $[0,1]$. For any subsample $[c_{1},c_{2}] \subset [0,1]$, the estimated coefficient on $y_{t-1}$ in \autoref{Empirical rolling window standard ADF regression} is written as $\gamma_{c_{1},c_{2}}$ and the associated ADF test statistic as $\text{ADF}_{c_{1},c_{2}}$. The parameter $c_{w}$ determines the window length of a given regression, with $c_{0}$ representing the fixed minimal start window size. The fractional parameter $c_{1}$ acts as the initialization point of a particular rolling window, and $c_{2}$ is its endpoint, so that $c_{2} = c_{1} + c_{w}$.\par
+
+Building on \autoref{Empirical rolling window standard ADF regression}, we can define a simple right-tailed ADF unit-root test over the full sample, a rolling ADF (RADF) statistic, and SADF and GSADF test statistics, as used in the PWY and PSY methods, respectively. The SADF and GSADF procedures are commonly found to have greater power to detect explosive behavior than a single ADF test estimated on the full sample \citep{phillips_explosive_2011,phillips_testing_2015}. By conducting experiments in a Monte Carlo framework, \citet{homm2012testing} demonstrate that the SADF statistic performs particularly well when there is a single periodically collapsing bubble, whereas the GSADF statistic dominates in settings with multiple episodes of exuberance and collapse. In practice, therefore, many empirical studies report both SADF and GSADF statistics and compare them to identify and validate bubble periods \citep[see, e.g., for selected digital assets,][]{Li20211829, kong_comparative_2024, corbet_are_2023}. Since DeFi and NFT markets are relatively young and do not yet exhibit long histories of clearly separated bull and bear cycles, the presence of repeated, well-separated collapse episodes cannot be taken for granted. For this reason, we rely on both the SADF and GSADF statistics to detect and date price bubbles in our sample.\par
+
+The SADF test can be formulated as an ADF regression that follows a sequential estimation with a fixed starting fraction $c_{0}$ and an increasing window size $c_{w}$, which is defined in a finite interval from $c_{0}$ up to 1. Here, $c_{1} = 0$ represents the fixed start point, so each regression is run over the interval $[0,c_{2}]$ with $c_{2} = c_{w}$. As $c_{2}$ varies from $c_{0}$ to 1, we obtain a sequence of ADF statistics $\text{ADF}^{c_{2}}_{0}$. The SADF statistic is then defined as the supremum of this sequence over the admissible range of $c_{2}$,
+\begin{equation}
+    \label{SADF test}
+    \text{SADF} \left(c_{0} \right) = \sup \limits_{c_{2} \in [c_{0}, 1]} \text{ADF}^{c_{2}}_{0},
+\end{equation}
+so that the unit-root null is rejected when the maximum forward-recursive ADF value exceeds its right-tailed critical value. The GSADF test extends this approach by allowing both the start and end points of the regression window to vary. In particular, the starting fraction $c_{1}$ can take any value in $[0, c_{2} - c_{0}]$, while $c_{2}$ still ranges from $c_{0}$ to 1. The GSADF statistic is defined as
+\begin{equation}
+    \label{GSADF test}
+    \text{GSADF} \left(c_{0} \right) = \sup \limits_{c_{1} \in [0, c_{2} - c_{0}],\, c_{2} \in [c_{0}, 1]} \text{ADF}^{c_{2}}_{c_{1}},
+\end{equation}
+that is, as the supremum of all right-tailed ADF statistics computed over rolling windows with varying start and end points.\par
+
+The asymptotic distribution of the GSADF statistic is then derived under the martingale null expressed by \autoref{Asymptotically negligible drift}, following the approach of \citet{phillips_testing_2015}. In their continuous-time representation, letting $W(\cdot)$ denote a standard Brownian motion, the limit distribution can be written as
+\begin{equation}
+\label{GSADF test limit distribution}
+\operatorname*{sup}_{\substack{
+c_{1} \in [0,\, c_{2}-c_{0}]\\
+c_{2} \in [c_{0},\, 1]
+}}
+\left\{
+\frac{
+\left(\tfrac{1}{2}\right)c_{w}\!\left[W(c_{2})^{2}-W(c_{1})^{2}-c_{w}\right]
+-\left(\int_{c_{1}}^{c_{2}} W(c)\,dc\right)\!\left[W(c_{2})-W(c_{1})\right]
+}{
+c_{w}^{1/2}\left\{
+c_{w}\int_{c_{1}}^{c_{2}} W(c)^{2}\,dc
+-\left[\int_{c_{1}}^{c_{2}} W(c)\,dc\right]^{2}
+\right\}^{1/2}
+}
+\right\}.
+\end{equation}
+The relevant finite-sample critical values are obtained by simulation under this null and then used to assess whether the observed SADF and GSADF statistics provide evidence against the unit-root benchmark in favor of explosive dynamics. \citet{phillips_explosive_2011} and \citet{phillips_testing_2015} further demonstrate that the SADF and GSADF statistics can be complemented by a date-stamping procedure that delivers consistent estimators of the onset and termination of exuberant episodes.\par
+
+For the SADF-based dating scheme, the price series are first ordered chronologically and treated as a univariate time series. The sequence of forward-recursive ADF statistics $\text{ADF}^{c_{2}}_{0}$ is then compared, point by point, with the corresponding critical values of the ADF test. Let $T_{c_{s}}$ denote the estimated date at which a bubble starts and $T_{c_{e}}$ that at which it ends. In normalized time, the estimated starting fraction $\hat{c}_{s}$ is defined as the first $c_{2}$ at which $\text{ADF}^{c_{2}}_{0}$ crosses its critical value from below, and the estimated ending fraction $\hat{c}_{e}$ is the first $c_{2}$ after $\hat{c}_{s}$ at which $\text{ADF}^{c_{2}}_{0}$ falls back below that critical value. Formally, the corresponding start and end points of a bubble episode under the SADF procedure are given by
+\begin{equation}
+    \label{Start point of the estimated price bubble period SADF}
+    \hat{c}_{s} = \inf \limits_{c_{2} \in [c_{0}, 1]} \left\{c_{2}: \text{ADF}^{c_{2}}_{0} > cv^{\beta_{T}}_{c_{2}} \right\},
+\end{equation}
+\begin{equation}
+    \label{Endpoint of the estimated price bubble period SADF}
+    \hat{c}_{e} = \inf \limits_{c_{2} \in [\hat{c}_{s}, 1]} \left\{c_{2}: \text{ADF}^{c_{2}}_{0} < cv^{\beta_{T}}_{c_{2}} \right\},
+\end{equation}
+where $cv^{\beta_{T}}{c{2}}$ is the $100(1-\beta_{T})\%$ right-tail quantile of the conventional ADF statistic evaluated on $[T c_{2}]$ observations, and the sequence $\beta_{T}$ is chosen such that $\beta_{T} \to 0$ as $T \to \infty$.
+
+An analogous date-stamping approach can be constructed for the GSADF test. In that case, we work with the sequence of backward supremum ADF (BSADF) statistics $\text{BSADF}^{c_{2}}_{0}(c_{0})$ computed for each endpoint $c_{2} \in [c_{0},1]$ while holding the minimal window size $c_{0}$ fixed. Bubble episodes are again defined by comparing this sequence with its corresponding time-varying critical values. The estimated start and end fractions for a GSADF-based bubble period are
+\begin{equation}
+    \label{Start point of the estimated price bubble period GSADF}
+    \hat{c}_{s} = \inf \limits_{c_{2} \in [c_{0}, 1]} \left\{c_{2}: \text{BSADF}^{c_{2}}_{0}(c_{0}) > cv^{\beta_{T_{c_{2}}}}_{c_{2}} \right\},
+\end{equation}
+\begin{equation}
+    \label{Endpoint of the estimated price bubble period GSADF}
+    \hat{c}_{e} = \inf \limits_{c_{2} \in [\hat{c}_{s}, 1]} \left\{c_{2}: \text{BSADF}^{c_{2}}_{0}(c_{0}) < cv^{\beta_{T_{c_{2}}}}_{c_{2}} \right\},
+\end{equation}
+where $cv^{\beta_{T_{c_{2}}}}_{c_{2}}$ now denotes the $100(1-\beta_{T_{c_{2}}})\%$ upper (right-tail) critical value of the BSADF statistic associated with endpoint $c_{2}$. 
+By construction, the sequence of BSADF statistics $\text{BSADF}^{c_{2}}_{0}(c_{0})$ for $c_{2} \in [c_{0},1]$ attains its supremum at the GSADF statistic, so that
+
+\[
+\text{GSADF}(r_{0}) = \sup \limits_{c_{2} \in [c_{0}, 1]} \text{BSADF}^{c_{2}}_{0}(c_{0}).
+\]
+Thus, the global test for explosiveness and the local dating of bubble episodes can be performed within a unified framework.\par
+
+\section{Results and Discussion}
+\label{Results_and_Discussion_chp2}
+
+This section reports the empirical evidence from the PWY and PSY test frameworks for the selected infrastructure cryptocurrencies, as well as the two composite indices (NFTI and DPI) and DeFi tokens. The statistics for all series are summarized in \autoref{The SADF and the GSADF tests of NFT and DeFi assets}. Following \citet{phillips_testing_2015}, we compute right-tailed critical values at the 90\%, 95\%, and 99\% levels under a random-walk null. The critical values are obtained via Monte Carlo simulation with 2{,}000 replications. We further define the minimum window length according to the PSY rule, $c_{0} = 0.01 + 1.8/\sqrt{T}$. The tests are applied to the full available samples of the daily spot prices of NFTI, DPI, and the selected cryptocurrency-related and DeFi tokens. For every asset, both the SADF and GSADF statistics exceed the corresponding 1\% finite-sample critical value, indicating the existence of at least one episode of mildly explosive price dynamics in each series and providing support for hypothesis $H_{1}$ that digital token-related markets exhibit bubble-like subperiods.\par
+
+%\begin{center}
+%[PLEASE INSERT \autoref{The SADF and the GSADF tests of NFT and DeFi assets} HERE]
+%\end{center}
+
+\begin{table}[htb]
+\begingroup
+\centering
+\scriptsize
+\caption{SADF and GSADF tests of NFT, DeFi, and cryptocurrency assets} 
+\label{The SADF and the GSADF tests of NFT and DeFi assets}
+
+\setlength{\tabcolsep}{3pt}% smaller horizontal padding
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc}
+\hline \hline
+& & \multicolumn{3}{c}{Critical values (finite sample)} \\ 
+\cline{3-5}
+& Test statistic & 90\% & 95\% & 99\% \\
+\hline
+\textbf{Panel A: NFT and crypto-related assets SADF} & & &\\
+\hline
+NFTI       & 2.751563$^{***}$ & 1.268513 & 1.606036 & 2.167819\\
+ETH        & 15.035449$^{***}$& 1.345162 & 1.691985 & 2.187101\\
+SOL          & 9.111697$^{***}$ & 1.277576 & 1.651560 & 2.187101\\
+BNB       & 17.867992$^{***}$& 1.302098 & 1.670719 & 2.167819\\
+ADA         & 4.053469$^{***}$ & 1.302098 & 1.660620 & 2.167819\\
+\hline
+\textbf{Panel B: DeFi assets SADF} & & &\\
+\hline
+DPI& 4.917791$^{***}$ & 1.268513 & 1.619720 & 2.187101\\
+UNI         & 4.093435$^{***}$ & 1.268513 & 1.619720 & 2.187101\\
+AVAX       & 8.362902$^{***}$ & 1.265938 & 1.619720 & 2.187101\\
+WBTC & 7.110673$^{***}$ & 1.296656 & 1.632826 & 2.187101\\
+LINK       & 9.286755$^{***}$ & 1.300952 & 1.660620 & 2.167819\\
+\hline
+\textbf{Panel C: NFT and crypto-related assets GSADF} & & &\\
+\hline
+NFTI       & 9.590425$^{***}$ & 2.192814 & 2.445202 & 2.883562\\
+ETH        & 15.035449$^{***}$& 2.312936 & 2.511406 & 2.997434\\
+SOL          & 9.111697$^{***}$ & 2.225690 & 2.460973 & 2.894968\\
+BNB       & 18.291627$^{***}$& 2.270788 & 2.465249 & 2.917123\\
+ADA         & 13.410167$^{***}$& 2.269375 & 2.465249 & 2.927669\\
+\hline
+\textbf{Panel D: DeFi assets GSADF} & & &\\
+\hline
+DPI& 4.917791$^{***}$ & 2.203050 & 2.450272 & 2.890831\\
+UNI         & 5.516475$^{***}$ & 2.203050 & 2.450272 & 2.890831\\
+AVAX       & 8.362902$^{***}$ & 2.203050 & 2.450272 & 2.890831\\
+WBTC & 8.589005$^{***}$ & 2.237580 & 2.461217 & 2.917478\\
+LINK       & 9.286755$^{***}$ & 2.263881 & 2.464582 & 2.927669\\
+\hline \hline
+\end{tabular*}
+
+\begin{tablenotes}
+\footnotesize
+\item Notes: SADF and GSADF statistics are computed from recursive right-tailed ADF regressions on daily spot prices using the PSY framework. Finite-sample critical values at the 90\%, 95\%, and 99\% levels are obtained via Monte Carlo simulation with 2{,}000 replications under a random-walk null, with the minimum window length set according to $c_{0} = 0.01 + 1.8/\sqrt{T}$. $^{*}p<0.1$. $^{**}p<0.05$. $^{***}p<0.01$.
+\end{tablenotes}
+\endgroup 
+\end{table}
+
+\newpage
+
+Inspecting the asset-level bubble statistics in \autoref{Bubbles period of NFT and DeFi assets} yields several clear patterns. First, bubble activity is markedly heterogeneous across series. ETH has the largest share of bubble days in the sample, with approximately 19.53\% of observations classified as explosive by the SADF test and 11.61\% by the GSADF test. WBTC and SOL also spend substantial time in bubble regimes (with SADF coverages of 17.77\% and 14.09\%, respectively), indicating that the prominent, highly traded crypto assets that act as the foundation for most NFT and DeFi applications are particularly prone to extended episodes of exuberant pricing. The relatively high incidence of bubbles in WBTC is intuitive: As a tokenized, one-to-one Bitcoin wrapper that trades on the ETH network, it inherits the speculative dynamics of the underlying Bitcoin market while being embedded in the leverage- and DeFi-intensive ETH ecosystem, consistent with prior evidence of recurrent bubbles in major cryptocurrencies \citep[e.g.,][]{Corbet201881,hafner2020,kyriazis2020}.\par 
+
+Second, comparing the SADF- and GSADF-based coverage helps to distinguish assets dominated by a few persistent bubbles from those characterized by several shorter episodes. For NFTI, ETH, BNB, DPI, UNI, WBTC, and LINK, the fraction of bubble days identified by the SADF test is higher than under the GSADF test, suggesting that their explosiveness is concentrated in relatively long-lived regimes. In contrast, SOL, ADA, and AVAX display higher GSADF coverage, which is consistent with multiple distinct bursts of explosiveness that are more easily captured by the flexible window structure of the GSADF procedure \citep{phillips_testing_2015}. Third, of the two capitalization-weighted indices, DPI exhibits a higher proportion of bubble days than NFTI (SADF: 6.40\% vs.\ 2.41\%; GSADF: 3.26\% vs.\ 2.18\%), indicating that the DeFi segment as a whole is more frequently in an explosive state over the entire sample length. However, NFTI has somewhat larger average daily price changes (APC) within its bubble windows---with an APC  of 6.50\% under SADF and 5.91\% under GSADF, compared with 5.20\% and 5.47\% for DPI---suggesting that NFT markets experience more volatile intra-bubble dynamics even though bubble episodes occur less often overall. These patterns are broadly in line with recent evidence on pronounced digital bubbles in DeFi and NFT markets during the COVID-19 pandemic \citep{maouchi_understanding_2022,karim_examining_2022}.\par
+
+We next apply the real-time date-stamping procedure for both the SADF and GSADF tests; the resulting bubble intervals are reported in \autoref{Bubbles period of NFT and DeFi assets}. Plots of the corresponding test sequences against the recursive 95\% critical values are shown in Figures~\ref{fig:sadf-grid} and~\ref{Date-stamping bubble periods in the NFT and DeFi assets: the GSADF test}. The alignment of date-stamped episodes across assets reveals clear periods of exuberance. The earliest cluster appears around the ``DeFi Summer'' of 2020: SOL enters bubble regimes in August--September 2020 and LINK does so from mid-July to early September 2020, coinciding with the first sharp run-up in total value locked in DeFi protocols and the emergence of yield-farming strategies \citep[see, e.g.,][]{maouchi_understanding_2022,karim_examining_2022,umar_covid-19_2022}.\footnote{Total value locked indicates the total number of digital assets that are committed to a specific protocol or project. We refer to \citet{maouchi_understanding_2022} for further details.}
+
+\newpage
+
+\begin{sidewaystable}[htbp]
+  \begingroup
+  \centering
+  \caption{Bubble statistics of NFT and DeFi assets}
+  \label{Bubbles period of NFT and DeFi assets}
+
+  % --- layout tweaks for readability & fit ---
+  \setlength{\tabcolsep}{2pt}      % tighter columns → less shrinking
+  \renewcommand{\arraystretch}{1.1}
+
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l l c c c c c c c c c c}
+    \hline \hline
+     & Main bubble period & \multicolumn{5}{c}{\textbf{SADF}} &
+                             \multicolumn{5}{c}{\textbf{GSADF}}\\
+    \cline{3-7} \cline{8-12}
+     &                    & BD & Percentage & HM & AM & APC & BD & Percentage & HM & AM & APC\\
+    \hline
+    \textbf{Panel A: NFT assets} & & & & & & & & & & & \\
+    \hline
+
+    NFTI & 2021/11/23--2021/11/30
+              & 41/1700  & 2.41\% & 81.32\%  & 45.19\% & 6.50\%
+              & 37/1700  & 2.18\% & 25.94\%  & 8.39\%  & 5.91\% \\
+    &&&&&&&&&&&\\
+
+    ETH & 2016/02/10--2016/02/16, 2016/02/22--2016/03/19, 2017/03/13--2017/04/03,
+             & 730/3,738 & 19.53\% & 1,300.65\% & 93.64\% & 4.92\%
+             & 434/3,738 & 11.61\% & 687.28\%  & 55.51\% & 5.88\% \\
+             & 2017/04/23--2017/07/07, 2017/08/27--2017/09/04, 2017/12/09--2018/02/02,
+             &&&&&&&&&&\\
+             & 2021/01/15--2021/02/26, 2021/03/02--2021/03/23, 2021/03/30--2021/05/20, 2021/11/03--2021/11/17
+             &&&&&&&&&&\\
+
+    SOL & 2020/08/03--2020/08/22, 2020/08/24--2020/09/04, 2021/02/04--2021/03/05,
+           & 286/2,030 & 14.09\% & 882.30\% & 203.17\% & 6.30\%
+           & 321/2,030 & 15.81\% & 212.09\% & 31.78\%  & 6.23\% \\
+           & 2021/03/08--2021/03/15, 2021/03/29--2021/05/20, 2021/08/28--2021/09/26,
+           &&&&&&&&&&\\
+           & 2021/10/02--2021/10/11, 2021/10/21--2021/11/25
+           &&&&&&&&&&\\
+
+    BNB & 2021/02/05--2021/02/26, 2021/03/31--2021/05/20
+              & 211/2,966 & 7.11\% & 506.14\% & 59.67\% & 5.61\%
+              & 184/2,966 & 6.20\% & 506.14\% & 31.38\% & 6.42\% \\
+
+    ADA & 2021/02/17--2021/04/23, 2021/04/27--2021/05/22, 2021/08/21--2021/09/08
+            & 175/2,936 & 5.96\% & 85.17\%  & 26.25\% & 5.21\%
+            & 227/2,936 & 7.73\% & 328.88\% & 41.44\% & 5.82\% \\
+    &&&&&&&&&&&\\
+
+    \hline
+    \textbf{Panel B: DeFi assets} & & & & & & & & & & & \\
+    \hline
+
+    DPI & 2021/01/06--2021/01/22, 2021/01/24--2021/02/24
+                     & 120/1,874 & 6.40\% & 123.72\% & 30.20\% & 5.20\%
+                     & 61/1,874  & 3.26\% & 113.35\% & 30.55\% & 5.47\% \\
+    &&&&&&&&&&&\\
+
+    UNI & 2021/01/25--2021/02/26, 2021/03/05--2021/03/15
+            & 96/1,871  & 5.13\% & 203.78\% & 30.13\% & 5.97\%
+            & 68/1,871  & 3.63\% & 232.86\% & 46.07\% & 7.24\% \\
+
+    AVAX & 2021/01/14--2021/01/30, 2021/02/01--2021/02/15
+              & 82/1,866  & 4.39\% & 555.36\% & 79.42\% & 7.70\%
+              & 97/1,866  & 5.20\% & 321.16\% & 36.08\% & 8.41\% \\
+
+    WBTC & 2020/12/17--2021/04/22
+                    & 438/2,465 & 17.77\% & 197.83\% & 13.07\% & 2.42\%
+                    & 203/2,465 & 8.24\%  & 92.18\%  & 16.11\% & 3.40\% \\
+
+    LINK & 2019/06/26--2019/07/15, 2020/07/13--2020/07/21, 2020/08/02--2020/09/04,
+              & 274/2,914 & 9.40\% & 255.92\% & 54.76\% & 6.49\%
+              & 162/2,914 & 5.56\% & 130.68\% & 16.81\% & 7.36\% \\
+              & 2021/02/09--2021/02/24, 2021/04/15--2021/04/22, 2021/05/02--2021/05/13
+              &&&&&&&&&&\\
+
+    \hline \hline
+    \end{tabular}%
+  } % end resizebox
+
+  \par\vspace{0.4em}
+  \scriptsize
+  \noindent
+  Notes: Intervals classified as main bubble episodes are jointly identified by the SADF and GSADF procedures. A bubble episode is reported only if windows detected by both tests overlap for at least seven consecutive trading days. We denote by BD the number of bubble days over the total sample size. The magnitude of each price bubble is computed as the percentage change between the highest and lowest prices within a respective bubble episode. The highest magnitude (HM) is the largest percentage change across all periods, whereas the average magnitude (AM) is the mean bubble magnitude across all observed intervals. APC is the absolute value of the average daily percentage change in price measured over all trading days flagged as bubble days for each digital asset.
+  \endgroup
+\end{sidewaystable}
+\FloatBarrier
+
+A second, much broader wave of exuberance spans late 2020 and the first half of 2021. In our sample, this phase is characterized by a long bubble spell in WBTC from December 2020 to April 2021 and overlapping bubble intervals for ETH, SOL, BNB, ADA, DPI, UNI, AVAX, and LINK between roughly January and May 2021. This cluster lines up with the institution-driven cryptocurrency bull market that culminated in the April 2021 peak in Bitcoin and ETH prices and with the initial NFT boom (``NFT Spring 2021''), during which NFT trading volumes and user participation expanded rapidly \citep{Nadini2021,Li20211829,borri_economics_2022,yousaf_relationship_2022}. A third phase is concentrated in the second half of 2021 and is more strongly tilted toward NFT-related instruments: We detect additional bubble episodes for SOL and ADA from late August to late November 2021 and a distinct bubble in NFTI in late November 2021. These intervals correspond to the late-2021 NFT bull run, when secondary-market volumes on major platforms such as OpenSea reached record levels and a small set of ``blue-chip'' collections, including \emph{CryptoPunks} and \emph{Bored Ape Yacht Club}, accounted for a disproportionate share of turnover and price appreciation \citep{Nadini2021,borri_economics_2022}.\par
+\FloatBarrier
+
+\begin{figure}[H]
+\centering
+\captionsetup{font=footnotesize}
+% Row 1
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_nft_index_extended.png}
+  \subcaption{NFTI}
+  \label{fig:sadf-nfti}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_eth_extended.png}
+  \subcaption{ETH}
+  \label{fig:sadf-eth}
+\end{minipage}
+
+\vspace{0.8em}
+
+% Row 2
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_sol_extended.png}
+  \subcaption{SOL}
+  \label{fig:sadf-sol}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_bnb_extended.png}
+  \subcaption{BNB}
+  \label{fig:sadf-bnb}
+\end{minipage}
+
+\vspace{0.8em}
+
+% Row 3
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_ada_extended.png}
+  \subcaption{ADA}
+  \label{fig:sadf-ada}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_dpi_extended.png}
+  \subcaption{DPI}
+  \label{fig:sadf-dpi}
+\end{minipage}
+
+\vspace{0.8em}
+
+% Row 4
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_uni_extended.png}
+  \subcaption{UNI}
+  \label{fig:sadf-uni}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_avax_extended.png}
+  \subcaption{AVAX}
+  \label{fig:sadf-avax}
+\end{minipage}
+
+\vspace{0.8em}
+
+% Row 5
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_wbtc_extended.png}
+  \subcaption{WBTC}
+  \label{fig:sadf-wbtc}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/SADF plots/sadf_link_extended.png}
+  \subcaption{LINK}
+  \label{fig:sadf-link}
+\end{minipage}
+
+\vspace{0.6em}
+
+\caption[Date-stamped bubble periods (SADF test).]% 
+{Date-stamped bubble periods (SADF test). Each panel shows the SADF test statistic together with the associated 95\% critical value path. The underlying indices, SADF values, and Monte Carlo simulated critical values are plotted in green, blue, and red, respectively. Gray shading indicates the periods classified as price bubbles.}
+\label{fig:sadf-grid}
+\end{figure}
+\FloatBarrier
+
+%\begin{center}
+%[PLEASE INSERT \autoref{Date-stamping bubble periods in the NFT and DeFi assets: the GSADF test} HERE]
+%\end{center}
+
+\begin{figure}[H]
+\centering
+\captionsetup{font=footnotesize}
+
+% Row 1
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_nft_index_extended.png}
+  \subcaption{NFTI}
+  \label{NFTI GSADF test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_eth_extended.png}
+  \subcaption{ETH}
+  \label{ETH GSADF test}
+\end{minipage}
+
+\vspace{0.8em}
+
+% Row 2
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_sol_extended.png}
+  \subcaption{SOL}
+  \label{SOL GSADF test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_bnb_extended.png}
+  \subcaption{BNB}
+  \label{BNB GSADF test}
+\end{minipage}
+
+\vspace{0.8em}
+
+% Row 3
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_ada_extended.png}
+  \subcaption{ADA}
+  \label{ADA GSADF test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_dpi_extended.png}
+  \subcaption{DPI}
+  \label{DeFi Plus Index GSADF test}
+\end{minipage}
+
+\vspace{0.8em}
+
+% Row 4
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_uni_extended.png}
+  \subcaption{UNI}
+  \label{UNI GSADF test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_avax_extended.png}
+  \subcaption{AVAX}
+  \label{AVAX GSADF test}
+\end{minipage}
+
+\vspace{0.8em}
+
+% Row 5
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_wbtc_extended.png}
+  \subcaption{WBTC}
+  \label{WBTC GSADF test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/GSADF plots/psy_singlepanel_link_extended.png}
+  \subcaption{LINK}
+  \label{LINK GSADF test}
+\end{minipage}
+
+\vspace{0.6em}
+
+\caption[Date-stamped bubble periods (GSADF test).]% 
+{Date-stamped bubble periods (GSADF test). Each panel displays the GSADF test statistic together with the associated 95\% critical value path. The underlying indices, GSADF values, and Monte Carlo simulated critical values are shown in green, blue, and red, respectively. Shaded gray bands mark the periods classified as price bubbles.}
+\label{Date-stamping bubble periods in the NFT and DeFi assets: the GSADF test}
+\end{figure}
+\FloatBarrier
+
+Across these phases, the joint bubbles in SOL, LINK, and WBTC around the DeFi Summer 2020, together with the synchronized episodes across almost all assets in early 2021, suggest that DeFi and NFT valuations are tightly intertwined with broader cryptocurrency cycles but also exhibit segment-specific amplification driven by market microstructure and investor behavior. The clustering of bubble intervals across assets is consistent with the herd-like trading and contagion observed within cryptocurrency-related markets \citep{bouri2019,Horky2021,youssef2022}, whereas the more NFT-dominated exuberance in late 2021 coincides with documented evidence of strong herding and momentum chasing in NFT collections themselves \citep{bao_herding_2023,fridgen_pricing_2025}. Taken together, the timing evidence points to bubbles that are manifestations of broader narrative shifts and cross-segment spillovers propagating through DeFi and NFT markets as new technologies, use cases, and investor bases emerge \citep{umar_covid-19_2022,ben_osman_are_2024}.\par
+
+Beyond the timing of individual bubbles, we also examine how often exuberant regimes occur \emph{jointly} across assets. To this end, we define a joint-bubble day as one on which two assets are simultaneously in a SADF--GSADF overlap window lasting at least seven consecutive days, and we compute the share of such days for each ordered pair. The resulting co-occurrence matrix in \autoref{fig:cooccurrence-heatmap} shows that cryptocurrencies such as BNB and ADA exhibit the strongest co-explosivity with DeFi benchmarks and tokens (DPI, LINK, UNI, WBTC), with joint-bubble shares frequently exceeding 25\%. In contrast, overlaps with NFTI are virtually absent, indicating that aggregate NFT-market bubbles are only weakly synchronized with DeFi-wide exuberance. \autoref{fig:cooccurrence-dynamic} traces the rolling 30-day counts of joint-bubble days for selected pairs. The curves confirm that synchronized exuberance is highly clustered in time: Most joint bubbles between DPI and the four cryptocurrencies occur during the main DeFi/NFT boom in the first quarter of 2021, whereas simultaneous bubbles involving NFTI are confined to a short window around the late-2021 NFT bull run. This pattern is consistent with earlier evidence on co-explosivity and contagion in cryptocurrency markets \citep[e.g.,][]{bouri_co-explosivity_2019,Corbet201881}; it reinforces the view that DeFi and NFT segments experience bursts of tightly coupled exuberance rather than isolated, asset-specific anomalies.\par
+
+\begin{figure}[htbp]
+  \centering
+  \captionsetup{font=footnotesize}
+  \includegraphics[width=\textwidth]{images/2. chapter/GSADF plots/cooccurrence_heatmap_matrix}
+  \caption[Heat map of co-occurrence rates of joint bubble episodes.]%
+  {Heat map of co-occurrence rates of joint bubble episodes between NFT/DeFi-related cryptocurrencies (rows) and NFT/DeFi benchmarks and tokens (columns).}
+  \label{fig:cooccurrence-heatmap}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \captionsetup{font=footnotesize}
+  \includegraphics[width=\textwidth]{images/2. chapter/GSADF plots/cooccurrence_dynamic_zoom_auto}
+  \caption[Dynamic co-occurrence of joint bubble episodes.]%
+  {Dynamic co-occurrence of joint bubble episodes for selected NFT/DeFi pairs based on a rolling 30-day window.}
+  \label{fig:cooccurrence-dynamic}
+\end{figure}
+
+Several additional patterns can be seen in the bubble magnitudes reported in \autoref{Bubbles period of NFT and DeFi assets}. For the NFT and crypto-related group (NFTI, ETH, SOL, BNB, ADA), the highest peak-to-trough bubble magnitude (HM) obtained with the SADF test ranges from roughly 80\% for NFTI to more than 880\% for SOL and over 1{,}300\% for ETH\@. In contrast, the DeFi assets display maximum amplitudes between 120\% (DPI) and 555\% (AVAX). Of the two composite indices, DPI has a higher maximum bubble magnitude than NFTI (123.72\% vs.\ 81.32\%), suggesting that, at the market level, DeFi valuations experience somewhat sharper single-run exuberance than the aggregate NFT market. At the level of individual assets, however, the largest explosive moves are concentrated in the base-layer smart-contract platforms that underpin both DeFi and NFTs, most notably ETH and SOL\@. This is consistent with the idea that these protocols sit at the core of the broader crypto ecosystem and, therefore, absorb a disproportionate share of speculative flows during boom phases \citep{karim_examining_2022,maouchi_understanding_2022,guo_bubbles_2025}.\par
+
+Turning to the average behavior within bubble episodes, both markets exhibit sizable but more moderate swings. The average bubble magnitude (AM) found using the SADF test lies in the range of 26\%--203\% for NFT and crypto-related assets and 30\%--79\% for DeFi tokens, with SOL and AVAX standing out with particularly pronounced average run-ups. The absolute average daily percentage change across bubble days (APC) is typically between 5\% and 8\% for most series, indicating that once a bubble regime is entered, prices tend to move in large steps on a day-to-day basis, regardless of whether the underlying asset belongs to the NFT or DeFi segment. These high amplitudes and daily volatilities are in line with existing evidence on the pronounced uncertainty and episodic mispricing observed in cryptocurrency markets more generally \citep{urquhart_inefficiency_2016,Lucey2021,hafner2020}.\par
+
+However, the somewhat higher average bubble magnitudes for NFT-related crypto assets such as SOL and ETH than for many DeFi tokens are consistent with the view that NFT markets inherit both the speculative component of infrastructure-related cryptocurrencies and additional layers of scarcity, taste heterogeneity, and thin trading typical of art-like objects \citep{Nadini2021,dowling_fertile_2022,borri_economics_2022}. Combining these observations with the timing evidence discussed above, we can conclude that both the DeFi and NFT segments remain prone to strong and recurrent departures from fundamentals, with NFT-linked base assets exhibiting particularly extreme bubble amplitudes and DeFi tokens showing sharp, but somewhat shorter-lived, bursts of exuberance.\par
+
+
+\newpage
+
+\subsection{Liquidity and Trading Activity During Bubble Episodes}
+\label{subsec:liquidity_bubbles}
+
+To complement the price-based evidence, this subsection considers whether the bubble episodes identified by the joint SADF--GSADF procedure are accompanied by surges in market liquidity. For each asset, we construct a daily liquidity panel comprising prices and trading volumes. From these data, we compute a standard liquidity proxy: the logarithm of trading volume expressed as $\log (1 + \text{volume}_t)$. We apply the same bubble detection procedure for each asset by constructing intervals in which the SADF and GSADF tests both signal explosiveness with an overlap of at least seven consecutive trading days. These intervals are then collapsed to a daily dummy that flags whether a given day falls inside at least one such joint episode. This allows us to compare liquidity on bubble and non-bubble days and to perform simple mean-comparison tests.\par
+
+\autoref{fig:liq_price_volume_gsadf} summarizes the joint behavior of prices and trading activity for NFTI, DPI, and the four market infrastructure-related cryptocurrencies ETH, SOL, BNB, and ADA\@. For each series, the upper panel shows a plot of the USD price, with joint SADF--GSADF bubble periods shaded in gray, and the lower panel shows the corresponding time series of $\log(1+\text{volume})$. Visually, the main bubble episodes identified earlier are associated with pronounced spikes in trading activity. This pattern is particularly clear for NFTI and DPI around the 2020--2021 boom, and for ETH and SOL during the 2017 and 2021 bull markets, when clusters of shaded bubble windows coincide with dense bands of elevated log trade volume.\par
+
+% ------- Liquidity: price--volume with joint bubble shading -------
+{%
+\setlength{\intextsep}{8pt}
+\captionsetup{font=footnotesize,aboveskip=6pt,belowskip=6pt}
+
+\begin{figure}[htb]
+\centering
+
+% Row 1
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/Liquidity plots/liq_nft_index_price_volume_jointbubbles.png}
+  \subcaption{NFTI}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/Liquidity plots/liq_dpi_price_volume_jointbubbles.png}
+  \subcaption{DPI}
+\end{minipage}
+
+\vspace{0.9em}
+
+% Row 2
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/Liquidity plots/liq_eth_price_volume_jointbubbles.png}
+  \subcaption{ETH}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/Liquidity plots/liq_sol_price_volume_jointbubbles.png}
+  \subcaption{SOL}
+\end{minipage}
+
+\vspace{0.9em}
+
+% Row 3
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/Liquidity plots/liq_bnb_price_volume_jointbubbles.png}
+  \subcaption{BNB}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/Liquidity plots/liq_ada_price_volume_jointbubbles.png}
+  \subcaption{ADA}
+\end{minipage}
+
+\caption[Prices, trading volumes, and joint bubble episodes for selected NFT and DeFi assets.]%
+{Prices, trading volumes, and joint bubble episodes for selected NFT and DeFi assets. For each asset, the upper panel shows the USD price, with gray shading used to indicate joint bubble episodes (overlapping positive SADF and GSADF tests for at least seven consecutive trading days). The lower panel displays the corresponding $\log(1+\text{volume})$ series.}
+\label{fig:liq_price_volume_gsadf}
+\end{figure}
+}
+\FloatBarrier
+
+Table~\ref{tab:liq_summary_indices} reports liquidity summaries for NFTI and DPI, distinguishing between bubble and non-bubble days according to the joint indicator. For NFTI, joint bubbles occur for only 8 out of 1,533 trading days in the sample, yet these days account for a significant proportion of the overall trading activity: The mean of $\log(1+\text{volume})$ rises from about 3.7 on non-bubble days to roughly 8.6 on bubble days, with a similar shift in the median. Two-sample $t$-tests and Wilcoxon rank-sum tests for equality of distributional log trade volume strongly reject the null of identical liquidity between bubble and non-bubble days.\par
+
+\begin{table}[htb]
+  \centering
+  \caption{Liquidity summary for NFTI and DPI: bubble vs.\ non-bubble days}
+  \label{tab:liq_summary_indices}
+
+  %--- local spacing & font tweaks so table fits textwidth ---
+  \begingroup
+  \small                          % slightly smaller than main text
+  \setlength{\tabcolsep}{3pt}     % default is 6pt; tighten columns
+  \renewcommand{\arraystretch}{1.1}
+
+  \begin{tabular}{@{}lcccccc@{}}
+    \toprule
+    Asset & Bubble day & $n_{\text{days}}$ &
+    Mean log volume &
+    Median log volume &
+    $p_{t}$ & $p_{\text{Wilcoxon}}$ \\
+    \midrule
+    NFTI & No  & 1,525 & 3.72 & 4.03 & $\leq 0.01^{***}$ & $\leq 0.01^{***}$ \\
+         & Yes &     8 & 8.64 & 8.57 & $\leq 0.01^{***}$ & $\leq 0.01^{***}$ \\
+    \addlinespace
+    DPI  & No  & 1,825 & 12.25 & 11.96 & $\leq 0.01^{***}$ & $\leq 0.01^{***}$ \\
+         & Yes &    49 & 15.83 & 15.88 & $\leq 0.01^{***}$ & $\leq 0.01^{***}$ \\
+    \bottomrule
+  \end{tabular}
+  \endgroup
+
+  \begin{flushleft}
+    \footnotesize\textit{Notes:} The table reports the number of trading days and the mean and median of $\log(1+\text{volume})$ for bubble and non-bubble days, as determined using the joint SADF--GSADF indicator with a minimum overlap of seven consecutive trading days. Trading volumes are measured in USD\@. The $p_{t}$ and $p_{\text{Wilcoxon}}$ columns list $p$-values from two-sample $t$-tests and Wilcoxon rank-sum tests for equality of $\log(1+\text{volume})$ between bubble and non-bubble days, computed separately for each asset. All reported $p$-values are displayed with $^{***}$, $^{**}$, and $^{*}$ denoting significance at the 1\%, 5\%, and 10\% levels, respectively.
+  \end{flushleft}
+\end{table}
+\FloatBarrier
+
+For DPI, trade volume increases markedly during joint bubble episodes. Bubble days (49 out of 1,874) have an average log trade volume of roughly 15.8 compared with 12.3 on non-bubble days, and the median log trade volume similarly shifts upward during bubbles. The difference is statistically highly significant, confirming that DPI bubbles coincide with phases of higher trading intensity. The large-capitalization cryptocurrencies display a qualitatively similar pattern. For ETH, SOL, BNB, and ADA, the price--volume panels in \autoref{fig:liq_price_volume_gsadf} show that joint bubble windows are clustered in periods with sustained high trading volume, typically around major market run-ups and subsequent corrections. Although the strength of the association varies across assets and episodes, there is no systematic evidence of bubbles occurring in illiquid conditions. Instead, explosive price dynamics tend to be found in periods of above-average trading activity.\par
+
+
+\subsection{Robustness Test}
+\label{robustness_test_chp2}
+
+The main results of this chapter depend on the time intervals detected by the SADF and GSADF procedures as price bubbles. To assess the robustness of these findings, we complement the PWY- and PSY-type tests with an alternative, structurally different bubble model: the LPPLS framework. This is designed to capture super-exponential price dynamics generated by positive feedback and has been widely employed as an econometric model for price bubble detection in equity, futures, and cryptocurrency markets \citep{wheatley_are_2019,filimonov_modified_2017,shu_real-time_2020,gerlach2019dissection,yao_study_2021}. In addition, recent work has formalized an associated LPPLS confidence indicator as a way of aggregating information from multiple local fits into a time-varying bubble signal \citep[e.g.,][]{song_2020_2022}. Formally, the LPPLS specification for the expected log price $E_t[\ln p(t)]$ at time $t$ takes the form
+\begin{equation}
+  \label{LPPLS model}
+  E_t[\ln p(t)] 
+  = A 
+  + B (t_c - t)^m 
+  + C (t_c - t)^m \cos\bigl(\omega \ln(t_c - t) - \phi\bigr),
+\end{equation}
+in which $t_c$ denotes the (unobserved) critical time at which the bubble is expected to terminate. The parameter $A = \ln p(t_c)$ is the expected log price at the critical point, and $B$ measures the degree of the power-law acceleration. A negative $B$ corresponds to a positive bubble, that is, an upward super-exponential regime. The exponent $m \in (0,1)$ controls the degree of super-exponential growth, with smaller values implying stronger acceleration. The coefficient $C$ scales the magnitude of the log-periodic oscillations, $\omega$ represents the angular log-frequency governing how quickly these oscillations condense as $t$ approaches $t_c$, and $\phi \in (0,2\pi)$ is a phase shift. The term $A + B(t_c - t)^m$ thus captures the hyperbolic power-law buildup of the bubble, while $C(t_c - t)^m \cos[\omega \ln(t_c - t) - \phi]$ superimposes accelerating oscillations whose local frequency diverges as $t \to t_c$.\par
+
+We estimate the LPPLS model on rolling windows of log prices using nonlinear least squares.\footnote{Figure~\ref{fig:lppls_composite_fits} shows the resulting model fit of the LPPLS after the estimation on a temporal basis according to the log price path of each studied digital asset.} For each asset, we consider overlapping windows of length 90, 120, 180, and 250 trading days, shifted forward in steps of three days. For each window, we construct a simple time index $t = 1,\dots,w$ and constrain the parameters to economically plausible ranges: $m \in [0.1,0.9]$, $\omega \in [4,13]$, and a critical time $t_c$ that lies between 5 and 180 days beyond the end of the window. Fits that fail to converge or violate these bounds are discarded. For every successful window, we record the estimated parameters, the residual sum of squares, and a local goodness-of-fit measure $R^2$. We also compute the implied number of log-periodic oscillations between the start and end of the window, $n_{\text{osc}}$, to rule out degenerate fits with implausibly many or few oscillations. In line with the LPPLS literature \citep[see, e.g.,][]{lin_volatility-confined_2014,shu_real-time_2020}, only windows satisfying $R^2 \ge 0.8$ and $0.65 \le n_{\text{osc}} \le 4.2$ are retained for subsequent analysis.\par
+
+To translate this collection of local fits into a daily bubble indicator, we construct an LPPLS confidence indicator in the spirit of \citet{filimonov_modified_2017} and \citet{song_2020_2022}. For each calendar date in the sample, we consider all ``good'' windows that (i) cover that date and (ii) have a critical time within the next 180 days. Each window receives a weight that increases with fit quality (lower residual variance, higher $R^2$, longer window length) and decays exponentially with the distance between the current date and its estimated $t_c$. The sum of these weights for windows with $B<0$ yields a positive-bubble strength measure $\text{STR}_{\text{pos}}(t)$; the analogue for $B>0$ defines the negative-bubble strength $\text{STR}_{\text{neg}}(t)$. After normalizing each strength series to the unit interval and applying a concave transformation, we obtain confidence indicators $\text{CI}_{\text{pos}}(t)$ and $\text{CI}_{\text{neg}}(t)$ that can be interpreted as rescaled probabilities of being in a positive or negative LPPLS bubble. In the baseline specification, we classify a date as belonging to a positive or negative LPPLS bubble whenever $\text{CI}_{\text{pos}}(t) \ge 0.7$ or $\text{CI}_{\text{neg}}(t) \ge 0.7$, respectively, and we aggregate consecutive bubble days into positive and negative LPPLS bubble intervals.\par
+
+\autoref{Date-stamping bubble periods in the NFT and DeFi assets: the LPPLS test} shows the LPPLS confidence indicators for all assets over the extended sample. For each instrument, the upper panel shows the logarithm of the price together with the smoothed positive indicator (red line), and the lower panel displays the same price path with the negative indicator (green line). Indicator values close to one indicate calendar dates around which many high-quality LPPLS fits cluster and, therefore, sustained positive or negative bubble dynamics. The positive indicator captures phases of super-exponential price acceleration, whereas the negative indicator corresponds to episodes of persistently accelerating drawdowns following a crash.
+Taken across all series, the LPPLS confidence indicators largely coincide with the key speculative episodes identified by the SADF and GSADF tests in Figures~\ref{fig:sadf-grid} and~\ref{Date-stamping bubble periods in the NFT and DeFi assets: the GSADF test}. In particular, the strongest positive signals for the DeFi index (DPI) and the major infrastructure coins (ETH, BNB, SOL, AVAX) concentrate around the 2020 “DeFi summer” and the early-2021 boom, whereas NFTI and the NFT-linked assets exhibit pronounced positive bubbles over the 2021 NFT bull market. The negative indicators peak during the subsequent downturns in 2018 and 2022--2023. For the extended period beyond 2022, the indicators also flag renewed bubble-like run-ups and corrections (e.g., in ETH, SOL, and WBTC), suggesting the presence of exuberance patterns similar to those in the earlier window. The close alignment between these LPPLS-based bubble intervals and the SADF/GSADF date stamps demonstrates the robustness of the bubble detection methods established in this chapter.\par
+
+%\begin{center}
+%[PLEASE INSERT \autoref{Date-stamping bubble periods in the NFT and DeFi assets: the LPPLS test} HERE]
+%\end{center}
+
+% ------- LPPLS (part 1) placed right under the text -------
+{%
+\setlength{\intextsep}{8pt} % tighten vertical gap above/below this H-float only
+\captionsetup{font=footnotesize,aboveskip=6pt,belowskip=6pt} % local; optional
+
+\begin{figure}[H]
+\centering
+
+% Row 1
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_nft_index_extended.png}
+  \subcaption{NFTI}\label{NFTI LPPLS test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_eth_extended.png}
+  \subcaption{ETH}\label{ETH LPPLS test}
+\end{minipage}
+
+\vspace{0.9em}
+
+% Row 2
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_sol_extended.png}
+  \subcaption{SOL}\label{SOL LPPLS test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_bnb_extended.png}
+  \subcaption{BNB}\label{BNB LPPLS test}
+\end{minipage}
+
+\vspace{0.9em}
+
+% Row 3
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_ada_extended.png}
+  \subcaption{ADA}\label{ADA LPPLS test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_dpi_extended.png}
+  \subcaption{DPI}\label{DeFi Plus Index LPPLS test}
+\end{minipage}
+
+\caption[Date-stamped bubble periods (LPPLS test).] 
+{Date-stamped bubble periods (LPPLS test). These figures present the LPPLS confidence indicator for each asset. Periods classified as positive and negative bubbles are marked in red and green, respectively. Continued on next page.}
+\label{Date-stamping bubble periods in the NFT and DeFi assets: the LPPLS test}
+
+\end{figure}
+}% end local spacing scope
+
+\newpage % start next part at the top of the following page
+
+% ------- LPPLS (part 2, continued) -------
+{%
+\setlength{\intextsep}{8pt}
+\captionsetup{aboveskip=6pt,belowskip=6pt}
+
+\begin{figure}[H]\ContinuedFloat
+\centering
+\caption*{(continued)}
+
+% Row 4
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_uni_extended.png}
+  \subcaption{UNI}\label{UNI LPPLS test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_avax_extended.png}
+  \subcaption{AVAX}\label{AVAX LPPLS test}
+\end{minipage}
+
+\vspace{0.9em}
+
+% Row 5
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_wbtc_extended.png}
+  \subcaption{WBTC}\label{WBTC LPPLS test}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS plots/lppls_ci_link_extended.png}
+  \subcaption{LINK}\label{LINK LPPLS test}
+\end{minipage}
+
+\end{figure}
+}
+\FloatBarrier
+
+
+\section{Conclusion}
+\label{Conclusion_chp2}
+
+This chapter has examined the extent, timing, and characteristics of price bubbles in digital asset markets over an extended sample period. Using two capitalization-weighted benchmark indices (NFTI and DPI) alongside a set of major market infrastructure cryptocurrencies and DeFi-related tokens, we applied recursive right-tailed unit-root tests (SADF and GSADF) and their associated date-stamping procedures to identify episodes of mildly explosive price dynamics. A joint bubble indicator, defined by the occurrence of overlapping SADF and GSADF intervals of at least seven consecutive trading days, provided a conservative set of bubble regimes for subsequent analysis of magnitudes, co-occurrence, and liquidity.\par
+
+The results lead to three main empirical conclusions. First, all assets in the sample exhibit recurrent bubble regimes, but the frequency and intensity of these episodes differ substantially across series. DPI spends a larger share of time in bubble states than NFTI, whereas NFTI displays somewhat stronger average daily movements within its bubble windows. The most extreme amplitudes are concentrated in the major smart-contract platforms, notably ETH and SOL, and in WBTC, reflecting their central role in the broader crypto ecosystem. Second, the timing of bubble episodes is highly clustered. A first wave coincides with the “DeFi Summer” of 2020, a second and broader wave covers the cryptocurrency and DeFi boom in early 2021 together with the first large-scale NFT expansion, and a third, more NFT-centered phase aligns with the late-2021 NFT bull run. Co-occurrence measures show that DeFi benchmarks and cryptocurrencies frequently enter bubble regimes simultaneously, whereas overlaps with NFTI are rarer and concentrated in the late-2021 episode.\par
+
+Third, bubble regimes are systematically associated with elevated trading activity. For both NFTI and DPI, joint bubble days display pronounced increases in log trade volume relative to non-bubble periods, with differences that are statistically highly significant. For the major cryptocurrencies, price--volume panels reveal that explosive price behavior tends to occur in periods of sustained high volume. In other words, bubbles in these digital segments are not obscure anomalies occurring in illiquid trading conditions, but episodes in which prices and trading intensity rise together. The robustness analysis based on the LPPLS framework supports these conclusions. Positive LPPLS confidence indicators recover the main run-up phases already flagged by the SADF and GSADF tests, and negative indicators identify the subsequent crash periods, including the downturns in 2018 and 2022--2023. The close alignment between the PSY- and LPPLS-based bubble histories suggests that the detected regimes are not artifacts of a particular testing strategy but robust features of the underlying price processes. Analysis of the extended sample shows that speculative episodes continue to recur beyond the initial boom, indicating that neither NFT nor DeFi markets have fully transitioned to a regime with only rare and mild deviations from their fundamentals.\par
+
+These findings have several implications for investors and policymakers. For market participants, the presence of frequent and sometimes synchronized bubble regimes, often accompanied by sharp volume surges, calls for regime-aware risk management, particularly when using NFTs and DeFi tokens as collateral or in leveraged strategies. For regulators and central banks, bubble detection in these segments can serve as an input into monitoring frameworks and discussions about investor protection, market integrity, and financial stability. This is especially relevant in jurisdictions where digital assets are rapidly adopted, trading is easily accessible to retail investors, and institutional safeguards are still developing. In such environments, episodes of exuberance in NFT and DeFi markets can amplify existing vulnerabilities.\par
+
+Finally, we turn to avenues for future research. A natural next step is to examine how bubble regimes propagate across the broader digital-asset economy, including stablecoins and governance tokens, and to model explicitly the channels through which stress in one segment spills over into others. Another extension would be to move beyond aggregate indices and large-capitalization tokens and study bubble behavior across different NFT categories and DeFi protocol types, where market microstructures and user bases differ markedly. As these markets mature and regulatory frameworks evolve, tracking how the frequency, magnitude, and liquidity profile of speculative episodes change over time will allow researchers to assess whether NFTs and DeFi converge toward more stable, informationally efficient price dynamics or whether episodic bubbles remain an intrinsic feature of this part of the financial system.\par
+
+\clearpage
+\begingroup
+\KOMAoptions{open=any} % temporarily allow starting on any page
+
+\begin{subappendices}
+
+\section{Additional Figure}
+% Include any supplementary material.
+\label{appendix:A_chp2}
+    % ------- LPPLS composite fits (part 1) -------
+{%
+\setlength{\intextsep}{8pt}
+\captionsetup{font=footnotesize,aboveskip=6pt,belowskip=6pt}
+
+\begin{figure}[H]
+\centering
+
+% Row 1
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_nft_index.png}
+  \subcaption{NFTI}\label{NFTI LPPLS composite}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_eth.png}
+  \subcaption{ETH}\label{ETH LPPLS composite}
+\end{minipage}
+
+\vspace{0.9em}
+
+% Row 2
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_sol.png}
+  \subcaption{SOL}\label{SOL LPPLS composite}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_bnb.png}
+  \subcaption{BNB}\label{BNB LPPLS composite}
+\end{minipage}
+
+\caption[Composite LPPLS fit and log price path.] 
+{Composite LPPLS fit and log price path. Each panel overlays the log price series (black) with a composite LPPLS fit (blue) (continued on next page). The composite fit is constructed from rolling LPPLS estimations over multiple window sizes (90, 120, 180, and 250 days). For each trading day, we first restrict our attention to admissible fits (with $R^2 \ge 0.8$ and an estimated number of oscillations in the interval $0.65 \le \hat{n}_{\text{osc}} \le 4.2$) and then select the specification with the highest $R^2$ value (breaking ties by the lowest residual sum of squares). The resulting daily predictions are smoothed to obtain a continuous composite LPPLS path that summarizes how well the model tracks medium-run boom and correction phases in each asset.}
+\label{fig:lppls_composite_fits}
+\end{figure}
+}% end local spacing scope
+
+\newpage % start next part at the top of the following page
+
+% ------- LPPLS composite fits (part 2, continued) -------
+{%
+\setlength{\intextsep}{8pt}
+\captionsetup{font=footnotesize,aboveskip=6pt,belowskip=6pt}
+
+\begin{figure}[H]\ContinuedFloat
+\centering
+\caption*{(continued)}
+
+% Row 3
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_ada.png}
+  \subcaption{ADA}\label{ADA LPPLS composite}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_dpi.png}
+  \subcaption{DPI}\label{DeFi Plus Index LPPLS composite}
+\end{minipage}
+
+% Row 4
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_uni.png}
+  \subcaption{UNI}\label{UNI LPPLS composite}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_avax.png}
+  \subcaption{AVAX}\label{AVAX LPPLS composite}
+\end{minipage}
+
+\vspace{0.9em}
+
+% Row 5
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_wbtc.png}
+  \subcaption{WBTC}\label{WBTC LPPLS composite}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}\centering
+  \includegraphics[width=\linewidth]{images/2. chapter/LPPLS fit plots/lppls_composite_single_link.png}
+  \subcaption{LINK}\label{LINK LPPLS composite}
+\end{minipage}
+
+\end{figure}
+}
+
+\end{subappendices}
+\endgroup

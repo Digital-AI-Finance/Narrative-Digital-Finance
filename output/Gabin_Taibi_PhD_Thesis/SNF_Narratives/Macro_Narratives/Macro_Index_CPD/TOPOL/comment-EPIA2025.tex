@@ -1,0 +1,149 @@
+EPIA 2025 PC Chairs
+
+SUBMISSION: 80
+TITLE: Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPOL
+
+----------------------- REVIEW 1 ---------------------
+
+SUBMISSION: 80
+TITLE: Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPOL
+AUTHORS: Gabin Taibi and Lucia Gomez Teijeiro
+
+----------- Overall evaluation -----------
+The authors present TOPol, as the need to explore mutidimensional polarity, instead of the negative to positive classical approach. This is a positive point in the paper.
+
+The data sets are two: one is based on the central bank speeches about macroeconomics from the Bank for International Settlements; the other is from the Amazon Polarity dataset, a collection of customer reviews labeled for binary sentiment.
+
+Several tools are used in this approach: Transformers, UMAP, Leiden clustering, and polarity vectors. However, there are important weak points in this paper:
+a)      It is not clear that “10 centroid central bank speeches and 50 centroid amazon product reviews” (Section 5) are the most correct number of clusters.
+b)      How vector fields will behave to perturbations in input?
+c)      Ground truth is not presented concerning polarity. This does not allow a real evaluation of the approach.
+d)      Concerning the scope of the evaluation, I am not sure that the two datasets presented cover the potential richness of the dimensions for the topic the authors are dealing with. I would propose the inclusion of other datasets such as political discourses where the subtlety and irony can even invert the apparent polarity of sentences, for example.
+e)      The paper does not follow the format and anonymity is not respected as requested in the CFP.
+
+
+----------------------- REVIEW 2 ---------------------
+
+SUBMISSION: 80
+TITLE: Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPOL
+AUTHORS: Gabin Taibi and Lucia Gomez Teijeiro
+
+----------- Overall evaluation -----------
+The paper touches a relevant topic and produces an interesting effort towards the analysis of sentiment shifts. Unfortunately the work presented is not able to be clear nor convincing. There is some scattered value here, such as the two datasets constructed with some ingenuity. But then the problem to approach is defined in an overly complicated way and the method is hard to follow.
+
+Aspects:
+
+- Sentiment is multi-dimensional: the authors focus on this issue but do not provide a truly multidimensional approach.
+
+Try: James W Pennebaker, Ryan L Boyd, Kayla Jordan, and Kate Blackburn. 2015. The development and psycho-metric properties of LIWC2015. University of Texas at Austin.
+
+The paper https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3766194&utm_source=chatgpt.com must be of interest as an example.
+
+## Format
+
+The paper is not in LNCS format
+
+## Data
+
+- Only US speeches. Why is this? The justification is not enough. Does this reduce the generalization of the work?
+
+## Method
+
+The whole description fot UMAP and the graphs is hard to understand.
+
+- What exactly is Graph_(A->B) ? take all texts in A and include all their neighbors in B? Is this clear?
+- What is the matrix with graphs? A justaposition? A union of the nodes and branches?
+
+It is not clear why the two datasets are treated differently. Offline and Online? Why is it online to train with one class only and offline if you train with both? This requires explanation. Perhaps you mean two application scenarios which require two training approaches. One is two class learning and the other one-class learning. But both can be applied online and offline in the sense of continuous learning.
+
+The difference between two centroids accounts for any change in semantics and not only sentiment. It may be used to detect segments but not necessarily changes in sentiment.
+
+What difference does it make to use the so called online or offline strategy? There are no results to illustrate the differences.
+
+## Explainability
+
+How is this output evaluated? What is the value of asking for the explanations?
+
+How exactly are the elements in fig. 3 obtained?
+
+The use of the LLM seems to come out of the box without much testing or probing.
+
+## Style
+
+- A bit too verbose
+- Needs some reduction on the self promotion
+
+
+## Details
+
+In parallel to the OpenAI embedding backend... -> this info belongs to future work and/or limitations section
+
+### typos
+
+multidimensionality is captures and narrative -> captured
+
+internally, we constructs
+
+
+----------------------- REVIEW 3 ---------------------
+
+SUBMISSION: 80
+TITLE: Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPOL
+AUTHORS: Gabin Taibi and Lucia Gomez Teijeiro
+
+----------- Overall evaluation -----------
+The paper is not anonymous, as required in the CfP (https://easychair.org/cfp/EPIA2025):
+
+> Submitted papers will be subject to a double-blind review process and will be peer-reviewed by at least three members of the respective thematic track program committee.
+>
+> It is the responsibility of the authors to remove names and affiliations from the submitted papers, and to take reasonable care to assure anonymity during the review process. Authors should also follow the standards as set out in the Springer Nature code of conduct.
+
+
+----------------------- REVIEW 4 ---------------------
+
+SUBMISSION: 80
+TITLE: Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPOL
+AUTHORS: Gabin Taibi and Lucia Gomez Teijeiro
+
+----------- Overall evaluation -----------
+**SUMMARY**
+
+The authors define "narrative polarity" as vectorial representations of semantic change across a contextual boundary (which may be related to sentiment/emotion polarity or instead to some other domains), and they introduce a computational framework to identify, reconstruct, and explain "narrative polarity" fields. The proposed approach, named TOPol, is based on (a) creating embeddings for documents originally assigned to bins corresponding to "contextual boundaries", (b) using UMAP to re-project the embeddings into a 50-dimentional space, (c) finding document clusters with basis on the projected embeddings, (d) computing directional displacement vectors between centroids derived from the documents of each "contextual boundary bin" within each cluster, and (e) using an LLM to interpret the displacement vectors. The framework was applied to two domains, namely to textual corpora of financial documents (where "narrative polarity" is bounded by macroeconomic changes) and product
+reviews (where "narrative polarity" is driven by sentiment).
+
+**POSITIVE ASPECTS**
+
+* The overall approach is clear and the paper is generally well-written;
+
+* The authors address an interesting and relevant topic;
+
+* A link to a GitHub repository is provided.
+
+**NEGATIVE ASPECTS**
+
+* There are several aspects in the proposed approach that should be described in more detail.
+
+* The proposed method is only evaluated with qualitative examples (two case studies), lacking on any quantitative evaluation (e.g., with user surveys for evaluating the overall usefulness/usability, or through experiments to evaluate components such as the clustering strategy);
+
+**DETAILED COMMENTS**
+
+* Section 3.1 should provide more details about the DistilBERT and FinBERT models that were used to classify texts according to positive/neutral/negative sentiments. The authors also mention several pre-processing steps (e.g., marking and removing named entities, removing stop-words, etc.) which destroy the syntactic structure of sentences, whereas the OpenAI embedding model mentioned in Section 3.2 expects regular English text to be provided as input. Better embeddings should, in principle, be obtained in case the texts were not pre-processed.
+
+* The explanations given in Section 4.1 are somewhat confusing, particularly on what concerns the construction of the graphs described in Page 7. While I imagine that Graph_A refers to a sub-graph formed with pairwise similarities with nodes corresponding to documents originally within context boundary A, I am not entirely sure if Graph_{A->B} refers to a sub-graph with links from nodes corresponding to documents originally within context boundary A, into nodes corresponding to documents originally within context boundary B. The paper should also discuss how we can apply the proposed framework when the number of "contextual boundaries" is greater than 2, and it should better detail why the bottom-right block in the graph for the central bank speeches should indeed be only zeroes.
+
+* The justifications for the advantages associated to the Leiden clustering algorithm, as an alternative to HDBSCAN, should be revised. For instance, HDBSCAN is also deterministic, HDBSCAN also allows us to tune the "resolution" of clusters, and a method being "graph-theoretic" does not ensure reproducibility and scalability (two properties that are also associated to HDBSCAN).
+
+* The paper should better explain how the results that are show in Figure 3 (which features percentages for documents before/after, labels for polar dimensions, groupings of polar dimensions, etc.) are actually derived from the results provided by the language model and the other preceding steps, expanding the discussion on Section 5.
+
+* The paper has some minor problems in terms of presentation and correct English usage, starting with the fact that the Springer template associated to the proceedings is not being used. For instance, in Page 3, the reference to "he2021deberta" should instead appear as a citation to a bibliographic reference with that particular key. Phrases like "we constructs" should be replaced by "we construct". The caption for Figure 2 mentions a part named "A'" instead of "B", and it is not clear what the two charts in the middle actually refer to. There are several examples of cases like these, but the problems can easily fixed through a careful revision.
+
+
+----------------------- REVIEW 5 ---------------------
+
+SUBMISSION: 80
+TITLE: Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPOL
+AUTHORS: Gabin Taibi and Lucia Gomez Teijeiro
+
+----------- Overall evaluation -----------
+Note from the PC Chairs:
+The reason for rejecting this paper was NOT that it violated the double-blind guideline.

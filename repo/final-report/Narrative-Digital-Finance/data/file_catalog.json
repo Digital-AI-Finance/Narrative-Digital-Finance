@@ -1,0 +1,1882 @@
+{
+  "generated_at": "2026-01-04T07:08:49.199305",
+  "generator": "PhD Research Pages Generator",
+  "version": "1.0.0",
+  "source_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance-Gabin-Research",
+  "target_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance\\repo",
+  "summary": {
+    "tex_files": 43,
+    "bib_files": 9,
+    "png_files": 67,
+    "pdf_files": 50,
+    "other_files": 15,
+    "total_size_mb": 105.17,
+    "total_files": 184
+  },
+  "files": [
+    {
+      "filename": "literature.bib",
+      "path": "Quoniam_Narratives\\literature.bib",
+      "extension": ".bib",
+      "size_kb": 1.7,
+      "file_type": "Bibliography",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.646042"
+    },
+    {
+      "filename": "manuscript.tex",
+      "path": "Quoniam_Narratives\\manuscript.tex",
+      "extension": ".tex",
+      "size_kb": 12.53,
+      "file_type": "LaTeX Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.608493"
+    },
+    {
+      "filename": "notes.tex",
+      "path": "Quoniam_Narratives\\notes.tex",
+      "extension": ".tex",
+      "size_kb": 23.95,
+      "file_type": "LaTeX Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.634326"
+    },
+    {
+      "filename": "literature.bib",
+      "path": "SNF_Narrative_Research\\literature.bib",
+      "extension": ".bib",
+      "size_kb": 3.89,
+      "file_type": "Bibliography",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:50.781519"
+    },
+    {
+      "filename": "thesis_outline.tex",
+      "path": "SNF_Narrative_Research\\thesis_outline.tex",
+      "extension": ".tex",
+      "size_kb": 7.32,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:50.844691"
+    },
+    {
+      "filename": "HFT-stylized-facts.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\HFT-stylized-facts.pdf",
+      "extension": ".pdf",
+      "size_kb": 1347.06,
+      "file_type": "PDF Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.876837"
+    },
+    {
+      "filename": "the-lessons-from-the-quant-winter-global.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\the-lessons-from-the-quant-winter-global.pdf",
+      "extension": ".pdf",
+      "size_kb": 3096.02,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.978062"
+    },
+    {
+      "filename": "macro-narratives.png",
+      "path": "Quoniam_Narratives\\images\\macro-narratives.png",
+      "extension": ".png",
+      "size_kb": 235.26,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.831218"
+    },
+    {
+      "filename": "market-crash.png",
+      "path": "Quoniam_Narratives\\images\\market-crash.png",
+      "extension": ".png",
+      "size_kb": 153.45,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.845671"
+    },
+    {
+      "filename": "regression_Investor_Sentiment_intensity_vs_SPY.png",
+      "path": "Quoniam_Narratives\\images\\regression_Investor_Sentiment_intensity_vs_SPY.png",
+      "extension": ".png",
+      "size_kb": 409.1,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.869492"
+    },
+    {
+      "filename": "regression_Investor_Sentiment_intensity_vs_VIX.png",
+      "path": "Quoniam_Narratives\\images\\regression_Investor_Sentiment_intensity_vs_VIX.png",
+      "extension": ".png",
+      "size_kb": 368.18,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.889396"
+    },
+    {
+      "filename": "regression_Market_Crash_intensity_vs_SPY.png",
+      "path": "Quoniam_Narratives\\images\\regression_Market_Crash_intensity_vs_SPY.png",
+      "extension": ".png",
+      "size_kb": 376.86,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.905299"
+    },
+    {
+      "filename": "regression_Market_Crash_intensity_vs_VIX.png",
+      "path": "Quoniam_Narratives\\images\\regression_Market_Crash_intensity_vs_VIX.png",
+      "extension": ".png",
+      "size_kb": 343.98,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.923398"
+    },
+    {
+      "filename": "regression_US_Growth_Slowdown_intensity_vs_SPY.png",
+      "path": "Quoniam_Narratives\\images\\regression_US_Growth_Slowdown_intensity_vs_SPY.png",
+      "extension": ".png",
+      "size_kb": 396.73,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.946504"
+    },
+    {
+      "filename": "regression_US_Growth_Slowdown_intensity_vs_VIX.png",
+      "path": "Quoniam_Narratives\\images\\regression_US_Growth_Slowdown_intensity_vs_VIX.png",
+      "extension": ".png",
+      "size_kb": 365.74,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.735044"
+    },
+    {
+      "filename": "regression_US_Stocks_intensity_vs_SPY.png",
+      "path": "Quoniam_Narratives\\images\\regression_US_Stocks_intensity_vs_SPY.png",
+      "extension": ".png",
+      "size_kb": 391.34,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.677904"
+    },
+    {
+      "filename": "regression_US_Stocks_intensity_vs_VIX.png",
+      "path": "Quoniam_Narratives\\images\\regression_US_Stocks_intensity_vs_VIX.png",
+      "extension": ".png",
+      "size_kb": 358.6,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.714836"
+    },
+    {
+      "filename": "rolling-spy-narr.png",
+      "path": "Quoniam_Narratives\\images\\rolling-spy-narr.png",
+      "extension": ".png",
+      "size_kb": 318.08,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.761308"
+    },
+    {
+      "filename": "rolling-vix-narr.png",
+      "path": "Quoniam_Narratives\\images\\rolling-vix-narr.png",
+      "extension": ".png",
+      "size_kb": 342.17,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.695538"
+    },
+    {
+      "filename": "super-narratives.png",
+      "path": "Quoniam_Narratives\\images\\super-narratives.png",
+      "extension": ".png",
+      "size_kb": 240.99,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.778713"
+    },
+    {
+      "filename": "temporary-narratives.png",
+      "path": "Quoniam_Narratives\\images\\temporary-narratives.png",
+      "extension": ".png",
+      "size_kb": 105.15,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.787434"
+    },
+    {
+      "filename": "us-growth.png",
+      "path": "Quoniam_Narratives\\images\\us-growth.png",
+      "extension": ".png",
+      "size_kb": 233.01,
+      "file_type": "Image",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:02.813617"
+    },
+    {
+      "filename": "business-news-and-business-cycles_bybee_2024.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\business-news-and-business-cycles_bybee_2024.pdf",
+      "extension": ".pdf",
+      "size_kb": 4021.48,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.491367"
+    },
+    {
+      "filename": "forecast-vol-with-narratives.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\forecast-vol-with-narratives.pdf",
+      "extension": ".pdf",
+      "size_kb": 3391.06,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.813507"
+    },
+    {
+      "filename": "jpm_quantifying_narratives.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\jpm_quantifying_narratives.pdf",
+      "extension": ".pdf",
+      "size_kb": 3022.93,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.270357"
+    },
+    {
+      "filename": "Narrative Attention Pricing sadka 2023.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\Narrative Attention Pricing sadka 2023.pdf",
+      "extension": ".pdf",
+      "size_kb": 1412.88,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.329800"
+    },
+    {
+      "filename": "Narrative-Asset-Pricing_bybee_2023.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\Narrative-Asset-Pricing_bybee_2023.pdf",
+      "extension": ".pdf",
+      "size_kb": 2525.71,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.398015"
+    },
+    {
+      "filename": "narrative-economics-shiller-2017.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\narrative-economics-shiller-2017.pdf",
+      "extension": ".pdf",
+      "size_kb": 1016.16,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.529557"
+    },
+    {
+      "filename": "narrative-momentum-sadka-2025.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\narrative-momentum-sadka-2025.pdf",
+      "extension": ".pdf",
+      "size_kb": 1017.6,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.169663"
+    },
+    {
+      "filename": "Quantifying Economic Narratives .pdf",
+      "path": "Quoniam_Narratives\\Narratives\\Quantifying Economic Narratives .pdf",
+      "extension": ".pdf",
+      "size_kb": 1142.7,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.578566"
+    },
+    {
+      "filename": "Quantifying Narratives and their Impact on Financial MarketsL.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\Quantifying Narratives and their Impact on Financial MarketsL.pdf",
+      "extension": ".pdf",
+      "size_kb": 833.88,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.604900"
+    },
+    {
+      "filename": "the-macroeconomic-of-narratives_flynn_2024.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\the-macroeconomic-of-narratives_flynn_2024.pdf",
+      "extension": ".pdf",
+      "size_kb": 1382.54,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.651231"
+    },
+    {
+      "filename": "TheMacroeconomicsOfNarratives_preview.pdf",
+      "path": "Quoniam_Narratives\\Narratives\\TheMacroeconomicsOfNarratives_preview.pdf",
+      "extension": ".pdf",
+      "size_kb": 1884.36,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:04.706590"
+    },
+    {
+      "filename": "A Practitioner's Guide to Factor Model.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\A Practitioner's Guide to Factor Model.pdf",
+      "extension": ".pdf",
+      "size_kb": 3912.93,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.090598"
+    },
+    {
+      "filename": "guide-to-factor-investing-global.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\guide-to-factor-investing-global.pdf",
+      "extension": ".pdf",
+      "size_kb": 1374.05,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.130189"
+    },
+    {
+      "filename": "Multiplicative Factor Model for Volatility.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\Multiplicative Factor Model for Volatility.pdf",
+      "extension": ".pdf",
+      "size_kb": 4629.47,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.263703"
+    },
+    {
+      "filename": "Volatility-brochure.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\Volatility-brochure.pdf",
+      "extension": ".pdf",
+      "size_kb": 4492.43,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.371953"
+    },
+    {
+      "filename": "A simpler look at complexity.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Fourrier Random Feautures\\A simpler look at complexity.pdf",
+      "extension": ".pdf",
+      "size_kb": 793.24,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.709220"
+    },
+    {
+      "filename": "Random features for large scale kernel machines.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Fourrier Random Feautures\\Random features for large scale kernel machines.pdf",
+      "extension": ".pdf",
+      "size_kb": 477.0,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.727290"
+    },
+    {
+      "filename": "Seemingly virtuous complexity in return prediction.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Fourrier Random Feautures\\Seemingly virtuous complexity in return prediction.pdf",
+      "extension": ".pdf",
+      "size_kb": 1407.89,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.784585"
+    },
+    {
+      "filename": "Understanding the virtue of complexity.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Fourrier Random Feautures\\Understanding the virtue of complexity.pdf",
+      "extension": ".pdf",
+      "size_kb": 1790.04,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.849444"
+    },
+    {
+      "filename": "1100-why-hold-expensive-slow-growing-stocks.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Narratives\\1100-why-hold-expensive-slow-growing-stocks.pdf",
+      "extension": ".pdf",
+      "size_kb": 3443.44,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.964600"
+    },
+    {
+      "filename": "ECBs-Monetary-Policy-Tone-index.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Narratives\\ECBs-Monetary-Policy-Tone-index.pdf",
+      "extension": ".pdf",
+      "size_kb": 474.26,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:06.097713"
+    },
+    {
+      "filename": "Haven't we seen this before; Return predictions from 200 years of news.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Narratives\\Haven't we seen this before; Return predictions from 200 years of news.pdf",
+      "extension": ".pdf",
+      "size_kb": 2170.03,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:06.295925"
+    },
+    {
+      "filename": "jfi_central_bank_monetary_tones_and_yields.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Narratives\\jfi_central_bank_monetary_tones_and_yields.pdf",
+      "extension": ".pdf",
+      "size_kb": 1929.14,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:06.362769"
+    },
+    {
+      "filename": "jfi_fed_members_monetary_tones_and_yields.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Narratives\\jfi_fed_members_monetary_tones_and_yields.pdf",
+      "extension": ".pdf",
+      "size_kb": 4684.4,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:06.467607"
+    },
+    {
+      "filename": "2506.02557v1.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\NLP-Graph\\2506.02557v1.pdf",
+      "extension": ".pdf",
+      "size_kb": 1055.03,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:06.987842"
+    },
+    {
+      "filename": "Community Topic.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\NLP-Graph\\Community Topic.pdf",
+      "extension": ".pdf",
+      "size_kb": 2727.92,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.155628"
+    },
+    {
+      "filename": "leidenalg-readthedocs-io-en-latest.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\NLP-Graph\\leidenalg-readthedocs-io-en-latest.pdf",
+      "extension": ".pdf",
+      "size_kb": 647.19,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.024041"
+    },
+    {
+      "filename": "Maths_of_UMAP.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\NLP-Graph\\Maths_of_UMAP.pdf",
+      "extension": ".pdf",
+      "size_kb": 1242.54,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.060940"
+    },
+    {
+      "filename": "s11135-025-02077-y.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\NLP-Graph\\s11135-025-02077-y.pdf",
+      "extension": ".pdf",
+      "size_kb": 2166.98,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.228786"
+    },
+    {
+      "filename": "1-s2.0-S0304405X05001819-main.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Other Macro\\1-s2.0-S0304405X05001819-main.pdf",
+      "extension": ".pdf",
+      "size_kb": 976.52,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.291720"
+    },
+    {
+      "filename": "1-s2.0-S0304405X19301151-main.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Other Macro\\1-s2.0-S0304405X19301151-main.pdf",
+      "extension": ".pdf",
+      "size_kb": 970.31,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.340602"
+    },
+    {
+      "filename": "Do Hedge Funds Reduce Idiosyncratic Risk.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Other Macro\\Do Hedge Funds Reduce Idiosyncratic Risk.pdf",
+      "extension": ".pdf",
+      "size_kb": 1698.78,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.496229"
+    },
+    {
+      "filename": "Int  J Fin Econ - 2023 - Molchanov - The myth of business cycle sector rotation.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Other Macro\\Int  J Fin Econ - 2023 - Molchanov - The myth of business cycle sector rotation.pdf",
+      "extension": ".pdf",
+      "size_kb": 1814.87,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.527725"
+    },
+    {
+      "filename": "ssrn_id3473907_code3092523.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Other Macro\\ssrn_id3473907_code3092523.pdf",
+      "extension": ".pdf",
+      "size_kb": 684.21,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.561882"
+    },
+    {
+      "filename": "The behaviour of high-frequency traders.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Other Macro\\The behaviour of high-frequency traders.pdf",
+      "extension": ".pdf",
+      "size_kb": 3971.46,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.663765"
+    },
+    {
+      "filename": "The Journal of Finance - 2023 - KELLY - Modeling Corporate Bond Returns.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Other Macro\\The Journal of Finance - 2023 - KELLY - Modeling Corporate Bond Returns.pdf",
+      "extension": ".pdf",
+      "size_kb": 931.22,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.849290"
+    },
+    {
+      "filename": "Using pca to construct macro trading signals _ Macrosynergy.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Other Macro\\Using pca to construct macro trading signals _ Macrosynergy.pdf",
+      "extension": ".pdf",
+      "size_kb": 5603.86,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.811437"
+    },
+    {
+      "filename": "a30fe-017(2024).pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Sentiment\\a30fe-017(2024).pdf",
+      "extension": ".pdf",
+      "size_kb": 1995.68,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.911773"
+    },
+    {
+      "filename": "Gauging the Fear Factor_ From Volatility Peaks to Equity Returns _ AB.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Volatility\\Gauging the Fear Factor_ From Volatility Peaks to Equity Returns _ AB.pdf",
+      "extension": ".pdf",
+      "size_kb": 261.73,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:07.930308"
+    },
+    {
+      "filename": "A Factor Model for Option Returns.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\Vol Factor Modeling\\A Factor Model for Option Returns.pdf",
+      "extension": ".pdf",
+      "size_kb": 562.12,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.407144"
+    },
+    {
+      "filename": "A Forward-Looking Factor Model for Volatility.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\Vol Factor Modeling\\A Forward-Looking Factor Model for Volatility.pdf",
+      "extension": ".pdf",
+      "size_kb": 938.09,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.447809"
+    },
+    {
+      "filename": "An Analysis of Volatility Clustering of Equity Factor Strategies - QuantPedia.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\Vol Factor Modeling\\An Analysis of Volatility Clustering of Equity Factor Strategies - QuantPedia.pdf",
+      "extension": ".pdf",
+      "size_kb": 1312.45,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.504840"
+    },
+    {
+      "filename": "Dynamic Factor Volatility Modeling = bayesian latent threshold approach.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\Vol Factor Modeling\\Dynamic Factor Volatility Modeling = bayesian latent threshold approach.pdf",
+      "extension": ".pdf",
+      "size_kb": 4006.65,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.630545"
+    },
+    {
+      "filename": "Factor Analysis for Volatility - Part II.pdf",
+      "path": "Quoniam_Narratives\\Base Papers\\Factor Analysis\\Vol Factor Modeling\\Factor Analysis for Volatility - Part II.pdf",
+      "extension": ".pdf",
+      "size_kb": 569.81,
+      "file_type": "PDF Document",
+      "research_stream": "quoniam",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:12:05.658120"
+    },
+    {
+      "filename": "PiE_2025_final_projects_cpp.pdf",
+      "path": "SNF_Narrative_Research\\C++ Course\\PiE_2025_final_projects_cpp.pdf",
+      "extension": ".pdf",
+      "size_kb": 29.23,
+      "file_type": "PDF Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.849616"
+    },
+    {
+      "filename": "project_report.tex",
+      "path": "SNF_Narrative_Research\\C++ Course\\project_report.tex",
+      "extension": ".tex",
+      "size_kb": 30.02,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.816606"
+    },
+    {
+      "filename": "references.bib",
+      "path": "SNF_Narrative_Research\\C++ Course\\references.bib",
+      "extension": ".bib",
+      "size_kb": 4.28,
+      "file_type": "Bibliography",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.832481"
+    },
+    {
+      "filename": "approach.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\approach.tex",
+      "extension": ".tex",
+      "size_kb": 0.93,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:50.872248"
+    },
+    {
+      "filename": "HFT_Activity_and_Market_Microstructures.bib",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\HFT_Activity_and_Market_Microstructures.bib",
+      "extension": ".bib",
+      "size_kb": 5.27,
+      "file_type": "Bibliography",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:50.889486"
+    },
+    {
+      "filename": "knowledge.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\knowledge.tex",
+      "extension": ".tex",
+      "size_kb": 2.73,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:50.907137"
+    },
+    {
+      "filename": "randomNotesFromStefan.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\randomNotesFromStefan.tex",
+      "extension": ".tex",
+      "size_kb": 2.92,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:50.921803"
+    },
+    {
+      "filename": "presentation-slides.tex",
+      "path": "SNF_Narrative_Research\\Qualifier\\presentation-slides.tex",
+      "extension": ".tex",
+      "size_kb": 39.99,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.573750"
+    },
+    {
+      "filename": "progress-report.tex",
+      "path": "SNF_Narrative_Research\\Qualifier\\progress-report.tex",
+      "extension": ".tex",
+      "size_kb": 7.91,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.587742"
+    },
+    {
+      "filename": "acl.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\acl.bst",
+      "extension": ".bst",
+      "size_kb": 46.59,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.265958"
+    },
+    {
+      "filename": "feedback and comments.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\feedback and comments.tex",
+      "extension": ".tex",
+      "size_kb": 2.38,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.316890"
+    },
+    {
+      "filename": "FIN-cover_letter.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\FIN-cover_letter.tex",
+      "extension": ".tex",
+      "size_kb": 3.22,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.247998"
+    },
+    {
+      "filename": "FIN-manuscript.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\FIN-manuscript.tex",
+      "extension": ".tex",
+      "size_kb": 69.05,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.334834"
+    },
+    {
+      "filename": "FIN-title_page.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\FIN-title_page.tex",
+      "extension": ".tex",
+      "size_kb": 9.02,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.282434"
+    },
+    {
+      "filename": "main.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\main.tex",
+      "extension": ".tex",
+      "size_kb": 70.77,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.300937"
+    },
+    {
+      "filename": "SLR_Narrative_Data_Extraction_v3.xlsx",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\SLR_Narrative_Data_Extraction_v3.xlsx",
+      "extension": ".xlsx",
+      "size_kb": 14.22,
+      "file_type": "Other",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.350036"
+    },
+    {
+      "filename": "SLR_references.bib",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\SLR_references.bib",
+      "extension": ".bib",
+      "size_kb": 78.54,
+      "file_type": "Bibliography",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.232047"
+    },
+    {
+      "filename": "cancelled.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\cancelled.png",
+      "extension": ".png",
+      "size_kb": 142.9,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.472736"
+    },
+    {
+      "filename": "deep.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\deep.png",
+      "extension": ".png",
+      "size_kb": 157.7,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.441431"
+    },
+    {
+      "filename": "llt-metrics.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\llt-metrics.png",
+      "extension": ".png",
+      "size_kb": 103.35,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.487390"
+    },
+    {
+      "filename": "participation-rates.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\participation-rates.png",
+      "extension": ".png",
+      "size_kb": 87.93,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.460258"
+    },
+    {
+      "filename": "snr.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\snr.png",
+      "extension": ".png",
+      "size_kb": 45.63,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.485574"
+    },
+    {
+      "filename": "Market_Participants_Classification.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\Paper 1 (SSRN)\\Market_Participants_Classification.tex",
+      "extension": ".tex",
+      "size_kb": 35.34,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.181836"
+    },
+    {
+      "filename": "outline.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\Paper 1 (SSRN)\\outline.tex",
+      "extension": ".tex",
+      "size_kb": 2.04,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.202914"
+    },
+    {
+      "filename": "outline.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\Paper 2 (Physica A)\\outline.tex",
+      "extension": ".tex",
+      "size_kb": 2.92,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.298764"
+    },
+    {
+      "filename": "UFT-HFT_Market_Impact.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\Paper 2 (Physica A)\\UFT-HFT_Market_Impact.tex",
+      "extension": ".tex",
+      "size_kb": 5.18,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.285877"
+    },
+    {
+      "filename": "outline.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\Paper 3 (top journal)\\outline.tex",
+      "extension": ".tex",
+      "size_kb": 0.52,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.347979"
+    },
+    {
+      "filename": "TBD.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\Paper 3 (top journal)\\TBD.tex",
+      "extension": ".tex",
+      "size_kb": 2.78,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.333924"
+    },
+    {
+      "filename": "HFT Poster.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\QuantMinds\\HFT Poster.tex",
+      "extension": ".tex",
+      "size_kb": 9.44,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.390952"
+    },
+    {
+      "filename": "tests.tex",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\QuantMinds\\tests.tex",
+      "extension": ".tex",
+      "size_kb": 2.18,
+      "file_type": "LaTeX Document",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.379561"
+    },
+    {
+      "filename": "bfh_logo.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\logos\\bfh_logo.png",
+      "extension": ".png",
+      "size_kb": 45.29,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Asset",
+      "modified": "2026-01-03T08:11:51.534236"
+    },
+    {
+      "filename": "Deutsche_Boerse_Logo.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\logos\\Deutsche_Boerse_Logo.png",
+      "extension": ".png",
+      "size_kb": 25.03,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Asset",
+      "modified": "2026-01-03T08:11:51.543503"
+    },
+    {
+      "filename": "logo-ut.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\logos\\logo-ut.png",
+      "extension": ".png",
+      "size_kb": 22.85,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Asset",
+      "modified": "2026-01-03T08:11:51.525220"
+    },
+    {
+      "filename": "logo_SNSF.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\images\\logos\\logo_SNSF.png",
+      "extension": ".png",
+      "size_kb": 15.55,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Asset",
+      "modified": "2026-01-03T08:11:51.516545"
+    },
+    {
+      "filename": "DBAG_matching_engine.png",
+      "path": "SNF_Narrative_Research\\Deutsche Börse\\Paper 1 (SSRN)\\images\\DBAG_matching_engine.png",
+      "extension": ".png",
+      "size_kb": 82.82,
+      "file_type": "Image",
+      "research_stream": "hft",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.242606"
+    },
+    {
+      "filename": "Qualifier_presentation_Yiting Liu.tex",
+      "path": "SNF_Narrative_Research\\Qualifier\\Examples\\Qualifier_presentation_Yiting Liu.tex",
+      "extension": ".tex",
+      "size_kb": 38.64,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Example",
+      "modified": "2026-01-03T08:11:51.676940"
+    },
+    {
+      "filename": "macro-narratives.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\macro-narratives.png",
+      "extension": ".png",
+      "size_kb": 235.26,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.756213"
+    },
+    {
+      "filename": "market-crash.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\market-crash.png",
+      "extension": ".png",
+      "size_kb": 153.45,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.737539"
+    },
+    {
+      "filename": "regression_Market_Crash_intensity_vs_SPY.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\regression_Market_Crash_intensity_vs_SPY.png",
+      "extension": ".png",
+      "size_kb": 376.86,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.784120"
+    },
+    {
+      "filename": "regression_Market_Crash_intensity_vs_VIX.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\regression_Market_Crash_intensity_vs_VIX.png",
+      "extension": ".png",
+      "size_kb": 343.98,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.813546"
+    },
+    {
+      "filename": "regression_US_Stocks_intensity_vs_SPY.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\regression_US_Stocks_intensity_vs_SPY.png",
+      "extension": ".png",
+      "size_kb": 391.34,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.844740"
+    },
+    {
+      "filename": "regression_US_Stocks_intensity_vs_VIX.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\regression_US_Stocks_intensity_vs_VIX.png",
+      "extension": ".png",
+      "size_kb": 358.6,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.869493"
+    },
+    {
+      "filename": "rolling-spy-narr.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\rolling-spy-narr.png",
+      "extension": ".png",
+      "size_kb": 318.08,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.893008"
+    },
+    {
+      "filename": "rolling-vix-narr.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\rolling-vix-narr.png",
+      "extension": ".png",
+      "size_kb": 342.17,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.933183"
+    },
+    {
+      "filename": "super-narratives.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\super-narratives.png",
+      "extension": ".png",
+      "size_kb": 240.99,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.905311"
+    },
+    {
+      "filename": "temporary-narratives.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\temporary-narratives.png",
+      "extension": ".png",
+      "size_kb": 105.15,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.950516"
+    },
+    {
+      "filename": "us-growth.png",
+      "path": "SNF_Narrative_Research\\Qualifier\\Images\\us-growth.png",
+      "extension": ".png",
+      "size_kb": 233.01,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:51.969042"
+    },
+    {
+      "filename": "lit_review_main.tex",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\General\\lit_review_main.tex",
+      "extension": ".tex",
+      "size_kb": 69.69,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.899732"
+    },
+    {
+      "filename": "project_summary.tex",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\General\\project_summary.tex",
+      "extension": ".tex",
+      "size_kb": 18.49,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.876717"
+    },
+    {
+      "filename": "references.bib",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\General\\references.bib",
+      "extension": ".bib",
+      "size_kb": 126.62,
+      "file_type": "Bibliography",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.862491"
+    },
+    {
+      "filename": "macro_narrative_references.bib",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\macro_narrative_references.bib",
+      "extension": ".bib",
+      "size_kb": 222.37,
+      "file_type": "Bibliography",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.258021"
+    },
+    {
+      "filename": "main.tex",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\main.tex",
+      "extension": ".tex",
+      "size_kb": 11.08,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.304996"
+    },
+    {
+      "filename": "poster.tex",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\poster.tex",
+      "extension": ".tex",
+      "size_kb": 13.04,
+      "file_type": "LaTeX Document",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.290842"
+    },
+    {
+      "filename": "centroid_null_hypo.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\centroid_null_hypo.png",
+      "extension": ".png",
+      "size_kb": 39.47,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.750932"
+    },
+    {
+      "filename": "cosine_null_hypo.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\cosine_null_hypo.png",
+      "extension": ".png",
+      "size_kb": 45.62,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.636329"
+    },
+    {
+      "filename": "jaccard_null_hypo.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\jaccard_null_hypo.png",
+      "extension": ".png",
+      "size_kb": 38.09,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.740614"
+    },
+    {
+      "filename": "nb_speeches_timeseries.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\nb_speeches_timeseries.png",
+      "extension": ".png",
+      "size_kb": 230.33,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.624771"
+    },
+    {
+      "filename": "PCA1_change_points.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\PCA1_change_points.png",
+      "extension": ".png",
+      "size_kb": 152.83,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.602379"
+    },
+    {
+      "filename": "PCA1_PCA2_plot.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\PCA1_PCA2_plot.png",
+      "extension": ".png",
+      "size_kb": 160.27,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.767855"
+    },
+    {
+      "filename": "pca_loadings.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\pca_loadings.png",
+      "extension": ".png",
+      "size_kb": 76.56,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.730545"
+    },
+    {
+      "filename": "polarity_null_hypo.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\polarity_null_hypo.png",
+      "extension": ".png",
+      "size_kb": 41.64,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.672460"
+    },
+    {
+      "filename": "topics_centroids_drift.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\topics_centroids_drift.png",
+      "extension": ".png",
+      "size_kb": 102.07,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.687914"
+    },
+    {
+      "filename": "wordcloud_A.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\wordcloud_A.png",
+      "extension": ".png",
+      "size_kb": 409.45,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.715014"
+    },
+    {
+      "filename": "wordcloud_B.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\wordcloud_B.png",
+      "extension": ".png",
+      "size_kb": 364.3,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.659165"
+    },
+    {
+      "filename": "abstract.tex",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\abstract.tex",
+      "extension": ".tex",
+      "size_kb": 5.06,
+      "file_type": "LaTeX Document",
+      "research_stream": "topol",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.351360"
+    },
+    {
+      "filename": "biblio.bib",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\biblio.bib",
+      "extension": ".bib",
+      "size_kb": 8.15,
+      "file_type": "Bibliography",
+      "research_stream": "topol",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.336850"
+    },
+    {
+      "filename": "comment-EPIA2025.tex",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\comment-EPIA2025.tex",
+      "extension": ".tex",
+      "size_kb": 10.13,
+      "file_type": "LaTeX Document",
+      "research_stream": "topol",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.364383"
+    },
+    {
+      "filename": "manuscript-EPIA2025.tex",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\manuscript-EPIA2025.tex",
+      "extension": ".tex",
+      "size_kb": 5.04,
+      "file_type": "LaTeX Document",
+      "research_stream": "topol",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.376289"
+    },
+    {
+      "filename": "logo-bfh.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\logos\\logo-bfh.png",
+      "extension": ".png",
+      "size_kb": 41.22,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Asset",
+      "modified": "2026-01-03T08:11:52.826742"
+    },
+    {
+      "filename": "logo-snsf.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\logos\\logo-snsf.png",
+      "extension": ".png",
+      "size_kb": 34.28,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Asset",
+      "modified": "2026-01-03T08:11:52.794606"
+    },
+    {
+      "filename": "logo-ut.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\images\\logos\\logo-ut.png",
+      "extension": ".png",
+      "size_kb": 6.98,
+      "file_type": "Image",
+      "research_stream": "narratives",
+      "document_category": "Asset",
+      "modified": "2026-01-03T08:11:52.808255"
+    },
+    {
+      "filename": "info.tex",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\AAAI\\info.tex",
+      "extension": ".tex",
+      "size_kb": 1.25,
+      "file_type": "LaTeX Document",
+      "research_stream": "topol",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.415452"
+    },
+    {
+      "filename": "fig_boundaries.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\figures\\fig_boundaries.png",
+      "extension": ".png",
+      "size_kb": 95.95,
+      "file_type": "Image",
+      "research_stream": "topol",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.485884"
+    },
+    {
+      "filename": "fig_polfield.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\figures\\fig_polfield.png",
+      "extension": ".png",
+      "size_kb": 389.59,
+      "file_type": "Image",
+      "research_stream": "topol",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.501550"
+    },
+    {
+      "filename": "xAI_poles.png",
+      "path": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\figures\\xAI_poles.png",
+      "extension": ".png",
+      "size_kb": 380.54,
+      "file_type": "Image",
+      "research_stream": "topol",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:52.535291"
+    },
+    {
+      "filename": "elsarticle.cs",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Examples\\elsarticle.cs",
+      "extension": ".cs",
+      "size_kb": 43.5,
+      "file_type": "Other",
+      "research_stream": "slr",
+      "document_category": "Example",
+      "modified": "2026-01-03T08:11:53.562088"
+    },
+    {
+      "filename": "Example_SLR.pdf",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Examples\\Example_SLR.pdf",
+      "extension": ".pdf",
+      "size_kb": 1320.68,
+      "file_type": "PDF Document",
+      "research_stream": "slr",
+      "document_category": "Example",
+      "modified": "2026-01-03T08:11:53.649936"
+    },
+    {
+      "filename": "example_SLR.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Examples\\example_SLR.tex",
+      "extension": ".tex",
+      "size_kb": 86.18,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Example",
+      "modified": "2026-01-03T08:11:53.544098"
+    },
+    {
+      "filename": "CoverLetter.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Financial Innovation Templates\\CoverLetter.tex",
+      "extension": ".tex",
+      "size_kb": 12.37,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.224289"
+    },
+    {
+      "filename": "agglomerative_clustering.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\agglomerative_clustering.png",
+      "extension": ".png",
+      "size_kb": 82.28,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.773285"
+    },
+    {
+      "filename": "filter_paper_diagram.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\filter_paper_diagram.png",
+      "extension": ".png",
+      "size_kb": 101.1,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.706956"
+    },
+    {
+      "filename": "filter_paper_diagram_v2.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\filter_paper_diagram_v2.png",
+      "extension": ".png",
+      "size_kb": 70.14,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.734047"
+    },
+    {
+      "filename": "final_relevance_score_v2.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\final_relevance_score_v2.png",
+      "extension": ".png",
+      "size_kb": 21.53,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.628600"
+    },
+    {
+      "filename": "final_relevance_score_v2_before.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\final_relevance_score_v2_before.png",
+      "extension": ".png",
+      "size_kb": 22.89,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.789014"
+    },
+    {
+      "filename": "gmm_clustering.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\gmm_clustering.png",
+      "extension": ".png",
+      "size_kb": 86.97,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.804615"
+    },
+    {
+      "filename": "index_per_quartile.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\index_per_quartile.png",
+      "extension": ".png",
+      "size_kb": 34.15,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.747303"
+    },
+    {
+      "filename": "index_per_quartile_v2.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\index_per_quartile_v2.png",
+      "extension": ".png",
+      "size_kb": 17.05,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.675853"
+    },
+    {
+      "filename": "kmeans_clustering.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\kmeans_clustering.png",
+      "extension": ".png",
+      "size_kb": 72.07,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.756009"
+    },
+    {
+      "filename": "paper_temporal_quantile_distribution.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\paper_temporal_quantile_distribution.png",
+      "extension": ".png",
+      "size_kb": 16.39,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.689118"
+    },
+    {
+      "filename": "paper_temporal_quantile_distribution_v2.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\paper_temporal_quantile_distribution_v2.png",
+      "extension": ".png",
+      "size_kb": 15.64,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.611909"
+    },
+    {
+      "filename": "paper_temporal_quantile_distribution_v2_before.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\paper_temporal_quantile_distribution_v2_before.png",
+      "extension": ".png",
+      "size_kb": 19.99,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.659497"
+    },
+    {
+      "filename": "pca_corr_v2.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\pca_corr_v2.png",
+      "extension": ".png",
+      "size_kb": 21.34,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.720594"
+    },
+    {
+      "filename": "pca_cumvar_v2.png",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\images\\pca_cumvar_v2.png",
+      "extension": ".png",
+      "size_kb": 17.08,
+      "file_type": "Image",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:54.643512"
+    },
+    {
+      "filename": "good_papers.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\papers\\good_papers.tex",
+      "extension": ".tex",
+      "size_kb": 0.26,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.716935"
+    },
+    {
+      "filename": "doctoral-colloquium-pres.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Presentations\\doctoral-colloquium-pres.tex",
+      "extension": ".tex",
+      "size_kb": 16.25,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.687399"
+    },
+    {
+      "filename": "adress_reviews.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Reviews\\adress_reviews.tex",
+      "extension": ".tex",
+      "size_kb": 9.91,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.402887"
+    },
+    {
+      "filename": "FIN-cover-letter-revision.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Reviews\\FIN-cover-letter-revision.tex",
+      "extension": ".tex",
+      "size_kb": 2.31,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.432788"
+    },
+    {
+      "filename": "FIN-manuscript-diff.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Reviews\\FIN-manuscript-diff.tex",
+      "extension": ".tex",
+      "size_kb": 105.26,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.454484"
+    },
+    {
+      "filename": "FIN-response-letter.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Reviews\\FIN-response-letter.tex",
+      "extension": ".tex",
+      "size_kb": 51.76,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.419148"
+    },
+    {
+      "filename": "raw-reviews.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Reviews\\raw-reviews.tex",
+      "extension": ".tex",
+      "size_kb": 16.37,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Active",
+      "modified": "2026-01-03T08:11:53.384766"
+    },
+    {
+      "filename": "empty.eps",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\empty.eps",
+      "extension": ".eps",
+      "size_kb": 2.82,
+      "file_type": "Other",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.344735"
+    },
+    {
+      "filename": "fig.eps",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\fig.eps",
+      "extension": ".eps",
+      "size_kb": 89.45,
+      "file_type": "Other",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.375026"
+    },
+    {
+      "filename": "sn-article.pdf",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\sn-article.pdf",
+      "extension": ".pdf",
+      "size_kb": 411.51,
+      "file_type": "PDF Document",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.404188"
+    },
+    {
+      "filename": "sn-article.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\sn-article.tex",
+      "extension": ".tex",
+      "size_kb": 33.27,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.308513"
+    },
+    {
+      "filename": "sn-bibliography.bib",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\sn-bibliography.bib",
+      "extension": ".bib",
+      "size_kb": 4.84,
+      "file_type": "Bibliography",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.282276"
+    },
+    {
+      "filename": "sn-jnl.cls",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\sn-jnl.cls",
+      "extension": ".cls",
+      "size_kb": 54.55,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.258144"
+    },
+    {
+      "filename": "user-manual.pdf",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\user-manual.pdf",
+      "extension": ".pdf",
+      "size_kb": 408.69,
+      "file_type": "PDF Document",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.336426"
+    },
+    {
+      "filename": "advanced_template.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Templates\\advanced_template.tex",
+      "extension": ".tex",
+      "size_kb": 6.57,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:53.506402"
+    },
+    {
+      "filename": "simple_template.tex",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\Templates\\simple_template.tex",
+      "extension": ".tex",
+      "size_kb": 0.31,
+      "file_type": "LaTeX Document",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:53.492176"
+    },
+    {
+      "filename": "sn-apacite.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-apacite.bst",
+      "extension": ".bst",
+      "size_kb": 142.59,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.448474"
+    },
+    {
+      "filename": "sn-aps.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-aps.bst",
+      "extension": ".bst",
+      "size_kb": 29.13,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.533389"
+    },
+    {
+      "filename": "sn-basic.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-basic.bst",
+      "extension": ".bst",
+      "size_kb": 34.68,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.434807"
+    },
+    {
+      "filename": "sn-chicago.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-chicago.bst",
+      "extension": ".bst",
+      "size_kb": 33.17,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.495429"
+    },
+    {
+      "filename": "sn-mathphys-ay.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-mathphys-ay.bst",
+      "extension": ".bst",
+      "size_kb": 62.52,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.463769"
+    },
+    {
+      "filename": "sn-mathphys-num.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-mathphys-num.bst",
+      "extension": ".bst",
+      "size_kb": 62.66,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.513350"
+    },
+    {
+      "filename": "sn-nature.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-nature.bst",
+      "extension": ".bst",
+      "size_kb": 36.46,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.548864"
+    },
+    {
+      "filename": "sn-vancouver-ay.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-vancouver-ay.bst",
+      "extension": ".bst",
+      "size_kb": 39.01,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.481297"
+    },
+    {
+      "filename": "sn-vancouver-num.bst",
+      "path": "SNF_Narrative_Research\\Systematic Literature review\\sn-article-template\\bst\\sn-vancouver-num.bst",
+      "extension": ".bst",
+      "size_kb": 39.8,
+      "file_type": "Style File",
+      "research_stream": "slr",
+      "document_category": "Template",
+      "modified": "2026-01-03T08:11:54.572653"
+    }
+  ],
+  "by_extension": {
+    ".bib": 9,
+    ".tex": 43,
+    ".pdf": 50,
+    ".png": 67,
+    ".bst": 10,
+    ".xlsx": 1,
+    ".cs": 1,
+    ".eps": 2,
+    ".cls": 1
+  },
+  "by_stream": {
+    "quoniam": 63,
+    "narratives": 39,
+    "hft": 23,
+    "slr": 51,
+    "topol": 8
+  },
+  "by_category": {
+    "Active": 154,
+    "Asset": 7,
+    "Example": 4,
+    "Template": 19
+  }
+}

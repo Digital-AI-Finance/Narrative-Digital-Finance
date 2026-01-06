@@ -1,0 +1,909 @@
+\documentclass[review,1p,times]{elsarticle}
+%\documentclass[preprint,12pt]{elsarticle}
+
+
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage{array,longtable}
+\usepackage{multicol}
+\usepackage{lineno,hyperref}
+\usepackage{parskip}
+\usepackage{lineno,hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{array,longtable}
+\usepackage{mwe}
+\usepackage{layout}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{soul}
+\usepackage{smartdiagram}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} % for "ThreePartTable" environment
+\usepackage{booktabs}        % for well-spaced horizontal rules
+\usepackage[final]{pdfpages}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{scalerel}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage[final]{pdfpages}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{nameref}
+\usepackage{natbib}
+\usepackage{lineno,hyperref}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,tikzmark,positioning}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{smartdiagram}
+\usepackage{mwe}
+\usepackage{layout}
+\usepackage{caption}
+\usepackage{pgfplots}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{adjustbox,lipsum}
+\usepackage{eurosym}
+\usepackage{nomencl}
+\usepackage[acronym, nogroupskip]{glossaries}
+\usepackage{soul} 
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{csquotes}
+\usepackage{xurl}
+\usepackage{subfig}
+\usepackage{subfig}
+
+
+\modulolinenumbers[5]
+
+
+\journal{International Journal of Information Management}
+
+
+\bibliographystyle{model5-names}
+\biboptions{authoryear}
+
+
+\begin{document}
+
+
+\begin{frontmatter}
+
+
+\author[inst3]{Alessandra Amato} 
+\ead{a.amato@student.utwente.nl} 
+
+\author[inst3]{Marcos R. Machado\corref{mycorrespondingauthor}}
+\cortext[mycorrespondingauthor]{Corresponding author: Marcos R. Machado (m.r.machado@utwente.nl, Tel. +31 534899045).}
+\ead{m.r.machado@utwente.nl}
+
+\affiliation[inst3]{organization={University of Twente},
+addressline={Industrial Engineering and Business Information Systems},
+city={AE Enschede},
+postcode={7500}, 
+country={Netherlands}}
+
+\author[inst2]{João Luiz Rebelo Moreira} 
+\ead{j.luizrebelomoreira@utwente.nl} 
+
+\author[inst3]{Joerg R. Osterrieder} 
+\ead{joerg.osterrieder@utwente.nl} 
+
+\affiliation[inst2]{organization={University of Twente},
+addressline={Faculty of Electrical Engineering, Mathematics, and Computer Science}, 
+city={AE Enschede},
+postcode={7500}, 
+country={Netherlands}}
+
+
+\title{Integrating Early Warning Systems with Customer Segmentation: An Information Management Approach to Identifying Business Opportunities for Commercial Customers in the Financial Industry}
+
+
+\begin{abstract}
+Early Warning Systems (EWS) are essential in the dynamic information management environments of banks and financial institutions to monitor credit portfolios and detect early indicators of financial trouble. The literature shows that EWS typically focus on identifying negative indicators, lacking research on positive indicators. Banks and financial institutions can enhance their operations by utilizing AI to incorporate automated Customer Segmentation (CS) techniques to also identify positive indicators, such as up-selling opportunities and enhancing information systems management. This study explores how integrating EWS into a new CS model can reveal possible business opportunities in commercial credit portfolios, with an emphasis on segment orientation, identifiability, and actionability. We utilize a dataset from a major European commercial bank to investigate our methodology for combining EWS with CS and information management solutions. We utilized K-Means and DBSCAN clustering techniques with EWS indications, in addition to Principal Component Analysis (PCA) for dimensionality reduction, to efficiently categorize the client base. We conducted risk-reward and risk exposure evaluations and analysis to improve clients' understanding of health. The assessment of clustering outcomes demonstrated that PCA is superior in improving the compactness and distinctiveness of clusters. Our research provides valuable insights into strategic risk monitoring by connecting EWS and CS. This allows banks and financial institutions to customize their services for various client groups, enhancing strategic decision-making and potentially boosting profitability.
+\end{abstract}
+
+
+\begin{keyword}
+Early Warning Systems \sep Customer Segmentation \sep Unsupervised Machine Learning \sep Commercial Customers \sep Financial Industry \sep Lending
+\end{keyword}
+
+
+\end{frontmatter}
+%% \linenumbers
+
+
+\section{Introduction}
+\label{sec:intro}
+Financial institutions continuously search for novel techniques to remain ahead of the competition and boost profits in today's competitive lending market. Big Data and advanced analytics enable organizations to gain valuable customer insights and develop targeted strategies \citep{paper1}. Companies have used Customer Segmentation (CS) as a popular and efficient data-driven solution in their workflow. The concept refers to breaking a broad client base into smaller subgroups with comparable features and behaviors for marketing and sales reasons \citep{paper2}. This technology enables banks and institutions to deliver customized goods and services to meet client needs and enhance risk management in the lending industry \citep{paper3}. Implementing a CS, or customer clustering, helps application marketers spot cross- and up-selling opportunities efficiently. The effectiveness of segmentation and its impact on business depends on the attributes used to generate clusters, which represent customer behaviors and traits \citep{paper4}. Finding the right features for an application requires a deep understanding of the business and its audience, as well as alignment with the initial business objective \citep{paper5}.
+
+Early Warning Systems (EWS) is another technology that has grown significantly in the past decade and is now a valuable asset for credit risk monitoring. Risk event prediction can be achieved by qualitative and quantitative markers \citep{misc1}. One signal, or trigger, alerts the management board to a future distress situation and helps them to plan mitigation and follow-up activities. While EWS remain unexplored for most firms, more organizations are incorporating them into risk management strategies, particularly in the financial sector \citep{paper6}. Integrating information from EWS into CS systems may enhance process outcomes. Indeed, using the risk element while engaging insolvent clients would reveal each segment's portfolio businesses' current and future credit health.
+
+Today, financial institutions can use information management tools and data-driven methods to boost revenue and client loyalty. Most firms are adopting automated CS as a very effective option for focused business efforts. In line with its customer empowerment strategy, commercial banks define a global client segmentation model to identify the necessary coverage and service levels for each segment. Segments are traditionally produced exclusively from financial and behavioral history records of companies, and investigating different input variables to support CS models may result in more accurate and informative segments, enabling the identification of low-risk prospects for business opportunities.
+
+This study aims to use triggers from an EWS tool to create an automated CS model utilizing unsupervised Machine Learning (ML) methods. The research also analyzes clustering model data to discover possible client groups with ideal entity profiles for credit extensions and upselling. The case study explored in this paper relates to a commercial customers dataset settings, and therefore our main research question is: ``How to create and incorporate early warning signals into a new CS model to discover business possibilities in banks' commercial customers credit portfolio entities?" To answer this questions, we aim to explore specific research questions: 
+
+\begin{enumerate}
+    \item How can EWS information be processed for integration into a CS model?
+    \item Which model requirements should be considered? What variables can create informative consumer clusters that meet business strategic goals?
+    \item How to automate customer segmentation processes?
+    \item Which ML approaches are exploited? How can we explina these models inner decisions?
+    \item How can cluster quality and segment interpretation be assessed? What measures can be used to evaluate cluster quality? 
+    \item How can segments be visualized and analyzed?
+    \item Which ethical concerns may come from interpreting the segments obtained? 
+    \item How to propose continuous improvement for the proposed framework?
+\end{enumerate} 
+
+To answer these questions, we explore a real world dataset from a major commercial bank in Europe. This financial institution offers financing as a key service to serve its customers, including large enterprises, governments, and other financial organizations. From those, we focus on commercial clients, as they face more risks and hazards due to the operations of participating institutions and market developments, and banks and financial institutions must manage capital, monitoring loans and clients' repayment capacities.
+
+The bank part of the case study explored in this research currently deploys an EWS that provides early warning signals for risk-related indicators, such as entities' Probability of Default (PD) or Exposure at Default (EAD), enabling risk managers and front officers to prevent and mitigate potential impacts on the bank's business. To continously use this EWS tool, they are required to collect data from internal and external sources. After fetching all the data, the system can trigger an early alert if one of the indications changes significantly over time. If the application identifies a daily decline in equity of above 10\% for a certain entity, a trigger will be raised for the client, indicating a potential risk escalation. This EWS can find relevant articles about the banks' customers from external sources like Google News, Baisu News, and the Financial Times. This feature employs Natural Language Processing (NLP) approaches for entity recognition, content classification, and event clustering algorithms for news articles.
+
+In recent years, this tool has been providing a more accurate and comprehensive view of client financial health and ensuring credit portfolio stability and resilience. It also has contributed to descrease risk managers' burden and accelerated decision-making by monitoring markets, sectors, and organizations proactively. Despite these results, the tool's early warning signals only detect unexpected negative changes and distressed clients. As it stands, it is mostly risk-oriented and cannot yet warn of potential economic prospects. Thus, new analytical solutions that alert front office managers to up-selling and business-making opportunities could enhance the application's worth, and thus this would bring various benefits:
+
+\begin{enumerate}
+    \item More targeted strategies: by segmenting consumers by comparable traits and behaviors, stakeholders can define suitable actions for each group and enhance credit portfolio resource allocation.
+    \item Quick identification of business prospects: segmentation insights may improve consumer understanding, leading to faster identification of potential opportunities.
+    \item Higher customer retention: knowing client segmentation would allow the bank to meet each group's needs and provide more proactive service. This would boost bank customer happiness and loyalty.
+\end{enumerate}
+
+The remaining sections follow. Section 2 presents a systematic literature review of CS and EWS models, highlighting key trends and repeating themes. Instead, the third section we present the proposed framework, providing an overview of the experimental setup for developing the customer clustering model, while Section 4 presents the results and discuss them. In Section 5, limitations, future recommendations, and research conclusion are presented.
+
+
+\section{Related Work}
+\label{sec:relatedwork}
+The study examines and consolidates related work from three distinct viewpoints: the contexts where comparable models/tools are utilized, the methodologies employed for both EWS and CS, and the assessment of these models. We also explore the probable connections between these two strategies to find their relationship.
+
+\subsection{Analysis of Techniques}
+Nowadays, a wide range of advanced solutions may be used to create efficient EWS and CS) systems due to technological progress and the creation of cutting-edge AI applications. This section will analyze the primary approaches used in various research to categorize the most often used methodologies and gain a deeper technical grasp of these systems.
+
+When it comes to the literature on CS applications, certain factors need to be highlighted. CS primarily depends on utilizing unsupervised learning algorithms to identify similarities among entities and cluster borrowers with similar characteristics from multiple perspectives, as found in various sources \citep{paper9, paper10, paper12, paper16, paper18}. Two clustering techniques, K-means and Fuzzy C-Means (FCM), have been used in several research among the various clustering strategies discussed in the articles cited \citep{paper10, paper11, paper12, paper13, paper16, paper17, paper19}. The first technology primarily included nearly all clustering-related applications due to its very versatile, accessible, and efficient implementation compared to other clustering algorithms. However, the effectiveness of K-Means and other clustering methods is greatly influenced by the chosen number of clusters, prompting some writers to utilize established methodologies to assist in the selection process. Two studies utilized the Elbow Method to determine the optimal number of clusters \citep{paper9, paper10}. The Ward Method and the Silhouette Score were also discussed as approaches for users to evaluate the compactness and separation of clusters \citep{paper19}.
+
+Several studies reviewed did not just concentrate on clustering existing clients. Instead, they introduced Hybrid Machine Learning (HML) models designed for various tasks. In HML models, several data-driven methodologies and algorithms collaborate to address challenges that they cannot handle individually. Some clustering studies first aimed to develop models to forecast clients' default risk. To enhance the accuracy of their artifact, groups of comparable borrowers will be created as a starting point for the forecast process.
+
+The literature discusses several aspects of EWS-articles, including the types of applications developed and the strategies utilized. The idea of ``Early Warning Systems" encompasses several methods and is not limited to a single form of technology. A frequent approach involved creating a single risk indicator to anticipate customers' default risk, as explored and implemented in several research. Two distinct approaches have been utilized in this situation: The primary approach, utilized in most articles, consisted of comparing various supervised ML algorithms to select the best accurate and effective model \citep{paper21, paper22, paper23, paper29, paper32}, and the second approach utilized statistical measurements and calculations as presented by \citet{paper34, paper35, paper38}. The first methodology discussed involves the use of several algorithms such as Logistic Regression (LR), Support Vector Machines (SVM), Random Forest (RF), and Decision Trees (DT). Importantly, XGBoost, an implementation of Gradient Boosting Decision Trees, has been identified as the most successful and efficient algorithm due to its fast execution speed and accurate results as acknowledged in various research papers \citep{paper22, paper23, paper29, paper32}.
+
+Furthermore, various other studies connected to EWS have focused on creating more advanced EWS that extend beyond just forecasting credit risk. Several studies reviewed focused on providing complex credit risk management structures consisting of various modules and procedures, each performing a distinct function and duty. Other papers focused on providing new expansions to current EWS, such as extra risk indicators and indices, to enhance their risk management capabilities. The diverse range of EWS applications indicates that the discipline is rising and evolving, however, it lacks a singular and universal foundation. 
+
+\subsection{Analysis of Evaluation Methods}
+Two studies on CS models employed the Silhouette Score as a validation parameter to assess the quality of the clusters created \citep{paper13, paper17}. Experts typically use multiple indicators to evaluate the efficiency of their clustering algorithm, however the Silhouette Score was the only index commonly utilized in a few studies.
+
+In the literature on hybrid models, it is crucial to note that the applications discussed did not originally aim to cluster consumers. Thus, the authors were specifically focused on assessing the artifact's performance concerning the experiment's ultimate result during the evaluation stages. The quality validation of the clusters obtained as an intermediate stage in the entire approach was frequently overlooked or not clearly addressed in the articles cited \citep{paper9, paper10, paper12, paper16}.
+
+The evaluation methodologies used for EWS-related publications varied according to the type of application created. The evaluation of studies assessing PD systems involved calculating different metrics and utilizing validation approaches typically employed in classification efforts. The most common metrics identified were the AUC Score, Accuracy Score, and the F1 Score. Less often encountered metrics in different studies include the Kolmogorov Smirnov Score and the G-Mean Score \citep{paper21, paper23, paper29}. Researchers have used two primary validation methods to assess predictor performance: train/test split and k-fold cross-validation. In the latter scenario, the variable k's value was typically chosen by the author based on the dataset's features and available computational capabilities. 
+
+No common EWS were identified in the literature for studies discussing advanced and intricate systems acting as real EWS. It was noted that the evaluation of the efficiency of these structures sometimes relied on qualitative studies of the infrastructures and the potential consequences on current processes.
+
+
+\subsection{Analysis of Settings}
+This section aims to present a summary of the common settings discussed in the literature concerning both CS and EWS models. ``Settings" here refers to the specific environments where the studies took place, which had a significant impact on the project's needs and the participants in the research. The literature on CS revealed a recent focus on Peer-to-Peer (P2P) lending services, a financial technology that allows individuals to lend or borrow money from others without involving a financial institution \cite{paper8, paper9, paper10, paper13}. The Lending Club dataset \cite{paper8}, which includes demographic and behavioral data from users of the Lending Club digital marketplace, was utilized in several research studies to carry out and confirm their experiments. Most of the examined articles focused on segmenting clientele of banking organizations. 
+
+Another significant feature identified during the setting analysis, which complements the previously described points, relates to the types of entities included for the inquiry. Retail banking customers, specifically individual consumers from the general public, were the primary focus of the clustering models in the cited papers. The clusters were mostly based on traits and variables that indicated the socio-economic characteristics of the respondents, making them suitable solely for segmenting actual physical borrowers. The study revealed that nearly all of the CS papers studied were used for risk assessment and monitoring. Most of the examined papers focused on using customer clustering techniques to construct models that identify high-risk borrowers with a high probability of experiencing financial distress. Only a few articles have applied these strategies for various purposes, such as improving client-product allocation \cite{paper19}.
+
+When analyzing the literature on using EWS for credit risk control, it is vital to address and explain a key factor. The studies on EWS covered several industries and institutions, unlike the focus on CS approaches during the investigation \cite{paper21, paper22, paper23, paper29, paper32}. Internet Finance and banks were a major focus in the research, with early warning applications designed to assess financial risk in various types of companies such as IoT, manufacturing, and governments.  
+
+
+\subsection{The Relationship Between Early Warning Systems (EWS) and Customer Segmentation Systems} 
+This section attempts to identify and explore potential connections in the literature between CS initiatives and EWS. Before beginning the exploration, it is crucial to note that none of the articles publicly discussed or addressed this subject in a clear manner. Despite conducting research on articles related to both EWS and CS, no pertinent results were found in Scopus' collection. 
+
+However, within this literature review it was noted that many studies in CS have focused on creating hybrid Machine Learning models that combine clustering and supervised learning algorithms to predict customer default risk. It was also noted that the word ``EWS" was linked to models used to assess the default risk of individuals on multiple occasions. The analysis indicates a nuanced link between these two technologies. Clustering algorithms can be utilized in default prediction models to identify patterns and risk profiles in data, enhancing the financial risk estimate process. 
+
+Finally, we were not able to identify in the literature any papers that discuss the incorporation of early warning indicators into CS models. This type of application has not been documented or implemented. Ultimately, based on the observations presented in this analysis, it can be confirmed that although no study has specifically explored the correlation between these two methods, a significant connection can be inferred and developed. The connection being discussed does not include the integration of EWS into CS systems, which appears to be an untapped area.
+
+
+\section{Proposed Methodology}
+\label{sec:methods}
+
+\subsection{Experimental Set-Up}
+The objective of this research is to identify potential business opportunities within the commercial customers' lending credit portfolio by developing a CS model. This model generates clusters of similar clients based on historical records of early warning triggers raised and internal data of entities. To fulfill this objective and address the background motivations, several requirements were derived to define the main characteristics of the proposed model:
+
+\begin{itemize}
+    \item \textbf{Risk-oriented:} Leveraging early warning triggers from an existing EWS of a commercial bank, the CS model aims to cluster entities with similar risk levels. While the current study focuses solely on financial and behavioral features, future research could explore the integration of additional aspects to enhance cluster accuracy.
+    \item \textbf{Identifiable:} It is crucial that distinct groups of entities with recognizable characteristics can be identified within the generated clusters.
+    \item \textbf{Actionable:} To facilitate decision-making processes and opportunity identification, the model should derive actionable insights from the analysis and exploration of the created segments.
+\end{itemize}
+
+Figure \ref{fig:framework} outlines the schematic framework deployed to achieve the final results of the proposed models. While non-technical procedures such as defining business objectives and requirements are not detailed in the overview, they were integral parts of the project framework. The experimental setup is structured into four main processes: data collection, data preprocessing, model implementation, and analysis of clustering results. Each process comprises specific and sequential sub-processes, implemented using Python libraries and tools supported by Jupyter Notebook.
+
+\begin{figure}[bth]
+\centering{\includegraphics[width=0.89\textwidth]{figs/framework.png}}
+        \caption{Overview of the Experimental Set-Up}
+        \label{fig:framework}
+\end{figure}
+
+A deeper exploration of the schema reveals that these processes align with central phases defined in both the Data Science Research (DSR) and Cross-Industry Standard Process for Data Mining (CRISP-DM) methodologies \citep{designscience, crispdm}. Specifically, the ``Data Collection" and ``Data Preprocessing" processes relate to the ``Design and Development" and ``Demonstration" steps of DSR, and the ``Data Understanding," ``Data Preparation," and ``Modeling" steps of CRISP-DM. The analysis and examination of clusters can be viewed as the "Evaluation" step common to both methodologies.
+
+Each highlighted procedure in the overview is thoroughly described and analyzed in the following sections, elucidating the motivations behind critical decisions that significantly influenced the research outcome.
+
+
+\subsection{Data Collection \& Preprocessing}
+The data used for this project was provided by a major commercial bank in the Netherlands and pertains to the same type of data processed by an existing EWS tool used to monitor customers' financial health and generate early warning triggers. As previously mentioned, this existing tool has three pipelines to extract and manipulate the data. Firstly, an internal pipeline collects clients' monthly data from the banks' central financial and risk systems, producing ``internal triggers." Secondly, two separate external pipelines retrieve public market data from Refinitiv\footnote{https://my.refinitiv.com/content/mytr/en/signin.html} and news articles from online sources such as the Financial Times and Google News, generating ``external triggers."
+
+Three datasets were retrieved from the existing EWS's databases in the form of CSV files, all containing historical records of triggers and internal data collected from May 2022 to April 2023. This 12-month period was chosen to provide a yearly overview of customers' risk profile changes and migrations, though different time windows could be implemented in future studies. Each dataset is described below, providing qualitative information about clients while maintaining confidentiality. Additional insights from exploratory data analysis and descriptive statistics are discussed in Section \ref{sec:results}.
+
+\begin{itemize}
+    \item \textbf{External Triggers:} The external triggers dataset includes records of all triggers raised by the existing application and news articles detected from May 2022 to April 2023. This dataset reports triggers activated by changes in financial instruments (e.g., Equity or CDS) and news articles involving monitored entities. Sentiment scores associated with each article provide insight into public perception. Table \ref{tab:ExTriggersTable} presents an overview of external triggers and brief descriptions.
+    \item \textbf{Internal Triggers:} The internal triggers dataset contains historical data of internal triggers flagged by the existing EWS application from May 2022 to April 2023. These triggers are derived from specific financial measures calculated internally by the bank for each client. Table \ref{tab:InTriggersTable} summarizes internal triggers included in the study.
+    \item \textbf{Internal Data:} The internal data table consists of monthly records of clients' personal and financial information. Columns irrelevant to the research objective were discarded. Table \ref{tab:InDataTable} summarizes internal data included in the study.
+\end{itemize}
+
+
+\begin{table}[htb]
+\fontsize{8}{7}\selectfont 
+\centering
+\caption{Summary of External Triggers}
+\begin{tabular}{p{0.20\linewidth}p{0.08\linewidth}p{0.65\linewidth}}
+\toprule
+\textbf{Trigger Type} & \textbf{ID} & \textbf{Description} \\
+\midrule
+External Trigger & BND & Raised when the Bond value changes over a pre-defined threshold \\
+External Trigger & CDS & Raised when the CDS value changes over a pre-defined threshold \\
+External Trigger & EQU & Raised when the Equity value changes over a pre-defined threshold \\
+External Trigger & FXR & Raised when the Foreign Exchange Rate EUR/VAL value changes over a pre-defined threshold \\
+External Trigger & ECR & Raised when the External Credit Rating value changes over a pre-defined threshold \\
+Topic Model & BNK & Flagged when a relevant Bankruptcy-related news article is detected \\
+Topic Model & ECC & Flagged when a relevant Environment \& Climate Change-related news article is detected \\
+Topic Model & FRD & Flagged when a relevant Fraud news article is detected \\
+Topic Model & HR & Flagged when a relevant Human Rights-related news article is detected \\
+Topic Model & MA & Flagged when a relevant Merger \& Acquisition-related news article is detected \\
+Topic Model & SNC & Flagged when a relevant Sanctions-related news article is detected \\
+\bottomrule
+\end{tabular}
+\label{tab:ExTriggersTable}
+\end{table}
+
+
+\begin{table}[htb]
+\fontsize{8}{7}\selectfont 
+\centering
+\captionof{table}{Summary of all the internal triggers included in the study}
+\begin{tabular}{p{0.20\linewidth}p{0.10\linewidth}p{0.63\linewidth}}
+    \toprule
+    \bf{Trigger Type} & \bf{ID} & \bf{Description} \\ [0.5ex] 
+    \midrule
+    Internal Trigger & FBS & Trigger generated when a significant change in the Forbearance Status is detected \\ [3pt] 
+    Internal Trigger & ESRT & Trigger generated when a significant change in the ESR Transaction Outcome is detected \\ [3pt]
+    Internal Trigger & SS & Trigger generated when a significant change in the Sanction Status is detected \\ [3pt]  
+    Internal Trigger & CVNT & Trigger related the Covenant Monitoring and scheduling \\ [3pt]
+    Internal Trigger & DPD2 & Trigger generated when the Days Past Due value changes over a pre-defined threshold \\ [3pt] 
+    Internal Trigger & IR/RG2 & Trigger generated when the Internal Rating Grade value changes over a pre-defined threshold \\ [3pt]
+    Internal Trigger & EAD2 & Trigger generated when the Exposure At Default value changes over a pre-defined threshold \\ [3pt]  
+    Internal Trigger & LE2 &  Trigger generated when the Outstanding Amount value exceeds a pre-defined threshold \\ [3pt]
+    Internal Trigger & RWA2 & Trigger generated when the Risk-Weighted Assets value changes over a pre-defined threshold  \\ [3pt]
+    Internal Trigger & LGD2 & Trigger generated when the Loss Given Default value changes over a pre-defined threshold \\ [3pt]    
+    Internal Trigger & ROD/RUD & Trigger generated when the Reviews Upcoming Date is after/before the respective Reporting Date  \\ [3pt] 
+    Internal Trigger & IFRSS2 & Trigger generated when a change in the International Financial Reporting Stage (IFRS) status is detected \\ [3pt] 
+    Internal Trigger & WL & Trigger generated when the difference between the current Reporting Date and a Watchlist Date is below a certain threshold\\ [3pt] 
+\bottomrule
+\end{tabular}
+\label{tab:InTriggersTable} 
+\end{table}
+
+
+\begin{table}[htb]
+\fontsize{8}{7}\selectfont 
+\centering
+\captionof{table}{Summary of the internal data included in the study}
+\begin{tabular}{p{0.20\linewidth}p{0.25\linewidth}p{0.48\linewidth}}
+    \toprule
+    \bf{Trigger Type} & \bf{ID} & \bf{Description} \\ [0.5ex] 
+    \midrule
+    Internal Data & ALLOC LIMIT AMT & Client's total allocated limit \\ [3pt] 
+    Internal Data & OUTSTANDING AMT & Client's total outstanding amount \\ [3pt]
+    Internal Data & EAD & Client's Exposure At Default value \\ [3pt]  
+    Internal Data & RWA & Client's Risk-Weighted Assets\\ [3pt]
+    Internal Data & WORST IFRS & Client's worst credit risk stage based on IFRS9 accounting standards\\ [3pt]
+    Internal Data & LGD &  Client's Loss Given Default value\\ [3pt]
+    Internal Data & PD & Client's Probability of Default value  \\ [3pt]
+    Internal Data & ACTIVE STATUS & Client's current Activity Status \\ [3pt]    
+    Internal Data & RISK RATING & Client's current Internal Risk Rating\\ [3pt] 
+\bottomrule
+\end{tabular}
+\label{tab:InDataTable} 
+\end{table}
+
+
+\subsection{Data Preprocessing}
+\label{data_preprocessing}
+Data preprocessing and feature engineering are crucial in ensuring the accuracy and reliability of subsequent analyses \citep{king2023diffusion, detwal2023machine}. In this research, these procedures were meticulously executed to prepare the data for clustering purposes. The complexities of the collected data demanded careful handling, as outlined below \citep{joung2023interpretable, vaid2023artificial}.
+
+\begin{itemize}
+    \item \textbf{Triggers and Topic Models Data Preparation:} Simple preprocessing procedures were applied to external and internal triggers datasets and news articles. This involved separating news articles from triggers data, filtering by trigger types, and counting occurrences for each customer on a monthly basis. Additionally, sentiment scores were associated with articles for sentiment analysis. Table \ref{tab:ExTriggersTable} offers an overview of external triggers, while internal triggers are summarized in Table \ref{tab:InTriggersTable}.   
+    \item \textbf{Internal Data Cleaning:} Extensive cleaning was required for the internal data table due to inconsistencies and missing values. Rows with inconsistent data were removed, entities with limited historical data were excluded, and clients without recent records were eliminated. This process ensured a reliable dataset for analysis.
+    \item \textbf{Internal Data Imputation:} Missing values in the internal dataset were addressed through systematic imputation techniques. Forward and backward filling methods were applied, and missing numerical values were replaced with column means. Categorical missing values were imputed with mode values, ensuring data completeness for subsequent analysis.
+    \item \textbf{Feature Engineering:} Feature engineering transformed the data into more suitable variables for analysis. New features such as Expected Loss were created, and logarithmic models computed monthly growth rates. Credit risk status migrations were tracked, and the most recent records were extracted. Average monthly triggers and news articles were also computed for each entity. These steps enhanced the dataset's interpretability and prepared it for clustering analysis.
+\end{itemize}
+
+
+\subsection{Models Implementation}
+\label{models_implementation}
+This subsection delves into the implementation of the clustering algorithms, which are instrumental in segmenting customers and extracting valuable insights from the dataset. Before diving into the specifics of the clustering algorithms, two essential preparatory steps were applied to the final dataset obtained: dimensionality reduction and data scaling. With the application of these two techniques, the effects of dimensionality and distribution of the data on the accuracy of the clusters are mitigated, leading to more insightful and coherent segments.
+
+
+\subsection{Dimensionality Reduction}
+\label{dim_reduction}
+Since a high number of input features can often make the clients segmentation difficult to interpret and challenging, one of the last and final steps before the actual implementation of the clustering models involved the reduction of the dimensionality of the dataset. Fewer input dimensions correspond to fewer input parameters that could also lead to simple clustering models \cite{misc10}. This was achieved by adopting two different methodologies.
+
+The first method involved manual feature selection based on the results of variables' correlation analysis. The correlation analysis aims to assess the relationship between two features by computing a decimal value called the Pearson's correlation coefficient, calculated using the equation below. If the coefficient is greater than zero, then the two variables in question have a positive correlation, meaning that an increase of one variable would also lead to an increase of the second variable \cite{paper41}.
+
+$$ C_{A,B} = \frac{Covariance(A,B)}{\sigma_{A}\sigma_{b}} $$
+ 
+Alternatively, another widely-used dimensionality reduction technique in customer segmentation projects is Principal Component Analysis (PCA). As already mentioned in the previous chapter, this method aims to identify a set of orthogonal axes, known as principal components, capturing the directions along which the data exhibits the most significant variation. The projection of the data onto these components reduces its dimensionality while preserving the data's essential patterns and initial structure.
+
+
+
+\subsection{Feature Scaling: Data Standardization}
+\label{data_standard}
+Feature Scaling is an essential preprocessing step in Machine Learning, especially when applying distance-based algorithms such as clustering. Since real-life datasets usually contain data of varying magnitude, variance, and ranges, it is important to ensure that all the features are on a comparable scale for the ML model to interpret them correctly. Feature scaling, in fact, prevents certain features from prevailing and leading to a biased model by transforming all variables to a similar scale. Standardization, also known as Z-Score Normalization, is a scaling method that transforms the data so that the mean of the attribute becomes zero and the resulting distribution has a unit standard variance \cite{misc9}.
+
+
+\subsection{K-Means \& DBSCAN}
+\label{kmeans-dbscan}
+After preprocessing and standardizing the final dataset, the first step required for implementing K-Means clustering was to determine the optimal number of clusters. In this study, the Elbow Method guided this decision-making process \citep{jeong2019social}. The technique involves running K-Means for a range of cluster numbers and plotting the corresponding Within-Cluster Sum of Squares (WCSS) values against the number of clusters. The ``Elbow" point represents the potential candidate for the optimal number of clusters.
+
+The performance of K-Means clustering \citep{ay2023fc} depends also on the definition of a number of other hyperparameters, which play a critical role in shaping the outcomes of the algorithm. These include Initialization Method, Number of Initializations, and Random Seed.
+
+Selecting optimal values for DBSCAN's key hyperparameters \citep{wei2024adaptive}, namely $\epsilon$ and MinPoints, presented more challenges compared to K-Means. Various studies have adopted different methods for selecting $\epsilon$ and MinPoints. Given the limitations imposed by traditional techniques, a more subjective approach to selecting these hyperparameters was adopted in this study. The focus shifted toward finding a balance between generating a reasonable number of clusters capturing meaningful customer segments and optimizing the Silhouette Score, a metric used to evaluate the quality of clustering results.
+
+
+
+\subsection{Models Validation}
+\label{models_validation}
+In this subsection, all the validation procedures adopted to provide a comprehensive exploration and evaluation of the customer segments generated are outlined. The analysis was developed from two main perspectives. Firstly, the quality of the clusters is assessed by investigating the cohesion and separation of the segments. This is achieved by calculating three popular measurements that help determine the best partition of entities. The second study, instead, thoroughly examines the characteristics of the customer segments based on all the features that have been maintained in the dataset. Descriptive statistics, such as mean values and distributions of features within clusters, are believed to provide meaningful insights into the distinct behaviors and growths of each segment. Finally, by integrating and interpreting the information obtained from the two previous analyses, the research aims to align the clusters with domain knowledge and business objectives in order to identify a group of entities that would represent ideal prospects for future business opportunities.
+
+
+\subsection{Clusters Quality Evaluation}
+\label{quality_eval}
+To estimate the quality of the customer segments generated by the K-Means and DBSCAN clustering algorithms, three key metrics were employed: the Silhouette Score \cite{shahapure2020cluster, ogbuabor2018clustering}, the Calinski-Harabasz Score \citep{gomez2018hierarchical}, and the Davies-Bouldin Score \citep{petrovic2006comparison}. These measures are defined as follows:
+
+\begin{itemize}
+\item \textbf{Silhouette Score}: Measures how close each data point is to its closest cluster, indicating the closeness of the points in the same cluster and the separation of points belonging to different clusters.
+\item \textbf{Calinski-Harabasz Score}: Also known as the Variance Ratio Criterion, is defined as the ratio between the within-cluster dispersion and the between-cluster dispersion.
+\item \textbf{Davies-Bouldin Score}: Measures the average similarity between clusters, where a low score signifies a more marked separation among the clusters.
+\end{itemize}
+
+The use of these three indicators provided valuable insights on the cohesion and separation of the segments created. Moreover, these metrics were computed for both the uncorrelated dataset, obtained from manual feature selection, and the PCA-generated dataset, in order to verify which dimensionality reduction technique was the most appropriate for the study objective.
+
+
+\subsection{Segments Exploration}
+\label{clusters_expl}
+The second type of analysis focused on the exploration of the clusters that have been developed to discover the main characteristics of each customer segment from several perspectives. Initially, the analysis of the number of entities falling into each customer cluster helped identify segments with higher density, signifying a larger concentration of customers sharing similar characteristics. Moreover, the study of the number of clients composing each cluster provided relevant insights on the actual performance of the clustering algorithm. The use of descriptive statistics for all the features used in the clustering process shed light on the main tendencies and spread of the data within each segment. Mean, median, standard deviation, minimum, and maximum values allowed the identification of the features and traits that distinguished a group of entities from the others and highlighted the distinct attributes that characterized the respective segment.
+
+Additionally, a risk-reward analysis and a risk exposure analysis were integrated into the study. The former investigated the average number of monthly triggers as a pivotal metric, while the latter examined the contrast between the average monthly Outstanding Amount growth and the average monthly EAD growth characterizing every cluster. These analyses enabled the identification of clusters more susceptible to financial volatility and unfavorable sentiments, providing insights for strategic decision-making.
+
+Moreover, the SHAP library was harnessed to unravel the web of feature contribution that defined the clusters generation process. This tool provided a better understanding of how individual features influenced the assignment of each entity to a particular segment. The computed SHAP values represented a quantitative measure capturing the feature's impact on the clustering model. The visualisation of SHAP values was executed independently for each cluster produced by K-Means, considering the dataset obtained from the dimensionality reduction process using correlation analysis. To overcome limitations and optimize efficiency, an iterative process was adopted, ensuring the reliability of the findings.
+
+
+\section{Results \& Discussions}
+\label{sec:results}
+
+\subsection{Exploratory Data Analysis}
+Prior to the comprehensive analysis of outcomes derived from each analytical model's implementation, a foundational step was to conduct an exploratory investigation into the data's structure. This initial examination focused on the attributes generated through the feature engineering phase, as detailed in Section \ref{sec:methods}. Termed Exploratory Data Analysis (EDA), this process is instrumental in uncovering fundamental patterns and characteristics within the dataset, thus informing the selection of the most appropriate clustering methodology. Figure \ref{fig: data_distribution} presents a summary of the descriptive statistics of the features explored in this study, and further illustrations of the distributions of the examples within each feature are presented in the Appendix \ref{fig: exploratory_data_binary} and \ref{fig: exploratory_data_nonbinary}.
+
+The initial analysis (presented in Figures \ref{fig: exploratory_data_binary} and \ref{fig: exploratory_data_nonbinary}) investigated the distribution of client metrics across different value ranges for each feature by quantifying observations and instances within specific intervals. Nonetheless, the significant dispersion observed in some attributes, coupled with the imbalance of occurrences across intervals, presented challenges in understanding data distribution through histogram visualizations alone. For example, in Figure \ref{fig: exploratory_data_nonbinary}, certain variables like "tot\_outstanding" and "negative\_articles" exhibited a singular dominant column. This observation indicates a concentration of clients within a specific value range, albeit not implying a uniformity in data values. A minority of clients exhibited outlier values not captured within the standard intervals, rendering their representation on the charts minimal.
+
+To enhance data interpretation, a secondary analysis incorporating descriptive statistics of the features was conducted, as depicted in Figure \ref{fig: data_distribution}. From these analyses, several insights can be drawn:
+
+\begin{itemize}
+    \item \textbf{Default/Watchlist Status}: By April 2023, fewer than 2000 entities out of the 22331 borrowers in the study were linked to either a "In Default" or "Watchlist" activity status. As anticipated, this particular group of persons, who were unable to meet their financial responsibilities or exhibited other risk characteristics that could result in default, made up just a small portion of all clients.
+    \item \textbf{Worst IFRS stage and Internal Rating score migrations}: The majority of clients included in the analysis maintained a favorable credit quality and low credit risk by reporting Internal Rating scores and IFRS stages below pre-defined thresholds from the start, for all possible Internal Rating score migrations and Worst IFRS stage migration. The borrowers with high ratings and falling under either Stage 2 or Stage 3 of the IFRS standard were the second most common group. The histograms showed that a greater proportion of the entire client base had a decrease in their personal rating and assigned stage rather than an increase. This indicates that clients were more likely to experience a decline in their credit quality and financial well-being, and less likely to make substantial progress.
+    \item \textbf{Allocated Limit, EAD, RWA, Expected Loss and Outstanding Amount growths}: The descriptive statistics values for different attributes revealed many relevant scenarios for monthly growth trends. Initially, both data indicated that a tiny group of entities saw significant declines and increases in all attributes. The consumers in question had values greater than $1$ and less than $-1$, indicating growth rates exceeding $100\%$ and $-100\%$, respectively. The odd results are due to the approximation method used during feature engineering to address null values at the beginning or conclusion of the period. The logarithmic increase calculated for this specific subgroup of clients was notably significant due to the data manipulation. Although this phenomena occurred, most borrowers witnessed growth within the range of around $-0.5$ to $+0.5$, with some showing even tighter intervals. For example, most clients reported increases in the variables Expected Loss growth and Allocated Limit growth within the range of $-0.2$ and $0.2$. Figure \ref{fig: data_distribution} shows that the Allocated Limit, EAD, and Outstanding Amount mostly experienced minor declines or no significant growth among clients over the months. This conclusion was based on analyzing the median and 75th percentile values of the characteristics, which were all around 0 for these qualities. Furthermore, it was found that while a considerable number of clients had an increase in Expected Loss and RWA, the growth was not very significant for the majority of these businesses. The $75^{th}$ percentiles for both attributes shown in Figure \ref{fig: data_distribution} were insignificant and did not suggest significant increases.
+    \item \textbf{Average number of monthly triggers and news articles}: Initially, it was noted that the majority of the entities in this study did not provide any external trigger, negative article, or positive article alerts on a monthly basis. The $75^{th}$ percentile value of the specific attributes in all three cases was found to be $0$ through analysis (Figure \ref{fig: data_distribution}). However, a small group of clients was found to generate 1 to 2 triggers and articles per month. The internal triggers indicated in Figure \ref{fig: exploratory_data_nonbinary} appeared to be slightly more alarming. Most entities had an average monthly internal trigger rate below \$0.57, indicating a low likelihood of activating any internal trigger each month. However, over 5000 borrowers reported a higher and more significant average rate, with a considerable number of clients even experiencing the activation of more than 1 trigger per month.
+    \item \textbf{Total Outstanding Amount and Total Allocated Limit}:  Due to the substantial divergence in the data of both features, no relevant insights into the distribution of customers' data could be obtained from the analysis of Figure \ref{fig: exploratory_data_nonbinary}. The analysis mostly depended on the findings shown in Figure \ref{fig: data_distribution}. As of April 2023, almost 50\% of the clients had a Total Outstanding amount below 5k euros. Within this selection of entities, almost 25\% of the clients had a null value, indicating that they had either paid off their amount completely or had not used their assigned limit. On the other hand, the rest of the clients had higher balances, with some even as high as $\num{7e-10}$ for some individuals. Regarding the Total Allocated Limit, it was found that 50\% of borrowers had limits below 500,000 euros, and within that group, 50\% had limits below 5000 euros. The highest value recorded for this particular property was $\num{1e-11}$, likely awarded to organizations with the largest outstanding debts.
+\end{itemize}
+
+\begin{figure}[htb] 
+    \centering
+    {\includegraphics[width=\textwidth]{figs/data_distribution2.png}}
+        \caption{Statistical data of growth and triggers-related features}
+        \label{fig: data_distribution}
+\end{figure}
+
+
+
+\subsection{Dimensionality Reduction Results}
+\subsubsection{Correlation Analysis in Dimensionality Reduction}
+\label{corr_analysis}
+
+A cornerstone of our dimensionality reduction effort involved performing a detailed correlation analysis to discern the relationships among various variables, as discussed in Section \ref{dim_reduction}. This analysis is crucial for identifying features that encapsulate significant information, thereby simplifying the model's computational demands and enhancing the interpretability and visualization of derived clusters. The correlation matrix \citep{liu2006new}, presented in the Appendix \ref{fig: correlation analysis}, was constructed using the complete dataset, detailing the correlation scores for each attribute pair. To improve readability and highlight strong correlations, a color gradient scheme was applied, with red tones indicating positive correlations and blue tones denoting negative correlations. The intensity of the color correlates with the strength of the relationship, and attributes with a correlation score beyond $0.95$ or below $-0.95$ were deemed highly correlated.
+
+The Appendix \ref{fig: correlation analysis} revealed predominantly positive, significant correlations among the attributes, with certain pairs exhibiting correlation scores as high as $0.99$. Notably, the pairs with scores above $0.95$ included: (i) RWA growth and Outstanding growth, (ii) EAD growth and Outstanding growth, (iii) RWA growth and EAD growth, and (iv) Total Outstanding Amount and Total Allocated Limit. 
+
+The strong correlation observed in the first three pairs can be attributed to the calculation methodologies underlying these metrics, where the outstanding amount plays a pivotal role in determining both EAD and RWA values. Despite these high correlations potentially influencing the performance of clustering models, discussions with bank credit risk experts underscored the value of these metrics in providing insights into clients' evolving risk profiles. Consequently, these three attributes were retained for further analysis.
+
+Conversely, the relationship between Total Outstanding Amount and Total Allocated Limit warranted a different approach. Given the study's focus on identifying clusters for potential credit limit adjustments, maintaining the Total Allocated Limit attribute was deemed crucial for enabling more tailored strategic decisions and offerings by stakeholders. Thus, the decision was made to exclude the Total Outstanding Amount feature, resulting in a refined dataset containing $19$ of the original $20$ attributes.
+
+
+\subsubsection{Principal Component Analysis (PCA)}
+\label{pca_analysis}
+The application of Principal Component Analysis (PCA) served as a supplementary dimensionality reduction technique, aimed at evaluating the efficacy and performance of clustering algorithms across datasets of varying dimensions \citep{hasan2021review}. This approach facilitated the identification of the most suitable technique for this specific dataset. The cumulative variance plot, shown in Figure \ref{fig: pca_cumvar}, played a critical role in determining the optimal number of principal components (PCs) to retain, adhering to an explained variance ratio of 80\% to 95\%. Analysis of this plot revealed that the first $11$ PCs accounted for approximately 90\% of the original dataset's information, establishing them as the optimal choice for dimensionality reduction. Consequently, the dataset underwent transformation into a lower-dimensional space represented by these $11$ PCs, allowing for a more efficient and insightful analysis.
+
+\begin{figure}[htb] 
+    \centering
+    {\includegraphics[width=0.7\textwidth]{figs/pca.png}}
+        \caption{Cumulative variance for each component}
+        \label{fig: pca_cumvar}
+\end{figure}
+
+
+
+
+
+\subsection{Models Implementation Results}
+
+\subsubsection{K-Means: Identifying the Optimal Cluster Count}
+\label{elbow_method}
+This subsection delves into the application of the Elbow Method for determining the most suitable number of clusters for the K-Means algorithm. This method was applied to datasets derived from two distinct dimensionality reduction techniques. Utilizing the KElbowVisualizer tool\footnote{\url{https://www.scikit-yb.org/en/latest/api/cluster/elbow.html}}, we automated the process of fitting the K-Means model across a predefined range of cluster counts and pinpointing the elbow point on the Within-Cluster Sum of Squares (WCSS) curve.
+
+Figures \ref{fig: elbow_uncorr} and \ref{fig: elbow_pca} showcase the results obtained using the Yellowbrick library\footnote{\url{https://www.scikit-yb.org}}, which proved invaluable for identifying the less apparent inflection points in both datasets. For the dataset resultant from the correlation analysis method (Figure \ref{fig: elbow_uncorr}), selecting a cap of $16$ clusters revealed the elbow point at $9$ clusters, with a WCSS of $181101.883$. In contrast, the PCA-transformed dataset (Figure \ref{fig: elbow_pca}) identified $8$ as the optimal number of clusters, featuring a WCSS of $171236.431$.
+
+Interestingly, these findings deviate from the norm identified in related literature, where the typical cluster range is between $4$ and $7$. This discrepancy might stem from the comprehensive array of attributes and features used in this study, leading to more nuanced customer profiles and, consequently, a higher number of precise and distinct segments.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figs/elbow_uncorr.png}
+		\caption
+		{Elbow point for the dataset from correlation analysis}    
+		\label{fig: elbow_uncorr}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.47\textwidth}  
+  		\centering 
+		\includegraphics[width=\textwidth]{figs/elbow_pca.png}
+		\caption
+ 	{Elbow point for the dataset from PCA analysis}    
+		\label{fig: elbow_pca}
+	\end{subfigure}
+	\caption{Elbow method for both correlation analysis and PCA approach.} 
+	\label{fig:elbow}
+\end{figure}
+
+
+\subsubsection{DBSCAN: Optimizing $\epsilon$ and MinPoints}
+\label{dbscan_hyperpar_analysis}
+
+The traditional methodologies for selecting DBSCAN hyperparameters did not suit our dataset's unique characteristics. Thus, we adopted a novel strategy focused on optimizing cluster count and Silhouette score. Figures \ref{fig: cluster_num_uncorr}, \ref{fig: silh_uncorr}, \ref{fig: cluster_num_pca}, and \ref{fig: silh_pca} present matrices illustrating the relationship between the number of clusters and Silhouette scores across varying $\epsilon$ and MinPoints for both datasets.
+
+Analysis of these matrices highlighted a trend: increasing $\epsilon$ and MinPoints values generally resulted in higher Silhouette scores, albeit at the cost of fewer clusters. Notably, for cluster counts similar to those determined through K-Means, the Silhouette scores remained reasonable, suggesting a balanced trade-off. Consequently, for both datasets—uncorrelated and PCA-transformed—forming $8$ clusters with an approximate Silhouette Score of $0.47$ emerged as the optimal configuration, striking a satisfactory balance between cluster granularity and quality.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figs/uncorr_clust_eps_min.jpeg}
+		\caption
+		{Clusters for varying DBSCAN parameters (correlation analysis dataset)}    
+		\label{fig: cluster_num_uncorr}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.47\textwidth}  
+  		\centering 
+		\includegraphics[width=\textwidth]{figs/pca_clust_eps_mins.jpeg}
+		\caption
+ 	{Clusters for varying DBSCAN parameters (PCA analysis dataset).}    	\label{fig: cluster_num_pca}
+	\end{subfigure}
+	\caption{Clusters for varying DBSCAN parameters using both PCA analysis and correlation datasets.} 
+	\label{fig:number-clusters-dbscan}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figs/uncorr_silh_eps_min.jpeg}
+		\caption
+		{Silhouette scores for varying DBSCAN parameters (correlation analysis dataset)}    
+		\label{fig: silh_uncorr}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.47\textwidth}  
+  		\centering 
+		\includegraphics[width=\textwidth]{figs/pca_silh_eps_mins.jpeg}
+		\caption
+ 	{Silhouette scores for varying DBSCAN parameters (PCA analysis dataset)}    	
+    \label{fig: silh_pca}
+	\end{subfigure}
+	\caption{Silhouette scores in both PCS and Correlation analysis methods.} 
+	\label{fig:silh-dbscan}
+\end{figure}
+
+
+
+\subsection{Models Performance Evaluation}
+\label{clusters_quality_analysis}
+Clustering, an exploratory approach at its core, operates without the benefit of ground-truth labels available in supervised learning, posing challenges in directly assessing model performance. However, evaluating clustering quality through specific metrics can offer insights into the model's effectiveness. This study utilized the Silhouette Score, Davies-Bouldin Score, and Calinski-Harabasz Score (Section \ref{quality_eval}) to gauge the compactness within clusters and the separation between them for both K-Means and DBSCAN algorithms. The outcomes of these evaluations are summarized in Table \ref{tab:algorithm_perf}.
+
+One of the critical observations from this analysis was the variation in performance metrics across different datasets for the same clustering algorithm. The Silhouette Scores for the K-Means algorithm on uncorrelated and PCA datasets were close, with scores of $0.538135$ and $0.538501$, respectively. DBSCAN also showed similar minimal contrast, with scores of $0.458367$ and $0.468183$ for the uncorrelated and PCA datasets, respectively.
+
+A notable point was that K-Means applied to PCA-transformed datasets outperformed in terms of the Davies-Bouldin and Calinski-Harabasz scores, indicating more well-defined and separate clusters, with scores of $0.759579$ and $4503.09$, respectively. This trend was echoed in the DBSCAN algorithm, with the exception of the Davies-Bouldin score favoring the uncorrelated dataset. However, the use of PCA-transformed data introduces practical limitations, as principal components are linear combinations of original attributes, potentially obscuring direct interpretation for decision-makers due to their detachment from the original features.
+
+Moreover, the comparison across performance metrics highlighted that K-Means generally yielded more favorable results, suggesting its capability to produce more cohesive and distinct clusters. For instance, the Calinski-Harabasz score for K-Means on the correlation analysis dataset was significantly higher at $3746.80$ compared to $859.201$ for DBSCAN.
+
+\begin{table}[H]
+  \captionsetup{justification=centering}
+  \caption{Clusters quality results for different algorithms and different datatsets}
+  \label{tab:algorithm_perf}
+  \begin{threeparttable}
+    \begin{center}
+      \resizebox{0.8\textwidth}{!}{%
+        \begin{tabular}{cc|ccc}
+          \toprule
+          Dataset & Algorithm & \textbf{Silhouette} & \textbf{Davies-Bouldin} & \textbf{Calinski-Harabasz} \\
+          \midrule
+          Uncorrelated & K-Means & 0.538135 & 0.814055 & 3746.80\\
+          & DBSCAN & 0.458367 & 1.56887 & 859.201 \\
+          PCA & K-Means & 0.538501 & 0.759579 & 4503.09 \\
+          & DBSCAN & 0.468183 & 1.86492 & 1183.54 \\
+          \bottomrule
+        \end{tabular}
+      }
+    \end{center}
+  \end{threeparttable}
+\end{table}
+
+This evaluation underscores the importance of selecting the appropriate clustering algorithm and dataset preprocessing technique, balancing computational efficiency, and interpretability to achieve meaningful segmentation.
+
+
+\subsection{Segments Exploration}
+
+\subsubsection{Clusters' Densities Analysis}
+\label{clusters_densities}
+
+Analyzing the densities and sizes of clusters is pivotal for understanding the effectiveness and performance of clustering algorithms. This analysis sheds light on the compactness, separation, and identification of outliers within the dataset. The distribution of clients across various clusters, as generated by the K-Means algorithm post-application of dimensionality reduction techniques, reveals the homogeneity and heterogeneity within and across clusters.
+
+The exploration of client distributions (Figure \ref{fig: clusters_distributions}) indicates that, despite different datasets, clusters defined similar subsets of entities, though under varied labels. This homogeneity suggests a consistent clustering mechanism, albeit revealing significant density variations across clusters. Such variations do not inherently signify the algorithm's failure to distinguish data points but rather highlight the diverse nature of the data and the potential insights gleaned from detailed segment explorations.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figs/distribution_kmeans-uncorr.png}
+		\caption
+		{Distribution for the uncorrelated dataset}    
+		\label{fig:distribution_kmeans_uncorr}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.47\textwidth}  
+  		\centering 
+		\includegraphics[width=\textwidth]{figs/distribution_kmeans-pca.png}
+		\caption
+ 	{Distribution for the PCA dataset}    	
+    \label{fig:distribution_kmeans_pca}
+	\end{subfigure}
+	\caption{Clients distribution across different K-Means clusters} 
+	\label{fig: clusters_distributions}
+\end{figure}
+
+Notably, one cluster encompassed about 70\% of the study's client base, while two smaller clusters contained minimal entity counts, indicating a broad disparity in cluster sizes. The remaining clusters exhibited more balanced distributions, suggesting effective client separation.
+
+
+\subsubsection{Highlights of Clustering Results and Analysis}
+\label{uncorr_kmeans_expl}
+
+The descriptive statistics analysis of each cluster offers a comprehensive view of the unique trends and peculiarities inherent to different segments within the dataset. From this in-depth and detailed investigation, several important aspects and insights could be derived. Firstly, the analysis revealed that the entities assigned to each segment were indeed characterised by similar traits and properties. However, as the traits in question were only related to a limited subset of the features involved, these common patterns did not define an all-around similarity within each cluster. In fact, it was observed that, for most segments, the reported statistics appeared to be consistent and less sparse only for a certain number of attributes, representing the most significant and meaningful features of the respective cluster. For this reason, it was not always possible to properly categorise and label specific groups of borrowers merely by their shared characteristics and attributes.
+
+Nevertheless, despite this limitation, it was discovered that, in reality, several clusters did exhibit more coherent and concordant scenarios for most of the variables, thus facilitating their interpretation and classification. For instance, Cluster $3$, generated from the implementation of K-Means over the so-called uncorrelated dataset, it was discerned that the majority of the entities involved did present a more favourable and promising profile compared to the other clusters. Indeed, when analyzing the descritive statistics of each cluster we can notice that the clients in question were assigned to regular and not critical status (except for a small and negligible percentage) and were most likely dealing with a depreciation of their PD or LGD, despite engaging with a new loan. Moreover, it was also noticed that Cluster $3$'s clients would not generate any trigger on a monthly basis and presented a positive credit quality throughout the whole study.
+
+On the contrary, for the elements composing Cluster $2$, the exploration of the respective descriptive data unveiled a more concerning and problematic picture. By including over $30\%$ of distressed or watchlisted clients, generating more than $1$ internal warning every month and presenting high-risk credit ratings and scores both in their starting and ending months, Cluster $2$ was indeed defined as the most unfavourable and adverse segment among the ones created.
+
+
+
+\subsubsection{Risk-Reward Analysis}
+\label{risk_rew_analysis}
+
+The development of the ARIA tool aimed at enhancing the supervision of customers at risk and detecting potential credit incidents early necessitated a focused risk-reward analysis. This analysis, centering on the average monthly count of positive and negative triggers, sought to deepen our understanding of the financial health and behavior of each cluster. Within this framework, the risk component was quantified by the average monthly count of negative triggers within a cluster, encompassing negative news articles and both internal and external triggers. Conversely, the reward component was determined by the average number of positive articles identified per segment. This comparative analysis between risk and reward metrics allowed for an assessment of the balance between risk exposure and business potential for engaging with specific customer subgroups.
+
+It's crucial to note the broader distribution within and overlap across clusters for these features, which limited their influence on the segmentation process. Additionally, the analysis was conducted exclusively on entities within the interquartile range of each attribute, highlighting a methodological choice that significantly influences the interpretability and reliability of the analysis outcomes.
+
+\textbf{Uncorrelated Dataset: K-Means: } In the uncorrelated dataset analysis, one cluster notably stood out for having an average monthly count of positive news articles greater than $1$, distinguishing it as particularly risky due to a high occurrence of negative triggers (Figure \ref{fig:rr_uncorr_kmeans}). This finding indicates a significant risk associated with this cluster, contrasting with other clusters that showed no positive article alerts and displayed low averages of monthly negative triggers, suggesting a generally lower risk profile.
+
+Additionally, certain clusters demonstrated a propensity to generate approximately one trigger almost every month, highlighting a spectrum of risk engagement across the dataset. This variation in risk profiles across clusters, as delineated by their respective trigger counts, underscores the diverse financial health within the dataset.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figs/RR_uncorr_kmeans.png}
+		\caption
+		{Overview}    
+		\label{fig:rr_uncorr_kmeans}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.47\textwidth}  
+  		\centering 
+		\includegraphics[width=\textwidth]{figs/RR_uncorr_kmeans2.png}
+		\caption
+ 	{Zoom in of overview}    	
+    \label{fig:rr_uncorr_kmeans2}
+	\end{subfigure}
+	\caption{Risk-reward analysis for clusters generated from the implementation of K-Means on the dataset obtained from correlation analysis} 
+	\label{fig: rr_pca_kmeans-complete1}
+\end{figure}
+
+
+\textbf{PCA Dataset: K-Means:} The PCA-transformed dataset's clustering outcomes closely mirrored those from the uncorrelated dataset, indicating consistent risk-reward profiles irrespective of the data preparation methodology used. Again, a singular cluster was identified as especially risky, characterized by both a high count of negative triggers and positive news articles (Figure \ref{fig:rr_pca_kmeans}). This cluster's distinct risk profile is indicative of the complex dynamics of risk and reward present within the dataset.
+
+Other clusters exhibited a lower risk profile, marked by minimal positive news alerts and low negative trigger averages. This analysis provides a detailed overview of the financial health and risk exposure across the client base, highlighting the importance of nuanced risk management strategies tailored to the diverse risk profiles identified through clustering.
+
+This risk-reward analysis, leveraging early warning triggers, enriches our understanding of each cluster's financial health, offering valuable insights into the dataset's risk exposure and business potential. It underscores the significance of developing customer engagement strategies that are attuned to the varied risk landscapes revealed through detailed clustering analysis.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figs/RR_pca_kmeans.png}
+		\caption
+		{Overview}    
+		\label{fig:rr_pca_kmeans}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.47\textwidth}  
+  		\centering 
+		\includegraphics[width=\textwidth]{figs/RR_pca_kmeans2.png}
+		\caption
+ 	{Zoom in of overview}    	
+    \label{fig:rr_pca_kmeans2}
+	\end{subfigure}
+	\caption{Risk-reward analysis for clusters generated from the implementation of K-Means on the PCA-transformed dataset} 
+	\label{fig: rr_pca_kmeans-complete}
+\end{figure}
+
+
+
+\subsubsection{Risk Exposure Analysis}
+The risk exposure analysis centers on evaluating the outcomes produced by the K-Means clustering algorithm applied to various datasets. This examination is particularly insightful when juxtaposed with the average Total Outstanding Amount for each cluster as of April 2023. Such a comparison aims to unveil the inherent risk associated with distinct subsets of entities.
+
+It is crucial to interpret the findings of this analysis with caution. The features scrutinized exhibit limited significance across most clusters, underscoring a need for circumspection in assessing the analysis's reliability and conclusions.
+
+\textbf{Uncorrelated Dataset: K-Means: } This portion of the analysis sheds light on the average risk exposure across clusters by comparing average growth in Outstanding Amount against EAD growth. Notably, two clusters demonstrate significant variances: one with substantial decreases and another with pronounced increases in both metrics, hinting at diverse financial behaviors within the dataset.
+
+Other clusters generally exhibit less marked declines in both attributes. However, certain clusters deviate from this trend, presenting unique patterns in their EAD-Outstanding Amount ratios. These variations signal different levels of financial health and risk exposure across the dataset.
+
+
+\begin{table}[H]
+\centering
+\caption{Summary of the K-Means clusters' average Outstanding growth, EAD growth, and EAD-Outstanding ratio for the uncorrelated dataset.}
+\label{tab:riskexp_kmeans_uncorr}
+\begin{tabular}{c|ccc}
+\toprule
+Cluster & EAD Growth & Outstanding Growth & EAD-Outstanding Ratio \\
+\midrule
+0 & -0.001100 & -0.001088 & 1.01 \\
+1 & -0.002487 & -0.002960 & 0.84 \\
+2 & -0.000866 & -0.001900 & 0.45 \\
+3 & 1.633508 & 1.648977 & 0.99 \\
+4 & -1.583113 & -1.558997 & 1.01 \\
+5 & 0.025014 & 0.021329 & 1.17 \\
+6 & -0.022743 & -0.040768 & 0.56 \\
+7 & -0.007402 & -0.007041 & 1.05 \\
+8 & -0.000119 & -0.000052 & 2.29 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\textbf{PCA Dataset: K-Means: } The findings from the PCA-transformed dataset mirror those observed in the uncorrelated dataset, emphasizing the consistency in identifying risk exposure variances among clusters. This analysis reveals clusters with significant growth differences, reinforcing the clustering outcomes' effectiveness in highlighting financial dynamics.
+
+\begin{table}[H]
+\centering
+\caption{Summary of the K-Means clusters' average Outstanding growth, EAD growth, EAD-Outstanding ratio, and Outstanding Amount for the PCA-transformed dataset.}
+\label{tab:riskexp_kmeans_pca}
+\begin{tabular}{c|cccc}
+\toprule
+Cluster & EAD Growth & Outstanding Growth & Total Outstanding Amount & EAD-Outstanding Ratio \\
+\midrule
+0 & -0.001111 & -0.001643 & 63718.68 & 0.68 \\
+1 & -0.001499 & -0.001511 & 1801486 & 0.99 \\
+2 & 1.638770 & 1.654103 & 2912977 & 0.99 \\
+3 & 0.025014 & 0.021329 & 7.07133e+10 & 1.17 \\
+4 & -1.573920 & -1.548339 & 0.00 & 1.01 \\
+5 & -0.002150 & -0.001378 & 31742.96 & 1.56 \\
+6 & -0.022743 & -0.040768 & 22314860 & 0.56 \\
+7 & -0.000252 & -0.000238 & 33418.19 & 1.06 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This exploration into risk exposure, leveraging the K-Means algorithm across different datasets, offers a nuanced view of the financial health and risk profiles present within the dataset. By correlating growth trends against the backdrop of average Total Outstanding Amounts, it provides a comprehensive framework for understanding the financial dynamics and risk considerations necessary for informed risk management and financial analysis.
+
+
+
+
+\subsection{Models Explainability \& Validation}
+
+\subsubsection{SHAP Analysis}
+\label{shap_results}
+
+SHAP (SHapley Additive exPlanations) values \citep{lundberg2020local}, indicating the contribution of each feature to the clustering model for a specific cluster, were computed across two different trials on distinct random samples from the original dataset. These analyses were performed using the dataset derived from the correlation analysis procedure, highlighting the most impactful attributes for each cluster. The Kernel SHAP method's outcomes, across various data subsets, revealed consistent feature importance across trials, especially for more significant attributes and denser clusters.
+
+Specifcially, in the case of Cluster 4 (Figure \ref{fig:shap_cluster4}), variations in less impactful attributes, such as "rating\_bad\_good\_migration," were observed across trials, likely due to data undersampling, which led to different feature distributions. Despite these variations, SHAP analysis results aligned well with statistical data exploration, indicating that growth-related features (e.g., EAD growth, Outstanding Amount growth) and low scores played crucial roles in clustering. Conversely, features like the average number of monthly triggers or credit limit status in April 2023 had a minor influence on segmentation.
+
+Similarly, for Cluster 2 (Figure \ref{fig:shap_cluster2}), as depicted in additional figures, influential attributes remained consistent across trials, confirming their decisive roles in clustering. High values in features like "ifrs\_bad\_bad\_migration" and "default\_watchlist\_status," and low values in "ifrs\_good\_good\_migration," were found to significantly contribute to the clustering process. These findings suggest that attributes with more variability and defined value ranges effectively differentiate data points, while attributes related to monthly triggers or total allocated limit in April 2023 were less significant.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figs/shap4_summaryplot.png}
+		\caption
+		{}    
+		\label{fig:shap_cluster4a}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.47\textwidth}  
+  		\centering 
+		\includegraphics[width=\textwidth]{figs/shap4_summaryplot2.png}
+		\caption
+ 	{}    	
+    \label{fig:shap_cluster4b}
+	\end{subfigure}
+	\caption{SHAP values of the most significant features for Cluster 4 generated with K-Means and the dataset obtained from correlation analysis} 
+	\label{fig:shap_cluster4}
+\end{figure}
+
+
+
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figs/shap2_summaryplot.png}
+		\caption
+		{}    
+		\label{fig:shap_cluster2a}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.47\textwidth}  
+  		\centering 
+		\includegraphics[width=\textwidth]{figs/shap2_summaryplot2.png}
+		\caption
+ 	{}    	
+    \label{fig:shap_cluster2b}
+	\end{subfigure}
+	\caption{SHAP values of the most significant features for Cluster 2 generated with K-Means and the dataset obtained from correlation analysis} 
+	\label{fig:shap_cluster2}
+\end{figure}
+
+
+
+\subsubsection{Models Validation Results}
+\label{models_validation_summary}
+
+This section summarizes the validation techniques applied to assess the analytical methods' quality and reliability:
+
+\begin{itemize}
+    \item \textbf{K-Means Number of Clusters Validation:} The KElbowVisualizer tool from Python's Yellowbrick library was used to determine the optimal number of clusters by analyzing the relationship between cluster count and intra-cluster inertia. The optimal cluster numbers identified for the uncorrelated and PCA-transformed datasets were 9 and 8, respectively.
+    \item \textbf{DBSCAN Hyperparameters Validation:} Various approaches were explored for determining optimal $\epsilon$ and MinPoints values. A custom approach, focusing on the trade-off between cluster count and Silhouette Score, was adopted due to the inadequacy of conventional methods for this dataset. Optimal values selected were $\epsilon=5.0$ and MinPoints=3 for the uncorrelated dataset, and $\epsilon=4.0$ and MinPoints=8 for the PCA dataset.
+    \item \textbf{Clusters Quality Evaluation:} The quality of clusters formed by K-Means and DBSCAN was validated using the Silhouette Score, Davies-Bouldin Score, and Calinski-Harabsz Score, indicating K-Means' superior performance in creating more distinct and compact clusters, especially for the PCA-transformed dataset.
+    \item \textbf{SHAP Analysis Validation:} SHAP values were calculated using Python's SHAP library, employing the Kernel SHAP explainer on multiple random subsets to assess feature influence consistently. Despite the computational intensity, this model-agnostic approach validated the integrity and consistency of the SHAP analysis outcomes across different trials.
+\end{itemize}
+
+
+
+
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This research delved into the integration of EWS into a novel CS model tailored for commercial clients. The aim was to identify a segment of customers ideal for potential business up-selling opportunities and credit limit extensions. 
+
+\subsection{Lessons learned and contributions}
+Our core research question was addressed through these contributions:
+
+\begin{itemize}
+    \item \textbf{Integration of EWS into the CS model:} Initially, key requirements were defined to align with the research's business objectives. The CS model was designed to be risk-oriented, generate distinguishable clusters, and provide actionable insights. Features were engineered to gauge clients' financial health from various perspectives.
+    \item \textbf{Automated generation of customer segments:} Two clustering algorithms, K-Means and DBSCAN, were deployed alongside dimensionality reduction techniques to identify the most suitable model. Validation techniques were employed, including the Elbow Method and Silhouette Score. SHAP values were computed to understand feature contributions.
+    \item \textbf{Assessment of cluster quality and interpretation:} Cluster evaluation involved metrics like Silhouette Score and Davies-Bouldin Score. Risk-reward analysis and exploration of cluster attributes provided insights into segment characteristics. Despite limitations in certain clusters' consistency across features, specific subgroups showed promise for future business prospects.
+\end{itemize}
+
+From a practical standpoint, this research enhances the understanding of commercial clients' financial health, supporting decision-makers with insights to adapt strategies, tailor offerings, and effectively monitor credit portfolios. It enables proactive risk management and personalized customer engagement strategies. Additionally, it assesses the efficacy of an existing EWS, uncovering cause-and-effect relationships and high-risk situations. The application of EWS for CS purposes extends beyond commercial customers in banking, benefiting sectors like healthcare, e-commerce, retail, and energy. 
+
+From a scientific standpoint, this study bridges the gap between EWS and CS practices, introducing a novel perspective on strategic risk control. By integrating EWS into CS, it enriches segmentation methodologies and sparks discussions on predictive indicators and ethical considerations. This approach not only enhances segmentation practices but also stimulates intellectual discourse on leveraging EWS for marketing and customer management purposes.
+
+\subsection{Limitations and Future Research}
+The main limitations that have influenced the outcomes and should be considered when interpreting the findings are described as follows.
+
+\begin{itemize}
+    \item \textbf{Utilization of one citation database and specific search criteria:} The systematic literature review was constrained by using only Scopus as the citation database. This approach was based on subjective researcher judgment and may have excluded related work from consideration.
+    \item \textbf{Literature limitations:} The existing literature on EWS and CS practices remains limited. These technologies have only recently gained attention from experts, indicating a need for further research.
+    \item \textbf{Application of two clustering algorithms:} While the chosen algorithms offer valuable insights, they may not capture all patterns within the dataset. Relying solely on two clustering models might restrict the identification of all potential clusters. Future research could explore a wider range of methods for a more comprehensive understanding.
+    \item \textbf{Data quality:} The accuracy of customer clustering models depends heavily on data quality. Potential inaccuracies within the dataset may have led to misclassifications or compromised segment reliability.
+    \item \textbf{Data preprocessing challenges:} The complexity of preprocessing efforts, particularly in integrating data from multiple sources, may have influenced the clustering outcomes. Future research could explore alternative preprocessing methods to improve model accuracy.
+    \item \textbf{Limited data accessibility:} Confidentiality restrictions limited access to client data, affecting the comprehensiveness of the dataset. This limitation may have compromised the identification of risk behaviors and hindered the effectiveness of the clustering model.
+\end{itemize}
+
+We highlight the main recommendations for further enhancing the value of the CS model as follows.
+
+\begin{itemize}
+    \item \textbf{Integration of diverse datasets:} Incorporating data from various sources, such as market data and clients' financial information, could provide a more comprehensive view of customers' financial health and profitability.
+    \item \textbf{Feature prioritization:} Involving domain experts to prioritize features or assign weights to attributes could improve the clustering process and automate the identification of client segments aligned with business objectives.
+    \item \textbf{Feature contribution:} Further research could explore the contributions of features to clustering outcomes using techniques such as SHAP values, potentially by integrating a classifier into the analysis for deeper understanding.
+\end{itemize}
+
+
+\bibliography{cas-refs}
+
+
+
+\newpage
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\setcounter{figure}{0}
+\makeatletter 
+\renewcommand{\thefigure}{A\@arabic\c@figure}
+\makeatother
+
+
+\section*{Appendix A - Exploratory Data Analysis}
+\label{appendixA}
+
+
+\begin{figure}[htb] 
+    \centering
+    {\includegraphics[width=\textwidth]{figs/expl_binary.png}}
+        \caption{Clients distribution for different values of the migrations and Default/Watchlist status}
+        \label{fig: exploratory_data_binary}
+\end{figure}
+
+\begin{figure}[htb] 
+    \centering
+    {\includegraphics[width=0.9\textwidth]{figs/expl_nonbinary.png}}
+        \caption{Clients distribution for different values of the growth and triggers-related features}
+        \label{fig: exploratory_data_nonbinary}
+\end{figure}
+
+
+\setcounter{figure}{0}
+\makeatletter 
+\renewcommand{\thefigure}{B\@arabic\c@figure}
+\makeatother
+
+
+\section*{Appendix B - Dimensionality Reduction Analysis}
+\label{appendixB}
+
+\begin{figure}[htb] 
+    \centering
+    {\includegraphics[width=\textwidth]{figs/corr_analysis.png}}
+        \caption{Feature's correlation matrix}
+        \label{fig: correlation analysis}
+\end{figure}
+
+
+\end{document}
+

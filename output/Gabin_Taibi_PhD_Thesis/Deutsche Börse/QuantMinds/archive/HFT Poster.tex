@@ -1,0 +1,157 @@
+\documentclass[final]{beamer}
+
+% \usepackage[orientation=portrait, size=a2, scale=1.4]{beamerposter}
+\usepackage[orientation=landscape, size=a2, scale=1.4]{beamerposter}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+
+\setbeamercolor{block title}{fg=white,bg=blue!70!black}  % Block title background
+\setbeamercolor{block body}{fg=black,bg=white}           % Block body background
+\setbeamerfont{title}{series=\bfseries, size=\Huge}       % Poster title font
+\setbeamerfont{block title}{size=\large,series=\bfseries} % Block title font
+\setbeamercolor{header}{fg=white, bg=black}               % Header background and font
+
+\begin{document}
+\begin{frame}[t] % Poster layout in a single frame
+
+% Header Section (Rectangle)
+\begin{block}
+    {\usebeamercolor[fg]{header}
+    \centering
+    \vspace{-0.5cm}
+    \rule{\textwidth}{0.4cm}  % Top border as a thick line
+    \vspace{0.5cm}
+    
+    % Title of the poster
+    \textbf{\Huge From Speed to Stability: The Influence of Low Latency Trading on Market Quality} \\
+    \vspace{0.5cm}
+    \textbf{\Large Gabin Taibi, Bern University of Applied Sciences, University of Twente}
+    
+    % Supervision Block with Affiliations
+    \vspace{0.5cm}
+    % \textbf{\large Under the supervision of:} \\
+    % \textbf{Dr. Stefan Schlamp, Head of Quantitative Analytics at Deutsche Börse} \\
+    % % \textbf{Prof. Dr. Joerg Osterrieder, Professor of Sustainable Finance at Bern University of Applied Sciences \& Associate Professor of Finance and AI at University of Twente} \\
+    % % \textbf{Prof. Dr. Branka Hadji Misheva, Professor at Bern University of Applied Sciences}
+    % \textbf{Prof. Dr. Joerg Osterrieder, Professor at Bern University of Applied Sciences \& University of Twente} \\
+    % \textbf{Prof. Dr. Branka Hadji Misheva, Professor at Bern University of Applied Sciences}
+    
+    % % University logos (replace with your images)
+    % \includegraphics[height=2cm]{path-to-your-logo1.png}
+    % \hspace{2cm}
+    % \includegraphics[height=2cm]{path-to-your-logo2.png}
+    % \vspace{0.5cm}
+    
+    \rule{\textwidth}{0.4cm}  % Bottom border as a thick line
+    }
+\end{block}
+
+% Now, the main content can follow (Introduction, Methodology, Results, etc.)
+\begin{columns}
+
+    % Left Column
+    \begin{column}{0.32\textwidth}
+        \centering
+        \begin{minipage}{0.23\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{QuantMinds/images/logos/Deutsche_Boerse_Logo.png}
+        \end{minipage}
+        \begin{minipage}{0.23\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{QuantMinds/images/logos/logo_SNSF.png}
+        \end{minipage}
+        \begin{minipage}{0.23\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{QuantMinds/images/logos/bfh_logo.png}
+        \end{minipage}
+        \begin{minipage}{0.23\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{QuantMinds/images/logos/logo-ut.png}
+        \end{minipage}
+    
+        \begin{block}{Background}
+        \justifying
+        The rapid evolution of electronic financial markets, driven by technological advancements such as ultra-low-latency trading systems, high-performance computing, and Field-Programmable Gate Arrays (FPGA) technology, has transformed the landscape of trading. These innovations have enabled the rise of Ultra-Fast Traders (UFT) and High-Frequency Traders (HFT), also known as Low-Latency Traders (LLT), who can react to market events within a few microseconds. These ultra-fast reaction capabilities set them apart from conventional market participants, making them a unique force in financial markets.
+        
+        Understanding the role and behavior of these traders is critical to analyzing modern market dynamics. UFTs and HFTs play a significant role in liquidity and price formation, but their impact on market stability and efficiency remains the subject of ongoing debate.
+        \end{block}
+
+        \begin{block}{Research Objectives}
+        \justifying
+        \begin{itemize}
+            \item Contributing to the ongoing discussion about the role of ultra-fast trading in financial markets.
+            \item Proposing a novel market particpants' classification methods.
+            \item Providing a detailed analysis of participation rates and trading behaviors of UFT and HFT.
+            \item Analyzing how these participants affect market microstructure, efficiency, and volatility.
+        \end{itemize}
+        % This research contributes to the ongoing discussion about the role of ultra-fast trading in financial markets by providing a detailed analysis of participation rates and trading behaviors of UFTs and HFTs, and how these participants affect market microstructure, efficiency, and volatility.
+        
+        % The primary objective is to identify market events that are triggered by LLT in order to measure their participation rate. Then, the second idea is to choose key market quality metrics and statute on a causal relation between higher LLT participation and less favorable market conditions.
+    \end{block}
+
+        \begin{block}{Data and preprocessing}
+        \justifying
+        The study is based on nanoseconds timestamp data from Eurex platform, starting from January 2021 until September 2024. More specifically,  we chose Euro STOXX 50 Futures due to their high liquidity on the Eurex exchange.
+        
+        To classify a specific market event, we have based our approach on the latency between a prior triggering trade and the event. \textbf{Events with a latency of less than $\mathbf{1 \boldsymbol{\mu} s}$ s are classified as UFT-triggered, latencies between $\mathbf{1 \boldsymbol{\mu} s}$ and $\mathbf{10 \boldsymbol{\mu} s}$ as HFT-triggered, while latencies exceeding $\mathbf{10 \boldsymbol{\mu} s}$ are attributed to conventional traders.} Additionally, events with negative latency are considered noise.
+        
+        To assess the impact of LLT on the market, we measure market quality using several key metrics: \textbf{traded volume, spread, effective spread, depth, order imbalance ratio, and volatility}.
+        % Uncommon metrics formulas: 
+        % \begin{itemize}
+        %     % \item $\text{volume} = \sum_{i=1}^{N}{q_{i}}$, $N$ being the number of trades in 1 min and $q$ the trade quantity.
+        %     % \item $\text{spread} = price_{ask}^{(1)} - price_{bid}^{(1)}$, where $^{(i)}$ denotes for the order book level.
+        %     \item $\text{effective spread} = $
+        %     % \item $\text{depth} = quantity_{ask}^{(1)} + quantity_{bid}^{(1)}$
+        %     \item $\text{order imbalance ratio} = \frac{quantity_{bid}^{(1)} - quantity_{ask}^{(1)}}{quantity_{ask}^{(1)} + quantity_{bid}^{(1)}}$
+        %     % \item $\text{mid price} = \frac{price_{ask}^{(1)} + price_{bid}^{(1)}}{2}$
+        %     \item $\text{micro price} = \frac{price_{ask}^{(1)} + price_{bid}^{(1)}}{2} + \frac{tick.size}{2} \times \frac{quantity_{bid}^{(1)} - quantity_{ask}^{(1)}}{quantity_{ask}^{(1)} + quantity_{bid}^{(1)}}$
+        % \end{itemize}
+        \end{block}
+    \end{column}
+
+    % Middle Column
+    \begin{column}{0.32\textwidth}
+        \begin{block}{Results}
+        \justifying
+        \centering
+            \includegraphics[width=1\textwidth]{QuantMinds/images/participation-rates.png}
+            \captionof{Figure 1: Cumulative participation rates (aggressive and passive)}
+            \vspace{0.4cm}
+
+            \includegraphics[width=1\textwidth]{QuantMinds/images/cancelled.png}
+            \captionof{Figure 2: Canceled Participation Insights}
+            \vspace{0.4cm}
+
+            \includegraphics[width=1\textwidth]{QuantMinds/images/deep.png}
+            \captionof{Figure 2: Deep Order Book Inserts Participation Insights}
+            \vspace{0.4cm}
+    
+            \includegraphics[width=1\textwidth]{QuantMinds/images/llt-metrics.png}
+            \captionof{Figure 3: LLT impact on eight key metrics}
+            \vspace{0.4cm}
+        \end{block}
+    \end{column}
+
+    % Right Column
+    \begin{column}{0.32\textwidth}
+        \begin{block}{Methodology}
+        \justifying
+            The initial method for measuring the participation rate involved counting the number of market events the participants triggered. However, this approach overlooks a critical factor: the volume of the market events. Therefore, we opted to measure participation using the \textbf{notional value}. The focus is then shifted to comparing various types of participation, including total, aggressive, passive, canceled, and deep (orders placed beyond the first level of the order book) participation. Subsequently, \textbf{we calculate the participation rate by summing the notional value of each participant's market events on a monthly basis}.
+
+            Secondly, to assess the impact of LLT on the market, we aggregate tick-to-trade data into 1-minute intervals and compute various metrics, \textbf{including traded volume, average spread, effective spread, depth, order imbalance ratio, and the volatility of mid, micro, and trade price}. A control variable, comparable to the signal-to-noise ratio, is also included, though it won’t be discussed in detail here. Lastly, we combined the 1-minute intervals into monthly datasets and, for each month, divided the data into 5 total participation quantiles.
+        \end{block}
+        
+    
+        \begin{block}{Conclusion and further work}
+        \justifying
+            Summarize your results.
+            Intraday analysis and reaction to news with NLP.
+        \end{block}
+    \end{column}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}

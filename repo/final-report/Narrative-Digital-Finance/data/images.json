@@ -1,0 +1,478 @@
+{
+  "generated_at": "2026-01-04T07:08:49.231208",
+  "generator": "PhD Research Pages Generator",
+  "version": "1.0.0",
+  "source_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance-Gabin-Research",
+  "target_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance\\repo",
+  "total_images": 56,
+  "total_size_mb": 8.37,
+  "by_stream": {
+    "quoniam": 15,
+    "hft": 10,
+    "narratives": 14,
+    "topol": 3,
+    "slr": 14
+  },
+  "by_category": {
+    "Narrative Visualization": 3,
+    "Analysis Chart": 11,
+    "Regression Analysis": 8,
+    "Rolling Analysis": 2,
+    "Market Microstructure": 3,
+    "Logo": 7,
+    "Statistical Test": 4,
+    "Time Series": 1,
+    "Dimensionality Reduction": 5,
+    "Text Visualization": 2,
+    "Research Figure": 2,
+    "Clustering Analysis": 3,
+    "Diagram": 2,
+    "Distribution Plot": 3
+  },
+  "streams_detail": {
+    "quoniam": {
+      "count": 15,
+      "size_mb": 4.53,
+      "categories": {
+        "Narrative Visualization": 3,
+        "Analysis Chart": 2,
+        "Regression Analysis": 8,
+        "Rolling Analysis": 2
+      }
+    },
+    "hft": {
+      "count": 10,
+      "size_mb": 0.71,
+      "categories": {
+        "Market Microstructure": 3,
+        "Analysis Chart": 3,
+        "Logo": 4
+      }
+    },
+    "narratives": {
+      "count": 14,
+      "size_mb": 1.7,
+      "categories": {
+        "Statistical Test": 4,
+        "Time Series": 1,
+        "Dimensionality Reduction": 3,
+        "Analysis Chart": 1,
+        "Text Visualization": 2,
+        "Logo": 3
+      }
+    },
+    "topol": {
+      "count": 3,
+      "size_mb": 0.85,
+      "categories": {
+        "Research Figure": 2,
+        "Analysis Chart": 1
+      }
+    },
+    "slr": {
+      "count": 14,
+      "size_mb": 0.58,
+      "categories": {
+        "Clustering Analysis": 3,
+        "Diagram": 2,
+        "Analysis Chart": 4,
+        "Distribution Plot": 3,
+        "Dimensionality Reduction": 2
+      }
+    }
+  },
+  "images": [
+    {
+      "filename": "macro-narratives.png",
+      "category": "Narrative Visualization",
+      "stream": "quoniam",
+      "size_kb": 235.26,
+      "web_path": null
+    },
+    {
+      "filename": "market-crash.png",
+      "category": "Analysis Chart",
+      "stream": "quoniam",
+      "size_kb": 153.45,
+      "web_path": null
+    },
+    {
+      "filename": "regression_Investor_Sentiment_intensity_vs_SPY.png",
+      "category": "Regression Analysis",
+      "stream": "quoniam",
+      "size_kb": 409.1,
+      "web_path": null
+    },
+    {
+      "filename": "regression_Investor_Sentiment_intensity_vs_VIX.png",
+      "category": "Regression Analysis",
+      "stream": "quoniam",
+      "size_kb": 368.18,
+      "web_path": null
+    },
+    {
+      "filename": "regression_Market_Crash_intensity_vs_SPY.png",
+      "category": "Regression Analysis",
+      "stream": "quoniam",
+      "size_kb": 376.86,
+      "web_path": null
+    },
+    {
+      "filename": "regression_Market_Crash_intensity_vs_VIX.png",
+      "category": "Regression Analysis",
+      "stream": "quoniam",
+      "size_kb": 343.98,
+      "web_path": null
+    },
+    {
+      "filename": "regression_US_Growth_Slowdown_intensity_vs_SPY.png",
+      "category": "Regression Analysis",
+      "stream": "quoniam",
+      "size_kb": 396.73,
+      "web_path": null
+    },
+    {
+      "filename": "regression_US_Growth_Slowdown_intensity_vs_VIX.png",
+      "category": "Regression Analysis",
+      "stream": "quoniam",
+      "size_kb": 365.74,
+      "web_path": null
+    },
+    {
+      "filename": "regression_US_Stocks_intensity_vs_SPY.png",
+      "category": "Regression Analysis",
+      "stream": "quoniam",
+      "size_kb": 391.34,
+      "web_path": null
+    },
+    {
+      "filename": "regression_US_Stocks_intensity_vs_VIX.png",
+      "category": "Regression Analysis",
+      "stream": "quoniam",
+      "size_kb": 358.6,
+      "web_path": null
+    },
+    {
+      "filename": "rolling-spy-narr.png",
+      "category": "Rolling Analysis",
+      "stream": "quoniam",
+      "size_kb": 318.08,
+      "web_path": null
+    },
+    {
+      "filename": "rolling-vix-narr.png",
+      "category": "Rolling Analysis",
+      "stream": "quoniam",
+      "size_kb": 342.17,
+      "web_path": null
+    },
+    {
+      "filename": "super-narratives.png",
+      "category": "Narrative Visualization",
+      "stream": "quoniam",
+      "size_kb": 240.99,
+      "web_path": null
+    },
+    {
+      "filename": "temporary-narratives.png",
+      "category": "Narrative Visualization",
+      "stream": "quoniam",
+      "size_kb": 105.15,
+      "web_path": null
+    },
+    {
+      "filename": "us-growth.png",
+      "category": "Analysis Chart",
+      "stream": "quoniam",
+      "size_kb": 233.01,
+      "web_path": null
+    },
+    {
+      "filename": "cancelled.png",
+      "category": "Market Microstructure",
+      "stream": "hft",
+      "size_kb": 142.9,
+      "web_path": null
+    },
+    {
+      "filename": "deep.png",
+      "category": "Market Microstructure",
+      "stream": "hft",
+      "size_kb": 157.7,
+      "web_path": null
+    },
+    {
+      "filename": "llt-metrics.png",
+      "category": "Analysis Chart",
+      "stream": "hft",
+      "size_kb": 103.35,
+      "web_path": null
+    },
+    {
+      "filename": "participation-rates.png",
+      "category": "Market Microstructure",
+      "stream": "hft",
+      "size_kb": 87.93,
+      "web_path": null
+    },
+    {
+      "filename": "snr.png",
+      "category": "Analysis Chart",
+      "stream": "hft",
+      "size_kb": 45.63,
+      "web_path": null
+    },
+    {
+      "filename": "bfh_logo.png",
+      "category": "Logo",
+      "stream": "hft",
+      "size_kb": 45.29,
+      "web_path": null
+    },
+    {
+      "filename": "Deutsche_Boerse_Logo.png",
+      "category": "Logo",
+      "stream": "hft",
+      "size_kb": 25.03,
+      "web_path": null
+    },
+    {
+      "filename": "logo-ut.png",
+      "category": "Logo",
+      "stream": "hft",
+      "size_kb": 22.85,
+      "web_path": null
+    },
+    {
+      "filename": "logo_SNSF.png",
+      "category": "Logo",
+      "stream": "hft",
+      "size_kb": 15.55,
+      "web_path": null
+    },
+    {
+      "filename": "DBAG_matching_engine.png",
+      "category": "Analysis Chart",
+      "stream": "hft",
+      "size_kb": 82.82,
+      "web_path": null
+    },
+    {
+      "filename": "centroid_null_hypo.png",
+      "category": "Statistical Test",
+      "stream": "narratives",
+      "size_kb": 39.47,
+      "web_path": null
+    },
+    {
+      "filename": "cosine_null_hypo.png",
+      "category": "Statistical Test",
+      "stream": "narratives",
+      "size_kb": 45.62,
+      "web_path": null
+    },
+    {
+      "filename": "jaccard_null_hypo.png",
+      "category": "Statistical Test",
+      "stream": "narratives",
+      "size_kb": 38.09,
+      "web_path": null
+    },
+    {
+      "filename": "nb_speeches_timeseries.png",
+      "category": "Time Series",
+      "stream": "narratives",
+      "size_kb": 230.33,
+      "web_path": null
+    },
+    {
+      "filename": "PCA1_change_points.png",
+      "category": "Dimensionality Reduction",
+      "stream": "narratives",
+      "size_kb": 152.83,
+      "web_path": null
+    },
+    {
+      "filename": "PCA1_PCA2_plot.png",
+      "category": "Dimensionality Reduction",
+      "stream": "narratives",
+      "size_kb": 160.27,
+      "web_path": null
+    },
+    {
+      "filename": "pca_loadings.png",
+      "category": "Dimensionality Reduction",
+      "stream": "narratives",
+      "size_kb": 76.56,
+      "web_path": null
+    },
+    {
+      "filename": "polarity_null_hypo.png",
+      "category": "Statistical Test",
+      "stream": "narratives",
+      "size_kb": 41.64,
+      "web_path": null
+    },
+    {
+      "filename": "topics_centroids_drift.png",
+      "category": "Analysis Chart",
+      "stream": "narratives",
+      "size_kb": 102.07,
+      "web_path": null
+    },
+    {
+      "filename": "wordcloud_A.png",
+      "category": "Text Visualization",
+      "stream": "narratives",
+      "size_kb": 409.45,
+      "web_path": null
+    },
+    {
+      "filename": "wordcloud_B.png",
+      "category": "Text Visualization",
+      "stream": "narratives",
+      "size_kb": 364.3,
+      "web_path": null
+    },
+    {
+      "filename": "logo-bfh.png",
+      "category": "Logo",
+      "stream": "narratives",
+      "size_kb": 41.22,
+      "web_path": null
+    },
+    {
+      "filename": "logo-snsf.png",
+      "category": "Logo",
+      "stream": "narratives",
+      "size_kb": 34.28,
+      "web_path": null
+    },
+    {
+      "filename": "logo-ut.png",
+      "category": "Logo",
+      "stream": "narratives",
+      "size_kb": 6.98,
+      "web_path": null
+    },
+    {
+      "filename": "fig_boundaries.png",
+      "category": "Research Figure",
+      "stream": "topol",
+      "size_kb": 95.95,
+      "web_path": null
+    },
+    {
+      "filename": "fig_polfield.png",
+      "category": "Research Figure",
+      "stream": "topol",
+      "size_kb": 389.59,
+      "web_path": null
+    },
+    {
+      "filename": "xAI_poles.png",
+      "category": "Analysis Chart",
+      "stream": "topol",
+      "size_kb": 380.54,
+      "web_path": null
+    },
+    {
+      "filename": "agglomerative_clustering.png",
+      "category": "Clustering Analysis",
+      "stream": "slr",
+      "size_kb": 82.28,
+      "web_path": null
+    },
+    {
+      "filename": "filter_paper_diagram.png",
+      "category": "Diagram",
+      "stream": "slr",
+      "size_kb": 101.1,
+      "web_path": null
+    },
+    {
+      "filename": "filter_paper_diagram_v2.png",
+      "category": "Diagram",
+      "stream": "slr",
+      "size_kb": 70.14,
+      "web_path": null
+    },
+    {
+      "filename": "final_relevance_score_v2.png",
+      "category": "Analysis Chart",
+      "stream": "slr",
+      "size_kb": 21.53,
+      "web_path": null
+    },
+    {
+      "filename": "final_relevance_score_v2_before.png",
+      "category": "Analysis Chart",
+      "stream": "slr",
+      "size_kb": 22.89,
+      "web_path": null
+    },
+    {
+      "filename": "gmm_clustering.png",
+      "category": "Clustering Analysis",
+      "stream": "slr",
+      "size_kb": 86.97,
+      "web_path": null
+    },
+    {
+      "filename": "index_per_quartile.png",
+      "category": "Analysis Chart",
+      "stream": "slr",
+      "size_kb": 34.15,
+      "web_path": null
+    },
+    {
+      "filename": "index_per_quartile_v2.png",
+      "category": "Analysis Chart",
+      "stream": "slr",
+      "size_kb": 17.05,
+      "web_path": null
+    },
+    {
+      "filename": "kmeans_clustering.png",
+      "category": "Clustering Analysis",
+      "stream": "slr",
+      "size_kb": 72.07,
+      "web_path": null
+    },
+    {
+      "filename": "paper_temporal_quantile_distribution.png",
+      "category": "Distribution Plot",
+      "stream": "slr",
+      "size_kb": 16.39,
+      "web_path": null
+    },
+    {
+      "filename": "paper_temporal_quantile_distribution_v2.png",
+      "category": "Distribution Plot",
+      "stream": "slr",
+      "size_kb": 15.64,
+      "web_path": null
+    },
+    {
+      "filename": "paper_temporal_quantile_distribution_v2_before.png",
+      "category": "Distribution Plot",
+      "stream": "slr",
+      "size_kb": 19.99,
+      "web_path": null
+    },
+    {
+      "filename": "pca_corr_v2.png",
+      "category": "Dimensionality Reduction",
+      "stream": "slr",
+      "size_kb": 21.34,
+      "web_path": null
+    },
+    {
+      "filename": "pca_cumvar_v2.png",
+      "category": "Dimensionality Reduction",
+      "stream": "slr",
+      "size_kb": 17.08,
+      "web_path": null
+    }
+  ]
+}

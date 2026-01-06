@@ -1,0 +1,361 @@
+\documentclass[12pt]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Language and formatting
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+
+% Links
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+% Math and symbols
+\usepackage{amsmath, amssymb, amsfonts}
+
+% Bibliography
+\usepackage[backend=biber, style=apa,natbib=true]{biblatex}
+\addbibresource{biblio.bib}
+
+% Figures and tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{tikz}
+
+% Code
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Other
+\usepackage{lipsum}
+\usepackage{pdflscape}
+\usepackage{authblk}
+
+% Keywords handling command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+% Variables
+\renewcommand\Authfont{\normalsize}
+\renewcommand\Affilfont{\small}
+\newcommand{\nbpapersinitial}{288} % Initial query
+\newcommand{\nbpapersfilters}{142} % Additional filters
+\newcommand{\nbpapersjournalareas}{125} % Journal area filter
+\newcommand{\nbpapersalgo}{24} % Algorithmic filtering
+\newcommand{\nbpapersavailable}{20} % Only available papers
+\newcommand{\nbpapersworkshops}{16} % No workshop proceeds
+\newcommand{\conditionnumber}{370}
+\newcommand{\kmoscore}{0.815}
+
+% Figure design
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\tikzstyle{database} = [cylinder, shape border rotate=90, aspect=0.25, draw, minimum height=1.2cm, text width=2cm, align=center]
+\tikzstyle{process} = [rectangle, draw, minimum height=1.2cm, minimum width=4.5cm, text width=4.3cm, align=center]
+\tikzstyle{phase} = [draw=none, text width=1cm, align=center]
+\tikzstyle{decision} = [diamond, draw, aspect=2, minimum width=3.5cm, minimum height=1.2cm, text width=3.3cm, align=center]
+\tikzstyle{arrow} = [thick, -{Stealth}]
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\title{Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPol}
+
+% Authors
+\author[1, 2]{Gabin Taibi}
+\author[1, 3]{Lucia Gomez Teijeiro}
+
+% Affiliations
+\affil[1]{University of Twente, Industrial Engineering and Business Information Systems, AE Enschede, Netherlands}
+\affil[2]{Bern University of Applied Sciences, Business School, Bern, Switzerland}
+\affil[3]{University of Geneva, Geneva School of Economics and Management, Geneva, Switzerland}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In computational linguistics, semantic polarity has traditionally been conceptualized as sentiment and measured along a unidimensional scalar continuum from negative to positive. However, this sentiment-centric framing oversimplifies language complexity, as semantic polarity is inherently multidimensional - reflecting the diversity of perspectives and directional shifts embedded in discourse. We introduce an unsupervised computational framework to identify, reconstruct, and explain multidimensional narrative polarity fields. Discourse polarity change is modeled as vector displacements between topical centroids of semantic transformer embedding network spaces. Narrative polarity is defined as vectorial representation of semantic change across a contextual boundary, which may-but need not- align with affective sentiment. These vectors capture both direction and magnitude of semantic shifts, enabling a geometrically grounded reconstruction of polarity-relevant transformations in discourse. For interpretability, we provide an explainability mechanism based on differential vocabulary analysis. For each polarity vector, we compute contrastive lexical distributions at its opposing extremities, revealing the principal linguistic dimension and features driving semantic change. We demonstrate the utility of this framework in two domains. First, we apply it to a corpus of central bank speeches, using macroeconomic regime changes as contextual boundaries. This non sentiment-driven domain highlights the framework's ability to detect non-affective semantic transitions. Second, we analyze Amazon product reviews, where  polarity is intrinsically sentiment-led, and we use low-versus-high-rated reviews as contextual boundary. This dual application shows the robustness and generalizability of TOPol (topic-orientation polarity), across narrative contexts, identifying key sources of textual variability and their polarity fields. TOPol constitutes the first computational formulation of narrative polarity vector fields and offers a open-source framework for modeling and interpreting semantics multidimensionally. It provides both theoretical and methodological foundations for analyzing narrative dynamics, thematic shifts, or communicative strategies within and across linguistic contexts.
+\end{abstract}
+
+\keywords{Polarity Fields, Transformers, Unsupervised, Manifold, Natural Language Processing}
+
+
+% #######################################################
+
+
+\section{Introduction}
+\label{sec:introduction}
+
+The concept of semantic polarity has long occupied a central position in computational linguistics, traditionally framed through the unidimensional lens of sentiment analysis, a discourse dimension representing emotional valence \parencite{wilson2009recognizing, wiebe2005annotating, agarwal2016semantic}.  While this framing has proven instrumental for Natural Language Processing (NLP), it restricts polarity analysis to scalar evaluations of sentiment - typically ranging from negative to positive - and thus limits the scope of polarity to affective meaning alone \parencite{bashiri2024comprehensive}. This narrow approach prevents the exploration of multidimensional polarity fields, a broader and richer form of analyzing discursive orientation. 
+
+Recent literature increasingly underscores the need for fine-grained, context-aware, and topic-based multidimensional sentiment and semantic representations \parencite{guo2021overview}. Unidimensional sentiment reconstructions have been shown to be prone to bias, particularly as they overlook the contextual specificity of narratives \parencite{thelwall2013topic, wegge2023topic}. This issue generalizes to any form of isolated narrative dimension analysis, as semantic meaning is always embedded in a multidimensional and contextualized field. Analogies from physical systems - such as electromagnetic fields - have been used to describe this binary view of sentiment analysis and polarity. However, in the case of photon polarization in optics, where light oscillates in multiple orientations and planes, we argue that polarity in narrative discourse is likewise multidimensional, dynamic, and contextually situated. 
+
+This paper proposes a first of its kind theoretical and methodological advancement that shifts the conceptualization of polarity in text analysis from unidimensional sentiment to narrative polarity fields - multidimensional semantic spaces - as in the case of light polarization, which represents orientation while also allowing to capture magnitude. This proposition responds to scientific voices starting to acknowledge how critical is to finely dissect narrative diversity and evolution \parencite{baes2024multidimensional}, enabling a careful and bias resistant interpretation of semantic polar dimensions, such as sentiment - one of many -, where each is viewed in the context of all others.
+
+With this conceptualization, narrative polarity goes beyond emotional valence to encode complex sociocognitive positions and thematic orientations, such as narrative positioning, perspectival alignment, or the adoption of specific narrative tones or intentions \parencite{du2018stance}.  Understanding narrative polarity as multidimensional fields of discourse orientations, the reconstruction of thematic shifts is also possible, as this expanded view allows accessing the latent semantic dimensions of polarity emerging from texts when analyzed across contextual (or any other) boundaries. These boundaries might include temporal markers, source differences, or topic partitions. In an unsupervised manner, and incorporating a solid explainability layer, we present TOPol (Topic Orientation Polarity), a breakthrough framework that extends the current boundaries of NLP by enabling the exploration of narratives from a multidimensional, and therefore integrated, perspective. Our contribution, built on top of state-of-the-art open source frameworks, sets the stage for the development of next-generation NLP pipelines, where semantic multidimensionality is captures and narrative evolution can both be reconstructed and analyzed comprehensively. TOPol enables capturing as many directional polarities as there are perspectives in a given discourse context, framework that leverages transformer-based language models (LM), therefore constituting as well an innovative approach to LM explainability.
+
+We demonstrate the utility of TOPol, by applying it in two drastically different contextual domains and reveling the narrative polarity fields naturally emerging from those. The first, a non-sentiment driven domain, central bank US speeches, highlights the framework's ability to detect non-affective semantic polarity. The second, Amazon product reviews, a context where polarity is highly sentiment-led, shows that TOPol is also able to reconstruct sentiment polarity vectors. This dual application shows the robustness and generalizability of our computational formulation. This work represents and demonstrates a significant departure from traditional one-dimensional content analysis solutions, such as sentiment scoring, and offers a robust unsupervised framework that flexibly builds on open standards and allows the emergence of new insights into the dynamic nature of narrative evolution, the reconstruction and interpretation of complex semantic landscapes and the tracing of discourse trajectories.
+
+
+% #######################################################
+
+
+\section{Related Work}
+\label{sec:relatedwork}
+
+% \textcolor{blue}{
+% SOMEONE DID SOMETHING SIMILAR TO WHAT WE ARE DOING? IF SO, WHAT WE ARE INNOVATING IN. SAY HOW WE ARE IMPROVING BERTOPIC}
+% The study of semantic polarity in computational linguistics has evolved significantly over the past decades, from dictionary-based approaches to advanced neural network models, among which, language transformers (ADD REFERENCE). However, despite emerging debates announcing the need for diversity-capturing semantic analysis techniques (ADD REFERENCE), the conceptualization of polarity as multidimensional vector fields represents a relatively unexplored frontier. Here, we review key developments in semantic polarity analysis, narrative modeling, and vector representations that inform our conceptual proposition and computational approach.
+
+The study of polarity in computational linguistics has traditionally centered on sentiment analysis, conceptualizing polarity as a unidimensional continuum ranging from negative to positive sentiment \textcite{wilson2009recognizing, wiebe2005annotating, agarwal2016semantic}. However, this perspective—while useful for many tasks—fails to capture the richness and multidimensionality of semantic orientation in language. Polarity can manifest not only as sentiment but also as stance, emphasis, ideology, and narrative perspective. To our knowledge, no previous work has directly addressed the reconstruction of multidimensional narrative polarity fields using unsupervised geometric methods, making our contribution a novel paradigm shift.
+
+\subsection{Early Approaches of Sentiment modeling}
+
+First efforts to model sentiment polarity were based on rule-based or lexicon-driven methods. Tools like SentiWordNet \parencite{esuli2006sentiwordnet} and VADER \parencite{hutto2014vader} used precompiled dictionaries to assign polarity scores to words or phrases. These approaches provided transparent and interpretable sentiment classifications, but were inherently limited by their inability to account for context, sarcasm, domain-specific meaning, or evolving usage. Subsequent approaches relied on supervised learning techniques to classify sentiment using handcrafted features and labeled datasets. These methods often used bag-of-words or n-gram representations, combined with classifiers such as support vector machines or logistic regression. While statistically more robust than lexicons, they still modeled sentiment as scalar and unidimensional, and did not account for topic, context, or discursive stance.
+
+The introduction of deep neural networks and contextual word embeddings, such as Word2Vec \parencite{mikolov2013efficient}, GloVe \parencite{pennington2014glove}, and later BERT \parencite{devlin2019bert}, marked a turning point. Transformer-based architectures allowed models to capture semantic relationships and contextual nuances with better accuracy. Transformer variants such as RoBERTa \parencite{liu2019roberta} and DeBERTa \parencite{he2021deberta} further improved performance on sentiment and emotion classification tasks. The GoEmotions dataset and benchmark \parencite{demszky2020goemotions} emphasized the importance of multi-label and fine-grained emotion classification, revealing the limitations of scalar sentiment scores.
+
+\subsection{From Sentiment Scores to Multidimensional Topic-Aware Modeling}
+
+Recent work has explored more nuanced models of sentiment and polarity. For example, aspect-based sentiment analysis \textcite{pontiki2016semeval} allows for topic-specific sentiment extraction. Meanwhile, topic modeling approaches such as BERTopic \parencite{grootendorst2022bertopic} and Top2Vec \parencite{angelov2020top2vec} use transformer embeddings and clustering to uncover latent topical structure. However, these methods focus on content or theme identification rather than on modeling the directionality or magnitude of semantic shifts.
+
+Polarity has also been studied in terms of stance parencite \textcite{du2018stance}, framing \parencite{ali2022framing}, and ideological discourse. These studies recognize polarity as a function of speaker alignment and discursive perspective. \textcite{hofmann2022slap} introduced SLAP4SLIP, a method for identifying salience and moral framing dimensions in political discourse. Yet these efforts remain supervised, domain-specific, and limited in generalizability.
+
+To date, no framework has addressed the challenge of reconstructing polarity as a vector field in semantic space. Our proposed model, TOPol, offers the first unsupervised method to infer semantic polarity vectors between discourse regimes, capturing directional and magnitude-based semantic shifts. It builds upon the idea that discourse polarity is not merely a scalar sentiment label but a vectorial, context-relative transformation within the semantic manifold.
+
+
+% #######################################################
+
+
+\section{Experimental Setup}
+\label{sec:relatedwork}
+
+% \textcolor{blue}{HERE SPEAK BRIEFLY ABOUT THE DATA, THE PCA INDEX, THE CHANGEPOINT DETECTION, WHAT IS THE NARRATIVE BOUNDARY WE USE AS CASE STUDY, WHY THIS CASE STUDY IS INTERESTING}
+To evaluate the robustness and generality of the TOPol framework, we apply it to two distinct textual domains: macroeconomic central bank communication and Amazon product reviews. The first case leverages the Gigando dataset, a large-scale corpus of central bank speeches sourced from the Bank for International Settlements (BIS), capturing decades of monetary policy discourse. The second case uses the Amazon Polarity dataset from HuggingFace, a large-scale corpus of product reviews that has been preprocessed into a binary sentiment classification task. This enables us to assess polarity dynamics in a completely different, sentiment-driven context.
+
+In both settings, we define polarity shifts relative to a contextual boundary. In the case of central bank speeches, this boundary is empirically identified using change point detection applied to a macroeconomic conditions index derived from a principal component analysis (PCA) of key economic indicators. This reveals a significant break around mid-2007, corresponding to the onset of the global financial crisis. In the case of Amazon reviews, the polarity boundary is structural, encoded directly in the data’s binary sentiment labeling. These two regimes, one emergent and macro-driven, the other explicit and sentiment-driven, allow us to test whether semantic polarity fields can be reconstructed across fundamentally different types of polarity transitions.
+
+
+\subsection{Data Collection and Preprocessing}
+\label{sec:data}
+
+% \textcolor{red}{Data: Describe exactly where and how we got these datasets}
+% \textcolor{red}{GIGANDO DATASET
+% Timeline? Source? Any selection? Any quality control?}
+% \textcolor{red}{AMAZON POLARITY DATASET 
+% Seems like you got it all but in the cell you say it is only 5 stars reviews. Any selection or quality control? Seems like A and B are random selections.}
+% \textcolor{red}{MACROECO INDEXES ???}
+
+We conduct our experiments on two corpora designed to explore polarity in structurally distinct settings. The first is a macroeconomic discourse dataset consisting of over 19,000 official central bank speeches collected from the Bank for International Settlements (BIS) archive, accessed via the Gigando API \footnote{\url{https://bis-med-it.github.io/gingado/datasets.html}}. These speeches were authored by monetary authorities from more than 120 regions and nearly 200 different institutions, spanning almost three decades (October 1996 to May 2025) of macro-financial communication. The texts include high-level policy addresses as well as technical statements on topics such as inflation targeting, financial stability, and monetary outlooks. Each speech is accompanied by detailed metadata: URL (linking to the source PDF), title, summary description, full text, author, and date (precise to the day), enabling precise temporal alignment for contextual segmentation. To isolate a consistent narrative field, we used OpenAI's \texttt{gpt-4o-mini-2024-07-18} model to extract structured named entity information from each speech using a custom prompt focused on author region (country or continent) and institutional affiliation. This enabled us to filter for U.S. central bank speeches only, resulting in a dataset of 2,342 speeches.
+
+To construct a macroeconomic contextual boundary for this corpus, we retrieved monthly U.S. economic indicators from the Federal Reserve Bank of St. Louis FRED API. We selected six widely used variables: the federal funds rate, consumer price index (CPI), producer price index (PPI), gross domestic product (GDP), unemployment rate, and nonfarm payrolls (NFP). Each series was standardized using a 12-month rolling z-score normalization, and the resulting matrix was decomposed via principal component analysis (PCA). The first principal component, which explained the majority of the variance across indicators, was interpreted as a macroeconomic strength index. We applied change point detection (Ruptures, with an RBF cost model) to this index, identifying major structural shifts in the underlying macroeconomic regime. 
+
+For the present study, we focused on a single break point, detected in May 2007, which precedes the onset of the 2008 subprime mortgage crisis—a significant transition point in modern macroeconomic discourse. We segmented the U.S. speeches accordingly, selecting only those dated between the previous break (January 2004) and the following one (April 2010), resulting in a final 600-length dataset. This yields a temporally localized corpus designed to capture the discursive shift around a major economic inflection point, providing a natural testbed for polarity drift. In fact, these are long and information-dense documents: the average length is 3,154 words, and 99\% of texts contain fewer than 5,000 words. The small number of longer documents (36 speeches) were truncated at 5,000 words to ensure uniform processing and fast computation with the embedding model.
+
+The second corpus is the Amazon Polarity dataset \footnote{\url{https://huggingface.co/datasets/fancyzhx/amazon_polarity}}, a large-scale benchmark for binary sentiment classification derived from the Amazon product review archive and retrieved from HuggingFace Hub. It consists of approximately 4 million customer reviews, evenly split between positive and negative sentiment classes. The negative class includes reviews rated 1 or 2 stars, while the positive class includes those rated 4 or 5 stars. Neutral 3-star reviews were excluded during the original dataset construction. Reviews span a wide range of product categories—books, electronics, home goods, and more—and consist of a title and a brief body. These texts are substantially shorter than the BIS speeches: the average word count is 78, with 99\% of reviews containing fewer than 180 words. To ensure balance and computational efficiency, we constructed a subset of the Amazon Polarity dataset by randomly sampling 5,000 reviews from each sentiment class, yielding a balanced corpus of 10,000 documents. This subset forms a polarity-structured test case, where the boundary between classes is explicit and binary by construction. In contrast to the emergent, macro-driven regime shift in the BIS corpus, the Amazon corpus provides a sentiment-driven, categorical polarity regime. This enables us to validate the TOPol framework's ability to detect and interpret polarity drift across both emergent and explicit contextual boundaries.
+
+Additionally, both textual datasets underwent a unified preprocessing pipeline. We first replaced newline, carriage return, tab, and backslash characters with whitespace to avoid interference with tokenization or downstream parsing. Multiple consecutive spaces were collapsed into a single space, and all text was normalized using Unicode NFKC. Non-informative formatting patterns, such as bullet points or markdown clutter, were removed using regular expressions. To reduce contextual bias and abstract away specific entities, we applied named entity recognition using spaCy (\texttt{en\_core\_web\_sm}) to detect and mask named people, organizations, locations, dates, times, quantities, and percentages. Standard English stopwords were removed, and all masking tokens introduced during anonymization were also excluded from further processing. This preprocessing ensures comparability across corpora and compatibility with transformer-based embedding methods.
+
+Lastly, we computed document-level sentiment distributions using two pretrained classification models: a general-purpose multilingual sentiment model based on DistilBERT, and a domain-specific financial model (FinBERT). These models were applied to all documents in both corpora to generate token-level or sentence-level probability distributions over sentiment classes. To facilitate comparison and serve as a control variable in later analyses, we defined a continuous polarity score capturing the intensity of opinionated content. Specifically, we computed:
+$$\text{score} = \frac{p_{\text{positive}} + p_{\text{negative}}}{p_{\text{positive}} + p_{\text{neutral}} + p_{\text{negative}}}$$
+where $p_{\text{positive}}$ includes both \textit{positive} and \textit{very positive} probabilities if such a distinction is present in the model output, and $p_{\text{negative}}$ includes both \textit{negative} and \textit{very negative} values accordingly. This metric captures how strongly a document expresses sentiment regardless of direction and is used as a control of the contextual boundary (see Figure~\ref{fig:???}).
+
+
+\subsection{Transformer Embeddings}
+\label{sec:data}
+
+% \textcolor{red}{text-embedding-3-small was called through ??? any other detail to mention. Average word length was 2960 words per speech so no problem for using this transformer. We use a general purpose model to not constrain the diversity in identifying semantic vectors. Transformer embeddings are high dimensional semantic fields.}
+
+To encode the semantic structure of documents across both corpora, we employed high-dimensional sentence-level transformer embeddings. All textual inputs were embedded using OpenAI's \texttt{text-embedding-3-small} model, accessed via the OpenAI API. This model produces 1,536-dimensional dense vector representations optimized for semantic similarity across a wide range of domains, including finance, policy, and consumer language. Its general-purpose design makes it particularly suitable for comparative studies spanning multiple textual domains, such as central bank communication and product reviews.
+
+We opted for this domain-agnostic embedding model to preserve the diversity and subtlety of the semantic fields in each corpus. While domain-specific models (e.g., FinBERT or financial embeddings trained on regulatory documents) could offer higher precision within specialized contexts, they also risk overfitting to local vocabulary and collapsing semantically rich variability into narrower latent spaces. For our purposes—detecting multidimensional polarity fields and modeling drift across contrasting discourse regimes—a general model offers broader expressive capacity and cross-domain comparability.
+
+Each document was embedded in full, entailing, for example, to embed entire speeches of the FED discourses dataset. Apart from the 5k-words truncation, no additional chunking or windowing was performed, as the OpenAI API internally handles long sequences. For the Amazon reviews, each review (title and body combined) was embedded as a single unit. The resulting embeddings were used as input to all subsequent steps in the TOPol pipeline, including manifold projection, clustering, drift estimation, and polarity vector construction.
+
+In parallel to the OpenAI embedding backend, we also implemented support for Google Gemini, specifically the \texttt{gemini-2.0-flash} model, accessed using OpenAI's library with a Google API endpoint. Although not used in this study, Gemini embeddings—and in particular, variants fine-tuned for clustering—will be explored in future work. Additionally, we plan to evaluate lighter open-source models from the HuggingFace plateform, with the goal of improving transparency, reproducibility, and computational accessibility of the TOPol framework.
+
+
+\subsection{Contextual Boundary Detection}
+\label{sec:boundary}
+
+% AMAZON 5000 per side of contextual boudnary
+% \textcolor{red}{Specifically, we applied XXXXXX to detect macroeconomic regime changes that could define a meaningful contextual boundary for the case of analyzing central bank speeches.}
+% \textcolor{blue}{
+% NOW ONLY WITH MACROECO INDEXES, WE NEED TO ARGUE THAT THIS CAN ALSO BE DONE ONLY WITH TEXT DATA, ELSE A HUGE LIMITATION OF OUR PROPOSITION.
+% IN SECTION 4 WE NEED TO PROPOSE THAT BOUNDARY DETECTION CAN ALSO BE DETECTED DIRECTLY ON THE UMAP MANIFOLD, FROM TEXT.}
+% The first robustly identified changepoint detected using macroeconomic indicators points to May first 2007 (WE NEED TO POINT TO THE PLOT), coinciding with one of the biggest economic crises of our era. We proceeded with this case study given its contextual solidity and the reported narrative shift known as the "Whatever it takes" discourse, pronounced by Mario Dragi, the XXXX of XXXX, and that marked the begining of a macroeconomic restoration. This case study, of great complexity and reported behavioral consequences, constitutes a sound case study to explore the diverse dimensions influencing discourse polarity shifts.
+
+The process of identifying meaningful contextual boundaries is central to the analysis of polarity drift. These boundaries define the narrative regimes under comparison and determine the granularity of polarity transitions that the TOPol framework can detect. Contextual boundaries may originate from external structural changes, internal shifts in discourse, or a combination of both. In this study, we operationalize boundary detection using two complementary strategies, aligned with the nature of the corpora under investigation.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/EPIA25/figures/fig_boundaries.png}
+    \caption{\footnotesize{\textbf{Detection of Contextual Boundaries} \textbf{A.} bla,bla \textbf{A'.} bla bla \textbf{B.} bla bla}}
+    \label{fig:fig_boundaries.png}
+\end{figure}
+
+In the case of U.S. central bank speeches, the contextual boundary is externally defined using macroeconomic structural shifts. The boundary separates a period of relative economic stability and recovery (following the dot-com bubble and early 2000s slowdown) from the onset of the global financial crisis. This segmentation is not based on labeled data or known semantic polarity, but on a data-driven identification of macroeconomic turning points using change point detection applied to a principal component index of key U.S. economic indicators (see Section~\ref{sec:data}). The unsupervised nature of this segmentation poses a methodological challenge: central bank discourse is typically cautious, descriptive, and institutionally constrained, often avoiding overt emotional or evaluative language. Whether such stylistically conservative language encodes latent polarity fields that shift meaningfully across macroeconomic regimes is an open question that our framework is designed to explore.
+
+Both FinBERT and DistilBERT sentiment classifiers confirm the expected neutrality of this corpus. As shown in Figure~\ref{fig:???}, sentiment score distributions for both pre- and post-crisis speeches are tightly centered around zero, with overlapping distributions and mean scores near the neutral point. This supports the hypothesis that lexical sentiment alone is insufficient to capture contextual change in central bank discourse, motivating our use of unsupervised, embedding-based polarity modeling.
+
+For example, prior to the 2007 change point, we expect to observe discourse shaped by moderate optimism, framed by narratives of economic recovery and financial stability. In contrast, speeches delivered during the post-crisis period may shift toward more cautious, regulatory, or even critical tones, characterized by terms related to austerity, systemic risk, and institutional accountability. This period includes landmark interventions, such as Mario Draghi’s “whatever it takes” speech in July 2012, which signaled a turning point in the Eurozone crisis. TOPol allows us to ask: can such rhetorical shifts be recovered unsupervised from semantic embeddings, even when lexical sentiment is subdued?
+
+In contrast, the contextual boundary in the Amazon review corpus is defined structurally: it separates documents labeled as negative (1–2 star ratings) from those labeled as positive (4–5 star ratings). Unlike the BIS corpus, this segmentation is supervised and explicit, reflecting user-provided evaluations. However, the presence of sentiment labels does not fully account for the variety of polarity dimensions in user-generated content. Reviews may express discontent through irony, sarcasm, exaggeration, or humorous derision, while positive reviews may vary in tone from factually appreciative to overtly promotional.
+
+Figure~\ref{fig:???} shows that sentiment score distributions are clearly separated for positive and negative reviews when using the general-purpose DistilBERT model, confirming strong valence-based divergence. FinBERT, a finance-specific model, yields less distinct separation between sentiment classes, as expected given its domain misalignment. This further illustrates the value of general-purpose embeddings for capturing sentiment-rich polarity regimes and underlines the need to model subtle rhetorical features beyond sentiment class, such as tone, irony, or subjectivity, which are frequently expressed even in brief reviews.
+
+Taken together, these two cases illustrate different aspects of contextual polarity boundaries: one driven by external structural signals and latent narrative shifts, the other defined by observable sentiment class labels but internally diverse in rhetorical form. In future work, we envision extending the TOPol framework to incorporate boundary discovery methods directly from text, such as dynamic topic modeling, regime segmentation using discourse coherence, or clustering drift trajectories in embedding space.
+
+
+% #######################################################
+
+
+\section{Unsupervised Reconstruction of Narrative Polarity Fields and Shifts}
+\label{sec:polarityfields}
+
+% \textcolor{blue}{
+% SHIFTS = polarity vectors that represent narrative change from a set of documents to another set of documents (on one end vs the other of the contextual boundary) through its direction and magnitude in the field. The extremes of the vectors direction constitute the poles of the polarity vector. Origin pole is located at the narrative centroid of the text at the 'left' of the contextual boundary. End pole is located at the narrative centroid of the text at the 'right' of the contextual boundary}
+% \textcolor{red}{
+% UMAP is built using XXXXXX, A for building the umap model, B XXXX . Then graph A plus B. Leiden. Calculate centroids per cluster in A vs B texts. Distance of centroids. polar vectors?}
+% \textcolor{blue}{
+% THE KEY FIGURE IS THE UMAP WITH THE ARROWS
+% Polarity fields and polarity vectors where calculated in high dimensions, 100 dimensions via umap. For illustration purposes, we projected the polarity field and vectors in 2 dimensions. This reduction does alter the relative position of the documents and vectors, as it is a dimensionality simplification. However, the relative orientation of all samples and vectors is maintained.
+% We observed the existence polarity vectors in the 4 directions of a 2D polarity field in the case of US speeches. WHAT CAN THIS MEAN?}
+% TOPol reveals semantic polarities as semantic vector displacements in the UMAP manifold. These capture both the direction and the magnitude of semantic shifts across a given contextual boundary for each point in the discourse space.
+% \textcolor{blue}{
+% PROPOSE THAT BOUNDARY DETECTION COULD ALSO BE DETECTED DIRECTLY ON THE UMAP MANIFOLD, FROM TEXT. }
+
+This section describes the core mechanism of the TOPol framework: the reconstruction of polarity vector fields in semantic space. Polarity vectors represent the semantic drift between clusters of documents across a contextual boundary. These vectors are computed as the directional displacement between centroids of topically coherent clusters before and after the boundary. Each polarity vector thus encodes both magnitude and orientation of semantic change, grounded in unsupervised structure. The pipeline comprises three main stages: dimensionality reduction via UMAP, document clustering using Leiden community detection, and centroid-level vector field estimation and analysis.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/EPIA25/figures/fig_polfield.png}
+    \caption{\footnotesize{\textbf{Narrative Polarity Field US Central Bank Speeches} \textbf{A.} bla,bla \textbf{A'.} bla bla }}
+    \label{fig:fig_polfield.png}
+\end{figure}
+
+\subsection{UMAP Dimensionality Reduction}
+
+The high-dimensional embeddings obtained from the transformer model are projected into a lower-dimensional space using Uniform Manifold Approximation and Projection (UMAP). UMAP is a non-linear manifold learning technique that constructs a weighted k-nearest-neighbor graph of the input space and optimizes a low-dimensional representation by minimizing the cross-entropy between fuzzy topological structures in the high- and low-dimensional spaces. It preserves both global structure and fine-grained local neighborhoods, making it particularly suitable for capturing semantic proximity among textual embeddings.
+
+In this work, UMAP is configured with \texttt{transform\_mode} parameter set to \texttt{graph}, which allows for direct access to the internal fuzzy simplicial set—a probabilistic graph that encodes pairwise similarities based on shared nearest neighbors. This representation enables us to exploit the topological structure of the data not only for visualization, but as the foundation for graph-based clustering and drift modeling.
+
+Two modeling strategies are adopted depending on the experimental objective. In the supervised setting, UMAP is trained on the combined set of documents from both sides of the contextual boundary. This produces a unified projection space in which documents from both regimes are jointly embedded, and where polarity drift can be observed directly in the reduced semantic space. We then obatin a graph of the form:
+$$
+\begin{bmatrix}
+\text{Graph}_A & \text{Graph}_{A \rightarrow B} \\
+\text{Graph}_{B \rightarrow A} & \text{Graph}_B
+\end{bmatrix}
+$$
+
+In contrast, the unsupervised (or online) approach fits the UMAP model exclusively on documents from regime $A$, which serves as the reference distribution. The model is then used to transform embeddings from regime $B$, effectively anchoring them within the manifold defined by $A$. This mode reflects a realistic use case in which a semantic model trained on historical discourse is used to detect structural shifts in unseen data. In this case, internally, we constructs a fuzzy graph for the new observations and integrates it into the original structure. This yields a block adjacency matrix of the form:
+$$
+\begin{bmatrix}
+\text{Graph}_A & \text{Graph}_{A \rightarrow B} \\
+\text{Graph}_{B \rightarrow A} & 0
+\end{bmatrix}
+$$
+
+The bottom-right block contains only zeros, since UMAP does not construct connections among test observations in $B$ during transformation. This asymmetry ensures that samples from $B$ are semantically located with respect to $A$ but do not form independent local structures. This is essential for drift modeling, as it guarantees that the coordinates of regime $B$ are interpreted in the semantic frame defined by $A$.
+
+\subsection{Leiden Clustering}
+
+Following dimensionality reduction, we cluster the embedded documents using the Leiden algorithm. Leiden clustering operates directly on the graph constructed by UMAP, treating documents as nodes and their semantic proximity as weighted edges. It is a modularity-based community detection algorithm that improves upon the Louvain method by guaranteeing that clusters are internally well-connected and free of disconnected components. Unlike density-based clustering algorithms such as HDBSCAN, Leiden is graph-theoretic and deterministic, which ensures reproducibility and scalability.
+
+This choice reflects a key innovation of the TOPol framework relative to BERTopic \parencite{grootendorst2022bertopic}. While BERTopic originally relied on HDBSCAN to identify dense regions in embedding space—though the library now allows for alternative dimensionality reduction and clustering methods—its performance is often sensitive to hyperparameter choices and prone to producing a high number of outlier documents or unstable cluster assignments. Moreover, HDBSCAN struggles in low-dimensional spaces or in cases with overlapping semantic clusters. In contrast, Leiden clustering is robust to such issues and enables us to tune the resolution of clusters through the \texttt{resolution} parameter, thereby controlling topic granularity in a principled manner.
+
+Importantly, the combination of UMAP and Leiden is conceptually aligned with the BERTopic pipeline, which also uses UMAP for dimensionality reduction followed by clustering and topic representation. However, in TOPol, the full fuzzy graph is preserved and explicitly passed to the clustering algorithm, whereas BERTopic discards the graph structure and clusters the low-dimensional coordinates directly. This makes TOPol more expressive in its treatment of the underlying semantic geometry, as clusters are grounded in the graph rather than in arbitrary embedding coordinates.
+
+The output of Leiden clustering highlights the contrasting structure of the two datasets. In the case of U.S. central bank speeches (Figure~\ref{fig:???}), clusters do not reveal clearly distinct topical boundaries, with most clusters spanning both periods and exhibiting considerable semantic overlap. This supports the assumption that monetary policy discourse is continuous and institutionally standardized, with recurring themes such as inflation, regulation, and financial stability being addressed across time regardless of macroeconomic conditions. In contrast, the Amazon reviews dataset (Figure~\ref{fig:???}) exhibits well-separated clusters that correspond to product categories, despite the reviews being randomly sampled. For instance, cluster 0 predominantly contains reviews of music and CDs, cluster 1 focuses on movies and DVDs, and clusters 2, 3, and 6 primarily involve books. This confirms that product-specific vocabulary and evaluation criteria naturally segment consumer discourse into semantically coherent clusters, reinforcing the interpretability of topic drift in this domain.
+
+Because clustering is applied to the UMAP graph, it respects the non-Euclidean structure of semantic space and identifies communities that are densely interconnected under the manifold topology. The result is a set of coherent, interpretable clusters that align with underlying narrative fields and serve as the foundation for drift estimation.
+
+\subsection{Centroid Drift Analysis}
+
+To quantify narrative polarity shifts, we analyze the displacement of cluster centroids across regimes. For each cluster $i$ that contains documents from both $A$ and $B$, we compute the average position of its members in each regime separately. Let $\text{Centroid}_i^A$ and $\text{Centroid}_i^B$ denote the centroids of cluster $i$ in regimes $A$ and $B$, respectively. The polarity vector for cluster $i$ is then given by:
+$$\vec{v}_i = \text{Centroid}_i^B - \text{Centroid}_i^A$$
+
+Each $\vec{v}_i$ captures the direction and magnitude of semantic drift for a locally coherent narrative cluster. These vectors form the basis for reconstructing the polarity field over the semantic space. In practice, the centroids and polarity vectors are visualized in two dimensions using the UMAP projection. While the absolute distances in this reduced space may be subject to non-linear distortion, the relative directions and orientations of drift vectors remain interpretable and meaningful.
+
+To analyze the overall structure of narrative shifts, we first normalize the polarity vectors and assign them to one of four directional quadrants based on their 2D projection. This coarse discretization provides an interpretable approximation of the dominant semantic directions in the reduced space, revealing clusters of parallel or opposing drifts. While this quadrant-based approach is sufficient for low-dimensional visualization, we propose in future work to extend the analysis using angular $k$-means clustering in higher-dimensional embedding spaces, allowing for a finer-grained decomposition of the polarity field into dominant semantic axes.
+
+The directional structure of centroid drifts further underscores the distinct dynamics in each corpus. In the U.S. central bank speeches (Figure~\ref{fig:???}), drift vectors are modest in magnitude and distributed relatively uniformly across quadrants. This diffuse orientation reflects the stylistic stability of central bank discourse, where most clusters exhibit slight semantic adjustments rather than clear directional reorientations. The absence of dominant directional trends supports the hypothesis that central bankers adapt discourse gradually, with institutional tone and vocabulary remaining largely consistent across macroeconomic regimes. In contrast, the Amazon reviews (Figure~\ref{fig:???}) display pronounced and coherent drifts. While the contextual boundary in the Amazon dataset is explicitly defined by sentiment labels, the observed drift directions reveal a richer polarity structure. Cluster-level vectors do not all align along a single axis: cluster 0 (music) and cluster 1 (films) drift in distinct directions, while clusters 2, 4, and 6 (books) exhibit coherent parallel drifts in yet another direction. This consistent internal alignment across semantically similar clusters, combined with divergence across product types, suggests that sentiment—while dominant—is not the sole dimension driving the polarity shift. Instead, it likely interacts with additional factors such as tone, genre-specific vocabulary, or review structure. The contextual boundary thus selects for one strong polarity axis (valence), but the resulting semantic field embeds multiple, entangled dimensions of evaluative change. This confirms that polarity in highly opinionated text is inherently multidimensional, and vector field modeling can expose these finer-grained structures.
+
+We emphasize that drift analysis in TOPol is performed at the cluster level, not globally across the entire corpus. This distinction is crucial. A global comparison of embeddings from $A$ and $B$ may reflect broad stylistic or lexical changes but risks conflating topic structure with polarity. By focusing on cluster-level drift, we ensure that each polarity vector is grounded in a semantically coherent region of the discourse space. This approach isolates the specific dimensions along which narratives evolve, rather than collapsing change into a single scalar metric like sentiment.
+
+
+% #######################################################
+
+
+\section{Explaining Narrative Polarity Shifts}
+\label{sec:topicshifts}
+
+for macro, top 10 representative documents
+for amazon, top 50 (because they are much smaller)
+
+\textcolor{blue}{
+THE KEY FIGURE HERE IS WHATEVER WE COME UP WITH (THE P-VALUES STUFF AND THE TFIDF WORDCLOUDS PER CLUSTER AND CENTROID??) (AND THEREFORE PER SHIFT). CALCULATE THE RELATION BETWEEN SIMILARITY IN DIRECTION OF ARROW (UMAP ARROW, POLAR VECTOR) AND SIMILARITY IN TOPICAL DIMENSION HIGHLIGHTED BY THE DIFFERENCE BEFORE - AFTER.}
+
+\textcolor{red}{
+To interpret the meaning of each semantic polarity dimension, we identify documents with the highest and lowest ... COMPLETE HERE ... and extract characteristic vocabulary for each pole by comparing word TFIDF between them ... COMPLETE IT WITH DETAILS ...}
+
+\textcolor{red}{
+Applying TOPol to central bank discourses, we identified PUTANUMBERHERE primary polarity dimensions:
+NOW THAT WE HAVE TWO DATASETS, WE NEED TO SAY WHICH SHIFTS ARE REVEALED ON EACH DATASET
+\begin{enumerate}
+    \item Monetary Policy (this is just an idea, you need to see what you get).
+    \item Inflation
+    \item Employment
+\end{enumerate}
+}
+
+
+% #######################################################
+
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+In this paper, we have introduced TOPol, a novel unsupervised computational framework for reconstructing and analyzing the multidimensional nature of semantic polarity in narrative discourse. By conceptualizing polarity as a vector field we move away from the one-dimensional polarity perspective of sentiment analysis. The multidimensional perspective we advance provides new insights into the dynamic nature of narrative evolution and offers a computational foundation for future research in this emerging area.
+
+Our key contributions can be summarized as follows:
+
+\textcolor{blue}{
+\begin{enumerate}
+    \item Theoretical framework: We have developed a theoretical foundation for understanding semantic polarity as a multidimensional vector field with direction, magnitude, and contextual relevance that transcends traditional scalar representations of sentiment.
+    \item Computational Methodology: TOBECOMPLETED
+\end{enumerate}
+}
+
+While TOPol represents a significant advancement towards understanding narrative analysis as a multidimensional problem, several limitations and avenues for future research remain. Specifically, efforts for continuously expanding TOPol are envisioned: \textcolor{blue}{NARRATETHEFOLLOWINGBETTER} incorporating dynamic topic modeling, diverse options for contextual boundary detection, move towards a boundary free implementation, and expanding vector spaces to represent as many intermediate vector points as needed in complex shifts.
+
+In conclusion, the reconstruction and analysis of narrative polarity vector fields represents a significant step forward in our computational capabilities for understanding the complex ways in which language reflects and shapes our perception of the world. The application here proposed, central bank communication in macroeconomic shifts, demonstrates the value brought by TOPol, as it reveals how policy narratives are strategically framed.
+
+
+% #######################################################
+
+
+\newpage
+\printbibliography
+
+
+% #######################################################
+
+
+\end{document}

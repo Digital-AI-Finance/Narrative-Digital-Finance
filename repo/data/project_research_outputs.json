@@ -1,0 +1,503 @@
+{
+  "metadata": {
+    "search_date": "2025-12-22",
+    "search_scope": "Ultra deep web search for SNSF Narrative Digital Finance project outputs",
+    "data_sources": [
+      "SNSF Data Portal",
+      "SSRN",
+      "Google Scholar",
+      "ResearchGate",
+      "OpenAlex",
+      "ScienceDirect",
+      "CORDIS",
+      "COST Action FinAI Wiki",
+      "Digital Finance MSCA Website",
+      "AI in Finance Portal",
+      "BFH Website",
+      "University of Twente Research Portal",
+      "LinkedIn",
+      "Web Search"
+    ]
+  },
+  "project": {
+    "title": "Narrative Digital Finance: A Tale of Structural Breaks, Bubbles & Market Narratives",
+    "short_title": "Narrative Digital Finance",
+    "status": "Completed",
+    "funder": "Swiss National Science Foundation (SNSF)",
+    "grant_number": "213370",
+    "proposal_number": "IZCOZ0_213370",
+    "mobility_grant_number": "100018E_213370",
+    "funding_amount": {
+      "value": 236118,
+      "currency": "CHF"
+    },
+    "duration": {
+      "start_date": "2023-07-01",
+      "end_date": "2026-08-31",
+      "months": 38
+    },
+    "eu_grant": {
+      "funder": "Horizon Europe - Marie Sklodowska-Curie Actions",
+      "grant_number": "101119635",
+      "cordis_url": "https://cordis.europa.eu/project/id/101119635"
+    },
+    "institutions": [
+      {
+        "name": "Bern University of Applied Sciences (BFH)",
+        "department": "Bern Business School",
+        "country": "Switzerland",
+        "role": "Lead Institution"
+      },
+      {
+        "name": "University of Twente",
+        "department": "Faculty of Behavioural, Management and Social Sciences",
+        "country": "Netherlands",
+        "role": "Partner Institution"
+      }
+    ],
+    "urls": {
+      "project_website": "https://www.digital-finance-msca.com/snsf-narrative-digital-finance",
+      "snsf_data_portal": "https://data.snf.ch/grants/grant/213370",
+      "mysnf": "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a",
+      "bfh_project_page": "https://www.bfh.ch/en/research/research-projects/2023-180-022-876/",
+      "ai_in_finance_portal": "https://www.ai-in-finance.eu/The-Digital-Finance-Research-Programme/SNSF/Narrative%20Digital%20Finance/",
+      "cost_wiki": "https://wiki.fin-ai.eu/index.php/SNSF_Narrative_Digital_Finance",
+      "github": "https://github.com/Digital-AI-Finance/Narrative-Digital-Finance"
+    }
+  },
+  "research_description": {
+    "background": "Large fluctuations, instabilities, trends and uncertainty of financial markets constitute a substantial challenge for asset management companies, pension funds and regulators. Nowadays, most asset management companies and financial institutions follow a so-called systematic trading approach in their investment decisions. However, automated or rules-based trading activities bring certain risks for market participants and the whole financial market. In times of increased market volatility, market turmoil or so-called market sell-offs, investors applying similar trading rules might undertake the same actions, escalating and increasing systemic market risk.",
+    "rationale": "Despite advancements in econometric methods, the detection of asset price bubbles and structural breaks remains uncertain and underexplored, particularly in the context of classic financial assets. Recent research underscores the powerful role of narratives in financial decision-making, suggesting that integrating textual analysis could enhance market understanding and prediction accuracy.",
+    "overall_objectives": "Develop a comprehensive framework that utilizes advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks using diverse data sources, including financial data and narrative content from text, speech, and multimedia.",
+    "specific_aims": [
+      "Validate and refine existing econometric models using real-world financial data",
+      "Integrate narrative analysis to understand and predict market behaviors and asset price dynamics",
+      "Create a multidimensional AI and ML framework that enhances the detection of market anomalies and forecasts financial trends"
+    ],
+    "methods": "The approach involves collecting and processing a wide range of data, including stock prices, macroeconomic indicators, and textual content from the web. We employ text mining and NLP techniques to analyze sentiment, narrative structures, and their impact on market movements. Developing and testing new AI models that combine traditional financial analysis with narrative insights to predict market changes and detect structural breaks.",
+    "expected_results": [
+      "Enhanced models for predicting financial markets with greater accuracy, especially in detecting asset price bubbles and structural breaks",
+      "Novel datasets and measurement techniques that provide deeper insights into the interplay between market narratives and financial indicators",
+      "Practical tools for asset management and regulatory bodies to better anticipate and react to market crises"
+    ],
+    "impact": "This research aims to bridge the gap between traditional econometric approaches and modern AI techniques, providing new insights into the role of narratives and quantitative data in financial decision-making. The results offer valuable tools for risk management, asset pricing, and optimizing trading strategies, potentially influencing policy and regulatory practices globally."
+  },
+  "team": {
+    "principal_investigator": {
+      "name": "Prof. Dr. Joerg Osterrieder",
+      "orcid": "0000-0003-0189-8636",
+      "affiliations": [
+        "Professor of Sustainable Finance, Bern Business School, Switzerland",
+        "Associate Professor of Finance and AI, University of Twente, Netherlands"
+      ],
+      "roles": [
+        "Principal Investigator - Narrative Digital Finance (SNSF)",
+        "Coordinator - MSCA Industrial Doctoral Network Digital Finance (EU 4.5M EUR)",
+        "Chair - COST Action CA19130 Fintech and AI in Finance (2020-2025)",
+        "Advisor - ING Group Global Data Analytics Team"
+      ],
+      "metrics": {
+        "google_scholar_citations": 2056,
+        "h_index": 13,
+        "works_count": 136,
+        "source": "Google Scholar"
+      },
+      "urls": {
+        "google_scholar": "https://scholar.google.com/citations?user=ocRaXoIAAAAJ",
+        "orcid": "https://orcid.org/0000-0003-0189-8636",
+        "linkedin": "https://www.linkedin.com/in/joergosterrieder/",
+        "website": "https://www.joergosterrieder.com/",
+        "bfh_profile": "https://www.bfh.ch/en/about-bfh/people/w4sicxpfhvnq/"
+      }
+    },
+    "team_members": [
+      {
+        "name": "Gabin Taibi",
+        "orcid": "0000-0002-0785-6771",
+        "role": "PhD Researcher",
+        "affiliation": "University of Twente / Bern Business School",
+        "expertise": ["Digital finance narratives", "Structural breaks", "NLP", "Machine Learning"],
+        "research_focus": "Intersection of digital finance narratives and their influence on structural breaks in financial markets",
+        "urls": {
+          "orcid": "https://orcid.org/0000-0002-0785-6771",
+          "linkedin": "https://www.linkedin.com/in/gabin-taibi/",
+          "bfh_profile": "https://www.bfh.ch/en/about-bfh/people/w4sicxpfhvnq/"
+        }
+      },
+      {
+        "name": "Lennart John Baals",
+        "orcid": "0000-0002-7737-9675",
+        "role": "PhD Researcher",
+        "affiliation": "University of Twente / Bern Business School",
+        "expertise": ["Digital asset analysis", "Financial econometrics", "Machine Learning"],
+        "metrics": {
+          "works_count": 14,
+          "citations": 125,
+          "h_index": 5
+        },
+        "urls": {
+          "linkedin": "https://www.linkedin.com/in/lennart-john-baals-a621aa193/",
+          "researchgate": "https://www.researchgate.net/scientific-contributions/Lennart-John-Baals-2218848188"
+        }
+      },
+      {
+        "name": "Dr. Yiting Liu",
+        "orcid": "0009-0006-9554-8205",
+        "role": "PhD Researcher",
+        "affiliation": "University of Twente / Bern Business School",
+        "expertise": ["Financial markets", "Machine Learning", "Digital finance"],
+        "metrics": {
+          "works_count": 12,
+          "citations": 351,
+          "h_index": 4
+        },
+        "urls": {
+          "orcid": "https://orcid.org/0009-0006-9554-8205",
+          "ut_profile": "https://people.utwente.nl/yiting.liu"
+        }
+      },
+      {
+        "name": "Marius Jan Klein",
+        "role": "Team Member",
+        "affiliation": "Bern Business School",
+        "expertise": ["Financial text analysis", "Market narratives", "Asset pricing"]
+      },
+      {
+        "name": "Prof. Dr. Christian Hopp",
+        "role": "Project Staff",
+        "affiliation": "Bern Business School"
+      }
+    ]
+  },
+  "publications": {
+    "directly_related": [
+      {
+        "title": "A Primer on Narrative Finance",
+        "authors": ["Joerg Osterrieder"],
+        "year": 2023,
+        "type": "Working Paper",
+        "venue": "SSRN",
+        "ssrn_id": "4324860",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4324860",
+        "abstract": "Narrative Finance is a relatively new field that aims to understand the narratives that shape financial markets and how these narratives influence market outcomes. This primer covers the use of Narrative Finance in sustainable finance, AI applications, study of different narratives that shape perceptions of different types of assets and investments, emerging markets, and how financial narratives are communicated through different media channels.",
+        "keywords": ["Narrative Finance", "Financial Narratives", "Market Bubbles", "Robert Shiller"]
+      },
+      {
+        "title": "Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI",
+        "authors": ["Karolina Bolesta", "Gabin Taibi", "Codruta Mare", "Christian Hopp", "Joerg Osterrieder"],
+        "year": 2024,
+        "type": "Working Paper",
+        "venue": "SSRN",
+        "ssrn_id": "4698153",
+        "date": "2024-01-17",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153",
+        "abstract": "This paper presents an advanced conceptual framework for the analysis of textual data in the context of financial securities, hypothesizing that a comprehensive evaluation of events within the broader economic environment, particularly through their descriptions, significantly influences the pricing of financial instruments. Extends beyond traditional NLP by proposing inclusion of non-textual data forms such as images, videos, and audio.",
+        "keywords": ["Multimodal NLP", "Financial Instrument Pricing", "Generative AI", "Text Analysis"]
+      },
+      {
+        "title": "Reaction Times to Economic News in High-Frequency Trading: An Analysis of Latency and Informed Trading reacting to Macro-News Announcements",
+        "authors": ["Joerg Osterrieder", "Stefan Schlamp"],
+        "year": 2025,
+        "type": "Working Paper",
+        "venue": "SSRN",
+        "ssrn_id": "5112295",
+        "date": "2025-01-26",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295",
+        "abstract": "Joint research with Deutsche Borse on high-frequency trading and market microstructure.",
+        "keywords": ["High-Frequency Trading", "Market Microstructure", "Economic News", "Latency"]
+      }
+    ],
+    "related_project_publications": [
+      {
+        "title": "A Primer on Natural Language Processing for Finance",
+        "authors": ["Joerg Osterrieder"],
+        "year": 2023,
+        "venue": "SSRN",
+        "ssrn_id": "4317320",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4317320",
+        "keywords": ["NLP", "Financial Text Data", "Sentiment Analysis", "Trading Signals"]
+      },
+      {
+        "title": "A Primer on Artificial Intelligence and Machine Learning for the Financial Services Industry",
+        "authors": ["Joerg Osterrieder"],
+        "year": 2023,
+        "venue": "SSRN",
+        "ssrn_id": "4349078",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4349078"
+      },
+      {
+        "title": "Machine Learning for Asset Management",
+        "authors": ["Joerg Osterrieder"],
+        "year": 2024,
+        "venue": "SSRN",
+        "ssrn_id": "4638186",
+        "pages": 233,
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4638186",
+        "abstract": "Structured into four distinct parts examining machine learning's role in finance, designed as a resource for professionals and students."
+      },
+      {
+        "title": "Predicting Retail Customers' Distress: Early Warning Systems and Machine Learning Applications",
+        "authors": ["Jaap Beltman", "Joerg Osterrieder", "Marcos Machado"],
+        "year": 2024,
+        "venue": "SSRN",
+        "ssrn_id": "4730470",
+        "date": "2024-01",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4730470"
+      },
+      {
+        "title": "Digital Finance: Reaching New Frontiers",
+        "authors": ["Joerg Osterrieder", "Marcos Machado"],
+        "year": 2023,
+        "type": "Journal Article",
+        "venue": "Open Research Europe",
+        "volume": "3",
+        "article_number": "38",
+        "doi": "10.12688/openreseurope.15386.1",
+        "url": "https://open-research-europe.ec.europa.eu/articles/3-38",
+        "pmc_id": "PMC10445873"
+      },
+      {
+        "title": "Mitigating Digital Asset Risks",
+        "authors": ["Huei-Wen Teng", "Wolfgang Karl Hardle", "Joerg Osterrieder", "Lennart John Baals", "et al."],
+        "year": 2023,
+        "venue": "SSRN",
+        "ssrn_id": "4594467",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4594467",
+        "note": "Multi-author paper from COST Action CA19130"
+      },
+      {
+        "title": "A discussion paper for possible approaches to building a statistically valid backtesting framework",
+        "authors": ["Veni Arakelian", "Karolina Bolesta", "Silvija Vlah Jeric", "Yiting Liu", "Joerg Osterrieder", "et al."],
+        "year": 2024,
+        "venue": "SSRN",
+        "ssrn_id": "4893677",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4893677"
+      },
+      {
+        "title": "AI 4 Crowdfunding - A hands-on roadmap to study and understand crowdfunding data using critical thinking AI",
+        "authors": ["Stefana Belbe", "Lucia Gomez Teijeiro", "Liana Stanca", "Karsten Wenzlaff", "et al.", "Joerg Osterrieder"],
+        "year": 2024,
+        "venue": "SSRN",
+        "ssrn_id": "4941279",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4941279"
+      },
+      {
+        "title": "Enhancing Security in Blockchain Networks: Anomalies, Frauds, and Advanced Detection Techniques",
+        "authors": ["Joerg Osterrieder", "Stephen Chan", "Jeffrey Chu", "Yuanyuan Zhang", "Codruta Mare"],
+        "year": 2024,
+        "venue": "arXiv",
+        "doi": "10.48550/arxiv.2402.11231"
+      },
+      {
+        "title": "Stylized facts of metaverse non-fungible tokens",
+        "authors": ["Joerg Osterrieder", "Stephen Chan", "Jeffrey Chu", "Yuanyuan Zhang"],
+        "year": 2024,
+        "venue": "Physica A: Statistical Mechanics and its Applications"
+      }
+    ]
+  },
+  "collaborations": {
+    "industry": [
+      {
+        "organization": "Deutsche Borse AG",
+        "country": "Germany",
+        "contact": "Dr. Stefan Schlamp",
+        "role": "Head of Quantitative Analytics",
+        "activities": ["In-depth constructive exchanges on approaches, methods, and results", "Joint publications", "Exchange of personnel", "HFT and market microstructure research"],
+        "output": "SSRN paper on HFT reaction times (2025)"
+      },
+      {
+        "organization": "Quoniam Asset Management",
+        "country": "Germany",
+        "activities": ["Quantitative investment strategies", "Knowledge transfer"]
+      },
+      {
+        "organization": "ING Group",
+        "country": "Netherlands",
+        "role": "Global Data Analytics Team Advisor",
+        "activities": ["AI advisory", "Financial analytics"]
+      }
+    ],
+    "academic": [
+      {
+        "organization": "Humboldt-University Berlin",
+        "country": "Germany",
+        "activities": ["Financial econometrics", "Constructive exchanges", "Joint publications"]
+      },
+      {
+        "organization": "American University of Sharjah",
+        "country": "UAE",
+        "activities": ["Keynote presentations", "Research stays", "Blockchain security and NFT research"]
+      },
+      {
+        "organization": "Babes-Bolyai University",
+        "country": "Romania",
+        "activities": ["Quantitative finance research", "PhD training"]
+      },
+      {
+        "organization": "SGH Warsaw School of Economics",
+        "country": "Poland",
+        "activities": ["Joint research", "PhD training"]
+      }
+    ],
+    "research_networks": [
+      {
+        "name": "COST Action CA19130 - Fintech and Artificial Intelligence in Finance",
+        "role": "Action Chair",
+        "duration": "September 2020 - May 2025",
+        "countries": 49,
+        "researchers": 270,
+        "funding": "European Union (H2020 and Horizon Europe)",
+        "activities": ["Research coordination", "Annual conferences", "PhD training schools", "Working group management"],
+        "url": "https://www.cost.eu/actions/CA19130/"
+      },
+      {
+        "name": "MSCA Industrial Doctoral Network on Digital Finance",
+        "role": "Coordinator",
+        "grant_number": "101119635",
+        "funding_amount": "4,500,000 EUR",
+        "institutions": 13,
+        "researchers": 100,
+        "activities": ["Cross-institutional research collaboration", "Doctoral training", "Knowledge transfer"],
+        "url": "https://www.digital-finance-msca.com/"
+      }
+    ]
+  },
+  "events": {
+    "conferences_organized": [
+      {
+        "name": "7th European COST Conference on Artificial Intelligence in Finance",
+        "location": "Bern, Switzerland",
+        "date": "September 2023",
+        "venue": "Bern Business School",
+        "role": "Main Organizer"
+      },
+      {
+        "name": "8th European COST Conference on Artificial Intelligence in Finance",
+        "location": "Bern, Switzerland",
+        "date": "September 2024",
+        "venue": "Bern Business School"
+      },
+      {
+        "name": "COST FinAI PhD School 2024",
+        "location": "Treviso, Italy",
+        "date": "2024",
+        "topics": ["Generative AI in finance", "Chatbots and LLMs", "Fintech", "Blockchain", "Machine Learning"],
+        "url": "https://www.digital-finance-msca.com/cost-finai-phd-school-2024"
+      },
+      {
+        "name": "COST FinAI Meets Istanbul",
+        "location": "Istanbul, Turkey",
+        "date": "May 2024"
+      },
+      {
+        "name": "COST FinAI Meets Brussels",
+        "location": "Brussels, Belgium",
+        "date": "2024"
+      }
+    ],
+    "presentations": [
+      {
+        "title": "Data Science in Finance - Applications",
+        "event": "Inaugural Research Conference on Mathematics and Related Area",
+        "location": "American University of Sharjah, UAE",
+        "date": "May 2024",
+        "type": "Keynote Speaker"
+      },
+      {
+        "title": "A tour through Quantitative Finance Research in the Era of Machine Learning and Artificial Intelligence",
+        "event": "Financial Math Seminar",
+        "location": "Worcester Polytechnic Institute, USA",
+        "type": "Invited Seminar"
+      }
+    ],
+    "workshops": [
+      {
+        "name": "COST Action CA19130 Management Committee Meeting",
+        "location": "Bern, Switzerland",
+        "date": "September 2023"
+      },
+      {
+        "name": "Brussels Meeting 2024",
+        "location": "Brussels, Belgium",
+        "date": "2024",
+        "url": "https://www.digital-finance-msca.com/brussels-meeting-2024"
+      }
+    ]
+  },
+  "datasets_and_code": {
+    "datasets_used": [
+      {
+        "name": "Financial Narratives Corpus",
+        "description": "Collection of financial news, earnings calls, and central bank communications for NLP analysis",
+        "sources": ["Reuters", "Bloomberg", "FOMC", "ECB"]
+      },
+      {
+        "name": "Deutsche Borse HFT Dataset",
+        "description": "Nanosecond-level market microstructure data from Xetra/Eurex for HFT analysis",
+        "source": "Deutsche Borse AG",
+        "collaboration": "Dr. Stefan Schlamp"
+      }
+    ],
+    "code_repositories": [
+      {
+        "name": "Narrative-Digital-Finance",
+        "platform": "GitHub",
+        "organization": "Digital-AI-Finance",
+        "url": "https://github.com/Digital-AI-Finance/Narrative-Digital-Finance",
+        "description": "Project repository with website and data files"
+      }
+    ],
+    "open_science": {
+      "policy": "Research publications freely accessible, research data openly available via GitHub, data permanently archived in OpenAIRE",
+      "url": "https://www.digital-finance-msca.com/open-science"
+    }
+  },
+  "related_projects": [
+    {
+      "title": "Digital Finance - Reaching New Frontiers",
+      "funder": "EU Horizon Europe MSCA",
+      "grant_number": "101119635",
+      "funding_amount": {
+        "value": 4500000,
+        "currency": "EUR"
+      },
+      "coordinator": "Prof. Dr. Joerg Osterrieder",
+      "url": "https://cordis.europa.eu/project/id/101119635"
+    }
+  ],
+  "statistics": {
+    "publications": {
+      "directly_related": 5,
+      "related_project": 12,
+      "total": 17
+    },
+    "team_members": 6,
+    "collaborating_organizations": 7,
+    "research_networks": 2,
+    "conference_events": 6,
+    "datasets_used": 2,
+    "total_funding_chf": 236118,
+    "related_funding_eur": 4500000
+  },
+  "keywords": [
+    "Narrative Finance",
+    "NLP",
+    "Machine Learning",
+    "Deep Learning",
+    "Asset Bubbles",
+    "Structural Breaks",
+    "Financial Markets",
+    "Sentiment Analysis",
+    "Generative AI",
+    "High-Frequency Trading",
+    "Market Microstructure",
+    "BERTopic",
+    "Digital Finance",
+    "Fintech",
+    "NFT",
+    "SNSF",
+    "COST Action",
+    "MSCA"
+  ]
+}

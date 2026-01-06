@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Documents - NarrativeBreak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        .round-section { margin: 40px 0; padding: 30px; background: white; border: 1px solid #e2e8f0; border-radius: 12px; }
+        .round-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid #e2e8f0; }
+        .round-badge { padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; }
+        .badge-major { background: #fef3c7; color: #92400e; }
+        .badge-minor { background: #dbeafe; color: #1e40af; }
+        .badge-accept { background: #dcfce7; color: #166534; }
+        .round-title { font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0; }
+        .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .doc-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; transition: all 0.2s; }
+        .doc-card:hover { border-color: #3b82f6; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15); }
+        .doc-icon { width: 40px; height: 40px; background: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+        .doc-icon svg { width: 24px; height: 24px; fill: white; }
+        .doc-title { font-weight: 600; color: #1e293b; margin: 0 0 8px 0; }
+        .doc-desc { font-size: 0.9rem; color: #64748b; margin: 0 0 16px 0; }
+        .doc-links { display: flex; gap: 12px; }
+        .doc-link { font-size: 0.85rem; color: #3b82f6; text-decoration: none; display: flex; align-items: center; gap: 4px; }
+        .doc-link:hover { text-decoration: underline; }
+        .timeline-mini { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; padding: 12px 16px; background: #f1f5f9; border-radius: 8px; font-size: 0.9rem; color: #64748b; }
+        .timeline-mini strong { color: #1e293b; }
+        .pdf-viewer { width: 100%; height: 600px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0; }
+        .tabs { display: flex; gap: 4px; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; }
+        .tab { padding: 12px 24px; background: transparent; border: none; cursor: pointer; font-size: 1rem; color: #64748b; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+        .tab.active { color: #3b82f6; border-bottom-color: #3b82f6; font-weight: 600; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .markdown-preview { background: #f8fafc; padding: 24px; border-radius: 8px; border: 1px solid #e2e8f0; max-height: 500px; overflow-y: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .markdown-preview h1, .markdown-preview h2, .markdown-preview h3 { color: #1e293b; margin-top: 24px; }
+        .markdown-preview h1:first-child, .markdown-preview h2:first-child { margin-top: 0; }
+        .markdown-preview p { color: #475569; line-height: 1.7; }
+        .markdown-preview ul, .markdown-preview ol { color: #475569; padding-left: 24px; }
+        .markdown-preview li { margin: 8px 0; }
+        .markdown-preview strong { color: #1e293b; }
+        .markdown-preview blockquote { border-left: 4px solid #3b82f6; margin: 16px 0; padding-left: 16px; color: #64748b; font-style: italic; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Narrative Digital Finance</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="paper.html">Paper</a>
+                <a href="reviews.html" class="active">Reviews</a>
+                <a href="results.html">Results</a>
+                <a href="reproducibility.html">Reproducibility</a>
+                <a href="data.html">Data</a>
+                <a href="charts.html">Charts</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero" style="padding: 60px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center; color: white;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Review Documents</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Complete peer review history from submission to acceptance</p>
+            </div>
+        </section>
+
+        <section style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+
+            <div class="timeline-mini">
+                <span>Day 0: Submission</span>
+                <span>-></span>
+                <span>Day 45: <strong>Major Revision</strong></span>
+                <span>-></span>
+                <span>Day 120: <strong>Minor Revision</strong></span>
+                <span>-></span>
+                <span>Day 150: <strong style="color: #16a34a;">Accept</strong></span>
+            </div>
+
+            <!-- Submission -->
+            <div class="round-section">
+                <div class="round-header">
+                    <span class="round-badge" style="background: #e0e7ff; color: #3730a3;">Day 0</span>
+                    <h2 class="round-title">Initial Submission</h2>
+                </div>
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Cover Letter</h3>
+                        <p class="doc-desc">Initial submission letter to the editor</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/submission_v1/cover_letter.pdf" class="doc-link" download>
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z"/></svg>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Manuscript v1</h3>
+                        <p class="doc-desc">Original submitted manuscript</p>
+                        <div class="doc-links">
+                            <a href="docs/NarrativeBreak-paper.pdf" class="doc-link">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg>
+                                View PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Round 1 -->
+            <div class="round-section">
+                <div class="round-header">
+                    <span class="round-badge badge-major">Day 45</span>
+                    <h2 class="round-title">Round 1: Major Revision</h2>
+                </div>
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #f59e0b;">
+                            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Editor Decision</h3>
+                        <p class="doc-desc">Major Revision decision with key issues</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_1/editor_decision.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #6366f1;">
+                            <svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Reviewer 1</h3>
+                        <p class="doc-desc">Methodology / Econometrics focus</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_1/reviewer1_comments.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #8b5cf6;">
+                            <svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Reviewer 2</h3>
+                        <p class="doc-desc">Empirical / NLP Applications focus</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_1/reviewer2_comments.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #a855f7;">
+                            <svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Reviewer 3</h3>
+                        <p class="doc-desc">Industry / Practical focus</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_1/reviewer3_comments.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #22c55e;">
+                            <svg viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Author Response</h3>
+                        <p class="doc-desc">Point-by-point response to all comments</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_1/author_response_r1.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Round 2 -->
+            <div class="round-section">
+                <div class="round-header">
+                    <span class="round-badge badge-minor">Day 120</span>
+                    <h2 class="round-title">Round 2: Minor Revision</h2>
+                </div>
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #3b82f6;">
+                            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Editor Decision</h3>
+                        <p class="doc-desc">Minor Revision decision</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_2/editor_decision.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #6366f1;">
+                            <svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Reviewer 1 (R2)</h3>
+                        <p class="doc-desc">Accept with Minor Revision</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_2/reviewer1_comments.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #8b5cf6;">
+                            <svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Reviewer 2 (R2)</h3>
+                        <p class="doc-desc">Minor Revision</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_2/reviewer2_comments.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #22c55e;">
+                            <svg viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Author Response</h3>
+                        <p class="doc-desc">Response to Round 2 comments</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/round_2/author_response_r2.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final -->
+            <div class="round-section" style="border: 2px solid #22c55e;">
+                <div class="round-header">
+                    <span class="round-badge badge-accept">Day 150</span>
+                    <h2 class="round-title">Final: Accepted</h2>
+                </div>
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #22c55e;">
+                            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Acceptance Letter</h3>
+                        <p class="doc-desc">Final acceptance from editor</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/final/editor_decision.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #16a34a;">
+                            <svg viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19M10,17L6,13L7.41,11.58L10,14.17L16.59,7.58L18,9Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Publication Checklist</h3>
+                        <p class="doc-desc">Pre-production requirements</p>
+                        <div class="doc-links">
+                            <a href="docs/reviews/final/publication_checklist.pdf" class="doc-link" download>Download PDF</a>
+                        </div>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon" style="background: #0ea5e9;">
+                            <svg viewBox="0 0 24 24"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
+                        </div>
+                        <h3 class="doc-title">Final Manuscript</h3>
+                        <p class="doc-desc">Accepted version of the paper</p>
+                        <div class="doc-links">
+                            <a href="docs/NarrativeBreak-paper.pdf" class="doc-link">View PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 40px;">Download All Documents</h2>
+            <p>All review documents are available in the GitHub repository:</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0;">
+                <a href="https://github.com/Digital-AI-Finance/NarrativeBreak/tree/main/paper/reviews" class="doc-link" target="_blank" style="padding: 12px 24px; background: #1e293b; color: white; border-radius: 8px; text-decoration: none; font-weight: 500;">
+                    View on GitHub
+                </a>
+                <a href="docs/reviews/all_reviews.zip" class="doc-link" download style="padding: 12px 24px; background: #f1f5f9; color: #1e293b; border-radius: 8px; text-decoration: none; font-weight: 500; border: 1px solid #e2e8f0;">
+                    Download All (ZIP)
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #1e293b; color: white; padding: 40px 20px; text-align: center;">
+        <p>SNSF Grant IZCOZ0_213370 - Narrative Digital Finance</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">Bern University of Applied Sciences | University of Twente</p>
+    </footer>
+</body>
+</html>

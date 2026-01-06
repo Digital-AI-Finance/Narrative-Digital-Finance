@@ -1,0 +1,195 @@
+% Master Template for Optimal Readability
+% WCAG AAA Compliant Design System
+% Version 1.0 - 2025
+
+\documentclass[8pt]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{dsfont}
+
+% ====================================
+% COLOR DEFINITIONS - WCAG AAA Compliant
+% ====================================
+\definecolor{PureBlack}{RGB}{0,0,0}          % 21:1 contrast
+\definecolor{DeepBlue}{RGB}{0,45,114}        % 12.6:1 contrast
+\definecolor{DarkGray}{RGB}{64,64,64}        % 9.7:1 contrast
+\definecolor{DarkGreen}{RGB}{0,100,0}        % Success/Positive
+\definecolor{DarkRed}{RGB}{139,0,0}          % Warning/Negative
+\definecolor{LightGray}{RGB}{192,192,192}    % Borders/Grids
+
+% Colorblind-safe palette for charts
+\definecolor{ChartBlue}{RGB}{0,114,178}
+\definecolor{ChartOrange}{RGB}{230,159,0}
+\definecolor{ChartTeal}{RGB}{0,158,115}
+\definecolor{ChartPurple}{RGB}{204,121,167}
+\definecolor{ChartRed}{RGB}{213,94,0}
+\definecolor{ChartYellow}{RGB}{240,228,66}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% ====================================
+% CUSTOM COMMANDS
+% ====================================
+
+% Text highlighting
+\newcommand{\highlight}[1]{\textcolor{DeepBlue}{\textbf{#1}}}
+\newcommand{\secondary}[1]{\textcolor{DarkGray}{#1}}
+\newcommand{\success}[1]{\textcolor{DarkGreen}{\textbf{#1}}}
+\newcommand{\warning}[1]{\textcolor{DarkRed}{\textbf{#1}}}
+\newcommand{\data}[1]{\textcolor{ChartBlue}{\textbf{#1}}}
+\newcommand{\dataalt}[1]{\textcolor{ChartOrange}{\textbf{#1}}}
+
+% Key points and formulas
+\newcommand{\keypoint}[1]{
+    \vspace{0.5em}
+    \begin{center}
+    \fcolorbox{LightGray}{white}{
+    \parbox{0.9\textwidth}{\centering\textbf{#1}}
+    }
+    \end{center}
+    \vspace{0.5em}
+}
+
+\newcommand{\formula}[1]{
+    \begin{center}
+    \colorbox{white}{
+    \parbox{0.8\textwidth}{\centering\Large $\displaystyle #1$}
+    }
+    \end{center}
+}
+
+% Mathematical notation shortcuts
+\newcommand{\prob}[1]{P\left(#1\right)}
+\newcommand{\given}{\mid}
+\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\Var}[1]{\text{Var}\left[#1\right]}
+\newcommand{\Cov}[1]{\text{Cov}\left[#1\right]}
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{argmax}}}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{argmin}}}
+\newcommand{\softmax}[1]{\text{softmax}\left(#1\right)}
+\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
+\newcommand{\relu}[1]{\text{ReLU}\left(#1\right)}
+
+% Slide layout commands
+\newcommand{\twocolslide}[3]{
+    \begin{frame}{#1}
+    \begin{columns}[T]
+    \column{0.48\textwidth}
+    #2
+    \column{0.48\textwidth}
+    #3
+    \end{columns}
+    \end{frame}
+}
+
+\newcommand{\threecolslide}[4]{
+    \begin{frame}{#1}
+    \begin{columns}[T]
+    \column{0.32\textwidth}
+    #2
+    \column{0.32\textwidth}
+    #3
+    \column{0.32\textwidth}
+    #4
+    \end{columns}
+    \end{frame}
+}
+
+\newcommand{\chartslide}[3]{
+    \begin{frame}{#1}
+    \begin{center}
+    \includegraphics[width=#2\textwidth]{#3}
+    \end{center}
+    \end{frame}
+}
+
+\newcommand{\fullchartslide}[2]{
+    \begin{frame}{#1}
+    \begin{center}
+    \includegraphics[width=0.95\textwidth]{#2}
+    \end{center}
+    \end{frame}
+}
+
+\newcommand{\conceptslide}[3]{
+    \begin{frame}{#1}
+    \begin{columns}[T]
+    \column{0.55\textwidth}
+    #2
+    \column{0.43\textwidth}
+    \begin{center}
+    \includegraphics[width=\textwidth]{#3}
+    \end{center}
+    \end{columns}
+    \end{frame}
+}
+
+\newcommand{\tableslide}[2]{
+    \begin{frame}{#1}
+    \begin{center}
+    #2
+    \end{center}
+    \end{frame}
+}
+
+\newcommand{\summaryslide}[2]{
+    \begin{frame}{#1}
+    \begin{center}
+    \fcolorbox{DeepBlue}{white}{
+    \parbox{0.85\textwidth}{
+    #2
+    }}
+    \end{center}
+    \end{frame}
+}
+
+% Code listing setup
+\lstset{
+    backgroundcolor=\color{white},
+    basicstyle=\tiny\ttfamily,
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{DarkGray},
+    stringstyle=\color{DarkGreen},
+    numbers=left,
+    numberstyle=\tiny\color{DarkGray},
+    stepnumber=1,
+    numbersep=5pt,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    frameround=tttt,
+    rulecolor=\color{LightGray},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+% PGFPlots settings
+\pgfplotsset{compat=1.17}
+\pgfplotsset{
+    every axis/.append style={
+        thick,
+        tick style={thick, black},
+        label style={font=\small},
+        legend style={font=\scriptsize},
+        grid=major,
+        grid style={LightGray, thin}
+    }
+}

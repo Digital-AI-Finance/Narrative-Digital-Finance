@@ -1,0 +1,289 @@
+{
+  "project": {
+    "title": "Narrative Digital Finance: A Tale of Structural Breaks, Bubbles & Market Narratives",
+    "short_title": "Narrative Digital Finance",
+    "subtitle": "SNSF Project",
+    "description": "SNSF-funded research project developing advanced ML and NLP frameworks to predict market outcomes, detect asset price bubbles, and identify structural breaks using financial data and narrative content from text, speech, and multimedia.",
+    "status": "completed",
+    "start_date": "2024-01-01",
+    "end_date": "2025-12-31",
+    "website_url": "https://digital-ai-finance.github.io/Narrative-Digital-Finance/",
+    "github_repo": "https://github.com/Digital-AI-Finance/Narrative-Digital-Finance"
+  },
+  "grant": {
+    "funder": "Swiss National Science Foundation",
+    "funder_short": "SNSF",
+    "funder_url": "https://www.snf.ch",
+    "grant_number": "213370",
+    "proposal_number": "100018E_213370",
+    "funding_scheme": "Project Funding",
+    "amount_main": 200000,
+    "amount_total": 200000,
+    "currency": "CHF",
+    "data_portal_url": "https://data.snf.ch/grants/grant/213370",
+    "mysnf_url": "https://www.mysnf.ch/grants/grant.aspx?id=c8d8081e-6eee-4418-92bb-21dc2c89566a"
+  },
+  "eu_grant": {
+    "funder": "Horizon Europe - Marie Sklodowska-Curie Actions",
+    "funder_short": "MSCA",
+    "grant_number": "101119635",
+    "cordis_url": "https://cordis.europa.eu/project/id/101119635"
+  },
+  "stats": {
+    "publications": 4,
+    "datasets": 3,
+    "collaborations": 6,
+    "researchers": 6,
+    "academic_events": 6,
+    "knowledge_transfer_events": 4,
+    "awards": 3
+  },
+  "principal_investigator": {
+    "name": "Prof. Dr. Joerg Osterrieder",
+    "institution": "Bern University of Applied Sciences (BFH)",
+    "institution2": "University of Twente, Netherlands",
+    "department": "Department of Business",
+    "address": "Bruckenstrasse 73, 3005 Bern, Switzerland",
+    "orcid": "0000-0003-0189-8636",
+    "google_scholar": "https://scholar.google.com/citations?user=ocRaXoIAAAAJ",
+    "linkedin": "https://www.linkedin.com/in/joergosterrieder/",
+    "website": "https://www.joergosterrieder.com/",
+    "image": "images/Osterrieder.jpg"
+  },
+  "team": [
+    {
+      "name": "Prof. Dr. Joerg Osterrieder",
+      "role": "Principal Investigator",
+      "institution": "Bern Business School, Switzerland",
+      "institution2": "University of Twente, Netherlands",
+      "image": "images/Osterrieder.jpg",
+      "orcid": "0000-0003-0189-8636",
+      "bio": "Professor of Finance and AI with 15+ years in quantitative finance. Chair of COST Action Fintech and AI in Finance. Coordinator of the MSCA Digital Finance doctoral network.",
+      "google_scholar": "https://scholar.google.com/citations?user=ocRaXoIAAAAJ",
+      "linkedin": "https://www.linkedin.com/in/joergosterrieder/",
+      "website": "https://www.joergosterrieder.com/"
+    },
+    {
+      "name": "Marius Jan Klein",
+      "role": "Researcher",
+      "institution": "Bern Business School, Switzerland",
+      "institution2": "",
+      "image": "https://ui-avatars.com/api/?name=Marius+Klein&background=1e3a5f&color=fff&size=200",
+      "orcid": "",
+      "bio": "PhD researcher focusing on market narratives, financial text analysis, and their impact on asset pricing.",
+      "google_scholar": "",
+      "linkedin": "",
+      "website": ""
+    },
+    {
+      "name": "Gabin Taibi",
+      "role": "Researcher",
+      "institution": "Bern Business School, Switzerland",
+      "institution2": "University of Twente, Netherlands",
+      "image": "images/Taibi.jpg",
+      "orcid": "0000-0002-0785-6771",
+      "bio": "PhD researcher in Quantitative Finance and AI focusing on digital finance narratives and their influence on structural breaks in financial markets.",
+      "google_scholar": "",
+      "linkedin": "https://www.linkedin.com/in/gabin-taibi/",
+      "website": "https://www.bfh.ch/en/about-bfh/people/w4sicxpfhvnq/"
+    },
+    {
+      "name": "Lennart John Baals",
+      "role": "Researcher",
+      "institution": "Bern Business School, Switzerland",
+      "institution2": "University of Twente, Netherlands",
+      "image": "images/Baals.jpg",
+      "orcid": "0000-0002-7737-9675",
+      "bio": "PhD researcher in Quantitative Finance focusing on credit risk assessment through graph-based models and network analysis in P2P lending markets.",
+      "google_scholar": "",
+      "linkedin": "https://www.linkedin.com/in/lennart-john-baals-a621aa193/",
+      "website": "https://www.bfh.ch/en/about-bfh/people/6ib6u54jtggl/"
+    },
+    {
+      "name": "Dr. Yiting Liu",
+      "role": "Researcher",
+      "institution": "Bern Business School, Switzerland",
+      "institution2": "University of Twente, Netherlands",
+      "image": "images/Liu.jpg",
+      "orcid": "0009-0006-9554-8205",
+      "bio": "PhD researcher specializing in P2P lending risk modelling using graph-based approaches. Research interests include credit risk, digital finance, and network theory.",
+      "google_scholar": "",
+      "linkedin": "https://www.linkedin.com/in/yiting-liu-313587266/",
+      "website": "https://people.utwente.nl/yiting.liu"
+    }
+  ],
+  "collaborations": [
+    {
+      "institution": "Deutsche Borse AG, Germany",
+      "contact": "Dr. Stefan Schlamp",
+      "role": "Head of Quantitative Analytics",
+      "activities": "In-depth constructive exchanges on approaches, methods, and results. Publications. Exchange of personnel."
+    },
+    {
+      "institution": "Humboldt-University Berlin, Germany",
+      "contact": "",
+      "activities": "Constructive exchanges, Publications"
+    },
+    {
+      "institution": "Quoniam Asset Management, Germany",
+      "contact": "",
+      "activities": "Industry collaboration, Knowledge transfer"
+    }
+  ],
+  "research_networks": [
+    {
+      "name": "COST Action CA19130 - Fintech and Artificial Intelligence in Finance",
+      "role": "Action Chair",
+      "description": "In-depth constructive exchanges on approaches, methods, and results. Joint publications and personnel exchange."
+    },
+    {
+      "name": "MSCA Industrial Doctoral Network on Digital Finance",
+      "role": "Coordinator",
+      "description": "Cross-institutional research collaboration. Doctoral training and knowledge transfer."
+    }
+  ],
+  "funding_sources": [
+    {
+      "title": "SNSF Project Funding - Narrative Digital Finance (Main Grant)",
+      "amount": 200000,
+      "currency": "CHF",
+      "grant_number": "213370",
+      "proposal_number": "100018E_213370",
+      "funding_scheme": "Project Funding",
+      "start_date": "2024-01-01",
+      "end_date": "2025-12-31",
+      "institution": "Bern University of Applied Sciences (BFH)",
+      "pi": "Joerg Osterrieder"
+    },
+    {
+      "title": "SNSF Mobility Grant 2024 / 1",
+      "amount": 0,
+      "currency": "CHF",
+      "grant_number": "100018E_213370 / 3",
+      "start_date": "TBD",
+      "end_date": "TBD",
+      "institution": "Bern University of Applied Sciences",
+      "pi": "TBD"
+    },
+    {
+      "title": "SNSF Mobility Grant 2024 / 2",
+      "amount": 0,
+      "currency": "CHF",
+      "grant_number": "100018E_213370 / 2",
+      "start_date": "TBD",
+      "end_date": "TBD",
+      "institution": "Bern University of Applied Sciences",
+      "pi": "TBD"
+    }
+  ],
+  "research_description": {
+    "background": "Large fluctuations, instabilities, trends and uncertainty of financial markets constitute a substantial challenge for asset management companies, pension funds and regulators. Nowadays, most asset management companies and financial institutions follow a so-called systematic trading approach in their investment decisions. However, automated or rules-based trading activities bring certain risks for market participants and the whole financial market. In times of increased market volatility, market turmoil or so-called market sell-offs, investors applying similar trading rules might undertake the same actions, escalating and increasing systemic market risk.",
+    "rationale": "Despite advancements in econometric methods, the detection of asset price bubbles and structural breaks remains uncertain and underexplored, particularly in the context of classic financial assets. Recent research underscores the powerful role of narratives in financial decision-making, suggesting that integrating textual analysis could enhance market understanding and prediction accuracy.",
+    "overall_objectives": "Develop a comprehensive framework that utilizes advanced machine learning and NLP techniques to predict market outcomes, detect asset price bubbles, and identify structural breaks using diverse data sources, including financial data and narrative content from text, speech, and multimedia.",
+    "specific_aims": [
+      "Validate and refine existing econometric models using real-world financial data",
+      "Integrate narrative analysis to understand and predict market behaviors and asset price dynamics",
+      "Create a multidimensional AI and ML framework that enhances the detection of market anomalies and forecasts financial trends"
+    ],
+    "methods": "The approach involves collecting and processing a wide range of data, including stock prices, macroeconomic indicators, and textual content from the web. We employ text mining and NLP techniques to analyze sentiment, narrative structures, and their impact on market movements. Developing and testing new AI models that combine traditional financial analysis with narrative insights to predict market changes and detect structural breaks.",
+    "expected_results": "Enhanced models for predicting financial markets with greater accuracy, especially in detecting asset price bubbles and structural breaks. Novel datasets and measurement techniques that provide deeper insights into the interplay between market narratives and financial indicators. Practical tools for asset management and regulatory bodies to better anticipate and react to market crises.",
+    "impact": "This research aims to bridge the gap between traditional econometric approaches and modern AI techniques, providing new insights into the role of narratives and quantitative data in financial decision-making. The results offer valuable tools for risk management, asset pricing, and optimizing trading strategies, potentially influencing policy and regulatory practices globally."
+  },
+  "key_publications": [
+    {
+      "authors": "Bolesta, K., Taibi, G., Codruta, M., Osterrieder, J. & Hopp, C.",
+      "year": 2024,
+      "title": "Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and Generative AI",
+      "journal": "SSRN",
+      "doi": "",
+      "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153",
+      "abstract": "The paper presents an advanced conceptual framework for the analysis of textual data in the context of financial securities, hypothesizing that a comprehensive evaluation of events within the broader economic environment, particularly through their descriptions, significantly influences the pricing of financial instruments."
+    }
+  ],
+  "news": [
+    {
+      "date": "2025-12-31",
+      "title": "PROJECT COMPLETED: SNSF Grant 213370",
+      "description": "Successfully concluded the SNSF-funded research on narrative digital finance. 4+ publications, 3 datasets, 6 collaborations, 3 awards."
+    }
+  ],
+  "events": [],
+  "datasets": [],
+  "announcement": {
+    "title": "PROJECT COMPLETED: Narrative Digital Finance - A Tale of Structural Breaks, Bubbles & Market Narratives",
+    "intro": "I am delighted to announce the successful completion of our SNSF-funded research project (Grant 213370) on narrative digital finance and market dynamics.",
+    "achievements": "This project developed novel machine learning and NLP methodologies that integrate narrative analysis with traditional financial data to predict market outcomes, detect asset price bubbles, and identify structural breaks.",
+    "key_outcomes": [
+      "4+ scientific publications",
+      "3 datasets created",
+      "6 research collaborations",
+      "6 academic events",
+      "3 awards received"
+    ],
+    "key_finding": "Our research demonstrates that market narratives from text, speech, and multimedia sources contain valuable predictive signals for financial market behavior and can enhance the detection of market anomalies.",
+    "hashtags": ["#NarrativeFinance", "#MachineLearning", "#NLP", "#FinTech", "#AssetBubbles", "#StructuralBreaks", "#SNSF", "#DigitalFinance", "#AI"]
+  },
+  "navigation": {
+    "sections": [
+      {"id": "home", "label": "Home"},
+      {"id": "announcement", "label": "Announcement"},
+      {"id": "team", "label": "Team"},
+      {"id": "research", "label": "Research"},
+      {"id": "publications", "label": "Publications"},
+      {"id": "analytics", "label": "Analytics"},
+      {"id": "news", "label": "News"},
+      {"id": "events", "label": "Events"},
+      {"id": "collaborations", "label": "Collaborations"},
+      {"id": "funding", "label": "Funding"},
+      {"id": "contact", "label": "Contact"}
+    ],
+    "external_links": []
+  },
+  "theme": {
+    "primary_color": "#1e3a5f",
+    "secondary_color": "#c5a028",
+    "accent_color": "#0a66c2",
+    "background_color": "#f8f9fa",
+    "jekyll_theme": "jekyll-theme-cayman",
+    "fonts": {
+      "heading": "system-ui, -apple-system, sans-serif",
+      "body": "system-ui, -apple-system, sans-serif"
+    }
+  },
+  "integrations": {
+    "publications_api": {
+      "source": "OpenAlex",
+      "url": "https://api.openalex.org",
+      "auto_update": true,
+      "update_frequency": "weekly"
+    },
+    "research_outputs": {
+      "source": "Zenodo",
+      "url": "https://zenodo.org/api/records"
+    },
+    "contact_form": {
+      "provider": "Formspree",
+      "endpoint": "https://formspree.io/f/YOUR_FORM_ID"
+    },
+    "analytics": {
+      "charts": "Chart.js",
+      "network_viz": "D3.js",
+      "search": "Lunr.js"
+    }
+  },
+  "seo": {
+    "schema_type": "ResearchProject",
+    "keywords": ["narrative finance", "NLP", "machine learning", "asset bubbles", "structural breaks", "fintech", "market narratives", "SNSF", "financial markets"],
+    "image": "/images/Osterrieder.jpg"
+  },
+  "features": {
+    "dark_mode": true,
+    "search": true,
+    "bibtex_export": true,
+    "publication_filters": true,
+    "citation_metrics": true,
+    "print_pdf": true,
+    "rss_feed": true,
+    "back_to_top": true
+  }
+}

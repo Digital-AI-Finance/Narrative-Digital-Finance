@@ -1,0 +1,15 @@
+{
+  "fetched_at": "2026-01-01T02:24:50.161710",
+  "total_team_members": 5,
+  "total_unique_publications": 122,
+  "total_citations": 1652,
+  "max_h_index": 13,
+  "data_source": "OpenAlex API",
+  "project": {
+    "name": "Narrative Digital Finance",
+    "grant": "IZCOZ0_213370",
+    "funding": "236,118 CHF",
+    "duration": "July 2023 - June 2026",
+    "funder": "Swiss National Science Foundation (SNSF)"
+  }
+}

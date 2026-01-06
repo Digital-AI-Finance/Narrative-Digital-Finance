@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Language and formatting
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage[a4paper, margin=1.9cm]{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{float}
+
+% Links
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+% Math and symbols
+\usepackage{amsmath, amssymb, amsfonts}
+
+% Bibliography
+\usepackage[backend=biber, style=apa,natbib=true]{biblatex}
+\addbibresource{biblio.bib}
+
+% Figures and tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{tikz}
+
+% Code
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Other
+\usepackage{lipsum}
+\usepackage{pdflscape}
+\usepackage{authblk}
+
+% Keywords handling command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+% Variables
+\renewcommand\Authfont{\normalsize}
+\renewcommand\Affilfont{\small}
+\newcommand{\nbpapersinitial}{288} % Initial query
+\newcommand{\nbpapersfilters}{142} % Additional filters
+\newcommand{\nbpapersjournalareas}{125} % Journal area filter
+\newcommand{\nbpapersalgo}{24} % Algorithmic filtering
+\newcommand{\nbpapersavailable}{20} % Only available papers
+\newcommand{\nbpapersworkshops}{16} % No workshop proceeds
+\newcommand{\conditionnumber}{370}
+\newcommand{\kmoscore}{0.815}
+
+% Figure design
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\tikzstyle{database} = [cylinder, shape border rotate=90, aspect=0.25, draw, minimum height=1.2cm, text width=2cm, align=center]
+\tikzstyle{process} = [rectangle, draw, minimum height=1.2cm, minimum width=4.5cm, text width=4.3cm, align=center]
+\tikzstyle{phase} = [draw=none, text width=1cm, align=center]
+\tikzstyle{decision} = [diamond, draw, aspect=2, minimum width=3.5cm, minimum height=1.2cm, text width=3.3cm, align=center]
+\tikzstyle{arrow} = [thick, -{Stealth}]
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\title{Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPol}
+
+% Authors
+\author[1, 2]{Gabin Taibi}
+\author[1, 3]{Lucia Gomez Teijeiro}
+
+% Affiliations
+\affil[1]{University of Twente, Industrial Engineering and Business Information Systems, AE Enschede, Netherlands}
+\affil[2]{Bern University of Applied Sciences, Business School, Bern, Switzerland}
+\affil[3]{University of Geneva, Geneva School of Economics and Management, Geneva, Switzerland}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In computational linguistics, semantic polarity has traditionally been conceptualized as sentiment and measured along a unidimensional scalar continuum from negative to positive. However, this sentiment-centric framing oversimplifies language complexity, as semantic polarity is inherently multidimensional - reflecting the diversity of perspectives and directional shifts embedded in discourse. We introduce an unsupervised computational framework to identify, reconstruct, and explain multidimensional narrative polarity fields. Discourse polarity change is modeled as vector displacements between topical centroids of semantic transformer embedding network spaces. Narrative polarity is defined as vectorial representation of semantic change across a contextual boundary, which may-but need not- align with affective sentiment. These vectors capture both direction and magnitude of semantic shifts, enabling a geometrically grounded reconstruction of polarity-relevant transformations in discourse. For interpretability, we provide an explainability mechanism based on differential vocabulary analysis. For each polarity vector, we compute contrastive lexical distributions at its opposing extremities, revealing the principal linguistic dimension and features driving semantic change. We demonstrate the utility of this framework in two domains. First, we apply it to a corpus of central bank speeches, using macroeconomic regime changes as contextual boundaries. This non sentiment-driven domain highlights the framework's ability to detect non-affective semantic transitions. Second, we analyze Amazon product reviews, where  polarity is intrinsically sentiment-led, and we use low-versus-high-rated reviews as contextual boundary. This dual application shows the robustness and generalizability of TOPol (topic-orientation polarity), across narrative contexts, identifying key sources of textual variability and their polarity fields. TOPol constitutes the first computational formulation of narrative polarity vector fields and offers a open-source framework for modeling and interpreting semantics multidimensionally. It provides both theoretical and methodological foundations for analyzing narrative dynamics, thematic shifts, or communicative strategies within and across linguistic contexts.
+\end{abstract}
+
+\keywords{Polarity Fields, Transformers, Unsupervised, Manifold, Natural Language Processing}
+
+
+% TODO: add the PDF
+
+\end{document}

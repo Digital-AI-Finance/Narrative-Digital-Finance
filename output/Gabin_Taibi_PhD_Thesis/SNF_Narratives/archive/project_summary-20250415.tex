@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Language and formatting
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+
+% Links
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\title{SNF Narrative Progress Summary}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section*{Introduction}
+\label{sec:introduction}
+This project aims to investigate how financial narratives emerge, evolve, and potentially drive structural changes in financial markets. By combining Natural Language Processing (NLP), time series econometrics, and causal inference methods, the project seeks to quantify the informational content and predictive power of market-related narratives, with a particular focus on their role in explaining volatility, bubbles, and regime shifts.\\
+
+This document summarizes the progress made so far across the different work packages (WP1 to WP4) and outlines the plan for the next stages of the research, including expected deliverables and deadlines.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Work Package 1: Literature Review and Data Collection}
+\label{sec:wp1}
+
+\subsection{Literature Analysis}
+
+A systematic literature review paper is currently being finalized and will soon be submitted to a peer-reviewed journal. This paper focuses on the intersection of sentiment, narratives in finance, and recent advances in NLP and machine learning methods applied to financial text. It does not yet include the structural break component.
+
+In parallel, a conceptual literature review has been developed to provide a broader academic foundation for the project. It synthesizes recent research across the three core components of the Narrative Digital Finance project: (1) textual data analysis, (2) detection of structural breaks and asset price bubbles, and (3) narrative economics. This internal review supports the methodological design and integration of insights across disciplines.
+
+\subsection{Data Collection and Analysis}
+
+\subsubsection{Financial Data}
+High-frequency trades and quotes data from Deutsche Börse (Xetra and Eurex) has been collected. From this, daily asset prices and daily (high-frequency) volatility and associated Hurst exponent have been computed.
+
+\subsubsection{Macroeconomic and Time Series Data}
+Macro-level indicators have been retrieved via Alpha Vantage, including foreign exchange rates, corporate earnings, WTI and Brent crude oil prices, natural gas prices, GDP figures, Treasury yields, Federal Reserve interest rates, CPI, and inflation measures.
+
+\subsubsection{Textual Measures}
+Sentiment scores have been sourced from Alpha Vantage and RavenPack (pending access confirmation from Quoniam). These indicators will serve as benchmark and/or exogenous variables in empirical and predictive modeling.
+
+\subsubsection{Text Data}
+Multiple sources of financial and economic text have been collected:
+\begin{itemize}
+    \item \textbf{Reddit (r/WallStreetBets):} Jan 2021 – Aug 2021 (via Kaggle)
+    \item \textbf{New York Times articles:} Jan 2000 – present (via Kaggle and Python script)
+    \item \textbf{Alpha Vantage:} Company overviews, earnings call transcripts, and news articles from Jan 2020 to present
+    \item \textbf{Gingado (BIS):} Central bank speeches from Jan 1996 – present
+    \item \textbf{Wayback Machine prototype:} Web scraping pipeline for archived economic content (Jan 2010 – present)
+\end{itemize}
+
+\paragraph{DataLoader Script.}  
+A unified data ingestion pipeline has been developed to standardize text input from all sources. The script implements source-specific routines to clean and process the data—normalizing timestamps, merging text fields, and filtering by date. The `DataLoader` class handles all operations: reading raw files, transforming them using modular logic, and returning clean Polars DataFrames. It also provides diagnostic reporting on data loss during preprocessing and overall processing time.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Work package 2}
+\label{sec:wp2}
+Draft methodologies has been drafted in Marius and Gabin's proposal.
+
+% ###########################################
+
+\subsection{Work package 2.1: ????}
+Lorem ipsum.
+
+% ###########################################
+
+\subsection{Work package 2.2: Change Point Detection Methodology}
+Not done yet, proposed method to be tested are:
+- Time series focus: Bai–Perron, Chow test, CUSUM
+- Bayesian methods: Bayesian CPD
+- ML approaches: Kernel CPD, HMM
+Two possible approaches: macro structural change (multivariate analysis on macroeconomic time series) or per asset analysis (e.g. MAG-7, commodities, FX rates, etc.). We will test both.
+
+% ###########################################
+
+\subsection{Work package 2.3: NLP and Text Analysis Methodology}
+
+\subsubsection{Text pre-processing}
+This script builds a scalable and efficient preprocessing pipeline for large-scale text data from sources like Reddit or NYT. It first loads and transforms the raw data using Polars, then cleans the text by removing URLs, long entries, and formatting issues. Next, it applies parallelized language detection with FastText and filters for English texts only, while removing stopwords and emojis for cleaner input. The pipeline is wrapped in a DataProcessor class, which handles transformation, filtering, and saving the final dataset to CSV. The script is designed to be run via command line and supports customization of data source, date range, and processing parameters.
+
+\subsubsection{Text analysis}
+- Word embedding + embedding model comparison (Hugging Face's pipeline with local models vs OpenAI's API vs Google's API)
+- Dim. reduction and clustering method comparisons (work in progress)
+- Sentiment analysis
+- Emotion analysis
+- Semantic uncertainty detection (prototype)
+- NER
+
+models script:
+This script builds an end-to-end topic modeling and clustering pipeline using text data. It begins by loading preprocessed text, computing sentence embeddings using a transformer model (e.g. MiniLM), and then fits a Gaussian Mixture Model (GMM) to group the text into clusters. Optionally, it can automatically determine the optimal number of clusters by evaluating metrics such as AIC, BIC, Silhouette, and more. Once the clusters are defined, the script extracts the top keywords per cluster using KeyBERT, visualizes the clusters via t-SNE, and exports all relevant results—including probabilities, evaluation metrics, summaries, and plots—into structured files. The pipeline is modular, GPU-aware, and designed for scalability and interpretability.
+
+analysis script:
+This script links topic clusters derived from news or social media with financial market data to explore potential relationships. It loads previously preprocessed and clustered text data, merges it with cluster probability scores, and filters entries with high confidence for specific clusters. It then groups this data over time intervals, adds historical stock price data using Yahoo Finance, and visualizes how selected cluster activity (like mean or sum of probabilities) evolves compared to stock price movements. Key plots and summaries are saved, helping to identify whether certain narrative clusters could be predictive or informative in financial contexts.
+
+\subsubsection{FASTopic}
+FASTopic modeling [to be done by Marius]
+
+\subsubsection{BERTopic}
+BERTopic modeling:
+- Various embedding model tested
+- Advanced topic representation tested: basic c-tf-idf, Part of Speech, Maximal Marginal Relevance, prompted LLM summarization
+- Weekly inference and daily partial fit to reduce backtest time and compare cluster on a daily basis (daily inference erase cluster from previous day and redo the clustering from scratch)
+- Clusters (topics) are considered as narratives
+
+\subsubsection{Narratives metric experiments}
+Narrative 
+Narrative metrics:
+- Narrative semantic change (topic's centroid change from one day to another)
+- Narrative strength (number of documents per topic)
+- Narrative confidence (average probability per topic, probability is probability for a document to belong to a cluster, calculated with on softmax distance to all centroids)
+- Narrative coherence (coherence model between documents and topic representation (c-tf-idf or MMR) per topic)
+- Narrative source diversity (source's representation percentage entropy per topic)
+- Narrative mood (average positive, neutral and negative sentiment per topic)
+- Narrative emotion arousal (average emotion arousal score per topic)
+- Narrative semantic uncertainty (average uncertainty score per topic)
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Work package 3}
+\label{sec:wp3}
+
+% ###########################################
+
+\subsection{Work package 3.1: Experimental Design}
+Lorem ipsum.
+
+% ###########################################
+
+\subsection{Work package 3.2: Pre-testing and Refinements}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Work package 4}
+\label{sec:wp4}
+
+% ###########################################
+
+\subsection{Work package 4.1: Ex-Ante Forecasting}
+Lorem ipsum.
+
+% ###########################################
+
+\subsection{Work package 4.2: Data Augmentation}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section*{Conclusion}
+\label{sec:conclusion}
+Lorem ipsum
+
+% ###########################################
+
+\subsection*{Block 1: Text data \& text analytics}
+- Paper
+- Data collection
+- Text analysis prototypes: topic modeling + sentiment analysis
+
+% ###########################################
+
+\subsection*{Block 2: Structural breaks detection \& asset price bubbles}
+- TBD: plan on techniques (macro or asset focus approach?)
+- Time series focus: Bai–Perron, Chow test, CUSUM
+- Bayesian methods: Bayesian CPD
+- ML approaches: Kernel CPD, HMM
+
+% ###########################################
+
+\subsection*{Block 3: Narratives for structural breaks}
+- Plan on ML model to predict structural breaks
+- Financial markets structural break explainability -> what is the narrative behind this structural change?
+
+% ###########################################
+
+\subsection*{Block 4: Multidimensional AI and ML solutions in a fully integrated framework}
+- TBD
+
+
+\end{document}

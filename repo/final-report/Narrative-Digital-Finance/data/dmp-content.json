@@ -1,0 +1,266 @@
+{
+  "metadata": {
+    "grant_number": "IZCOZ0_213370",
+    "title": "Narrative Digital Finance: a tale of structural breaks, bubbles & market narratives",
+    "pi": "Prof. Dr. Joerg Osterrieder",
+    "institutions": ["Bern University of Applied Sciences", "University of Twente"],
+    "duration": "August 2023 - August 2026",
+    "last_updated": "January 2026"
+  },
+  "sections": [
+    {
+      "id": "1",
+      "title": "Data collection and documentation",
+      "questions": [
+        {
+          "id": "1.1",
+          "title": "What data will you collect, observe, generate or reuse?",
+          "original": "We will use publicly available data on financial markets as well data from databases which we buy, e.g. from Refinitiv. The data will be in csv format, about 10 GB, the data type are financial data, stored as integers and characters.",
+          "enhanced": {
+            "intro": "We will use publicly available data on financial markets as well as data from databases which we buy. The data will be in various formats including CSV, JSON, and Parquet, totaling approximately 65 GB. The data types are financial data, stored as integers, floats, and characters.",
+            "commercial_sources": [
+              {"name": "Refinitiv/LSEG", "description": "Earnings call transcripts, financial news, market data", "format": "JSON, CSV", "volume": "~5 GB", "time_range": "2010-2025"},
+              {"name": "RavenPack", "description": "News headlines with sentiment scores", "format": "CSV, Parquet", "volume": "~3 GB", "time_range": "2000-2025"},
+              {"name": "Deutsche Borse T7", "description": "Nanosecond-level trading data for FESX and DAX futures", "format": "Binary, CSV", "volume": "~50 GB", "time_range": "January-August 2025"}
+            ],
+            "public_sources": [
+              {"name": "BIS Gigando", "description": "Central bank speeches worldwide", "format": "Text, PDF", "url": "https://www.bis.org/cbspeeches/"},
+              {"name": "SEC EDGAR", "description": "10-K and 10-Q regulatory filings", "format": "HTML, XBRL", "url": "https://www.sec.gov/edgar"},
+              {"name": "St. Louis FED FRED", "description": "Macroeconomic indicators (CPI, PPI, GDP, etc.)", "format": "CSV via API", "url": "https://fred.stlouisfed.org/"}
+            ],
+            "generated_data": [
+              {"name": "TOPol Embeddings", "description": "Transformer-based semantic embeddings", "format": "NumPy, HDF5", "volume": "~2 GB", "repository": "https://osf.io/nr94j/"},
+              {"name": "NLP Features", "description": "Sentiment scores, topic models, embeddings", "format": "CSV, Parquet", "volume": "~1 GB", "repository": "Zenodo (pending)"},
+              {"name": "Macro Index", "description": "PCA-based US Macro Strength Index", "format": "CSV", "volume": "less than 100 MB", "repository": "GitHub"}
+            ],
+            "total_volume": "~65 GB"
+          }
+        },
+        {
+          "id": "1.2",
+          "title": "How will the data be collected, observed or generated?",
+          "original": "Quality assurance\n- The data are checked for consistency and completeness using statistical methods.\nVersioning\n- The code and the database are versioned with the help of the ZHAW internal tools.\n\nThe quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.",
+          "enhanced": {
+            "quality_assurance": "The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.",
+            "versioning": "The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases receive DOIs via Zenodo integration. Models are tracked using MLflow for experiment tracking and model registry.",
+            "original_paragraph": "The quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.",
+            "collection_methods": "API Access via FRED API (Python fredapi), SEC EDGAR XBRL API, and BIS web scraping (Beautiful Soup). Commercial data is accessed via RavenPack SQL access, LSEG API and bulk delivery, and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling."
+          }
+        },
+        {
+          "id": "1.3",
+          "title": "What documentation and metadata will you provide with the data?",
+          "original": "The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.",
+          "enhanced": {
+            "original_paragraph": "The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.",
+            "metadata_standards": "Dublin Core for general descriptive metadata. DataCite for DOI registration and citation metadata. JSON Schema for data structure documentation and programmatic access.",
+            "documentation": "Data Dictionaries contain variable names, types, units, and valid ranges, stored in README.md files per folder. Provenance information includes source attribution, collection dates, and processing steps, stored in METADATA.json files. Code Documentation includes inline comments and NumPy-style docstrings in source files. Reproducibility materials include requirements.txt, environment.yml, config files, and random seeds in repository roots."
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Ethics, legal and security issues",
+      "questions": [
+        {
+          "id": "2.1",
+          "title": "How will ethical issues be addressed and handled?",
+          "original": "No personal data or other sensitive data is used in the project. In this respect, the university internal security standards are applied.\n\nThe conditions have already been discussed with the data providers. No special security standards are required by the data providers for this data.",
+          "enhanced": {
+            "original_paragraph": "No personal data or other sensitive data is used in the project. In this respect, the university internal security standards are applied. The conditions have already been discussed with the data providers. No special security standards are required by the data providers for this data.",
+            "ethical_considerations": "All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. We maintain transparency in model documentation and perform bias assessment for NLP models. Research outputs are not used for automated trading decisions.",
+            "data_provider_agreements": [
+              {"provider": "Refinitiv/LSEG", "terms": "Academic research license", "restrictions": "No redistribution of raw data"},
+              {"provider": "RavenPack", "terms": "Research subscription", "restrictions": "Academic use only"},
+              {"provider": "Deutsche Borse", "terms": "Research collaboration agreement with Dr. Schlamp", "restrictions": "Project-specific usage"}
+            ],
+            "ethics_approval": "Not required (non-human-subjects research per Swiss SNSF guidelines)"
+          }
+        },
+        {
+          "id": "2.2",
+          "title": "How will data access and security be managed?",
+          "original": "Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.",
+          "enhanced": {
+            "original_paragraph": "Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.",
+            "access_control": [
+              {"category": "Public data (FRED, BIS, SEC)", "access": "Open", "storage": "GitHub, Zenodo"},
+              {"category": "Commercial data", "access": "Team only", "storage": "BFH secure server"},
+              {"category": "Deutsche Borse HFT data", "access": "Restricted", "storage": "Encrypted local storage"},
+              {"category": "Processed features", "access": "Open (with publication)", "storage": "OSF, Zenodo"}
+            ],
+            "security_measures": "BFH IT infrastructure with regular backups and access logging. Encrypted file transfer for commercial data (SFTP, HTTPS). Two-factor authentication for all cloud services. Role-based access control for team members.",
+            "team_members": [
+              {"name": "Prof. Dr. Joerg Osterrieder", "role": "Principal Investigator"},
+              {"name": "Gabin Taibi", "role": "PhD Researcher"},
+              {"name": "Lennart John Baals", "role": "PhD Researcher"},
+              {"name": "Yiting Liu", "role": "PhD Researcher"},
+              {"name": "Marius Jan Klein", "role": "Researcher"}
+            ]
+          }
+        },
+        {
+          "id": "2.3",
+          "title": "How will you handle copyright and Intellectual Property Rights issues?",
+          "original": "The project is based on data that are largely publicly available. The raw data records may not be published without restriction.",
+          "enhanced": {
+            "original_paragraph": "The project is based on data that are largely publicly available. The raw data records may not be published without restriction.",
+            "copyright_framework": [
+              {"data": "RavenPack news", "holder": "RavenPack Inc.", "rights": "Academic use only", "license": "Proprietary"},
+              {"data": "LSEG transcripts", "holder": "LSEG", "rights": "Academic use only", "license": "Proprietary"},
+              {"data": "Deutsche Borse data", "holder": "Deutsche Borse AG", "rights": "Research collaboration", "license": "Agreement"},
+              {"data": "BIS speeches", "holder": "BIS/Speakers", "rights": "Full reuse", "license": "Public (cite)"},
+              {"data": "SEC filings", "holder": "Public domain", "rights": "Full reuse", "license": "Public domain"},
+              {"data": "Our code", "holder": "Project team", "rights": "Open source", "license": "MIT License"},
+              {"data": "Our models/data", "holder": "Project team", "rights": "Open access", "license": "CC-BY 4.0"}
+            ],
+            "publication_rights": {
+              "allowed": ["Aggregated statistics and derived features", "Code, models, and methodology"],
+              "not_allowed": ["Raw commercial data redistribution"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Data storage and preservation",
+      "questions": [
+        {
+          "id": "3.1",
+          "title": "How will your data be stored and backed-up during the research?",
+          "original": "The storage capacities are very large, the amount of data remains very limited in the project.\n\nThe data is managed in the form of databases on the ZHAW internal Github. Backups and versions of the data are continuously created.",
+          "enhanced": {
+            "original_paragraph": "The storage capacities are very large, the amount of data remains very limited in the project. The data is managed in the form of databases on GitHub. Backups and versions of the data are continuously created.",
+            "primary_storage": {
+              "location": "BFH Institute for Applied Data Science servers",
+              "capacity": "1 TB allocated for the project",
+              "backup": "Daily incremental with weekly full backup",
+              "retention": "Project duration plus 10 years minimum"
+            },
+            "cloud_storage": [
+              {"platform": "GitHub", "purpose": "Code repositories", "url": "https://github.com/Digital-AI-Finance"},
+              {"platform": "OSF", "purpose": "Research materials and preprints", "url": "https://osf.io/nr94j/"},
+              {"platform": "Zenodo", "purpose": "Archived releases with DOIs", "url": "Linked via GitHub"}
+            ],
+            "backup_strategy": [
+              {"type": "Code", "frequency": "Continuous (Git)", "retention": "Permanent", "location": "GitHub"},
+              {"type": "Processed data", "frequency": "Weekly", "retention": "10 years", "location": "BFH + Zenodo"},
+              {"type": "Commercial raw data", "frequency": "Daily", "retention": "Project duration", "location": "BFH (encrypted)"}
+            ]
+          }
+        },
+        {
+          "id": "3.2",
+          "title": "What is your data preservation plan?",
+          "original": "The data is stored on the ZHAW internal github for a long time and managed by the ZHAW using the existing tools. There is no obligation to destroy the data.",
+          "enhanced": {
+            "original_paragraph": "The data is stored on GitHub for a long time and managed using existing tools. There is no obligation to destroy the data.",
+            "repository_selection": [
+              {"name": "Zenodo", "organization": "CERN/OpenAIRE (non-profit)", "features": "DOI assignment, FAIR compliance, 20+ year guarantee, CoreTrustSeal certification"},
+              {"name": "OSF", "organization": "Center for Open Science (non-profit)", "features": "Preprints, supplementary materials, version control"},
+              {"name": "arXiv", "organization": "Cornell University (non-profit)", "features": "Preprints, permanent archive"}
+            ],
+            "preservation_timeline": [
+              {"milestone": "Paper submission", "action": "Archive code and data snapshots", "doi": "Version DOI via Zenodo"},
+              {"milestone": "Paper acceptance", "action": "Update with final version", "doi": "Version DOI update"},
+              {"milestone": "Project end (August 2026)", "action": "Final comprehensive archive", "doi": "Concept DOI"}
+            ],
+            "archival_formats": {
+              "data": "CSV, Parquet, HDF5 (machine-readable, open formats)",
+              "documentation": "Markdown, PDF/A (long-term readable)",
+              "code": "Python (plain text, version-controlled)",
+              "images": "PNG, SVG (lossless, open formats)"
+            },
+            "retention_period": "Minimum 10 years post-project (per SNSF Open Research Data policy)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Data sharing and reuse",
+      "questions": [
+        {
+          "id": "4.1",
+          "title": "How and where will the data be shared?",
+          "original": "The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.",
+          "enhanced": {
+            "original_paragraph": "The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.",
+            "current_outputs": [
+              {"name": "TOPol Framework", "repository": "OSF", "url": "https://osf.io/nr94j/", "status": "Published"},
+              {"name": "Project Website", "repository": "GitHub Pages", "url": "https://digital-ai-finance.github.io/Narrative-Digital-Finance/", "status": "Live"}
+            ],
+            "upcoming_deposits": [
+              {"name": "SLR Methodology and Data", "repository": "Zenodo", "timeline": "Upon paper acceptance"},
+              {"name": "HFT Analysis Code", "repository": "GitHub + Zenodo", "timeline": "Planned"},
+              {"name": "Macro Narrative Index", "repository": "OSF", "timeline": "Planned"},
+              {"name": "Final Project Archive", "repository": "Zenodo", "timeline": "Project end (August 2026)"}
+            ],
+            "sharing_by_type": [
+              {"data": "FRED, BIS, SEC", "shareable": true, "reason": "Public domain / open access"},
+              {"data": "RavenPack raw data", "shareable": false, "reason": "License restriction"},
+              {"data": "LSEG transcripts", "shareable": false, "reason": "License restriction"},
+              {"data": "Deutsche Borse T7", "shareable": false, "reason": "Collaboration agreement"},
+              {"data": "Derived features", "shareable": true, "reason": "Our work product"},
+              {"data": "All code", "shareable": true, "reason": "MIT License"}
+            ]
+          }
+        },
+        {
+          "id": "4.2",
+          "title": "Are there any necessary limitations to protect sensitive data?",
+          "original": "We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.",
+          "enhanced": {
+            "original_paragraph": "We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.",
+            "unrestricted": [
+              "All code developed by the project (MIT License)",
+              "Derived features, embeddings, and processed outputs (CC-BY 4.0)",
+              "Documentation, methodology, and research materials",
+              "Public source data (FRED, BIS, SEC)"
+            ],
+            "restricted": [
+              "Raw RavenPack news data (license prohibits redistribution)",
+              "Raw LSEG/Refinitiv transcripts (license prohibits redistribution)",
+              "Raw Deutsche Borse T7 data (collaboration agreement restriction)"
+            ],
+            "reuse_conditions": [
+              "Citation required (BibTeX provided in repositories)",
+              "License compliance: MIT for code, CC-BY 4.0 for data/models",
+              "Academic and commercial use permitted for our outputs"
+            ],
+            "access_requests": "joerg.osterrieder@bfh.ch"
+          }
+        },
+        {
+          "id": "4.3",
+          "title": "All digital repositories I will choose are conform to the FAIR Data Principles.",
+          "original": "Yes",
+          "enhanced": {
+            "answer": true,
+            "fair_implementation": {
+              "findable": "DOIs via Zenodo, indexed in OpenAlex, DataCite, and Google Dataset Search",
+              "accessible": "Open repositories (Zenodo, OSF, GitHub) with standard protocols (HTTPS)",
+              "interoperable": "Standard formats (CSV, JSON, Parquet), documented schemas, and Python APIs",
+              "reusable": "CC-BY license, comprehensive metadata, README files, and example notebooks"
+            }
+          }
+        },
+        {
+          "id": "4.4",
+          "title": "I will choose digital repositories maintained by a non-profit organisation.",
+          "original": "Yes",
+          "enhanced": {
+            "answer": true,
+            "repository_certification": [
+              {"name": "Zenodo", "organization": "CERN/OpenAIRE", "certification": "Non-profit, CoreTrustSeal certified"},
+              {"name": "OSF", "organization": "Center for Open Science", "certification": "Non-profit, COS Registered Reports partner"},
+              {"name": "arXiv", "organization": "Cornell University", "certification": "Non-profit, permanent archive"}
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

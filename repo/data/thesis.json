@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-01-04T07:08:49.223209",
+  "generator": "PhD Research Pages Generator",
+  "version": "1.0.0",
+  "source_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance-Gabin-Research",
+  "target_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance\\repo",
+  "title": "Modeling Narrative Dynamics for Volatility Regime Detection in Financial Markets",
+  "author": "Gabin Taibi",
+  "supervisors": [
+    "Prof. Dr. Joerg Osterrieder"
+  ],
+  "institutions": [
+    "University of Twente",
+    "Bern University of Applied Sciences"
+  ],
+  "grant": "SNSF IZCOZ0_213370",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Systematic Literature Review of Narratives in Finance",
+      "description": "AI-enhanced systematic review mapping narrative concepts in financial research",
+      "status": "UNDER_REVIEW",
+      "work_package": "WP1",
+      "paper_link": "slr",
+      "status_label": "Under Review",
+      "status_color": "#fce7f3",
+      "status_text_color": "#9d174d"
+    },
+    {
+      "number": 2,
+      "title": "Key Financial Market Narratives",
+      "description": "Narrative detection methods: supervised embeddings, LLM tagging, and unsupervised clustering",
+      "status": "IN_PROGRESS",
+      "work_package": "WP2",
+      "paper_link": "narratives",
+      "status_label": "In Progress",
+      "status_color": "#dbeafe",
+      "status_text_color": "#1e40af"
+    },
+    {
+      "number": 3,
+      "title": "Market Microstructure and Volatility Modeling",
+      "description": "HFT analysis using nanosecond data; realized, implied, and rough volatility estimation",
+      "status": "SUBMITTED",
+      "work_package": "WP4",
+      "paper_link": "hft",
+      "status_label": "Submitted",
+      "status_color": "#fef3c7",
+      "status_text_color": "#92400e"
+    },
+    {
+      "number": 4,
+      "title": "Do Narratives Drive Markets?",
+      "description": "Extending Sadka et al. framework to evaluate narrative explanatory power",
+      "status": "IN_PROGRESS",
+      "work_package": "WP3",
+      "paper_link": "quoniam",
+      "status_label": "In Progress",
+      "status_color": "#dbeafe",
+      "status_text_color": "#1e40af"
+    },
+    {
+      "number": 5,
+      "title": "Narrative-Driven Volatility Structural Breaks",
+      "description": "Integrating textual and volatility features for regime detection",
+      "status": "PLANNING",
+      "work_package": "WP3-WP4",
+      "paper_link": null,
+      "status_label": "Planning",
+      "status_color": "#e0e7ff",
+      "status_text_color": "#3730a3"
+    },
+    {
+      "number": 6,
+      "title": "Conclusion: Synthesizing Narratives and Volatility",
+      "description": "Integration of findings and implications for risk management",
+      "status": "PLANNING",
+      "work_package": "WP4",
+      "paper_link": null,
+      "status_label": "Planning",
+      "status_color": "#e0e7ff",
+      "status_text_color": "#3730a3"
+    }
+  ],
+  "chapter_count": 6,
+  "completed_count": 0,
+  "in_progress_count": 4
+}

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMP Comparison | Narrative Digital Finance</title>
+    <meta name="description" content="Side-by-side comparison of original vs enhanced Data Management Plan for SNSF Grant IZCOZ0_213370.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand"><span>NDF</span> Narrative Digital Finance</a>
+        <div class="navbar-nav">
+            <a href="index.html">Home</a>
+            <a href="objectives.html">Objectives</a>
+            <a href="report.html">Report</a>
+            <a href="dmp.html">DMP</a>
+            <a href="dmp-comparison.html" style="color:#3b82f6">Compare</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar" aria-label="Navigation">
+        <div class="sidebar-section">
+            <div class="sidebar-title">Sections</div>
+            <ul class="sidebar-nav">
+                <li><a href="#section-1">1. Data</a></li>
+                <li><a href="#section-1-1">1.1 What data will you c...</a></li>
+                <li><a href="#section-1-2">1.2 How will the data be...</a></li>
+                <li><a href="#section-1-3">1.3 What documentation a...</a></li>
+                <li><a href="#section-2">2. Ethics,</a></li>
+                <li><a href="#section-2-1">2.1 How will ethical iss...</a></li>
+                <li><a href="#section-2-2">2.2 How will data access...</a></li>
+                <li><a href="#section-2-3">2.3 How will you handle ...</a></li>
+                <li><a href="#section-3">3. Data</a></li>
+                <li><a href="#section-3-1">3.1 How will your data b...</a></li>
+                <li><a href="#section-3-2">3.2 What is your data pr...</a></li>
+                <li><a href="#section-4">4. Data</a></li>
+                <li><a href="#section-4-1">4.1 How and where will t...</a></li>
+                <li><a href="#section-4-2">4.2 Are there any necess...</a></li>
+                <li><a href="#section-4-3">4.3 All digital reposito...</a></li>
+                <li><a href="#section-4-4">4.4 I will choose digita...</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">Pages</div>
+            <a href="dmp.html" class="sidebar-link">Full DMP</a>
+            <a href="index.html#datasets" class="sidebar-link">Datasets</a>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <div class="sidebar-title">COST Action</div>
+            <a href="cost-action.html" class="sidebar-link">SNSF Integration</a>
+            <a href="cost-network.html" class="sidebar-link">Network (420+)</a>
+            <a href="cost-events.html" class="sidebar-link">Events (150+)</a>
+            <a href="cost-publications.html" class="sidebar-link">Publications</a>
+            <a href="cost-mobility.html" class="sidebar-link">Mobility Grants</a>
+            <a href="cost-resources.html" class="sidebar-link">Resources</a>
+        </div>
+    </aside>
+
+    <main class="main" id="main-content">
+        <div class="comparison-hero">
+            <h1>DMP Comparison: Original vs Enhanced</h1>
+            <p class="sub">SNSF Grant IZCOZ0_213370 | Data Management Plan Review</p>
+        </div>
+
+        <div class="container">
+            <!-- Legend -->
+            <div class="comparison-legend">
+                <div class="legend-item">
+                    <div class="legend-color legend-original"></div>
+                    <span>Original (from PDF)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-enhanced"></div>
+                    <span>Enhanced (SNSF-compliant)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-addition"></div>
+                    <span>New content added</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-improvement"></div>
+                    <span>Improved detail</span>
+                </div>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="comparison-section" id="section-1">
+                <div class="comparison-section-header">1. Data collection and documentation</div>
+
+                <!-- 1.1 -->
+                <div id="section-1-1">
+                    <div class="comparison-question">1.1 What data will you collect, observe, generate or reuse?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>We will use publicly available data on financial markets as well data from databases which we buy, e.g. from Refinitiv. The data will be in csv format, about 10 GB, the data type are financial data, stored as integers and characters.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Commercial Data Sources (Licensed):</strong></div>
+                            <table>
+                                <tr><th>Source</th><th>Format</th><th>Volume</th></tr>
+                                <tr><td>Refinitiv/LSEG</td><td>JSON, CSV</td><td>~5 GB</td></tr>
+                                <tr><td>RavenPack</td><td>CSV, Parquet</td><td>~3 GB</td></tr>
+                                <tr><td>Deutsche Borse T7</td><td>Binary, CSV</td><td>~50 GB</td></tr>
+                            </table>
+                            <div class="diff-addition"><strong>Public Data Sources:</strong></div>
+                            <table>
+                                <tr><th>Source</th><th>Format</th><th>URL</th></tr>
+                                <tr><td>BIS Gigando</td><td>Text, PDF</td><td>bis.org/cbspeeches/</td></tr>
+                                <tr><td>SEC EDGAR</td><td>HTML, XBRL</td><td>sec.gov/edgar</td></tr>
+                                <tr><td>St. Louis FED FRED</td><td>CSV via API</td><td>fred.stlouisfed.org/</td></tr>
+                            </table>
+                            <div class="diff-addition"><strong>Generated Data:</strong></div>
+                            <ul>
+                                <li>TOPol Embeddings (~2 GB, NumPy, HDF5) - osf.io/nr94j/</li>
+                                <li>NLP Features (~1 GB, CSV, Parquet) - Zenodo (pending)</li>
+                                <li>Macro Index (less than 100 MB, CSV) - GitHub</li>
+                            </ul>
+                            <div class="diff-improvement"><strong>Total: ~65 GB</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.2 -->
+                <div id="section-1-2">
+                    <div class="comparison-question">1.2 How will the data be collected, observed or generated?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>Quality assurance</p><p>- The data are checked for consistency and completeness using statistical methods.</p><p>Versioning</p><p>- The code and the database are versioned with the help of the ZHAW internal tools.</p><p></p><p>The quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Data Collection Methods:</strong></div>
+                            <p>API Access via FRED API (Python fredapi), SEC EDGAR XBRL API, and BIS web scraping (Beautiful Soup). Commercial data is accessed via RavenPack SQL access, LSEG API and bulk delivery, and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling.</p>
+                            <div class="diff-improvement"><strong>Quality Assurance:</strong></div>
+                            <p>The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.</p>
+                            <div class="diff-improvement"><strong>Versioning:</strong></div>
+                            <p>The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases receive DOIs via Zenodo integration. Models are tracked using MLflow for experiment tracking and model registry.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.3 -->
+                <div id="section-1-3">
+                    <div class="comparison-question">1.3 What documentation and metadata will you provide with the data?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Metadata Standards:</strong></div>
+                            <p>Dublin Core for general descriptive metadata. DataCite for DOI registration and citation metadata. JSON Schema for data structure documentation and programmatic access.</p>
+                            <div class="diff-addition"><strong>Documentation Provided:</strong></div>
+                            <p>Data Dictionaries contain variable names, types, units, and valid ranges, stored in README.md files per folder. Provenance information includes source attribution, collection dates, and processing steps, stored in METADATA.json files. Code Documentation includes inline comments and NumPy-style docstrings in source files. Reproducibility materials include requirements.txt, environment.yml, config files, and random seeds in repository roots.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Section 2 -->
+            <div class="comparison-section" id="section-2">
+                <div class="comparison-section-header">2. Ethics, legal and security issues</div>
+
+                <!-- 2.1 -->
+                <div id="section-2-1">
+                    <div class="comparison-question">2.1 How will ethical issues be addressed and handled?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>No personal data or other sensitive data is used in the project. In this respect, the university internal security standards are applied.</p><p></p><p>The conditions have already been discussed with the data providers. No special security standards are required by the data providers for this data.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-improvement"><strong>Ethical Considerations:</strong></div>
+                            <p>All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. We maintain transparency in model documentation and perform bias assessment for NLP models. Research outputs are not used for automated trading decisions.</p>
+                            <div class="diff-addition"><strong>Data Provider Agreements:</strong></div>
+                            <table>
+                                <tr><th>Provider</th><th>Terms</th></tr>
+                                <tr><td>Refinitiv/LSEG</td><td>Academic research license, No redistribution of raw data</td></tr>
+                                <tr><td>RavenPack</td><td>Research subscription, Academic use only</td></tr>
+                                <tr><td>Deutsche Borse</td><td>Research collaboration agreement with Dr. Schlamp, Project-specific usage</td></tr>
+                            </table>
+                            <p><strong>Not required (non-human-subjects research per Swiss SNSF guidelines)</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2.2 -->
+                <div id="section-2-2">
+                    <div class="comparison-question">2.2 How will data access and security be managed?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Access Control Matrix:</strong></div>
+                            <table>
+                                <tr><th>Data Category</th><th>Access</th><th>Storage</th></tr>
+                                <tr><td>Public data (FRED, BIS, SEC)</td><td>Open</td><td>GitHub, Zenodo</td></tr>
+                                <tr><td>Commercial data</td><td>Team only</td><td>BFH secure server</td></tr>
+                                <tr><td>Deutsche Borse HFT data</td><td>Restricted</td><td>Encrypted local storage</td></tr>
+                                <tr><td>Processed features</td><td>Open (with publication)</td><td>OSF, Zenodo</td></tr>
+                            </table>
+                            <div class="diff-addition"><strong>Security Measures:</strong></div>
+                            <p>BFH IT infrastructure with regular backups and access logging. Encrypted file transfer for commercial data (SFTP, HTTPS). Two-factor authentication for all cloud services. Role-based access control for team members.</p>
+                            <div class="diff-addition"><strong>Authorized Team:</strong></div>
+                            <ul>
+                                <li>Prof. Dr. Joerg Osterrieder (Principal Investigator)</li>
+                                <li>Gabin Taibi (PhD Researcher)</li>
+                                <li>Lennart John Baals (PhD Researcher)</li>
+                                <li>Yiting Liu (PhD Researcher)</li>
+                                <li>Marius Jan Klein (Researcher)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2.3 -->
+                <div id="section-2-3">
+                    <div class="comparison-question">2.3 How will you handle copyright and Intellectual Property Rights issues?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>The project is based on data that are largely publicly available. The raw data records may not be published without restriction.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Copyright Framework:</strong></div>
+                            <table>
+                                <tr><th>Data</th><th>Copyright</th><th>Our Rights</th></tr>
+                                <tr><td>RavenPack news</td><td>RavenPack Inc.</td><td>Academic use only</td></tr>
+                                <tr><td>LSEG transcripts</td><td>LSEG</td><td>Academic use only</td></tr>
+                                <tr><td>Deutsche Borse data</td><td>Deutsche Borse AG</td><td>Research collaboration</td></tr>
+                                <tr><td>BIS speeches</td><td>BIS/Speakers</td><td>Full reuse</td></tr>
+                                <tr><td>SEC filings</td><td>Public domain</td><td>Full reuse</td></tr>
+                                <tr><td>Our code</td><td>Project team</td><td>Open source</td></tr>
+                                <tr><td>Our models/data</td><td>Project team</td><td>Open access</td></tr>
+                            </table>
+                            <div class="diff-addition"><strong>Publication Rights:</strong></div>
+                            <ul>
+                                <li>Aggregated statistics and derived features: Yes</li>
+                                <li>Code, models, and methodology: Yes</li>
+                                <li>Raw commercial data redistribution: No</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Section 3 -->
+            <div class="comparison-section" id="section-3">
+                <div class="comparison-section-header">3. Data storage and preservation</div>
+
+                <!-- 3.1 -->
+                <div id="section-3-1">
+                    <div class="comparison-question">3.1 How will your data be stored and backed-up during the research?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>The storage capacities are very large, the amount of data remains very limited in the project.</p><p></p><p>The data is managed in the form of databases on the ZHAW internal Github. Backups and versions of the data are continuously created.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-improvement"><strong>Primary Storage:</strong></div>
+                            <ul>
+                                <li><strong>Location:</strong> BFH Institute for Applied Data Science servers</li>
+                                <li><strong>Capacity:</strong> 1 TB allocated for the project</li>
+                                <li><strong>Retention:</strong> Project duration plus 10 years minimum</li>
+                            </ul>
+                            <div class="diff-addition"><strong>Cloud Storage:</strong></div>
+                            <ul>
+                                <li>GitHub: <a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a></li>
+                                <li>OSF: <a href="https://osf.io/nr94j/">osf.io/nr94j/</a></li>
+                                <li>Zenodo: Linked via GitHub</li>
+                            </ul>
+                            <div class="diff-addition"><strong>Backup Strategy:</strong></div>
+                            <table>
+                                <tr><th>Type</th><th>Frequency</th><th>Retention</th></tr>
+                                <tr><td>Code</td><td>Continuous (Git)</td><td>Permanent (GitHub)</td></tr>
+                                <tr><td>Processed data</td><td>Weekly</td><td>10 years (BFH + Zenodo)</td></tr>
+                                <tr><td>Commercial raw data</td><td>Daily</td><td>Project duration (BFH (encrypted))</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.2 -->
+                <div id="section-3-2">
+                    <div class="comparison-question">3.2 What is your data preservation plan?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>The data is stored on the ZHAW internal github for a long time and managed by the ZHAW using the existing tools. There is no obligation to destroy the data.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Repository Selection:</strong></div>
+                            <ul>
+                                <li><strong>Zenodo (CERN/OpenAIRE (non-profit)):</strong> DOI assignment, FAIR compliance, 20+ year guarantee, CoreTrustSeal certification</li>
+                                <li><strong>OSF (Center for Open Science (non-profit)):</strong> Preprints, supplementary materials, version control</li>
+                                <li><strong>arXiv (Cornell University (non-profit)):</strong> Preprints, permanent archive</li>
+                            </ul>
+                            <div class="diff-addition"><strong>Preservation Timeline:</strong></div>
+                            <table>
+                                <tr><th>Milestone</th><th>Action</th></tr>
+                                <tr><td>Paper submission</td><td>Archive code and data snapshots (Version DOI via Zenodo)</td></tr>
+                                <tr><td>Paper acceptance</td><td>Update with final version (Version DOI update)</td></tr>
+                                <tr><td>Project end (August 2026)</td><td>Final comprehensive archive (Concept DOI)</td></tr>
+                            </table>
+                            <div class="diff-addition"><strong>Archival File Formats:</strong></div>
+                            <ul>
+                                <li>Data: CSV, Parquet, HDF5 (machine-readable, open formats)</li>
+                                <li>Documentation: Markdown, PDF/A (long-term readable)</li>
+                                <li>Code: Python (plain text, version-controlled)</li>
+                                <li>Images: PNG, SVG (lossless, open formats)</li>
+                            </ul>
+                            <div class="diff-improvement"><strong>Retention:</strong> Minimum 10 years post-project (per SNSF Open Research Data policy)</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Section 4 -->
+            <div class="comparison-section" id="section-4">
+                <div class="comparison-section-header">4. Data sharing and reuse</div>
+
+                <!-- 4.1 -->
+                <div id="section-4-1">
+                    <div class="comparison-question">4.1 How and where will the data be shared?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Current Outputs (Available Now):</strong></div>
+                            <table>
+                                <tr><th>Output</th><th>Repository</th><th>Status</th></tr>
+                                <tr><td>TOPol Framework</td><td><a href="https://osf.io/nr94j/">OSF</a></td><td>Published</td></tr>
+                                <tr><td>Project Website</td><td><a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">GitHub Pages</a></td><td>Live</td></tr>
+                            </table>
+                            <div class="diff-addition"><strong>Upcoming Deposits:</strong></div>
+                            <table>
+                                <tr><th>Output</th><th>Timeline</th></tr>
+                                <tr><td>SLR Methodology and Data</td><td>Upon paper acceptance</td></tr>
+                                <tr><td>HFT Analysis Code</td><td>Planned</td></tr>
+                                <tr><td>Macro Narrative Index</td><td>Planned</td></tr>
+                                <tr><td>Final Project Archive</td><td>Project end (August 2026)</td></tr>
+                            </table>
+                            <div class="diff-addition"><strong>Sharing Restrictions:</strong></div>
+                            <table>
+                                <tr><th>Data</th><th>Shareable?</th><th>Reason</th></tr>
+                                <tr><td>FRED, BIS, SEC</td><td>Yes</td><td>Public domain / open access</td></tr>
+                                <tr><td>RavenPack raw data</td><td>No</td><td>License restriction</td></tr>
+                                <tr><td>LSEG transcripts</td><td>No</td><td>License restriction</td></tr>
+                                <tr><td>Deutsche Borse T7</td><td>No</td><td>Collaboration agreement</td></tr>
+                                <tr><td>Derived features</td><td>Yes</td><td>Our work product</td></tr>
+                                <tr><td>All code</td><td>Yes</td><td>MIT License</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.2 -->
+                <div id="section-4-2">
+                    <div class="comparison-question">4.2 Are there any necessary limitations to protect sensitive data?</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <div class="diff-improvement"><strong>Unrestricted (Open Access):</strong></div>
+                            <ul>
+                                <li>All code developed by the project (MIT License)</li>
+                                <li>Derived features, embeddings, and processed outputs (CC-BY 4.0)</li>
+                                <li>Documentation, methodology, and research materials</li>
+                                <li>Public source data (FRED, BIS, SEC)</li>
+                            </ul>
+                            <div class="diff-addition"><strong>Restricted (Cannot Share):</strong></div>
+                            <ul>
+                                <li>Raw RavenPack news data (license prohibits redistribution)</li>
+                                <li>Raw LSEG/Refinitiv transcripts (license prohibits redistribution)</li>
+                                <li>Raw Deutsche Borse T7 data (collaboration agreement restriction)</li>
+                            </ul>
+                            <div class="diff-addition"><strong>Reuse Conditions:</strong></div>
+                            <ul>
+                                <li>Citation required (BibTeX provided in repositories)</li>
+                                <li>License compliance: MIT for code, CC-BY 4.0 for data/models</li>
+                                <li>Academic and commercial use permitted for our outputs</li>
+                            </ul>
+                            <p><strong>Access Requests:</strong> <a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.3 -->
+                <div id="section-4-3">
+                    <div class="comparison-question">4.3 All digital repositories I will choose are conform to the FAIR Data Principles.</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>Yes</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <p><strong>Answer:</strong> Yes</p>
+                            <div class="diff-addition"><strong>FAIR Compliance Matrix:</strong></div>
+                            <table>
+                                <tr><th>Principle</th><th>Implementation</th></tr>
+                                <tr><td><strong>Findable</strong></td><td>DOIs via Zenodo, indexed in OpenAlex, DataCite, and Google Dataset Search</td></tr>
+                                <tr><td><strong>Accessible</strong></td><td>Open repositories (Zenodo, OSF, GitHub) with standard protocols (HTTPS)</td></tr>
+                                <tr><td><strong>Interoperable</strong></td><td>Standard formats (CSV, JSON, Parquet), documented schemas, and Python APIs</td></tr>
+                                <tr><td><strong>Reusable</strong></td><td>CC-BY license, comprehensive metadata, README files, and example notebooks</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.4 -->
+                <div id="section-4-4">
+                    <div class="comparison-question">4.4 I will choose digital repositories maintained by a non-profit organisation.</div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column column-original">
+                            <div class="column-label">Original</div>
+                            <p>Yes</p>
+                        </div>
+                        <div class="comparison-column column-enhanced">
+                            <div class="column-label">Enhanced</div>
+                            <p><strong>Answer:</strong> Yes</p>
+                            <div class="diff-addition"><strong>Repository Certification:</strong></div>
+                            <table>
+                                <tr><th>Repository</th><th>Organization</th><th>Certification</th></tr>
+                                <tr><td>Zenodo</td><td>CERN/OpenAIRE</td><td>Non-profit, CoreTrustSeal certified</td></tr>
+                                <tr><td>OSF</td><td>Center for Open Science</td><td>Non-profit, COS Registered Reports partner</td></tr>
+                                <tr><td>arXiv</td><td>Cornell University</td><td>Non-profit, permanent archive</td></tr>
+                            </table>
+                            <div class="diff-improvement" style="margin-top: 12px;">
+                                <strong>SNSF Checkboxes:</strong><br>
+                                [x] All repositories conform to FAIR Data Principles<br>
+                                [x] All repositories maintained by non-profit organizations
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Summary -->
+            <div class="section">
+                <div class="section-title">Summary of Enhancements</div>
+                <div class="grid grid-3">
+                    <div class="stat-card">
+                        <div class="stat-num">7</div>
+                        <div class="stat-lbl">Data Sources Specified</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">3</div>
+                        <div class="stat-lbl">Repositories with DOIs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">65 GB</div>
+                        <div class="stat-lbl">Total Data Volume</div>
+                    </div>
+                </div>
+                <p style="margin-top: 16px; text-align: center;">
+                    <a href="dmp.html" class="btn btn-primary">View Full Enhanced DMP</a>
+                </p>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom">
+                    Narrative Digital Finance | SNSF Grant IZCOZ0_213370 |
+                    <a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,346 @@
+\documentclass[9pt, aspectratio=169, compress]{beamer}
+
+\usepackage{xcolor}
+\usepackage{beamerthemebars}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\bibliographystyle{plainnat} % or abbrvnat, unsrtnat, etc.
+\usepackage[backend=biber,style=apa,natbib=true]{biblatex}
+\addbibresource{Gabin/Systematic Literature review/SLR_references.bib}
+
+
+% ====== THEME SETTINGS ======
+
+\usetheme{Warsaw}
+\useoutertheme{miniframes}
+% \usecolortheme{beaver}
+\definecolor{CustomBlue}{RGB}{0, 75, 150}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{structure}{fg=CustomBlue}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{item}{fg=CustomBlue}
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+
+\AtBeginSection[]{
+\begin{frame}{Table of Contents}
+  \setlength{\columnsep}{10pt}
+  \setlength{\parskip}{-0pt}
+  \vspace{1em}
+\tableofcontents[currentsection,sectionstyle=show/shaded,subsectionstyle=show/shaded]
+\end{frame}
+}
+
+
+% ====== TITLE PAGE ======
+
+\title{An Algorithmic Framework for Systematic Literature Reviews: A Case Study for Financial Narratives}
+\author{Gabin Taibi}
+\institute{
+    BFH, Business School, Institute for Applied Data Science \& Finance \\
+    University of Twente, Management and Social sciences (BMS), High-tech Business and Entrepreneurship (HBE) \\
+}
+\date{\today}
+
+
+% ====== START DOCUMENT ======
+
+\begin{document}
+
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+
+\section{Research Context}
+
+\begin{frame}{Research Context}
+    \textbf{SNF Research Project: "Narrative Digital Finance: a tale of structural breaks, bubbles \& market narratives"} \footnote{\url{https://data.snf.ch/grants/grant/213370}} \footnote{\url{https://wiki.fin-ai.eu/index.php/SNSF_Narrative_Digital_Finance}}, 01.11.2023 – 31.10.2026, Prof. Dr. Joerg Osterrieder
+
+    \textbf{Four main blocks:}
+    \begin{itemize}
+        \item Text data \& text analytics: text mining with NLP techniques (topic modeling, sentiment and emotion analysis, NER)
+        \item Structural breaks detection \& asset price bubbles: ex/post-ante methods to detect structural breaks and change points in market dynamics (asset prices, volatility, volume, option Greeks, etc.)
+        \item Narratives for structural breaks: apply narratives modeling from block 1 to predict structural breaks and change points (statistical/machine learning)
+        \item Multidimensional AI and ML solutions in a fully integrated framework: predict formation and burst of asset price bubbles in online mode
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Financial Narratives}
+    \begin{itemize}
+        \item \textbf{Definition}: emergent and structured interpretations or sets of expectations about financial markets, formed through the convergence of individual narratives;
+        \item \textbf{Motivation}: market participants must interpret complex and uncertain environments to make informed decisions;
+        \item \textbf{Sources}: derived from public and private information, personal experience, and social interaction;
+        \item \textbf{Core features}: central theme, related subtopics, temporal orientation, sentiment, emotional tone, and semantic uncertainty (extended from \cite{roos_narratives_2024});
+        \item \textbf{Research challenge}: How can NLP/textual analysis techniques be used to quantify and model financial narratives? Can financial narratives modeling enhance financial market dynamics understanding?
+    \end{itemize}
+\end{frame}
+
+
+\section{Systematic Literature Review Framework}
+
+\begin{frame}{The Systematic Literature Review}
+    \begin{itemize}
+        \item \textbf{Objective}: apply a reproducible and unbiased methodology to identify relevant academic literature;
+        \item \textbf{Challenge}: most literature reviews rely heavily on researcher judgment to assess relevance, leading to limited reproducibility; the manual screening process is time-consuming and adds little direct value to the research itself;
+        \item \textbf{Proposed approach}: introduce an algorithmic framework to automate paper selection, evaluate the quality of inclusion, and support structured data extraction;
+        \item \textbf{Use case – Financial Narratives}: clarifying definitions, processing approaches, modeling techniques, and the role of NLP in financial text analysis;
+        \item \textbf{Tools}: Scopus\footnote{\url{https://www.scopus.com/}} (peer-reviewed literature database), SCImago Journal \& Country Rank\footnote{\url{https://www.scimagojr.com/journalrank.php}}, Python, Transformer-based models from HuggingFace and OpenAI's API.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Overall Selection Process}
+% \begin{frame}{Inclusion Criteria}
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{p{10cm} c} % Adjust column widths if needed
+            \toprule
+            \textbf{Criteria} & \textbf{Decision} \\
+            \midrule
+            Inclusion of pre-defined keywords in title, abstract, or keyword list & Inclusion \\
+            Article publication in a scientific journal & Inclusion \\
+            Article written in English & Inclusion \\
+            Article published before 2010 & Exclusion \\
+            Duplicates & Exclusion \\
+            Medium/low relevance clusters & Exclusion \\
+            Unavailability of the article online & Exclusion \\
+            \bottomrule
+        \end{tabular}
+        \caption{Summary of article selection criteria.}
+        \label{tab:selection_criteria}
+    \end{table}
+% \end{frame}
+
+% \begin{frame}{Overall Selection Process}
+    \begin{figure}[h]
+        \centering
+        \label{fig:selection_criteria}
+        \includegraphics[width=1\textwidth]{Gabin/Systematic Literature review/images/filter_paper_diagram_v2.png}
+        \caption{Paper selection diagram.}
+        \label{fig:paper_selection_diagram}
+    \end{figure}
+\end{frame}
+
+
+\section{Algorithmic Selection Methodology}
+
+\begin{frame}{Relevance Assessment}
+    \begin{itemize}
+        \item Research statements:
+        \begin{itemize}
+            \item \textbf{Discussion}: "The research discusses [Financial Narrative Processing, Financial Narrative Modeling or the use of textual data to understand financial markets]."
+            \item \textbf{Context}: "The research is highly relevant in the context of [financial markets, including: equities, foreign exchange, cryptocurrencies, bonds, commodities, or real estate]."
+            \item \textbf{Methods}: "The research methodologies include: [textual analysis, text mining or Natural Language Processing techniques such as topic modeling, emotion analysis, sentiment analysis, word embeddings or Transformer-based models]."
+            \item \textbf{Data}: "The research leverages the following data: [textual data such as financial reports, news articles, social media posts, audio or video transcripts, or any other form of financial textual data]."
+            \item \textbf{Questions}: "The research helps answering the research question(s): [How can NLP and textual analysis techniques be used to quantify and model financial narratives? Can financial narratives modeling enhance financial market dynamics understanding?]"
+        \end{itemize}
+        \item Paraphrase: use LLM (OpenAI GPT-4o-mini) to generate 5 paraphrases per statements;
+        \item Word embedding: average embedding of the 6 paraphrases per statement;
+        \item Similarity measure: cosine similarity makes more sense as semantic similarity measure (tested euclidean distance, dot product needs more careful vector pre-processing).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dimensionality Reduction}
+    \begin{itemize}
+        \item PCA decision:
+        \begin{itemize}
+            \item Kaiser-Meyer-Olkin score: shared variance between features, $KMO < 0.5$ means data is not suitable for PCA, $0.5 <= KMO < 0.7$ mediocre suitability (we check condition number) and $KMO => 0.7$ means that we apply PCA;
+            \item Condition Number: multicollinearity of feature matrix, $CN < 30$ no multicollinearity so no need for PCA, $30 <= KMO < 100$ moderate multicollinearity (we might apply PCA) and $KMO => 100$ high multicollinearity so we apply PCA;
+            \item \textbf{Results}: $KMO = 0.72$ and $CN = 232$ $\rightarrow$ we apply PCA;
+        \end{itemize}
+        \item PCA: 
+        \begin{itemize}
+            \item Optimal Number of Components: number of components that explain at least 95\% of the variance;
+            \item \textbf{Results}: 3 components;
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dimensionality Reduction}
+    \begin{figure}[ht]
+        \centering
+        \begin{subfigure}[t]{0.45\textwidth}
+            \includegraphics[width=\linewidth]{Gabin/Systematic Literature review/images/pca_cumvar_v2.png}
+            \caption{Explained variance per component.}
+            \label{fig:pca_cumvar}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.45\textwidth}
+            \includegraphics[width=\linewidth]{Gabin/Systematic Literature review/images/pca_corr_v2.png}
+            \caption{PCA eigenvectors.}
+            \label{fig:pca_corr}
+        \end{subfigure}
+        \caption{Principal Component Analysis: variance explained and principal components.}
+        \label{fig:pca_overview}
+    \end{figure}
+\end{frame}
+
+% \begin{frame}[t]{Clustering Classification}
+\begin{frame}{Clustering Classification}
+    \begin{itemize}
+        \item Clustering:
+        \begin{itemize}
+            \item K-means;
+            \item Gaussian Mixture Model;
+            \item Hierarchical Agglomerative;
+        \end{itemize}
+        \item Number of Clusters: 3 for a more granular classification or to allow manual review, or 2.
+        \item Classification: average relevance score, number of points and Silhouette score.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Clustering Classification}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.65\linewidth]{Gabin/Systematic Literature review/images/kmeans_clustering.png}
+        \caption{K-means clustering.}
+        \label{fig:kmeans_clustering}
+    \end{figure}
+    \begin{itemize}
+        \item "High" relevance cluster: 0.489 relevance score and 24 papers;
+        \item Overall Silhouette score: 0.336.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Clustering Classification}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.65\linewidth]{Gabin/Systematic Literature review/images/gmm_clustering.png}
+        \caption{GMM clustering.}
+        \label{fig:gmm_clustering}
+    \end{figure}
+    \begin{itemize}
+        \item "High" relevance cluster: 0.487 relevance score and 16 papers;
+        \item Overall Silhouette score: 0.069.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Clustering Classification}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\linewidth]{Gabin/Systematic Literature review/images/agglomerative_clustering.png}
+        \caption{Agglomerative clustering.}
+        \label{fig:agg_clustering}
+    \end{figure}
+    \begin{itemize}
+        \item "High" relevance cluster: 0.493 relevance score and 19 papers;
+        \item Overall Silhouette score: 0.365.
+    \end{itemize}
+\end{frame}
+
+
+\section{Results}
+
+\begin{frame}{Selection Quality}
+    \textbf{Selection Results:}
+    \begin{itemize}
+        \item From 174 (phase 1), to 85 (phase 2) and finally 19 (phase 3);
+        \item From average relevance score of 0.38 to 0.49;
+        \item From 49\% of Q1-Q2 journals to 79\%.
+    \end{itemize}
+
+    \textbf{Quality Metrics:} journal ranking, relevance score.
+    \begin{figure}[h]
+        \centering
+        \begin{subfigure}[t]{0.48\textwidth}
+            \includegraphics[width=\linewidth]{Gabin/Systematic Literature review/images/paper_temporal_quantile_distribution_v2.png}
+            \caption{Temporal distribution of selected research papers.}
+            \label{fig:paper_temporal_distribution}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.48\textwidth}
+            \includegraphics[width=\linewidth]{Gabin/Systematic Literature review/images/final_relevance_score_v2.png}
+            \caption{Box plot of the selected papers' relevance score.}
+            \label{fig:H_index_per_cluster}
+        \end{subfigure}
+        \caption{Overview of temporal and journal ranking and relevance characteristics of selected papers.}
+        \label{fig:temporal_and_index}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Comparison Quality: Phase 1 and 3}
+    \textbf{Phase 1 results:}
+    \begin{figure}[h]
+        \centering
+        \begin{subfigure}[t]{0.48\textwidth}
+            \includegraphics[width=\linewidth]{Gabin/Systematic Literature review/images/paper_temporal_quantile_distribution_v2_before.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.48\textwidth}
+            \includegraphics[width=\linewidth]{Gabin/Systematic Literature review/images/final_relevance_score_v2_before.png}
+        \end{subfigure}
+    \end{figure}
+
+    \textbf{Phase 3 results:}
+    \begin{figure}[h]
+        \centering
+        \begin{subfigure}[t]{0.48\textwidth}
+            \includegraphics[width=\linewidth]{Gabin/Systematic Literature review/images/paper_temporal_quantile_distribution_v2.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[t]{0.48\textwidth}
+            \includegraphics[width=\linewidth]{Gabin/Systematic Literature review/images/final_relevance_score_v2.png}
+        \end{subfigure}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Data Extraction}
+    \textbf{K-means clustering selection (23 papers):}
+    \begin{itemize}
+        \item Covers a wide range of financial narrative approaches:
+        \begin{itemize}
+            \item \textbf{Theoretical studies:} narrative theory and definitions;
+            \item \textbf{Processing-focused:} methods for quantifying narratives;
+            \item \textbf{Modeling-focused:} links between narrative metrics and market dynamics.
+        \end{itemize}
+        \item Broad set of NLP techniques, including non-computational approaches;%: manual analysis, sentiment and emotion detection, topic modeling, named entity recognition, summarization.
+        \item A few unrelated papers (e.g., neuroeconomics).
+        % \item One original and promising contribution \cite{miori_narratives_2023}: a dynamic and holistic modeling of narratives in financial news.
+    \end{itemize}
+    
+    \textbf{Agglomerative clustering selection (16 papers):}
+    \begin{itemize}
+        \item Exclusively computational NLP approaches;
+        \item Focused on narrative quantification and market modeling;
+        \item While some relevant papers were excluded, overall alignment with research objectives improved.
+    \end{itemize}
+
+    \textbf{Proposed improvement:} automate the manual categorization of selected papers using
+    \begin{itemize}
+        \item Embedding-based classification with HDBSCAN (ongoing);
+        \item Zero-shot classification (ongoing).
+    \end{itemize}
+\end{frame}
+
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+    \textbf{Algorithmic Literature Review:}
+    \begin{itemize}
+        \item Reproducible and unbiaised framework for systematic literature reviews, applied to the financial narratives modeling field;
+        % \item Automatically reduce the number of papers from 171 to 18;
+        % \item Other improvement: use LLM to extract data;
+        \item Minimal human intervention required for framework configuration;
+        \item Selection efficiency: manual review of the medium and high relevance class was conducted (less than 5\% FP-FN);
+        \item We compared multiple clustering methods enabling a robust and data-driven clustering choice;
+        \item Next steps:
+        \begin{itemize}
+            \item Finalize automatic data extraction;
+            \item Extend to other literature sources: Web of Science, OpenAlex, and merge results from various sources;
+            \item Find a way to automatically retrieve full papers and compare with title/abstract/keyword approach.
+        \end{itemize}
+    \end{itemize}
+
+    \textbf{Financial Narratives literature:}
+    \begin{itemize}
+        \item Lack of unified definition for narratives in economics and financial markets;
+        \item Financial narratives are frequently analyzed as isolated topics, entities, or text sentiments, often without a holistic approach.
+        \item Main NLP techniques: sentiment/emotion analysis, NER, topic modeling, summarization.
+    \end{itemize}
+\end{frame}
+
+
+% ====== END DOCUMENT ======
+\end{document}

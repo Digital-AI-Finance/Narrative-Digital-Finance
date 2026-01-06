@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{threeparttable}
+\usepackage[margin=1in]{geometry}
+\usepackage{authblk}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{appendix}
+
+% Dummy command for KOMA-Script compatibility
+\newcommand{\KOMAoptions}[1]{}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% Suppress chapter abstract and credit (already on title page)
+\excludecomment{chapterabstract}
+\excludecomment{chaptercredit}
+
+\graphicspath{{images/}}
+
+% Title and author info
+\title{\LARGE\bfseries Detecting Price Bubble Formation in NFT and DeFi Markets}
+
+\author[1,2]{Lennart J. Baals\thanks{Corresponding author. Email: l.j.baals@utwente.nl. ORCID: \href{https://orcid.org/0000-0002-7737-9675}{0000-0002-7737-9675}}}
+\affil[1]{University of Twente, Enschede, The Netherlands}
+\affil[2]{Bern University of Applied Sciences, Bern, Switzerland}
+
+\date{June 2025}
+
+\begin{document}
+
+% Title page
+\maketitle
+
+\begin{abstract}
+\noindent Digital asset markets, including those for non-fungible tokens (NFTs) and decentralized finance (DeFi) instruments, have expanded rapidly and are commonly viewed as highly speculative. This paper examines the extent and timing of price bubbles in these markets. Using daily USD prices for two capitalization-weighted benchmarks (the NFT Index and the DeFi Pulse Index), alongside major infrastructure coins and DeFi-related tokens, we apply the supremum augmented Dickey--Fuller (SADF) and generalized SADF (GSADF) tests to detect and date-stamp mildly explosive episodes. A log-periodic power-law singularity (LPPLS) framework is used as a robustness check. All assets considered display recurrent bubble regimes, but with cross-sectional differences. The DeFi index spends more time in bubble states than the NFT index, but NFT-related benchmarks and cryptocurrency tokens exhibit stronger and larger average intra-bubble price swings. Exuberant periods cluster around three phases: the ``DeFi Summer'' of 2020, the broad crypto and DeFi boom in early 2021, and an NFT-centered bull run in late 2021. Co-occurrence patterns and a simple liquidity analysis indicate that bubbles coincide with elevated trading activity and show synchronized exuberance.
+\end{abstract}
+
+\vspace{1em}
+\noindent\textbf{Keywords:} NFTs; DeFi; Cryptocurrency; SADF; GSADF; LPPLS; Explosive price bubbles; Bubble detection
+
+\vspace{1em}
+\noindent\textbf{JEL Classification:} G12, G14, G15, C22
+
+\vspace{2em}
+\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{0.5em}
+\noindent\small\textbf{Funding:} This research was supported by the Swiss National Science Foundation (SNSF) under Grant IZCOZ0-213370: ``Narrative Digital Finance: a tale of structural breaks, bubbles \& market narratives.''
+
+\vspace{0.5em}
+\noindent\small\textbf{Data Availability:} The research code and analysis pipeline are available on Zenodo at \href{https://doi.org/10.5281/zenodo.18154903}{doi:10.5281/zenodo.18154903}. Raw market data must be obtained from original vendors (WorldCoinIndex, CoinGecko) due to licensing restrictions.
+
+\vspace{0.5em}
+\noindent\small\textbf{Declaration:} This paper is based on Chapter 2 of the author's doctoral dissertation at the University of Twente. It extends work from Wang, Y., Horky, F., Baals, L. J., Lucey, B. M., \& Vigne, S. A. (2022), \textit{Journal of Chinese Economic and Business Studies}, 20(4), 415--436.
+
+\vspace{0.5em}
+\noindent\rule{\textwidth}{0.4pt}
+
+\newpage
+
+% Suppress chapter title (already on title page)
+\renewcommand{\chapter}[1]{}
+
+\input{chapters/2. chapter market-risk.tex}
+
+\bibliographystyle{apalike}
+\bibliography{bib-refs,bib-refs-zotero}
+
+\end{document}

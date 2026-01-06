@@ -1,0 +1,394 @@
+\documentclass[8pt]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{xcolor}
+
+% Define minimalist color scheme
+\definecolor{maintext}{RGB}{64,64,64}
+\definecolor{annotation}{RGB}{180,180,180}
+\definecolor{bglight}{RGB}{240,240,240}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+\title{Quantifying Narratives and their Impact on Financial Markets}
+\subtitle{Based on Bhargava et al. (2022) - State Street Associates}
+\author{Presentation}
+\date{January 2025}
+
+\begin{document}
+
+% Title Slide
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Agenda
+\begin{frame}{Agenda}
+\begin{enumerate}
+\item Introduction: Why Narratives Matter
+\item Data \& Methodology: 150,000+ Media Sources
+\item Key Narratives Driving Markets
+\item Predictive Power \& Market Returns
+\item Portfolio Construction Strategies
+\item Case Study: COVID-19 Recovery Portfolio
+\item Conclusions \& Takeaways
+\end{enumerate}
+\end{frame}
+
+% Introduction
+\begin{frame}{The Power of Narratives in Economics}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Robert Shiller's Vision}
+\begin{itemize}
+\item ``We need to incorporate the contagion of narratives into economic theory''
+\item Stories drive economic behavior
+\item Traditional indicators miss narrative impact
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{This Research Contribution}
+\begin{itemize}
+\item Quantifies 73 predefined narratives
+\item Analyzes 150,000+ digital media sources daily
+\item Links narrative intensity to market returns
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} Source: Shiller (2019), Narrative Economics}
+\end{frame}
+
+% Methodology Overview
+\begin{frame}{Data Pipeline: From Media to Market Signals}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Data Collection}
+\begin{itemize}
+\item 150,000+ global digital media sources
+\item Articles tagged for 73 narratives
+\item NLP-based sentiment scoring
+\item Daily intensity measurements
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Key Metrics}
+\begin{itemize}
+\item \textbf{Intensity}: Proportion of articles per narrative
+\item \textbf{Negative Intensity}: Articles with negative sentiment
+\item \textbf{7-day rolling averages} for stability
+\item Weekly changes for market impact
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} Processing pipeline runs continuously from July 2015 to present}
+\end{frame}
+
+% Top Narratives
+\begin{frame}{Top Narratives by Explanatory Power (2015-2021)}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{US Equity Market (SPY)}
+\begin{tabular}{lr}
+\toprule
+Narrative & Avg R\textsuperscript{2} \\
+\midrule
+Market Crash & \textbf{34\%} \\
+Govt \& Corp Debt & 19\% \\
+Treasury Bonds & 18\% \\
+Global Growth & 15\% \\
+Liquidity & 15\% \\
+\midrule
+Top-5 Combined & \textbf{40\%} \\
+\bottomrule
+\end{tabular}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{US Dollar (DXY)}
+\begin{tabular}{lr}
+\toprule
+Narrative & Avg R\textsuperscript{2} \\
+\midrule
+Federal Reserve & 14\% \\
+Donald Trump & 13\% \\
+Emerging Markets & 12\% \\
+Interest Rates & 12\% \\
+Labor Market & 12\% \\
+\midrule
+Top-5 Combined & 29\% \\
+\bottomrule
+\end{tabular}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} R\textsuperscript{2} from rolling 3-month univariate regressions}
+\end{frame}
+
+% Market Crash Narrative Analysis
+\begin{frame}{Market Crash Narrative: The Dominant Driver}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Regression Results}
+\begin{itemize}
+\item Coefficient: \textbf{-0.26}
+\item T-statistic: \textbf{-9.94}
+\item R\textsuperscript{2}: \textbf{0.30}
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Interpretation}
+\begin{itemize}
+\item Negative relationship confirmed
+\item Higher negative coverage $\rightarrow$ lower returns
+\item Captures investor fear sentiment
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Predictive Power}
+\begin{itemize}
+\item Contains information beyond VIX
+\item T-stat: -2.20 for future returns
+\item Enables market timing strategies
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Practical Application}
+\begin{itemize}
+\item Rotate to bonds when z-score > 3
+\item 2-week holding period
+\item Outperforms 50/50 benchmark
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} SPY weekly returns regressed on 7-day change in negative intensity}
+\end{frame}
+
+% COVID-19 Narrative Evolution
+\begin{frame}{Topical Narratives: COVID-19 Case Study}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Timeline of Impact}
+\begin{itemize}
+\item Dec 2019: First cases, minimal coverage
+\item Feb 2020: Intensity spikes to 55\%
+\item Mar-Apr: Peak fear period
+\item Nov 2020: Vaccine announcement pivot
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Market Response}
+\begin{itemize}
+\item Initial R\textsuperscript{2}: 60-80\%
+\item Coefficient: -0.4 to -0.9
+\item Dominated other narratives
+\item Recession fears amplified impact
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} COVID-19 narrative tracked from January 2020}
+\end{frame}
+
+% Asset Allocation Strategy
+\begin{frame}{Narrative-Based Asset Allocation Performance}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Strategy Rules}
+\begin{itemize}
+\item Monitor Market Crash z-score
+\item Threshold: z-score > 3
+\item Action: Rotate SPY $\rightarrow$ Bonds
+\item Duration: 2 weeks
+\item Implementation lag: 2 days
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Performance (2015-2021)}
+\begin{tabular}{lr}
+\toprule
+Metric & Return \\
+\midrule
+Narrative Strategy & \textbf{18.13\%} \\
+SPY Only & 13.38\% \\
+Bonds Only & 2.51\% \\
+50/50 Benchmark & 7.94\% \\
+\midrule
+Information Ratio & \textbf{1.26} \\
+Max Drawdown & -11.57\% \\
+\bottomrule
+\end{tabular}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} Annualized returns with HAC-adjusted standard errors}
+\end{frame}
+
+% COVID Recovery Portfolio
+\begin{frame}{COVID-19 Recovery Portfolio Construction}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Methodology}
+\begin{itemize}
+\item Estimate stock-level narrative betas
+\item Select 25 lowest beta stocks (long)
+\item Select 25 highest beta stocks (short)
+\item Monthly rebalancing
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Low Beta Examples}
+\begin{itemize}
+\item Wynn Resorts (-2.98)
+\item Disney (-2.92)
+\item Las Vegas Sands (-2.43)
+\item Halliburton (-3.10)
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Performance Results}
+\begin{itemize}
+\item Pre-vaccine: \textbf{-32.25\%}
+\item Post-vaccine: \textbf{+120.74\%}
+\item Total period: +88.49\%
+\item Information Ratio: 2.01
+\end{itemize}
+\vspace{0.5cm}
+\textbf{vs. Case-Count Strategy}
+\begin{itemize}
+\item Case-based: +16.55\% only
+\item Narrative captures sentiment better
+\item Media influence > raw statistics
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} Portfolio pivoted November 9, 2020 (Pfizer vaccine announcement)}
+\end{frame}
+
+% Individual Stock Example
+\begin{frame}{Stock-Level Narrative Exposure: Amazon Example}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Positive Exposures}
+\begin{itemize}
+\item COVID-19: +2.5 t-stat
+\item Health: +1.8 t-stat
+\item Benefited from lockdowns
+\item E-commerce acceleration
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Negative Exposures}
+\begin{itemize}
+\item Trade War: -2.0 t-stat
+\item Global Trade: -2.2 t-stat
+\item Supply chain vulnerabilities
+\item International revenue risk
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} Rolling 1-year regressions on narrative intensity changes}
+\end{frame}
+
+% Key Results Summary
+\begin{frame}{Key Empirical Findings}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Explanatory Power}
+\begin{itemize}
+\item Market Crash R\textsuperscript{2} = 34\%
+\item Top 5 narratives R\textsuperscript{2} = 40\%
+\item COVID peak R\textsuperscript{2} = 80\%
+\item Narratives vary by asset class
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Predictive Ability}
+\begin{itemize}
+\item Information beyond VIX
+\item Statistically significant at 5\%
+\item Enables market timing
+\item Self-fulfilling prophecy effects
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Portfolio Performance}
+\begin{itemize}
+\item Asset allocation: +18.13\% annual
+\item COVID recovery: +120.74\%
+\item Outperforms benchmarks
+\item Lower drawdowns
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Practical Applications}
+\begin{itemize}
+\item Risk management tool
+\item Thematic investing
+\item Narrative hedging strategies
+\item Enhanced factor models
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+% Conclusions
+\begin{frame}{Conclusions and Implications}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Academic Contributions}
+\begin{itemize}
+\item Quantifies narrative economics
+\item Links media to market returns
+\item Validates Shiller's hypothesis
+\item New predictive variables
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Methodology Innovations}
+\begin{itemize}
+\item 73 narrative framework
+\item Real-time processing pipeline
+\item Sentiment-adjusted intensity
+\item Stock-level narrative betas
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Investment Applications}
+\begin{itemize}
+\item Enhanced risk models
+\item Systematic allocation strategies
+\item Thematic portfolio construction
+\item Market timing signals
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Future Research}
+\begin{itemize}
+\item Cross-asset applications
+\item International markets
+\item High-frequency trading
+\item Alternative data integration
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{\fill}
+{\footnotesize \color{annotation} Research partnership: State Street Associates \& MKT MediaStats}
+\end{frame}
+
+% Thank You
+\begin{frame}{}
+\begin{center}
+\vspace{3cm}
+{\Large \textbf{Thank You}}\\
+\vspace{1cm}
+{\large Questions?}\\
+\vspace{2cm}
+{\footnotesize Based on: ``Quantifying Narratives and their Impact on Financial Markets''\\
+Bhargava, Lou, Ozik, Sadka, Whitmore (2022)}
+\end{center}
+\end{frame}
+
+\end{document}

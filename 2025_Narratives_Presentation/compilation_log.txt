@@ -1,0 +1,1951 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(20250121_0930_narratives_llm_comprehensive.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-19>
+
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamer.
+cls
+Document Class: beamer 2025/06/15 v3.74 A class for typesetting presentations
+
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asemodes.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etool
+box.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asedecode.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.
+sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aseoptions.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyva
+l.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geome
+try.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex
+.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geome
+try.cfg))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfma
+th.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\
+pgfrcs.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilitie
+s\pgfutil-common.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilitie
+s\pgfutil-latex.def)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilitie
+s\pgfrcs.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revi
+sion.tex)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\
+pgfkeys.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilitie
+s\pgfkeys.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilitie
+s\pgfkeyslibraryfiltered.code.tex)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+math.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathutil.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathparser.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.basic.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.trigonometric.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.random.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.comparison.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.base.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.round.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.misc.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfunctions.integerarithmetics.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathcalc.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+mathfloat.code.tex)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/extsizes\size8
+.clo)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer
+\pgfcore.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graph
+icx.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graph
+ics.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.
+sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\g
+raphics.cfg)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\p
+dftex.def)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlaye
+r\pgfsys.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemla
+yer\pgfsys.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemla
+yer\pgf.cfg)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemla
+yer\pgfsys-pdftex.def
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemla
+yer\pgfsys-common-pdf.def)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemla
+yer\pgfsyssoftpath.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemla
+yer\pgfsysprotocol.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.
+sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\c
+olor.cfg)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathc
+olor.ltx))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcore.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgf
+int.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorepoints.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorepathconstruct.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorepathusage.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorescopes.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcoregraphicstate.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcoretransformations.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorequick.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcoreobjects.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorepathprocessing.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorearrows.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcoreshade.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcoreimage.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcoreexternal.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorelayers.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcoretransparency.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorepatterns.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclay
+er\pgfcorerdf.code.tex)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\
+xxcolor.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-
+ltx.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyper
+ref.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvse
+tkeys.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys
+\kvdefinekeys.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pd
+fescape.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxc
+mds.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\p
+dftexcmds.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\in
+fwarerr.sty)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolo
+r.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\namer
+ef.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refco
+unt.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestri
+ng\gettitlestring.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvop
+tions.sty)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\st
+ringenc.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1en
+c.def)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intc
+alc.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc
+.def)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitse
+t.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\b
+igintcalc.sty))
+
+Package hyperref Message: Stopped early.
+
+)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdft
+ex.def
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck
+\rerunfilecheck.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounte
+r\uniquecounter.sty)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aserequires.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asecompatibility.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asefont.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssy
+mb.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfo
+nts.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent
+\sansmathaccent.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\sc
+rlfile.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\sc
+rlfile-hook.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\sc
+rlogo.sty)))))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asetranslator.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/translator\tra
+nslator.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asemisc.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asetwoscreens.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aseoverlay.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asetitle.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asesection.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aseframe.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aseverbatim.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aseframesize.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aseframecomponents.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asecolor.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asenotes.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asetoc.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asetemplates.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aseauxtemplates.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aseboxes.sty)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+aselocalstructure.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerat
+e.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asenavigation.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asenavigationsymbols.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asetheorems.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmat
+h.sty
+For additional information on amsmath, use the `?' option.
+
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstex
+t.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen
+.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy
+.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn
+.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.
+sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerb
+asethemes.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamert
+hemedefault.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerf
+ontthemedefault.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerc
+olorthemedefault.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beameri
+nnerthemedefault.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamero
+uterthemedefault.sty)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamert
+hemeMadrid.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerc
+olorthemewhale.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerc
+olorthemeorchid.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beameri
+nnerthemerounded.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamero
+uterthemeinfolines.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\bookt
+abs.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adju
+stbox.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyva
+l.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkey
+val.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvu
+tils.tex)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjc
+alc.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trim
+clip.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\col
+lectbox.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-p
+dftex.def))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifod
+dpage.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwi
+dth.sty)
+==> First Aid for varwidth.sty applied!
+)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol
+.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.st
+y)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/listings\listi
+ngs.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpa
+tch.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmi
+sc.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/listings\listi
+ngs.cfg))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\alg
+orithm.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/float\float.st
+y)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.st
+y))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\alg
+orithmic.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendla
+yer\tikz.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer
+\pgf.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\
+pgfmoduleshapes.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\
+pgfmoduleplot.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibil
+ity\pgfcomp-version-0-65.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibil
+ity\pgfcomp-version-1-18.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\
+pgffor.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilitie
+s\pgffor.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontend
+layer/tikz\tikz.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/librarie
+s\pgflibraryplothandlers.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\
+pgfmodulematrix.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontend
+layer/tikz/libraries\tikzlibrarytopaths.code.tex)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfpl
+ots.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plots.revision.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plots.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plotscore.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys
+\pgfplotssysgeneric.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/lib
+s\pgfplotslibrary.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/old
+pgfcompatib\pgfplotsoldpgfsupp_loader.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/librarie
+s\pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/old
+pgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/uti
+l\pgfplotsutil.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/lis
+tstructure\pgfplotsliststructure.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/lis
+tstructure\pgfplotsliststructureext.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/lis
+tstructure\pgfplotsarray.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/lis
+tstructure\pgfplotsmatrix.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/num
+table\pgfplotstableshared.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/lis
+tstructure\pgfplotsdeque.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/uti
+l\pgfplotsbinary.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/uti
+l\pgfplotsbinary.data.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/uti
+l\pgfplotsutil.verb.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/lib
+s\pgflibrarypgfplots.surfshading.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys
+\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/uti
+l\pgfplotscolormap.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/uti
+l\pgfplotscolor.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plotsstackedplots.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plotsplothandlers.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plotsmeshplothandler.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plotsmeshplotimage.code.tex)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plots.scaling.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plotscoordprocessing.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plots.errorbars.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plots.markers.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plotsticks.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgf
+plots.paths.code.tex)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontend
+layer/tikz/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\
+pgfmoduledecorations.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontend
+layer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/librarie
+s/decorations\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontend
+layer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/librarie
+s/decorations\pgflibrarydecorations.pathreplacing.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/lib
+s\tikzlibrarypgfplots.contourlua.code.tex))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontend
+layer/tikz/libraries\tikzlibraryplotmarks.code.tex
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/generic/pgf/librarie
+s\pgflibraryplotmarks.code.tex)))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\math
+tools.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhse
+tup.sty))
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\d
+sfont.sty)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3ba
+ckend-pdftex.def) (20250121_0930_narratives_llm_comprehensive.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\su
+pp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\e
+pstopdf-base.sty
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epsto
+pdf-sys.cfg)) (20250121_0930_narratives_llm_comprehensive.out)
+(20250121_0930_narratives_llm_comprehensive.out)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/translator\tra
+nslator-basic-dictionary-English.dict)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/translator\tra
+nslator-bibliography-dictionary-English.dict)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/translator\tra
+nslator-environment-dictionary-English.dict)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/translator\tra
+nslator-months-dictionary-English.dict)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/translator\tra
+nslator-numbers-dictionary-English.dict)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/translator\tra
+nslator-theorem-dictionary-English.dict)
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
+your preamble.
+ on input line 56.
+
+No file 20250121_0930_narratives_llm_comprehensive.nav.
+
+[1{C:/Users/OsterriederJRO/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+No file 20250121_0930_narratives_llm_comprehensive.toc.
+
+[2]
+[3]
+Overfull \vbox (5.05597pt too high) detected at line 106
+
+[4 <./llm_pipeline_flow.pdf>]
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstla
+ng1.sty)
+Runaway argument?
+! Paragraph ended before \lst@next was complete.
+<to be read again> 
+                   \par 
+l.160 \end{frame}
+                 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.160 \end{frame}
+                 
+
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.
+fd)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.
+fd)
+(C:\Users\OsterriederJRO\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent
+\ot1mathkerncmss.fd)
+! Missing { inserted.
+<to be read again> 
+                   _
+l.160 \end{frame}
+                 
+! Missing { inserted.
+<to be read again> 
+                   _
+l.160 \end{frame}
+                 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.160 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.160 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.160 \end{frame}
+                 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.160 \end{frame}
+                 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.160 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.160 \end{frame}
+                 
+
+[5]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.201 \end{frame}
+                 
+Runaway argument?
+! Paragraph ended before \lst@next was complete.
+<to be read again> 
+                   \par 
+l.201 \end{frame}
+                 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.201 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.201 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.201 \end{frame}
+                 
+
+! LaTeX Error: \begin{lstlisting} on input line 201 ended by \end{minipage}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 \end{frame}
+                 
+
+! LaTeX Error: \begin{lstlisting} on input line 201 ended by \end{altenv}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 \end{frame}
+                 
+
+! LaTeX Error: \begin{minipage} on input line 201 ended by \end{uncoverenv}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 \end{frame}
+                 
+
+! LaTeX Error: \begin{minipage} on input line 201 ended by \end{actionenv}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.201 \end{frame}
+                 
+Runaway argument?
+! Paragraph ended before \lst@next was complete.
+<to be read again> 
+                   \par 
+l.201 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\beamer@colexitcode ->\egroup 
+                              \nobreak \hskip -\beamer@rightmargin \egroup 
+l.201 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+<recently read> \egroup 
+                        
+l.201 \end{frame}
+                 
+
+! LaTeX Error: \begin{altenv} on input line 201 ended by \end{columns}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.201 \end{frame}
+                 
+! Missing } inserted.
+<inserted text> 
+                }
+l.201 \end{frame}
+                 
+
+Overfull \hbox (8.50012pt too wide) detected at line 201
+ []
+
+! LaTeX Error: \begin{uncoverenv} on input line 201 ended by \end{beamer@framep
+auses}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endbeamer@frameslide ...amer@framepauses}\egroup 
+                                                  \ifx \beamer@frametitle \@...
+l.201 \end{frame}
+                 
+
+! LaTeX Error: \begin{actionenv} on input line 201 ended by \end{beamer@framesl
+ide}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.252 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.258 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.307 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.360 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.410 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.416 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.477 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.488 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.545 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.608 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.672 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.683 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.754 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.765 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.827 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.881 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.923 \end{frame}
+                 
+
+Overfull \hbox (4.36362pt too wide) in paragraph at lines 954--965
+ [] 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.974 \end{frame}
+                 
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1030 \end{frame}
+                  
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1094 \end{frame}
+                  
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1152 \end{frame}
+                  
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1200 \end{frame}
+                  
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1227 \end{frame}
+                  
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\translate ' on input line 1233.
+
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1242 ├── 
+                 ingestion/
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1242 ├── 
+                 ingestion/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1242 ├── 
+                 ingestion/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1242 ├── 
+                 ingestion/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1243 │ 
+             ├── news_apis.py         # Bloomberg, Reuters, MarketAux
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1243 │ 
+             ├── news_apis.py         # Bloomberg, Reuters, MarketAux
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1243 │   ├── 
+                       news_apis.py         # Bloomberg, Reuters, MarketAux
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1243 │   ├── 
+                       news_apis.py         # Bloomberg, Reuters, MarketAux
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1243 │   ├── 
+                       news_apis.py         # Bloomberg, Reuters, MarketAux
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1243 │   ├── 
+                       news_apis.py         # Bloomberg, Reuters, MarketAux
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1244 │ 
+             └── stream_processor.py  # Real-time processing
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1244 │ 
+             └── stream_processor.py  # Real-time processing
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1244 │   └── 
+                       stream_processor.py  # Real-time processing
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1244 │   └── 
+                       stream_processor.py  # Real-time processing
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1244 │   └── 
+                       stream_processor.py  # Real-time processing
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1244 │   └── 
+                       stream_processor.py  # Real-time processing
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1245 ├── 
+                 preprocessing/
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1245 ├── 
+                 preprocessing/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1245 ├── 
+                 preprocessing/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1245 ├── 
+                 preprocessing/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246 │ 
+             ├── llm_cleaner.py       # LLM-based cleaning
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246 │ 
+             ├── llm_cleaner.py       # LLM-based cleaning
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246 │   ├── 
+                       llm_cleaner.py       # LLM-based cleaning
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246 │   ├── 
+                       llm_cleaner.py       # LLM-based cleaning
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246 │   ├── 
+                       llm_cleaner.py       # LLM-based cleaning
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1246 │   ├── 
+                       llm_cleaner.py       # LLM-based cleaning
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1247 │ 
+             └── entity_extractor.py  # GPT-4 entity extraction
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1247 │ 
+             └── entity_extractor.py  # GPT-4 entity extraction
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1247 │   └── 
+                       entity_extractor.py  # GPT-4 entity extraction
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1247 │   └── 
+                       entity_extractor.py  # GPT-4 entity extraction
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1247 │   └── 
+                       entity_extractor.py  # GPT-4 entity extraction
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1247 │   └── 
+                       entity_extractor.py  # GPT-4 entity extraction
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1248 ├── 
+                 embedding/
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1248 ├── 
+                 embedding/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1248 ├── 
+                 embedding/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1248 ├── 
+                 embedding/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1249 │ 
+             ├── openai_embedder.py   # text-embedding-3
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1249 │ 
+             ├── openai_embedder.py   # text-embedding-3
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1249 │   ├── 
+                       openai_embedder.py   # text-embedding-3
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1249 │   ├── 
+                       openai_embedder.py   # text-embedding-3
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1249 │   ├── 
+                       openai_embedder.py   # text-embedding-3
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1249 │   ├── 
+                       openai_embedder.py   # text-embedding-3
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1250 │ 
+             └── sentence_bert.py     # Local embeddings
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1250 │ 
+             └── sentence_bert.py     # Local embeddings
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1250 │   └── 
+                       sentence_bert.py     # Local embeddings
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1250 │   └── 
+                       sentence_bert.py     # Local embeddings
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1250 │   └── 
+                       sentence_bert.py     # Local embeddings
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1250 │   └── 
+                       sentence_bert.py     # Local embeddings
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1251 ├── 
+                 classification/
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1251 ├── 
+                 classification/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1251 ├── 
+                 classification/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1251 ├── 
+                 classification/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 │ 
+             ├── zero_shot.py         # Zero-shot classification
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 │ 
+             ├── zero_shot.py         # Zero-shot classification
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 │   ├── 
+                       zero_shot.py         # Zero-shot classification
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 │   ├── 
+                       zero_shot.py         # Zero-shot classification
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 │   ├── 
+                       zero_shot.py         # Zero-shot classification
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 │   ├── 
+                       zero_shot.py         # Zero-shot classification
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1253 │ 
+             ├── few_shot.py          # Dynamic few-shot
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1253 │ 
+             ├── few_shot.py          # Dynamic few-shot
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1253 │   ├── 
+                       few_shot.py          # Dynamic few-shot
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1253 │   ├── 
+                       few_shot.py          # Dynamic few-shot
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1253 │   ├── 
+                       few_shot.py          # Dynamic few-shot
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1253 │   ├── 
+                       few_shot.py          # Dynamic few-shot
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1254 │ 
+             └── chain_of_thought.py  # CoT reasoning
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1254 │ 
+             └── chain_of_thought.py  # CoT reasoning
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1254 │   └── 
+                       chain_of_thought.py  # CoT reasoning
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1254 │   └── 
+                       chain_of_thought.py  # CoT reasoning
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1254 │   └── 
+                       chain_of_thought.py  # CoT reasoning
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1254 │   └── 
+                       chain_of_thought.py  # CoT reasoning
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1255 ├── 
+                 rag/
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1255 ├── 
+                 rag/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1255 ├── 
+                 rag/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1255 ├── 
+                 rag/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1256 │ 
+             ├── vector_store.py      # Pinecone/Qdrant
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1256 │ 
+             ├── vector_store.py      # Pinecone/Qdrant
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1256 │   ├── 
+                       vector_store.py      # Pinecone/Qdrant
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1256 │   ├── 
+                       vector_store.py      # Pinecone/Qdrant
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1256 │   ├── 
+                       vector_store.py      # Pinecone/Qdrant
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1256 │   ├── 
+                       vector_store.py      # Pinecone/Qdrant
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1257 │ 
+             ├── retriever.py         # Semantic search
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1257 │ 
+             ├── retriever.py         # Semantic search
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1257 │   ├── 
+                       retriever.py         # Semantic search
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1257 │   ├── 
+                       retriever.py         # Semantic search
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1257 │   ├── 
+                       retriever.py         # Semantic search
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1257 │   ├── 
+                       retriever.py         # Semantic search
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1258 │ 
+             └── reranker.py          # Cross-encoder reranking
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1258 │ 
+             └── reranker.py          # Cross-encoder reranking
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1258 │   └── 
+                       reranker.py          # Cross-encoder reranking
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1258 │   └── 
+                       reranker.py          # Cross-encoder reranking
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1258 │   └── 
+                       reranker.py          # Cross-encoder reranking
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1258 │   └── 
+                       reranker.py          # Cross-encoder reranking
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1259 ├── 
+                 timeseries/
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1259 ├── 
+                 timeseries/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1259 ├── 
+                 timeseries/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1259 ├── 
+                 timeseries/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1260 │ 
+             ├── aggregator.py        # Temporal aggregation
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1260 │ 
+             ├── aggregator.py        # Temporal aggregation
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1260 │   ├── 
+                       aggregator.py        # Temporal aggregation
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1260 │   ├── 
+                       aggregator.py        # Temporal aggregation
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1260 │   ├── 
+                       aggregator.py        # Temporal aggregation
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1260 │   ├── 
+                       aggregator.py        # Temporal aggregation
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1261 │ 
+             └── smoother.py          # Semantic smoothing
+
+! LaTeX Error: Invalid UTF-8 byte "82.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1261 │ 
+             └── smoother.py          # Semantic smoothing
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1261 │   └── 
+                       smoother.py          # Semantic smoothing
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1261 │   └── 
+                       smoother.py          # Semantic smoothing
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1261 │   └── 
+                       smoother.py          # Semantic smoothing
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1261 │   └── 
+                       smoother.py          # Semantic smoothing
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1262 └── 
+                 monitoring/
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1262 └── 
+                 monitoring/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1262 └── 
+                 monitoring/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1262 └── 
+                 monitoring/
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1263     ├── 
+                     dashboard.py         # Streamlit dashboard
+
+! LaTeX Error: Invalid UTF-8 byte "9C.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1263     ├── 
+                     dashboard.py         # Streamlit dashboard
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1263     ├── 
+                     dashboard.py         # Streamlit dashboard
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1263     ├── 
+                     dashboard.py         # Streamlit dashboard
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1264     └── 
+                     alerting.py          # Real-time alerts
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1264     └── 
+                     alerting.py          # Real-time alerts
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1264     └── 
+                     alerting.py          # Real-time alerts
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1264     └── 
+                     alerting.py          # Real-time alerts
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1266 \end{frame}
+                  
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1311 \end{frame}
+                  
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1329 \end{frame}
+                  
+! Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1369 \end{frame}
+                  
+
+! LaTeX Error: \begin{frame} on input line 1331 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1371 \end{document}
+                     
+(20250121_0930_narratives_llm_comprehensive.aux)
+
+Package rerunfilecheck Warning: File `20250121_0930_narratives_llm_comprehensiv
+e.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+! You can't use `\end' in internal vertical mode.
+\enddocument ...cument/end}\deadcycles \z@ \@@end 
+                                                  
+l.1371 \end{document}
+                     
+
+! LaTeX Error: \begin{frame} on input line 1331 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1371 \end{document}
+                     
+)
+! Emergency stop.
+<*> ...50121_0930_narratives_llm_comprehensive.tex
+                                                  
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on 20250121_0930_narratives_llm_comprehensive.log.

@@ -1,0 +1,76 @@
+FromSpeedtoStability: TheInfluenceofLowLatency
+TradingonMarketQuality
+Gabin Taibi, Bern University of Applied Sciences, University of Twente
+Background
+The rapid evolution of electronic financial markets, driven by technological ad-
+vancements such as ultra-low-latency trading systems, high-performance comput-
+ing, and Field-Programmable Gate Arrays (FPGA) technology, has transformed
+the landscape of trading. These innovations have enabled the rise of Ultra-Fast
+Traders (UFT) and High-Frequency Traders (HFT), also known as Low-Latency
+Traders (LLT), who can react to market events within a few microseconds. These
+ultra-fast reaction capabilities set them apart from conventional market partici-
+pants, making them a unique force in financial markets.
+Understanding the role and behavior of these traders is critical to analyzing modern
+market dynamics. UFTs and HFTs play a significant role in liquidity and price
+formation, but their impact on market stability and efficiency remains the subject
+of ongoing debate.
+Research Objectives
+▶Contributing to the ongoing discussion about the role of ultra-fast trading in
+financial markets.
+▶Proposing a novel market participants’ classification method.
+▶Providing a detailed analysis of participation rates and trading behaviors of
+UFT and HFT.
+▶Analyzing if and how these participants affect market microstructure,
+efficiency, and volatility.
+Data and Preprocessing
+The study is based on nanoseconds timestamp data from Deutsche B¨orse’s T7
+platform, starting from January 2021 until September 2024. Specifically, we se-
+lected Euro STOXX 50 and DAX Futures, along with MSCI World and S&P500
+iShares ETFs for their high liquidity on Eurex and Xetra, although only the Euro
+STOXX 50 results are presented on this poster.
+To classify a specific market event, we have based our approach on the latency
+between a prior triggering trade and the event. Events with a latency of less
+than 1µs are classified as UFT-triggered, latencies between 1µs and
+10µs as HFT-triggered, while latencies exceeding 10µs are attributed
+to conventional traders. Additionally, negative latencies are attributed to noise.
+Methodology
+▶The total participation is measured as the sum of the notional value (price
+× quantity) for all market events triggered by a given participant category.
+▶Other participation types: aggressive, passive, canceled, and deep (beyond
+the first order book level).
+▶Aggregated tick-to-trade data into 1-minute intervals to compute metrics:
+traded volume, average spread, effective spread, depth, order imbalance ratio
+(OIR), and mid/micro/trade price volatility.
+▶Included a control variable similar to SNR.
+▶Combined 1-minute data into monthly datasets and divided into 5 total
+participation quantiles.
+Conclusion
+▶LLT (both UFT and HFT) produce, at most, roughly 20% of total
+participation, including aggressive and passive (Fig. 1).
+▶All participants primarily generate passive order data, with UFTs
+contributing almost no passive orders (Fig. 1): market making strategies?
+▶UFTs cancel around 80% of their orders, but this represents, at most, 20%
+of total canceled participation. (Fig. 2).
+▶The deep order book participation (often considered noise) is insignificant,
+at most 0.06% (Fig. 3).
+▶Clear correlation between high LLT participation and all eight metrics (Fig.
+4), but the impact is positive on spread, effective spread, depth and OIR.
+▶Interesting difference between UFT and HFT’s behaviour: UFTs’ SNR
+decreases with higher participation while HFTs’ SNR is stable or slightly
+increases with higher participation (Fig. 5)
+▶Causal effect study (ongoing)
+Results
+Figure 1: Cumulative Total Participation Rates (aggressive and passive)
+Figure 2: Canceled Participation Insights
+Figure 3: Deep Order Book Participation Insights
+Figure 4: Eight key metrics average value for participation quantile 1 and 5
+Figure 5: UFT vs. HFT Signal-to-Noise Ratio (SNR) per Quantile
+Further Work
+Next steps will involve evaluating the classification performance using proprietary
+data from Deutsche B¨orse.
+Then, we will focus on identifying intraday patterns in LLT participation, particu-
+larly how they react to macroeconomic events or news, leveraging NLP to assess
+both the nature and speed of these reactions. This will provide insight into their
+behavior in response to key events. Another important avenue will be to explore
+flash crashes, investigating whether these are triggered by ’micro’ bubble bursts,
+contributing to market instability during extreme volatility.

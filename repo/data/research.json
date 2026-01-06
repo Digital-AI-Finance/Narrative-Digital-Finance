@@ -1,0 +1,2566 @@
+{
+  "generated_at": "2026-01-04T07:08:48.968976",
+  "generator": "PhD Research Pages Generator",
+  "version": "1.0.0",
+  "source_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance-Gabin-Research",
+  "target_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance\\repo",
+  "paper_count": 8,
+  "papers": [
+    {
+      "id": "manuscript",
+      "filename": "manuscript.tex",
+      "filepath": "Quoniam_Narratives\\manuscript.tex",
+      "title": "Quantifying Industry-Relevant Narratives from Headlines: A Comparative Framework for Narrative Modeling",
+      "authors": [
+        {
+          "name": "Gabin Taibi",
+          "affiliations": [],
+          "email": null
+        }
+      ],
+      "authors_string": "Gabin Taibi",
+      "abstract": "This paper introduces a framework for identifying and quantifying financial narratives from short-text data, focusing exclusively on news headlines rather than full-length articles. We propose three approaches: two supervised tagging methods (one based on semantic similarity and another using large language model (LLM) outputs) and one unsupervised method (relying on graph-based topic modeling). The research focuses on \"evergreen\" and emerging narratives spanning 2004–2025, generating daily narrative intensity scores for overall, positive, and negative sentiment. We link these intensities to excess returns of the twelve Fama–French industries through rolling regressions and assess the relevance of narratives-enhanced industry portfolio with top/bottom-10 portfolio analyses. Our findings show consistent relationships between cyclical and defensive industries and specific macroeconomic narratives, even under short-text constraints. This work bridges narrative economics, NLP, and quantitative finance by providing robust methods for extracting market-relevant signals from limited textual data.",
+      "abstract_short": "This paper introduces a framework for identifying and quantifying financial narratives from short-text data, focusing exclusively on news headlines rather than full-length articles. We propose three a...",
+      "keywords": [
+        "Narratives Modeling",
+        "Sentiment Analysis",
+        "Semantic Similarity",
+        "Large Language Models",
+        "News Headlines",
+        "Financial Markets"
+      ],
+      "sections": [
+        {
+          "level": 1,
+          "title": "Introduction"
+        },
+        {
+          "level": 1,
+          "title": "Research Motivation"
+        },
+        {
+          "level": 2,
+          "title": "Narratives quantifying"
+        },
+        {
+          "level": 2,
+          "title": "Short-Text Challenge"
+        },
+        {
+          "level": 2,
+          "title": "Rationale"
+        },
+        {
+          "level": 1,
+          "title": "Data"
+        },
+        {
+          "level": 2,
+          "title": "News Headlines"
+        },
+        {
+          "level": 2,
+          "title": "Market and Factor Data"
+        },
+        {
+          "level": 2,
+          "title": "Sample Splits"
+        },
+        {
+          "level": 1,
+          "title": "Methodology"
+        },
+        {
+          "level": 2,
+          "title": "Narrative Label Space"
+        },
+        {
+          "level": 2,
+          "title": "Supervised Tagger A: Embedding Similarity"
+        },
+        {
+          "level": 2,
+          "title": "Supervised Tagger B: LLM Tool-Call"
+        },
+        {
+          "level": 2,
+          "title": "Unsupervised Tagger: UMAP–Leiden Topics"
+        },
+        {
+          "level": 2,
+          "title": "Sentiment Labeling"
+        },
+        {
+          "level": 2,
+          "title": "Daily Narrative Intensities"
+        },
+        {
+          "level": 2,
+          "title": "Econometric Design"
+        },
+        {
+          "level": 1,
+          "title": "Results"
+        },
+        {
+          "level": 2,
+          "title": "Tagger Calibration"
+        },
+        {
+          "level": 2,
+          "title": "Narrative–Industry Links"
+        },
+        {
+          "level": 2,
+          "title": "Out-of-Sample Stability"
+        },
+        {
+          "level": 2,
+          "title": "Top/Bottom-10 Strategy Sketch"
+        },
+        {
+          "level": 1,
+          "title": "Robustness Checks"
+        },
+        {
+          "level": 1,
+          "title": "Discussion"
+        },
+        {
+          "level": 1,
+          "title": "Conclusion"
+        }
+      ],
+      "figures": [],
+      "has_bibliography": true,
+      "document_class": "article",
+      "status": "IN_PROGRESS",
+      "status_label": "In Progress",
+      "venue": "Quoniam Collaboration",
+      "work_package": "WP3",
+      "stream": "quoniam",
+      "year": 2025,
+      "ssrn_url": "",
+      "arxiv_url": "",
+      "doi": ""
+    },
+    {
+      "id": "FIN-manuscript",
+      "filename": "FIN-manuscript.tex",
+      "filepath": "SNF_Narrative_Research\\Systematic Literature review\\FIN-manuscript.tex",
+      "title": "An Algorithmic Framework for Systematic Literature Reviews with Application to Financial Narratives",
+      "authors": [],
+      "authors_string": "",
+      "abstract": "This paper presents a systematic literature review on financial narratives and the methods used to model them. To support this review, we develop an algorithmic framework that improves the efficiency, reproducibility, and consistency of study selection. The framework uses Natural Language Processing (NLP) techniques, clustering algorithms, and interpretability tools to automate key steps of the screening and analysis process. We apply this approach to the study of financial narratives, a growing field in financial economics concerned with how structured interpretations of economic events shape market behaviour and asset prices. Drawing from the Scopus} database of peer-reviewed literature, the review identifies research practices used to model financial narratives with a range of NLP methods. Results show that although technical progress has been significant, the conceptualization of financial narratives remains fragmented and is often simplified to sentiment-based measures. A large share of studies relies on media sources, which is understandable given their availability, but the short length of these texts introduces noise and reduces predictive reliability. Using longer and more diverse textual materials would help to address this limitation and provide a broader view of narratives circulating among economic agents. The findings also highlight the importance of more comprehensive forms of narrative modeling that go beyond sentiment alone, and they illustrate the practical usefulness of the proposed algorithmic SLR methodology.",
+      "abstract_short": "This paper presents a systematic literature review on financial narratives and the methods used to model them. To support this review, we develop an algorithmic framework that improves the efficiency,...",
+      "keywords": [
+        "Systematic Literature Review",
+        "Text Processing",
+        "NLP",
+        "Financial Narrative",
+        "Financial Market Dynamics"
+      ],
+      "sections": [
+        {
+          "level": 1,
+          "title": "Introduction"
+        },
+        {
+          "level": 1,
+          "title": "Methodology"
+        },
+        {
+          "level": 2,
+          "title": "Initial Research Sourcing"
+        },
+        {
+          "level": 2,
+          "title": "Algorithmic Selection Framework"
+        },
+        {
+          "level": 2,
+          "title": "Final Validation and Data Extraction"
+        },
+        {
+          "level": 1,
+          "title": "Results"
+        },
+        {
+          "level": 2,
+          "title": "Selection Phase Results"
+        },
+        {
+          "level": 2,
+          "title": "Narrative Understanding Papers"
+        },
+        {
+          "level": 2,
+          "title": "Narrative Modeling Papers"
+        },
+        {
+          "level": 2,
+          "title": "Stability Checks"
+        },
+        {
+          "level": 1,
+          "title": "Discussion"
+        },
+        {
+          "level": 2,
+          "title": "Adressing Research Questions"
+        },
+        {
+          "level": 2,
+          "title": "Methodological Contribution"
+        },
+        {
+          "level": 2,
+          "title": "Limitations"
+        },
+        {
+          "level": 2,
+          "title": "Implications and Future Research Directions"
+        },
+        {
+          "level": 1,
+          "title": "Conclusion"
+        },
+        {
+          "level": 1,
+          "title": "List of Abbreviations"
+        },
+        {
+          "level": 1,
+          "title": "Appendix"
+        }
+      ],
+      "figures": [
+        "images/paper_temporal_quantile_distribution.png"
+      ],
+      "has_bibliography": true,
+      "document_class": "article",
+      "status": "UNDER_REVIEW",
+      "status_label": "Under Review",
+      "venue": "Financial Innovation",
+      "work_package": "WP1",
+      "stream": "slr",
+      "year": 2025,
+      "ssrn_url": "",
+      "arxiv_url": "",
+      "doi": ""
+    },
+    {
+      "id": "main",
+      "filename": "main.tex",
+      "filepath": "SNF_Narrative_Research\\Systematic Literature review\\main.tex",
+      "title": "An Algorithmic Framework for Systematic Literature Reviews: A Case Study for Financial Narratives",
+      "authors": [
+        {
+          "name": "Gabin Taibi",
+          "affiliations": [],
+          "email": null
+        },
+        {
+          "name": "Joerg Osterrieder",
+          "affiliations": [],
+          "email": null
+        }
+      ],
+      "authors_string": "Gabin Taibi and Joerg Osterrieder",
+      "abstract": "In recent years, narratives have emerged as a critical factor shaping financial markets, influencing investor behavior, market dynamics, and ultimately asset price movements. In social science, narratives refer to structured accounts or interpretations of events, ideas, or phenomena that emerge from individuals, groups, or institutions. More specifically, financial narratives are emergent and structured set of expectations about financial markets, assets, or economic events that form through the convergence of individual narratives created by market participants. They are sense-making stories that shape perceptions and influence decision, based on available information, market conditions, personal experiences, and social interactions. Advancements in data processing methods, particularly in Natural Language Processing (NLP), have enhanced the modeling and analysis of textual data on a large scale, opening new directions for a deeper and more advanced understanding of narratives. This systematic literature review explores the intersection of narratives and financial markets, focusing on the development and application of computational techniques for text mining, textual analysis, and financial narrative modeling. Additionally, this study will not only provide an overview of existing research but also proposes and implements an algorithmic framework for systematic literature reviews, enhancing efficiency, reproducibility, and selection quality assessments. Drawing from the Scopus } abstract and citation database of peer-reviewed literature, we highlight that research approaches focus on understanding and modeling narratives to assess their influence on financial markets or forecast market dynamics. The review identifies two main narrative approach and various methodologies to uncover them, ranging from simple statistical to most advanced NLP and machine learning techniques. Our findings suggest that the concept of narratives in finance lacks a unified and comprehensive definition, and is often being either oversimplified to sentiment analysis (the measurement of emotional tone in text) and topic modeling (which identifies latent themes within large corpora), or a combination of both.",
+      "abstract_short": "In recent years, narratives have emerged as a critical factor shaping financial markets, influencing investor behavior, market dynamics, and ultimately asset price movements. In social science, narrat...",
+      "keywords": [
+        "Algorithmic Literature Review",
+        "Textual Analysis",
+        "Natural Language Processing",
+        "Financial Narrative Modeling",
+        "Financial Market Dynamics"
+      ],
+      "sections": [
+        {
+          "level": 1,
+          "title": "Introduction"
+        },
+        {
+          "level": 1,
+          "title": "Methodology"
+        },
+        {
+          "level": 2,
+          "title": "Initial research sourcing"
+        },
+        {
+          "level": 2,
+          "title": "Algorithmic selection framework"
+        },
+        {
+          "level": 2,
+          "title": "Data cleaning and extraction"
+        },
+        {
+          "level": 1,
+          "title": "Results"
+        },
+        {
+          "level": 2,
+          "title": "Narrative Understanding Papers"
+        },
+        {
+          "level": 2,
+          "title": "Narrative Modeling Papers"
+        },
+        {
+          "level": 1,
+          "title": "Discussion"
+        },
+        {
+          "level": 2,
+          "title": "Toward a Shared Understanding of Financial Narratives"
+        },
+        {
+          "level": 2,
+          "title": "Methodological Advances in Narrative Quantification"
+        },
+        {
+          "level": 2,
+          "title": "Narrative Analysis, Behavioral Signals and Market Applications"
+        },
+        {
+          "level": 1,
+          "title": "Conclusion"
+        },
+        {
+          "level": 1,
+          "title": "Acknowledgements"
+        },
+        {
+          "level": 1,
+          "title": "Appendix"
+        }
+      ],
+      "figures": [
+        "images/paper_temporal_quantile_distribution.png",
+        "images/filter_paper_diagram.png"
+      ],
+      "has_bibliography": true,
+      "document_class": "article",
+      "status": "IN_PROGRESS",
+      "status_label": "In Progress",
+      "venue": "Working Paper",
+      "work_package": "WP1",
+      "stream": "slr",
+      "year": 2025,
+      "ssrn_url": "",
+      "arxiv_url": "",
+      "doi": ""
+    },
+    {
+      "id": "Market_Participants_Classification",
+      "filename": "Market_Participants_Classification.tex",
+      "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 1 (SSRN)\\Market_Participants_Classification.tex",
+      "title": "Decoding the Flash: A Data-Driven Approach to Measuring Ultra-Fast and High-Frequency Traders Activity",
+      "authors": [
+        {
+          "name": "Gabin Taibi",
+          "affiliations": [
+            "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+            "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+            "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+          ],
+          "email": "gabin.taibi@bfh.ch"
+        },
+        {
+          "name": "Stefan Schlamp",
+          "affiliations": [
+            "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+          ],
+          "email": "stefan.schlamp@deutsche-boerse.com"
+        },
+        {
+          "name": "Joerg Osterrieder",
+          "affiliations": [
+            "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+            "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+          ],
+          "email": "joerg.osterrieder@bfh.ch"
+        }
+      ],
+      "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+      "abstract": "This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As technological advancements continue to reshape trading landscapes, accurately identifying and categorizing traders becomes crucial for understanding market dynamics and informing regulatory decisions. We analyze high-precision data from Deutsche Börse, focusing on post-trade event latencies to distinguish between ultra-fast traders (UFTs) using field-programmable gate arrays (FPGAs), high-frequency traders (HFTs), and other conventional participants. Our classification approach utilizes nanosecond-level latency thresholds and examines various metrics including total participation, aggressive and passive participation, cancellation rate, deep orderbook participation, liquidity adding and removing participation, and signal and noise value. We apply this methodology to a comprehensive dataset encompassing multiple markets and instruments, on a period spanning from January 2021 to January 2024. We conclude by discussing the limitations of our approach, including potential misclassification issues, and outlining future research directions aimed at refining classification accuracy and further exploring the impact of different trader categories on price formation and liquidity provision.",
+      "abstract_short": "This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As t...",
+      "keywords": [
+        "Financial Markets",
+        "Ultra-Fast Trading",
+        "High-Frequency Trading",
+        "Price Formation",
+        "Information Share",
+        "Market Efficiency",
+        "Orderbook Liquidity",
+        "Market Micro structures"
+      ],
+      "sections": [
+        {
+          "level": 1,
+          "title": "Introduction"
+        },
+        {
+          "level": 2,
+          "title": "Context of the study"
+        },
+        {
+          "level": 2,
+          "title": "Research Purposes"
+        },
+        {
+          "level": 1,
+          "title": "Literature Review"
+        },
+        {
+          "level": 2,
+          "title": "Limit Orderbooks and Market Microstructures"
+        },
+        {
+          "level": 2,
+          "title": "UFTs, HFTs and their Strategies"
+        },
+        {
+          "level": 2,
+          "title": "The Nanoseconds Races"
+        },
+        {
+          "level": 1,
+          "title": "Technological Infrastructure and Market Participants"
+        },
+        {
+          "level": 2,
+          "title": "Technological Improvements in Financial Markets"
+        },
+        {
+          "level": 2,
+          "title": "The T7 Infrastructure"
+        },
+        {
+          "level": 2,
+          "title": "Roles of Market Participants"
+        },
+        {
+          "level": 2,
+          "title": "Market Participants Objectives"
+        },
+        {
+          "level": 2,
+          "title": "Information Asymetry in low-latency trading"
+        },
+        {
+          "level": 1,
+          "title": "Classification Methodology"
+        },
+        {
+          "level": 2,
+          "title": "Data Description"
+        },
+        {
+          "level": 2,
+          "title": "Post-Trade Events Reaction Time Calculation"
+        },
+        {
+          "level": 2,
+          "title": "Reaction Latencies and Classification Criteria"
+        },
+        {
+          "level": 2,
+          "title": "Participation Metrics"
+        },
+        {
+          "level": 1,
+          "title": "Empirical Results"
+        },
+        {
+          "level": 2,
+          "title": "Total participation and Average Latency"
+        },
+        {
+          "level": 2,
+          "title": "Aggressive and Passive Participation"
+        },
+        {
+          "level": 2,
+          "title": "Liquidity Adding and Removing Participation"
+        },
+        {
+          "level": 2,
+          "title": "Cancellation Rate and Deep Orderbook Participation"
+        },
+        {
+          "level": 1,
+          "title": "Conclusion"
+        },
+        {
+          "level": 1,
+          "title": "Acknowledgements"
+        },
+        {
+          "level": 1,
+          "title": "References"
+        }
+      ],
+      "figures": [
+        "Paper 1 (SSRN)/images/DBAG_matching_engine.png"
+      ],
+      "has_bibliography": true,
+      "document_class": "elsarticle",
+      "status": "SUBMITTED",
+      "status_label": "Submitted",
+      "venue": "SSRN",
+      "work_package": "WP4",
+      "stream": "hft",
+      "year": 2024,
+      "ssrn_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153",
+      "arxiv_url": "",
+      "doi": "10.2139/ssrn.4698153"
+    },
+    {
+      "id": "UFT-HFT_Market_Impact",
+      "filename": "UFT-HFT_Market_Impact.tex",
+      "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 2 (Physica A)\\UFT-HFT_Market_Impact.tex",
+      "title": "Nanoseconds traders: How Ultra-Fast and High-Frequency Traders Reshape Market Microstructure",
+      "authors": [
+        {
+          "name": "Gabin Taibi",
+          "affiliations": [
+            "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+            "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+            "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+          ],
+          "email": "gabin.taibi@bfh.ch"
+        },
+        {
+          "name": "Stefan Schlamp",
+          "affiliations": [
+            "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+          ],
+          "email": "stefan.schlamp@deutsche-boerse.com"
+        },
+        {
+          "name": "Joerg Osterrieder",
+          "affiliations": [
+            "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+            "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+          ],
+          "email": "joerg.osterrieder@bfh.ch"
+        }
+      ],
+      "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+      "abstract": "The advent of ultra-fast (UFT) and high-frequency trading (HFT) has fundamentally transformed financial markets, sparking intense debate about their impact on market quality and stability. This study provides a comprehensive empirical analysis of UFT and HFT effects on market microstructure, addressing critical questions about efficiency, liquidity, and volatility in modern electronic markets. Utilizing high-precision timestamp data from Deutsche Börse's Eurex and Xetra platforms, we employ a novel classification methodology to categorize market participants based on their reaction latencies, distinguishing between FPGA-enabled ultra-fast traders, high-frequency traders, and conventional participants. Our analysis encompasses a diverse range of instruments, including futures, equities, and ETFs, focusing on the most liquid assets to capture the full spectrum of trading behavior. We introduce a combination of eight metrics to quantify market quality, including effective spread, mid price, micro price, and trade price realized kernels for volatility estimation, alongside traditional measures such as volume, spread, depth and order imbalance ratio. A key contribution is our methodology for classifying trading activities as either \"noise\" or \"signal,\" allowing for a nuanced examination of different trader categories' market impact. This research contributes to the ongoing debate on market efficiency in the age of algorithmic trading, providing empirical evidence that both supports and refutes common criticisms of ultra-fast trading. Our findings have significant implications for market regulation, suggesting the need for more granular and adaptive oversight mechanisms to address the evolving landscape of electronic trading.",
+      "abstract_short": "The advent of ultra-fast (UFT) and high-frequency trading (HFT) has fundamentally transformed financial markets, sparking intense debate about their impact on market quality and stability. This study ...",
+      "keywords": [
+        "Financial Markets",
+        "Ultra-Fast Trading",
+        "High-Frequency Trading",
+        "Price Information",
+        "Information Share",
+        "Market Efficiency",
+        "Orderbook Liquidity",
+        "Market Micro structures",
+        "[specific models or methodologies]"
+      ],
+      "sections": [
+        {
+          "level": 1,
+          "title": "Introduction"
+        },
+        {
+          "level": 1,
+          "title": "Theoretical Background"
+        },
+        {
+          "level": 1,
+          "title": "Literature Review"
+        },
+        {
+          "level": 1,
+          "title": "Data and Methodology"
+        },
+        {
+          "level": 1,
+          "title": "Empirical Results"
+        },
+        {
+          "level": 1,
+          "title": "Discussion"
+        },
+        {
+          "level": 1,
+          "title": "Conclusion"
+        },
+        {
+          "level": 1,
+          "title": "Acknowledgements"
+        },
+        {
+          "level": 1,
+          "title": "References"
+        }
+      ],
+      "figures": [],
+      "has_bibliography": true,
+      "document_class": "elsarticle",
+      "status": "IN_PROGRESS",
+      "status_label": "In Progress",
+      "venue": "Physica A",
+      "work_package": "WP4",
+      "stream": "hft",
+      "year": 2025,
+      "ssrn_url": "",
+      "arxiv_url": "",
+      "doi": ""
+    },
+    {
+      "id": "TBD",
+      "filename": "TBD.tex",
+      "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 3 (top journal)\\TBD.tex",
+      "title": "Identifying Market Signals: A Statistical/Machine Learning Approach",
+      "authors": [
+        {
+          "name": "Gabin Taibi",
+          "affiliations": [
+            "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+            "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+            "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+          ],
+          "email": "gabin.taibi@bfh.ch"
+        },
+        {
+          "name": "Stefan Schlamp",
+          "affiliations": [
+            "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+          ],
+          "email": "stefan.schlamp@deutsche-boerse.com"
+        },
+        {
+          "name": "Joerg Osterrieder",
+          "affiliations": [
+            "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+            "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+          ],
+          "email": "joerg.osterrieder@bfh.ch"
+        }
+      ],
+      "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+      "abstract": "",
+      "abstract_short": "",
+      "keywords": [
+        "Financial Markets",
+        "Ultra-Fast Trading",
+        "High-Frequency Trading",
+        "Price Information",
+        "Information Share",
+        "Market Efficiency",
+        "Orderbook Liquidity",
+        "Market Micro structures",
+        "[specific models or methodologies]"
+      ],
+      "sections": [
+        {
+          "level": 1,
+          "title": "Introduction"
+        },
+        {
+          "level": 1,
+          "title": "Theoretical Framework"
+        },
+        {
+          "level": 1,
+          "title": "Literature Review"
+        },
+        {
+          "level": 1,
+          "title": "Data and Methodology"
+        },
+        {
+          "level": 1,
+          "title": "Empirical Results"
+        },
+        {
+          "level": 1,
+          "title": "Robustness Checks"
+        },
+        {
+          "level": 2,
+          "title": "Discussions"
+        },
+        {
+          "level": 1,
+          "title": "Conclusion"
+        },
+        {
+          "level": 2,
+          "title": "Summary of Key Findings"
+        },
+        {
+          "level": 2,
+          "title": "Future Possible Research"
+        },
+        {
+          "level": 1,
+          "title": "Acknowledgements"
+        },
+        {
+          "level": 1,
+          "title": "References"
+        }
+      ],
+      "figures": [],
+      "has_bibliography": true,
+      "document_class": "elsarticle",
+      "status": "PLANNING",
+      "status_label": "Planning",
+      "venue": "Top Journal TBD",
+      "work_package": "WP4",
+      "stream": "hft",
+      "year": 2026,
+      "ssrn_url": "",
+      "arxiv_url": "",
+      "doi": ""
+    },
+    {
+      "id": "main",
+      "filename": "main.tex",
+      "filepath": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\main.tex",
+      "title": "Strategic Narratives during Economic Turning Points: An AI Framework for Monitoring U.S. Central Bank Communications",
+      "authors": [
+        {
+          "name": "Gabin Taibi",
+          "affiliations": [],
+          "email": null
+        },
+        {
+          "name": "Lucia Gomez Teijeiro",
+          "affiliations": [],
+          "email": null
+        }
+      ],
+      "authors_string": "Gabin Taibi and Lucia Gomez Teijeiro",
+      "abstract": "Central bank communication plays a critical role in shaping expectations during macroeconomic transitions, yet empirical understanding of how narrative strategies evolve around economic turning points remains limited. This study leverages large language models to analyze U.S. Federal Reserve public speeches made from 1996 to 2025, focusing on those occurring during economic turning points. By combining macroeconomic indicators and communication materials, we here identify key strategic communication patterns systematically preceding these economic inflection points and announcing transitions. Our findings demonstrate that macroeconomic regimes and associated policy narratives strategies can be identified and predicted in an unsupervised manner, with statistical evidences of topic and tone shifts aligned with macroeconomic transitions. This work extends emerging research unveiling central bank transparency, and the proposed framework bridges macroeconomic signal detection with large-scale textual analysis and offers a practical tool for policy monitoring and narrative tracking. Future efforts aim at generalize the framework to emerging breakpoints, expand model explainability, and exploring causal links to market reactions.",
+      "abstract_short": "Central bank communication plays a critical role in shaping expectations during macroeconomic transitions, yet empirical understanding of how narrative strategies evolve around economic turning points...",
+      "keywords": [
+        "Macroeconomy",
+        "Central Bank Speeches",
+        "Dimensionality Reduction",
+        "Natural Language Processing",
+        "Topic Modeling"
+      ],
+      "sections": [
+        {
+          "level": 1,
+          "title": "Introduction"
+        },
+        {
+          "level": 1,
+          "title": "Related Work"
+        },
+        {
+          "level": 1,
+          "title": "Methodology"
+        },
+        {
+          "level": 2,
+          "title": "Macro Strength Index"
+        },
+        {
+          "level": 2,
+          "title": "Narrative Shift Detection"
+        },
+        {
+          "level": 2,
+          "title": "Null Hypothesis testing"
+        },
+        {
+          "level": 1,
+          "title": "Case Study: The 2008 Financial Crisis"
+        },
+        {
+          "level": 1,
+          "title": "Discussion and Future Work"
+        },
+        {
+          "level": 1,
+          "title": "Conclusion"
+        }
+      ],
+      "figures": [],
+      "has_bibliography": true,
+      "document_class": "article",
+      "status": "IN_PROGRESS",
+      "status_label": "In Progress",
+      "venue": "Working Paper",
+      "work_package": "WP1",
+      "stream": "slr",
+      "year": 2025,
+      "ssrn_url": "",
+      "arxiv_url": "",
+      "doi": ""
+    },
+    {
+      "id": "manuscript-EPIA2025",
+      "filename": "manuscript-EPIA2025.tex",
+      "filepath": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\manuscript-EPIA2025.tex",
+      "title": "Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPol",
+      "authors": [
+        {
+          "name": "Gabin Taibi",
+          "affiliations": [],
+          "email": null
+        },
+        {
+          "name": "Lucia Gomez Teijeiro",
+          "affiliations": [],
+          "email": null
+        }
+      ],
+      "authors_string": "Gabin Taibi and Lucia Gomez Teijeiro",
+      "abstract": "In computational linguistics, semantic polarity has traditionally been conceptualized as sentiment and measured along a unidimensional scalar continuum from negative to positive. However, this sentiment-centric framing oversimplifies language complexity, as semantic polarity is inherently multidimensional - reflecting the diversity of perspectives and directional shifts embedded in discourse. We introduce an unsupervised computational framework to identify, reconstruct, and explain multidimensional narrative polarity fields. Discourse polarity change is modeled as vector displacements between topical centroids of semantic transformer embedding network spaces. Narrative polarity is defined as vectorial representation of semantic change across a contextual boundary, which may-but need not- align with affective sentiment. These vectors capture both direction and magnitude of semantic shifts, enabling a geometrically grounded reconstruction of polarity-relevant transformations in discourse. For interpretability, we provide an explainability mechanism based on differential vocabulary analysis. For each polarity vector, we compute contrastive lexical distributions at its opposing extremities, revealing the principal linguistic dimension and features driving semantic change. We demonstrate the utility of this framework in two domains. First, we apply it to a corpus of central bank speeches, using macroeconomic regime changes as contextual boundaries. This non sentiment-driven domain highlights the framework's ability to detect non-affective semantic transitions. Second, we analyze Amazon product reviews, where polarity is intrinsically sentiment-led, and we use low-versus-high-rated reviews as contextual boundary. This dual application shows the robustness and generalizability of TOPol (topic-orientation polarity), across narrative contexts, identifying key sources of textual variability and their polarity fields. TOPol constitutes the first computational formulation of narrative polarity vector fields and offers a open-source framework for modeling and interpreting semantics multidimensionally. It provides both theoretical and methodological foundations for analyzing narrative dynamics, thematic shifts, or communicative strategies within and across linguistic contexts.",
+      "abstract_short": "In computational linguistics, semantic polarity has traditionally been conceptualized as sentiment and measured along a unidimensional scalar continuum from negative to positive. However, this sentime...",
+      "keywords": [
+        "Polarity Fields",
+        "Transformers",
+        "Unsupervised",
+        "Manifold",
+        "Natural Language Processing"
+      ],
+      "sections": [],
+      "figures": [],
+      "has_bibliography": true,
+      "document_class": "article",
+      "status": "SUBMITTED",
+      "status_label": "Submitted",
+      "venue": "EPIA 2025",
+      "work_package": "WP3",
+      "stream": "topol",
+      "year": 2025,
+      "ssrn_url": "",
+      "arxiv_url": "https://arxiv.org/abs/2510.25069",
+      "doi": "10.48550/arXiv.2510.25069"
+    }
+  ],
+  "by_stream": {
+    "quoniam": [
+      {
+        "id": "manuscript",
+        "filename": "manuscript.tex",
+        "filepath": "Quoniam_Narratives\\manuscript.tex",
+        "title": "Quantifying Industry-Relevant Narratives from Headlines: A Comparative Framework for Narrative Modeling",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [],
+            "email": null
+          }
+        ],
+        "authors_string": "Gabin Taibi",
+        "abstract": "This paper introduces a framework for identifying and quantifying financial narratives from short-text data, focusing exclusively on news headlines rather than full-length articles. We propose three approaches: two supervised tagging methods (one based on semantic similarity and another using large language model (LLM) outputs) and one unsupervised method (relying on graph-based topic modeling). The research focuses on \"evergreen\" and emerging narratives spanning 2004–2025, generating daily narrative intensity scores for overall, positive, and negative sentiment. We link these intensities to excess returns of the twelve Fama–French industries through rolling regressions and assess the relevance of narratives-enhanced industry portfolio with top/bottom-10 portfolio analyses. Our findings show consistent relationships between cyclical and defensive industries and specific macroeconomic narratives, even under short-text constraints. This work bridges narrative economics, NLP, and quantitative finance by providing robust methods for extracting market-relevant signals from limited textual data.",
+        "abstract_short": "This paper introduces a framework for identifying and quantifying financial narratives from short-text data, focusing exclusively on news headlines rather than full-length articles. We propose three a...",
+        "keywords": [
+          "Narratives Modeling",
+          "Sentiment Analysis",
+          "Semantic Similarity",
+          "Large Language Models",
+          "News Headlines",
+          "Financial Markets"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Research Motivation"
+          },
+          {
+            "level": 2,
+            "title": "Narratives quantifying"
+          },
+          {
+            "level": 2,
+            "title": "Short-Text Challenge"
+          },
+          {
+            "level": 2,
+            "title": "Rationale"
+          },
+          {
+            "level": 1,
+            "title": "Data"
+          },
+          {
+            "level": 2,
+            "title": "News Headlines"
+          },
+          {
+            "level": 2,
+            "title": "Market and Factor Data"
+          },
+          {
+            "level": 2,
+            "title": "Sample Splits"
+          },
+          {
+            "level": 1,
+            "title": "Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Label Space"
+          },
+          {
+            "level": 2,
+            "title": "Supervised Tagger A: Embedding Similarity"
+          },
+          {
+            "level": 2,
+            "title": "Supervised Tagger B: LLM Tool-Call"
+          },
+          {
+            "level": 2,
+            "title": "Unsupervised Tagger: UMAP–Leiden Topics"
+          },
+          {
+            "level": 2,
+            "title": "Sentiment Labeling"
+          },
+          {
+            "level": 2,
+            "title": "Daily Narrative Intensities"
+          },
+          {
+            "level": 2,
+            "title": "Econometric Design"
+          },
+          {
+            "level": 1,
+            "title": "Results"
+          },
+          {
+            "level": 2,
+            "title": "Tagger Calibration"
+          },
+          {
+            "level": 2,
+            "title": "Narrative–Industry Links"
+          },
+          {
+            "level": 2,
+            "title": "Out-of-Sample Stability"
+          },
+          {
+            "level": 2,
+            "title": "Top/Bottom-10 Strategy Sketch"
+          },
+          {
+            "level": 1,
+            "title": "Robustness Checks"
+          },
+          {
+            "level": 1,
+            "title": "Discussion"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          }
+        ],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "IN_PROGRESS",
+        "status_label": "In Progress",
+        "venue": "Quoniam Collaboration",
+        "work_package": "WP3",
+        "stream": "quoniam",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      }
+    ],
+    "slr": [
+      {
+        "id": "FIN-manuscript",
+        "filename": "FIN-manuscript.tex",
+        "filepath": "SNF_Narrative_Research\\Systematic Literature review\\FIN-manuscript.tex",
+        "title": "An Algorithmic Framework for Systematic Literature Reviews with Application to Financial Narratives",
+        "authors": [],
+        "authors_string": "",
+        "abstract": "This paper presents a systematic literature review on financial narratives and the methods used to model them. To support this review, we develop an algorithmic framework that improves the efficiency, reproducibility, and consistency of study selection. The framework uses Natural Language Processing (NLP) techniques, clustering algorithms, and interpretability tools to automate key steps of the screening and analysis process. We apply this approach to the study of financial narratives, a growing field in financial economics concerned with how structured interpretations of economic events shape market behaviour and asset prices. Drawing from the Scopus} database of peer-reviewed literature, the review identifies research practices used to model financial narratives with a range of NLP methods. Results show that although technical progress has been significant, the conceptualization of financial narratives remains fragmented and is often simplified to sentiment-based measures. A large share of studies relies on media sources, which is understandable given their availability, but the short length of these texts introduces noise and reduces predictive reliability. Using longer and more diverse textual materials would help to address this limitation and provide a broader view of narratives circulating among economic agents. The findings also highlight the importance of more comprehensive forms of narrative modeling that go beyond sentiment alone, and they illustrate the practical usefulness of the proposed algorithmic SLR methodology.",
+        "abstract_short": "This paper presents a systematic literature review on financial narratives and the methods used to model them. To support this review, we develop an algorithmic framework that improves the efficiency,...",
+        "keywords": [
+          "Systematic Literature Review",
+          "Text Processing",
+          "NLP",
+          "Financial Narrative",
+          "Financial Market Dynamics"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Initial Research Sourcing"
+          },
+          {
+            "level": 2,
+            "title": "Algorithmic Selection Framework"
+          },
+          {
+            "level": 2,
+            "title": "Final Validation and Data Extraction"
+          },
+          {
+            "level": 1,
+            "title": "Results"
+          },
+          {
+            "level": 2,
+            "title": "Selection Phase Results"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Understanding Papers"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Modeling Papers"
+          },
+          {
+            "level": 2,
+            "title": "Stability Checks"
+          },
+          {
+            "level": 1,
+            "title": "Discussion"
+          },
+          {
+            "level": 2,
+            "title": "Adressing Research Questions"
+          },
+          {
+            "level": 2,
+            "title": "Methodological Contribution"
+          },
+          {
+            "level": 2,
+            "title": "Limitations"
+          },
+          {
+            "level": 2,
+            "title": "Implications and Future Research Directions"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 1,
+            "title": "List of Abbreviations"
+          },
+          {
+            "level": 1,
+            "title": "Appendix"
+          }
+        ],
+        "figures": [
+          "images/paper_temporal_quantile_distribution.png"
+        ],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "UNDER_REVIEW",
+        "status_label": "Under Review",
+        "venue": "Financial Innovation",
+        "work_package": "WP1",
+        "stream": "slr",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      },
+      {
+        "id": "main",
+        "filename": "main.tex",
+        "filepath": "SNF_Narrative_Research\\Systematic Literature review\\main.tex",
+        "title": "An Algorithmic Framework for Systematic Literature Reviews: A Case Study for Financial Narratives",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [],
+            "email": null
+          },
+          {
+            "name": "Joerg Osterrieder",
+            "affiliations": [],
+            "email": null
+          }
+        ],
+        "authors_string": "Gabin Taibi and Joerg Osterrieder",
+        "abstract": "In recent years, narratives have emerged as a critical factor shaping financial markets, influencing investor behavior, market dynamics, and ultimately asset price movements. In social science, narratives refer to structured accounts or interpretations of events, ideas, or phenomena that emerge from individuals, groups, or institutions. More specifically, financial narratives are emergent and structured set of expectations about financial markets, assets, or economic events that form through the convergence of individual narratives created by market participants. They are sense-making stories that shape perceptions and influence decision, based on available information, market conditions, personal experiences, and social interactions. Advancements in data processing methods, particularly in Natural Language Processing (NLP), have enhanced the modeling and analysis of textual data on a large scale, opening new directions for a deeper and more advanced understanding of narratives. This systematic literature review explores the intersection of narratives and financial markets, focusing on the development and application of computational techniques for text mining, textual analysis, and financial narrative modeling. Additionally, this study will not only provide an overview of existing research but also proposes and implements an algorithmic framework for systematic literature reviews, enhancing efficiency, reproducibility, and selection quality assessments. Drawing from the Scopus } abstract and citation database of peer-reviewed literature, we highlight that research approaches focus on understanding and modeling narratives to assess their influence on financial markets or forecast market dynamics. The review identifies two main narrative approach and various methodologies to uncover them, ranging from simple statistical to most advanced NLP and machine learning techniques. Our findings suggest that the concept of narratives in finance lacks a unified and comprehensive definition, and is often being either oversimplified to sentiment analysis (the measurement of emotional tone in text) and topic modeling (which identifies latent themes within large corpora), or a combination of both.",
+        "abstract_short": "In recent years, narratives have emerged as a critical factor shaping financial markets, influencing investor behavior, market dynamics, and ultimately asset price movements. In social science, narrat...",
+        "keywords": [
+          "Algorithmic Literature Review",
+          "Textual Analysis",
+          "Natural Language Processing",
+          "Financial Narrative Modeling",
+          "Financial Market Dynamics"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Initial research sourcing"
+          },
+          {
+            "level": 2,
+            "title": "Algorithmic selection framework"
+          },
+          {
+            "level": 2,
+            "title": "Data cleaning and extraction"
+          },
+          {
+            "level": 1,
+            "title": "Results"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Understanding Papers"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Modeling Papers"
+          },
+          {
+            "level": 1,
+            "title": "Discussion"
+          },
+          {
+            "level": 2,
+            "title": "Toward a Shared Understanding of Financial Narratives"
+          },
+          {
+            "level": 2,
+            "title": "Methodological Advances in Narrative Quantification"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Analysis, Behavioral Signals and Market Applications"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 1,
+            "title": "Acknowledgements"
+          },
+          {
+            "level": 1,
+            "title": "Appendix"
+          }
+        ],
+        "figures": [
+          "images/paper_temporal_quantile_distribution.png",
+          "images/filter_paper_diagram.png"
+        ],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "IN_PROGRESS",
+        "status_label": "In Progress",
+        "venue": "Working Paper",
+        "work_package": "WP1",
+        "stream": "slr",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      },
+      {
+        "id": "main",
+        "filename": "main.tex",
+        "filepath": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\main.tex",
+        "title": "Strategic Narratives during Economic Turning Points: An AI Framework for Monitoring U.S. Central Bank Communications",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [],
+            "email": null
+          },
+          {
+            "name": "Lucia Gomez Teijeiro",
+            "affiliations": [],
+            "email": null
+          }
+        ],
+        "authors_string": "Gabin Taibi and Lucia Gomez Teijeiro",
+        "abstract": "Central bank communication plays a critical role in shaping expectations during macroeconomic transitions, yet empirical understanding of how narrative strategies evolve around economic turning points remains limited. This study leverages large language models to analyze U.S. Federal Reserve public speeches made from 1996 to 2025, focusing on those occurring during economic turning points. By combining macroeconomic indicators and communication materials, we here identify key strategic communication patterns systematically preceding these economic inflection points and announcing transitions. Our findings demonstrate that macroeconomic regimes and associated policy narratives strategies can be identified and predicted in an unsupervised manner, with statistical evidences of topic and tone shifts aligned with macroeconomic transitions. This work extends emerging research unveiling central bank transparency, and the proposed framework bridges macroeconomic signal detection with large-scale textual analysis and offers a practical tool for policy monitoring and narrative tracking. Future efforts aim at generalize the framework to emerging breakpoints, expand model explainability, and exploring causal links to market reactions.",
+        "abstract_short": "Central bank communication plays a critical role in shaping expectations during macroeconomic transitions, yet empirical understanding of how narrative strategies evolve around economic turning points...",
+        "keywords": [
+          "Macroeconomy",
+          "Central Bank Speeches",
+          "Dimensionality Reduction",
+          "Natural Language Processing",
+          "Topic Modeling"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Related Work"
+          },
+          {
+            "level": 1,
+            "title": "Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Macro Strength Index"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Shift Detection"
+          },
+          {
+            "level": 2,
+            "title": "Null Hypothesis testing"
+          },
+          {
+            "level": 1,
+            "title": "Case Study: The 2008 Financial Crisis"
+          },
+          {
+            "level": 1,
+            "title": "Discussion and Future Work"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          }
+        ],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "IN_PROGRESS",
+        "status_label": "In Progress",
+        "venue": "Working Paper",
+        "work_package": "WP1",
+        "stream": "slr",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      }
+    ],
+    "hft": [
+      {
+        "id": "Market_Participants_Classification",
+        "filename": "Market_Participants_Classification.tex",
+        "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 1 (SSRN)\\Market_Participants_Classification.tex",
+        "title": "Decoding the Flash: A Data-Driven Approach to Measuring Ultra-Fast and High-Frequency Traders Activity",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "gabin.taibi@bfh.ch"
+          },
+          {
+            "name": "Stefan Schlamp",
+            "affiliations": [
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "stefan.schlamp@deutsche-boerse.com"
+          },
+          {
+            "name": "Joerg Osterrieder",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+            ],
+            "email": "joerg.osterrieder@bfh.ch"
+          }
+        ],
+        "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+        "abstract": "This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As technological advancements continue to reshape trading landscapes, accurately identifying and categorizing traders becomes crucial for understanding market dynamics and informing regulatory decisions. We analyze high-precision data from Deutsche Börse, focusing on post-trade event latencies to distinguish between ultra-fast traders (UFTs) using field-programmable gate arrays (FPGAs), high-frequency traders (HFTs), and other conventional participants. Our classification approach utilizes nanosecond-level latency thresholds and examines various metrics including total participation, aggressive and passive participation, cancellation rate, deep orderbook participation, liquidity adding and removing participation, and signal and noise value. We apply this methodology to a comprehensive dataset encompassing multiple markets and instruments, on a period spanning from January 2021 to January 2024. We conclude by discussing the limitations of our approach, including potential misclassification issues, and outlining future research directions aimed at refining classification accuracy and further exploring the impact of different trader categories on price formation and liquidity provision.",
+        "abstract_short": "This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As t...",
+        "keywords": [
+          "Financial Markets",
+          "Ultra-Fast Trading",
+          "High-Frequency Trading",
+          "Price Formation",
+          "Information Share",
+          "Market Efficiency",
+          "Orderbook Liquidity",
+          "Market Micro structures"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 2,
+            "title": "Context of the study"
+          },
+          {
+            "level": 2,
+            "title": "Research Purposes"
+          },
+          {
+            "level": 1,
+            "title": "Literature Review"
+          },
+          {
+            "level": 2,
+            "title": "Limit Orderbooks and Market Microstructures"
+          },
+          {
+            "level": 2,
+            "title": "UFTs, HFTs and their Strategies"
+          },
+          {
+            "level": 2,
+            "title": "The Nanoseconds Races"
+          },
+          {
+            "level": 1,
+            "title": "Technological Infrastructure and Market Participants"
+          },
+          {
+            "level": 2,
+            "title": "Technological Improvements in Financial Markets"
+          },
+          {
+            "level": 2,
+            "title": "The T7 Infrastructure"
+          },
+          {
+            "level": 2,
+            "title": "Roles of Market Participants"
+          },
+          {
+            "level": 2,
+            "title": "Market Participants Objectives"
+          },
+          {
+            "level": 2,
+            "title": "Information Asymetry in low-latency trading"
+          },
+          {
+            "level": 1,
+            "title": "Classification Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Data Description"
+          },
+          {
+            "level": 2,
+            "title": "Post-Trade Events Reaction Time Calculation"
+          },
+          {
+            "level": 2,
+            "title": "Reaction Latencies and Classification Criteria"
+          },
+          {
+            "level": 2,
+            "title": "Participation Metrics"
+          },
+          {
+            "level": 1,
+            "title": "Empirical Results"
+          },
+          {
+            "level": 2,
+            "title": "Total participation and Average Latency"
+          },
+          {
+            "level": 2,
+            "title": "Aggressive and Passive Participation"
+          },
+          {
+            "level": 2,
+            "title": "Liquidity Adding and Removing Participation"
+          },
+          {
+            "level": 2,
+            "title": "Cancellation Rate and Deep Orderbook Participation"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 1,
+            "title": "Acknowledgements"
+          },
+          {
+            "level": 1,
+            "title": "References"
+          }
+        ],
+        "figures": [
+          "Paper 1 (SSRN)/images/DBAG_matching_engine.png"
+        ],
+        "has_bibliography": true,
+        "document_class": "elsarticle",
+        "status": "SUBMITTED",
+        "status_label": "Submitted",
+        "venue": "SSRN",
+        "work_package": "WP4",
+        "stream": "hft",
+        "year": 2024,
+        "ssrn_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153",
+        "arxiv_url": "",
+        "doi": "10.2139/ssrn.4698153"
+      },
+      {
+        "id": "UFT-HFT_Market_Impact",
+        "filename": "UFT-HFT_Market_Impact.tex",
+        "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 2 (Physica A)\\UFT-HFT_Market_Impact.tex",
+        "title": "Nanoseconds traders: How Ultra-Fast and High-Frequency Traders Reshape Market Microstructure",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "gabin.taibi@bfh.ch"
+          },
+          {
+            "name": "Stefan Schlamp",
+            "affiliations": [
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "stefan.schlamp@deutsche-boerse.com"
+          },
+          {
+            "name": "Joerg Osterrieder",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+            ],
+            "email": "joerg.osterrieder@bfh.ch"
+          }
+        ],
+        "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+        "abstract": "The advent of ultra-fast (UFT) and high-frequency trading (HFT) has fundamentally transformed financial markets, sparking intense debate about their impact on market quality and stability. This study provides a comprehensive empirical analysis of UFT and HFT effects on market microstructure, addressing critical questions about efficiency, liquidity, and volatility in modern electronic markets. Utilizing high-precision timestamp data from Deutsche Börse's Eurex and Xetra platforms, we employ a novel classification methodology to categorize market participants based on their reaction latencies, distinguishing between FPGA-enabled ultra-fast traders, high-frequency traders, and conventional participants. Our analysis encompasses a diverse range of instruments, including futures, equities, and ETFs, focusing on the most liquid assets to capture the full spectrum of trading behavior. We introduce a combination of eight metrics to quantify market quality, including effective spread, mid price, micro price, and trade price realized kernels for volatility estimation, alongside traditional measures such as volume, spread, depth and order imbalance ratio. A key contribution is our methodology for classifying trading activities as either \"noise\" or \"signal,\" allowing for a nuanced examination of different trader categories' market impact. This research contributes to the ongoing debate on market efficiency in the age of algorithmic trading, providing empirical evidence that both supports and refutes common criticisms of ultra-fast trading. Our findings have significant implications for market regulation, suggesting the need for more granular and adaptive oversight mechanisms to address the evolving landscape of electronic trading.",
+        "abstract_short": "The advent of ultra-fast (UFT) and high-frequency trading (HFT) has fundamentally transformed financial markets, sparking intense debate about their impact on market quality and stability. This study ...",
+        "keywords": [
+          "Financial Markets",
+          "Ultra-Fast Trading",
+          "High-Frequency Trading",
+          "Price Information",
+          "Information Share",
+          "Market Efficiency",
+          "Orderbook Liquidity",
+          "Market Micro structures",
+          "[specific models or methodologies]"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Theoretical Background"
+          },
+          {
+            "level": 1,
+            "title": "Literature Review"
+          },
+          {
+            "level": 1,
+            "title": "Data and Methodology"
+          },
+          {
+            "level": 1,
+            "title": "Empirical Results"
+          },
+          {
+            "level": 1,
+            "title": "Discussion"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 1,
+            "title": "Acknowledgements"
+          },
+          {
+            "level": 1,
+            "title": "References"
+          }
+        ],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "elsarticle",
+        "status": "IN_PROGRESS",
+        "status_label": "In Progress",
+        "venue": "Physica A",
+        "work_package": "WP4",
+        "stream": "hft",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      },
+      {
+        "id": "TBD",
+        "filename": "TBD.tex",
+        "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 3 (top journal)\\TBD.tex",
+        "title": "Identifying Market Signals: A Statistical/Machine Learning Approach",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "gabin.taibi@bfh.ch"
+          },
+          {
+            "name": "Stefan Schlamp",
+            "affiliations": [
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "stefan.schlamp@deutsche-boerse.com"
+          },
+          {
+            "name": "Joerg Osterrieder",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+            ],
+            "email": "joerg.osterrieder@bfh.ch"
+          }
+        ],
+        "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+        "abstract": "",
+        "abstract_short": "",
+        "keywords": [
+          "Financial Markets",
+          "Ultra-Fast Trading",
+          "High-Frequency Trading",
+          "Price Information",
+          "Information Share",
+          "Market Efficiency",
+          "Orderbook Liquidity",
+          "Market Micro structures",
+          "[specific models or methodologies]"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Theoretical Framework"
+          },
+          {
+            "level": 1,
+            "title": "Literature Review"
+          },
+          {
+            "level": 1,
+            "title": "Data and Methodology"
+          },
+          {
+            "level": 1,
+            "title": "Empirical Results"
+          },
+          {
+            "level": 1,
+            "title": "Robustness Checks"
+          },
+          {
+            "level": 2,
+            "title": "Discussions"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 2,
+            "title": "Summary of Key Findings"
+          },
+          {
+            "level": 2,
+            "title": "Future Possible Research"
+          },
+          {
+            "level": 1,
+            "title": "Acknowledgements"
+          },
+          {
+            "level": 1,
+            "title": "References"
+          }
+        ],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "elsarticle",
+        "status": "PLANNING",
+        "status_label": "Planning",
+        "venue": "Top Journal TBD",
+        "work_package": "WP4",
+        "stream": "hft",
+        "year": 2026,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      }
+    ],
+    "topol": [
+      {
+        "id": "manuscript-EPIA2025",
+        "filename": "manuscript-EPIA2025.tex",
+        "filepath": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\manuscript-EPIA2025.tex",
+        "title": "Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPol",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [],
+            "email": null
+          },
+          {
+            "name": "Lucia Gomez Teijeiro",
+            "affiliations": [],
+            "email": null
+          }
+        ],
+        "authors_string": "Gabin Taibi and Lucia Gomez Teijeiro",
+        "abstract": "In computational linguistics, semantic polarity has traditionally been conceptualized as sentiment and measured along a unidimensional scalar continuum from negative to positive. However, this sentiment-centric framing oversimplifies language complexity, as semantic polarity is inherently multidimensional - reflecting the diversity of perspectives and directional shifts embedded in discourse. We introduce an unsupervised computational framework to identify, reconstruct, and explain multidimensional narrative polarity fields. Discourse polarity change is modeled as vector displacements between topical centroids of semantic transformer embedding network spaces. Narrative polarity is defined as vectorial representation of semantic change across a contextual boundary, which may-but need not- align with affective sentiment. These vectors capture both direction and magnitude of semantic shifts, enabling a geometrically grounded reconstruction of polarity-relevant transformations in discourse. For interpretability, we provide an explainability mechanism based on differential vocabulary analysis. For each polarity vector, we compute contrastive lexical distributions at its opposing extremities, revealing the principal linguistic dimension and features driving semantic change. We demonstrate the utility of this framework in two domains. First, we apply it to a corpus of central bank speeches, using macroeconomic regime changes as contextual boundaries. This non sentiment-driven domain highlights the framework's ability to detect non-affective semantic transitions. Second, we analyze Amazon product reviews, where polarity is intrinsically sentiment-led, and we use low-versus-high-rated reviews as contextual boundary. This dual application shows the robustness and generalizability of TOPol (topic-orientation polarity), across narrative contexts, identifying key sources of textual variability and their polarity fields. TOPol constitutes the first computational formulation of narrative polarity vector fields and offers a open-source framework for modeling and interpreting semantics multidimensionally. It provides both theoretical and methodological foundations for analyzing narrative dynamics, thematic shifts, or communicative strategies within and across linguistic contexts.",
+        "abstract_short": "In computational linguistics, semantic polarity has traditionally been conceptualized as sentiment and measured along a unidimensional scalar continuum from negative to positive. However, this sentime...",
+        "keywords": [
+          "Polarity Fields",
+          "Transformers",
+          "Unsupervised",
+          "Manifold",
+          "Natural Language Processing"
+        ],
+        "sections": [],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "SUBMITTED",
+        "status_label": "Submitted",
+        "venue": "EPIA 2025",
+        "work_package": "WP3",
+        "stream": "topol",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "https://arxiv.org/abs/2510.25069",
+        "doi": "10.48550/arXiv.2510.25069"
+      }
+    ]
+  },
+  "by_status": {
+    "IN_PROGRESS": [
+      {
+        "id": "manuscript",
+        "filename": "manuscript.tex",
+        "filepath": "Quoniam_Narratives\\manuscript.tex",
+        "title": "Quantifying Industry-Relevant Narratives from Headlines: A Comparative Framework for Narrative Modeling",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [],
+            "email": null
+          }
+        ],
+        "authors_string": "Gabin Taibi",
+        "abstract": "This paper introduces a framework for identifying and quantifying financial narratives from short-text data, focusing exclusively on news headlines rather than full-length articles. We propose three approaches: two supervised tagging methods (one based on semantic similarity and another using large language model (LLM) outputs) and one unsupervised method (relying on graph-based topic modeling). The research focuses on \"evergreen\" and emerging narratives spanning 2004–2025, generating daily narrative intensity scores for overall, positive, and negative sentiment. We link these intensities to excess returns of the twelve Fama–French industries through rolling regressions and assess the relevance of narratives-enhanced industry portfolio with top/bottom-10 portfolio analyses. Our findings show consistent relationships between cyclical and defensive industries and specific macroeconomic narratives, even under short-text constraints. This work bridges narrative economics, NLP, and quantitative finance by providing robust methods for extracting market-relevant signals from limited textual data.",
+        "abstract_short": "This paper introduces a framework for identifying and quantifying financial narratives from short-text data, focusing exclusively on news headlines rather than full-length articles. We propose three a...",
+        "keywords": [
+          "Narratives Modeling",
+          "Sentiment Analysis",
+          "Semantic Similarity",
+          "Large Language Models",
+          "News Headlines",
+          "Financial Markets"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Research Motivation"
+          },
+          {
+            "level": 2,
+            "title": "Narratives quantifying"
+          },
+          {
+            "level": 2,
+            "title": "Short-Text Challenge"
+          },
+          {
+            "level": 2,
+            "title": "Rationale"
+          },
+          {
+            "level": 1,
+            "title": "Data"
+          },
+          {
+            "level": 2,
+            "title": "News Headlines"
+          },
+          {
+            "level": 2,
+            "title": "Market and Factor Data"
+          },
+          {
+            "level": 2,
+            "title": "Sample Splits"
+          },
+          {
+            "level": 1,
+            "title": "Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Label Space"
+          },
+          {
+            "level": 2,
+            "title": "Supervised Tagger A: Embedding Similarity"
+          },
+          {
+            "level": 2,
+            "title": "Supervised Tagger B: LLM Tool-Call"
+          },
+          {
+            "level": 2,
+            "title": "Unsupervised Tagger: UMAP–Leiden Topics"
+          },
+          {
+            "level": 2,
+            "title": "Sentiment Labeling"
+          },
+          {
+            "level": 2,
+            "title": "Daily Narrative Intensities"
+          },
+          {
+            "level": 2,
+            "title": "Econometric Design"
+          },
+          {
+            "level": 1,
+            "title": "Results"
+          },
+          {
+            "level": 2,
+            "title": "Tagger Calibration"
+          },
+          {
+            "level": 2,
+            "title": "Narrative–Industry Links"
+          },
+          {
+            "level": 2,
+            "title": "Out-of-Sample Stability"
+          },
+          {
+            "level": 2,
+            "title": "Top/Bottom-10 Strategy Sketch"
+          },
+          {
+            "level": 1,
+            "title": "Robustness Checks"
+          },
+          {
+            "level": 1,
+            "title": "Discussion"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          }
+        ],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "IN_PROGRESS",
+        "status_label": "In Progress",
+        "venue": "Quoniam Collaboration",
+        "work_package": "WP3",
+        "stream": "quoniam",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      },
+      {
+        "id": "main",
+        "filename": "main.tex",
+        "filepath": "SNF_Narrative_Research\\Systematic Literature review\\main.tex",
+        "title": "An Algorithmic Framework for Systematic Literature Reviews: A Case Study for Financial Narratives",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [],
+            "email": null
+          },
+          {
+            "name": "Joerg Osterrieder",
+            "affiliations": [],
+            "email": null
+          }
+        ],
+        "authors_string": "Gabin Taibi and Joerg Osterrieder",
+        "abstract": "In recent years, narratives have emerged as a critical factor shaping financial markets, influencing investor behavior, market dynamics, and ultimately asset price movements. In social science, narratives refer to structured accounts or interpretations of events, ideas, or phenomena that emerge from individuals, groups, or institutions. More specifically, financial narratives are emergent and structured set of expectations about financial markets, assets, or economic events that form through the convergence of individual narratives created by market participants. They are sense-making stories that shape perceptions and influence decision, based on available information, market conditions, personal experiences, and social interactions. Advancements in data processing methods, particularly in Natural Language Processing (NLP), have enhanced the modeling and analysis of textual data on a large scale, opening new directions for a deeper and more advanced understanding of narratives. This systematic literature review explores the intersection of narratives and financial markets, focusing on the development and application of computational techniques for text mining, textual analysis, and financial narrative modeling. Additionally, this study will not only provide an overview of existing research but also proposes and implements an algorithmic framework for systematic literature reviews, enhancing efficiency, reproducibility, and selection quality assessments. Drawing from the Scopus } abstract and citation database of peer-reviewed literature, we highlight that research approaches focus on understanding and modeling narratives to assess their influence on financial markets or forecast market dynamics. The review identifies two main narrative approach and various methodologies to uncover them, ranging from simple statistical to most advanced NLP and machine learning techniques. Our findings suggest that the concept of narratives in finance lacks a unified and comprehensive definition, and is often being either oversimplified to sentiment analysis (the measurement of emotional tone in text) and topic modeling (which identifies latent themes within large corpora), or a combination of both.",
+        "abstract_short": "In recent years, narratives have emerged as a critical factor shaping financial markets, influencing investor behavior, market dynamics, and ultimately asset price movements. In social science, narrat...",
+        "keywords": [
+          "Algorithmic Literature Review",
+          "Textual Analysis",
+          "Natural Language Processing",
+          "Financial Narrative Modeling",
+          "Financial Market Dynamics"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Initial research sourcing"
+          },
+          {
+            "level": 2,
+            "title": "Algorithmic selection framework"
+          },
+          {
+            "level": 2,
+            "title": "Data cleaning and extraction"
+          },
+          {
+            "level": 1,
+            "title": "Results"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Understanding Papers"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Modeling Papers"
+          },
+          {
+            "level": 1,
+            "title": "Discussion"
+          },
+          {
+            "level": 2,
+            "title": "Toward a Shared Understanding of Financial Narratives"
+          },
+          {
+            "level": 2,
+            "title": "Methodological Advances in Narrative Quantification"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Analysis, Behavioral Signals and Market Applications"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 1,
+            "title": "Acknowledgements"
+          },
+          {
+            "level": 1,
+            "title": "Appendix"
+          }
+        ],
+        "figures": [
+          "images/paper_temporal_quantile_distribution.png",
+          "images/filter_paper_diagram.png"
+        ],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "IN_PROGRESS",
+        "status_label": "In Progress",
+        "venue": "Working Paper",
+        "work_package": "WP1",
+        "stream": "slr",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      },
+      {
+        "id": "UFT-HFT_Market_Impact",
+        "filename": "UFT-HFT_Market_Impact.tex",
+        "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 2 (Physica A)\\UFT-HFT_Market_Impact.tex",
+        "title": "Nanoseconds traders: How Ultra-Fast and High-Frequency Traders Reshape Market Microstructure",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "gabin.taibi@bfh.ch"
+          },
+          {
+            "name": "Stefan Schlamp",
+            "affiliations": [
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "stefan.schlamp@deutsche-boerse.com"
+          },
+          {
+            "name": "Joerg Osterrieder",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+            ],
+            "email": "joerg.osterrieder@bfh.ch"
+          }
+        ],
+        "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+        "abstract": "The advent of ultra-fast (UFT) and high-frequency trading (HFT) has fundamentally transformed financial markets, sparking intense debate about their impact on market quality and stability. This study provides a comprehensive empirical analysis of UFT and HFT effects on market microstructure, addressing critical questions about efficiency, liquidity, and volatility in modern electronic markets. Utilizing high-precision timestamp data from Deutsche Börse's Eurex and Xetra platforms, we employ a novel classification methodology to categorize market participants based on their reaction latencies, distinguishing between FPGA-enabled ultra-fast traders, high-frequency traders, and conventional participants. Our analysis encompasses a diverse range of instruments, including futures, equities, and ETFs, focusing on the most liquid assets to capture the full spectrum of trading behavior. We introduce a combination of eight metrics to quantify market quality, including effective spread, mid price, micro price, and trade price realized kernels for volatility estimation, alongside traditional measures such as volume, spread, depth and order imbalance ratio. A key contribution is our methodology for classifying trading activities as either \"noise\" or \"signal,\" allowing for a nuanced examination of different trader categories' market impact. This research contributes to the ongoing debate on market efficiency in the age of algorithmic trading, providing empirical evidence that both supports and refutes common criticisms of ultra-fast trading. Our findings have significant implications for market regulation, suggesting the need for more granular and adaptive oversight mechanisms to address the evolving landscape of electronic trading.",
+        "abstract_short": "The advent of ultra-fast (UFT) and high-frequency trading (HFT) has fundamentally transformed financial markets, sparking intense debate about their impact on market quality and stability. This study ...",
+        "keywords": [
+          "Financial Markets",
+          "Ultra-Fast Trading",
+          "High-Frequency Trading",
+          "Price Information",
+          "Information Share",
+          "Market Efficiency",
+          "Orderbook Liquidity",
+          "Market Micro structures",
+          "[specific models or methodologies]"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Theoretical Background"
+          },
+          {
+            "level": 1,
+            "title": "Literature Review"
+          },
+          {
+            "level": 1,
+            "title": "Data and Methodology"
+          },
+          {
+            "level": 1,
+            "title": "Empirical Results"
+          },
+          {
+            "level": 1,
+            "title": "Discussion"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 1,
+            "title": "Acknowledgements"
+          },
+          {
+            "level": 1,
+            "title": "References"
+          }
+        ],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "elsarticle",
+        "status": "IN_PROGRESS",
+        "status_label": "In Progress",
+        "venue": "Physica A",
+        "work_package": "WP4",
+        "stream": "hft",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      },
+      {
+        "id": "main",
+        "filename": "main.tex",
+        "filepath": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\main.tex",
+        "title": "Strategic Narratives during Economic Turning Points: An AI Framework for Monitoring U.S. Central Bank Communications",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [],
+            "email": null
+          },
+          {
+            "name": "Lucia Gomez Teijeiro",
+            "affiliations": [],
+            "email": null
+          }
+        ],
+        "authors_string": "Gabin Taibi and Lucia Gomez Teijeiro",
+        "abstract": "Central bank communication plays a critical role in shaping expectations during macroeconomic transitions, yet empirical understanding of how narrative strategies evolve around economic turning points remains limited. This study leverages large language models to analyze U.S. Federal Reserve public speeches made from 1996 to 2025, focusing on those occurring during economic turning points. By combining macroeconomic indicators and communication materials, we here identify key strategic communication patterns systematically preceding these economic inflection points and announcing transitions. Our findings demonstrate that macroeconomic regimes and associated policy narratives strategies can be identified and predicted in an unsupervised manner, with statistical evidences of topic and tone shifts aligned with macroeconomic transitions. This work extends emerging research unveiling central bank transparency, and the proposed framework bridges macroeconomic signal detection with large-scale textual analysis and offers a practical tool for policy monitoring and narrative tracking. Future efforts aim at generalize the framework to emerging breakpoints, expand model explainability, and exploring causal links to market reactions.",
+        "abstract_short": "Central bank communication plays a critical role in shaping expectations during macroeconomic transitions, yet empirical understanding of how narrative strategies evolve around economic turning points...",
+        "keywords": [
+          "Macroeconomy",
+          "Central Bank Speeches",
+          "Dimensionality Reduction",
+          "Natural Language Processing",
+          "Topic Modeling"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Related Work"
+          },
+          {
+            "level": 1,
+            "title": "Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Macro Strength Index"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Shift Detection"
+          },
+          {
+            "level": 2,
+            "title": "Null Hypothesis testing"
+          },
+          {
+            "level": 1,
+            "title": "Case Study: The 2008 Financial Crisis"
+          },
+          {
+            "level": 1,
+            "title": "Discussion and Future Work"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          }
+        ],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "IN_PROGRESS",
+        "status_label": "In Progress",
+        "venue": "Working Paper",
+        "work_package": "WP1",
+        "stream": "slr",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      }
+    ],
+    "UNDER_REVIEW": [
+      {
+        "id": "FIN-manuscript",
+        "filename": "FIN-manuscript.tex",
+        "filepath": "SNF_Narrative_Research\\Systematic Literature review\\FIN-manuscript.tex",
+        "title": "An Algorithmic Framework for Systematic Literature Reviews with Application to Financial Narratives",
+        "authors": [],
+        "authors_string": "",
+        "abstract": "This paper presents a systematic literature review on financial narratives and the methods used to model them. To support this review, we develop an algorithmic framework that improves the efficiency, reproducibility, and consistency of study selection. The framework uses Natural Language Processing (NLP) techniques, clustering algorithms, and interpretability tools to automate key steps of the screening and analysis process. We apply this approach to the study of financial narratives, a growing field in financial economics concerned with how structured interpretations of economic events shape market behaviour and asset prices. Drawing from the Scopus} database of peer-reviewed literature, the review identifies research practices used to model financial narratives with a range of NLP methods. Results show that although technical progress has been significant, the conceptualization of financial narratives remains fragmented and is often simplified to sentiment-based measures. A large share of studies relies on media sources, which is understandable given their availability, but the short length of these texts introduces noise and reduces predictive reliability. Using longer and more diverse textual materials would help to address this limitation and provide a broader view of narratives circulating among economic agents. The findings also highlight the importance of more comprehensive forms of narrative modeling that go beyond sentiment alone, and they illustrate the practical usefulness of the proposed algorithmic SLR methodology.",
+        "abstract_short": "This paper presents a systematic literature review on financial narratives and the methods used to model them. To support this review, we develop an algorithmic framework that improves the efficiency,...",
+        "keywords": [
+          "Systematic Literature Review",
+          "Text Processing",
+          "NLP",
+          "Financial Narrative",
+          "Financial Market Dynamics"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Initial Research Sourcing"
+          },
+          {
+            "level": 2,
+            "title": "Algorithmic Selection Framework"
+          },
+          {
+            "level": 2,
+            "title": "Final Validation and Data Extraction"
+          },
+          {
+            "level": 1,
+            "title": "Results"
+          },
+          {
+            "level": 2,
+            "title": "Selection Phase Results"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Understanding Papers"
+          },
+          {
+            "level": 2,
+            "title": "Narrative Modeling Papers"
+          },
+          {
+            "level": 2,
+            "title": "Stability Checks"
+          },
+          {
+            "level": 1,
+            "title": "Discussion"
+          },
+          {
+            "level": 2,
+            "title": "Adressing Research Questions"
+          },
+          {
+            "level": 2,
+            "title": "Methodological Contribution"
+          },
+          {
+            "level": 2,
+            "title": "Limitations"
+          },
+          {
+            "level": 2,
+            "title": "Implications and Future Research Directions"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 1,
+            "title": "List of Abbreviations"
+          },
+          {
+            "level": 1,
+            "title": "Appendix"
+          }
+        ],
+        "figures": [
+          "images/paper_temporal_quantile_distribution.png"
+        ],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "UNDER_REVIEW",
+        "status_label": "Under Review",
+        "venue": "Financial Innovation",
+        "work_package": "WP1",
+        "stream": "slr",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      }
+    ],
+    "SUBMITTED": [
+      {
+        "id": "Market_Participants_Classification",
+        "filename": "Market_Participants_Classification.tex",
+        "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 1 (SSRN)\\Market_Participants_Classification.tex",
+        "title": "Decoding the Flash: A Data-Driven Approach to Measuring Ultra-Fast and High-Frequency Traders Activity",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "gabin.taibi@bfh.ch"
+          },
+          {
+            "name": "Stefan Schlamp",
+            "affiliations": [
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "stefan.schlamp@deutsche-boerse.com"
+          },
+          {
+            "name": "Joerg Osterrieder",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+            ],
+            "email": "joerg.osterrieder@bfh.ch"
+          }
+        ],
+        "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+        "abstract": "This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As technological advancements continue to reshape trading landscapes, accurately identifying and categorizing traders becomes crucial for understanding market dynamics and informing regulatory decisions. We analyze high-precision data from Deutsche Börse, focusing on post-trade event latencies to distinguish between ultra-fast traders (UFTs) using field-programmable gate arrays (FPGAs), high-frequency traders (HFTs), and other conventional participants. Our classification approach utilizes nanosecond-level latency thresholds and examines various metrics including total participation, aggressive and passive participation, cancellation rate, deep orderbook participation, liquidity adding and removing participation, and signal and noise value. We apply this methodology to a comprehensive dataset encompassing multiple markets and instruments, on a period spanning from January 2021 to January 2024. We conclude by discussing the limitations of our approach, including potential misclassification issues, and outlining future research directions aimed at refining classification accuracy and further exploring the impact of different trader categories on price formation and liquidity provision.",
+        "abstract_short": "This paper presents a novel methodology for classifying market participants in electronic financial markets based on their trading speed, and measure their participation in the financial markets. As t...",
+        "keywords": [
+          "Financial Markets",
+          "Ultra-Fast Trading",
+          "High-Frequency Trading",
+          "Price Formation",
+          "Information Share",
+          "Market Efficiency",
+          "Orderbook Liquidity",
+          "Market Micro structures"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 2,
+            "title": "Context of the study"
+          },
+          {
+            "level": 2,
+            "title": "Research Purposes"
+          },
+          {
+            "level": 1,
+            "title": "Literature Review"
+          },
+          {
+            "level": 2,
+            "title": "Limit Orderbooks and Market Microstructures"
+          },
+          {
+            "level": 2,
+            "title": "UFTs, HFTs and their Strategies"
+          },
+          {
+            "level": 2,
+            "title": "The Nanoseconds Races"
+          },
+          {
+            "level": 1,
+            "title": "Technological Infrastructure and Market Participants"
+          },
+          {
+            "level": 2,
+            "title": "Technological Improvements in Financial Markets"
+          },
+          {
+            "level": 2,
+            "title": "The T7 Infrastructure"
+          },
+          {
+            "level": 2,
+            "title": "Roles of Market Participants"
+          },
+          {
+            "level": 2,
+            "title": "Market Participants Objectives"
+          },
+          {
+            "level": 2,
+            "title": "Information Asymetry in low-latency trading"
+          },
+          {
+            "level": 1,
+            "title": "Classification Methodology"
+          },
+          {
+            "level": 2,
+            "title": "Data Description"
+          },
+          {
+            "level": 2,
+            "title": "Post-Trade Events Reaction Time Calculation"
+          },
+          {
+            "level": 2,
+            "title": "Reaction Latencies and Classification Criteria"
+          },
+          {
+            "level": 2,
+            "title": "Participation Metrics"
+          },
+          {
+            "level": 1,
+            "title": "Empirical Results"
+          },
+          {
+            "level": 2,
+            "title": "Total participation and Average Latency"
+          },
+          {
+            "level": 2,
+            "title": "Aggressive and Passive Participation"
+          },
+          {
+            "level": 2,
+            "title": "Liquidity Adding and Removing Participation"
+          },
+          {
+            "level": 2,
+            "title": "Cancellation Rate and Deep Orderbook Participation"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 1,
+            "title": "Acknowledgements"
+          },
+          {
+            "level": 1,
+            "title": "References"
+          }
+        ],
+        "figures": [
+          "Paper 1 (SSRN)/images/DBAG_matching_engine.png"
+        ],
+        "has_bibliography": true,
+        "document_class": "elsarticle",
+        "status": "SUBMITTED",
+        "status_label": "Submitted",
+        "venue": "SSRN",
+        "work_package": "WP4",
+        "stream": "hft",
+        "year": 2024,
+        "ssrn_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153",
+        "arxiv_url": "",
+        "doi": "10.2139/ssrn.4698153"
+      },
+      {
+        "id": "manuscript-EPIA2025",
+        "filename": "manuscript-EPIA2025.tex",
+        "filepath": "SNF_Narrative_Research\\SNF_Narratives\\Macro_Narratives\\Macro_Index_CPD\\TOPOL\\manuscript-EPIA2025.tex",
+        "title": "Transformer Narrative Polarity Fields: Capturing Multidimensional Semantic Shifts with TOPol",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [],
+            "email": null
+          },
+          {
+            "name": "Lucia Gomez Teijeiro",
+            "affiliations": [],
+            "email": null
+          }
+        ],
+        "authors_string": "Gabin Taibi and Lucia Gomez Teijeiro",
+        "abstract": "In computational linguistics, semantic polarity has traditionally been conceptualized as sentiment and measured along a unidimensional scalar continuum from negative to positive. However, this sentiment-centric framing oversimplifies language complexity, as semantic polarity is inherently multidimensional - reflecting the diversity of perspectives and directional shifts embedded in discourse. We introduce an unsupervised computational framework to identify, reconstruct, and explain multidimensional narrative polarity fields. Discourse polarity change is modeled as vector displacements between topical centroids of semantic transformer embedding network spaces. Narrative polarity is defined as vectorial representation of semantic change across a contextual boundary, which may-but need not- align with affective sentiment. These vectors capture both direction and magnitude of semantic shifts, enabling a geometrically grounded reconstruction of polarity-relevant transformations in discourse. For interpretability, we provide an explainability mechanism based on differential vocabulary analysis. For each polarity vector, we compute contrastive lexical distributions at its opposing extremities, revealing the principal linguistic dimension and features driving semantic change. We demonstrate the utility of this framework in two domains. First, we apply it to a corpus of central bank speeches, using macroeconomic regime changes as contextual boundaries. This non sentiment-driven domain highlights the framework's ability to detect non-affective semantic transitions. Second, we analyze Amazon product reviews, where polarity is intrinsically sentiment-led, and we use low-versus-high-rated reviews as contextual boundary. This dual application shows the robustness and generalizability of TOPol (topic-orientation polarity), across narrative contexts, identifying key sources of textual variability and their polarity fields. TOPol constitutes the first computational formulation of narrative polarity vector fields and offers a open-source framework for modeling and interpreting semantics multidimensionally. It provides both theoretical and methodological foundations for analyzing narrative dynamics, thematic shifts, or communicative strategies within and across linguistic contexts.",
+        "abstract_short": "In computational linguistics, semantic polarity has traditionally been conceptualized as sentiment and measured along a unidimensional scalar continuum from negative to positive. However, this sentime...",
+        "keywords": [
+          "Polarity Fields",
+          "Transformers",
+          "Unsupervised",
+          "Manifold",
+          "Natural Language Processing"
+        ],
+        "sections": [],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "article",
+        "status": "SUBMITTED",
+        "status_label": "Submitted",
+        "venue": "EPIA 2025",
+        "work_package": "WP3",
+        "stream": "topol",
+        "year": 2025,
+        "ssrn_url": "",
+        "arxiv_url": "https://arxiv.org/abs/2510.25069",
+        "doi": "10.48550/arXiv.2510.25069"
+      }
+    ],
+    "PLANNING": [
+      {
+        "id": "TBD",
+        "filename": "TBD.tex",
+        "filepath": "SNF_Narrative_Research\\Deutsche Börse\\Paper 3 (top journal)\\TBD.tex",
+        "title": "Identifying Market Signals: A Statistical/Machine Learning Approach",
+        "authors": [
+          {
+            "name": "Gabin Taibi",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands",
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "gabin.taibi@bfh.ch"
+          },
+          {
+            "name": "Stefan Schlamp",
+            "affiliations": [
+              "Market Data and Services, Deutsche Börse, Eschborn, Germany"
+            ],
+            "email": "stefan.schlamp@deutsche-boerse.com"
+          },
+          {
+            "name": "Joerg Osterrieder",
+            "affiliations": [
+              "Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland",
+              "Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands"
+            ],
+            "email": "joerg.osterrieder@bfh.ch"
+          }
+        ],
+        "authors_string": "Gabin Taibi, Stefan Schlamp, and Joerg Osterrieder",
+        "abstract": "",
+        "abstract_short": "",
+        "keywords": [
+          "Financial Markets",
+          "Ultra-Fast Trading",
+          "High-Frequency Trading",
+          "Price Information",
+          "Information Share",
+          "Market Efficiency",
+          "Orderbook Liquidity",
+          "Market Micro structures",
+          "[specific models or methodologies]"
+        ],
+        "sections": [
+          {
+            "level": 1,
+            "title": "Introduction"
+          },
+          {
+            "level": 1,
+            "title": "Theoretical Framework"
+          },
+          {
+            "level": 1,
+            "title": "Literature Review"
+          },
+          {
+            "level": 1,
+            "title": "Data and Methodology"
+          },
+          {
+            "level": 1,
+            "title": "Empirical Results"
+          },
+          {
+            "level": 1,
+            "title": "Robustness Checks"
+          },
+          {
+            "level": 2,
+            "title": "Discussions"
+          },
+          {
+            "level": 1,
+            "title": "Conclusion"
+          },
+          {
+            "level": 2,
+            "title": "Summary of Key Findings"
+          },
+          {
+            "level": 2,
+            "title": "Future Possible Research"
+          },
+          {
+            "level": 1,
+            "title": "Acknowledgements"
+          },
+          {
+            "level": 1,
+            "title": "References"
+          }
+        ],
+        "figures": [],
+        "has_bibliography": true,
+        "document_class": "elsarticle",
+        "status": "PLANNING",
+        "status_label": "Planning",
+        "venue": "Top Journal TBD",
+        "work_package": "WP4",
+        "stream": "hft",
+        "year": 2026,
+        "ssrn_url": "",
+        "arxiv_url": "",
+        "doi": ""
+      }
+    ]
+  },
+  "streams_summary": {
+    "quoniam": {
+      "name": "Quoniam Industry Collaboration",
+      "count": 1,
+      "description": "Industry-relevant narrative modeling from U.S. financial news headlines"
+    },
+    "slr": {
+      "name": "Systematic Literature Review",
+      "count": 3,
+      "description": "AI-enhanced systematic review of financial narrative modeling literature"
+    },
+    "hft": {
+      "name": "Deutsche Borse HFT Research",
+      "count": 3,
+      "description": "Market microstructure analysis using nanosecond-level trading data from Eurex and Xetra platforms"
+    },
+    "topol": {
+      "name": "TOPOL Framework",
+      "count": 1,
+      "description": "Transformer Narrative Polarity Fields for multidimensional semantic shift detection"
+    }
+  },
+  "status_summary": {
+    "IN_PROGRESS": 4,
+    "UNDER_REVIEW": 1,
+    "SUBMITTED": 2,
+    "PLANNING": 1
+  }
+}

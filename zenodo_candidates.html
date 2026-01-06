@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenodo Upload Candidates - Narrative Digital Finance</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .snsf-requirements {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary);
+        }
+
+        .snsf-requirements h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .req-item {
+            background: var(--light-bg);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .req-item strong {
+            color: var(--dark);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .req-item span {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .items-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .item-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .item-header {
+            background: linear-gradient(135deg, var(--dark) 0%, #334155 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .item-number {
+            background: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .item-title-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .item-type {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .item-body {
+            padding: 20px;
+        }
+
+        .item-description {
+            margin-bottom: 15px;
+            color: #475569;
+        }
+
+        .item-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .meta-item {
+            background: var(--light-bg);
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-value {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+            word-break: break-all;
+        }
+
+        .snsf-reason {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+        }
+
+        .snsf-reason strong {
+            color: #059669;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+        }
+
+        .snsf-reason span {
+            color: #047857;
+            font-size: 0.9rem;
+        }
+
+        .priority-high {
+            border-left: 4px solid var(--success);
+        }
+
+        .priority-medium {
+            border-left: 4px solid var(--warning);
+        }
+
+        .file-path {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: #e0e7ff;
+            color: #4338ca;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .summary-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .summary-section h2 {
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .summary-table th,
+        .summary-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .summary-table th {
+            background: var(--light-bg);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .status-required {
+            background: #dcfce7;
+            color: #166534;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .status-recommended {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .sources {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+
+        .sources h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .sources a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .sources a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .item-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Zenodo Upload Candidates</h1>
+        <p>Narrative Digital Finance - SNSF Grant IZCOZ0_213370</p>
+        <span class="badge">10 Items Ready for DOI Assignment</span>
+    </div>
+
+    <div class="container">
+        <div class="snsf-requirements">
+            <h2>SNSF Open Research Data Requirements</h2>
+            <p>The Swiss National Science Foundation requires grantees to make research data publicly accessible following FAIR principles. Zenodo is explicitly approved as an acceptable repository.</p>
+            <div class="req-grid">
+                <div class="req-item">
+                    <strong>Data Underlying Publications</strong>
+                    <span>All data enabling reproducibility must be shared</span>
+                </div>
+                <div class="req-item">
+                    <strong>Code/Software</strong>
+                    <span>When applicable to reproduce results</span>
+                </div>
+                <div class="req-item">
+                    <strong>Documentation</strong>
+                    <span>README files explaining data and methods</span>
+                </div>
+                <div class="req-item">
+                    <strong>Persistent Identifiers</strong>
+                    <span>DOIs required for all shared data</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="items-grid">
+            <!-- Item 1 -->
+            <div class="item-card priority-high">
+                <div class="item-header">
+                    <div class="item-number">1</div>
+                    <div class="item-title-section">
+                        <h3>SNSF Scientific Report</h3>
+                        <span class="item-type">Document</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Complete final scientific report for SNSF grant submission. Contains detailed methodology descriptions for all 4 work packages (WP1-WP4): Text Analytics, Structural Breaks Detection, Narratives for Structural Breaks, and Multidimensional AI/ML Solutions.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">DOCX (Word)</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Size</div>
+                            <div class="meta-value">~43 KB</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Last Updated</div>
+                            <div class="meta-value">December 2025</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">License</div>
+                            <div class="meta-value">CC BY 4.0</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">FinalScientificReport/Form_Scientific_Report_IC_ACCURATE.docx</div>
+
+                    <div class="tags">
+                        <span class="tag">TOPol Framework</span>
+                        <span class="tag">BERTopic</span>
+                        <span class="tag">HFT Microstructure</span>
+                        <span class="tag">Narrative Economics</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Documents research methodology and outputs - required for transparency and reproducibility</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="item-card priority-high">
+                <div class="item-header">
+                    <div class="item-number">2</div>
+                    <div class="item-title-section">
+                        <h3>Project Research Outputs Metadata</h3>
+                        <span class="item-type">Dataset (JSON)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Comprehensive structured metadata for all project outputs including team profiles with ORCIDs, publications list, collaborations, research networks, datasets, and code repositories. Machine-readable format for data interoperability.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">JSON</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Records</div>
+                            <div class="meta-value">~600 lines</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Contains</div>
+                            <div class="meta-value">17 publications, 7 collaborations</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">License</div>
+                            <div class="meta-value">CC BY 4.0</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">repo/data/project_research_outputs.json</div>
+
+                    <div class="tags">
+                        <span class="tag">Metadata</span>
+                        <span class="tag">FAIR Principles</span>
+                        <span class="tag">Machine-Readable</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Structured metadata with persistent identifiers - essential for Findable and Interoperable data</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="item-card priority-high">
+                <div class="item-header">
+                    <div class="item-number">3</div>
+                    <div class="item-title-section">
+                        <h3>OpenAlex Publication Fetcher</h3>
+                        <span class="item-type">Code (Python)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Python script to fetch author profiles and publications from OpenAlex API. Includes team member ORCIDs, handles API rate limiting, extracts h-index, citation counts, and publication metadata. Outputs structured JSON for further analysis.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">Python (.py)</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Lines of Code</div>
+                            <div class="meta-value">342</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Dependencies</div>
+                            <div class="meta-value">requests, json, pathlib</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">License</div>
+                            <div class="meta-value">MIT</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">repo/scripts/fetch_openalex.py</div>
+
+                    <div class="tags">
+                        <span class="tag">OpenAlex API</span>
+                        <span class="tag">Bibliometrics</span>
+                        <span class="tag">ORCID</span>
+                        <span class="tag">Reusable</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Code enabling reproducibility of data collection - required when software is integral to research</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="item-card priority-high">
+                <div class="item-header">
+                    <div class="item-number">4</div>
+                    <div class="item-title-section">
+                        <h3>Publications Dataset</h3>
+                        <span class="item-type">Dataset (JSON)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Complete publication inventory for all team members fetched from OpenAlex. Includes DOIs, abstracts, venues, citation counts, open access status, PDF URLs, and concept tags. Data underlying team analysis and project outputs.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">JSON</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Records</div>
+                            <div class="meta-value">122 publications</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Total Citations</div>
+                            <div class="meta-value">2,010+</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Data Source</div>
+                            <div class="meta-value">OpenAlex API</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">repo/data/publications.json</div>
+
+                    <div class="tags">
+                        <span class="tag">Bibliometric Data</span>
+                        <span class="tag">OpenAlex</span>
+                        <span class="tag">DOI</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Data underlying publications - MUST be shared to enable reproducibility</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="item-card priority-high">
+                <div class="item-header">
+                    <div class="item-number">5</div>
+                    <div class="item-title-section">
+                        <h3>Author Metrics Dataset</h3>
+                        <span class="item-type">Dataset (JSON)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Team member research metrics including h-index, i10-index, citation counts, institutional affiliations, and OpenAlex IDs. Contains 6 researchers with verified ORCID identifiers for persistent identification.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">JSON</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Team Members</div>
+                            <div class="meta-value">6</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Max h-index</div>
+                            <div class="meta-value">13</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Last Updated</div>
+                            <div class="meta-value">December 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">repo/data/authors.json</div>
+
+                    <div class="tags">
+                        <span class="tag">ORCID</span>
+                        <span class="tag">h-index</span>
+                        <span class="tag">Researcher Profiles</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Research team metrics with persistent identifiers - supports transparency and attribution</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="item-card priority-high">
+                <div class="item-header">
+                    <div class="item-number">6</div>
+                    <div class="item-title-section">
+                        <h3>SNSF Report Generator</h3>
+                        <span class="item-type">Code (Python)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Python script for generating SNSF scientific reports with automatic character count verification. Uses python-docx library to produce Word documents compliant with SNSF section limits (6000, 2000, 2000, 4000, 4000 characters).</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">Python (.py)</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Lines of Code</div>
+                            <div class="meta-value">133</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Dependencies</div>
+                            <div class="meta-value">python-docx</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">License</div>
+                            <div class="meta-value">MIT</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">FinalScientificReport/generate_accurate_report.py</div>
+
+                    <div class="tags">
+                        <span class="tag">SNSF Template</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Document Generation</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Tool for reproducible report generation - aids other SNSF researchers</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="item-card priority-medium">
+                <div class="item-header">
+                    <div class="item-number">7</div>
+                    <div class="item-title-section">
+                        <h3>Research Methodology Documentation</h3>
+                        <span class="item-type">Documentation (Markdown)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Comprehensive methodology documentation covering data collection, NLP techniques (sentiment analysis, topic modeling, embeddings), ML methods (classical, deep learning, ensemble), econometric methods (ARIMA, GARCH, structural break detection), and software infrastructure.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">Markdown (.md)</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Lines</div>
+                            <div class="meta-value">243</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Sections</div>
+                            <div class="meta-value">10 major topics</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">License</div>
+                            <div class="meta-value">CC BY 4.0</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">wiki_content/Methodology.md</div>
+
+                    <div class="tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Econometrics</span>
+                        <span class="tag">FAIR</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Documentation explaining methods - required for Reusable data per FAIR principles</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="item-card priority-medium">
+                <div class="item-header">
+                    <div class="item-number">8</div>
+                    <div class="item-title-section">
+                        <h3>Datasets Documentation</h3>
+                        <span class="item-type">Documentation (Markdown)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Detailed documentation of project datasets including Financial Narratives Corpus, HFT Market Microstructure Dataset (Deutsche Borse collaboration), and external data sources. Includes data access policies, FAIR compliance, and ethical considerations.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">Markdown (.md)</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Lines</div>
+                            <div class="meta-value">201</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Datasets Described</div>
+                            <div class="meta-value">3 project + externals</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">License</div>
+                            <div class="meta-value">CC BY 4.0</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">wiki_content/Datasets.md</div>
+
+                    <div class="tags">
+                        <span class="tag">HFT Data</span>
+                        <span class="tag">Financial Narratives</span>
+                        <span class="tag">Data Access</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Data documentation with access procedures - required for Findable and Accessible data</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="item-card priority-medium">
+                <div class="item-header">
+                    <div class="item-number">9</div>
+                    <div class="item-title-section">
+                        <h3>PDF Text Extraction Tool</h3>
+                        <span class="item-type">Code (Python)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Utility script for extracting text from PDF documents in the repository. Creates markdown summaries with keywords and table of contents extraction. Uses PyMuPDF (fitz) library for reliable text extraction from research papers.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">Python (.py)</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Dependencies</div>
+                            <div class="meta-value">PyMuPDF, pathlib</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Output</div>
+                            <div class="meta-value">TXT + MD summaries</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">License</div>
+                            <div class="meta-value">MIT</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">output/extract_summaries.py</div>
+
+                    <div class="tags">
+                        <span class="tag">PDF Processing</span>
+                        <span class="tag">Text Extraction</span>
+                        <span class="tag">Utility</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Supporting code for document processing - contributes to reproducible research workflows</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 10 -->
+            <div class="item-card priority-medium">
+                <div class="item-header">
+                    <div class="item-number">10</div>
+                    <div class="item-title-section">
+                        <h3>Project README</h3>
+                        <span class="item-type">Documentation (Markdown)</span>
+                    </div>
+                </div>
+                <div class="item-body">
+                    <p class="item-description">Main project documentation with research objectives, methods, team listing with ORCIDs, collaborations, publications, funding information, and links. Serves as the primary entry point for understanding the project scope and outputs.</p>
+
+                    <div class="item-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">Markdown (.md)</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Lines</div>
+                            <div class="meta-value">126</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Content</div>
+                            <div class="meta-value">Project overview + links</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">License</div>
+                            <div class="meta-value">MIT</div>
+                        </div>
+                    </div>
+
+                    <div class="file-path">repo/README.md</div>
+
+                    <div class="tags">
+                        <span class="tag">Project Overview</span>
+                        <span class="tag">Team</span>
+                        <span class="tag">Links</span>
+                    </div>
+
+                    <div class="snsf-reason">
+                        <strong>SNSF Compliance</strong>
+                        <span>Top-level documentation - provides context for all deposited materials</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Table -->
+        <div class="summary-section">
+            <h2>Summary: Zenodo Upload Checklist</h2>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Asset</th>
+                        <th>Type</th>
+                        <th>SNSF Status</th>
+                        <th>License</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>SNSF Scientific Report</td>
+                        <td>Document</td>
+                        <td><span class="status-required">Required</span></td>
+                        <td>CC BY 4.0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Project Research Outputs</td>
+                        <td>Dataset</td>
+                        <td><span class="status-required">Required</span></td>
+                        <td>CC BY 4.0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>OpenAlex Fetcher</td>
+                        <td>Code</td>
+                        <td><span class="status-required">Required</span></td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Publications Dataset</td>
+                        <td>Dataset</td>
+                        <td><span class="status-required">Required</span></td>
+                        <td>CC BY 4.0</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Author Metrics</td>
+                        <td>Dataset</td>
+                        <td><span class="status-required">Required</span></td>
+                        <td>CC BY 4.0</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Report Generator</td>
+                        <td>Code</td>
+                        <td><span class="status-required">Required</span></td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Methodology Docs</td>
+                        <td>Documentation</td>
+                        <td><span class="status-recommended">Recommended</span></td>
+                        <td>CC BY 4.0</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Datasets Docs</td>
+                        <td>Documentation</td>
+                        <td><span class="status-recommended">Recommended</span></td>
+                        <td>CC BY 4.0</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>PDF Extractor</td>
+                        <td>Code</td>
+                        <td><span class="status-recommended">Recommended</span></td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Project README</td>
+                        <td>Documentation</td>
+                        <td><span class="status-recommended">Recommended</span></td>
+                        <td>MIT</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sources -->
+        <div class="sources">
+            <h3>SNSF Guidelines Sources</h3>
+            <ul>
+                <li><a href="https://www.snf.ch/en/dMILj9t4LNk8NwyR/topic/open-research-data" target="_blank">SNSF Open Research Data Policy</a></li>
+                <li><a href="https://www.snf.ch/en/WtezJ6qxuTRnSYgF/topic/open-research-data-which-data-repositories-can-be-used" target="_blank">SNSF Approved Repositories (includes Zenodo)</a></li>
+                <li><a href="https://www.snf.ch/en/MDecEyLJgpSTk0cU/page/open-access-information-for-researchers" target="_blank">SNSF Open Access Information</a></li>
+                <li><a href="https://library.ethz.ch/en/researching-and-publishing/data-management-and-policies/research-funding/swiss-national-science-foundation.html" target="_blank">ETH Library SNSF Guide</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 30px; color: #64748b; font-size: 0.9rem;">
+        <p>Generated: December 27, 2025 | Project: SNSF Grant IZCOZ0_213370</p>
+        <p>No upload performed - documentation for future reference</p>
+    </footer>
+</body>
+</html>

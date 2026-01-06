@@ -1,0 +1,1165 @@
+\documentclass[8pt]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% Color definitions
+\definecolor{mlblue}{RGB}{31, 119, 180}
+\definecolor{mlorange}{RGB}{255, 127, 14}
+\definecolor{mlgreen}{RGB}{44, 160, 44}
+\definecolor{mlred}{RGB}{214, 39, 40}
+\definecolor{mlpurple}{RGB}{148, 103, 189}
+\definecolor{mlgray}{RGB}{127, 127, 127}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+
+% Title information
+\title{From Headlines to Narratives}
+\subtitle{Mathematical Theory of LLM-Based Narrative Extraction}
+\author{Prof. Dr. Joerg Osterrieder}
+\institute{Advanced NLP and Machine Learning Theory}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\begin{frame}[t]
+\titlepage
+\end{frame}
+
+% Table of contents
+\begin{frame}[t]{Mathematical Framework Overview}
+\tableofcontents
+\vfill
+\footnotesize
+\textbf{Scope:} Complete mathematical treatment of narrative extraction using Large Language Models. From raw text embeddings through topic discovery to narrative generation. Emphasis on theoretical foundations of NLP methods.
+\end{frame}
+
+% PART I: EMBEDDINGS
+\section{Mathematical Foundations of Text Embeddings}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Mathematical Foundations of Text Embeddings\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Word Embedding Theory}
+\textbf{Word2Vec Objectives}
+
+Skip-gram objective function:
+\begin{equation}
+J(\theta) = -\frac{1}{T}\sum_{t=1}^T \sum_{-c \leq j \leq c, j \neq 0} \log p(w_{t+j}|w_t)
+\end{equation}
+
+Softmax formulation:
+\begin{equation}
+p(w_O|w_I) = \frac{\exp(v_{w_O}^T v_{w_I})}{\sum_{w=1}^W \exp(v_w^T v_{w_I})}
+\end{equation}
+
+\textbf{Negative Sampling Approximation:}
+\begin{equation}
+\log \sigma(v_{w_O}^T v_{w_I}) + \sum_{k=1}^K \mathbb{E}_{w_k \sim P_n(w)} [\log \sigma(-v_{w_k}^T v_{w_I})]
+\end{equation}
+
+where $P_n(w) = \frac{U(w)^{3/4}}{\sum_w U(w)^{3/4}}$ is the noise distribution.
+\end{frame}
+
+\begin{frame}[t]{GloVe and FastText Extensions}
+\textbf{GloVe: Co-occurrence Matrix Factorization}
+
+Objective function:
+\begin{equation}
+J = \sum_{i,j=1}^V f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}_j - \log X_{ij})^2
+\end{equation}
+
+\textbf{FastText: Subword Information}
+\begin{equation}
+s(w,c) = \sum_{g \in G_w} z_g^T v_c
+\end{equation}
+
+where $G_w$ is the set of n-grams for word $w$.
+
+\textbf{Character n-gram representations:}
+\begin{itemize}
+\item Handle out-of-vocabulary words
+\item Morphological information preservation
+\item Shared representations across related words
+\end{itemize}
+
+\textbf{Key Insight:} Subword units capture morphological patterns essential for narrative understanding.
+\end{frame}
+
+\begin{frame}[t]{Evolution of Contextual Embeddings}
+\textbf{ELMo: Bidirectional LSTM Language Models}
+
+\begin{equation}
+h_{LM} = [\vec{h}_{LM}; \overleftarrow{h}_{LM}]
+\end{equation}
+
+\textbf{GPT: Autoregressive Objective}
+\begin{equation}
+L = \sum_i \log P(u_i | u_{i-k}, ..., u_{i-1}; \Theta)
+\end{equation}
+
+\textbf{BERT: Bidirectional Transformer}
+
+MLM objective: $\mathcal{L}_{MLM} = -\mathbb{E}_{\mathcal{D}} \sum_{m \in M} \log P(x_m | x_{\setminus M})$
+
+NSP objective: $\mathcal{L}_{NSP} = -\mathbb{E}_{(S_A,S_B)} \log P(y | [CLS], S_A, [SEP], S_B)$
+
+\textbf{Key Advancement:} Context-dependent representations vs. static embeddings.
+\end{frame}
+
+\begin{frame}[t]{Sentence and Document Embeddings}
+\textbf{Universal Sentence Encoder (USE)}
+
+Deep Averaging Network: $\text{DAN}(x) = \text{DNN}(\frac{1}{n}\sum_{i=1}^n x_i)$
+
+Transformer variant: $\text{USE}_T = \text{Transformer}([w_1, ..., w_n])$
+
+\textbf{Doc2Vec: Paragraph Vector}
+
+Distributed Memory (PV-DM):
+\begin{equation}
+\mathcal{L} = \sum_{d \in D} \sum_{w \in d} \log P(w | w_{\text{context}}, d)
+\end{equation}
+
+\textbf{Sentence-BERT: Siamese Networks}
+\begin{equation}
+u = \text{BERT}(S_A), \quad v = \text{BERT}(S_B)
+\end{equation}
+
+Classification: $o = \text{softmax}(W_t(u, v, |u-v|))$
+
+Triplet loss: $\mathcal{L} = \max(||s_a - s_p|| - ||s_a - s_n|| + \epsilon, 0)$
+\end{frame}
+
+\begin{frame}[t]{Embedding Space Geometry and Distance Metrics}
+\textbf{Manifold Hypothesis}
+
+Narratives lie on low-dimensional manifolds: $ID = \lim_{r \to 0} \frac{\log \mathbb{E}[N(r)]}{\log r}$
+
+\textbf{Distance Metrics for Narrative Similarity:}
+
+Cosine similarity: $\cos(\theta) = \frac{A \cdot B}{||A|| \cdot ||B||}$
+
+Earth Mover's Distance:
+\begin{equation}
+EMD(P,Q) = \min_{\gamma \in \Pi(P,Q)} \sum_{i,j} \gamma_{ij} ||x_i - y_j||
+\end{equation}
+
+\textbf{Optimal Transport Formulation:}
+\begin{equation}
+W_p(P,Q) = \left(\inf_{\gamma \in \Pi(P,Q)} \int ||x-y||^p d\gamma(x,y)\right)^{1/p}
+\end{equation}
+
+\textbf{Anisotropy Problem:} $\text{avg-cos} = \frac{2}{n(n-1)} \sum_{i<j} \cos(v_i, v_j)$
+
+\footnotesize
+\textbf{Applications:} Document similarity, semantic search, narrative clustering.
+\end{frame}
+
+% PART II: TOPIC MODELING
+\section{Topic Modeling and Narrative Discovery}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Topic Modeling and Narrative Discovery\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Latent Dirichlet Allocation}
+\textbf{Generative Process}
+
+For each document $d$:
+\begin{enumerate}
+\item Draw topic distribution: $\theta_d \sim \text{Dir}(\alpha)$
+\item For each word position $n$:
+   \begin{itemize}
+   \item Draw topic: $z_{dn} \sim \text{Multinomial}(\theta_d)$
+   \item Draw word: $w_{dn} \sim \text{Multinomial}(\beta_{z_{dn}})$
+   \end{itemize}
+\end{enumerate}
+
+\textbf{Joint Distribution:}
+\begin{equation}
+p(\theta, z, w | \alpha, \beta) = p(\theta | \alpha) \prod_{n=1}^N p(z_n | \theta) p(w_n | z_n, \beta)
+\end{equation}
+
+\textbf{Posterior Inference (Intractable):}
+\begin{equation}
+p(\theta, z | w, \alpha, \beta) = \frac{p(\theta, z, w | \alpha, \beta)}{p(w | \alpha, \beta)}
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Variational Inference for LDA}
+\textbf{Variational Lower Bound (ELBO)}
+
+Approximate posterior: $q(\theta, z | \gamma, \phi)$
+
+\begin{equation}
+\log p(w | \alpha, \beta) \geq \mathcal{L}(\gamma, \phi; \alpha, \beta) = \mathbb{E}_q[\log p(\theta, z, w | \alpha, \beta)] - \mathbb{E}_q[\log q(\theta, z)]
+\end{equation}
+
+\textbf{Mean Field Approximation:}
+\begin{equation}
+q(\theta, z | \gamma, \phi) = q(\theta | \gamma) \prod_{n=1}^N q(z_n | \phi_n)
+\end{equation}
+
+\textbf{Update Equations:}
+\begin{align}
+\phi_{ni} &\propto \beta_{iw_n} \exp(\Psi(\gamma_i) - \Psi(\sum_j \gamma_j)) \\
+\gamma_i &= \alpha_i + \sum_{n=1}^N \phi_{ni}
+\end{align}
+
+where $\Psi$ is the digamma function.
+\end{frame}
+
+\begin{frame}[t]{Neural Topic Models: VAE-LDA}
+\textbf{Variational Autoencoder for Topics}
+
+Encoder (inference network):
+\begin{equation}
+q_\phi(\theta | d) = \mathcal{N}(\mu_\phi(d), \Sigma_\phi(d))
+\end{equation}
+
+Decoder (generative network):
+\begin{equation}
+p_\psi(w | \theta) = \prod_{n=1}^N \text{Softmax}(W\theta + b)_{w_n}
+\end{equation}
+
+\textbf{ELBO Objective:}
+\begin{equation}
+\mathcal{L} = \mathbb{E}_{q_\phi(\theta|d)}[\log p_\psi(d|\theta)] - D_{KL}(q_\phi(\theta|d) || p(\theta))
+\end{equation}
+
+\textbf{Reparameterization Trick:}
+\begin{equation}
+\theta = \mu_\phi(d) + \epsilon \odot \sigma_\phi(d), \quad \epsilon \sim \mathcal{N}(0, I)
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{BERTopic: Neural Embeddings for Topics}
+\textbf{Algorithm Pipeline}
+
+1. \textbf{Document Embeddings:} $e_i = \text{BERT}(d_i)$
+
+2. \textbf{Dimensionality Reduction:} UMAP
+\begin{equation}
+\mathcal{L}_{UMAP} = \sum_{i \sim j} \log \frac{p_{ij}}{q_{ij}} + (1 - p_{ij}) \log \frac{1 - p_{ij}}{1 - q_{ij}}
+\end{equation}
+
+3. \textbf{Clustering:} HDBSCAN with mutual reachability
+
+4. \textbf{Topic Representation:} c-TF-IDF
+\begin{equation}
+w_{t,c} = tf_{t,c} \cdot \log \left(1 + \frac{|C|}{|\{c' : t \in c'\}|}\right)
+\end{equation}
+
+where $tf_{t,c}$ is term frequency in cluster $c$.
+\end{frame}
+
+\begin{frame}[t]{Dynamic Topic Models}
+\textbf{Time-Evolving Topics}
+
+State evolution: $\beta_{k,t} | \beta_{k,t-1} \sim \mathcal{N}(\beta_{k,t-1}, \sigma^2 I)$
+
+\textbf{Online LDA with Mini-Batch Updates:}
+\begin{equation}
+\rho_t = (\tau_0 + t)^{-\kappa}, \quad \lambda_t = (1-\rho_t)\lambda_{t-1} + \rho_t \tilde{\lambda}_t
+\end{equation}
+
+\textbf{Change Point Detection:}
+Bayesian online changepoint detection with hazard function $H(r)$.
+
+Predictive probability:
+\begin{equation}
+P(x_t | x_{1:t-1}) = \sum_{r=0}^{t-1} P(r_t = r | x_{1:t-1}) P(x_t | x_{r+1:t-1})
+\end{equation}
+
+\textbf{Temporal Coherence:} Regularization term $\Omega = \sum_t ||\beta_{t} - \beta_{t-1}||^2$
+\end{frame}
+
+\begin{frame}[t]{Hierarchical Topic Models}
+\textbf{Hierarchical Dirichlet Process}
+
+\begin{equation}
+G_j | G_0 \sim DP(\alpha, G_0), \quad G_0 | \gamma, H \sim DP(\gamma, H)
+\end{equation}
+
+\textbf{Chinese Restaurant Process:}
+Customer $n$ sits at table $k$ with probability:
+\begin{equation}
+P(\text{table } k) = \begin{cases}
+\frac{n_k}{n-1+\alpha} & \text{if } k \text{ occupied} \\
+\frac{\alpha}{n-1+\alpha} & \text{if new table}
+\end{cases}
+\end{equation}
+
+\textbf{Pachinko Allocation Model:}
+Topic correlations via directed acyclic graph (DAG).
+
+\textbf{Tree-Structured Topic Hierarchies:}
+Nested partitions with depth-dependent Dirichlet parameters.
+\end{frame}
+
+\begin{frame}[t]{Topic Coherence and Evaluation}
+\textbf{PMI Coherence:}
+\begin{equation}
+C_{PMI} = \frac{2}{k(k-1)} \sum_{i<j} \log \frac{P(w_i, w_j)}{P(w_i)P(w_j)}
+\end{equation}
+
+\textbf{Normalized PMI (NPMI):}
+\begin{equation}
+NPMI(w_i, w_j) = \frac{PMI(w_i, w_j)}{-\log P(w_i, w_j)}
+\end{equation}
+
+\textbf{CV Coherence:} Sliding window with normalized pointwise mutual information.
+
+\textbf{Word Embedding Coherence:}
+\begin{equation}
+C_{emb} = \frac{1}{k(k-1)} \sum_{i \neq j} \text{sim}(\text{embed}(w_i), \text{embed}(w_j))
+\end{equation}
+
+\footnotesize
+\textbf{Evaluation:} Coherence correlates with human interpretability judgments.
+\end{frame}
+
+% PART III: HEADLINES TO NARRATIVES
+\section{From Headlines to Narratives: Aggregation Theory}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large From Headlines to Narratives: Aggregation Theory\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Graph-Based Headline Clustering}
+\textbf{Similarity Graph Construction}
+
+Edge weights between headlines $h_i, h_j$:
+\begin{equation}
+w_{ij} = \text{sim}(h_i, h_j) = \frac{\text{BERT}(h_i) \cdot \text{BERT}(h_j)}{||\text{BERT}(h_i)|| \cdot ||\text{BERT}(h_j)||}
+\end{equation}
+
+\textbf{Spectral Clustering Objective:}
+\begin{equation}
+\min_H \text{tr}(H^T L H) \quad \text{s.t.} \quad H^T H = I
+\end{equation}
+
+where $L = D - W$ is the graph Laplacian.
+
+\textbf{Solution:} Eigenvectors of smallest eigenvalues of $L$
+
+\textbf{Normalized Cut:}
+\begin{equation}
+\text{NCut}(A,B) = \frac{\text{cut}(A,B)}{\text{vol}(A)} + \frac{\text{cut}(A,B)}{\text{vol}(B)}
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Multi-Document Summarization}
+\textbf{Integer Linear Programming Formulation}
+
+Binary variables: $x_i = 1$ if sentence $i$ selected
+
+\textbf{Objective:}
+\begin{equation}
+\max \sum_{i} w_i x_i - \lambda \sum_{i,j} s_{ij} x_i x_j
+\end{equation}
+
+where $w_i$ is importance, $s_{ij}$ is similarity.
+
+\textbf{Constraints:}
+\begin{align}
+\sum_i l_i x_i &\leq L \quad \text{(length limit)} \\
+\sum_{i \in C_k} x_i &\geq 1 \quad \forall k \quad \text{(coverage)}
+\end{align}
+
+\textbf{Submodular Approximation:}
+\begin{equation}
+f(S) = \sum_{i \in V} \min(R(i, S), \alpha R(i, V))
+\end{equation}
+
+Greedy algorithm gives $(1 - 1/e)$ approximation.
+\end{frame}
+
+\begin{frame}[t]{Event Chain Extraction}
+\textbf{Narrative Event Chains}
+
+Probability of event sequence:
+\begin{equation}
+P(e_1, ..., e_n) = P(e_1) \prod_{i=2}^n P(e_i | e_1, ..., e_{i-1})
+\end{equation}
+
+\textbf{Pairwise Event Relations:}
+
+Temporal: \textit{before, after, simultaneous}
+
+Causal: $P(\text{cause}(e_i, e_j) | e_i, e_j, \text{context})$
+
+\textbf{Script Learning Objective:}
+\begin{equation}
+\max_\theta \sum_{(e_i, e_j) \in \mathcal{D}} \log P_\theta(e_j | e_i) + \log P_\theta(\text{rel}_{ij} | e_i, e_j)
+\end{equation}
+
+\textbf{Coherence Score:}
+\begin{equation}
+\text{coherence}(e_1, ..., e_n) = \prod_{i<j} P(e_j | e_i)^{1/d_{ij}}
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Cross-Document Entity Linking}
+\textbf{Entity Resolution Across Documents}
+
+Mention pair scoring:
+\begin{equation}
+s(m_i, m_j) = w^T \phi(m_i, m_j, \text{context})
+\end{equation}
+
+\textbf{Clustering Objective:}
+\begin{equation}
+\max \sum_{C \in \mathcal{C}} \sum_{m_i, m_j \in C} s(m_i, m_j) - \lambda ||\mathcal{C}||
+\end{equation}
+
+\textbf{Knowledge Graph Construction:}
+
+Nodes: Entities $\mathcal{E}$, Events $\mathcal{V}$
+
+Edges: Relations $\mathcal{R}$
+
+\textbf{Narrative Graph:}
+\begin{equation}
+G = (\mathcal{E} \cup \mathcal{V}, \mathcal{R}), \quad \mathcal{R} \subseteq (\mathcal{E} \times \mathcal{V}) \cup (\mathcal{V} \times \mathcal{V})
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Information Fusion and Contradiction Detection}
+\textbf{Dempster-Shafer Theory for Evidence Combination}
+
+Basic probability assignment: $m: 2^\Theta \to [0,1]$
+
+\textbf{Belief and Plausibility:}
+\begin{align}
+\text{Bel}(A) &= \sum_{B \subseteq A} m(B) \\
+\text{Pl}(A) &= \sum_{B \cap A \neq \emptyset} m(B)
+\end{align}
+
+\textbf{Dempster's Rule of Combination:}
+\begin{equation}
+m_{12}(A) = \frac{\sum_{B \cap C = A} m_1(B) m_2(C)}{1 - K}
+\end{equation}
+
+where $K = \sum_{B \cap C = \emptyset} m_1(B) m_2(C)$ is the conflict.
+
+\textbf{Contradiction Detection:} High conflict $K$ indicates inconsistent sources.
+\end{frame}
+
+\begin{frame}[t]{Narrative Arc Modeling}
+\textbf{Freytag's Pyramid Formalization}
+
+Dramatic arc structure: Exposition $\to$ Rising Action $\to$ Climax $\to$ Falling Action $\to$ Denouement
+
+\textbf{Sentiment Trajectory:}
+\begin{equation}
+s(t) = \sum_i w_i \cdot \text{sentiment}(w_i, t)
+\end{equation}
+
+\textbf{Vonnegut's Story Shapes:}
+\begin{itemize}
+\item Man in Hole: $s(t) = -\sin(\pi t) + \epsilon(t)$
+\item Cinderella: $s(t) = \text{sigmoid}(\alpha(t - t_0)) + \epsilon(t)$
+\item Kafka: $s(t) = -e^{-\lambda t} + \epsilon(t)$
+\end{itemize}
+
+\textbf{Story Grammar Parsing:}
+Context-free grammar: $S \to \text{Setup } \text{Complication } \text{Resolution}$
+
+\footnotesize
+\textbf{Neural Implementation:} RNN/Transformer with narrative structure attention.
+\end{frame}
+
+% PART IV: TRANSFORMER ARCHITECTURE
+\section{Transformer Architecture for Narrative Understanding}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Transformer Architecture for Narrative Understanding\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Multi-Head Self-Attention Mechanism}
+\textbf{Scaled Dot-Product Attention}
+
+\begin{equation}
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\end{equation}
+
+\textbf{Multi-Head Attention:}
+\begin{align}
+\text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O \\
+\text{where head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+\end{align}
+
+\textbf{Complexity Analysis:}
+\begin{itemize}
+\item Self-attention: $O(n^2 \cdot d)$
+\item Feed-forward: $O(n \cdot d^2)$
+\item Memory: $O(n^2 + n \cdot d)$
+\end{itemize}
+
+where $n$ = sequence length, $d$ = model dimension
+\end{frame}
+
+\begin{frame}[t]{Positional Encodings for Narrative Structure}
+\textbf{Absolute Position Encoding}
+
+Sinusoidal:
+\begin{align}
+PE_{(pos,2i)} &= \sin(pos/10000^{2i/d_{model}}) \\
+PE_{(pos,2i+1)} &= \cos(pos/10000^{2i/d_{model}})
+\end{align}
+
+\textbf{Relative Position Encoding:}
+\begin{equation}
+e_{ij} = x_i W^Q (x_j W^K + a_{ij}^K)^T + x_i W^Q (a_{ij}^K)^T
+\end{equation}
+
+\textbf{Rotary Position Embedding (RoPE):}
+\begin{equation}
+f_q(x_m, m) = R_{\Theta,m}^d W_q x_m
+\end{equation}
+
+where $R_{\Theta,m}^d$ is a rotation matrix dependent on position $m$.
+\end{frame}
+
+\begin{frame}[t]{Efficient Transformers for Long Documents}
+\textbf{Sparse Attention Patterns}
+
+Longformer sliding window + global:
+\begin{equation}
+\text{Attention}_{ij} = \begin{cases}
+1 & \text{if } |i - j| \leq w/2 \\
+1 & \text{if } i \in \mathcal{G} \text{ or } j \in \mathcal{G} \\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+
+\textbf{Linear Attention via Kernel Trick:}
+\begin{equation}
+\text{Attention}(Q, K, V) = \phi(Q)(\phi(K)^T V)
+\end{equation}
+
+Complexity: $O(n \cdot d^2)$ instead of $O(n^2 \cdot d)$
+
+\textbf{Flash Attention:}
+\begin{itemize}
+\item Tiling computation for GPU memory hierarchy
+\item Recomputation in backward pass
+\item IO complexity: $O(n^2 d / M^{1/2})$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Pre-training Objectives for Narrative Understanding}
+\textbf{Beyond MLM: Discourse-Aware Objectives}
+
+\textbf{Sentence Order Prediction (SOP):}
+\begin{equation}
+\mathcal{L}_{SOP} = -\mathbb{E}_{(s_1, s_2)} \log P(y | [CLS], s_1, [SEP], s_2)
+\end{equation}
+
+\textbf{Discourse Relation Prediction:}
+\begin{equation}
+\mathcal{L}_{DR} = -\sum_{r \in \mathcal{R}} \log P(r | s_i, s_j, \text{context})
+\end{equation}
+
+\textbf{Contrastive Learning (SimCSE):}
+\begin{equation}
+\mathcal{L} = -\log \frac{e^{\text{sim}(h_i, h_i^+)/\tau}}{\sum_{j=1}^N e^{\text{sim}(h_i, h_j)/\tau}}
+\end{equation}
+
+where $h_i^+$ is augmented version of $h_i$, $\tau$ is temperature.
+\end{frame}
+
+\begin{frame}[t]{Fine-tuning Strategies for Narratives}
+\textbf{Parameter-Efficient Fine-tuning}
+
+\textbf{LoRA (Low-Rank Adaptation):}
+\begin{equation}
+W' = W + BA, \quad B \in \mathbb{R}^{d \times r}, A \in \mathbb{R}^{r \times k}
+\end{equation}
+
+\textbf{Adapters:}
+\begin{equation}
+h' = h + f(hW_{down})W_{up}
+\end{equation}
+
+\textbf{Prefix-tuning:}
+\begin{equation}
+P(y|x) = P(y | P_\phi; x)
+\end{equation}
+
+\textbf{Multi-task Learning:}
+\begin{equation}
+\mathcal{L}_{total} = \sum_{i=1}^T w_i \mathcal{L}_i + \lambda \Omega(\theta)
+\end{equation}
+
+\footnotesize
+\textbf{Advantage:} Efficient adaptation while preserving pre-trained knowledge.
+\end{frame}
+
+\begin{frame}[t]{Interpretability and Probing}
+\textbf{Attention Analysis for Narrative Structure}
+
+Attention rollout:
+\begin{equation}
+A_{rollout} = \prod_{l=1}^L A^{(l)}
+\end{equation}
+
+\textbf{Probing Tasks:}
+\begin{itemize}
+\item Syntactic: POS tagging, dependency parsing
+\item Semantic: Named entity recognition, coreference
+\item Discourse: Narrative structure, coherence
+\end{itemize}
+
+\textbf{Gradient-based Attribution:}
+Integrated gradients:
+\begin{equation}
+IG_i(x) = (x_i - x'_i) \times \int_{\alpha=0}^1 \frac{\partial f(x' + \alpha(x-x'))}{\partial x_i} d\alpha
+\end{equation}
+
+\footnotesize
+\textbf{Tools:} BertViz, Captum, Attention rollout for narrative flow analysis.
+\end{frame}
+
+% PART V: LLM GENERATION
+\section{Large Language Models for Narrative Generation}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Large Language Models for Narrative Generation\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Autoregressive Language Modeling}
+\textbf{Fundamental Objective}
+
+\begin{equation}
+P(x_1, ..., x_T) = \prod_{t=1}^T P(x_t | x_{<t})
+\end{equation}
+
+\textbf{Maximum Likelihood Training:}
+\begin{equation}
+\mathcal{L}_{MLE} = -\frac{1}{T} \sum_{t=1}^T \log P_\theta(x_t | x_{<t})
+\end{equation}
+
+\textbf{Perplexity:}
+\begin{equation}
+\text{PPL} = \exp\left(-\frac{1}{T}\sum_{t=1}^T \log P(x_t | x_{<t})\right) = \exp(\mathcal{L}_{MLE})
+\end{equation}
+
+\textbf{Exposure Bias Problem:}
+\begin{itemize}
+\item Training: Teacher forcing with ground truth
+\item Inference: Model's own predictions
+\item Mismatch leads to error accumulation
+\end{itemize}
+
+\textbf{Scheduled Sampling:}
+Use model predictions with probability $\epsilon_t$:
+\begin{equation}
+x_t^{input} = \begin{cases}
+x_t^{truth} & \text{with prob } 1-\epsilon_t \\
+\arg\max P(x | x_{<t}) & \text{with prob } \epsilon_t
+\end{cases}
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Decoding Strategies}
+\textbf{Beam Search}
+
+Maintain top $k$ sequences:
+\begin{equation}
+\hat{y} = \arg\max_{y} P(y|x) = \arg\max_y \prod_{t=1}^T P(y_t | y_{<t}, x)
+\end{equation}
+
+\textbf{Top-k Sampling:}
+\begin{equation}
+P'(x) = \begin{cases}
+P(x)/\sum_{x' \in V_k} P(x') & \text{if } x \in V_k \\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+
+\textbf{Nucleus (Top-p) Sampling:}
+\begin{equation}
+V_p = \text{smallest set s.t. } \sum_{x \in V_p} P(x) \geq p
+\end{equation}
+
+\textbf{Temperature Scaling:}
+\begin{equation}
+P'(x_i) = \frac{\exp(z_i/T)}{\sum_j \exp(z_j/T)}
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Controlled Generation with LLMs}
+\textbf{Plug and Play Language Models (PPLM)}
+
+Gradient-based steering:
+\begin{equation}
+\tilde{H}_t = H_t + \alpha \frac{\nabla_{H_t} \log P(a | x + H_t)}{\||\nabla_{H_t} \log P(a | x + H_t)||}_\gamma
+\end{equation}
+
+\textbf{Control Codes (CTRL):}
+\begin{equation}
+P(x | c) = \prod_{t=1}^T P(x_t | c, x_{<t})
+\end{equation}
+
+\textbf{Reinforcement Learning from Human Feedback:}
+
+Reward model: $r_\phi(x, y)$
+
+Policy optimization:
+\begin{equation}
+\mathcal{L}_{RLHF} = -\mathbb{E}_{y \sim \pi_\theta}[r_\phi(x, y)] + \beta D_{KL}(\pi_\theta || \pi_{ref})
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{In-Context Learning Theory}
+\textbf{Few-Shot Learning via Prompting}
+
+Prompt structure: $P = (x_1, y_1, ..., x_k, y_k, x_{test})$
+
+\textbf{Bayesian Interpretation:}
+\begin{equation}
+P(y | x, \mathcal{D}_{prompt}) = \int P(y | x, \theta) P(\theta | \mathcal{D}_{prompt}) d\theta
+\end{equation}
+
+\textbf{Implicit Meta-Learning:}
+\begin{equation}
+\theta^* = \arg\min_\theta \mathbb{E}_{\mathcal{T} \sim p(\mathcal{T})} \left[ \mathcal{L}(\theta, \mathcal{T}_{support}) \right]
+\end{equation}
+
+\textbf{Gradient Descent in Context:}
+LLMs perform implicit gradient descent on in-context examples.
+
+\textbf{Distribution Shift:}
+\begin{equation}
+\text{Error} \leq \mathcal{O}\left(\sqrt{\frac{\log(1/\delta)}{n}} + D_{TV}(P_{train}, P_{test})\right)
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Hallucination and Factuality}
+\textbf{Hallucination Detection}
+
+Confidence-based detection:
+\begin{equation}
+H(x) = 1 - \max_y P(y|x)
+\end{equation}
+
+\textbf{Factual Consistency Scoring:}
+\begin{equation}
+FC(s, d) = \frac{1}{|E_s|} \sum_{e \in E_s} \mathbb{I}[e \text{ entailed by } d]
+\end{equation}
+
+\textbf{Knowledge Grounding:}
+Retrieval-augmented generation (RAG):
+\begin{equation}
+P(y|x) = \sum_{z \in \text{retrieve}(x)} P(z|x) P(y|x,z)
+\end{equation}
+
+\textbf{Uncertainty Quantification:}
+Semantic entropy: $SE = -\sum_c P(c|x) \log P(c|x)$
+
+\footnotesize
+\textbf{Applications:} Filter unreliable narrative generations.
+\end{frame}
+
+\begin{frame}[t]{Evaluation Metrics for Narrative Generation}
+\textbf{Overlap-Based Metrics}
+
+BLEU score:
+\begin{equation}
+BLEU = BP \cdot \exp\left(\sum_{n=1}^N w_n \log p_n\right)
+\end{equation}
+
+ROUGE-L:
+\begin{equation}
+F_{lcs} = \frac{(1+\beta^2) R_{lcs} P_{lcs}}{\beta^2 R_{lcs} + P_{lcs}}
+\end{equation}
+
+\textbf{Semantic Similarity:}
+
+BERTScore:
+\begin{equation}
+F_{BERT} = \frac{2 \cdot P_{BERT} \cdot R_{BERT}}{P_{BERT} + R_{BERT}}
+\end{equation}
+
+\textbf{Human Evaluation:} Coherence, fluency, informativeness, factuality
+\end{frame}
+
+% PART VI: ADVANCED NLP
+\section{Advanced NLP Theory for Narratives}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Advanced NLP Theory for Narratives\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Neural Coreference Resolution}
+\textbf{End-to-End Neural Model}
+
+Span representation:
+\begin{equation}
+g_i = [x_{START(i)}, x_{END(i)}, \hat{x}_i, \phi(i)]
+\end{equation}
+
+Mention scoring:
+\begin{equation}
+s_m(i) = w_m^T \text{FFNN}_m(g_i)
+\end{equation}
+
+Pairwise scoring:
+\begin{equation}
+s_a(i,j) = w_a^T \text{FFNN}_a([g_i, g_j, g_i \circ g_j, \phi(i,j)])
+\end{equation}
+
+\textbf{Marginalization over antecedents:}
+\begin{equation}
+P(y_i = j) = \frac{\exp(s(i,j))}{\sum_{j' \in Y(i)} \exp(s(i,j'))}
+\end{equation}
+
+where $s(i,j) = s_m(i) + s_m(j) + s_a(i,j)$
+\end{frame}
+
+\begin{frame}[t]{Temporal Reasoning in Narratives}
+\textbf{Allen's Interval Algebra}
+
+13 basic relations: before, after, meets, overlaps, starts, finishes, equals...
+
+\textbf{Temporal Graph Construction:}
+
+Nodes: Events $\mathcal{E}$
+
+Edges: Temporal relations $\mathcal{R}$
+
+\textbf{Constraint Propagation:}
+\begin{equation}
+r_{AC} = r_{AB} \circ r_{BC}
+\end{equation}
+
+\textbf{TimeML Annotation:}
+\begin{itemize}
+\item EVENT: Actions, states
+\item TIMEX3: Temporal expressions
+\item SIGNAL: Temporal connectives
+\item TLINK: Temporal links
+\end{itemize}
+
+\textbf{Neural Temporal Extraction:}
+\begin{equation}
+P(r_{ij} | e_i, e_j) = \text{softmax}(W[\text{BERT}(e_i); \text{BERT}(e_j); \text{features}])
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Relation Extraction for Narratives}
+\textbf{Distant Supervision}
+
+Automatically label training data using knowledge base:
+\begin{equation}
+\mathcal{L}_{distant} = \sum_{(e_1, r, e_2) \in KB} \log P(r | \text{sentences containing } e_1, e_2)
+\end{equation}
+
+\textbf{Joint Entity and Relation Extraction:}
+\begin{equation}
+P(E, R | S) = P(E | S) \cdot P(R | E, S)
+\end{equation}
+
+\textbf{Graph Neural Networks for RE:}
+\begin{equation}
+h_i^{(l+1)} = \sigma\left(\sum_{r \in \mathcal{R}} \sum_{j \in N_r(i)} W_r^{(l)} h_j^{(l)} + b^{(l)}\right)
+\end{equation}
+
+\textbf{OpenIE: Open Information Extraction}
+Extract $(arg_1, relation, arg_2)$ tuples without predefined schema.
+\end{frame}
+
+\begin{frame}[t]{Causal Reasoning in Text}
+\textbf{Pearl's Causal Hierarchy in NLP}
+
+\textbf{Level 1 - Association:} $P(Y|X)$
+Statistical correlation in text.
+
+\textbf{Level 2 - Intervention:} $P(Y|do(X))$
+Counterfactual text generation.
+
+\textbf{Level 3 - Counterfactuals:} $P(Y_x|X',Y')$
+What would have happened if...
+
+\textbf{Backdoor Adjustment:}
+\begin{equation}
+P(Y|do(X)) = \sum_z P(Y|X,Z) P(Z)
+\end{equation}
+
+\textbf{Instrumental Variables in Text:}
+Use exogenous text features as instruments for causal identification.
+
+\footnotesize
+\textbf{Application:} Distinguish causation from correlation in narrative claims.
+\end{frame}
+
+\begin{frame}[t]{Aspect-Based Sentiment Analysis}
+\textbf{Joint Extraction and Classification}
+
+Task: Extract aspects and predict sentiment
+
+\textbf{BERT for ABSA:}
+\begin{equation}
+h = \text{BERT}([CLS], \text{sentence}, [SEP], \text{aspect}, [SEP])
+\end{equation}
+
+\textbf{CRF Layer for Sequence Labeling:}
+\begin{equation}
+P(y|x) = \frac{\exp(\sum_{i=1}^n (W_{y_{i-1},y_i} + P_{i,y_i}))}{\sum_{y'} \exp(\sum_{i=1}^n (W_{y'_{i-1},y'_i} + P_{i,y'_i}))}
+\end{equation}
+
+\textbf{Multi-Task Learning:}
+\begin{equation}
+\mathcal{L} = \lambda_1 \mathcal{L}_{aspect} + \lambda_2 \mathcal{L}_{sentiment} + \lambda_3 \mathcal{L}_{joint}
+\end{equation}
+\end{frame}
+
+% PART VII: OPTIMIZATION
+\section{Mathematical Optimization for NLP}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Mathematical Optimization for NLP\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Loss Functions for Language Models}
+\textbf{Beyond Cross-Entropy}
+
+\textbf{Focal Loss (for imbalanced data):}
+\begin{equation}
+\mathcal{L}_{focal} = -\alpha_t (1 - p_t)^\gamma \log(p_t)
+\end{equation}
+
+\textbf{Label Smoothing:}
+\begin{equation}
+y'_i = (1 - \epsilon) y_i + \frac{\epsilon}{K}
+\end{equation}
+
+\textbf{Contrastive Loss (InfoNCE):}
+\begin{equation}
+\mathcal{L}_{NCE} = -\log \frac{\exp(f(x, x^+)/\tau)}{\exp(f(x, x^+)/\tau) + \sum_{i=1}^N \exp(f(x, x_i^-)/\tau)}
+\end{equation}
+
+\textbf{Sequence-Level Loss:}
+\begin{equation}
+\mathcal{L}_{seq} = -\mathbb{E}_{y \sim P_\theta}[R(y)] + \lambda H(P_\theta)
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Optimization Algorithms for Transformers}
+\textbf{Adam with Warmup}
+
+Adam update:
+\begin{align}
+m_t &= \beta_1 m_{t-1} + (1-\beta_1) g_t \\
+v_t &= \beta_2 v_{t-1} + (1-\beta_2) g_t^2 \\
+\theta_t &= \theta_{t-1} - \eta \frac{m_t}{\sqrt{v_t} + \epsilon}
+\end{align}
+
+\textbf{Learning Rate Schedule:}
+\begin{equation}
+\eta_t = d_{model}^{-0.5} \cdot \min(t^{-0.5}, t \cdot \text{warmup}^{-1.5})
+\end{equation}
+
+\textbf{Gradient Clipping:}
+\begin{equation}
+g' = \begin{cases}
+g & \text{if } ||g|| \leq c \\
+c \cdot g/||g|| & \text{otherwise}
+\end{cases}
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Regularization Techniques}
+\textbf{Dropout}
+\begin{equation}
+y = \frac{1}{1-p} x \odot m \text{ where } m \sim \text{Bernoulli}(1-p)
+\end{equation}
+
+\textbf{Layer Normalization:}
+\begin{equation}
+y = \gamma \frac{x - \mu}{\sigma} + \beta
+\end{equation}
+
+\textbf{Weight Decay (L2 Regularization):}
+\begin{equation}
+\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda \sum_i ||W_i||_2^2
+\end{equation}
+
+\textbf{Spectral Normalization:}
+\begin{equation}
+W_{SN} = \frac{W}{\sigma(W)}, \quad \sigma(W) = \max_u ||Wu||_2
+\end{equation}
+
+where $\sigma(W)$ is the spectral norm (largest singular value).
+\end{frame}
+
+\begin{frame}[t]{Multi-objective Optimization}
+\textbf{Pareto Optimality in Multi-task Learning}
+
+Pareto frontier: No improvement in one task without degrading another.
+
+\textbf{Gradient Surgery:}
+\begin{equation}
+g_i' = g_i - \frac{g_i \cdot g_j}{||g_j||^2} g_j \text{ if } g_i \cdot g_j < 0
+\end{equation}
+
+\textbf{Uncertainty Weighting:}
+\begin{equation}
+\mathcal{L} = \sum_i \frac{1}{2\sigma_i^2} \mathcal{L}_i + \log \sigma_i
+\end{equation}
+
+\textbf{Task Balancing:}
+Dynamic loss scaling: $w_i^{(t)} = \frac{r_i^{(t-1)}}{\sum_j r_j^{(t-1)}}$
+
+where $r_i^{(t)}$ is the loss ratio for task $i$.
+\end{frame}
+
+% Key Mathematical Frameworks
+\section{Key Mathematical Frameworks}
+
+\begin{frame}[t]{Information Theory for Narrative Analysis}
+\textbf{Mutual Information between Headlines and Narratives}
+
+\begin{equation}
+I(H;N) = \sum_{h,n} P(h,n) \log \frac{P(h,n)}{P(h)P(n)} = H(N) - H(N|H)
+\end{equation}
+
+\textbf{Conditional Entropy:}
+\begin{equation}
+H(N|H) = -\sum_{h,n} P(h,n) \log P(n|h)
+\end{equation}
+
+\textbf{Information Gain:}
+\begin{equation}
+IG = H(N) - \sum_h P(h) H(N|H=h)
+\end{equation}
+
+\textbf{Jensen-Shannon Divergence:}
+\begin{equation}
+JS(P,Q) = \frac{1}{2}D_{KL}(P||M) + \frac{1}{2}D_{KL}(Q||M), \quad M = \frac{P+Q}{2}
+\end{equation}
+
+\footnotesize
+\textbf{Application:} Quantify information content in narrative extraction.
+\end{frame}
+
+\begin{frame}[t]{Spectral Theory for Attention Analysis}
+\textbf{Eigendecomposition of Attention Matrices}
+
+Attention matrix: $A = QK^T / \sqrt{d_k}$
+
+\textbf{Spectral Decomposition:}
+\begin{equation}
+A = U\Lambda U^T = \sum_{i=1}^n \lambda_i u_i u_i^T
+\end{equation}
+
+\textbf{Low-rank Approximation:}
+\begin{equation}
+A_k = \sum_{i=1}^k \lambda_i u_i u_i^T
+\end{equation}
+
+\textbf{Attention Head Analysis:}
+Rank of attention head: $\text{rank}(A_h) = |\{\lambda_i : \lambda_i > \epsilon\}|$
+
+\textbf{Frobenius Norm:}
+\begin{equation}
+||A||_F = \sqrt{\sum_{i,j} A_{ij}^2} = \sqrt{\text{tr}(A^T A)} = \sqrt{\sum_i \lambda_i^2}
+\end{equation}
+
+\footnotesize
+\textbf{Insight:} Low-rank attention heads focus on specific linguistic patterns.
+\end{frame}
+
+% Conclusions
+\section{Theoretical Synthesis}
+
+\begin{frame}[t]{Key Mathematical Contributions}
+\textbf{Unified Framework for Narrative Extraction}
+
+\begin{enumerate}
+\item \textbf{Embedding Theory:} Distributional semantics $\to$ contextual representations
+\item \textbf{Topic Discovery:} Probabilistic graphical models $\to$ neural variational inference
+\item \textbf{Aggregation:} Graph algorithms + optimization for multi-document fusion
+\item \textbf{Transformer Architecture:} Attention as information routing
+\item \textbf{Generation Theory:} Autoregressive models with control
+\item \textbf{Advanced NLP:} Joint models for narrative understanding
+\item \textbf{Optimization:} Specialized techniques for language models
+\end{enumerate}
+
+\vfill
+\textbf{Open Questions:}
+\begin{itemize}
+\item Causal representation learning in text
+\item Compositional generalization
+\item Grounded language understanding
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Thank You}
+\centering
+\Large Questions and Discussion\\
+\vspace{20pt}
+\normalsize
+\textbf{Contact:}\\
+Prof. Dr. Joerg Osterrieder\\
+\vspace{10pt}
+\textbf{Resources:}\\
+Code implementations available\\
+\vspace{10pt}
+Mathematical proofs in supplementary materials
+\end{frame}
+
+\end{document}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative Digital Finance - SNSF Research Project</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --accent: #f59e0b;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; }
+        header p { opacity: 0.9; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 15px 5px 0;
+        }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        main { padding: 40px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.5rem; }
+        h3 { margin: 20px 0 10px; font-size: 1.15rem; color: var(--primary); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .block-card {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .block-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .block-card h3 { margin-top: 0; color: var(--primary); }
+        .block-card .num {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .block-card p { font-size: 0.95rem; color: #475569; margin: 10px 0 15px; }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+        .team-member .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .team-member .info { flex: 1; }
+        .team-member .name { font-weight: 600; }
+        .team-member .role { font-size: 0.85rem; color: #64748b; }
+        .funding {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #fef3c7;
+            border-radius: 8px;
+        }
+        .funding-item { text-align: center; }
+        .funding-item .label { font-size: 0.8rem; color: #92400e; }
+        .funding-item .value { font-weight: 700; color: #78350f; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6rem; }
+            nav ul { flex-direction: column; align-items: center; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Narrative Digital Finance</h1>
+            <p>Investigating the interplay between financial narratives and market dynamics using NLP and machine learning</p>
+            <span class="badge">SNSF Grant IZCOZ0_213370</span>
+            <span class="badge">2023-2026</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="block4/">Block 4: ML Framework</a></li>
+            <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h2>Project Overview</h2>
+            <p>The Narrative Digital Finance project explores how textual information from news, social media, and corporate communications influences financial markets. We develop machine learning frameworks that integrate natural language processing with traditional quantitative methods to improve market prediction and risk management.</p>
+
+            <div class="funding" style="margin-top: 25px;">
+                <div class="funding-item">
+                    <div class="label">Primary Funding</div>
+                    <div class="value">Swiss National Science Foundation</div>
+                </div>
+                <div class="funding-item">
+                    <div class="label">Grant Number</div>
+                    <div class="value">IZCOZ0_213370</div>
+                </div>
+                <div class="funding-item">
+                    <div class="label">Duration</div>
+                    <div class="value">2023-2026</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Work Packages</h2>
+            <div class="grid">
+                <div class="block-card">
+                    <h3><span class="num">1</span>Data Infrastructure</h3>
+                    <p>Building comprehensive datasets combining market data with textual narratives from multiple sources.</p>
+                </div>
+                <div class="block-card">
+                    <h3><span class="num">2</span>NLP Methods</h3>
+                    <p>Developing finance-specific NLP models for sentiment analysis, topic modeling, and narrative extraction.</p>
+                </div>
+                <div class="block-card">
+                    <h3><span class="num">3</span>Market Dynamics</h3>
+                    <p>Analyzing lead-lag relationships between narratives and market movements across asset classes.</p>
+                </div>
+                <div class="block-card" style="background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-color: #6ee7b7;">
+                    <h3><span class="num" style="background: #059669;">4</span>Integrated ML Framework</h3>
+                    <p>Ex-ante structural break detection combining NLP, change point detection, and ensemble methods.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="block4/" class="btn">View Paper & Results</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Research Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="avatar">JO</div>
+                    <div class="info">
+                        <div class="name">Prof. Dr. Joerg Osterrieder</div>
+                        <div class="role">Principal Investigator - UZH / FHGR</div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">GT</div>
+                    <div class="info">
+                        <div class="name">Gabin Taibi</div>
+                        <div class="role">PhD Researcher - University of Zurich</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Publications</h2>
+            <h3>Block 4: Structural Break Detection</h3>
+            <p style="margin-bottom: 15px;">
+                <strong>Integrated Machine Learning Framework for Ex-Ante Detection of Structural Breaks: Combining NLP, Change Point Detection, and Ensemble Methods</strong><br>
+                <em>Osterrieder, J. & Taibi, G.</em> - Target: Physica A: Statistical Mechanics and its Applications
+            </p>
+            <a href="block4/paper/" class="btn">Read Paper</a>
+            <a href="block4/paper/main.pdf" class="btn btn-outline" download>Download PDF</a>
+        </div>
+
+        <div class="card">
+            <h2>Key Results (Block 4)</h2>
+            <p>Our stacking ensemble achieves significant improvements over single-stream approaches:</p>
+            <ul style="margin: 15px 0 15px 20px;">
+                <li><strong>AUC-ROC: 0.712</strong> (+12.7% vs best single model)</li>
+                <li><strong>Detection Delay: 3.2 days</strong> (67% faster than break-signal-only)</li>
+                <li>Each feature stream (quantitative, NLP, break signals) contributes unique predictive information</li>
+            </ul>
+            <a href="block4/figures/" class="btn btn-outline">View All Figures</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Narrative Digital Finance | SNSF Grant IZCOZ0_213370</p>
+        <p>University of Zurich | University of Applied Sciences Graubunden</p>
+    </footer>
+</body>
+</html>

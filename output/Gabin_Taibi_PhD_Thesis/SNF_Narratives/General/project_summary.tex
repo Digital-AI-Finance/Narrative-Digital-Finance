@@ -1,0 +1,226 @@
+\documentclass[12pt]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Language and formatting
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+
+% Links
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\title{SNF Narrative Progress Summary}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section*{Introduction}
+\label{sec:introduction}
+This project aims to investigate how financial narratives emerge, evolve, and potentially drive structural changes in financial markets. By combining Natural Language Processing (NLP), time series econometrics, and causal inference methods, the project seeks to quantify the informational content and predictive power of market-related narratives, with a particular focus on their role in explaining bubbles, and regime shifts.
+
+This document summarizes the progress made so far across the different work packages (WP1 to WP4) and outlines the plan for the next stages of the research, including expected deliverables and deadlines.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Work Package 1: Literature Review and Data Collection}
+\label{sec:wp1}
+
+% ###########################################
+
+\subsection{Literature Analysis}
+
+A systematic literature review paper is currently being finalized and will soon be submitted to a peer-reviewed journal. This paper focuses on the intersection of narratives in finance and recent advances in NLP and machine learning methods applied to financial text. It does not yet include the structural break component.
+
+In parallel, a conceptual literature review has been developed to provide a broader academic foundation for the project. It synthesizes recent research across the three core components of the Narrative Digital Finance project: (1) textual data analysis, (2) detection of structural breaks and asset price bubbles, and (3) narrative economics. This internal review supports the methodological design and integration of insights across disciplines.
+
+% ###########################################
+
+\subsection{Data Collection and Analysis}
+
+\subsubsection{Financial Data}
+High-frequency trades \footnote{\url{https://a7-dataplatform.deutsche-boerse.com/products?category=ANALYTICS&subcategory=HIGH_PRECISION_TIMESTAMP}} and quotes data from Deutsche Börse (Xetra and Eurex) has been collected. From this, daily asset prices and daily (high-frequency) volatility and associated Hurst exponent have been computed.
+
+\subsubsection{Macroeconomic and Time Series Data}
+Macro-level indicators have been retrieved via Alpha Vantage \footnote{\url{https://www.alphavantage.co/}} and St. Louis FED's FRED API \footnote{\url{https://fred.stlouisfed.org/docs/api/fred/}}, including treasury yield, LIBOR, CPI, PPI, GDP, Unemployement, Nonfarm Payrolls, foreign exchange rates, corporate earnings, WTI and Brent crude oil prices and natural gas prices.
+
+\subsubsection{Textual Measures}
+Sentiment scores have been sourced from Alpha Vantage and RavenPack (pending access confirmation from Quoniam). These indicators will serve as benchmark or exogenous variables in empirical and predictive modeling.
+
+\subsubsection{Text Data}
+Multiple sources of financial and economic text have been collected:
+\begin{itemize}
+    \item \textbf{Reddit (r/WallStreetBets) \footnote{\url{https://www.kaggle.com/datasets/gpreda/reddit-wallstreetsbets-posts}}:} Jan 2021 – Aug 2021 (via Kaggle)
+    \item \textbf{New York Times articles \footnote{\url{https://www.kaggle.com/datasets/aryansingh0909/nyt-articles-21m-2000-present}}:} Jan 2000 – present (via Kaggle and Python script)
+    \item \textbf{Alpha Vantage:} Company overviews, earnings call transcripts, and news articles from Jan 2020 to present
+    \item \textbf{Gingado \footnote{\url{https://dkgaraujo.github.io/gingado/}} (BIS):} Central bank speeches from Jan 1996 – present
+    \item \textbf{Wayback Machine \footnote{\url{https://web.archive.org/}} prototype:} Web scraping pipeline for archived economic content (Jan 2010 – present)
+\end{itemize}
+
+\paragraph{DataLoader Script.}  
+A unified data ingestion pipeline has been developed to standardize text input from all sources. The script implements source-specific routines to clean and process the data—normalizing timestamps, merging text fields, and filtering by date. The `DataLoader` class handles all operations: reading raw files, transforming them using modular logic, and returning clean Polars DataFrames. It also provides diagnostic reporting on data loss during preprocessing and overall processing time.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Work Package 2: Method Selection and Narrative Detection}
+\label{sec:wp2}
+
+Preliminary methodologies for this work package have been proposed in both Marius and Gabin’s PhD research proposals. Two main prototypes have been implemented to test end-to-end narrative detection pipelines and define a consistent set of narrative metrics. The work is divided into three subcomponents.
+
+% ###########################################
+
+\subsection{WP2.1: Narrative Clustering Pipeline and Evaluation}
+Initial implementation of the clustering pipeline has been completed. The architecture is designed to test different embedding models, clustering methods, and topic representation techniques to identify stable and meaningful topic clusters that can be interpreted as narratives.
+
+Each document is transformed using sentence embeddings (default: MiniLM), clustered using a Gaussian Mixture Model (GMM) or HBDSCAN, and assigned a probability of belonging to each topic. Topic representation is refined using techniques such as KeyBERT (keyword extraction), Part-of-Speech filtering, Maximal Marginal Relevance (MMR) and LLM-based summaries. Evaluation metrics include coherence, silhouette scores, and information criteria (AIC/BIC). Clustering performance is currently being evaluated across time for consistency and interpretability.
+
+% ###########################################
+
+\subsection{WP2.2: Change Point Detection Methodology}
+
+This part is a work in progress. Proposed methods to detect structural changes in financial or narrative-related time series include:
+
+\begin{itemize}
+  \item \textbf{Classical time series tests:} Bai–Perron test for multiple breaks, Chow test for single breakpoints, and CUSUM tests for parameter stability.
+  \item \textbf{Bayesian approaches:} Bayesian Change Point Detection (offline detection using MCMC or variational inference).
+  \item \textbf{Machine learning-based methods:} Kernel-based CPD and Hidden Markov Models (HMM) for regime-switching dynamics.
+\end{itemize}
+
+Two analytical approaches are considered: (1) macro-level structural changes based on multivariate macroeconomic indicators, and (2) asset-specific change points using daily time series from key assets (e.g., MAG7, commodities, FX). Both approaches will be tested to determine whether structural breaks in market data align with changes in narrative dynamics.
+
+% ###########################################
+
+\subsection{WP2.3: NLP and Text Analysis Methodology}
+
+\subsubsection{Text Pre-processing}
+A robust, modular, and scalable preprocessing pipeline has been implemented using Polars and FastText. It handles:\\
+- Loading and transforming raw text data from Reddit, NYT, and other sources\\
+- Cleaning: removing URLs, malformed entries, emojis, and overly long texts\\
+- FastText-based language detection (parallelized) to filter for English texts\\
+- Stopword removal and timestamp normalization\\
+
+The pipeline is packaged in a `DataProcessor` class and can be run via command line with customizable options for date ranges and source-specific parameters.
+
+\subsubsection{FASTopic modeling}
+A prototype has been developed which explores the relationship between online discussions and stock prices, focusing on Reddit posts about GameStop. It begins by preprocessing and filtering the text data, then trains or loads a pretrained topic model (FASTopic) to identify latent themes in the posts. One selected topic’s intensity is tracked over time. The script also optionally runs a Roberta-based emotion classifier to extract detailed emotional signals (like fear, optimism, or excitement) from the posts. These emotion scores are then weighted by the topic strength and resampled over time (e.g., weekly averages). Finally, the script visualizes how these topic and emotion dynamics correlate with GameStop’s actual stock price, enabling intuitive interpretation of how specific narratives and moods may have interacted with market movements.
+
+\subsubsection{BERTopic modeling}
+The core BERTopic modeling pipeline includes:
+\begin{itemize}
+  \item \textbf{Embedding model comparison:} Local models via Hugging Face, OpenAI embeddings, and Google’s API embeddings are being evaluated.
+  \item \textbf{Topic modeling:} Two main approaches have been developed:
+    \begin{itemize}
+      \item \textbf{Custom GMM + KeyBERT pipeline:} Sentence embeddings $\rightarrow$ GMM clustering $\rightarrow$ topic keyword extraction. The number of clusters can be inferred using metrics (AIC, BIC, silhouette). Clustering outputs include document-cluster probabilities and cluster keywords.
+      \item \textbf{BERTopic:} Supports multiple embedding models, uses class-based TF-IDF (c-TF-IDF), Part-of-Speech filtering, MMR (Maximal Marginal Relevance), and LLM summaries. Weekly inference with daily partial fit is tested to balance clustering stability and computational cost.
+    \end{itemize}
+  \item \textbf{NER, Sentiment and Emotion Analysis:} Extraction of named entities, VADER/FinBERT sentiment scores, and emotion classification.
+  \item \textbf{Semantic uncertainty estimation:} Prototype score reflecting entropy or embedding variance across texts.
+\end{itemize}
+
+\subsubsection{Narrative Metric Experiments}
+For each topic cluster (interpreted as a narrative), the following metrics are computed:
+\begin{itemize}
+  \item \textbf{Semantic change:} Cosine distance between cluster centroids over time
+  \item \textbf{Strength:} Number of documents per cluster
+  \item \textbf{Confidence:} Average document-cluster assignment probability
+  \item \textbf{Coherence:} Topic coherence using c-TF-IDF or MMR
+  \item \textbf{Source diversity:} Entropy of source representation per topic
+  \item \textbf{Mood:} Mean sentiment score (positive, neutral, negative)
+  \item \textbf{Emotion arousal:} Mean emotion arousal score per cluster
+  \item \textbf{Semantic uncertainty:} Mean uncertainty score per topic
+\end{itemize}
+
+\paragraph{Analysis and Visualization.}
+The clustering results are matched with financial time series data to explore potential relationships. For instance, high-confidence cluster activity is aggregated at daily or weekly levels and compared to asset price changes using exploratory plots. These plots are saved for further analysis and hypothesis formulation regarding narrative impact.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+% [BELLOW IS ONLY CHATGPT GENERATED AS IDEAS AND PLACEHOLDER: to be discussed tomorrow]
+
+
+
+\section{Work Package 3: Causal Inference and Experimental Validation}
+\label{sec:wp3}
+
+This work package aims to assess the causal effect of narratives on financial market dynamics. It builds on the clustering results and narrative metrics developed in WP2, and introduces empirical designs that treat narrative changes as interventions to be evaluated.
+
+% ###########################################
+
+\subsection{WP3.1: Experimental Design}
+
+Between May and September 2025, we will define treatment conditions based on significant changes in narrative features such as semantic shift, sentiment polarity, or strength. These treatments will be matched to outcome variables such as macroeconomic or asset-level returns, trading volume, or volqtility. We will construct an econometric framework using rgression discontinuity, difference-in-differences, event studies, or causal machine learning approaches to isolate the effect of narratives from other confounding factors. Control variables will include lagged market indicators and exogenous text-based signals. The first step will involve synthetic experiments and stylized narrative shocks to calibrate the design before applying it to real data.
+
+% ###########################################
+
+\subsection{WP3.2: Pre-testing and Refinements}
+
+From September 2025 to February 2026, we will conduct stability tests to ensure the consistency of clustering and narrative metrics over time. We will fine-tune the treatment thresholds and assess their sensitivity to window lengths and sampling frequency. Additional robustness checks will include alternative model specifications. The empirical performance of the causal framework will be evaluated both in-sample and out-of-sample, with a focus on whether narrative shocks explain shifts in financial indicators.
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+\section{Work Package 4: Forecasting and Methodological Advancements}
+\label{sec:wp4}
+
+WP4 focuses on evaluating the predictive power of narrative metrics for financial variables and exploring methodological extensions such as data augmentation and clustering improvements.
+
+% ###########################################
+
+\subsection{WP4.1: Ex-Ante Forecasting}
+
+From February to August 2028, we will test the forecasting value of narratives for variables such as macroeconomic variables or asset returns, volume, volatility, and market depth. Predictive models will compare traditional econometric approaches with models augmented by narrative features, including ridge regression, Gaussian process regression, or transformer-based predictors. A rolling window setup with time-based cross-validation will be used to evaluate predictive accuracy. We will also explore whether early shifts in narrative metrics can signal upcoming structural breaks, building a bridge between WP2 and WP4.
+
+% ###########################################
+
+\subsection{WP4.2: Data Augmentation and Methodological Exploration}
+
+From August to October 2026 (end date of the project), we will explore new methods to enrich the modeling pipeline. This includes dynamic tracking of narratives over time using evolving topic models or narrative graphs, augmentation of missing or sparse sentiment data using retrieval-augmented generation or embedding interpolation, and application of the pipeline to low-resource datasets. We will also generate synthetic financial narratives to test the robustness of the models under hypothetical but realistic market scenarios. These experiments will support methodological refinements and open the door to further applications of narrative-based models in finance.
+
+
+% % ------------------------------------------------------------------------------------------------------------------------
+
+
+\section*{Conclusion}
+\label{sec:conclusion}
+
+The Narrative Digital Finance project is structured around four interconnected conceptual blocks: text analytics, structural breaks, narrative-driven regime shifts, and integrated AI/ML frameworks. These blocks are operationalized through four work packages, each progressively advancing the project's objectives.
+
+\subsection*{Block 1: Text Data \& Text Analytics}
+
+Block 1 focuses on collecting and analyzing large-scale textual data from multiple sources including Reddit, news articles, central bank speeches, and financial platforms. This effort is captured in WP1 and WP2.3, where a scalable text preprocessing pipeline and multiple narrative clustering methods have been implemented. We have constructed a robust set of narrative metrics—semantic shift, coherence, confidence, strength, sentiment, and uncertainty—that form the analytical foundation for subsequent empirical and predictive tasks. Experiments have already demonstrated how these metrics evolve and cluster meaningfully across time and source types.
+
+\subsection*{Block 2: Structural Breaks Detection \& Asset Price Bubbles}
+
+Block 2 investigates methods for detecting structural changes in financial time series. WP2.2 proposes a range of statistical, Bayesian, and machine learning techniques, including the Bai–Perron test, Chow test, Bayesian CPD, Kernel CPD, and HMMs. These methods will be applied to both macroeconomic variables and asset-level data, such as MAG7 equities or FX rates. The aim is to detect shifts in market regimes, which may or may not coincide with narrative transitions. This methodological block is expected to be developed and tested in the next research phase.
+
+\subsection*{Block 3: Narratives for Structural Breaks}
+
+Block 3 integrates the two previous blocks by assessing the extent to which narrative changes drive or anticipate structural breaks in financial data. WP3 builds on the metrics and clustering results from WP2 to design treatment-based empirical setups. These include statistical techniques that to quantify the causal relationship between shifts in narratives and corresponding movements in financial indicators. Experiments will establish whether narrative volatility, sentiment, or semantic change can explain turning points in macroeconomics or asset specific variables.
+
+\subsection*{Block 4: Multidimensional AI and ML Solutions}
+
+The final block focuses on forecasting and model integration. Predictive models include econometric baselines and ML architectures (e.g., Ridge, GPR, transformers), evaluated using rolling windows and cross-validation. In addition, WP4 explores methodological innovations such as dynamic topic tracking, sentiment imputation, and synthetic data generation. These explorations will support the deployment of a fully integrated ML framework that treats narratives as multidimensional inputs in financial modeling and forecasting tasks.
+
+Overall, the project has made strong progress on Block 1, partially implemented Block 2 and 3, and designed the methodology for Blocks 2, 3 and 4. The next phase will focus on finalizing narrative-based causal inference (WP3) and testing the predictive utility of narrative metrics (WP3 and 4), moving the project toward a comprehensive framework that connects narratives, structural breaks, and asset price dynamics.
+
+\end{document}

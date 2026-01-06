@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figures - NDF Block 4</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 0.95rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 30px 0; }
+        .figure-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .figure-header {
+            background: var(--bg);
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .figure-header h2 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .figure-num {
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .figure-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .figure-content object,
+        .figure-content embed,
+        .figure-content iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background: white;
+        }
+        .figure-caption {
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #555;
+            background: #fafafa;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .intro {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        @media (max-width: 600px) {
+            nav ul { flex-direction: column; align-items: center; gap: 10px; }
+            .figure-content object,
+            .figure-content embed,
+            .figure-content iframe { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Paper Figures</h1>
+            <p>Visualizations from the NDF Block 4 Paper</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Project Home</a></li>
+            <li><a href="../">Block 4</a></li>
+            <li><a href="../paper/">Paper</a></li>
+            <li><a href="./" class="active">Figures</a></li>
+            <li><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-Block-4">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="intro">
+            <p>All figures are generated from experiment results using standalone Python scripts. Each figure loads data from JSON files in <code>experiments/results/</code> to ensure reproducibility. No values are hardcoded.</p>
+        </div>
+
+        <!-- Figure 1: Framework Architecture -->
+        <div class="figure-card">
+            <div class="figure-header">
+                <div>
+                    <span class="figure-num">Figure 1</span>
+                    <h2>Framework Architecture</h2>
+                </div>
+                <a href="01_framework_architecture.pdf" class="btn btn-sm" download>Download PDF</a>
+            </div>
+            <div class="figure-content">
+                <object data="01_framework_architecture.pdf" type="application/pdf">
+                    <p>PDF cannot be displayed. <a href="01_framework_architecture.pdf">Download PDF</a></p>
+                </object>
+            </div>
+            <div class="figure-caption">
+                <strong>Caption:</strong> Integrated ML framework architecture. Input data flows through stream-specific feature extractors, specialized XGBoost base models, and a stacking meta-learner to produce break probability predictions.
+            </div>
+        </div>
+
+        <!-- Figure 2: Feature Importance -->
+        <div class="figure-card">
+            <div class="figure-header">
+                <div>
+                    <span class="figure-num">Figure 2</span>
+                    <h2>Feature Importance</h2>
+                </div>
+                <a href="02_feature_importance.pdf" class="btn btn-sm" download>Download PDF</a>
+            </div>
+            <div class="figure-content">
+                <object data="02_feature_importance.pdf" type="application/pdf">
+                    <p>PDF cannot be displayed. <a href="02_feature_importance.pdf">Download PDF</a></p>
+                </object>
+            </div>
+            <div class="figure-caption">
+                <strong>Caption:</strong> Feature importance within each stream. Volatility features dominate quantitative, sentiment dynamics lead NLP, and PELT/CUSUM are key break signals.
+            </div>
+        </div>
+
+        <!-- Figure 3: ROC Comparison -->
+        <div class="figure-card">
+            <div class="figure-header">
+                <div>
+                    <span class="figure-num">Figure 3</span>
+                    <h2>ROC Curve Comparison</h2>
+                </div>
+                <a href="03_roc_comparison.pdf" class="btn btn-sm" download>Download PDF</a>
+            </div>
+            <div class="figure-content">
+                <object data="03_roc_comparison.pdf" type="application/pdf">
+                    <p>PDF cannot be displayed. <a href="03_roc_comparison.pdf">Download PDF</a></p>
+                </object>
+            </div>
+            <div class="figure-caption">
+                <strong>Caption:</strong> ROC curve comparison across models. The stacking ensemble (red) dominates single-stream approaches and simple averaging across all operating points.
+            </div>
+        </div>
+
+        <!-- Figure 4: Detection Delay -->
+        <div class="figure-card">
+            <div class="figure-header">
+                <div>
+                    <span class="figure-num">Figure 4</span>
+                    <h2>Detection Delay</h2>
+                </div>
+                <a href="04_detection_delay.pdf" class="btn btn-sm" download>Download PDF</a>
+            </div>
+            <div class="figure-content">
+                <object data="04_detection_delay.pdf" type="application/pdf">
+                    <p>PDF cannot be displayed. <a href="04_detection_delay.pdf">Download PDF</a></p>
+                </object>
+            </div>
+            <div class="figure-caption">
+                <strong>Caption:</strong> Average detection delay by model. Lower values indicate earlier detection. The stacking ensemble achieves the fastest detection at 3.2 days.
+            </div>
+        </div>
+
+        <!-- Figure 5: Ablation Study -->
+        <div class="figure-card">
+            <div class="figure-header">
+                <div>
+                    <span class="figure-num">Figure 5</span>
+                    <h2>Ablation Study</h2>
+                </div>
+                <a href="05_ablation_study.pdf" class="btn btn-sm" download>Download PDF</a>
+            </div>
+            <div class="figure-content">
+                <object data="05_ablation_study.pdf" type="application/pdf">
+                    <p>PDF cannot be displayed. <a href="05_ablation_study.pdf">Download PDF</a></p>
+                </object>
+            </div>
+            <div class="figure-caption">
+                <strong>Caption:</strong> Ablation study results. Removing any feature stream degrades performance, with quantitative features showing the largest marginal impact (-5.3%).
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>NDF Block 4 - Narrative Digital Finance | SNSF Grant IZCOZ0_213370</p>
+        <p>Figures generated with matplotlib | Source: <code>paper/figures/*/chart.py</code></p>
+    </footer>
+</body>
+</html>

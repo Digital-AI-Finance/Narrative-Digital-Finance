@@ -1,0 +1,223 @@
+\documentclass[review,1p,times]{elsarticle}
+%\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage{booktabs}
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{SLR_references.bib} % Ensure this matches your .bib file
+\usepackage{xcolor} % Allows colored text
+\usepackage{hyperref} % Makes URLs and citations clickable
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,      % Makes URLs blue and clickable
+    citecolor=blue,     % Makes citations blue and clickable
+}
+\addbibresource{SLR_references.bib} 
+
+\journal{JOURNAL NAME}
+
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\begin{frontmatter}
+
+
+\title{Computational Methods for Modeling Narratives and Analyzing Their Impact on Financial Markets: A Systematic Review}
+\date{XX Month YYYY}
+
+% Affiliations
+\affiliation[inst1]{organization={University of Twente},
+addressline={Industrial Engineering and Business Information Systems},
+city={AE Enschede},
+postcode={7500}, 
+country={Netherlands}}
+
+\affiliation[inst2]{organization={Bern University of Applied Sciences},
+addressline={Business School}, 
+city={Bern},
+postcode={3005}, 
+country={Switzerland}}
+
+% Authors
+\author[inst1, inst2]{Gabin Taibi}
+% \author[inst1, inst2]{Gabin Taibi\corref{mycorrespondingauthor}}
+% \cortext[mycorrespondingauthor]{Corresponding author: Gabin Taibi (gabin.taibi@bfh.ch Tel. +31 000000000).}
+\ead{gabin.taibi@bfh.ch}
+
+
+\begin{abstract}
+In recent years, narratives have emerged as a critical factor shaping financial markets, influencing investor behavior, market dynamics, and ultimately asset price movements. Advancements in data processing methods, particularly in Natural Language Processing (NLP), has enhanced the modeling and analysis of textual data on an unprecedented scale,  opening new avenues for a deeper and more advanced understanding of narratives. This systematic literature review explores the intersection of narratives and financial markets, focusing on the development and application of computational techniques for text mining, textual analysis and narrative modeling. The review will focus on defining narratives and their use in detecting bubbles, structural breaks, or other unusual market phenomena. %Specifically, we will synthesize research that explores the following questions: how can NLP and textual analysis techniques effectively quantify and model narratives in financial markets, and how can these insights improve our comprehension of market dynamics?
+
+Additionally, this study aims not only provides an overview of existing research but also proposes an algorithmic framework for systematic literature reviews. This framework enhances efficiency and reproducibility through the use of embedding models, PCA for dimensionality reduction, and the basic clustering methods. Drawing from a Scopus database of journal articles, the review identifies dominant research trends, highlights methodological advancements, and uncovers gaps in the literature. Preliminary findings suggest that while sentiment analysis and topic modeling are extensively applied to explain financial markets dynamics, the integration of these methods with structural breaks and bubbles, remains under-explored. Furthermore, the review highlights that the concept of "Financial Narrative" lacks a unified and comprehensive definition, often being simplified to sentiments, topics, or a combination of both. This study provides a foundation for advancing the role of narratives in financial decision-making and underscores the potential of interdisciplinary approaches to enrich our understanding of market dynamics.
+\end{abstract}
+
+\begin{keyword}
+Algorithmic Literature Review \sep Financial Narrative Modeling \sep Natural Language Processing \sep Textual Analysis \sep Financial Market Dynamics \sep Structural Breaks
+\end{keyword}
+
+\end{frontmatter}
+%% \linenumbers
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Introduction}
+\label{sec:intro}
+
+During the last decade, economists and academics have progressively recognized the pivotal role narratives play in shaping individual and collective decision-making, with stories being spread through society, driving economic events and consequentially market movements \parencite{shiller_narrative_2019}. \textcite{mccloskey_rhetoric_2011} argues that economic changes are heavily influenced by social narratives that mold people's ideas and beliefs. Despite the acknowledged interplay between narratives, actions, and market outcomes, our understanding of the mechanisms through which they interact remains limited. %Research has documented that verbal communication—including written texts like social media posts and blogs, as well as spoken text—serves as a crucial medium for securing support and investment.
+The study of narratives in economics (defined under the term \textit{Narrative Economics}) or more specifically in finance (\textit{Financial Narrative}), refer to the analysis of stories popularized by humans and their emotions (the "epidemiology of narratives"), and their evolution alongside economic fluctuations \parencite{shiller_narrative_2017}. However, despite the growing interest in narrative economics, it remains an unclear and not precisely defined topic, as the term narrative is used with different meanings in economics, according to \textcite{roos_narratives_2024}. In the same study, the authors propose a definition of collective economic narratives as sense-making stories that emerge in social interactions, are shared by members of a group, and suggest actions in uncertain environments. This aligns with \textcite{tuckett_role_2017}, who support that narratives help economic agents navigate radical uncertainty by constructing conviction narratives, which provide coherence to their decisions and support their actions. Narratives, therefore, are not merely passive reflections of economic events but play an active role in shaping expectations, guiding behavior, and influencing economic outcomes.
+
+Existing studies have demonstrated the influence of narratives on various aspects of financial markets. The news media, for instance, has been shown to play a significant role in shaping investor sentiment and market dynamics. Tetlock's research reveals that the tone and content of the Wall Street Journal can impact trading volume and stock returns. Similarly, Chan's findings suggest that the absence of news coverage can also affect stock prices \parencite{gan_sensitivity_2020}. Beyond traditional news sources, recent studies have explored the role of social media and user-generated content in propagating narratives and their impact on financial markets. Researchers have found that the narratives extracted from investor surveys during the COVID-19 pandemic not only reflect political identity but also contain predictive information for future stock and bond returns, even after controlling for contemporaneous news and social media data.
+
+NLP has emerged as a critical tool for analyzing textual data in financial contexts, enabling researchers to derive meaningful insights from unstructured information. Despite its potential, existing studies aiming to quantify narratives often focus on isolated aspects, such as sentiment or topic trends, without addressing the multifaceted nature of narratives.
+The most basic NLP-based financial research such as \textcite{agarwal_investor_2024}, \textcite{taffler_narrative_nodate} or \textcite{diaz_sobrino_narrative_2022} rely on dictionary-based techniques to measure sentiment or emotions. Another simple approach explored by \textcite{nyman_news_2021} focused on measuring structural changes in narrative distributions using Latent Semantic Analysis (LSA), X-means clustering, and entropy. However, recent advancements in Transformer-based architectures have significantly improved the capabilities of NLP tasks, surpassing the accuracy and interpretability of traditional methods. These architectures and their derivatives, excel at capturing contextual information and semantic relationships within text. For example, \textcite{miori_narratives_2023} leveraged GPT-3.5 to extract key entities from financial articles. Similarly, \textcite{armbrust_computational_2020} investigated the relevance of textual information in 10-K and 10-Q filings for predicting financial and environmental performance.
+
+Modeling financial market dynamics is an increasingly critical area of research, particularly given the instabilities often observed in financial markets that result in significant fluctuations. These instabilities arise from the heterogeneity of market participants and the complexity of their interactions \parencite{brunnermeier_complexity_nodate, huber_boom_2022}, making it challenging to fully understand the triggers for the so-called "tail events" using only quantitative data. Furthermore, the diversity and growth in the number of market participants, including a significant rise in retail investors, have exacerbate such market disruptions in recent years. The COVID-19 market sell-off in March 2020 occurred concurrently with the widespread dissemination of the coronavirus narrative, which also went viral \parencite{chen_covid_2022}. Additionally, the Short-Squeezes driven by Reddit communities \parencite{anand_role_2022, mancini_self-induced_2022}, highlight the impact of retail-triggered narratives on financial markets, as they can amplify asset price movements through "crowd effects".
+To better understand financial markets dynamics, other studies have incorporated narrative quantification into their methodologies for detecting bubbles, such as \textcite{agarwal_investor_2024}, who argue that mathematical models of stylized bubble processes commonly found in existing literature are somewhat limited in explaining speculative bubbles. They point out that such models often overlook the emotions that drive investor behavior, which are crucial to understanding these market phenomena. \textcite{phillips_predicting_2017} are going further, mixing textual data analysis and epidemic modeling to predict cryptocurrency price bubbles. This approach is grounded in the notion that financial price bubbles often resemble the epidemic-like spread of investment ideas, highlighting the contagious nature of market trends.
+
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Methodology}
+\label{sec:methodology}
+Lorem ipsum.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/filter_paper_diagram.png}
+    \caption{Paper selection diagram.}
+    \label{fig:paper_selection_diagram}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \caption{Summary of article selection criteria.}
+    \label{tab:selection_criteria}
+    \begin{tabular}{p{10cm} c} % Adjust column widths if needed
+        \toprule
+        \textbf{Criteria} & \textbf{Decision} \\
+        \midrule
+        Inclusion of pre-defined keywords in title, abstract, or keyword list & Inclusion \\
+        Article publication in a scientific journal & Inclusion \\
+        Article written in English & Inclusion \\
+        Article published before 2010 & Exclusion \\
+        Duplicates & Exclusion \\
+        % Unavailability of the article online for free & Exclusion \\
+        Algorithmic Relevance Classification & Exclusion \\
+        Manual Relevance Classification & Exclusion \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Deconstructing the research landscape}
+\label{sec:researchlandscape}
+Lorem ipsum.
+
+
+\subsection{Temporal distribution of literature}
+Lorem ipsum.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/paper_temporal_quantile_distribution.png}
+    \caption{Temporal distributions of selected research papers.}
+    \label{fig:paper_temporal_distribution}
+\end{figure}
+
+\subsection{Journal distribution of literature}
+Lorem ipsum.
+
+\subsection{Distribution based on keywords}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{The Role of NLP in Finance}
+\label{sec:nlprole}
+- NLP evolved and the performances have increased exponentially
+- Process large unstructured dataset
+- Various tasks: sentiment analysis, topic extraction, semantic analysis, etc.
+
+\subsection{Alpha Research}
+Lorem ipsum.
+
+\subsection{Risk and Portfolio Management}
+Bubble and Structural Break detection
+
+\subsection{Quantifying Narratives}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+section{Predominant themes in literature}
+\label{sec:predominantthemes}
+Lorem ipsum.
+
+\subsection{Settings analysis}
+Lorem ipsum.
+
+\subsection{Techniques analysis}
+Lorem ipsum.
+
+\subsection{Evaluation methods analysis}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{From textual analysis to market dynamics predictions}
+\label{sec:relationnarrativebubble}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+Lorem ipsum. 
+
+
+\subsection{Implications of the study}
+Lorem ipsum.
+
+
+\subsection{Limitations and future recommendations}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\printbibliography
+
+\newpage
+
+% \section*{Appendix A - Exploratory Data Analysis}
+% \label{appendixA}
+
+
+% \setcounter{figure}{0}
+% \makeatletter 
+% \renewcommand{\thefigure}{B\@arabic\c@figure}
+% \makeatother
+
+% \section*{Appendix B - Dimensionality Reduction Analysis}
+% \label{appendixB}
+
+
+\end{document}
+

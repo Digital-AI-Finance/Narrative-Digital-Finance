@@ -1,0 +1,44 @@
+name: Update Publications (Monthly)
+
+on:
+  schedule:
+    # Run on the 1st of each month at midnight UTC
+    - cron: '0 0 1 * *'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Fetch publications from OpenAlex
+        run: |
+          python scripts/fetch_openalex.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet data/publications.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/publications.json data/authors.json data/summary.json
+          git commit -m "chore: Update publications from OpenAlex [skip ci]"
+          git push

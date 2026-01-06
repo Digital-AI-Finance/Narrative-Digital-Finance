@@ -1,0 +1,901 @@
+\documentclass[9pt, aspectratio=169, compress]{beamer}
+
+\usepackage{xcolor}
+\usepackage{beamerthemebars}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage[backend=biber, style=apa, natbib=true]{biblatex}
+
+
+% ====== BIBLIOGRAPHY ======
+
+
+\addbibresource{literature.bib}
+
+
+% ====== THEME SETTINGS ======
+
+\usetheme{Warsaw}
+\useoutertheme{miniframes}
+% \usecolortheme{beaver}
+\definecolor{CustomBlue}{RGB}{0, 75, 150}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{structure}{fg=CustomBlue}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{item}{fg=CustomBlue}
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+
+\AtBeginSection[]{
+\begin{frame}[t]{Table of Contents}
+  \setlength{\columnsep}{10pt}
+  \setlength{\parskip}{-0pt}
+  \vspace{1em}
+\tableofcontents[currentsection,sectionstyle=show/shaded,subsectionstyle=show/shaded]
+\end{frame}
+}
+
+
+% ====== HEADER & FOOTER CUSTOMIZATION ======
+
+% \setbeamertemplate{footline}{
+%   \leavevmode
+%   \hbox{
+%     \begin{beamercolorbox}[wd=.5\paperwidth,ht=1.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}
+%           \usebeamerfont{author in head/foot}
+%         \end{beamercolorbox}
+%         \begin{beamercolorbox}[wd=.5\paperwidth,ht=1.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}
+%           \usebeamerfont{title in head/foot}
+%           \hfill\insertframenumber/\inserttotalframenumber
+%     \end{beamercolorbox}
+%   }
+% }
+
+% \setbeamertemplate{frametitle}{
+%   \nointerlineskip
+%   \begin{beamercolorbox}[ht=0.8em,dp=0.8ex,wd=\paperwidth]{frametitle}
+%         \usebeamerfont{frametitle}\insertframetitle
+%   \end{beamercolorbox}
+% }
+
+% \setbeamertemplate{headline}{%
+%     \begin{beamercolorbox}[wd=\paperwidth,ht=0.25cm]{frametitle} % Reduce height
+%         \hspace{0.2cm} \textbf{\insertsectionhead} \hfill \insertsection
+%     \end{beamercolorbox}
+% }
+
+
+% ====== TITLE PAGE ======
+
+\title{PhD Qualifier Report}
+\author{Gabin Taibi}
+\institute{
+  Faculty, Department: Behavioural, Management and Social sciences (BMS), High-tech Business and Entrepreneurship (HBE) \\
+  Promotor(s): prof. dr. Joerg Osterrieder \\
+  Co-Promotor(s): dr. Xiaohong Huang \\
+  Supervisors: dr. Stefan Schlamp, dr. Axel Gross-Klussmann \\
+  Qualifier Committee Members: prof. dr. Wolfgang Haerdle, prof. dr. Ali Hirsa, prof. dr. Daniel Pele
+}
+\date{\today}
+
+
+% ====== START DOCUMENT ======
+
+\begin{document}
+
+% \frame{\titlepage}
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+
+% ====== SECTION 1 ======
+
+\section{Doctoral Journey and Structure}
+
+
+\subsection{Thesis Overview}
+
+
+\begin{frame}[t]{Abstract}
+    \textbf{Modeling Narrative Dynamics for Volatility Regime Detection in Financial Markets} 
+    \begin{itemize}
+        \item \textbf{Research question:} How do forms of narratives influence volatility and regime changes in markets?
+        
+        \item \textbf{Research summary:}
+        Financial markets are increasingly driven by narratives, defined as collective interpretations that influence expectations, volatility, and market regimes. Yet, despite their central role, narratives remain largely unquantified in financial modeling. This research aims to bridge that gap by developing a computational framework linking the evolution of financial narratives to volatility dynamics and structural market shifts. 
+        The thesis integrates methods from natural language processing, high–frequency econometrics, and machine learning to (1) detect and quantify narratives across multiple textual sources, (2) measure volatility and its higher–order properties from high–frequency data, and (3) analyze the causal and predictive relationship between narrative shifts and volatility regimes.
+        
+        \item \textbf{PhD expected period:} Dec 1st, 2023 - Nov 30th, 2027
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Research Motivation}
+    \textbf{Rationale:}
+    \begin{itemize}
+        \item Narrative information forms a latent context for market decisions (Shiller), yet quantitative models often overlook these textual dynamics.
+        \item Recent advances in transformer-based NLP:
+        \begin{itemize}
+            \item Allow scalable narrative extraction, extending analysis beyond simple sentiment/polarity.
+            \item As LLMs increase textual data, this research seeks to identify which narratives matter most.
+        \end{itemize}
+        \item Access to high-quality, high-frequency (HFT) data allows for precise estimation of market dynamics, including volatility and its higher-order properties.
+        \item Understanding how narrative shocks translate into volatility regime changes provides academic and practical insights for risk management and narrative-aware trading.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Research Motivation}
+    \textbf{Social perspectives:} 
+    \begin{itemize}
+        \item 1. Understanding Financial Narratives and Financial Markets Reactions;
+        \item 2. Improving Financial Stability and Crisis Prediction;
+        \item 3. Empowering Retail and Institutional Decision-Making;
+        \item 4. Interdisciplinary Applications Beyond Finance.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Research Motivation}
+    \textbf{Scientific  perspective:} 
+    \begin{itemize}
+        \item 1. Improving NLP methods for financial text;
+        \item 2. Advancing the quantitative modeling of various forms of narratives within finance;
+        \item 3. Highlight interconnexion between narratives or forms of narratives 
+        \\ (e.g. how macro and micro information spread in news);
+        \item 4. Linking narrative and volatility dynamics.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{PhD Thesis Plan Overview}
+\begin{table}
+\begin{tabularx}{\textwidth}{|>{\hsize=0.5\hsize\centering\arraybackslash}X|>{\hsize=.5\hsize\centering\arraybackslash}X|>{\hsize=2\hsize}X|>{\hsize=1\hsize}X|}
+    \hline
+    \textbf{Stage} & \textbf{Chapter} & \textbf{Theme} & \textbf{Duration} \\
+    \hline
+    I & Introduction \& Chapter 1 & Data Collection, Literature Review, and NLP–Finance Foundations & 12 months \\
+    \hline
+    II & Chapter 2 & Narrative Detection and Quantification across Macro, Micro and Market–Wide Sources & 8 months \\
+    \hline
+    III & Chapter 3 & Volatility Components Modeling and Benchmarking from High–Frequency Data & 6 months \\
+    \hline
+    IV & Chapter 4 & Narrative–Driven Volatility Structural Breaks, Causality and Forecasting & 12 months \\
+    \hline
+    V & Conclusion & Narrative–Driven Risk Management Framework and Final Synthesis & 3 months \\
+    \hline
+\end{tabularx}
+\end{table}
+
+$\bullet$ Stage I and part of Stage II and III have been completed during the Qualifier period.\\
+$\bullet$ Thesis submission expected by July 2027, with defense preparation period reserved (Jul-Nov 2027).
+\end{frame}
+
+
+\begin{frame}[t]{Stage I – Data Collection \& Literature Review (Introduction \& Chapter 1)}
+
+\textbf{Objectives:}
+\begin{itemize}
+    \item Establish conceptual and methodological foundations for narrative modeling in finance.
+    \item Collect, clean, and structure textual and financial market data.
+    \item Conduct a literature review to define financial narratives and identify methodological gaps.
+\end{itemize}
+
+\textbf{Data Sources:}
+\begin{itemize}
+    \item RavenPack v1 news headlines via Quoniam partnership.  
+    \item Central-bank speeches (BIS Gigando, since 1996), corporate 10-K/10-Q filings (EDGAR) and Earning Call Transcripts (LSEG).
+    \item Deutsche Börse High-Precision Timestamp databases (nanosecond trades and quotes since Feb. 2018) and LSEG (recent trades and quotes).
+    \item Custom Python library for ingestion and Parquet/CSV storage, version control, and DMP compliance.
+\end{itemize}
+
+\textbf{Outputs:}
+\begin{itemize}
+    \item Preprint hypothesizing about impact of alternative data on asset pricing.
+    \item Systematic literature review.
+    \item Private GitHub and Kaggle repositories.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Stage II – Key Financial Market Narratives (Chapter 2)}
+
+\textbf{Goal:} Detect, quantify, and compare macro, micro, and market-wide financial narratives using advanced NLP techniques.
+
+\textbf{Methodology:}
+\begin{itemize}
+    \item Three intensity score measurements: (1) supervised zero-shot latent embedding, (2) LLM-supervised, (3) unsupervised topic-modeling. 
+    \item Sentiment filtration: \cite{mohammad2025nrcvadlexiconv2} lexicon-based, \cite{loughran2011when} lexicon-based, \cite{araci2019finbertfinancialsentimentanalysis} approach
+    \item Multi-source text corpus:  
+          \textit{news headlines} (market-wide),  \textit{central-bank speeches} (macro),  \textit{10-K/10-Q filings} and \textit{earning calls transcripts} (micro).  
+    \item Evaluate explanatory power of narrative intensities on market variables (via rolling univariate regressions).
+\end{itemize}
+
+\textbf{Outputs:}
+\begin{itemize}
+    \item Preprint on multidimensional aspect of polarity in text.
+    \item Research paper employing supervised and unsupervised techniques for narrative modeling and quantifying.
+    \item Private and Public GitHub and Kaggle repositories, including daily narrative scores.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Stage III – Market Microstructure \& Volatility Modeling (Chapter 3)}
+
+\textbf{Objectives:}
+\begin{itemize}
+    \item Build a high-frequency volatility modeling benchmark from Deutsche Börse nanosecond data.
+    \item Build daily realized and 1-month implied volatility databases.
+    \item Build rolling 3-months daily Hurst exponent and vol-of-vol databases.
+\end{itemize}
+
+\textbf{Research Tasks:}
+\begin{itemize}
+    \item Model microstructure effects from UFTs and HFTs.  
+    \item Comparison of realized volatility estimators and jump detection tests.  
+    \item Estimation of implied vol surfaces, Hurst exponent and vol-of-vol.
+\end{itemize}
+
+\textbf{Outputs:}
+\begin{itemize}
+    \item Research paper on stylized facts about High-Frequency Trading impact on financial markets.
+    \item Preprint benchmarking various volatility estimators from High-Frequency Trading data.  
+    \item Private and Public Kaggle repositories, including daily volatility features.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Stage IV – Narrative-Driven Volatility Structural Breaks (Chapter 4)}
+
+\textbf{Objectives:} Integrate narrative information into the modeling and forecasting of volatility regimes.
+
+\textbf{Research Tasks:}
+\begin{itemize}
+    \item Structural Break Detection from Bai–Perron, CUSUM, and Kernel methods to volatilities, Hurst exponents, and vol-of-vol series.  
+    \item Rolling regressions and state-space models of narrative intensity on volatility dynamics.  
+    \item Causal Machine Learning frameworks to identify drivers of volatility regimes.  
+    \item Narrative-enhanced models for volatility and volatility roughness forecasting.
+\end{itemize}
+
+\textbf{Outputs:}
+\begin{itemize}
+    \item Preprint assessing the explanatory power of narratives in volatility dynamics.
+    \item Research paper on causal relationship between narratives and volatility, and narratives forecasting power. 
+    \item Private and Public Kaggle repositories, including daily volatility features.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Stage V – Conclusion}
+\textbf{Objective:}
+Synthesize the theoretical, empirical, and methodological insights gained across the four stages of the thesis.
+
+\textbf{Key Contributions:}
+\begin{itemize}
+    \item Establish a quantitative definition and measurement framework for financial narratives using advanced NLP methods across multiple textual domains.
+    \item Link narrative to market volatility dynamics using high-frequency data.
+    \item Demonstrate that narrative evolution anticipate structural breaks and volatility regime transitions.
+    \item Provide new evidence of causal relationships between macro-, micro-, and market-wide narratives and volatility dynamics.
+\end{itemize}
+
+\textbf{Outlook:}
+\begin{itemize}
+    \item Extend narrative–volatility models to cross-asset and global settings.
+    \item Investigate the interaction between narrative diffusion, information flow, and volatility contagion.
+    \item Develop narrative-based indicators for macro-financial monitoring and volatility investing.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Paper Overview}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{4pt}
+\begin{table}[h!]
+    \centering
+    \small
+    \begin{tabular}{|p{7cm}|p{2cm}|p{1.7cm}|p{1.7cm}|}
+        \hline
+        \textbf{Title} & \textbf{Venue} & \textbf{Status} & \textbf{Date} \\
+        \hline
+        \emph{Hypothesizing Multimodal Influence: Assessing the Impact of Textual and Non-Textual Data on Financial Instrument Pricing Using NLP and GenAI} & \textbf{SSRN} \footnote{DOI: \href{http://dx.doi.org/10.2139/ssrn.4698153}{10.2139/ssrn.4698153}} & Published & Feb 2025 \\
+        \hline
+        \emph{An Algorithmic Framework for Systematic Literature Reviews: A Case Study for Financial Narratives} & \textbf{Financial Innovation} & Under review & May 2025 \\
+        \hline
+        \emph{TOPol: Capturing and Explaining Multidimensional Semantic Polarity Fields and Vectors} & \textbf{arXiv} \footnote{DOI: \href{https://doi.org/10.48550/arXiv.2510.25069}{10.48550/arXiv.2510.25069}} & Published & Oct 2025 \\
+        \hline
+        \emph{Nanosecond Microstructure: High-Frequency Traders Participation Stylized Facts} & TBC & Ongoing \footnote{Preprint submitted to the \href{https://housefinance.dauphine.fr/fr/conferences-de-recherche/annual-hedge-fund-research-conference/17th-annual-hedge-fund-research-conference.html}{17th Annual Hedge Fund Research Conference}} & Jan 2026 \\
+        \hline
+        \emph{Quantifying Market-Relevant Narratives: A Comparative Framework for Narrative Modeling} & TBC & Ongoing & Mar 2026 \\
+        \hline
+        \emph{Benchmark of Realized Volatility Estimators from Nanosecond Data} & \textbf{SSRN} &  & 2026 \\
+        \hline
+        \emph{Narratives and Volatility Dynamics in Equity Markets} & \textbf{SSRN} &  & 2027 \\
+        \hline
+        \emph{Narratives as Causal Drivers of Volatility Regimes} & TBD &  & 2027 \\
+        \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+
+\begin{frame}[t]{PhD Thesis Cohesion}
+\begin{itemize}
+    \item \textbf{Unified Objective:}  
+    The thesis establishes an integrated framework linking financial narratives and volatility dynamics.  
+    It moves from the detection and quantification of narratives in textual data to their empirical connection with realized and implied volatility.  
+    Each chapter contributes to understanding how narratives emerge, evolve, and potentially drive structural changes in financial markets.
+    \item \textbf{Progressive Methodological Depth:}  
+    The research follows a clear methodological progression.  
+    It begins with a systematic literature review and conceptual definition of financial narratives,  
+    advances to supervised and unsupervised NLP approaches for narrative detection,  
+    continues with high-frequency volatility modeling,  
+    and culminates in causal and predictive analyses of narrative–volatility interactions.  
+    This structure ensures increasing analytical depth and integration across disciplines.
+    \item \textbf{Scientific and Practical Relevance:}  
+    The work contributes to both the theoretical foundations of narrative economics and its quantitative applications in finance.  
+    By combining NLP, econometrics, and machine learning, it enhances interpretability and predictive power in volatility modeling.  
+    The results have implications for alpha research, portfolio and risk management, policy making, and the broader understanding of information flow in financial markets.
+\end{itemize}
+\end{frame}
+
+
+\subsection{Doctoral Education Programme}
+
+\begin{frame}[t]{Outline of Doctoral Education Programme}
+\textbf{Approx. 15 EC's are planned to be earned before 2026 (remaining 15-20 EC's are scheduled to be earned before 2027):}
+\begin{itemize}
+    \item 20 scientific discipline EC: industry and academic conferences, PhD training schools, paper reviews, etc.
+    \item 10-15 generic EC: PhD courses on academic activities, personal development, ML, etc.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Outline of Doctoral Education Programme}
+\textbf{Scientific Discipline ECs}
+\begin{table}[]
+    \centering
+    % \begin{tabularx}{\textwidth}{|X|c|X|c|}
+    \begin{tabular}{|p{6.5cm}|p{1.3cm}|p{3.5cm}|p{0.8cm}|}
+        \hline
+        \textbf{Title} & \textbf{EC} & \textbf{Location} & \textbf{Done} \\
+        \hline
+        Vienna MSCA Conference & 1.5 & WU Vienna & \checkmark \\
+        COST Action Coordination & 3 & BFH & \checkmark \\
+        COST Action Meeting in Brussels & 1 & Brussels & \checkmark \\
+        COST PhD Training School at UT & 2.5 & University of Twente & \checkmark \\
+        Review paper for IEEE SDS2024 & 0.5 & BFH & \checkmark \\
+        QuantMinds 2025, 2026, 2027 & 4.5 & London &  \\
+        Conference Advances in Mathematical Finance & 1.5 & University of Freiburg & \checkmark \\
+        Review paper for AAAI 2026 & 2 & BFH & \checkmark \\
+        Paper/Poster Presentation & 2 & Various locations &  \\
+        23rd Winter school on Mathematical Finance & 1 & University of Amsterdam & \\
+        17th Annual Hedge Fund Research Conference & 2 & Université Paris Dauphine-PSL & \\
+        \hline
+        \textbf{Obtained / Total} & \textbf{12 / 21.5} & \textbf{-} &  \\
+        \hline
+    \end{tabular}
+    % \end{tabularx}
+\end{table}
+\end{frame}
+
+\begin{frame}[t]{Outline of Doctoral Education Programme}
+\textbf{Generic ECs}
+\begin{table}[]
+    \centering
+    % \begin{tabularx}{\textwidth}{|X|c|X|c|}
+    \begin{tabular}{|p{6.5cm}|p{1.3cm}|p{3.5cm}|p{0.8cm}|}
+        \hline
+        \textbf{Title} & \textbf{EC} & \textbf{Location} & \textbf{Done} \\
+        \hline
+        Introduction to programming in C++ & 1.5 & University of Twente &  \\
+        PhD/EngD Introductory Workshop + Academic Integrity & 1.5 & University of Twente &  \\
+        Academic Publishing & 2 & University of Twente &  \\
+        Presentation skills & 2 & University of Twente &  \\
+        Data Management & 1 & University of Twente &  \\
+        Scientific Information & 0.5 & University of Twente &  \\
+        Introduction to R & 0.2 & University of Twente &  \\
+        Data visualization with R & 0.2 & University of Twente &  \\
+        Narrative Economics by Robert Shiller & 0.5 & Coursera &  \\
+        Statistical Learning with Python & 1.5 & Coursera &  \\
+        Machine Learning Specialization by Andrew Ng & 3.5 & Coursera &  \\
+        \hline
+        \textbf{Obtained / Total} & \textbf{0 / 14.4} & \textbf{-} &  \\
+        \hline
+    \end{tabular}
+    % \end{tabularx}
+\end{table}
+\end{frame}
+
+
+\subsection{Other Academic Activities}
+
+\begin{frame}[t]{Achievements}
+
+\textbf{Project active participations:}
+\begin{itemize}
+    \item \textbf{COST Action 19130 on Fintech and Artificial Intelligence in Finance:} Co-coordinated events, internal communication, and budget.
+    \item \textbf{MSCA Doctoral Network “Digital Finance”:} Presented at event, admin tasks.
+\end{itemize}
+
+\textbf{Industry collaborations:}
+\begin{itemize}
+    \item \textbf{Deutsche Börse:} Conducted a research internship focused on high-frequency trading classification and market microstructure analysis using nanosecond-level data.
+    \item \textbf{Quoniam Asset Management:} Ongoing research internship on narrative-based alpha factor development using financial texts.  
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Achievements}
+\textbf{Outputs:}
+\begin{itemize}
+    \item Various preprints and research papers.
+    \item \textbf{\texttt{realized-library} \footnote{\url{https://github.com/GabinTB/realized-library}} \footnote{\url{https://pypi.org/project/realized-library/}}:} Python package for realized volatility estimation and jump detection using nanosecond-level HFT data.
+    \item \textbf{\texttt{TOPol} \footnote{\url{https://github.com/GabinTB/TOPOL}}:} transformer-based framework for Topic–Orientation Polarity shift detection to analyze semantic and polarity drift in texts.
+    \item Literature discovery prototype: AI-enhanced tool for literature discovery and synthesis, integrating OpenAlex API, vector search, and graph-based semantic clustering and reranking.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Plan for the Remaining Period}
+
+\textbf{Academic and Industry events:}
+\begin{itemize}
+    \item \textbf{PhD Training Schools:} active participation.
+    \item \textbf{Conferences:} participation, paper submission, paper presentation. 
+    \item \textbf{Academic Collaborations:} visit, research papers. 
+\end{itemize}
+
+\textbf{Next short-term milestones:}
+\begin{itemize}
+    \item UTwente courses: C++ (ongoing), academic publishing (ongoing), presentation skills (ongoing), introductory workshop (Mar 2026), scientific information (Mar 2026), data management bootcamp (Jun 2026)
+    \item Finalization and submission of HFT impact paper and market-wide narrative quantifying frameworks paper writing
+    \item Completion of narrative detection framework (macro and micro levels).
+    \item C++ improvement of \texttt{realized-library} package and volatility estimators benchmark.  
+    \item Online courses, conferences and training schools.  
+\end{itemize}
+
+\textbf{Overall focus:}
+Consolidate interdisciplinary results, report the results in research papers, advertise research (conferences and social media).
+\end{frame}
+
+
+% ====== SECTION 2 ======
+
+\section{Research Design and Methodology}
+
+\subsection{Thesis}
+
+\begin{frame}[t]{Proposed Thesis Outline (1)}
+
+\textbf{Introduction:} 
+NLP for Financial Narrative Modeling
+
+\medskip
+\textbf{Chapter 1:} 
+Systematic Literature Review of Textual analysis and Narratives in Financial Markets
+
+\medskip
+\textbf{Chapter 2:} 
+Financial Narratives Detection and Processing
+\begin{itemize}
+    \item Market-Wide Narratives (news headlines)
+    \item Macro Narratives (central bank speeches)
+    \item Micro Narratives (corporate filings and earnings calls)
+    \item Comparative Analysis of Narrative–Market Relationships
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[t]{Proposed Thesis Outline (2)}
+
+\medskip
+\textbf{Chapter 3:} 
+Market Microstructure and Volatility Modeling
+\begin{itemize}
+    \item Market Participants Behavior and Market Efficiency
+    \item Realized and Implied Volatility Estimation
+    \item Volatility Roughness and Vol-of-Vol Analysis
+\end{itemize}
+
+\medskip
+\textbf{Chapter 4:} 
+Narrative-Driven Volatility Dynamics Forecasting
+\begin{itemize}
+    \item Volatility Structural Break Detection
+    \item Narrative–Volatility Dynamics
+    \item Causality and Forecasting Frameworks
+\end{itemize}
+
+\medskip
+\textbf{Conclusion:} 
+Synthesis of Narrative–Volatility Interactions and Future Research Directions
+
+\end{frame}
+
+
+\subsection{Dataset}
+
+\begin{frame}[t]{News Headlines}
+
+\textbf{Source:} RavenPack Analytics v1 dataset \footnote{\url{https://www.ravenpack.com/products/edge/data/news-analytics}} (via Quoniam AM partnership). 
+
+\textbf{Content:} Global financial and macroeconomic news headlines enriched with metadata. 
+
+\textbf{Structure:}
+\begin{itemize}
+    \item Core fields: id, publication time, source, and headline text.  
+    \item RavenPack metadata: sentiment scores, entity, relevance to entities, entity categories (companies, indices, commodities, currencies), and topic tags.  
+    \item Time coverage: 2000–present, event-level granularity.  
+    \item Used to build market-wide narrative tagging and daily narrative intensities.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{10-K and 10-Q Filings}
+
+\textbf{Source:} SEC EDGAR database \footnote{\url{https://www.sec.gov/search-filings/edgar-application-programming-interfaces}} (U.S. Securities and Exchange Commission). 
+
+\textbf{Content:} Company-specific financial disclosures (10-K annual reports and 10-Q quarterly reports). 
+
+\textbf{Structure:}
+\begin{itemize}
+    \item Extracted sections: Item 1A – Risk Factors, Management Discussion and Analysis (MD\&A), and Business Overview.  
+    \item Text parsed from structured files via Python API.  
+    \item Mapped to firm identifiers (ticker, CIK, ISIN) and time-aligned with market data.
+    \item Used to extract micro-level narratives about firm-specific risks and strategic outlook.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Earnings Call Transcripts}
+
+\textbf{Source:} London Stock Exchange Group (LSEG) Transcripts database \footnote{\url{https://www.lseg.com/en/data-analytics/financial-data/company-data/events/earnings-transcripts-briefs}}.
+
+\textbf{Content:} Full-text earnings call transcripts, including management remarks and Q\&A sessions.
+
+\textbf{Structure:}
+\begin{itemize}
+    \item Metadata: company ticker, ISIN, event date, speaker role (CEO, CFO, analyst).
+    \item Extracted via LSEG Workspace API with unified formatting.  
+    \item Used to extract micro-level narratives about firm-specific risks and strategic outlook.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Market Data and Asset Prices}
+
+\textbf{Macroeconomic Data:} St. Louis Federal Reserve (FRED API \footnote{\url{https://fred.stlouisfed.org/docs/api/fred/}})
+\begin{itemize}
+    \item Indicators: Fed Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls.  
+    \item Monthly frequency, used for macroeconomic condition indices and regime labeling.
+\end{itemize}
+
+\textbf{Live and Historical Market Data:} LSEG Workspace API \footnote{\url{https://developers.lseg.com/en/api-catalog}}
+\begin{itemize}
+    \item Historical data covering many assets (trade prices, bid–ask quotes).
+    \item Fundamental data (balance sheet, income statement, valuation ratios).  
+    \item Integration with corporate events, analyst estimates, and earnings call metadata.
+\end{itemize}
+
+\textbf{High-Frequency Data:} Deutsche Börse Marketplace \footnote{\url{https://console.marketplace.deutsche-boerse.com/home}} (Eurex \& Xetra)
+\begin{itemize}
+    \item Nanosecond-level timestamped trades and order-book messages (HPT \& HPT-All).  
+    \item Instruments: equity and index spot, futures, and options.
+    \item Enables participant classification (UFT, HFT, conventional) and market microstructure analysis.
+    \item Used for realized and implied volatility estimation.  
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Data Management}
+
+\textbf{Data Collection and Storage:}
+\begin{itemize}
+    \item Data accessed via official APIs or institutional databases (RavenPack, LSEG, EDGAR, FRED, Deutsche Börse).  
+    \item Stored in structured (CSV, Parquet) and semi-structured (Markdown, JSON, PDF) formats.  
+    \item Secure storage on private servers with redundancy; eventually replication on private Kaggle repositories.
+\end{itemize}
+
+\textbf{Data Preprocessing:}
+\begin{itemize}
+    \item Quality checks and alignment across textual and market datasets (timestamps, tickers, entities).  
+    \item Text preprocessing: cleaning, embedding generation (Transformers models).  
+    \item Market preprocessing: regular market hours filtering, trade–quote matching, microstructure event labeling.  
+    \item All pipelines version-controlled via private GitHub repositories with custom Python pipelines.
+\end{itemize}
+\end{frame}
+
+
+\subsection{Narratives}
+
+\begin{frame}[t]{Narrative Definition}
+
+\textbf{Proposition:}
+\begin{itemize}
+    \item Narratives are recurring, structured collections of financial topics that shape how market participants interpret and respond to market information.  
+    \item Each narrative is characterized by:
+    \begin{itemize}
+        \item A set of semantically coherent topics (e.g., inflation, liquidity, policy uncertainty).  
+        \item An intensity score capturing its relative prominence and emotional tone over time.
+    \end{itemize}
+    \item The framework allows both cyclic narratives (e.g., inflation, monetary policy) and emerging narratives (e.g., AI, energy transition) to be modeled dynamically.
+\end{itemize}
+
+\textbf{Financial Market Topics:}
+\begin{itemize}
+    \item Macroeconomics: Inflation, growth, GDP, unemployment, fiscal policy, recession risk.  
+    \item Geopolitics: Trade tensions, sanctions, wars, political uncertainty, global supply chains.  
+    \item Monetary Policies: Interest rates, quantitative easing, central bank communication, forward guidance.  
+    \item Assets: Equity markets, commodities, FX, credit, volatility, crypto assets.  
+    \item Etc.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Sentiment Analysis}
+
+\textbf{\cite{loughran2011when} Lexicon Approach:}
+\begin{itemize}
+    \item Finance-specific lexicon classifying words as positive, negative, uncertain, or litigious.
+    \item Captures direction and uncertainty, commonly used in empirical asset pricing.
+\end{itemize}
+
+\textbf{\cite{mohammad2025nrcvadlexiconv2} Lexicon Approach:}
+\begin{itemize}
+    \item Valence–Arousal–Dominance model: measures emotional valence (pleasantness), arousal (intensity), and dominance (control).  
+    \item Provides multidimensional sentiment representation.  
+    \item Applied on tokenized texts using weighted averages of VAD scores per text.
+\end{itemize}
+
+\textbf{\cite{araci2019finbertfinancialsentimentanalysis} Embedding Approach:}
+\begin{itemize}
+    \item Transformer-based language model fine-tuned on financial text corpora.  
+    \item Outputs text-level probabilities for positive, neutral, and negative sentiment.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Narrative Modeling}
+\textbf{Microeconomic narratives:} 10-K, 10-Q and earning call transcripts (\cite{flynn2024macroeconomics}); \\
+\textbf{Macroeconomic narratives:} central bank speech transcripts from \cite{feldkircher2021focus}; \\
+\textbf{Overall narratives:} \cite{bybee2024business} and "evergreen" extended narratives, reservoirs and super-narratives from \cite{bhargava2023quantifying} and \cite{lee2024narrativemomentum}:
+\begin{itemize}
+    \item List of predefined financial narratives (e.g., “Inflation”, “COVID-19”, “US Growth”, “Market Crash”, etc.), classified in reservoirs and super-narratives. 
+    \item Represents a stable taxonomy of market stories, allowing consistent tracking but limited discovery of new ones.
+\end{itemize}
+
+\textbf{Supervised Methods:} Discover and track well-known cyclical and past temporary narratives:
+\begin{itemize}
+    \item Similarity Tagging: Compute cosine similarity between text embeddings and narrative descriptions; assign top-matching narratives per text, aggregate at daily or intraday frequency to obtain narrative intensities.  
+    \item LLM Tagging: Use state-of-the art LLM with structured agentic framework to classify each text into predefined narratives; enables interpretability and narrative revalidation through self-consistent reasoning checks.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Narrative Modeling}
+\textbf{Unsupervised method:} Discover and track emerging narratives without predefined labels.
+\begin{itemize}
+    \item Based on the LDA topic-modeling from \cite{bybee2023narrative};
+    \item Graph-Based Topic Modeling: Enhancing the work of \cite{grootendorst2022bertopic}, the goal is to embed texts using sentence-transformers, reduce dimensionality with UMAP, and cluster via Leiden algorithm; each cluster represents a latent narrative evolving through time.  
+    \item Unsupervised LLM Approach: On daily batches of text, prompt an LLM to detect narratives and tag text.
+    \item Advantages: Captures new market themes dynamically, providing early detection of evolving macro or micro narratives absent in predefined taxonomies.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Narrative Evolution}
+\textbf{Intensity Scoring:}
+\begin{itemize}
+    \item Overall Intensity: Cumulative narrative-related text weights per day.
+    \item Positive/Negative Intensity: Cumulative positive- or negative-sentiment narrative-related text weights per day.
+    \item Super-Narrative Intensity: Cumulative narrative-related text weights per super-narrative per day.
+    \item Reservoir Intensity: Cumulative narrative-related text weights per reservoir per day.
+\end{itemize}
+
+\textbf{Temporal Tracking:}
+\begin{itemize}
+    \item Compute rolling correlations between narrative intensities and financial variables.  
+    \item Detect structural changes in narrative relevance using rolling univariate regressions.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Narrative Evolution - Super narratives}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Qualifier/Images/super-narratives.png}
+\caption{\small \textit{Super Narratives Intensity Scores}}
+\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Narrative Evolution - Major temporary narratives}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Qualifier/Images/temporary-narratives.png}
+\caption{\small \textit{Major Temporary Narratives Neg. Intensity Scores}}
+\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Narrative Evolution - Macroeconomic narratives}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Qualifier/Images/macro-narratives.png}
+\caption{\small \textit{Macroeconomic Narratives Neg. Intensity Scores}}
+\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Narrative Evolution - Market crash narratives}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Qualifier/Images/market-crash.png}
+\caption{\small \textit{Market Crash Narratives Neg. Intensity Scores}}
+\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Narrative Explanatory Power - S\&P500}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Qualifier/Images/rolling-spy-narr.png}
+\caption{\small \textit{Rolling $r^2$ of 3m-rolling regression between top narratives and \$SPY}}
+\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Narrative Explanatory Power - S\&P500}
+\begin{figure}[c]
+  \centering
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Qualifier/Images/regression_Market_Crash_intensity_vs_SPY.png}
+    \caption{(a) Overall Regression Market Crash vs. \$SPY}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Qualifier/Images/regression_US_Stocks_intensity_vs_SPY.png}
+    \caption{(b) Overall Regression US Stock vs. \$SPY}
+  \end{minipage}
+  % \caption{Comparing realized volatility and narrative intensity.}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[c]{Narrative Explanatory Power - VIX}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Qualifier/Images/rolling-vix-narr.png}
+    \caption{\small \textit{Rolling $r^2$ of 3m-rolling regression between top narratives and \$VIX}}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[c]{Narrative Explanatory Power - VIX}
+\begin{figure}[c]
+  \centering
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Qualifier/Images/regression_Market_Crash_intensity_vs_VIX.png}
+    \caption{(a) Overall Regression Market Crash vs. \$VIX}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Qualifier/Images/regression_US_Stocks_intensity_vs_VIX.png}
+    \caption{(b) Overall Regression US Stock vs. \$VIX}
+  \end{minipage}
+  % \caption{Comparing realized volatility and narrative intensity.}
+\end{figure}
+\end{frame}
+
+
+\subsection{Volatility}
+
+\begin{frame}[t]{Historical Realized Volatility}
+
+\textbf{Objective:} Compute jump- and noise-robust realized volatility measures from nanosecond-level HFT data.
+
+\begin{itemize}
+    \item Developed the \texttt{realized-library}, a fast Python/C++ package for realized volatility estimation and price jumps detection.
+    \item Use Deutsche Börse data (Xetra \& Eurex, 2018–present) filtered to regular trading hours (09:30–17:00).
+    \item Estimated daily volatility using multiple approaches: Realized Variance, MinRV, MedRV, Realized Kernel, etc.
+    \item Construct daily time series of realized volatility, then derived realized Hurst exponents and volatility-of-volatility estimates.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Historical Implied Volatility}
+
+\textbf{Objective:} Extract option-implied volatility surfaces and higher-order volatility metrics.
+
+\begin{itemize}
+    \item Use intraday snapshots of closest 1-, 3-, and 12-month maturities per underlying asset as reference options.
+    \item Apply the Black–Scholes inversion to compute implied volatility from option prices (Eurex dataset).
+    \item Select near-the-money contracts with sufficient liquidity and daily closing quotes for stability.
+    \item Create daily close implied volatility timeseries and derive implied vol-of-vol.
+    \item Use volatility surfaces to obtain time series of implied Hurst exponents.
+\end{itemize}
+\end{frame}
+
+
+\subsection{Narratives–Volatility Dynamics}
+
+\begin{frame}[t]{Structural Breaks}
+
+\textbf{Objective:} Detect and interpret structural changes in volatility regimes through the lens of financial narratives.
+
+\begin{itemize}
+    \item Apply multiple change–point detection techniques to volatility features: Bai–Perron multiple break test, CUSUM and Bayesian and Kernel-based methods for robustness.
+    \item Identify volatility regime shifts (e.g., high– to low–vol regimes, smooth– to rough–vol transitions).
+    \item Align detected breakpoints with changes in narrative intensities and sentiment indicators:
+    \begin{itemize}
+        \item Overall (news headlines)
+        \item Macroeconomic narratives (policy, inflation, liquidity).
+        \item Micro narratives (corporate risk, earnings uncertainty).
+    \end{itemize}
+    
+    \item Evaluate whether narrative shocks precede or coincide with structural volatility transitions.
+\end{itemize}
+
+\textbf{Output:} Narrative–aligned map of volatility regime shifts, providing interpretability to purely statistical break detection.
+\end{frame}
+
+
+\begin{frame}[t]{Narrative Causality and Volatility Forecasting}
+\textbf{Objective:} Quantify and predict how narrative dynamics influence volatility structure and evolution.
+\begin{itemize}
+    \item \textbf{Causality Analysis:}
+    \begin{itemize}
+        \item Test causal direction between narrative intensities and volatility components (realized and implied, volatility, roughness, vol-of-vol).  
+        \item Combine econometric and machine learning methods? E.g.: Granger causality, transfer entropy, Double Machine Learning, and Causal Forests.
+    \end{itemize}
+    \item \textbf{Forecasting Framework:}
+    \begin{itemize}
+        \item Integrate narrative features into volatility forecasting models. 
+        \item Evaluate predictive gains versus baseline volatility models.  
+        \item Explore narrative-timed volatility factor strategies (e.g., “short rough, long smooth” regimes).
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\subsection{Conclusion}
+
+\begin{frame}[t]{Summary of Contributions}
+\textbf{Thesis goal:} Model financial narratives and volatility co-dynamics using NLP, econometrics, and high-frequency data.
+
+\begin{itemize}
+    \item Establish a unified framework to quantify, track, and compare macro, micro, and market-wide financial narratives.
+    \item Build high-frequency datasets and open-source tools (\texttt{realized-library}, \texttt{TOPol}) for volatility and semantic analysis.
+    \item Develop a complete volatility modeling pipeline: realized, implied, roughness, and vol-of-vol.
+    \item Connect narrative shifts to volatility and explain and forecast regime transitions.
+\end{itemize}
+
+\textbf{Broader impact:}
+\begin{itemize}
+    \item Contributes to the empirical foundations of \textit{Narrative Economics}.
+    \item Enhances financial stability analysis, risk management, and macro-financial policy interpretation.
+\end{itemize}
+
+\textbf{Future research directions:}
+\begin{itemize}
+    \item Extend the narrative–volatility framework to cross-asset and international markets.
+    \item Model information diffusion and contagion through narrative propagation networks.
+    \item Explore narrative-based volatility factors for portfolio construction and risk monitoring.
+    \item Incorporate multimodal features (text, price, and sentiment) into deep forecasting architectures.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Conclusion}
+\centering
+\vspace{1cm}
+{\Huge \textbf{Thank you!}}\\[1em]
+{\Large Questions and Discussion}\\[2em]
+{\normalsize
+    Gabin Taibi \\[2pt]
+    PhD Student, University of Twente \\[4pt]
+    PhD Researcher, Bern University of Applied Sciences \\[4pt]
+    \texttt{gabin.taibi@utwente.nl}, \texttt{gabin.taibi@bfh.ch}
+}
+\end{frame}
+
+
+% ====== END DOCUMENT ======
+\end{document}

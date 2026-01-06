@@ -1,0 +1,388 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage[backend=biber,style=apa,sorting=ynt,natbib]{biblatex}
+\addbibresource{references.bib}
+
+\title{SNSF Narrative Digital Finance}
+\author{Marius Klein}
+\date{August 2024}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section{Project Description}
+The SNSF Narrative Digital Finance project is structured into four primary blocks. The first block investigates how textual analysis and natural language processing (NLP) techniques can be effectively used to forecast financial instruments, e.g. via sentiment analysis or topic clustering. The second block addresses the challenge of detecting asset price bubbles, leveraging the previously identified text analysis techniques as either a supportive or main method for identifying breakpoints. The third block dives into the concept of narrative economics, examining how narratives influence investment decisions and whether they can aid in detecting financial market bubbles. Finally, the fourth block integrates all findings into a comprehensive multidimensional machine learning (ML) framework, designed to enhance predictive accuracy in financial applications.
+
+\section{Introduction}
+
+Narrative finance is an emerging interdisciplinary field that integrates concepts from finance, economics, psychology, and sociology to explore how narratives, or stories, influence financial markets and decision-making. Unlike traditional financial theories, which assume rational behavior, narrative finance recognizes that the stories investors, media, and analysts tell about the market can significantly impact investor behavior, market trends, and economic outcomes.\\
+In the past two years, narrative finance has gained increasing attention globally, particularly as researchers leverage advancements in data analytics and machine learning to analyze financial narratives. The COVID-19 pandemic provided a unique context for studying the effects of narratives on financial markets, with widespread discourse on economic recovery, government interventions, and market volatility shaping investor behavior.\\
+One significant development has been the rise of social media as a platform for financial narratives. Platforms like Reddit and Twitter have played a crucial role in shaping market movements, as seen in the GameStop short squeeze of 2021, where collective narratives led to substantial market volatility. Researchers have begun to examine these phenomena more closely, focusing on how social media-driven narratives can create rapid, large-scale impacts on stock prices.\\
+Text analysis and NLP are critical tools in narrative finance, enabling researchers to extract and quantify narratives from large volumes of text, such as news articles, social media posts, and earnings calls. Sentiment analysis, a technique within NLP, is commonly used to assess the emotional tone of financial narratives, which can then be correlated with market movements. Sentiment analysis of Twitter posts during the GameStop event provided insights into how retail investors' collective sentiment influenced the stock's dramatic price fluctuations.
+
+\pagebreak
+
+\section{Potential datasets}
+
+\subsection{Market Data}
+\begin{itemize}
+\item
+\href{https://a7-dataplatform.deutsche-boerse.com/products?category=ANALYTICS&subcategory=HIGH_PRECISION_TIMESTAMP}{Deutsche Börse HPT and HPTA files for Eurex and Xetra}: trades and orderbook updates at nanoseconds level
+\item
+\href{https://a7.deutsche-boerse.com/}{Deutsche Börse A7 Analytic Plateform for Eurex, Xetra, EEX and CME Group data}: raw data or C++ Algos developement with API access
+\item
+\href{https://a7-dataplatform.deutsche-boerse.com/product/details/KAIKOTRADES}{Deutsche Börse Cryptocurrencies Spot and Derivatives Trade Data powered by Kaiko}
+\item
+\href{https://fred.stlouisfed.org/docs/api/fred/}{FRED (Federal Reserve Economic Data)}
+\item
+\href{https://optionmetrics.com}{OptionMetrics, daily end-of-day put and call option quotes, not sure about cost}
+\end{itemize}
+
+\subsection{Textual Data}
+\begin{itemize}
+\item
+\href{https://www.lseg.com/en/data-analytics/products/workspace?utm_source=reuters.com&utm_medium=lseg&utm_campaign=Reuters_ProductPage_Links}{Reuters news and more via LSEG Workspace, news data}
+% https://www.lseg.com/en/data-analytics/financial-data/financial-news-coverage#benefits
+\item
+\href{https://paperswithcode.com/dataset/reuters-21578}{Reuters-21578 (most used dataset for financial textual analysis)}
+\item
+\href{https://developer.x.com/en/docs/x-api/getting-started/about-x-api}{X API (access to full-archive search needed, only with Pro version, \$5000 per month)}
+\item
+\href{https://www.reddit.com/dev/api/}{Reddit API}
+\item
+\href{https://trends.google.com/trends/explore?geo=CH&hl=fr}{Google Trend API}
+\item
+\href{https://www.kaggle.com/datasets/equinxx/stock-tweets-for-sentiment-analysis-and-prediction}{kaggle twitter data, sept2021-sept2022}
+\item
+\href{https://www.kaggle.com/datasets/sbhatti/financial-sentiment-analysis/data}{kaggle financial news, FiQA, Financial Phrase Bank}
+\item
+\href{https://github.com/Zdong104/FNSPID_Financial_News_Dataset}{FNSPID data, combining lots of sources, 1999-2023}
+\end{itemize}
+
+Results from \cite{ghoshal_extracting_2016} indicate that StockTwits data is significantly more informative than Twitter which is not surprising given that StockTwits is specifically focused on finance, whereas Twitter encompasses a broad range of topics, including many unrelated to finance. StockTwits was created in 2008 as an app built on the Twitter’s API. It utilized "cashtags" with the stock ticker symbol, similar to the Twitter hashtag, as a way of indexing people's thoughts and ideas about a company and the stock. Notably, users can label their posts as either bullish or bearish. It enables sentiment classification of all messages by applying ML models trained on these user-labeled messages. \cite{divernois_stocktwits_2023} found that there is an imbalance between bullish labels and bearish ones. Among the user-labeled messages, there were five times more bullish than bearish ones which indicates that investors are on average optimistic about the market.
+
+\pagebreak
+
+\section{Block 1: Text Analysis and NLP}
+
+\subsection{Overview}
+
+\paragraph{Main NLP Models used in Finance:}
+Sentiment Analysis ranges from broad sentiment assessment to fine-grained and aspect-based sentiment analysis, critical for understanding market moods and investor sentiments.
+\newline
+Information Extraction employs Named Entity Recognition (NER) and Relationship Extraction to identify financial entities and their relationships, essential for tracking corporate actions and understanding market dynamics.
+\newline
+Topic Modeling uses techniques like Latent Dirichlet Allocation (LDA) and Non-negative Matrix Factorization (NMF) to help in discovering underlying themes in large volumes of financial documents, aiding in automated report generation and summarization.
+\newline
+Text Summarization through methods such as extractive and abstractive summarization provides concise summaries of financial reports, earnings calls, and analyst notes, facilitating quicker decision-making.
+\newline
+Speech Recognition involves Automatic Speech Recognition (ASR) systems that transcribe earnings calls and presentations, making the data accessible for further textual analysis.
+\newline
+Natural Language Understanding (NLU) is used for intent classification and powering dialogue systems, helping in automating customer service and advisory roles in finance.
+
+\subsection{Literature Review of NLP techniques}
+
+\subsubsection{Sentiment Analysis}
+
+\paragraph{Motivation}
+Understanding public opinion can be very helpful across different applications and areas. Companies can use sentiment analysis to improve products, services, and customer interactions, leading to increased satisfaction and loyalty. Early detection of negative sentiment can help organizations to manage public relations crises before they escalate. Due to the vast amount of text data generated online, monitoring public opinions and emotions, expressed by individuals across various platforms such as social media, reviews and surveys has become a challenge. Manual analysis has become very impractical. Thus, new technologies have emerged that enable sentiment monitoring in real-time.
+\paragraph{Technology}
+The methods for sentiment analysis have evolved over time. Initially, simple word lists and statistical models were used to identify sentiment polarity (positive, negative, neutral). This approach gradually shifted towards machine learning models such as Support Vector Machines (SVMs) and then Recurrent Neural Networks (RNNs) like LSTM.
+\newline
+In recent years, there has been significant development in deep learning models based on transformer architectures, including BERT (Google), RoBERTa (Meta), GPT (OpenAI), and OPT (Google, similar to GPT but open to the public). These models are capable of handling complex language structures and implicit sentiment. Modern approaches now incorporate context-aware and aspect-based sentiment analysis, enhancing accuracy and nuance. 
+Transformers were introduced by researchers at Google with the paper "Attention Is All You Need" \parencite{vaswani_attention_2017}. A transformer is a deep learning architecture that includes of encoder and decoder components with self-attention capabilities. Using word embeddings, transformers can pre-process text as numerical representations through the encoder and understand the context of words and phrases with similar meanings as well as other relationships between words such as parts of speech. It is then possible for LLMs to apply this knowledge of the language through the decoder to produce a unique output. Training is performed using a large corpus of high-quality data. During training, the model iteratively adjusts parameter values until the model correctly predicts the next token from an the previous squence of input tokens. It does this through self-learning techniques which teach the model to adjust parameters to maximize the likelihood of the next tokens in the training examples. Three common learning models exist: Zero-shot learning, few-shot learning and fine-tuning. Zero-shot learning achieves that base LLMs can respond to a broad range of requests without explicit training, often through prompts, although answer accuracy varies. In Few-shot learning a few relevant training examples are provided which causes base model performance to significantly improve in that specific area. Fine-tuning is an extension of few-shot learning in that data scientists train a base model to adjust its parameters with additional data relevant to the specific application \cite{amazon_web_services_what_nodate}.
+\newline
+When applied towards sentiment analysis, a sentiment score is derived through a series of steps. First, the input text is tokenized and passed through the model, generating contextual embeddings. These embeddings are then fed into a classifier that predicts the sentiment class, such as positive, negative, or neutral. The model ultimately outputs a sentiment score, which quantifies the sentiment of a given text, typically ranging from -1 (most negative) to +1 (most positive).
+\newline
+Challenges that remain include the handling of negation, sarcasm as well as domain-specific language and social media slang.
+
+\paragraph{Application towards Finance}
+Sentiment analysis is increasingly utilized in the financial sector to forecast movements in financial assets, such as through analysis of financial news and social media tweets. By detecting market sentiment shifts before they are reflected in prices, sentiment analysis offers a competitive advantage. A significant challenge in this application is the availability of high-quality datasets with appropriate labels, as well as the specific financial terminology and jargon needed for effective model training. 
+\newline
+Some word list models as well as of LLMs were optimized to handle financial texts.
+The dictionary approach by \cite{loughran_when_2011} is particularly noteworthy. They developed six word lists tailored to financial contexts, focusing on 10-K filings from 1994-2008. These lists include categories for negative, positive, uncertainty, litigious, strong modal, and weak modal words. This approach transforms each document into a vector that accounts for term frequency. However, this "word counting" method loses out in analyzing deeper semantic meanings.
+sOne particular component of transformer based models is the ability to further fine-tune them on domain specific datasets. The platform Hugging Face \parencite{httpshuggingfaceco_hugging_2024} offers a transformers library with pre-trained models ready to use, compatible with PyTorch and TensorFlow. FinBERT for example, based on Google's BERT model, represents a LLM specifically pre-trained for financial concepts. It utilizes the Financial PhraseBank dataset created by \cite{malo_good_2014}, which includes corporate filings, analyst reports, and earnings call transcripts. FinBERT outperforms traditional models like dictionary approaches in interpreting financial context, largely due to its extensive scale and pre-training as shown by \cite{araci_finbert_2019}, \cite{huang_finbert_2023} and \cite{kirtac_sentiment_2024}.
+
+\subsubsection{Topic modelling}
+The primary motivation behind topic modeling in text analysis is to uncover the hidden thematic structure within large collections of textual data. As textual data has exploded in volume across various domains—ranging from social media and news articles to academic papers and customer reviews—researchers and analysts face the challenge of making sense of this unstructured data efficiently.
+
+Topic modeling serves as a powerful tool to automatically discover and organize this content into coherent topics, which are essentially clusters of words that frequently co-occur. These topics offer a distilled representation of the main themes or subjects discussed across the documents, allowing for a more manageable and interpretable exploration of large datasets.
+
+Topic modeling can be seen as a method to reduce the dimensionality of text data by transforming a vast array of words into a smaller set of topics, which can then be used for various downstream tasks. These tasks include summarization, trend analysis, and the discovery of latent patterns that might not be immediately obvious through simple keyword searches.
+
+Moreover, topic modeling is unsupervised, meaning it doesn’t require labeled data, making it highly versatile and applicable across different domains without the need for prior knowledge of the text’s content. By uncovering the structure of the data, topic modeling can also guide further research, such as identifying areas for deeper investigation or generating hypotheses based on the discovered topics. In essence, topic modeling is a bridge between raw text and actionable insights, enabling a deeper understanding of large-scale textual corpora.
+
+LDA remains a strong general-purpose method, while newer approaches like BERT-based models and Top2Vec are pushing the boundaries in terms of accuracy and applicability to modern datasets.
+Latent Dirichlet Allocation (LDA) \cite{blei_latent_2003}
+
+\subsubsection{Named Entity Recognition}
+Named Entity Recognition (NER) is critical in the financial sector for extracting specific entities such as company names, stock tickers, financial indicators, and geographical locations from unstructured text data. NER helps in organizing and categorizing data, which can be used for monitoring corporate news, regulatory updates, and market movements effectively.
+
+Financial NER systems are often challenged by the unique nomenclature and the dynamic nature of the financial domain, where new terms and product names frequently emerge. Models trained on general language datasets may not perform well in recognizing these specialized entities unless they are specifically fine-tuned on financial corpora.
+
+Enhanced NER models, leveraging deep learning and contextual embeddings from transformers, have shown improvements in accurately identifying financial entities from complex sentences. These advancements not only improve the accuracy of information extraction tasks but also enhance downstream applications like compliance monitoring, risk assessment, and personalized financial advice.
+
+By continuously updating the training datasets and incorporating the latest market terminology, financial institutions can keep their NER systems robust and effective in dealing with the ever-evolving landscape of financial texts.
+\newline
+\cite{A comparative study on ML-based approaches for Main Entity Detection in Financial Reports}
+
+\subsection{Predicting financial markets}
+Several studies have been conducted to forecast markets with the help of sentiment analysis and topic modelling, both on a macro level and at the individual stock level. The underlying data included traditional financial news from sources like Bloomberg or Refinitv as well as social media like Twitter or StockTwits.
+There are some studies around models like logistic regression, SVM or random forest which were not able to disprove the hypothesis of market efficiency \parencite{renault_sentiment_2020, divernois_stocktwits_2023}. However some studies, outlined below, point the other way, showing that news text is predictive of future asset price paths.
+\newline
+The paper "Predicting Returns with Text Data" written by \cite{ke_predicting_2021} presents a supervised learning framework where the sentiment score is derived from the joint behavior of article text and stock returns, rather than merely sentiment. Their approach is called SESTM (Sentiment Extraction via Screening and Topic Modelling). Using returns as labels for sentiment analysis had been introduced by \cite{jegadeesh_word_2013}.
+\cite{ke_predicting_2021} do not rely on LLMs or pre-existing dictionaries. Their approach is entirely "white box" and requires little computing power. They start with isolating the most relevant terms from a large vocabulary of terms via predictive correlation screening. Then they assign term-specific sentiment weights using a supervised topic model involving probabilistic latent semantic analysis (PLSA) \parencite{hofmann_probabilistic_1999}. In the final step they use the estimated topic model to assign article-level sentiment scores via penalized maximum likelihood.
+The model is empirically tested on the Dow Jones Newswires, a prominent stream of financial news, where it effectively extracts return-predictive signals. The authors find that fresh news impact asset prices above all, more pronounced in smaller and more volatile firms.
+\newline
+\cite{kirtac_sentiment_2024} demonstrated the potential of LLMs in enhancing trading strategies by leveraging sentiment analysis. In their study they used their own fine-tuned versions of BERT and OPT along with FinBERT and the traditional Loughran-McDonald dictionary to forecast the direction of stock returns over a three-day preriod post-publication. They subsequently modelled the return of individual stocks on the  next-day with a regression model, linearly dependent on the sentiment scores. Their research was based on U.S. financial news articles from Refinitiv between 2010 and 2023 and focused on companies from AMEX, NASDAQ and NYSE. Their results showed that the OPT model is the most accurate, followed closely by BERT and FinBERT. The Loughran-McDonald dictionary had a significantly lower accuracy. For instance, a self-financing long-short strategy based on OPT scores, buying top 20 percentile stocks with positive scores and selling top 20 percentile stocks with negative scores after news announcements, achieved a remarkable Sharpe ratio of 3.05 over our sample period, compared to a Sharpe ratio of 1.23 for the strategy based on the dictionary model. The long-short OPT strategy achieved an impressive 355\% return between August 2021 to July 2023 outperforming traditional market portfolios and the Loughran-McDonald portfolio which only managed a 0.91\% return.
+\newline
+\cite{kirtac_sentiment_2024}
+\newline
+Other concrete applications include:
+\begin{itemize}
+    \item \textbf{Predicting Asset Prices:} NLP can be utilized to analyze earnings reports, news articles, and social media feeds to predict asset price movements. Techniques such as sentiment analysis using models like BERT or RoBERTa can assess the mood of financial texts, while topic modeling can identify key themes influencing asset prices. For example, a machine learning pipeline might use sentiment scores from financial news articles to forecast stock price movements, integrating this data with historical price trends to improve prediction accuracy.
+    \newline
+    In \cite{TODO}, the author made a sruvey listing different methods to predict Bitcoin and Ehterum cryptocurrencies prices and trends, by combining deep learning models like Recurent Neural Network (RNNs) or Long-Short Term Memory networks (LSTMs), with advanced NLP techniques such as Dependency Parser, Coreference Resolution, or Named Entity Recognition.
+
+    \item \textbf{Predicting Volatility:} Textual analysis of news and social media can provide early indicators of market volatility. By applying NLP techniques to detect changes in the sentiment or the emergence of new topics (using LDA or NMF), financial models can anticipate volatility spikes. For instance, sudden increases in negative sentiment around geopolitical events can be quantitatively linked to increases in market volatility, helping in the development of trading strategies that account for such risks. 
+    \newline
+    \cite{zadeh_predicting_nodate} used FED Meeting Minutes from 1967 to 2008 with unigram and bigram bag-of-word coupled with word frequencies and TF-IDF scores to predict  whether volatility will rise or fall (classification), and the volatility itself (regression).
+    \newline
+    \cite{TODO} applied an hybrid approach based on the GARCH framework and the artificial neural network framework with feedforward and recurrent neural network on stock-related sentiment (StockTwits) to predict S\&P500 volatility.
+
+    \item \textbf{Detecting Asset Price Bubbles:} NLP can help in identifying speculative bubbles by monitoring the hype around certain assets or topics through social media and news analysis. By employing sentiment analysis and frequency analysis (how often an asset is mentioned), alongside natural language understanding to gauge the context, financial analysts can detect the irrational exuberance that often precedes a bubble. For example, a significant uptick in overly positive sentiment and non-skeptical coverage of an asset might indicate bubble conditions.
+    \newline
+    \cite{phillips_predicting_2017} proposed to use textual data mining to get social media datasets and, then, use a Hidden Markov Model to apply a common model used in epidemiology: the SIR model, where the population is split into three categories (Susceptible, Infected, and Recovered/Removed).
+
+    \item \textbf{Predicting Short Term Price Changes:} High-frequency trading (HFT) can benefit from NLP by processing news feeds in real-time to execute trades based on news sentiment. Using techniques like Named Entity Recognition (NER) to quickly identify the entities involved and sentiment analysis to gauge the news tone, algorithmic traders can adjust their HFT strategies to reduce risk or profit from the news. This approach requires the integration of fast NLP models such as spaCy for NER and transformer-based models for real-time sentiment analysis. \cite{barez_exploring_2023} present a model that was specifically adapted to the HFT environment, outperforming traditional LSTM models by leveraging unique architectural enhancements that capitalize on the speed and volume of data characteristic of HFT. \cite{alabi_predicting_2024} adopt another approach, combining NLP techniques with machine learning to predict market reactions to macro-economic announcements effectively. Sentiment analysis and topic modeling were used to extract meaningful features from unstructured text, and was, then, integrated with traditional market data features.
+    \newline
+    \cite{Transformers in High-Frequency Trading}
+\end{itemize}
+
+\subsection{NLP for Portfolio Management}
+\subsubsection{Risk Management}
+NLP can play a critical role in risk management by analyzing news, financial reports, and external communication within financial institutions (such as emails or financial reports) to detect signals of potential risks or compliance issues. Techniques like NER and sentiment analysis can identify negative sentiments or alarming patterns in communication that may require further investigation. For example, changes in the sentiment of communications within a trading desk might be analyzed in real-time to preemptively identify and mitigate risky trading behaviors or compliance breaches. \cite{lisa_analyzing_2023} employ NLP-based clustering and machine learning to analyze credit risk model validation reports, identifying and categorizing issues with high accuracy. Similarly, \cite{wang_application_2024} demonstrates the use of NLP in financial risk detection by constructing a model that efficiently identifies and predicts potential risks in financial documents. Additionally, \cite{li_financial_2024} explores the use of DeepFM models combined with NLP to enhance financial risk prediction and management, offering a sophisticated approach to understanding and managing financial risks.
+
+\subsubsection{Asset Allocation}
+NLP also plays a pivotal role in asset allocation by providing insights derived from market sentiment and thematic trends across various asset classes. Techniques such as sentiment analysis, entity recognition, and thematic extraction from financial news and reports help in understanding macroeconomic trends and sector performances. This information is crucial for making informed decisions on asset distribution. For instance, if NLP tools detect a positive sentiment trend in technology sector news, portfolio managers might consider increasing their allocation to tech stocks. Conversely, detecting a rise in negative sentiment related to the real estate market might prompt a reduction in exposure to that sector. By integrating NLP into asset allocation strategies, investment firms can dynamically adjust their portfolios in response to real-time global market sentiments and trends.
+
+\subsection{Results and Performances of NLP techniques in Finance}
+NLP techniques have shown varying levels of success in the financial sector. Sentiment analysis has been increasingly utilized to forecast market trends and investor behavior, demonstrating significant predictive power in some cases. Topic modeling has facilitated the summarization and categorization of financial documents, contributing to more efficient data management and retrieval processes.
+\newline
+However, the performance of these techniques can be inconsistent, largely depending on the quality of the underlying algorithms and the relevance of the training data to specific financial contexts. The adaptability of NLP models to the rapidly changing financial language and their ability to handle ambiguous and complex expressions also play crucial roles in their effectiveness.
+\newline
+Studies have shown that while some traditional models struggle to capture the nuances of financial texts, advanced models like BERT and FinBERT, which are specifically tuned for financial contexts, offer more accurate and reliable results. These models are better at interpreting the subtle cues within financial news and analyst reports, which are pivotal for making informed investment decisions.
+\newline
+\cite{zadeh_predicting_nodate}
+
+\subsection{Limitations}
+Text mining in finance encounters several challenges due to the unstructured nature of textual data. Transforming unstructured text into a structured format for analysis is a fundamental hurdle. Although text mining techniques are powerful, their effectiveness hinges heavily on the quality of data prepossessing and feature selection, which are pivotal in model development.
+
+Furthermore, NLP models often struggle with nuances such as sarcasm, idioms, and financial jargon, which can lead to misinterpretations and inaccuracies in sentiment analysis and information extraction. The specific language of finance, laden with specialized vocabulary, demands that models be finely tuned to process this language effectively, which is not always achievable with general NLP models.
+
+Another significant limitation is the dependency on large, labeled datasets for training. Acquiring and annotating such datasets is not only time-consuming but also costly, posing a barrier to the development and refinement of robust NLP applications in the financial sector.
+
+\newpage
+\section{Block 2: Asset Price Bubble Detection}
+\subsection{Literature Review}
+Bubbles, characterized by a rapid escalation in asset prices followed by a sharp contraction, are driven by speculative behavior, often resulting in significant financial losses when they burst. The most commonly used methods include fundamental analysis, traditional econometric techniques, more advanced mathematical models and modern machine learning approaches. The study of bubble detection is a relevant and active area of research and their detection remains difficult. A key concern in financial surveillance is the reliability of a warning alert system that signals inflationary market upturns. Ideally, such systems should have a low false detection rate to prevent unnecessary policy actions, while maintaining a high positive detection rate to enable early and effective policy responses. For detection methods to be effective in the practical work, they must be able to address multiple-bubble phenomena. However, identifying multiple bubbles with periodically collapsing behavior over time is significantly more challenging than detecting a single bubble due to complex nonlinear dynamics.\\
+\newline
+In general, bubbles can be classified into two categories: rational and irrational. A rational bubble occurs when investors knowingly trade an asset at prices higher than its fundamental value, fully aware that the price exceeds the asset’s intrinsic worth. However, they believe that they can still profit by selling the asset at a higher price to other investors in the future before the bubble bursts. In this case, the inflated prices are justified by the belief that the bubble will continue for a while, allowing them to profit from the rising price. An irrational bubble occurs when prices rise due to investors’ misjudgments or speculative mania, often driven by psychological factors like excessive optimism, herd behavior or overconfidence. Investors in an irrational bubble might not fully realize or acknowledge that the asset is overvalued and may buy the asset due to emotional biases, believing that the rapid price increases reflect the asset’s true value. Both types of bubbles can lead to sudden crashes when investor sentiment shifts or when the market can no longer support inflated prices.\\
+\newline
+Using fundamental analysis for bubble detection is one of the simplest and most widely used approaches. John Campbell and Robert Shiller have been pioneers in this area of research \parencite{campbell_stock_1988}, where current asset prices are evaluated against historical benchmarks of fundamental values, such as the price-to-earnings (P/E) ratio or the cyclically adjusted price-to-earnings (CAPE) ratio. A bubble is identified when these ratios are significantly above their historical averages, suggesting that asset prices have become disconnected from underlying economic fundamentals. Fundamental ratios offer a straightforward way to assess market overvaluation and their wide usage makes them a go-to tool for detecting potential bubbles in stock markets and real estate. However, these methods are more of a warning signal rather than a precise timing tool as they do not capture the speculative dynamics that drive bubbles.\\
+\newline
+More advanced testing methods that capture bubble dynamics can be both parametric or non-parametric. The two approaches differ primarily in their assumptions and approach to the data. Parametric methods rely on specific assumptions about the price dynamics, typically using a predefined mathematical model. These methods assume that the asset prices follow a certain process, such as an auto-regressive or stochastic model, and then estimate key parameters like volatility or drift. Based on these estimates, parametric tests determine whether the asset price behavior suggests the presence of a bubble. While parametric approaches can provide precise insights when the model assumptions are valid, they can be slow to adapt to changing market conditions and may produce inaccurate results if the underlying model is not well-suited to the data. In contrast, non-parametric methods are more flexible and make fewer assumptions about the price dynamics. Instead of relying on a specific model, non-parametric tests directly analyze patterns in the observed data, such as the volatility distribution, and extrapolate from these patterns to detect bubbles. This allows non-parametric methods to adapt to more complex or changing market conditions, as they are driven by the data itself rather than a rigid model. However, this flexibility comes at a cost, as non-parametric methods are often more prone to false positives, incorrectly signaling bubbles due to noise in the data. 
+While parametric methods are structured and depend heavily on correct model specification, non-parametric methods offer adaptability but can be less reliable in real-time applications.\\
+\newline
+The rational bubble literature can be divided into models that represent prices in discrete time and those that represent prices in continuous time. While they can sometimes describe the same phenomena, such as the binomial model approximating the Black-Scholes formula, they are not always equivalent. The choice between them affects bubble detection assumptions. In discrete time, bubbles require an infinite time horizon and unobserved fundamental value assumptions, leading to a joint-hypothesis problem simultaneously testing for the presence of a bubble and the validity of the model's assumptions.
+In continuous time, bubbles can exist in finite horizons and can be detected using stochastic differential equations. This involves classifying the stochastic process modeling the discounted asset price as either true or strict local martingales. Although real-world trading occurs at discrete intervals, these are not uniformly spaced, making continuous-time models a plausible choice.\\
+\newline
+In the literature on bubble detection in discrete time, the work of \cite{phillips_testing_2015} is particularly notable.
+For the development of their bubble estimator, historical time-series asset prices are used. They addressed the challenge of multiple-bubble phenomena with an advancement of the Sup Augmented Dickey-Fuller (SADF) test, a recursive econometric test for explosiveness with a flexible window width. 
+The starting point in their analysis is the asset pricing equation:
+\begin{equation} \label{eq:phillips15_price}
+    P_t = \sum_{i=0}^{\infty} \left( \frac{1}{1 + r_f} \right)^i \mathbb{E}_t \left( D_{t+i} + U_{t+i} \right) + B_t,
+\end{equation}
+where \( P_t \) represents the post-dividend price of the asset, \( D_t \) is the asset's payoff (i.e., the dividend), \( r_f \) denotes the risk-free interest rate, \( U_t \) captures unobservable fundamentals, and \( B_t \) is the bubble component which follows the submartingale property
+\(
+\mathbb{E}_t (B_{t+1}) = (1 + r_f) B_t.
+\)
+In the absence of bubbles (\( B_t = 0 \)), the nonstationarity of asset prices is determined by the behavior of dividends and unobservable fundamentals. However, in the presence of bubbles, asset prices become explosive. Thus, when unobservable fundamentals are at most integrated of order one \(I(1)\) and dividends are stationary after differencing, signs of explosive behavior in asset prices or the price-dividend ratio can suggest bubbles.\\
+They applied their method in an empirical study to S\&P 500 data from January 1871 to December 2010, successfully identifying major episodes of exuberance including the Great Crash, the 1954 postwar boom, Black Monday and the dot-com bubble.\\
+\newline
+Significant contributions to the local martingale theory of bubbles in continuous time have been made by, among others, \cite{loewenstein_rational_2000}, \cite{cox_local_2005}, and \cite{jarrow_asset_2010}. More recent research by \cite{fusari_testing_2020}, \cite{jarrow_inferring_2021}, \cite{bashchenko_deep_2020} and \cite{biagini_detecting_2024} expands upon these foundational findings. In these papers, a bubble process is defined as difference between the observed market price \( S \) of a financial asset and its fundamental value \( S^Q \):
+\begin{equation} \label{eq:cont_time_bubble_def}
+    \beta^Q = S - S^Q.
+\end{equation}
+Assuming a discount factor of 1 and given an equivalent local martingale measure \( Q \) for \( S \), the fundamental value \( S^Q \) is typically defined as the expected sum of future payoffs under \( Q \). In this context, a bubble exists if and only if \( S \) is a strict local martingale under \( Q \). A strict local martingale is a local martingale that is not a true martingale. In parametric methods, a key aspect is estimating the volatility coefficient, which is determined by specific parameter values in the volatility model of the price process.
+\cite{bashchenko_deep_2020} estimate the volatility coefficient based on the trajectory of the underlying whereas \cite{fusari_testing_2020} and \cite{biagini_detecting_2024} provide forward-looking methods implying the volatility coefficient from option price data. The theoretical basis behind these studies suggests that an asset price bubble occurs when volatility grows more rapidly than the asset price. Higher volatility, often linked to increased trading, reflects the motive to capture future resale value. The premise is that while call option prices may reflect bubbles, put option prices do not because their payoff is bounded above. Therefore, the magnitude of the bubble in the underlying asset can be estimated by calculating the difference between the observed call option prices and the model-implied prices, using a model that accurately prices put options.\\
+\newline
+\cite{fusari_testing_2020} use the generalized stochastic volatility jump-diffusion (G-SVJD) model which allows the underlying asset process \(S_t\) to exhibit both martingale and strict local martingale behaviors:
+\begin{equation} \label{eq:fusari20_gsvjd1}
+    \frac{dS_t}{S_t} = \sqrt{V_t} \, dW_t + dJ_t - \lambda M \, dt,
+\end{equation}
+\begin{equation} \label{eq:fusari20_gsvjd2}
+    dV_t = \kappa (\bar{\nu} - V_t) \, dt + \sigma_v V_t^p \, dZ_t.
+\end{equation}
+Here, \( W_t \) and \( Z_t \) are correlated standard Brownian motions with \( \rho \in [-1, 1] \), such that \( dW_t dZ_t = \rho \, dt \), \( (dJ_t - \lambda M \, dt) \) is the martingale jump term, the parameter \( \sigma_v > 0 \) represents the volatility of the variance process \( V_t \), \( \kappa > 0 \) denotes the mean-reversion speed of the variance process, and \( \bar{\nu} > 0 \) is the long-term mean of the variance. The model assumes both no free lunch with vanishing risk (NFLVR) and no dominance (ND). It is important to note that under NFLVR and ND, put-call parity holds:
+\begin{equation} \label{eq:putcallparity}
+    C_t - P_t = S_t - K p(t, t + \tau),
+\end{equation}
+where \(C_t\) is the value of the call at time \(t\), \(P_t\) is the value of the put at time \(t\), \(K\) is the strike price and \(p(t, t + \tau)\) is discount factor for \(K\) between time \(t\) and \(t + \tau\). At expiration, the payoff for the call option is \( C_{t+\tau} = \max\{S_{t+\tau} - K, 0\} \), and for the put option, it is \( P_{t+\tau} = \max\{K - S_{t+\tau}, 0\} \), respectively.\\
+Under NFLVR and ND, the bubble in the call option is linearly related to the bubble in the underlying asset’s price and does not depend on the option’s strike price. As a result, options with the same maturity but different strikes should display the same bubble. Varying combinations of the parameters \( p \) and the correlation coefficient \( \rho \) jointly determine whether the stock price behaves as a strict local martingale or just as a martingale. It is possible to estimate the parameters of this model by minimizing the distance between observed put options prices and model-implied put prices. In the final step, the estimated parameters are used to compute model-implied call option prices that are generated under the risk-neutral measure \(Q\), which represent the calls' fundamental value. The call option price bubble can then be estimated as the difference between the observed call market price and its fundamental value. The study shows that bubbles correlate with spikes in volatility and trading, particularly before earnings announcements. They applied their methodology to four assets from 2014-2018: the S\&P 500, Nasdaq-100, Amazon and Facebook. While the indices showed no price bubbles during this period, the single stocks exhibited several large and persistent positive bubbles. It should be noted that as bubble identification strategy may be influenced by the joint-hypothesis problem under the joint assumptions of NFLVR and ND. However, the parameter estimation mitigates concerns about model misspecification as the pricing fit on put options directly validates the model. This separates testing the option-pricing model from tests for a bubble in the underlying asset.\\
+\newline
+\cite{bashchenko_deep_2020} and \cite{biagini_detecting_2024} employ supervised machine learning techniques to estimate parametric models that classifies assets as either true martingales or strict local martingales at each time step. Their models are trained on simulated data where the volatility, depending on certain parameters, is assumed to be in one out of the two states.
+\cite{bashchenko_deep_2020} utilize a recurrent neural network with a long short-term memory (LSTM) architecture, to estimate the volatility parameters historically over a rolling window. In the estimation of historical volatility, it's important to note that the goal is not to estimate volatility over time, but rather to determine the functional form of volatility in relation to the price over a specific time period. For the simulation, they assume the following form for the volatility:
+\begin{equation} \label{eq:bashenko_vol}
+    \sigma(x) = \gamma_0 x^{\gamma_1},
+\end{equation}
+where \( \gamma = (\gamma_0, \gamma_1) \) remains constant within a given time interval \( (t_i, t_{i+1}] \) but may vary across different intervals. Based on this function, the stock price \( S_t \) is a true martingale if \( 1/2 < \gamma_1 \leq 1 \). When \( \gamma_1 > 1 \), the stock price becomes a strict local martingale. A Markov chain determines at random times at which the stock switches between the two states. The LSTM model is trained on the synthetic data and achieves an out-of-sample accuracy of roughly 84\%. Additionally, the method is applied to real-world data where it identifies multiple bubbles in the U.S. equity market between 2006 and 2008. Finally, a zero net exposure trading strategy is developed, which shorts assets in bubble territory. The profitability of this strategy provides an estimate of the economic impact of bubbles and supports the theoretical assumptions underlying the model. \cite{biagini_detecting_2024} use a neural network trained on synthetic option price data generated from various models, particularly local volatility models (displaced CEV) and stochastic volatility models (SABR, Sin). During training, the network is fed with cross sections of call option prices across different strikes and maturities, written on an underlying price process with known dynamics, together with a label specifying if the price process is a strict local martingale or a true martingale. To determine whether a new stock has a bubble, the trained neural network is evaluated at the related cross section of call option prices. The network outputs a value between 0 and 1, representing the probability that the underlying asset has a bubble. By modifying the algorithm slightly, the size of the bubble can be estimated. The method was tested on both synthetic and real data, achieving high accuracy when trained on one class of models and applied to another. Tests on market data from four tech stocks also aligned well with expected results. The empirical study is complemented by a mathematical proof supporting the method in a local volatility setting.\\
+\newline
+\cite{jarrow_inferring_2021} also attempt to detect bubbles via options data, however they choose a different approach. Instead of using a parametric volatility model, they propose a non-parametric estimator for asset price bubbles, relying on the assumptions of NFLVR and the independence of call price bubbles on strike prices. The latter restriction is significantly weaker than the ND assumption and allows violations of put-call parity. By using a cross section of option prices across various strike prices and maturities, which contains useful information about the state-price density (SPD) of the underlying asset, the fundamental asset value, defined as the mean \(\mu^Q\) of the SPD, can be obtained, enabling the identification of asset price bubbles. The SPD represents the price today of receiving one unit of payoff in a specific future state. It includes both the probability of that state and the market’s valuation of risk in that state. The mean can be decomposed as follows:
+\begin{equation} \label{eq:jarrow_mean}
+   \mu^Q = \int_{\ell_p}^{u_c} e^{-r_f \tau} [1 - Q(s)]ds + \left[ e^{-r_f \tau} \ell_p + C^Q(u_c) - P^Q(\ell_p) \right].
+\end{equation}
+Here, \(e^{-r_f \tau}\) represents the discount factor to adjust for the time value of money at time to maturity \(\tau\) with the risk-free rate \(r_f\); \( u_c \) is the maximum strike for calls, \( \ell_p \) the minimum strike for puts and \(Q(s)\) the state-price density. The fundamental prices of the call options \( C^Q(u_c) \) and put options \( P^Q(\ell_p) \) are unobserved but can be bounded. The integration spans the available range of strike prices and can be evaluated.
+The authors show that their method effectively tracks S\&P 500 bubbles and enables profitable momentum trading strategies, outperforming benchmarks from 1996-2015.\\
+\newline
+Another parametric approach in continuous time worth mentioning is the log-periodic power law singularity (LPPLS) model. This model, also known as the Johansen–Ledoit–Sornette (JLS) model, was proposed by \cite{sornette_stock_1996}, as well as independently by \cite{feigenbaum_discrete_1996}. It takes a more empirical approach, focusing on the characteristic price patterns that occur during bubble formation. The model has its origins in statistical physics and complex systems theory, where it was first applied to model critical phenomena like earthquakes. Researchers noticed that the behavior of earthquakes exhibited similar patterns to financial bubbles before a crash. In a financial context, the model assumes that asset prices are driven by ongoing non-linear interactions among heterogeneous agents, namely rational traders and non-rational noise traders. \cite{johansen_crashes_2000} provide a detail description of the model. The asset price process is assumed to be a martingale under the assumption of no arbitrage with the following dynamics with respect to time \(t\):
+\begin{equation} \label{eq:LPPLS_priceprocess}
+    \frac{dp}{p(t)} = \mu(t) dt + \sigma(t) dW - \kappa dj.
+\end{equation}
+Here, \(\mu(t)\) denotes the drift, \( \sigma(t) \) the volatility, \( dW \) the increment of a Wiener process, \( k \in (0,1) \) the percentage drop in price during a regime change and \( dj \) a discontinuous jump with the value of zero before the crash and one afterwards. The dynamics of the jumps are governed by a crash hazard rate \(h(t)\), and \( h(t) dt \) represents the probability that a regime change will occur between time \( t \) and \( t + dt \), given that it has not taken place yet. The crash hazard rate is assumed to have following form:
+\begin{equation} \label{eq:LPPLS_hazardrate}
+    h(t) = \alpha (t_c - t)^{m-1} (1+\beta \cos\left(\omega \ln(t_c - t) - \phi_0\right)),
+\end{equation}
+where the parameters \( \alpha \), \( \beta \), \( m \), \( \omega \), and \( \phi_0 \) govern the behavior of the bubble; \( t_c \) represents the critical time when the bubble is expected to burst. The dynamics of the logarithmic price expectation can be derived as:
+\begin{equation} \label{eq:LPPLS_priceexpectation}
+    E_t[\ln p(t)] = A + B (t_c - t)^m + C (t_c - t)^m \cos\left(\omega \ln(t_c - t) - \phi\right),
+\end{equation}
+where \( A = \ln p(t_c) \) represents the expected terminal log-price at the critical time \( t_c \), \(B\) governs the amplitude of the power-law acceleration, \(C\) determines the magnitude of the log-periodic oscillations around the power-law singular growth, \( \omega \) represents the angular frequency of the oscillations, \( \phi \) is the phase parameter and the exponent \( m \in (0, 1) \) controls the shape of the price acceleration. The LPPLS model can be calibrated with a nonlinear least squares optimization algorithm that is applied to minimize the error between the observed and model-predicted logarithmic prices. \cite{shu_detection_2024} offer a comprehensive review of both the theoretical and empirical academic literature regarding the development and expansion of the LPPLS model for detecting financial bubbles and crashes.
+
+\subsection{Theoretical Background}
+\subsubsection{Local Martingale Framework}
+A \textbf{strict local martingale} is a special type of stochastic process that behaves like a martingale in some respects but does not fully adhere to the properties of a true martingale. To understand this concept, it’s helpful to break down its components. First, a \textbf{martingale} is a stochastic process that reflects a “fair game.” Specifically, the expected future value of the process, given all current information, is equal to its current value. This means that there are no predictable trends or biases in how the process evolves over time. Formally, for a martingale \(X_t\), we have \( \mathbb{E}[X_t | \mathcal{F}_s] = X_s \) for all \( s \leq t \), where \( \mathcal{F}_s \) represents the information available up to time \( s \). A \textbf{local martingale} is a weaker version of a martingale. It satisfies the martingale property but only up to certain stopping times. In other words, the process behaves like a martingale for finite periods, though it might not have the same long-term properties. Technically, a process \(X_t\) is a local martingale if there is a sequence of stopping times \( \tau_n \) such that the process stopped at each \( \tau_n \), denoted \(X_{t \wedge \tau_n}\), is a true martingale. A \textbf{strict local martingale} is a local martingale that is \textbf{not} a true martingale. While it satisfies the local martingale property, it fails to maintain the defining feature of a martingale: that the expected value remains constant over time. For a strict local martingale, the expected value of the process can decrease over time, meaning that \( \mathbb{E}[X_t] \) can be less than \( X_0 \), even though locally, the process behaves as if it had no drift. A classic example of a strict local martingale is the reciprocal of a Brownian motion, \( Y_t = 1/W_t \), where \( W_t \) is a standard Brownian motion starting at a positive value. Locally, \( Y_t \) behaves like a martingale, but globally, its expected value tends to decrease, and in fact, it converges toward zero as time progresses, even though \(Y_t\) itself stays positive. Strict local martingales are important in various applications, particularly in finance. For example, in risk-neutral valuation and asset pricing, it is common to assume that the price of a risky asset, when discounted, follows a martingale under a risk-neutral measure. However, if the price process is a strict local martingale, this can lead to surprising results. The value of an asset might drift toward zero in expectation, making certain derivative pricing models problematic. Such processes can exhibit behavior similar to supermartingales, where the expected value declines over time.\\
+\newline
+The first Fundamental Theorem of Asset Pricing (Delbaen and Schachermayer (1994, 1998)) asserts that \textbf{NFLVR} is equivalent to the existence of an equivalent local martingale measure (ELMM)
+No dominance \textbf{ND}...
+
+
+\newpage
+\section{Block 3: Narratives in Economics}
+
+\subsection{Literature Review}
+The following literature review is largely based on the book "Narrative Economics" by \cite{shiller_narrative_2019}. The Nobel Laurate Robert Shiller has played a significant role in popularizing and shaping this term and its associated field of research. For his research, he used the ProQuest News \& Newspapers database (proquest.com), a tool that allows users to search newspaper articles and advertisements online, dating back to the year 1700.
+\subsubsection{Background}
+Narratives can be thought of as stories which are used to explain or justify a society or era. When these stories spread through a chain of events leading to broad awareness about it in society, then these stories "go viral". Contagion is largest when there is a person involved in the story who people feel connected to on a personal level.\\
+Anyone who seeks to understand significant economic events solely by analyzing data on changes in aggregate economic quantities, such as gross domestic product, wage curves, interest rates, and taxes, runs the risk of overlooking the underlying motivations driving the changes.\\
+Ultimately, the majority of people whose consumption and investment decisions cause economic fluctuations are not very well informed. Most of them do not pay close attention to the news they see or read, and they rarely organize the facts in any coherent way. Yet, their decisions drive overall economic activity. It must therefore be the case that attention-grabbing narratives, often supported by prominent figures or trusted individuals, influence these decisions. Once we recognize that recently changed stories within constellations of narratives can cause current economic events, we will have made significant progress. However, gaining a solid understanding of how narratives influence the economy is not easy. Also measuring or quantifying them is difficult.
+
+\subsubsection{Key points}
+Key points when it comes to economic narratives:
+\begin{itemize}
+    \item Epidemics can be fast or slow, large or small. The duration and scope of epidemics can vary greatly.
+	\item Significant economic narratives may only occupy a small portion of everyday conversations. Narratives might reach only a few people and still have substantial economic impacts.
+	\item Narrative constellations have a greater effect than any single narrative. Constellations are important.
+	\item The economic effects of narratives can change over time. Changing details matter as narratives evolve.
+	\item Truth alone is not enough to stop false narratives. Truth matters, but only when it is absolutely obvious.
+	\item The spread of economic narratives relies on opportunities for repetition. Reinforcement is key.
+	\item Narratives thrive when they are connected to something: human interest, identity, and patriotism are crucial.
+\end{itemize} 
+
+\subsubsection{Recurring narratives}
+Some narratives keep recurring in mutated forms. Some mutations can even convey an opposite lesson which can be confusing. The narrative about machines destroying jobs created a sense of fear during the Great Depression of the 1930s, but evoked a sense of great business opportunities during the dotcom boom of the 1990s.\\
+Expressing economic crises in terms of the well-known narratives that likely contribute to or worsen them is challenging because these events are complex, and ultimately, no definitive proof of causality can be established. The first step in this task is to organize and classify significant economic narratives, along with the mutations that enable them to resurface over long periods of time. The following narratives are long-lasting and recur over time, organized by theme:
+\begin{itemize}
+
+    \item Panic vs. Optimism:
+    This narrative depends on people's confidence in banks, businesses, the economy and each other. They focus on whether we trust banks to honor their commitments and whether we trust that other customers won’t all withdraw their money at the same time.\\
+    A notably famous financial panic, during which trust was restored, took place in 1907. A prominent narrative from this panic centered around a well-known figure, J.P. Morgan, the most famous banker in the U.S. at the time, which is why the story endured for decades. In the absence of a U.S. central bank, he used his own money to save the banking system and urged other bankers to do the same. This rescue of the United States became an impressive story, and Morgan's status as a celebrity grew even further.\\
+    On the other side, during the 2007-2009 recession, the narrative of the 1930s Great Depression merged with the narrative of bank runs. People believed they had just experienced an euphoric, speculation-driven and immoral period similar to the Roaring Twenties. The stock market and banks were collapsing, just like in 1929.
+    
+	\item Frugality vs. Exuberant Consumption:
+    During the "Poverty chic" culture of the 1930s, people refrained from flaunting consumption when those around them had lost everything and were struggling. They also reduced spending out of fear that they might lose their jobs. These factors led to reduced consumption and hindered a swift economic recovery. Cheap products like bikes, jeans and puzzles became popular. The narrative of modesty resurfaced in Japan during the 1990s, alongside other stories and influential figures, like a successful TV show about an ascetic monk, and had a dragging impact on the countries economy in the following "lost decades".\\
+    "American Dream" narrative symbolizes strong consumption. It emerged around 1931 linked to equality. Martin Luther King Jr. contributed to this narrative with his "I have a dream" speech at March on Washington in 1963. Later, the narrative mutated and homeowners became part of the American Dream, with the implication that owning a home and committing to a community was a patriotic act. This version of the American Dream was used by the US government, and its mortgage agency Fannie Mae, to justify actions which fueled the housing bubble that ultimately burst during the 2007-2009 financial crisis.
+    
+	\item Gold Standard vs. Bimetallism:
+    The "Gold Standard vs. Bimetallism" debate revolved around monetary policy in the 19th and early 20th centuries. The gold standard meant that currency was backed solely by gold, which limited the money supply but provided stability. Bimetallism proposed that both gold and silver should back currency, increasing the money supply and making it easier for debtors, particularly farmers and laborers, to pay off debts. Supporters of bimetallism argued that a gold-only standard favored wealthy industrialists and creditors by keeping prices low and deflationary pressures high. The gold standard narrative is no longer widely discussed today. President Trump tested the waters by expressing support for it, but the public reaction was largely indifferent.
+ 
+	\item Labor-Saving Machines Replacing Many Jobs:
+    The narrative about labor-saving machines was very popular in the 1930s and is closely linked to the theory of overproduction, which suggested that people cannot possibly consume all the output produced by machines. Whenever a man is replaced by a machine, a consumer is lost because he no longer has the means to pay for what he consumes. Chronic underemployment is the inevitable result. This theory was accompanied by the idea that the world now belonged to the technicians who could design and operate machines, which was naturally frightening for the majority of the population who could not become scientists.\\
+    Stories about new technologies do not necessarily evoke fear, especially if they are not associated with job replacement but exciting new consumer goods like cars, TVs or household appliances.
+    
+	\item Automation and AI Replacing Nearly All Jobs:
+    This narrative is a further development of the narrative about labor-saving machines. The mutation consists in the fact that machines are not only displacing pure muscle power but also the human brain. This narrative appeared multiple times after the Second World War and each time suggested that a terrifying tipping point had been reached, at which machines would take over everything.\\
+    The double recession of the years 1957-1958 and 1960-1961 may have been caused by people spending less because they had fears about the future due to concerns about automation. However, by the year 1965 this narrative was forgotten. The fear of automation resurfaced strongly in the 1980s, accompanied by the phenomenal success of computer manufacturers like Atari and Apple. Fueled by the hype, robot-themed films such as "Star Wars", "The Transformers", and "The Terminator" emerged. Again, this narrative might have had an impact on the double recession in the 1980s. At the turn of the millennium in 2000, the stock market surged, driven by new technological innovations related to the internet. Unlike in earlier periods, this boosted the economy, as people were no longer afraid of being replaced by machines but instead saw opportunities to earn money as investors.
+ 
+	\item Real Estate Booms and Bubbles:
+    Stories about price increases of land and houses are shaped by an ongoing narrative about limited availability. This narrative stands in stark contrast to the "Panic vs. Optimism" narrative, as real estate is regarded as a personal asset with a social dimension, whereas the economy is perceived as the result of numerous unknown factors. Up until the mid-20th century speculation was limited to investments in land. Investments in houses were generally seen as investments in buildings, valued based on construction costs and subject to depreciation from weather and usage. In this kind of narrative, the likelihood of real estate bubbles was low.\\
+    Around the year 2000, the ability to track house prices through indices and view them online made homes more accessible and thus they received more attention. Moreover, narratives surfaced portraying houses as crucial for retirement planning and necessary for a successful life, particularly when viewed through the lens of social comparison with others. During the housing boom prior to the 2007-2009 financial crisis, homes became speculative investments which were bought and sold again shortly afterwards to make a quick profit, a trend that lenders eagerly supported.
+ 
+	\item Stock Market Bubbles:
+    The stock market speculation in the 1920s was fueled by a technological innovation: the ticker projector. This device displayed recent stock market transactions on a large screen, visible to a substantial audience. Crowds would gather around the tickers, amplifying the spread of stories about the stock market. The crash also includes narratives of successful individuals, such as John D. Rockefeller, who sold their stocks just before the collapse, after a shoeshine boy gave them advice on how to invest in the stock market. Even though a long time has passed since the 1929 crash, the feeling persists that such a crash could happen again. This enduring economic narrative is a lasting legacy of 1929 and likely contributes to amplifying price drops at the end of a boom and worsening the business climate. Stories and legends from the past serve as the scripts for the next boom or crash.
+ 
+	\item Boycotts, Profiteers and Evil Business:
+    Anger toward companies fluctuates over time. People may perceive companies as evil when prices for consumer goods rise significantly or wages are cut. Such anger-driven narratives can lead to organized boycotts or uncoordinated decisions to postpone spending. In these cases, people base their purchasing decisions on moral standards rather than solely on satisfying their needs. The boycott narrative has surfaced periodically, alternating between times of social inequality and times when it was viewed more critically as people became tired of it.
+ 
+	\item The Wage-Price Spiral and the Evil Unions:
+    The narrative of the wage-price spiral describes a movement of the workforce, led by influential unions, who demand higher wages for themselves. Management achieves this without losing profit by raising the prices of the final products for consumers. The unions then use the higher prices to justify even higher wage demands. This process repeats itself over and over again, until inflation eventually spirals out of control.
+ 
+\end{itemize}
+
+\subsubsection{Outlook}
+Many of these described narratives will become epidemic again, weaken after a few years, and then rise again. These will be variations.\\
+The occasional perception of economic strength is fueled by narratives which inspire confidence and overshadow less optimistic competing narratives at that time. During the 2007-2009 global financial crisis, we saw a swift collapse in consumer sentiment and a revival of the narrative surrounding the 1929 stock market crash. A similar situation could quickly arise again with a minor shift or a change in external conditions.\\
+There is no exact science for predicting economic events. Economists often focus on central bank policies, business sentiment indices or other macroeconomic factors to explain economic trends. However, they frequently cannot pinpoint the root causes. Evolving narratives often trigger these changes but there is no professional consensus on this matter.\\
+Throughout history, significant changes in information technology have occurred, from the printing press to radio and the rise of the internet. These inventions have influenced the way narratives spread. The internet, and especially social media, have the potential to fundamentally alter the nature of how ideas are transmitted. In the past, ideas spread in a more random and unsystematic way. Social media platforms now enable the systematic dissemination of narratives by connecting like-minded individuals who can amplify these narratives together. Artificial intelligence can help us in analyzing unstructured digital text data and thereby advancing research on narratives. Since narratives are often emotionally charged, methods that can quantify public sentiment are particularly important in this context. However, to find out if narrative economics can help us develop better economic models for predicting financial crises, we need to increase the amount of high-quality data and study many narratives collectively. Having time series of narratives would be extremely useful.\\
+The objective is to help policymakers considering narrative epidemics in their actions. Therefor, they first need tools to grasp the dynamics of economic narratives, enabling them to create counter-narratives that benefit the common good in a second step.
+
+\subsubsection{Epidemic models}
+Epidemiology, a subfield of medicine, includes a mathematical theory for describing epidemic dynamics. We can adapt this theory to model the spread of economic narratives.\\
+The most basic model is the Kermack-McKendrick SIR model which divides the population into three compartments: Susceptibles \(S\) , Infectives \(I\) and Recovereds \(R\). Susceptibles are individuals who have not been infected but are vulnerable to the disease. Infectives are those who have contracted the disease and can transmit it. Recovereds are individuals who have recovered from the disease and are immune. The total population is assumed constant, \(N = S + I + R\).\\
+The core idea of the model is that in a well-mixed population, the rate of increase in infectives is proportional to both the number of susceptibles and the number of infectives. The contagion rate, \(c > 0\), represents the likelihood of transmission during interactions between susceptibles and infectives. The recovery rate, \(r > 0\), governs the rate at which infectives recover. The interactions are governed by the following system of differential equations:
+\[
+\frac{dS}{dt} = -cSI
+\]
+\[
+\frac{dI}{dt} = cSI - rI
+\]
+\[
+\frac{dR}{dt} = rI
+\]
+Key insights:
+\begin{itemize}
+    \item The epidemic curve is bell-shaped, with infectives peaking before declining as more individuals recover.
+    \item As time goes to infinity, he number of people who have ever had the disease goes to a limit \(R_\infty\) which is determined by the ratio \( \frac{c}{r} \).
+    \item Extensions of the SIR model include the SIRS model (re-susceptibility) and the SEIR model (latent exposed period).
+\end{itemize}
+
+\subsection{Research Plan}
+
+\subsubsection{Current Narratives}
+What are strong narratives today? Is there a way to systematically find it out? Frequency of certain words overall?\\
+The "keeping up with the neighbors" narrative seems particularly strong in the United States right now. Donald Trump exemplifies a flashy lifestyle, while charitable donations have seen a downward trend.\\
+Meanwhile, narratives surrounding intelligent machines are gaining significant traction and appear to be positively influencing the economy. Much like during the dotcom boom, people view new technological advancements in this field as investment opportunities. During the COVID years, central banks and governments adopted highly expansionary monetary policies, yet there were limited opportunities to spend the money. New brokerage platforms made the stock market more accessible, giving it a positive boost, with technology companies being beneficiaries.
+
+Classical, more manual approach: Check which of the recurrent narratives identified by Shiller are in play nowadays, and how?
+
+More original approach: Take sources (news headlines, social media), split by region, age group, social status, profession etc. and try to identify narratives via clustering / topic modelling.
+
+ongoing themes: Central Banks support causing asset price inflation, cant fight the fed / the only game in town. Already rich people profit even more. Tax them!
+
+nationalism / immigration, America first, AFD
+Also trade wars (US vs China)
+
+
+\pagebreak
+\printbibliography
+
+\end{document}

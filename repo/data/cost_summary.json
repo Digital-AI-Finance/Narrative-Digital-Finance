@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "generated": "2026-01-04T07:01:57.811024",
+    "source": "COST Action CA19130",
+    "action_code": "CA19130",
+    "action_name": "Fintech and Artificial Intelligence in Finance"
+  },
+  "stats": {
+    "researchers": 420,
+    "countries": 55,
+    "cost_countries": 39,
+    "citations": 10000,
+    "meetings": 52,
+    "stsms": 27,
+    "training_schools": 7,
+    "virtual_mobility": 39,
+    "total_budget": 963654.17
+  },
+  "working_groups": [
+    {
+      "number": 1,
+      "title": "Transparency in FinTech",
+      "leader": "Prof Wolfgang Hardle",
+      "participants": 281
+    },
+    {
+      "number": 2,
+      "title": "Transparent versus Black Box Decision-Support Models in the Financial Industry",
+      "leader": "Prof Petre Lameski",
+      "participants": 254
+    },
+    {
+      "number": 3,
+      "title": "Transparency into Investment Product Performance for Clients",
+      "leader": "Prof Peter Schwendner",
+      "participants": 223
+    }
+  ],
+  "grant_periods": [
+    {
+      "period": 1,
+      "start": "2020-11-01",
+      "end": "2021-10-31",
+      "institution": "Zurich University of Applied Sciences",
+      "status": "Closed"
+    },
+    {
+      "period": 2,
+      "start": "2021-11-01",
+      "end": "2022-05-31",
+      "institution": "Zurich University of Applied Sciences",
+      "status": "Closed"
+    },
+    {
+      "period": 3,
+      "start": "2022-06-01",
+      "end": "2022-10-31",
+      "institution": "Bern University of Applied Sciences",
+      "status": "Closed"
+    },
+    {
+      "period": 4,
+      "start": "2022-11-01",
+      "end": "2023-10-31",
+      "institution": "Bern University of Applied Sciences",
+      "status": "Closed"
+    },
+    {
+      "period": 5,
+      "start": "2023-11-01",
+      "end": "2024-09-13",
+      "institution": "Bern University of Applied Sciences",
+      "status": "Closed"
+    }
+  ],
+  "snsf_alignment": {
+    "WP1": {
+      "name": "Text Data & Text Analytics",
+      "cost_wgs": [
+        "WG1"
+      ],
+      "alignment": "Strong - Both focus on ML/NLP for financial transparency"
+    },
+    "WP2": {
+      "name": "Structural Breaks & Bubbles",
+      "cost_wgs": [
+        "WG3"
+      ],
+      "alignment": "Strong - Time series analysis and interpretable ML"
+    },
+    "WP3": {
+      "name": "Narratives for Structural Breaks",
+      "cost_wgs": [
+        "WG1",
+        "WG2"
+      ],
+      "alignment": "Moderate - Narrative analysis uses XAI concepts"
+    },
+    "WP4": {
+      "name": "Multidimensional AI/ML",
+      "cost_wgs": [
+        "WG3"
+      ],
+      "alignment": "Strong - Market microstructure and HFT analysis"
+    }
+  },
+  "collaborators": [
+    {
+      "name": "Prof. Wolfgang Karl Hardle",
+      "institution": "Humboldt-University Berlin",
+      "country": "Germany",
+      "role": "WG1 Leader, PhD examination, co-author",
+      "cost_role": "Working Group 1 Leader"
+    },
+    {
+      "name": "Prof. Daniel Traian Pele",
+      "institution": "Bucharest University of Economic Studies",
+      "country": "Romania",
+      "role": "COST network, PhD training",
+      "cost_role": "WG1 Co-Leader"
+    },
+    {
+      "name": "Prof. Codruta Mare",
+      "institution": "Babes-Bolyai University",
+      "country": "Romania",
+      "role": "Co-author 'Multimodal Influence'",
+      "cost_role": "Grant Awarding Coordinator"
+    },
+    {
+      "name": "Dr. Karolina Bolesta",
+      "institution": "SGH Warsaw School of Economics",
+      "country": "Poland",
+      "role": "Co-author, COST network",
+      "cost_role": "Virtual Grant Co-Coordinator"
+    },
+    {
+      "name": "Dr. Stefan Schlamp",
+      "institution": "Deutsche Borse AG",
+      "country": "Germany",
+      "role": "HFT data access, joint publications",
+      "cost_role": "Industry Partner"
+    }
+  ]
+}

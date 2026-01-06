@@ -1,0 +1,69 @@
+\documentclass[preprint,12pt]{elsarticle}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+\begin{document}
+
+\section{Introduction}
+\label{sec:intro}
+\begin{itemize}
+    \item Overview of ultra-fast and high-frequency trading (UFT and HFT)
+    \item Critics on UFTs/HFT: market manipulations (quote spoofing/stuffing/sniffing), latency arbitrage (front running, more or less equal to quote sniffing), flash crashes, higher volatility
+    \item Objectives and structure of the paper
+\end{itemize}
+
+\section{Theoretical Background}
+\begin{itemize}
+    \item UF and HFTs participation rate (cf paper 1)
+    \item Theory of efficient markets and its critics ("fake" liquidity due to high cancellation rates and a lot of noise)
+    \item Volatility estimation in modern financial markets (Close-to-Close standard deviation, mid/trade price Realized Variance/Kernel?)
+    \item What is Liquidity?
+\end{itemize}
+
+\section{Literature Review}
+\begin{itemize}
+    \item Market micro-structures analysis
+    \item Liquidity: a more complex and yet not well defined concept
+    \item Empirical studies on UF/HFTs impacts
+\end{itemize}
+
+\section{Data and Methodology}
+\label{sec:datamethod}
+\begin{itemize}
+    \item Description of data: public data (HPT/HPT All files and A7 Analytics Platform), period, markets (Eurex and Xetra), instruments (Eurostoxx, Dax and Eurobund futures, equities, and ETFs)
+    \item Data prepossessing: filtering most liquid instrument reaction events (but kept all trigger trades are considered), gathering orderbook and BBO updates data, 1 min time interval aggregation
+    \item Reaction latency based classification (FPGA/HFTs/non-HFTs)
+    \item Methodology to classify noise/signal reaction events
+    \item Participation Metrics (quote currency volume \%): total, aggressive/passive, signal/noise, liquidity adding/removing
+    \item Market Quality Metrics: volatility (mid, micro and trade price realized kernels), tick and effective tick spread, depth, order imbalance, and Liquidity Flow
+    \item Hypotheses
+\end{itemize}
+
+\section{Empirical Results}
+\label{sec:results}
+\begin{itemize}
+    \item Impact of UFTs and HFTs noise orders
+    \item Impact of UFTs and HFTs aggressive orders
+    \item Impact of UFTs and HFTs removing liquidity orders (toxic flow, front-running trades and cancellation)
+    \item Impact of UFTs and HFTs total participation
+    \item Robustness checks
+\end{itemize}
+
+\section{Discussion}
+\label{sec:discussion}
+\begin{itemize}
+    \item Comparison with existing studies
+    \item Implications for market efficiency and stability
+    \item Limitations and potential areas for misclassification (arbitrary threshold and signal/noise misclassifications)
+\end{itemize}
+
+\section{Conclusion}
+\label{sec:conclusion}
+\begin{itemize}
+    \item Summary of key findings
+    \item Future research directions: refining noise/signal classification (machine learning approach), impact on different markets
+\end{itemize}
+
+\end{document}

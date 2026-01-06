@@ -1,0 +1,72 @@
+\documentclass[final]{beamer}
+
+% Beamer poster settings for landscape A2
+\usepackage[orientation=landscape, size=a2, scale=1.4]{beamerposter}
+\usepackage{graphicx}  % For including images
+\usepackage{multicol}  % For multicolumn layout
+
+% Title and Author Information
+\title{Your Research Poster Title}
+\author{Name}
+\institute{University of XXXX}
+
+% Colors and font customization for the header and blocks
+\setbeamercolor{block title}{fg=white,bg=blue!70!black}  % Block title background
+\setbeamercolor{block body}{fg=black,bg=white}           % Block body background
+\setbeamerfont{title}{series=\bfseries, size=\Huge}       % Poster title font
+\setbeamerfont{block title}{size=\large,series=\bfseries} % Block title font
+
+% Begin Document
+\begin{document}
+
+% Poster layout in a single frame
+\begin{frame}[t]
+
+% Header Section (Title and Author)
+\begin{block}
+    {\centering
+    \textbf{\Huge Your Research Poster Title} \\
+    \vspace{0.3cm}
+    \textbf{\Large Your Name, University of XXXX}
+    }
+\end{block}
+
+% Grid layout for blocks (2 columns)
+\begin{columns}
+
+    % First Column
+    \begin{column}{0.5\textwidth}
+        
+        % Background block
+        \begin{block}{Context of the Study}
+            The rapid advancement of electronic markets has reshaped the financial landscape...
+        \end{block}
+        
+        % Data block with dynamic width and more content
+        \begin{block}{Data and Methodology}
+            We utilize high-precision timestamp data from Deutsche Börse's Eurex and Xetra platforms...
+        \end{block}
+        
+    \end{column}
+
+    % Second Column
+    \begin{column}{0.5\textwidth}
+        
+        % Results block with a larger size to fit figures or tables
+        \begin{block}{Results}
+            \includegraphics[width=0.8\textwidth]{path-to-your-figure.png} \\
+            Our analysis reveals the significant role of UFTs and HFTs in market liquidity...
+        \end{block}
+        
+        % Conclusion block, adjustable to content length
+        \begin{block}{Conclusions}
+            By providing a detailed analysis of participant reaction times and their trading behaviors...
+        \end{block}
+        
+    \end{column}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}

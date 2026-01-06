@@ -1,0 +1,119 @@
+Strategic Narratives during Economic Turning Points: An AI Framework for Monitoring U.S.
+Central Bank Communications
+Gabin Taibi, Bern University of Applied Sciences, University of Twente
+Background
+Examining how the Federal Reserve System communicates during times of
+macroeconomic change is key to understanding policy strategy. While prior work
+has studied macro indicators [3, 2] or central bank speeches [1, 4] in isolation
+for this purpose, little is known about the key strategic communication patterns
+occurring in times of structural economic changes.
+This project bridges quantitative macroeconomic trends and qualitative commu-
+nication patterns to uncover patterns in U.S. central bankers narratives during
+changing economic conditions.
+Research Objectives
+▶Construct a transparent and data-driven composite index that condenses
+multifaceted U.S. macroeconomic indicators.
+▶Detect structural breaks in the macroeconomic environment through
+unsupervised change point detection.
+▶Quantify how the thematic focus, sentiment orientation, and rhetorical
+structure of Federal Reserve communication evolves around these
+macroeconomic transitions.
+▶Demonstrate that combining macroeconomic signal detection with
+narrative analysis offers a practical tool for interpreting monetary policy
+shifts, with direct applications in market monitoring and economic
+storytelling.
+Methodology
+Macroeconomic Index Construction
+A static Principal Component Analysis (PCA) [5] is applied to six standard-
+ized (12-month rolling window Z-score) monthly U.S. macroeconomic indicators
+(FED Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls from St.
+Louis FED FRED datasets) from 1996 to 2025. The first principal component
+(explaining the largest share of variance, see fig. 1) is interpreted as the US
+Macro Strength Index, capturing joint dynamics in growth, inflation, and labor
+conditions. Change points are then identified using the PELT algorithm from the
+ruptures. Python library, with a radial basis function cost and penalty = 5 (see
+fig. 2).
+Narrative Shift Analysis
+As a case study, we focus on the 2008 financial crisis. Federal Reserve bankers
+speech transcripts (BIS Gigando datasets) from 2004-01-01 to 2010-04-01 are
+split at the detected breakpoint (2007-05-01). BERTopic is fit on the pre-break
+period and updated (partial fit) on the post-break period. For each topic, we
+compute: Mean polarity shift (FinBERT sentiment [6]), semantic topic centroid
+drift, cosine similarity between topic centroids, and Jaccard similarity of Maximal
+Marginal Relevance (MMR) keyword sets. We also generate word clouds aggre-
+gating MMR keywords from all topics before and after the breakpoint, visualizing
+the thematic drift across narrative regimes (fig 3 and 4).
+Null Hypothesis Testing
+To test statistical significance, we simulate 1000 null scenarios by randomly shuf-
+fling speech dates while preserving content and structure. Each metric is re-
+computed for the randomized assignments, allowing comparison of observed drift
+values to their null distributions (see fig. 5, 6, 7, and 8).
+Figure 1: PCA Loadings and Explained Variance
+Figure 2: Principal Component 1 and Change Points
+Preliminary Results
+Figure 3: MMR Wordcloud for
+2004.01.01-2007.05.01 period
+Figure 4: MMR Wordcloud for
+2004.01.01-2010.04.01 period
+Figure 5: Polarity Drift Null Hypothesis
+Distribution and Observed Value
+Figure 6: Centroid Drift Null Hypothesis
+Distribution and Observed Value
+Figure 7: Cosine Similarity Null Hypothesis
+Distribution and Observed Value
+Figure 8: Jaccard Similarity Null Hypothesis
+Distribution and Observed Value
+Conclusion
+We apply our method to the 2008 crisis as a case study, showing that the PCA-
+based Macro Strength Index captures structural shifts in the U.S. economy: the
+dot-com bubble (2001), economy recovering (2004), the Subprime crisis and its
+recovering phase (2007 and 2010), the post-2016 monetary regime shift, COVID-
+19 (2020–2021), and recent inflation-driven turbulence (2023). Clear changes in
+narrative framing emerge around the detected breakpoint:
+▶Word clouds reveal a shift from growth-oriented language to crisis and
+uncertainty themes.
+▶Narrative drift is statistically significant across polarity, semantic centroids,
+cosine similarity, and Jaccard overlap.
+▶These changes align with macroeconomic dynamics and are not explained
+by chance (validated via permutation tests).
+This confirms the joint relevance of the Macro Strength Index and the text
+analysis pipeline. The framework can be replicated across other macroeconomic
+turning points to further explore strategic communication shifts in central bank
+narratives.
+Discussion and Further Work
+While our analysis already demonstrate significant results, there are areas for
+improvement. The PCA-based Macro Strength Index, while interpretable, may
+obscure regime-specific dynamics due to its linear nature and fixed component
+structure. Incorporating non-linear dimensionality reduction or regime-switching
+models could yield more adaptive representations.
+On the NLP side, while Transformer embeddings capture nuanced semantic
+changes, relying on proprietary LLM services (e.g., OpenAI) limits interpretabil-
+ity. A key next step is to compare performance across open-source models and
+other proprietary services (e.g., FinBERT, Llama, Mistral, Google’s models) and
+evaluate trade-offs between computation time, cost, explainability, and narrative
+signal quality.
+Future work include applying the pipeline across other detected economic shifts.
+It should also validate whether narrative shifts predict market reactions or volatil-
+ity, strengthening the framework’s value for policy monitoring and financial
+decision-making. Extending the framework cross-country and including emerging
+market central banks would also test robustness across institutional contexts.
+References
+[1] Maximilian Ahrens, Deniz Erdemlioglu, Michael McMahon, Christopher J. Neely, and Xiye Yang. Mind your
+language: Market responses to central bank speeches. Journal of Econometrics, page 105921, December
+2024. ISSN 03044076. doi: 10.1016/j.jeconom.2024.105921. URL https://linkinghub.elsevier.
+com/retrieve/pii/S0304407624002720.
+[2] Scott A. Brave, R. Andrew Butters, and David Kelley. A new “big data” index of U.S. economic ac-
+tivity. Economic Perspectives, 2019. ISSN 0164-0682. doi: 10.21033/ep-2019-1. URL https://www.
+chicagofed.org/~/media/publications/economic-perspectives/2019/ep2019-1-pdf.pdf.
+[3] Peng-Fei Dai, Xiong Xiong, and Wei-Xing Zhou. A global economic policy uncertainty index from principal
+component analysis. Finance Research Letters, 40:101686, May 2021. ISSN 15446123. doi: 10.1016/j.frl.
+2020.101686. URL https://linkinghub.elsevier.com/retrieve/pii/S1544612319310542.
+[4] Martin Feldkircher, Paul Hofmarcher, and Pierre Siklos. SUERF Policy Briefs No 153, August 202.
+[5] Abigail Rogot. Dimensionality Reduction Techniques in Macroeconomic Analysis. 2023.
+[6] Yolanda S. Stander.
+A News Sentiment Index to Inform International Financial Reporting Standard 9
+Impairments. Journal of Risk and Financial Management, 17(7):282, July 2024. ISSN 1911-8074. doi:
+10.3390/jrfm17070282.
+URL https://www.mdpi.com/1911-8074/17/7/282.
+Number: 7 Publisher:
+Multidisciplinary Digital Publishing Institute.

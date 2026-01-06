@@ -1,0 +1,3155 @@
+\documentclass[8pt]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+
+% Color definitions
+\definecolor{mlblue}{RGB}{31, 119, 180}
+\definecolor{mlorange}{RGB}{255, 127, 14}
+\definecolor{mlgreen}{RGB}{44, 160, 44}
+\definecolor{mlred}{RGB}{214, 39, 40}
+\definecolor{mlpurple}{RGB}{148, 103, 189}
+\definecolor{mlgray}{RGB}{127, 127, 127}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+
+% Custom environments
+\newenvironment{concept}[1]{%
+  \begin{block}{\textbf{Key Concept: #1}}%
+}{%
+  \end{block}%
+}
+
+\newenvironment{intuition}{%
+  \begin{alertblock}{Intuition}%
+}{%
+  \end{alertblock}%
+}
+
+% Title information
+\title{From Headlines to Narratives}
+\subtitle{A Complete Course in LLM-Based Narrative Extraction}
+\author{Prof. Dr. Joerg Osterrieder}
+\institute{Graduate Course in Advanced NLP and Machine Learning}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\begin{frame}[t]
+\titlepage
+\vfill
+\footnotesize
+\textbf{Course Overview:} Comprehensive treatment of Large Language Models for narrative extraction from financial news. Mathematical foundations, practical implementations, and real-world applications.
+\end{frame}
+
+% Course Overview
+\begin{frame}[t]{Course Learning Objectives}
+\textbf{By the end of this course, you will understand:}
+
+\begin{enumerate}
+\item \textbf{Text Representation:} How raw text becomes mathematical objects (embeddings)
+\item \textbf{Semantic Discovery:} How machines discover topics and themes in text
+\item \textbf{Information Aggregation:} How individual headlines become coherent narratives
+\item \textbf{Deep Learning Architecture:} How Transformers process and understand language
+\item \textbf{Generation Theory:} How LLMs create new text and control their outputs
+\item \textbf{Advanced NLP:} How machines understand complex linguistic phenomena
+\item \textbf{Optimization:} How to train large language models effectively
+\end{enumerate}
+
+\vfill
+\textbf{Prerequisites:} Linear algebra, probability theory, basic machine learning, Python programming
+\end{frame}
+
+% Table of contents
+\begin{frame}[t]{Course Roadmap}
+\tableofcontents
+\vfill
+\footnotesize
+\textbf{Pedagogical Approach:} Each topic builds on previous concepts. We start with fundamental representations and progress to sophisticated generation models. Mathematical rigor combined with intuitive explanations and practical examples.
+\end{frame}
+
+% PART I: EMBEDDINGS
+\section{Mathematical Foundations of Text Embeddings}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Part I: Mathematical Foundations of Text Embeddings\par
+\end{beamercolorbox}
+\vfill
+\footnotesize
+\textbf{Learning Goals:} Understand how text becomes numbers, why embeddings work, and the mathematical principles behind different embedding methods.
+\end{frame}
+
+\begin{frame}[t]{Why Do We Need Text Embeddings?}
+\textbf{The Fundamental Problem:}
+
+Computers work with numbers, but language consists of discrete symbols (words).
+
+\begin{concept}{One-Hot Encoding Limitations}
+Traditional approach: Represent each word as a binary vector with single 1.
+\begin{itemize}
+\item Vocabulary size = 50,000 words $\Rightarrow$ 50,000-dimensional vectors
+\item No semantic similarity: "king" and "queen" are orthogonal
+\item Sparse, inefficient, no generalization
+\end{itemize}
+\end{concept}
+
+\begin{intuition}
+We want representations where semantically similar words have similar mathematical representations. This allows machines to understand that "king" and "queen" are more related than "king" and "banana".
+\end{intuition}
+
+\textbf{The Solution:} Dense vector representations (embeddings) that capture semantic relationships.
+\end{frame}
+
+\begin{frame}[t]{The Distributional Hypothesis}
+\begin{concept}{Firth's Principle (1957)}
+"You shall know a word by the company it keeps"
+\end{concept}
+
+\textbf{Mathematical Formulation:}
+Words appearing in similar contexts should have similar representations.
+
+\textbf{Context Window Example:}
+\begin{itemize}
+\item "The \textcolor{mlred}{king} ruled the kingdom wisely"
+\item "The \textcolor{mlred}{queen} governed the nation fairly"
+\item "The \textcolor{mlred}{president} led the country effectively"
+\end{itemize}
+
+\begin{intuition}
+Words surrounded by similar words (ruled/governed/led, kingdom/nation/country) should have similar embeddings. This is the core insight behind all embedding methods.
+\end{intuition}
+
+\textbf{Implications:}
+\begin{itemize}
+\item Semantic similarity emerges from distributional patterns
+\item No manual feature engineering required
+\item Works across languages and domains
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Historical Development of Embeddings}
+\textbf{Timeline of Major Developments:}
+
+\begin{itemize}
+\item \textbf{1986:} Rumelhart et al. - Distributed representations
+\item \textbf{1990s:} Latent Semantic Analysis (LSA) - SVD on term-document matrices
+\item \textbf{2003:} Neural Language Models (Bengio et al.)
+\item \textbf{2008:} Collobert \& Weston - Multi-task learning for NLP
+\item \textbf{2013:} Word2Vec (Mikolov et al.) - Efficient neural embeddings
+\item \textbf{2014:} GloVe (Pennington et al.) - Global statistics + local context
+\item \textbf{2017:} Transformer (Vaswani et al.) - Self-attention revolution
+\item \textbf{2018:} BERT - Bidirectional contextual representations
+\item \textbf{2019+:} Large Language Models (GPT, T5, etc.)
+\end{itemize}
+
+\begin{intuition}
+Each development solved limitations of previous approaches while building on their insights.
+\end{intuition}
+\end{frame}
+
+\begin{frame}[t]{Section I Learning Objectives}
+\textbf{After this section, you will be able to:}
+
+\begin{enumerate}
+\item \textbf{Explain} the distributional hypothesis and why it enables semantic representations
+\item \textbf{Derive} the Word2Vec objective functions from first principles
+\item \textbf{Understand} the computational tricks (negative sampling, hierarchical softmax)
+\item \textbf{Compare} different embedding methods and their trade-offs
+\item \textbf{Implement} basic embedding algorithms
+\item \textbf{Evaluate} embedding quality using intrinsic and extrinsic tasks
+\item \textbf{Apply} embeddings to narrative extraction problems
+\end{enumerate}
+
+\textbf{Key Mathematical Tools:}
+\begin{itemize}
+\item Probability distributions and conditional probability
+\item Gradient descent and backpropagation
+\item Matrix factorization and singular value decomposition
+\item Information theory (entropy, mutual information)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Word2Vec: The Breakthrough}
+\textbf{Why Word2Vec Revolutionized NLP:}
+
+\begin{concept}{Core Innovation}
+Instead of complex neural architectures, use a simple objective: predict context words from target word (or vice versa).
+\end{concept}
+
+\textbf{Two Main Architectures:}
+
+\begin{enumerate}
+\item \textbf{Skip-gram:} Given center word, predict surrounding words
+   \begin{itemize}
+   \item Input: "king"
+   \item Output: "the", "ruled", "kingdom", "wisely"
+   \end{itemize}
+
+\item \textbf{CBOW (Continuous Bag of Words):} Given context, predict center word
+   \begin{itemize}
+   \item Input: "the", "ruled", "kingdom", "wisely"
+   \item Output: "king"
+   \end{itemize}
+\end{enumerate}
+
+\begin{intuition}
+If we can predict context from word (or word from context), then our learned representations must capture semantic meaning.
+\end{intuition}
+\end{frame}
+
+\begin{frame}[t]{Skip-gram Architecture Deep Dive}
+\textbf{Neural Network Structure:}
+
+\begin{enumerate}
+\item \textbf{Input Layer:} One-hot encoded word $w_I \in \{0,1\}^V$
+\item \textbf{Hidden Layer:} Dense embedding $h = W^T w_I \in \mathbb{R}^N$
+\item \textbf{Output Layer:} Context word probabilities $y \in \mathbb{R}^V$
+\end{enumerate}
+
+\textbf{Key Insight:} The hidden layer weights $W \in \mathbb{R}^{V \times N}$ become our word embeddings!
+
+\begin{concept}{Embedding Matrix}
+Each row of $W$ is the embedding vector for a word. Training the network to predict context automatically learns semantic representations.
+\end{concept}
+
+\textbf{Mathematical Objective:}
+\begin{equation}
+J(\theta) = -\frac{1}{T}\sum_{t=1}^T \sum_{-c \leq j \leq c, j \neq 0} \log p(w_{t+j}|w_t)
+\end{equation}
+
+where $T$ = corpus size, $c$ = context window size.
+\end{frame}
+
+\begin{frame}[t]{The Softmax Problem}
+\textbf{Probability Computation:}
+
+For each context position, we need:
+\begin{equation}
+p(w_O|w_I) = \frac{\exp(v_{w_O}^T v_{w_I})}{\sum_{w=1}^W \exp(v_w^T v_{w_I})}
+\end{equation}
+
+\textbf{Computational Challenge:}
+\begin{itemize}
+\item Denominator requires summing over entire vocabulary ($W \approx 50,000$)
+\item For each training example, for each context position
+\item Makes training prohibitively expensive
+\end{itemize}
+
+\begin{concept}{The Bottleneck}
+Computing softmax over large vocabularies is the main computational bottleneck in language modeling.
+\end{concept}
+
+\textbf{Two Solutions:}
+\begin{enumerate}
+\item \textbf{Hierarchical Softmax:} Use binary tree structure
+\item \textbf{Negative Sampling:} Approximate softmax with sampling
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Negative Sampling: Elegant Solution}
+\textbf{Key Insight:} Instead of computing probabilities over all words, distinguish target from random "negative" samples.
+
+\begin{concept}{Reformulation}
+Transform multi-class classification into binary classification problems.
+\end{concept}
+
+\textbf{Objective Function:}
+\begin{equation}
+\log \sigma(v_{w_O}^T v_{w_I}) + \sum_{k=1}^K \mathbb{E}_{w_k \sim P_n(w)} [\log \sigma(-v_{w_k}^T v_{w_I})]
+\end{equation}
+
+\textbf{Breaking it down:}
+\begin{itemize}
+\item $\sigma(x) = \frac{1}{1 + e^{-x}}$ is the sigmoid function
+\item First term: Maximize probability of actual context word
+\item Second term: Minimize probability of random "negative" words
+\item $K$ = number of negative samples (typically 5-20)
+\end{itemize}
+
+\textbf{Noise Distribution:} $P_n(w) = \frac{U(w)^{3/4}}{\sum_w U(w)^{3/4}}$ favors frequent words
+\end{frame}
+
+\begin{frame}[t]{Training Word2Vec: Step by Step}
+\textbf{Algorithm:}
+
+\begin{algorithmic}[1]
+\STATE Initialize embedding matrices $W_{in}, W_{out}$ randomly
+\FOR{each training sentence}
+\FOR{each word $w_t$ in sentence}
+\FOR{each context position $j \in [-c, c], j \neq 0$}
+\STATE Sample $K$ negative words: $w_{neg,1}, ..., w_{neg,K} \sim P_n$
+\STATE Compute gradients for positive pair $(w_t, w_{t+j})$
+\STATE Compute gradients for negative pairs $(w_t, w_{neg,k})$
+\STATE Update embeddings using SGD
+\ENDFOR
+\ENDFOR
+\ENDFOR
+\end{algorithmic}
+
+\textbf{Gradient Computation:}
+For positive pair: $\frac{\partial}{\partial v_{w_O}} \log \sigma(v_{w_O}^T v_{w_I}) = (\sigma(v_{w_O}^T v_{w_I}) - 1) v_{w_I}$
+
+\textbf{Learning Rate:} Typically starts at 0.025, decreases during training
+\end{frame}
+
+\begin{frame}[t]{Word2Vec: What Did We Learn?}
+\textbf{Emergent Properties:}
+
+\begin{enumerate}
+\item \textbf{Semantic Similarity:} Similar words cluster together
+   \begin{itemize}
+   \item Countries: France, Germany, Italy
+   \item Colors: red, blue, green
+   \item Emotions: happy, sad, angry
+   \end{itemize}
+
+\item \textbf{Analogical Reasoning:} Linear relationships in embedding space
+   \begin{itemize}
+   \item King - Man + Woman ≈ Queen
+   \item Paris - France + Germany ≈ Berlin
+   \item Walking - Walk + Swam ≈ Swimming
+   \end{itemize}
+
+\item \textbf{Syntactic Patterns:} Grammatical relationships preserved
+   \begin{itemize}
+   \item Verb tenses: run/running, eat/eating
+   \item Pluralization: cat/cats, mouse/mice
+   \end{itemize}
+\end{enumerate}
+
+\begin{intuition}
+The embedding space automatically organizes itself to reflect human conceptual knowledge, purely from distributional statistics!
+\end{intuition}
+\end{frame}
+
+\begin{frame}[t]{Limitations of Word2Vec}
+\textbf{What Word2Vec Cannot Do:}
+
+\begin{enumerate}
+\item \textbf{Polysemy:} Same word, different meanings
+   \begin{itemize}
+   \item "bank" (financial institution) vs "bank" (river side)
+   \item Single embedding cannot capture both meanings
+   \end{itemize}
+
+\item \textbf{Context Dependency:} Meaning changes with context
+   \begin{itemize}
+   \item "The bank was closed" vs "The river bank was muddy"
+   \item Static embeddings miss contextual nuances
+   \end{itemize}
+
+\item \textbf{Out-of-Vocabulary:} Cannot handle unknown words
+   \begin{itemize}
+   \item New words, typos, rare words
+   \item No representation available
+   \end{itemize}
+\end{enumerate}
+
+\textbf{Impact on Narrative Extraction:}
+\begin{itemize}
+\item Financial terms often have multiple meanings
+\item Context crucial for disambiguation
+\item Need more sophisticated approaches
+\end{itemize}
+
+\textbf{Solution Preview:} Contextual embeddings (BERT, GPT)
+\end{frame}
+
+\begin{frame}[t]{GloVe: Combining Global and Local Statistics}
+\textbf{Motivation:} Word2Vec uses only local context windows. Can we also leverage global corpus statistics?
+
+\begin{concept}{Co-occurrence Matrix}
+$X_{ij}$ = number of times word $j$ appears in context of word $i$ across entire corpus.
+\end{concept}
+
+\textbf{Key Insight:} Ratios of co-occurrence probabilities reveal semantic relationships.
+
+\textbf{Example:} Ice vs Steam
+\begin{itemize}
+\item $P(solid|ice) / P(solid|steam)$ is large (ice is solid, steam is not)
+\item $P(water|ice) / P(water|steam)$ is close to 1 (both related to water)
+\item $P(fashion|ice) / P(fashion|steam)$ is close to 1 (neither related to fashion)
+\end{itemize}
+
+\textbf{Mathematical Goal:} Learn embeddings where $w_i^T w_j \approx \log P(j|i)$
+
+This leads to the GloVe objective function.
+\end{frame}
+
+\begin{frame}[t]{GloVe Objective Function Derivation}
+\textbf{Starting Point:} We want $w_i^T w_j = \log P(j|i) = \log X_{ij} - \log X_i$
+
+\textbf{Problem:} Different words have different total frequencies $X_i = \sum_k X_{ik}$
+
+\textbf{Solution:} Add bias terms to absorb frequency differences.
+
+\textbf{Target:} $w_i^T \tilde{w}_j + b_i + \tilde{b}_j = \log X_{ij}$
+
+\textbf{Least Squares Objective:}
+\begin{equation}
+J = \sum_{i,j=1}^V f(X_{ij})(w_i^T \tilde{w}_j + b_i + \tilde{b}_j - \log X_{ij})^2
+\end{equation}
+
+\textbf{Weighting Function:} $f(x)$ handles zero entries and reduces influence of very common pairs.
+\begin{equation}
+f(x) = \begin{cases}
+(x/x_{max})^\alpha & \text{if } x < x_{max} \\
+1 & \text{otherwise}
+\end{cases}
+\end{equation}
+
+Typically: $x_{max} = 100$, $\alpha = 0.75$
+\end{frame}
+
+\begin{frame}[t]{FastText: Handling the Unknown}
+\textbf{Motivation:} What about words not seen during training?
+
+Examples in financial news:
+\begin{itemize}
+\item Company names: "Anthropic", "OpenAI"
+\item Technical terms: "DeFi", "stablecoin"
+\item Misspellings: "sentement" instead of "sentiment"
+\end{itemize}
+
+\begin{concept}{Subword Representations}
+Represent each word as sum of character n-gram embeddings.
+\end{concept}
+
+\textbf{Example:} Word "banking" with trigrams:
+\begin{itemize}
+\item Special markers: "<ba", "ban", "ank", "nki", "kin", "ing", "ng>"
+\item Each n-gram has its own embedding $z_g$
+\item Word embedding: $v_{banking} = \sum_{g \in G_{banking}} z_g$
+\end{itemize}
+
+\textbf{Mathematical Formulation:}
+\begin{equation}
+s(w,c) = \sum_{g \in G_w} z_g^T v_c
+\end{equation}
+
+\textbf{Advantages:}
+\begin{itemize}
+\item Handles out-of-vocabulary words
+\item Captures morphological patterns
+\item Works well for morphologically rich languages
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{The Leap to Contextual Embeddings}
+\textbf{The Polysemy Problem Revisited:}
+
+Traditional embeddings give one representation per word type.
+
+\textbf{Example:} "bank"
+\begin{itemize}
+\item "I deposited money at the \textcolor{mlred}{bank}" (financial institution)
+\item "We sat by the river \textcolor{mlred}{bank}" (shore)
+\item "The pilot had to \textcolor{mlred}{bank} the airplane" (turn)
+\end{itemize}
+
+\begin{concept}{Contextual Embeddings}
+Generate different representations for the same word based on its context.
+\end{concept}
+
+\textbf{Mathematical Shift:}
+\begin{itemize}
+\item Traditional: $\text{embed}(\text{"bank"}) = v_{bank}$ (fixed)
+\item Contextual: $\text{embed}(\text{"bank"}, \text{context}) = f(\text{context})$ (dynamic)
+\end{itemize}
+
+This requires more sophisticated architectures that can process entire sequences.
+\end{frame}
+
+\begin{frame}[t]{ELMo: Bidirectional Context}
+\textbf{Embeddings from Language Models (ELMo)}
+
+\begin{concept}{Bidirectional Processing}
+To understand a word, look at both left and right context simultaneously.
+\end{concept}
+
+\textbf{Architecture:}
+\begin{enumerate}
+\item Forward LSTM: $\vec{h}_{LM} = \text{LSTM}(w_1, ..., w_t)$
+\item Backward LSTM: $\overleftarrow{h}_{LM} = \text{LSTM}(w_n, ..., w_t)$
+\item Concatenation: $h_{LM} = [\vec{h}_{LM}; \overleftarrow{h}_{LM}]$
+\end{enumerate}
+
+\textbf{Training Objective:}
+Maximize likelihood of predicting next/previous words:
+\begin{align}
+\mathcal{L}_{forward} &= \sum_{t=1}^T \log P(w_t | w_1, ..., w_{t-1}) \\
+\mathcal{L}_{backward} &= \sum_{t=1}^T \log P(w_t | w_{t+1}, ..., w_T)
+\end{align}
+
+\textbf{Usage:} Extract representations from different layers for downstream tasks.
+\end{frame}
+
+\begin{frame}[t]{Why BERT Masking Strategy Works}
+\textbf{The Masking Innovation:}
+
+\begin{concept}{Bidirectional Training Trick}
+Mask random words and predict them using full bidirectional context.
+\end{concept}
+
+\textbf{Masking Strategy Details:}
+\begin{itemize}
+\item 80\% of time: Replace with [MASK] token
+\item 10\% of time: Replace with random word
+\item 10\% of time: Keep original word unchanged
+\end{itemize}
+
+\textbf{Why This Complex Strategy?}
+\begin{enumerate}
+\item Pure [MASK] creates train/test mismatch
+\item Random words teach robustness
+\item Unchanged words provide bias correction
+\end{enumerate}
+
+\textbf{Mathematical Objective:}
+\begin{equation}
+\mathcal{L}_{MLM} = -\mathbb{E}_{\mathcal{D}} \sum_{m \in M} \log P(x_m | x_{\setminus M})
+\end{equation}
+
+\textbf{Key Insight:} Model must use entire context to predict masked words, forcing deep understanding.
+\end{frame}
+
+\begin{frame}[t]{BERT vs GPT: Architectural Differences}
+\textbf{Two Paradigms for Language Understanding:}
+
+\begin{concept}{Bidirectional vs Autoregressive}
+BERT sees all context, GPT only sees previous context.
+\end{concept}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{BERT (Bidirectional):}
+\begin{itemize}
+\item Encoder-only architecture
+\item Bidirectional self-attention
+\item Masked language modeling
+\item Best for understanding tasks
+\item Cannot generate naturally
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{GPT (Autoregressive):}
+\begin{itemize}
+\item Decoder-only architecture
+\item Causal (masked) self-attention
+\item Next token prediction
+\item Natural for generation
+\item Can do understanding via prompting
+\end{itemize}
+\end{column}
+\end{columns}
+
+\textbf{Mathematical Difference:}
+\begin{itemize}
+\item BERT: $P(w_i | w_1, ..., w_{i-1}, w_{i+1}, ..., w_n)$
+\item GPT: $P(w_i | w_1, ..., w_{i-1})$
+\end{itemize}
+
+\textbf{Trade-offs:} Understanding vs generation capabilities.
+\end{frame>
+
+\begin{frame}[t]{Practical Word2Vec Implementation}
+\textbf{Training Algorithm Walkthrough:}
+
+\begin{algorithmic}[1]
+\STATE \textbf{Initialize:} Random embedding matrices $W_{in} \in \mathbb{R}^{V \times d}$, $W_{out} \in \mathbb{R}^{V \times d}$
+\STATE \textbf{Hyperparameters:} window size $c$, negative samples $K$, learning rate $\eta$
+\FOR{epoch = 1 to max\_epochs}
+    \FOR{each sentence in corpus}
+        \FOR{each word $w_t$ in sentence}
+            \FOR{each context position $j \in [-c, c], j \neq 0$}
+                \STATE \textbf{Positive pair:} $(w_t, w_{t+j})$
+                \STATE \textbf{Sample negatives:} $\{w_{neg,k}\}_{k=1}^K \sim P_n$
+                \STATE \textbf{Compute gradients:}
+                \STATE $\quad \nabla_{v_{w_t}} = (\sigma(v_{w_{t+j}}^T v_{w_t}) - 1) v_{w_{t+j}} + \sum_k (\sigma(-v_{w_{neg,k}}^T v_{w_t}) - 0) (-v_{w_{neg,k}})$
+                \STATE \textbf{Update embeddings:} $v_{w_t} \leftarrow v_{w_t} - \eta \nabla_{v_{w_t}}$
+            \ENDFOR
+        \ENDFOR
+    \ENDFOR
+\ENDFOR
+\end{algorithmic}
+
+\textbf{Practical Tips:}
+\begin{itemize}
+\item Start with learning rate 0.025, decay during training
+\item Subsampling: Remove very frequent words with probability $1 - \sqrt{t/f}$
+\item Dynamic context window: Sample window size uniformly
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Word2Vec Hyperparameter Effects}
+\textbf{Understanding Hyperparameter Impact:}
+
+\begin{concept}{Window Size Effects}
+Larger windows capture topical similarity, smaller windows capture functional similarity.
+\end{concept}
+
+\textbf{Window Size Analysis:}
+\begin{itemize}
+\item \textbf{Small (2-5):} Syntactic relationships, functional words
+\item \textbf{Medium (5-10):} Balanced semantic and syntactic
+\item \textbf{Large (10-15):} Topical relationships, broader context
+\end{itemize}
+
+\textbf{Embedding Dimension Trade-offs:}
+\begin{itemize}
+\item \textbf{50-100:} Fast training, basic similarity
+\item \textbf{200-300:} Good balance for most applications
+\item \textbf{500-1000:} Rich representations, slower training
+\end{itemize}
+
+\textbf{Negative Sampling Count:}
+\begin{itemize}
+\item Small corpora: 5-10 negatives
+\item Large corpora: 2-5 negatives sufficient
+\item Too many: Slower training, diminishing returns
+\end{itemize}
+
+\textbf{Learning Rate Schedule:}
+Start high (0.025), linearly decay to 0.0001 by end of training.
+\end{frame>
+
+\begin{frame}[t]{GloVe Implementation Details}
+\textbf{Building the Co-occurrence Matrix:}
+
+\begin{algorithmic}[1]
+\STATE \textbf{Initialize:} Co-occurrence matrix $X \in \mathbb{R}^{V \times V}$ (sparse)
+\FOR{each sentence in corpus}
+    \FOR{each word $w_i$ in sentence}
+        \FOR{each word $w_j$ in context window}
+            \STATE $X_{ij} \leftarrow X_{ij} + 1/d_{ij}$
+        \ENDFOR
+    \ENDFOR
+\ENDFOR
+\STATE \textbf{Optimization:} Minimize GloVe objective using AdaGrad
+\end{algorithmic}
+
+\textbf{Weighting Function Design:}
+\begin{equation}
+f(x) = \begin{cases}
+(x/x_{max})^\alpha & \text{if } x < x_{max} \\
+1 & \text{otherwise}
+\end{cases}
+\end{equation}
+
+\textbf{Why This Function?}
+\begin{itemize}
+\item Gives less weight to very rare co-occurrences (noise)
+\item Caps influence of very frequent pairs
+\item $\alpha = 0.75$ found empirically optimal
+\item $x_{max} = 100$ balances rare vs common
+\end{itemize}
+
+\textbf{Final Embedding:} $w_{final} = w + \tilde{w}$ (sum of input and output vectors)
+\end{frame>
+
+\begin{frame}[t]{FastText Character N-grams}
+\textbf{Subword Tokenization Strategy:}
+
+\begin{concept}{Character N-gram Decomposition}
+Each word becomes sum of character-level features.
+\end{concept}
+
+\textbf{Example: "banking"}
+\begin{itemize}
+\item Word boundaries: <banking>
+\item Trigrams: <ba, ban, ank, nki, kin, ing, ng>
+\item Bigrams: <b, ba, an, nk, ki, in, ng, g>
+\item Full word: <banking>
+\end{itemize}
+
+\textbf{Embedding Computation:}
+\begin{equation}
+v_{banking} = v_{<banking>} + \sum_{g \in \{<ba, ban, ..., ng>\}} v_g
+\end{equation}
+
+\textbf{Training:} Same skip-gram objective, but replace word vectors with n-gram sums.
+
+\textbf{Advantages for Financial NLP:}
+\begin{itemize}
+\item Handles company names: "Bloomberg" → "bloom", "berg"
+\item New financial terms: "DeFi" → "DeF", "eFi"
+\item Typos and variants: "recievables" still similar to "receivables"
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Evaluating Embedding Quality}
+\textbf{Comprehensive Evaluation Framework:}
+
+\begin{concept}{Multi-faceted Assessment}
+No single metric captures all aspects of embedding quality.
+\end{concept}
+
+\textbf{Intrinsic Evaluation Tasks:}
+
+\begin{enumerate}
+\item \textbf{Word Similarity:} Correlation with human judgments
+   \begin{itemize}
+   \item WordSim-353: 353 word pairs with similarity scores
+   \item SimLex-999: Focused on genuine similarity (not relatedness)
+   \item MEN: 3000 word pairs from multiple domains
+   \end{itemize}
+
+\item \textbf{Analogy Tasks:} Solve a:b :: c:? problems
+   \begin{itemize}
+   \item Google analogy dataset: 19,544 questions
+   \item Categories: semantic (country-capital) and syntactic (verb tenses)
+   \item Method: Find $d$ such that $\vec{d}$ is closest to $\vec{b} - \vec{a} + \vec{c}$
+   \end{itemize}
+
+\item \textbf{Categorization:} Cluster words by semantic categories
+   \begin{itemize}
+   \item AP dataset: 402 nouns in 21 categories
+   \item BLESS dataset: Concept-relation-relatum triples
+   \end{itemize}
+\end{enumerate}
+\end{frame>
+
+\begin{frame}[t]{Advanced Embedding Evaluation}
+\textbf{Extrinsic Evaluation on Downstream Tasks:}
+
+\textbf{Text Classification:}
+\begin{itemize}
+\item Use embeddings as features for document classification
+\item Better embeddings → higher accuracy
+\item Test on: sentiment analysis, topic classification, spam detection
+\end{itemize}
+
+\textbf{Named Entity Recognition:}
+\begin{itemize}
+\item Pre-trained embeddings as input to NER models
+\item Measure F1-score improvement over random embeddings
+\item Test ability to handle out-of-vocabulary entities
+\end{itemize}
+
+\textbf{Information Retrieval:}
+\begin{itemize}
+\item Query-document matching using embedding similarity
+\item Measure: Mean Average Precision (MAP), Normalized DCG
+\item Test semantic matching beyond keyword overlap
+\end{itemize}
+
+\textbf{Embedding Analysis Tools:}
+\begin{itemize}
+\item t-SNE visualization for 2D embedding space
+\item PCA for identifying principal directions
+\item Clustering quality metrics (silhouette score)
+\item Nearest neighbor analysis
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Common Embedding Problems and Solutions}
+\textbf{Frequent Issues in Practice:}
+
+\begin{enumerate}
+\item \textbf{Rare Word Problem:}
+   \begin{itemize}
+   \item Issue: Poor embeddings for infrequent words
+   \item Solution: Subword models (FastText), character-level models
+   \end{itemize}
+
+\item \textbf{Polysemy:}
+   \begin{itemize}
+   \item Issue: "bank" (financial) vs "bank" (river)
+   \item Solution: Contextual embeddings (ELMo, BERT)
+   \end{itemize}
+
+\item \textbf{Anisotropy:}
+   \begin{itemize}
+   \item Issue: All embeddings similar due to narrow distribution
+   \item Solution: Post-processing (remove mean, PCA), isotropy regularization
+   \end{itemize}
+
+\item \textbf{Evaluation Bias:}
+   \begin{itemize}
+   \item Issue: Evaluation datasets may not reflect target domain
+   \item Solution: Domain-specific evaluation, multiple metrics
+   \end{itemize}
+\end{enumerate}
+
+\textbf{Best Practices:}
+\begin{itemize}
+\item Always evaluate on target domain
+\item Use multiple embedding dimensions
+\item Combine intrinsic and extrinsic evaluation
+\item Consider computational constraints
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Advanced Word2Vec Variants}
+\textbf{Extensions and Improvements:}
+
+\begin{concept}{Beyond Basic Word2Vec}
+Numerous variants address specific limitations and use cases.
+\end{concept>
+
+\textbf{Key Variants:}
+
+\begin{enumerate}
+\item \textbf{Phrase2Vec:} Handle multi-word expressions
+   \begin{itemize}
+   \item "New York" as single token
+   \item Collocation detection using pointwise mutual information
+   \end{itemize}
+
+\item \textbf{Doc2Vec:} Document-level embeddings
+   \begin{itemize}
+   \item Add document ID as additional context
+   \item Learn document and word embeddings simultaneously
+   \end{itemize}
+
+\item \textbf{Sense2Vec:} Address polysemy
+   \begin{itemize}
+   \item Tag words with part-of-speech: "bank|NOUN" vs "bank|VERB"
+   \item Separate embeddings for different senses
+   \end{itemize}
+
+\item \textbf{Node2Vec:} Graph embeddings
+   \begin{itemize}
+   \item Apply Word2Vec to graph random walks
+   \item Learn embeddings for graph nodes
+   \end{itemize}
+\end{enumerate}
+\end{frame>
+
+\begin{frame}[t]{Part I Summary: Text Embeddings Mastery}
+\textbf{Complete Understanding Achieved:}
+
+\begin{enumerate}
+\item \textbf{Theoretical Foundations:}
+   \begin{itemize}
+   \item Distributional hypothesis and its implications
+   \item Mathematical objectives for different embedding methods
+   \item Probabilistic interpretations of embeddings
+   \end{itemize}
+
+\item \textbf{Practical Implementation:}
+   \begin{itemize}
+   \item Algorithm details for Word2Vec, GloVe, FastText
+   \item Hyperparameter tuning strategies
+   \item Common implementation pitfalls
+   \end{itemize}
+
+\item \textbf{Evaluation and Analysis:}
+   \begin{itemize}
+   \item Comprehensive evaluation frameworks
+   \item Quality metrics and interpretation
+   \item Diagnostic tools and visualization
+   \end{itemize}
+
+\item \textbf{Advanced Concepts:}
+   \begin{itemize}
+   \item Contextual embeddings and their advantages
+   \item Embedding space geometry and properties
+   \item Distance metrics and similarity measures
+   \end{itemize}
+\end{enumerate}
+
+\textbf{Ready for:} Topic modeling and narrative discovery using these embedding foundations.
+\end{frame>
+
+\begin{frame}[t]{BERT: Bidirectional Transformer Revolution}
+\textbf{The Transformer Advantage:}
+
+\begin{concept}{Self-Attention vs RNNs}
+Instead of processing sequences left-to-right, attend to all positions simultaneously.
+\end{concept}
+
+\textbf{Key Innovations:}
+
+\begin{enumerate}
+\item \textbf{Masked Language Modeling:} Randomly mask 15\% of words, predict them
+   \begin{itemize}
+   \item Input: "The [MASK] was very successful"
+   \item Target: Predict "company"
+   \end{itemize}
+
+\item \textbf{Next Sentence Prediction:} Predict if sentence B follows sentence A
+   \begin{itemize}
+   \item Helps model understand document structure
+   \end{itemize}
+\end{enumerate}
+
+\textbf{Mathematical Objectives:}
+
+MLM: $\mathcal{L}_{MLM} = -\mathbb{E}_{\mathcal{D}} \sum_{m \in M} \log P(x_m | x_{\setminus M})$
+
+NSP: $\mathcal{L}_{NSP} = -\mathbb{E}_{(S_A,S_B)} \log P(y | [CLS], S_A, [SEP], S_B)$
+
+Total: $\mathcal{L} = \mathcal{L}_{MLM} + \mathcal{L}_{NSP}$
+\end{frame}
+
+\begin{frame}[t]{Why BERT Works So Well}
+\textbf{Bidirectional Context Benefits:}
+
+\begin{concept}{Full Context Access}
+Unlike left-to-right models, BERT sees entire sentence during training.
+\end{concept}
+
+\textbf{Example Analysis:}
+"The animal didn't cross the street because it was too \textcolor{mlred}{tired}."
+
+\begin{itemize}
+\item Left-only model: Only sees "The animal didn't cross the street because it was too"
+\item BERT: Sees full sentence, understands "it" refers to "animal"
+\end{itemize}
+
+\textbf{Mathematical Intuition:}
+Masking forces model to use bidirectional context:
+\begin{equation}
+P(w_i | w_1, ..., w_{i-1}, [MASK], w_{i+1}, ..., w_n)
+\end{equation}
+
+\textbf{Transfer Learning Power:}
+\begin{itemize}
+\item Pre-train on large unlabeled corpus
+\item Fine-tune on specific tasks with small labeled data
+\item Achieves state-of-the-art on multiple NLP benchmarks
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Sentence-Level Embeddings}
+\textbf{From Words to Sentences:}
+
+\begin{concept}{Compositional Challenge}
+How do we get embeddings for entire sentences or documents?
+\end{concept}
+
+\textbf{Naive Approaches (Don't Work Well):}
+\begin{itemize}
+\item Average word embeddings: $\text{sent} = \frac{1}{n}\sum_{i=1}^n w_i$
+\item TF-IDF weighted average
+\item Simple concatenation
+\end{itemize}
+
+\textbf{Why They Fail:} Lose word order, ignore syntax, no interaction modeling.
+
+\textbf{Better Solutions:}
+
+\begin{enumerate}
+\item \textbf{Doc2Vec:} Treat document as additional "word" in vocabulary
+\item \textbf{Universal Sentence Encoder:} Deep averaging network or Transformer
+\item \textbf{Sentence-BERT:} Fine-tune BERT for sentence similarity
+\end{enumerate}
+
+\textbf{Key Insight:} Need architectures designed specifically for sentence-level tasks.
+\end{frame}
+
+\begin{frame}[t]{Sentence-BERT Architecture}
+\textbf{The BERT Limitation:}
+
+Original BERT requires comparing every sentence pair individually:
+\begin{itemize}
+\item Input: [CLS] Sentence A [SEP] Sentence B [SEP]
+\item For $n$ sentences: $O(n^2)$ comparisons
+\item Impractical for large-scale similarity search
+\end{itemize}
+
+\begin{concept}{Siamese Networks Solution}
+Process sentences independently, then compare embeddings.
+\end{concept}
+
+\textbf{Architecture:}
+\begin{enumerate}
+\item Encode sentences separately: $u = \text{BERT}(S_A)$, $v = \text{BERT}(S_B)$
+\item Pool representations (mean, max, or CLS token)
+\item Compute similarity: $\text{sim}(u,v) = \frac{u \cdot v}{||u|| \cdot ||v||}$
+\end{enumerate}
+
+\textbf{Training Strategies:}
+\begin{itemize}
+\item Classification: $o = \text{softmax}(W[u; v; |u-v|])$
+\item Regression: Direct cosine similarity
+\item Triplet loss: Anchor, positive, negative examples
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Embedding Quality Evaluation}
+\textbf{How Do We Know If Embeddings Are Good?}
+
+\begin{concept}{Intrinsic vs Extrinsic Evaluation}
+\begin{itemize}
+\item Intrinsic: Test embedding properties directly
+\item Extrinsic: Use embeddings in downstream tasks
+\end{itemize}
+\end{concept}
+
+\textbf{Intrinsic Tasks:}
+\begin{enumerate}
+\item \textbf{Word Similarity:} Compare with human judgments
+   \begin{itemize}
+   \item WordSim-353, SimLex-999 datasets
+   \item Spearman correlation with human ratings
+   \end{itemize}
+
+\item \textbf{Analogical Reasoning:} a:b :: c:? problems
+   \begin{itemize}
+   \item Google analogy dataset
+   \item Accuracy on completing analogies
+   \end{itemize}
+
+\item \textbf{Clustering:} Do similar words cluster together?
+\end{enumerate}
+
+\textbf{Extrinsic Tasks:}
+\begin{itemize}
+\item Text classification accuracy
+\item Named entity recognition performance
+\item Sentiment analysis improvement
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Embedding Space Geometry}
+\textbf{Understanding the Structure of Embedding Spaces}
+
+\begin{concept}{Manifold Hypothesis}
+High-dimensional embeddings actually lie on lower-dimensional manifolds.
+\end{concept}
+
+\textbf{Intrinsic Dimensionality:}
+\begin{equation}
+ID = \lim_{r \to 0} \frac{\log \mathbb{E}[N(r)]}{\log r}
+\end{equation}
+
+\textbf{Intuitive Explanation:}
+\begin{itemize}
+\item $N(r)$ = number of points within distance $r$
+\item If data lies on $d$-dimensional manifold, $N(r) \propto r^d$
+\item Most 300D embeddings have intrinsic dimension 10-50
+\end{itemize}
+
+\textbf{Anisotropy Problem:}
+Embeddings often concentrated in narrow cone:
+\begin{equation}
+\text{avg-cos} = \frac{2}{n(n-1)} \sum_{i<j} \cos(v_i, v_j)
+\end{equation}
+
+When avg-cos is high, all embeddings are similar $\Rightarrow$ poor discriminability.
+\end{frame}
+
+\begin{frame}[t]{Distance Metrics for Text Similarity}
+\textbf{How Do We Measure Similarity Between Text Embeddings?}
+
+\begin{enumerate}
+\item \textbf{Cosine Similarity:} Most common in NLP
+\begin{equation}
+\cos(\theta) = \frac{A \cdot B}{||A|| \cdot ||B||} = \frac{\sum_i a_i b_i}{\sqrt{\sum_i a_i^2}\sqrt{\sum_i b_i^2}}
+\end{equation}
+
+\textbf{Why cosine?} Ignores magnitude, focuses on direction.
+
+\item \textbf{Euclidean Distance:} $d(A,B) = \sqrt{\sum_i (a_i - b_i)^2}$
+
+\textbf{When to use?} When magnitude matters (frequency-based features).
+
+\item \textbf{Earth Mover's Distance:} Optimal transport between distributions
+\begin{equation}
+EMD(P,Q) = \min_{\gamma \in \Pi(P,Q)} \sum_{i,j} \gamma_{ij} ||x_i - y_j||
+\end{equation}
+
+\textbf{Intuition:} Minimum cost to transform one distribution into another.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Section I Summary and Key Takeaways}
+\textbf{What We've Learned About Text Embeddings:}
+
+\begin{enumerate}
+\item \textbf{Distributional Hypothesis:} Semantic similarity from contextual similarity
+\item \textbf{Word2Vec:} Efficient neural embeddings via prediction tasks
+\item \textbf{GloVe:} Combining local and global statistics
+\item \textbf{FastText:} Subword representations for robustness
+\item \textbf{Contextual Models:} ELMo, BERT for dynamic representations
+\item \textbf{Distance Metrics:} How to measure semantic similarity
+\end{enumerate}
+
+\textbf{Key Mathematical Insights:}
+\begin{itemize}
+\item Prediction objectives naturally capture semantics
+\item Matrix factorization perspectives
+\item Probabilistic interpretations of embeddings
+\item Geometric properties of embedding spaces
+\end{itemize}
+
+\textbf{Applications to Narrative Extraction:}
+\begin{itemize}
+\item Represent headlines as dense vectors
+\item Cluster semantically similar headlines
+\item Build narrative coherence measures
+\end{itemize}
+\end{frame}
+
+% PART II: TOPIC MODELING
+\section{Topic Modeling and Narrative Discovery}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Part II: Topic Modeling and Narrative Discovery\par
+\end{beamercolorbox}
+\vfill
+\footnotesize
+\textbf{Learning Goals:} Understand how machines discover hidden thematic structure in text collections and extract coherent narratives from news headlines.
+\end{frame}
+
+\begin{frame}[t]{What Is a Topic? Intuitive Understanding}
+\textbf{Human Perspective:}
+When we read news articles, we naturally group them by themes:
+\begin{itemize}
+\item Economic news: GDP, inflation, unemployment, interest rates
+\item Political news: elections, policies, candidates, polls
+\item Technology news: AI, startups, innovations, regulations
+\end{itemize}
+
+\begin{concept}{Computational Topic Definition}
+A topic is a probability distribution over words that captures a coherent theme.
+\end{concept}
+
+\textbf{Example Topic Distributions:}
+
+\textbf{Topic 1 (Economics):} market (0.08), economy (0.06), growth (0.05), GDP (0.04)...
+
+\textbf{Topic 2 (Politics):} election (0.09), candidate (0.07), vote (0.05), poll (0.04)...
+
+\textbf{Goal:} Automatically discover these topics from raw text without supervision.
+\end{frame}
+
+\begin{frame}[t]{The Generative Story: How Documents Are "Born"}
+\textbf{Latent Dirichlet Allocation (LDA) Intuition:}
+
+Imagine an author writing a document:
+
+\begin{enumerate}
+\item \textbf{Choose Topic Mix:} "I'll write 60\% about economics, 30\% politics, 10\% technology"
+   \begin{itemize}
+   \item Draw from Dirichlet: $\theta_d \sim \text{Dir}(\alpha)$
+   \end{itemize}
+
+\item \textbf{For Each Word:}
+   \begin{itemize}
+   \item Choose which topic: $z_{dn} \sim \text{Multinomial}(\theta_d)$
+   \item Pick word from that topic: $w_{dn} \sim \text{Multinomial}(\phi_{z_{dn}})$
+   \end{itemize}
+\end{enumerate}
+
+\begin{concept}{Generative Process}
+LDA assumes documents are created by this probabilistic process. Our job is to reverse-engineer the hidden topics and mixtures.
+\end{concept}
+
+\textbf{Key Assumption:} Documents are "bags of words" - order doesn't matter for topic assignment.
+\end{frame}
+
+\begin{frame}[t]{LDA Mathematical Framework}
+\textbf{The Complete Generative Process:}
+
+\textbf{For the entire corpus:}
+\begin{enumerate}
+\item For each topic $k = 1, ..., K$:
+   \begin{itemize}
+   \item Draw word distribution: $\phi_k \sim \text{Dir}(\beta)$
+   \end{itemize}
+\end{enumerate}
+
+\textbf{For each document $d = 1, ..., D$:}
+\begin{enumerate}
+\item Draw topic distribution: $\theta_d \sim \text{Dir}(\alpha)$
+\item For each word position $n = 1, ..., N_d$:
+   \begin{itemize}
+   \item Choose topic: $z_{dn} \sim \text{Multinomial}(\theta_d)$
+   \item Choose word: $w_{dn} \sim \text{Multinomial}(\phi_{z_{dn}})$
+   \end{itemize}
+\end{enumerate}
+
+\textbf{Joint Probability:}
+\begin{equation}
+p(\bm{w}, \bm{z}, \bm{\theta}, \bm{\phi} | \alpha, \beta) = \prod_{k=1}^K p(\phi_k | \beta) \prod_{d=1}^D p(\theta_d | \alpha) \prod_{n=1}^{N_d} p(z_{dn} | \theta_d) p(w_{dn} | z_{dn}, \phi_{z_{dn}})
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{The Inference Challenge}
+\textbf{What We Want to Compute:}
+
+Given observed words $\bm{w}$, find posterior distributions:
+\begin{equation}
+p(\bm{z}, \bm{\theta}, \bm{\phi} | \bm{w}, \alpha, \beta) = \frac{p(\bm{w}, \bm{z}, \bm{\theta}, \bm{\phi} | \alpha, \beta)}{p(\bm{w} | \alpha, \beta)}
+\end{equation}
+
+\textbf{The Problem:} Denominator is intractable!
+\begin{equation}
+p(\bm{w} | \alpha, \beta) = \int \sum_{\bm{z}} p(\bm{w}, \bm{z}, \bm{\theta}, \bm{\phi} | \alpha, \beta) d\bm{\theta} d\bm{\phi}
+\end{equation}
+
+This integral over all possible topic assignments and parameters cannot be computed exactly.
+
+\begin{concept}{Approximate Inference}
+We need approximation methods: variational inference or sampling.
+\end{concept}
+
+\textbf{Two Main Approaches:}
+\begin{enumerate}
+\item \textbf{Variational Bayes:} Approximate with simpler distributions
+\item \textbf{Gibbs Sampling:} Sample from posterior using MCMC
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Variational Inference: The Approximation}
+\textbf{Core Idea:} Replace intractable posterior with tractable approximation.
+
+\begin{concept}{Mean Field Approximation}
+Assume independence between latent variables:
+\end{concept}
+
+\begin{equation}
+q(\bm{z}, \bm{\theta}, \bm{\phi} | \bm{\gamma}, \bm{\xi}, \bm{\lambda}) = \prod_{d=1}^D q(\theta_d | \gamma_d) \prod_{k=1}^K q(\phi_k | \lambda_k) \prod_{d=1}^D \prod_{n=1}^{N_d} q(z_{dn} | \xi_{dn})
+\end{equation}
+
+\textbf{Variational Objective (ELBO):}
+\begin{equation}
+\mathcal{L} = \mathbb{E}_q[\log p(\bm{w}, \bm{z}, \bm{\theta}, \bm{\phi} | \alpha, \beta)] - \mathbb{E}_q[\log q(\bm{z}, \bm{\theta}, \bm{\phi})]
+\end{equation}
+
+\textbf{Intuition:} Maximize likelihood while keeping approximation close to prior.
+
+\textbf{Coordinate Ascent:} Optimize each parameter while holding others fixed.
+\end{frame}
+
+\begin{frame}[t]{LDA Update Equations}
+\textbf{Coordinate Ascent Updates:}
+
+\textbf{Topic Assignment:}
+\begin{equation}
+\xi_{dni} \propto \beta_{iw_{dn}} \exp(\Psi(\gamma_{di}) - \Psi(\sum_j \gamma_{dj}))
+\end{equation}
+
+\textbf{Document-Topic Distribution:}
+\begin{equation}
+\gamma_{di} = \alpha_i + \sum_{n=1}^{N_d} \xi_{dni}
+\end{equation}
+
+\textbf{Topic-Word Distribution:}
+\begin{equation}
+\lambda_{kw} = \beta_w + \sum_{d=1}^D \sum_{n=1}^{N_d} \mathbf{1}[w_{dn} = w] \xi_{dnk}
+\end{equation}
+
+\textbf{What's Happening:}
+\begin{itemize}
+\item $\xi$: Soft topic assignments for each word
+\item $\gamma$: Document's topic mixture (pseudo-counts)
+\item $\lambda$: Topic's word mixture (pseudo-counts)
+\item $\Psi$: Digamma function (derivative of log-gamma)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Neural Topic Models: Why Go Neural?}
+\textbf{Limitations of Classical Topic Models:}
+
+\begin{enumerate}
+\item \textbf{Bag of Words:} Ignores word order and syntax
+\item \textbf{Discrete Topics:} Hard assignments, no continuous representations
+\item \textbf{Fixed Vocabulary:} Cannot handle out-of-vocabulary words
+\item \textbf{No Transfer Learning:} Each corpus modeled independently
+\end{enumerate}
+
+\begin{concept}{Neural Solution}
+Use neural networks to learn topic representations that can leverage pre-trained embeddings and capture more complex patterns.
+\end{concept}
+
+\textbf{Variational Autoencoder Approach:}
+\begin{itemize}
+\item \textbf{Encoder:} Maps documents to topic distributions
+\item \textbf{Decoder:} Reconstructs documents from topics
+\item \textbf{Training:} End-to-end optimization via reparameterization trick
+\end{itemize}
+
+\textbf{Advantages:}
+\begin{itemize}
+\item Incorporates pre-trained word embeddings
+\item Handles continuous topic representations
+\item Scales to large corpora
+\item Enables transfer learning
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{VAE-LDA Architecture Deep Dive}
+\textbf{Encoder Network (Inference):}
+
+Document representation: $\bm{d} \in \mathbb{R}^V$ (bag-of-words or TF-IDF)
+
+\begin{enumerate}
+\item Hidden layers: $h_1 = \text{ReLU}(W_1 \bm{d} + b_1)$
+\item Output parameters:
+   \begin{align}
+   \mu &= W_\mu h_1 + b_\mu \\
+   \log \sigma^2 &= W_\sigma h_1 + b_\sigma
+   \end{align}
+\item Approximate posterior: $q_\phi(\theta | d) = \mathcal{N}(\mu, \text{diag}(\sigma^2))$
+\end{enumerate}
+
+\textbf{Reparameterization Trick:}
+\begin{equation}
+\theta = \mu + \epsilon \odot \sigma, \quad \epsilon \sim \mathcal{N}(0, I)
+\end{equation}
+
+\textbf{Why This Works:} Allows gradients to flow through random sampling.
+
+\textbf{Decoder Network (Generation):}
+\begin{equation}
+p_\psi(w | \theta) = \text{Softmax}(W \theta + b)
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{BERTopic: Modern Neural Topic Modeling}
+\textbf{The BERTopic Pipeline Explained:}
+
+\begin{concept}{Three-Stage Process}
+1) Embed documents, 2) Cluster embeddings, 3) Extract topic words
+\end{concept}
+
+\textbf{Stage 1: Document Embeddings}
+\begin{equation}
+e_i = \text{BERT}(\text{document}_i)
+\end{equation}
+
+Use sentence-transformers for high-quality document representations.
+
+\textbf{Stage 2: Dimensionality Reduction + Clustering}
+
+UMAP: $\mathcal{L} = \sum_{ij} p_{ij} \log \frac{p_{ij}}{q_{ij}} + (1-p_{ij}) \log \frac{1-p_{ij}}{1-q_{ij}}$
+
+HDBSCAN: Density-based clustering with hierarchy.
+
+\textbf{Stage 3: Topic Word Extraction}
+
+Class-based TF-IDF:
+\begin{equation}
+w_{t,c} = tf_{t,c} \cdot \log \left(1 + \frac{|\text{documents}|}{|\text{documents containing } t|}\right)
+\end{equation}
+
+\textbf{Advantage:} Leverages powerful pre-trained representations while maintaining interpretability.
+\end{frame>
+
+\begin{frame}[t]{Dirichlet Distribution: The Mathematical Foundation}
+\textbf{Why Dirichlet for Topic Models?}
+
+\begin{concept}{Conjugate Prior for Multinomial}
+Dirichlet is the conjugate prior for multinomial distributions, enabling analytical updates.
+\end{concept>
+
+\textbf{Dirichlet Properties:}
+\begin{equation}
+\text{Dir}(\alpha_1, ..., \alpha_K) = \frac{\Gamma(\sum_k \alpha_k)}{\prod_k \Gamma(\alpha_k)} \prod_{k=1}^K \theta_k^{\alpha_k - 1}
+\end{equation}
+
+\textbf{Key Properties:}
+\begin{itemize}
+\item \textbf{Support:} Probability simplex: $\sum_k \theta_k = 1$, $\theta_k \geq 0$
+\item \textbf{Mean:} $\mathbb{E}[\theta_k] = \frac{\alpha_k}{\sum_j \alpha_j}$
+\item \textbf{Variance:} Higher $\alpha$ → lower variance (more concentrated)
+\end{itemize}
+
+\textbf{Intuition for LDA:}
+\begin{itemize}
+\item $\alpha$ controls document-topic sparsity
+\item Small $\alpha$ → few topics per document
+\item Large $\alpha$ → uniform topic distribution
+\end{itemize>
+
+\textbf{Conjugacy Property:} If prior is Dirichlet and likelihood is multinomial, posterior is also Dirichlet.
+\end{frame>
+
+\begin{frame}[t]{LDA Plate Notation and Graphical Model}
+\textbf{Understanding the Dependencies:}
+
+\begin{concept}{Graphical Model Representation}
+Plate notation shows conditional independence structure and repeated components.
+\end{concept}
+
+\textbf{Model Structure:}
+\begin{itemize}
+\item \textbf{Hyperparameters:} $\alpha$ (document-topic), $\beta$ (topic-word)
+\item \textbf{Global variables:} $\phi_k$ (topic distributions)
+\item \textbf{Document variables:} $\theta_d$ (topic mixtures)
+\item \textbf{Word variables:} $z_{dn}$ (topic assignments), $w_{dn}$ (observed words)
+\end{itemize}
+
+\textbf{Conditional Dependencies:}
+\begin{align}
+\phi_k | \beta &\sim \text{Dir}(\beta) \\
+\theta_d | \alpha &\sim \text{Dir}(\alpha) \\
+z_{dn} | \theta_d &\sim \text{Mult}(\theta_d) \\
+w_{dn} | z_{dn}, \phi &\sim \text{Mult}(\phi_{z_{dn}})
+\end{align}
+
+\textbf{Plate Structure:}
+\begin{itemize}
+\item Inner plate: Words within documents (N)
+\item Outer plate: Documents (D)
+\item Topics plate: Topic distributions (K)
+\end{itemize>
+\end{frame>
+
+\begin{frame}[t]{Why Exact Inference Is Impossible}
+\textbf{The Computational Complexity Problem:}
+
+\begin{concept}{Intractable Posterior}
+Computing exact posterior requires summing over all possible topic assignments.
+\end{concept}
+
+\textbf{Number of Configurations:}
+For document with $N$ words and $K$ topics:
+\begin{equation}
+|\text{topic assignments}| = K^N
+\end{equation}
+
+\textbf{Example:} 100 words, 10 topics → $10^{100}$ possibilities!
+
+\textbf{Marginal Likelihood:}
+\begin{equation}
+p(\bm{w} | \alpha, \beta) = \int \sum_{\bm{z}} p(\bm{w}, \bm{z}, \bm{\theta}, \bm{\phi} | \alpha, \beta) d\bm{\theta} d\bm{\phi}
+\end{equation}
+
+\textbf{Why Intractable:}
+\begin{itemize}
+\item Integral over continuous parameters $\bm{\theta}, \bm{\phi}$
+\item Sum over exponentially many discrete assignments $\bm{z}$
+\item Coupling between latent variables
+\end{itemize}
+
+\textbf{Solution:} Approximate inference methods.
+\end{frame>
+
+\begin{frame}[t]{Gibbs Sampling for LDA}
+\textbf{Markov Chain Monte Carlo Approach:}
+
+\begin{concept}{Collapsed Gibbs Sampling}
+Integrate out continuous parameters, sample only discrete topic assignments.
+\end{concept>
+
+\textbf{Collapsed Posterior:}
+\begin{equation}
+P(z_{dn} = k | \bm{z}_{-dn}, \bm{w}, \alpha, \beta) \propto \frac{n_{dk}^{-dn} + \alpha_k}{n_d^{-dn} + \sum_j \alpha_j} \cdot \frac{n_{kw}^{-dn} + \beta_w}{n_k^{-dn} + \sum_v \beta_v}
+\end{equation}
+
+\textbf{Count Definitions:}
+\begin{itemize}
+\item $n_{dk}$: Number of words in document $d$ assigned to topic $k$
+\item $n_{kw}$: Number of times word $w$ assigned to topic $k$
+\item $n_d$: Total words in document $d$
+\item $n_k$: Total words assigned to topic $k$
+\item Superscript $-dn$: Excluding current word
+\end{itemize>
+
+\textbf{Intuition:} Popular topics in document × popular words in topic.
+\end{frame>
+
+\begin{frame}[t]{Gibbs Sampling Algorithm}
+\textbf{Step-by-Step Sampling Procedure:}
+
+\begin{algorithmic}[1]
+\STATE \textbf{Initialize:} Random topic assignments for all words
+\STATE \textbf{Compute:} Count matrices $n_{dk}$, $n_{kw}$, $n_d$, $n_k$
+\FOR{iteration = 1 to max\_iterations}
+    \FOR{each document $d$}
+        \FOR{each word position $n$}
+            \STATE \textbf{Remove:} Current assignment from counts
+            \STATE \textbf{Compute:} Probability for each topic:
+            \STATE $\quad P(z_{dn} = k) \propto \frac{n_{dk} + \alpha_k}{n_d + \sum_j \alpha_j} \cdot \frac{n_{kw_{dn}} + \beta_{w_{dn}}}{n_k + \sum_v \beta_v}$
+            \STATE \textbf{Sample:} New topic assignment from this distribution
+            \STATE \textbf{Update:} Count matrices with new assignment
+        \ENDFOR
+    \ENDFOR
+\ENDFOR
+\STATE \textbf{Estimate:} Final parameters from count matrices
+\end{algorithmic}
+
+\textbf{Convergence:} Monitor log-likelihood or topic stability across iterations.
+\end{frame>
+
+\begin{frame}[t]{Topic Model Evaluation: Perplexity}
+\textbf{Held-out Likelihood Assessment:}
+
+\begin{concept}{Perplexity}
+Measures how surprised the model is by unseen data. Lower perplexity = better model.
+\end{concept>
+
+\textbf{Mathematical Definition:}
+\begin{equation}
+\text{Perplexity} = \exp\left(-\frac{\sum_d \log P(w_d | \text{model})}{\sum_d |w_d|}\right)
+\end{equation}
+
+\textbf{For LDA:}
+\begin{equation}
+P(w_d) = \int P(w_d | \theta_d, \Phi) P(\theta_d | \alpha) d\theta_d
+\end{equation}
+
+This integral is also intractable! Need approximation.
+
+\textbf{Approximation Methods:}
+\begin{itemize}
+\item \textbf{Left-to-right:} Use partial document to estimate $\theta_d$
+\item \textbf{Document completion:} Hold out portion of document
+\item \textbf{Importance sampling:} Monte Carlo approximation
+\end{itemize}
+
+\textbf{Limitation:} Lower perplexity doesn't always mean more interpretable topics.
+\end{frame>
+
+\begin{frame}[t]{Topic Coherence: Human Interpretability}
+\textbf{Beyond Perplexity: Measuring Topic Quality}
+
+\begin{concept}{Coherence Measures}
+Quantify how semantically coherent topic words appear to humans.
+\end{concept}
+
+\textbf{PMI Coherence:}
+\begin{equation}
+C_{PMI} = \frac{2}{M(M-1)} \sum_{i=1}^{M-1} \sum_{j=i+1}^M \log \frac{P(w_i, w_j)}{P(w_i) P(w_j)}
+\end{equation}
+
+\textbf{Interpretation:}
+\begin{itemize}
+\item High PMI → words co-occur more than expected by chance
+\item Average over all word pairs in topic
+\item Correlates well with human coherence judgments
+\end{itemize}
+
+\textbf{NPMI (Normalized PMI):}
+\begin{equation}
+NPMI(w_i, w_j) = \frac{PMI(w_i, w_j)}{-\log P(w_i, w_j)}
+\end{equation}
+
+Normalization bounds values between -1 and 1.
+
+\textbf{CV Coherence:} Uses sliding window and normalizes by word frequency.
+\end{frame>
+
+\begin{frame}[t]{Choosing Number of Topics}
+\textbf{The Model Selection Problem:}
+
+\begin{concept}{Bias-Variance Trade-off}
+Too few topics → underfitting, too many topics → overfitting and poor interpretability.
+\end{concept>
+
+\textbf{Evaluation Approaches:}
+
+\begin{enumerate}
+\item \textbf{Perplexity on Held-out Data:}
+   \begin{itemize}
+   \item Plot perplexity vs number of topics
+   \item Choose "elbow" where improvement plateaus
+   \item Can be misleading for interpretability
+   \end{itemize}
+
+\item \textbf{Topic Coherence:}
+   \begin{itemize}
+   \item Optimize for human interpretability
+   \item Often peaks at moderate topic numbers
+   \item More reliable for practical applications
+   \end{itemize}
+
+\item \textbf{Domain Knowledge:}
+   \begin{itemize}
+   \item Expert assessment of topic quality
+   \item Business requirements for granularity
+   \item Computational constraints
+   \end{itemize}
+\end{enumerate}
+
+\textbf{Practical Strategy:} Test range of topic numbers, evaluate multiple metrics, choose based on application needs.
+\end{frame>
+
+\begin{frame}[t]{Neural Topic Models: Motivation and Architecture}
+\textbf{Limitations of Classical LDA:}
+
+\begin{concept}{Representational Constraints}
+LDA uses bag-of-words and discrete topic assignments.
+\end{concept}
+
+\textbf{Key Limitations:}
+\begin{enumerate}
+\item \textbf{Bag-of-words:} Ignores word order, syntax, local dependencies
+\item \textbf{Discrete topics:} Hard assignments, no uncertainty representation
+\item \textbf{Linear combinations:} Topic mixing is linear weighted sum
+\item \textbf{Fixed vocabulary:} Cannot handle new words or domains
+\item \textbf{No transfer:} Must retrain for each new corpus
+\end{enumerate>
+
+\textbf{Neural Solutions:}
+\begin{itemize}
+\item \textbf{Pre-trained embeddings:} Leverage Word2Vec/BERT representations
+\item \textbf{Continuous latents:} Gaussian rather than Dirichlet distributions
+\item \textbf{Neural networks:} Flexible, non-linear transformations
+\item \textbf{End-to-end training:} Joint optimization of all components
+\end{itemize}
+
+\textbf{Trade-off:} Interpretability vs expressiveness.
+\end{frame>
+
+\begin{frame}[t]{Variational Autoencoders: Mathematical Foundation}
+\textbf{The VAE Framework:}
+
+\begin{concept}{Generative Model with Latent Variables}
+Learn latent representations that can generate observed data.
+\end{concept>
+
+\textbf{Generative Process:}
+\begin{align}
+z &\sim p(z) \quad \text{(latent code)} \\
+x &\sim p_\theta(x | z) \quad \text{(observed data)}
+\end{align}
+
+\textbf{Inference Problem:} Want $p(z | x)$ but it's intractable.
+
+\textbf{Variational Solution:} Approximate with $q_\phi(z | x)$.
+
+\textbf{Evidence Lower Bound (ELBO):}
+\begin{equation}
+\log p(x) \geq \mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x) || p(z))
+\end{equation}
+
+\textbf{Two Terms:}
+\begin{itemize}
+\item \textbf{Reconstruction:} How well can we recreate input?
+\item \textbf{Regularization:} How close is posterior to prior?
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Reparameterization Trick: Enabling Gradients}
+\textbf{The Gradient Flow Problem:}
+
+\begin{concept}{Sampling Blocks Gradients}
+Cannot backpropagate through random sampling operations.
+\end{concept>
+
+\textbf{Original Problem:}
+\begin{equation}
+z \sim q_\phi(z | x) = \mathcal{N}(\mu_\phi(x), \sigma_\phi(x)^2)
+\end{equation}
+
+Gradients cannot flow through sampling operation.
+
+\textbf{Reparameterization Solution:}
+\begin{equation}
+z = \mu_\phi(x) + \epsilon \odot \sigma_\phi(x), \quad \epsilon \sim \mathcal{N}(0, I)
+\end{equation}
+
+\textbf{Why This Works:}
+\begin{itemize}
+\item Randomness moved to $\epsilon$ (independent of parameters)
+\item $z$ is now deterministic function of $x$ and $\epsilon$
+\item Gradients can flow through $\mu_\phi$ and $\sigma_\phi$
+\end{itemize}
+
+\textbf{Monte Carlo Gradient Estimation:}
+\begin{equation}
+\nabla_\phi \mathbb{E}_{q_\phi(z|x)}[f(z)] = \mathbb{E}_{\epsilon \sim \mathcal{N}(0,I)}[\nabla_\phi f(\mu_\phi(x) + \epsilon \odot \sigma_\phi(x))]
+\end{equation}
+\end{frame>
+
+\begin{frame}[t]{Neural Variational Document Model (NVDM)}
+\textbf{VAE for Topic Modeling:}
+
+\begin{concept}{Continuous Topic Representations}
+Replace discrete topic assignments with continuous latent variables.
+\end{concept>
+
+\textbf{Architecture:}
+
+\textbf{Encoder (Inference Network):}
+\begin{align}
+h_1 &= \text{ReLU}(W_1 x + b_1) \\
+h_2 &= \text{ReLU}(W_2 h_1 + b_2) \\
+\mu &= W_\mu h_2 + b_\mu \\
+\log \sigma^2 &= W_\sigma h_2 + b_\sigma
+\end{align}
+
+\textbf{Decoder (Generative Network):}
+\begin{align}
+h_3 &= \text{ReLU}(W_3 z + b_3) \\
+h_4 &= \text{ReLU}(W_4 h_3 + b_4) \\
+\text{logits} &= W_5 h_4 + b_5 \\
+p(w|z) &= \text{Softmax}(\text{logits})
+\end{align}
+
+\textbf{Training Objective:}
+\begin{equation}
+\mathcal{L} = \mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x) || \mathcal{N}(0, I))
+\end{equation>
+\end{frame>
+
+\begin{frame}[t]{ProdLDA: Logistic Normal Topics}
+\textbf{Addressing Dirichlet Limitations:}
+
+\begin{concept}{Logistic Normal Distribution}
+More flexible than Dirichlet, allows topic correlations.
+\end{concept>
+
+\textbf{ProdLDA Formulation:}
+\begin{align}
+h &\sim \mathcal{N}(0, I) \\
+\theta &= \text{softmax}(h) \\
+w &\sim \text{Mult}(\theta)
+\end{align}
+
+\textbf{Advantages over LDA:}
+\begin{itemize}
+\item \textbf{Topic correlations:} Can model dependencies between topics
+\item \textbf{Continuous space:} Smoother interpolations
+\item \textbf{Neural flexibility:} Can incorporate pre-trained embeddings
+\end{itemize}
+
+\textbf{Evidence Lower Bound:}
+\begin{equation}
+\mathcal{L} = \mathbb{E}_{q(h|w)}[\log p(w|h)] - D_{KL}(q(h|w) || p(h))
+\end{equation}
+
+\textbf{Training:} Standard VAE training with Adam optimizer.
+\end{frame>
+
+\begin{frame}[t]{Embedded Topic Model (ETM)}
+\textbf{Incorporating Word Embeddings:}
+
+\begin{concept}{Embedding-Enhanced Topics}
+Use pre-trained word embeddings to improve topic coherence and handle rare words.
+\end{concept}
+
+\textbf{Key Innovation:} Topic-word distributions via embedding space.
+\begin{equation}
+\beta_{k,v} = \frac{\exp(\rho_k^T \alpha_v)}{\sum_{v'=1}^V \exp(\rho_k^T \alpha_{v'})}
+\end{equation}
+
+where:
+\begin{itemize}
+\item $\rho_k$: Topic embedding for topic $k$
+\item $\alpha_v$: Pre-trained word embedding for word $v$
+\end{itemize}
+
+\textbf{Advantages:}
+\begin{itemize}
+\item \textbf{Semantic coherence:} Similar words get similar probabilities
+\item \textbf{Rare word handling:} Embeddings provide prior knowledge
+\item \textbf{Transfer learning:} Leverage pre-trained embeddings
+\item \textbf{Interpretability:} Topics live in interpretable embedding space
+\end{itemize}
+
+\textbf{Training:} Joint optimization of topic embeddings and inference network.
+\end{frame>
+
+\begin{frame}[t]{Dynamic Topic Models: Tracking Evolution}
+\textbf{Time-Varying Topics:}
+
+\begin{concept}{Temporal Topic Dynamics}
+Topics evolve over time - new words become popular, others fade away.
+\end{concept>
+
+\textbf{Dynamic LDA Formulation:}
+\begin{equation}
+\beta_{k,t} | \beta_{k,t-1} \sim \mathcal{N}(\beta_{k,t-1}, \sigma^2 I)
+\end{equation}
+
+\textbf{State Space Model:}
+\begin{align}
+\text{Evolution:} \quad & \beta_t = \beta_{t-1} + \epsilon_t, \quad \epsilon_t \sim \mathcal{N}(0, \sigma^2 I) \\
+\text{Observation:} \quad & w_{d,t} | \beta_t \sim \text{LDA}(\alpha, \beta_t)
+\end{align}
+
+\textbf{Inference:} Forward-backward algorithm (Kalman filtering).
+
+\textbf{Applications to Financial Narratives:}
+\begin{itemize}
+\item Track how "inflation" narrative evolves
+\item Detect emerging themes (e.g., "cryptocurrency")
+\item Monitor narrative lifecycle: emergence → peak → decline
+\item Identify narrative transitions and regime changes
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Online Topic Models: Real-Time Updates}
+\textbf{Streaming Topic Discovery:}
+
+\begin{concept}{Incremental Learning}
+Update topic models as new documents arrive without retraining from scratch.
+\end{concept>
+
+\textbf{Online LDA Algorithm:}
+
+\textbf{Mini-batch Updates:}
+\begin{equation}
+\rho_t = (\tau_0 + t)^{-\kappa}
+\end{equation}
+
+\textbf{Parameter Update:}
+\begin{equation}
+\lambda_t = (1 - \rho_t) \lambda_{t-1} + \rho_t \tilde{\lambda}_t
+\end{equation}
+
+where $\tilde{\lambda}_t$ is the natural gradient update.
+
+\textbf{Stochastic Variational Inference:}
+\begin{itemize}
+\item Process documents in mini-batches
+\item Update global parameters using noisy gradients
+\item Convergence guaranteed under regularity conditions
+\end{itemize}
+
+\textbf{Financial News Application:}
+\begin{itemize}
+\item Real-time narrative tracking
+\item Detect breaking news topics
+\item Monitor topic sentiment evolution
+\item Alert for narrative regime changes
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Hierarchical Topic Models: HDP}
+\textbf{Unknown Number of Topics:}
+
+\begin{concept}{Nonparametric Topic Models}
+Automatically determine appropriate number of topics from data.
+\end{concept>
+
+\textbf{Hierarchical Dirichlet Process:}
+\begin{align}
+G_0 | \gamma, H &\sim DP(\gamma, H) \quad \text{(global measure)} \\
+G_j | \alpha, G_0 &\sim DP(\alpha, G_0) \quad \text{(document measures)} \\
+\theta_{ji} | G_j &\sim G_j \quad \text{(word topics)}
+\end{align}
+
+\textbf{Chinese Restaurant Process Metaphor:}
+\begin{itemize}
+\item \textbf{Restaurant:} Topic
+\item \textbf{Tables:} Topic instances in documents
+\item \textbf{Customers:} Words
+\item \textbf{Dishes:} Global topic distribution
+\end{itemize}
+
+\textbf{Probability of Joining Table $k$:}
+\begin{equation}
+P(\text{table } k) = \begin{cases}
+\frac{n_k}{n + \alpha} & \text{if table occupied} \\
+\frac{\alpha}{n + \alpha} & \text{if new table}
+\end{cases}
+\end{equation}
+
+\textbf{Advantage:} Number of topics grows with data complexity.
+\end{frame>
+
+\begin{frame}[t]{Modern Neural Topic Models}
+\textbf{Transformer-Based Topic Discovery:}
+
+\begin{concept}{Contextualized Topic Modeling}
+Use transformer representations for richer topic discovery.
+\end{concept}
+
+\textbf{BERTopic Pipeline Detailed:}
+
+\textbf{Stage 1: Contextual Embeddings}
+\begin{equation}
+e_i = \text{sentence-BERT}(\text{document}_i)
+\end{equation}
+
+\textbf{Stage 2: UMAP Dimensionality Reduction}
+\begin{equation}
+\mathcal{L}_{UMAP} = \sum_{ij} p_{ij} \log \frac{p_{ij}}{q_{ij}} + (1-p_{ij}) \log \frac{1-p_{ij}}{1-q_{ij}}
+\end{equation}
+
+\textbf{Stage 3: HDBSCAN Clustering}
+\begin{itemize}
+\item Build minimum spanning tree
+\item Extract cluster hierarchy
+\item Find stable clusters using persistence
+\end{itemize}
+
+\textbf{Stage 4: c-TF-IDF Topic Representation}
+\begin{equation}
+w_{t,c} = tf_{t,c} \cdot \log \left(1 + \frac{A}{f_t}\right)
+\end{equation}
+
+where $A$ = average number of words per class, $f_t$ = frequency of term $t$.
+\end{frame>
+
+\begin{frame}[t]{Topic Model Applications in Finance}
+\textbf{Practical Applications:}
+
+\begin{concept}{Document Organization and Analysis}
+Topic models help organize and understand large financial document collections.
+\end{concept}
+
+\textbf{Financial Use Cases:}
+
+\begin{enumerate}
+\item \textbf{Earnings Call Analysis:}
+   \begin{itemize}
+   \item Extract key themes from quarterly calls
+   \item Track management focus areas over time
+   \item Compare topics across companies/sectors
+   \end{itemize}
+
+\item \textbf{News Categorization:}
+   \begin{itemize}
+   \item Automatically classify news articles
+   \item Route relevant news to analysts
+   \item Build sector-specific news feeds
+   \end{itemize}
+
+\item \textbf{Research Report Mining:}
+   \begin{itemize}
+   \item Extract key investment themes
+   \item Identify analyst consensus/disagreement
+   \item Track research trend evolution
+   \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Part II Summary: Topic Modeling Mastery}
+\textbf{Key Concepts Covered:}
+
+\begin{enumerate}
+\item \textbf{Probabilistic Topic Models:} LDA as the foundation
+\item \textbf{Inference Methods:} Variational Bayes and Gibbs sampling
+\item \textbf{Neural Extensions:} VAE-based topic models
+\item \textbf{Modern Approaches:} BERTopic and transformer-based methods
+\item \textbf{Evaluation:} Coherence metrics and human interpretability
+\end{enumerate}
+
+\textbf{Mathematical Tools Learned:}
+\begin{itemize}
+\item Dirichlet distributions and conjugacy
+\item Variational inference and ELBO
+\item Coordinate ascent optimization
+\item Reparameterization trick for neural models
+\end{itemize}
+
+\textbf{Narrative Applications:}
+\begin{itemize}
+\item Discover themes in financial news
+\item Track narrative evolution over time
+\item Identify emerging market concerns
+\item Cluster related news stories
+\end{itemize}
+
+\textbf{Next:} How to aggregate individual headlines into coherent narrative threads.
+\end{frame}
+
+\begin{frame}[t]{Topic Modeling Review Questions}
+\textbf{Test Your Understanding:}
+
+\begin{enumerate}
+\item Explain the generative process for LDA in your own words.
+\item Why is exact inference intractable in LDA?
+\item What is the difference between variational inference and Gibbs sampling?
+\item How does the reparameterization trick enable gradient flow in VAEs?
+\item What advantages do neural topic models have over classical LDA?
+\item How would you choose the optimal number of topics?
+\item What is topic coherence and why is it important?
+\item When would you use dynamic topic models?
+\end{enumerate}
+
+\textbf{Case Study:}
+You have 50,000 financial news articles from the past year. Design a complete topic modeling pipeline including preprocessing, model selection, evaluation, and application to narrative tracking.
+
+\textbf{Implementation Challenge:}
+Compare LDA vs BERTopic on the same financial news corpus. What differences would you expect and why?
+\end{frame>
+
+\section{From Headlines to Narratives: Aggregation Theory}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Part III: From Headlines to Narratives\par
+\end{beamercolorbox}
+\vfill
+\footnotesize
+\textbf{Learning Goals:} Understand how individual news headlines are aggregated into coherent narrative threads using clustering, summarization, and information fusion techniques.
+\end{frame}
+
+\begin{frame}[t]{The Aggregation Challenge}
+\textbf{From Individual Headlines to Coherent Stories:}
+
+\textbf{Input:} Thousands of individual headlines per day
+\begin{itemize}
+\item "Fed raises interest rates by 0.75 basis points"
+\item "Markets tumble following Fed announcement"
+\item "Inflation concerns drive monetary policy shift"
+\item "Dollar strengthens on hawkish Fed stance"
+\end{itemize}
+
+\textbf{Goal:} Group into coherent narratives
+\begin{itemize}
+\item \textbf{Narrative:} "Federal Reserve tightening cycle"
+\item \textbf{Key events:} Rate hikes, market reactions, policy statements
+\item \textbf{Temporal evolution:} How story develops over time
+\end{itemize}
+
+\begin{concept}{Aggregation Tasks}
+1) Clustering similar headlines, 2) Extracting key information, 3) Building temporal threads, 4) Resolving contradictions
+\end{concept}
+\end{frame}
+
+\begin{frame}[t]{Graph-Based Text Clustering}
+\textbf{Why Graphs for Text Clustering?}
+
+\begin{concept}{Similarity Networks}
+Represent documents as nodes, similarity as edge weights. Clustering becomes graph partitioning.
+\end{concept}
+
+\textbf{Similarity Graph Construction:}
+
+\begin{enumerate}
+\item \textbf{Nodes:} Each headline/document
+\item \textbf{Edges:} Similarity scores between documents
+\item \textbf{Weights:} $w_{ij} = \text{similarity}(\text{doc}_i, \text{doc}_j)$
+\end{enumerate}
+
+\textbf{Using BERT Embeddings:}
+\begin{equation}
+w_{ij} = \frac{\text{BERT}(h_i) \cdot \text{BERT}(h_j)}{||\text{BERT}(h_i)|| \cdot ||\text{BERT}(h_j)||}
+\end{equation}
+
+\textbf{Graph Properties:}
+\begin{itemize}
+\item Dense clusters = coherent topics
+\item Bridge nodes = documents spanning multiple topics
+\item Isolated nodes = unique/outlier content
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Spectral Clustering: Mathematical Foundation}
+\textbf{Graph Partitioning as Optimization:}
+
+\begin{concept}{Graph Cut Problem}
+Find partition that minimizes connections between groups while maximizing internal connections.
+\end{concept}
+
+\textbf{Graph Laplacian:} $L = D - W$
+\begin{itemize}
+\item $D_{ii} = \sum_j W_{ij}$ (degree matrix)
+\item $W_{ij}$ = similarity weights
+\end{itemize}
+
+\textbf{Normalized Cut Objective:}
+\begin{equation}
+\text{NCut}(A,B) = \frac{\text{cut}(A,B)}{\text{vol}(A)} + \frac{\text{cut}(A,B)}{\text{vol}(B)}
+\end{equation}
+
+where $\text{vol}(A) = \sum_{i \in A} d_i$ is the volume.
+
+\textbf{Relaxed Solution:} Eigenvectors of normalized Laplacian
+\begin{equation}
+\min_H \text{tr}(H^T L_{norm} H) \quad \text{s.t.} \quad H^T H = I
+\end{equation}
+
+\textbf{Algorithm:} Use $k$ smallest eigenvectors as features, then apply k-means.
+\end{frame}
+
+\begin{frame}[t]{Multi-Document Summarization Theory}
+\textbf{The Summarization Challenge:}
+
+Given cluster of related headlines, extract key information without redundancy.
+
+\begin{concept}{Optimization Formulation}
+Balance informativeness, coverage, and diversity.
+\end{concept}
+
+\textbf{Integer Linear Programming Approach:}
+
+Binary variables: $x_i = 1$ if sentence $i$ selected
+
+\textbf{Objective Function:}
+\begin{equation}
+\max \sum_{i} w_i x_i - \lambda \sum_{i,j} s_{ij} x_i x_j
+\end{equation}
+
+\textbf{Terms Explained:}
+\begin{itemize}
+\item $w_i$: Importance score of sentence $i$
+\item $s_{ij}$: Similarity between sentences $i$ and $j$
+\item $\lambda$: Penalty for redundancy
+\end{itemize}
+
+\textbf{Constraints:}
+\begin{align}
+\sum_i l_i x_i &\leq L \quad \text{(length limit)} \\
+\sum_{i \in C_k} x_i &\geq 1 \quad \forall k \quad \text{(coverage)}
+\end{align}
+\end{frame}
+
+\begin{frame}[t]{Event Chain Extraction}
+\textbf{Building Temporal Narrative Threads:}
+
+\begin{concept}{Narrative Chains}
+Sequences of events that typically occur together in stories.
+\end{concept}
+
+\textbf{Example Financial Narrative Chain:}
+\begin{enumerate}
+\item Company reports earnings miss
+\item Stock price drops
+\item Analysts downgrade ratings
+\item CEO makes reassuring statements
+\item Market stabilizes
+\end{enumerate}
+
+\textbf{Mathematical Model:}
+Event sequence probability:
+\begin{equation}
+P(e_1, ..., e_n) = P(e_1) \prod_{i=2}^n P(e_i | e_1, ..., e_{i-1})
+\end{equation}
+
+\textbf{Learning Objective:}
+\begin{equation}
+\max_\theta \sum_{chains} \log P_\theta(\text{chain})
+\end{equation}
+
+\textbf{Applications:} Predict likely next events, identify narrative completion, detect anomalous event sequences.
+\end{frame>
+
+\begin{frame}[t]{Entity Coreference Across Documents}
+\textbf{Linking Entity Mentions:}
+
+\begin{concept}{Cross-Document Entity Resolution}
+Identify when mentions in different documents refer to same real-world entity.
+\end{concept>
+
+\textbf{Challenges:}
+\begin{itemize}
+\item Different naming conventions: "Apple Inc." vs "Apple" vs "AAPL"
+\item Ambiguous references: "The company" could refer to many entities
+\item Temporal aspects: Entity properties change over time
+\end{itemize}
+
+\textbf{Neural Coreference Pipeline:}
+\begin{enumerate}
+\item \textbf{Mention Detection:} Identify entity spans
+\item \textbf{Mention Representation:} BERT-based span embeddings
+\item \textbf{Pairwise Scoring:} $s(m_i, m_j) = \text{NN}([\text{embed}(m_i); \text{embed}(m_j); \text{features}])$
+\item \textbf{Clustering:} Group coreferent mentions
+\end{enumerate}
+
+\textbf{Financial Applications:} Track company mentions across news sources, build entity-centric narrative timelines.
+\end{frame>
+
+\begin{frame}[t]{Knowledge Graph Construction from Headlines}
+\textbf{From Text to Structured Knowledge:}
+
+\begin{concept}{Structured Narrative Representation}
+Transform unstructured headlines into graph of entities, events, and relationships.
+\end{concept>
+
+\textbf{Knowledge Graph Components:}
+\begin{itemize}
+\item \textbf{Entities:} Companies, people, locations, concepts
+\item \textbf{Relations:} Ownership, partnerships, competition, causation
+\item \textbf{Events:} Earnings, mergers, regulatory actions
+\item \textbf{Temporal information:} When events occurred
+\end{itemize}
+
+\textbf{Construction Pipeline:}
+\begin{enumerate}
+\item \textbf{Named Entity Recognition:} Extract entity mentions
+\item \textbf{Relation Extraction:} Identify relationships between entities
+\item \textbf{Event Extraction:} Find action/state changes
+\item \textbf{Entity Linking:} Connect to knowledge base
+\item \textbf{Temporal Ordering:} Establish event sequence
+\item \textbf{Graph Assembly:} Build final knowledge graph
+\end{enumerate}
+
+\textbf{Applications:} Enhanced search, question answering, narrative consistency checking.
+\end{frame>
+
+\begin{frame}[t]{Narrative Coherence Modeling}
+\textbf{What Makes a Story Coherent?}
+
+\begin{concept}{Coherence Dimensions}
+Multiple aspects contribute to narrative coherence: entity consistency, temporal ordering, causal relationships.
+\end{concept>
+
+\textbf{Coherence Components:}
+
+\begin{enumerate}
+\item \textbf{Referential Coherence:} Consistent entity references
+   \begin{equation}
+   C_{ref} = \frac{|\text{resolved references}|}{|\text{total references}|}
+   \end{equation}
+
+\item \textbf{Temporal Coherence:} Logical event ordering
+   \begin{equation}
+   C_{temp} = \frac{|\text{consistent temporal relations}|}{|\text{total temporal relations}|}
+   \end{equation}
+
+\item \textbf{Causal Coherence:} Valid cause-effect chains
+   \begin{equation}
+   C_{causal} = \frac{|\text{valid causal links}|}{|\text{total causal claims}|}
+   \end{equation}
+
+\item \textbf{Topical Coherence:} Thematic consistency
+   \begin{equation}
+   C_{topic} = \text{cosine\_similarity}(\text{topic\_dist}_1, \text{topic\_dist}_2)
+   \end{equation}
+\end{enumerate}
+
+\textbf{Overall Coherence:} $C = w_1 C_{ref} + w_2 C_{temp} + w_3 C_{causal} + w_4 C_{topic}$
+\end{frame>
+
+\begin{frame}[t]{Multi-Document Contradiction Detection}
+\textbf{Handling Conflicting Information:}
+
+\begin{concept}{Information Conflicts}
+Different sources may provide contradictory information about same events.
+\end{concept>
+
+\textbf{Contradiction Types:}
+\begin{itemize}
+\item \textbf{Factual:} "Stock price up 5\%" vs "Stock price down 3\%"
+\item \textbf{Temporal:} Different event timing claims
+\item \textbf{Causal:} Different explanations for same outcome
+\item \textbf{Evaluative:} Positive vs negative assessments
+\end{itemize}
+
+\textbf{Detection Methods:}
+
+\textbf{Textual Entailment:}
+\begin{equation}
+P(\text{contradiction}|s_1, s_2) = \text{BERT\_NLI}([CLS], s_1, [SEP], s_2, [SEP])
+\end{equation}
+
+\textbf{Semantic Consistency:}
+\begin{equation}
+\text{conflict\_score} = 1 - \text{cosine\_sim}(\text{embed}(s_1), \text{embed}(s_2))
+\end{equation}
+
+\textbf{Resolution Strategies:} Source credibility weighting, temporal recency, majority voting.
+\end{frame>
+
+\begin{frame}[t]{Part III Summary: Aggregation Theory Mastery}
+\textbf{Complete Pipeline Understanding:}
+
+\begin{enumerate}
+\item \textbf{Text Clustering:} Graph-based methods for grouping similar headlines
+\item \textbf{Summarization:} Extracting key information without redundancy
+\item \textbf{Event Processing:} Building temporal chains and causal relationships
+\item \textbf{Entity Resolution:} Tracking entities across multiple documents
+\item \textbf{Narrative Structure:} Modeling story arcs and coherence
+\item \textbf{Information Fusion:} Handling multiple sources and contradictions
+\end{enumerate}
+
+\textbf{Key Mathematical Tools:}
+\begin{itemize}
+\item Graph theory and spectral clustering
+\item Optimization for summarization
+\item Probabilistic models for event chains
+\item Information theory for fusion
+\end{itemize}
+
+\textbf{Ready for:} Deep dive into Transformer architecture that enables sophisticated language understanding.
+\end{frame}
+
+\section{Transformer Architecture for Deep Language Understanding}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Part IV: Transformer Architecture\par
+\end{beamercolorbox}
+\vfill
+\footnotesize
+\textbf{Learning Goals:} Master the mathematical foundations of Transformers, understand attention mechanisms, and learn how these architectures enable sophisticated narrative understanding.
+\end{frame}
+
+\begin{frame}[t]{Why Transformers Revolutionized NLP}
+\textbf{The RNN Bottleneck:}
+
+\begin{concept}{Sequential Processing Limitation}
+RNNs must process sequences step-by-step, preventing parallelization.
+\end{concept}
+
+\textbf{Problems with RNNs:}
+\begin{enumerate}
+\item \textbf{Sequential Dependency:} $h_t$ depends on $h_{t-1}$
+\item \textbf{Long-Range Dependencies:} Information loss over long sequences
+\item \textbf{Training Speed:} Cannot parallelize across time steps
+\item \textbf{Gradient Issues:} Vanishing/exploding gradients
+\end{enumerate}
+
+\textbf{Transformer Innovation:}
+\begin{itemize}
+\item \textbf{Attention:} Direct connections between all positions
+\item \textbf{Parallelization:} Process entire sequence simultaneously
+\item \textbf{Long-Range:} No information bottleneck
+\item \textbf{Scalability:} Efficient on modern hardware
+\end{itemize}
+
+\begin{intuition}
+Instead of passing information sequentially, attention allows direct communication between any two positions in the sequence.
+\end{intuition}
+\end{frame}
+
+\begin{frame}[t]{Attention Mechanism: Core Intuition}
+\textbf{What Is Attention?}
+
+\begin{concept}{Information Retrieval Analogy}
+Given a query, find relevant information from a database and compute weighted combination.
+\end{concept}
+
+\textbf{Three Components:}
+\begin{enumerate}
+\item \textbf{Query (Q):} What information are we looking for?
+\item \textbf{Key (K):} What information is available?
+\item \textbf{Value (V):} The actual information content
+\end{enumerate}
+
+\textbf{Example:} Translating "The cat sat on the mat"
+\begin{itemize}
+\item When translating "cat", query = representation of "cat"
+\item Keys = representations of all input words
+\item Values = contextual information from all words
+\item Attention weights = how much each input word is relevant to "cat"
+\end{itemize}
+
+\textbf{Mathematical Formulation:}
+\begin{equation}
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Scaled Dot-Product Attention: Step by Step}
+\textbf{Breaking Down the Attention Formula:}
+
+\begin{equation}
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\end{equation}
+
+\textbf{Step 1: Compute Similarities}
+$QK^T$: Dot products between queries and keys
+\begin{itemize}
+\item Large values = high similarity
+\item Result: $n \times n$ similarity matrix
+\end{itemize}
+
+\textbf{Step 2: Scale}
+Divide by $\sqrt{d_k}$ to prevent vanishing gradients
+\begin{itemize}
+\item Without scaling: softmax becomes too peaked
+\item With scaling: maintains gradient flow
+\end{itemize}
+
+\textbf{Step 3: Normalize}
+Softmax ensures weights sum to 1:
+\begin{equation}
+\text{softmax}(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
+\end{equation}
+
+\textbf{Step 4: Weighted Combination}
+Multiply attention weights by values to get final output.
+\end{frame}
+
+\begin{frame}[t]{Multi-Head Attention: Why Multiple Heads?}
+\textbf{Single Head Limitation:}
+
+One attention mechanism can only capture one type of relationship.
+
+\begin{concept}{Multiple Representation Subspaces}
+Different heads can focus on different linguistic phenomena.
+\end{concept}
+
+\textbf{Examples of Head Specialization:}
+\begin{itemize}
+\item \textbf{Head 1:} Subject-verb relationships
+\item \textbf{Head 2:} Adjective-noun modifications
+\item \textbf{Head 3:} Long-range dependencies
+\item \textbf{Head 4:} Local syntactic patterns
+\end{itemize}
+
+\textbf{Mathematical Formulation:}
+\begin{align}
+\text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O \\
+\text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+\end{align}
+
+\textbf{Key Insight:} Each head learns different linear projections of Q, K, V, allowing specialization.
+
+\textbf{Computational Cost:} $h$ heads with $d_{head} = d_{model}/h$ has same cost as single head.
+\end{frame}
+
+\begin{frame}[t]{Self-Attention vs Cross-Attention}
+\textbf{Two Types of Attention:}
+
+\begin{enumerate}
+\item \textbf{Self-Attention:} Q, K, V all come from same sequence
+   \begin{itemize}
+   \item Used in: BERT, GPT encoders
+   \item Purpose: Understand relationships within sequence
+   \item Example: "The animal didn't cross the street because it was too tired"
+   \item "it" attends strongly to "animal"
+   \end{itemize}
+
+\item \textbf{Cross-Attention:} Q from target, K,V from source
+   \begin{itemize}
+   \item Used in: Encoder-decoder models
+   \item Purpose: Align target with source information
+   \item Example: Translation - target language queries attend to source language
+   \end{itemize}
+\end{enumerate}
+
+\textbf{For Narrative Extraction:}
+\begin{itemize}
+\item Self-attention captures relationships between events in same document
+\item Cross-attention can link events across different documents
+\item Enables building coherent narrative threads
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Transformer Layer Architecture}
+\textbf{Complete Layer Structure:}
+
+\begin{concept}{Residual Connections and Layer Normalization}
+Each transformer layer includes skip connections and normalization for stable training.
+\end{concept}
+
+\textbf{Standard Transformer Layer:}
+\begin{align}
+\text{Attention output:} \quad & \tilde{x} = \text{MultiHead}(x, x, x) \\
+\text{Add \& norm 1:} \quad & x' = \text{LayerNorm}(x + \tilde{x}) \\
+\text{Feed-forward:} \quad & \tilde{x'} = \text{FFN}(x') \\
+\text{Add \& norm 2:} \quad & x'' = \text{LayerNorm}(x' + \tilde{x'})
+\end{align}
+
+\textbf{Feed-Forward Network:}
+\begin{equation}
+\text{FFN}(x) = \text{ReLU}(xW_1 + b_1)W_2 + b_2
+\end{equation}
+
+\textbf{Layer Normalization:}
+\begin{equation}
+\text{LayerNorm}(x) = \gamma \frac{x - \mu}{\sigma} + \beta
+\end{equation}
+
+\textbf{Why These Components:}
+\begin{itemize}
+\item Residual connections enable deep networks
+\item Layer norm stabilizes training
+\item FFN provides non-linearity and expressiveness
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Part IV Summary: Transformer Architecture}
+\textbf{Deep Understanding Achieved:}
+
+\begin{enumerate}
+\item \textbf{Attention Mechanisms:}
+   \begin{itemize}
+   \item Mathematical foundations of scaled dot-product attention
+   \item Multi-head attention and representation subspaces
+   \item Self-attention vs cross-attention applications
+   \end{itemize}
+
+\item \textbf{Architectural Components:}
+   \begin{itemize}
+   \item Positional encoding for sequence order
+   \item Layer normalization and residual connections
+   \item Feed-forward networks for non-linearity
+   \end{itemize>
+
+\item \textbf{Efficiency and Scaling:}
+   \begin{itemize}
+   \item Computational complexity analysis
+   \item Efficient transformer variants for long sequences
+   \item Memory optimization techniques
+   \end{itemize>
+
+\item \textbf{Transfer Learning:}
+   \begin{itemize}
+   \item Pre-training and fine-tuning paradigms
+   \item Parameter-efficient adaptation methods
+   \item Task-specific customization strategies
+   \end{itemize>
+\end{enumerate>
+
+\textbf{Ready for:} Large language models and their generation capabilities.
+\end{frame}
+
+\section{Large Language Models for Narrative Generation}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Part V: Large Language Models for Generation\par
+\end{beamercolorbox}
+\vfill
+\footnotesize
+\textbf{Learning Goals:} Understand how LLMs generate text, control their outputs, and apply them to narrative generation tasks.
+\end{frame}
+
+\begin{frame}[t]{Language Modeling: The Foundation}
+\textbf{What Is Language Modeling?}
+
+\begin{concept}{Probability Distribution Over Text}
+A language model assigns probabilities to sequences of words/tokens.
+\end{concept}
+
+\textbf{Applications:}
+\begin{itemize}
+\item \textbf{Text Generation:} Sample from the distribution
+\item \textbf{Text Completion:} Find most likely continuation
+\item \textbf{Quality Assessment:} High probability = fluent text
+\item \textbf{Compression:} Use as probabilistic code
+\end{itemize}
+
+\textbf{Chain Rule Decomposition:}
+\begin{equation}
+P(x_1, ..., x_T) = \prod_{t=1}^T P(x_t | x_1, ..., x_{t-1})
+\end{equation}
+
+\textbf{Autoregressive Principle:} Model each word conditioned on all previous words.
+
+\begin{intuition}
+If we can accurately predict the next word given context, we understand language structure.
+\end{intuition}
+\end{frame}
+
+\begin{frame}[t]{Training Language Models}
+\textbf{Maximum Likelihood Objective:}
+
+Given corpus $\mathcal{D} = \{s_1, s_2, ..., s_N\}$, maximize likelihood:
+\begin{equation}
+\mathcal{L}_{MLE} = \frac{1}{|\mathcal{D}|} \sum_{s \in \mathcal{D}} \log P_\theta(s)
+\end{equation}
+
+\textbf{Expanding for Autoregressive Model:}
+\begin{equation}
+\mathcal{L}_{MLE} = \frac{1}{|\mathcal{D}|} \sum_{s \in \mathcal{D}} \sum_{t=1}^{|s|} \log P_\theta(x_t | x_{<t})
+\end{equation}
+
+\textbf{Cross-Entropy Loss:} Equivalent negative log-likelihood:
+\begin{equation}
+\mathcal{L}_{CE} = -\frac{1}{T} \sum_{t=1}^T \log P_\theta(x_t | x_{<t})
+\end{equation}
+
+\textbf{Teacher Forcing:} During training, use ground truth context (not model predictions).
+
+\textbf{Why This Works:} Gradient descent finds parameters that assign high probability to observed text.
+\end{frame}
+
+\begin{frame}[t]{The Exposure Bias Problem}
+\textbf{Training vs Inference Mismatch:}
+
+\begin{concept}{Distribution Shift}
+Model trained on ground truth context but used with its own predictions.
+\end{concept}
+
+\textbf{Training:} $P(x_t | x_1^{truth}, ..., x_{t-1}^{truth})$
+
+\textbf{Inference:} $P(x_t | x_1^{model}, ..., x_{t-1}^{model})$
+
+\textbf{Consequences:}
+\begin{itemize}
+\item Errors compound over time
+\item Model hasn't seen its own mistakes during training
+\item Quality degrades for longer sequences
+\end{itemize}
+
+\textbf{Solutions:}
+
+\textbf{Scheduled Sampling:}
+\begin{equation}
+x_t^{input} = \begin{cases}
+x_t^{truth} & \text{with prob } 1-\epsilon_t \\
+\arg\max P(x | x_{<t}) & \text{with prob } \epsilon_t
+\end{cases}
+\end{equation}
+
+Start with teacher forcing, gradually use model predictions.
+\end{frame}
+
+\begin{frame}[t]{Decoding: From Probabilities to Text}
+\textbf{The Generation Challenge:}
+
+Given trained model $P_\theta(x_t | x_{<t})$, how do we generate text?
+
+\begin{concept}{Search vs Sampling}
+Two paradigms: find most likely sequence (search) or sample from distribution.
+\end{concept}
+
+\textbf{Greedy Decoding:} Always pick most likely next word
+\begin{equation}
+x_t = \arg\max_{x} P_\theta(x | x_{<t})
+\end{equation}
+
+\textbf{Problems:}
+\begin{itemize}
+\item No backtracking - locally optimal choices
+\item Repetitive, boring output
+\item Misses creative alternatives
+\end{itemize}
+
+\textbf{Beam Search:} Keep top $k$ sequences
+\begin{equation}
+\text{score}(x_1, ..., x_t) = \sum_{i=1}^t \log P(x_i | x_{<i})
+\end{equation}
+
+\textbf{Sampling Methods:} Introduce controlled randomness for diversity.
+\end{frame}
+\section{Advanced NLP Theory for Narrative Processing}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Part VI: Advanced NLP for Narratives\par
+\end{beamercolorbox}
+\vfill
+\footnotesize
+\textbf{Learning Goals:} Master advanced NLP techniques including coreference resolution, relation extraction, temporal reasoning, and causal analysis for narrative understanding.
+\end{frame}
+
+\begin{frame}[t]{Coreference Resolution: Linking Mentions}
+\textbf{The Coreference Problem:}
+
+\begin{concept}{Entity Tracking}
+Identify when different phrases refer to the same real-world entity.
+\end{concept}
+
+\textbf{Example:}
+"Apple Inc. announced strong earnings. The company's revenue exceeded expectations. Its stock price surged after the announcement."
+
+\textbf{Coreference Chains:}
+\begin{itemize}
+\item "Apple Inc." $\rightarrow$ "The company" $\rightarrow$ "Its"
+\item All refer to the same entity
+\end{itemize}
+
+\textbf{Why It Matters for Narratives:}
+\begin{itemize}
+\item Track main characters/entities across documents
+\item Build coherent storylines
+\item Understand entity-centric narratives
+\end{itemize}
+
+\textbf{Mathematical Approach:} Score all mention pairs, then cluster.
+\begin{equation}
+s(m_i, m_j) = w^T \phi(m_i, m_j, \text{context})
+\end{equation}
+\end{frame}
+
+\begin{frame}[t]{Temporal Reasoning in Financial Narratives}
+\textbf{Time Matters in Financial Stories:}
+
+\begin{concept}{Temporal Dependencies}
+Financial narratives have complex temporal structures: cause-effect relationships, simultaneous events, overlapping periods.
+\end{concept}
+
+\textbf{Allen's Interval Algebra:} 13 basic temporal relations
+\begin{itemize}
+\item Before: "Fed meeting" before "market reaction"
+\item During: "Earnings season" during "Q3"
+\item Overlaps: "Trade war" overlaps "election period"
+\end{itemize}
+
+\textbf{Temporal Graph Construction:}
+\begin{itemize}
+\item Nodes: Events/time periods
+\item Edges: Temporal relations
+\item Constraints: Ensure consistency
+\end{itemize}
+
+\textbf{Constraint Propagation:}
+\begin{equation}
+r_{AC} = r_{AB} \circ r_{BC}
+\end{equation}
+
+If A before B and B before C, then A before C.
+\end{frame}
+\section{Mathematical Optimization for Large-Scale Training}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Part VII: Mathematical Optimization\par
+\end{beamercolorbox}
+\vfill
+\footnotesize
+\textbf{Learning Goals:} Understand the optimization challenges in training large language models and the mathematical techniques that make it possible.
+\end{frame}
+
+\begin{frame}[t]{The Optimization Challenge in NLP}
+\textbf{Why Is Training LLMs Hard?}
+
+\begin{concept}{Scale and Complexity}
+Modern LLMs have billions of parameters trained on trillions of tokens.
+\end{concept}
+
+\textbf{Unique Challenges:}
+\begin{enumerate}
+\item \textbf{High Dimensionality:} Parameter spaces with billions of dimensions
+\item \textbf{Non-Convexity:} Multiple local minima, saddle points
+\item \textbf{Discrete Outputs:} Text generation is fundamentally discrete
+\item \textbf{Long Sequences:} Gradient flow over long dependencies
+\item \textbf{Memory Constraints:} GPU memory limitations
+\end{enumerate}
+
+\textbf{Loss Landscape Properties:}
+\begin{itemize}
+\item Neural networks have complex, high-dimensional loss surfaces
+\item Good local minima often have similar quality
+\item Wide minima generalize better than sharp minima
+\end{itemize}
+
+\begin{intuition}
+Modern optimizers must navigate these complex landscapes efficiently while avoiding poor local minima.
+\end{intuition}
+\end{frame}
+
+\begin{frame}[t]{Beyond Cross-Entropy: Advanced Loss Functions}
+\textbf{Cross-Entropy Limitations:}
+
+Standard loss: $\mathcal{L}_{CE} = -\sum_i y_i \log p_i$
+
+\textbf{Problems:}
+\begin{itemize}
+\item Treats all errors equally
+\item Doesn't handle class imbalance
+\item No robustness to label noise
+\end{itemize}
+
+\textbf{Focal Loss for Imbalanced Data:}
+\begin{equation}
+\mathcal{L}_{focal} = -\alpha_t (1 - p_t)^\gamma \log(p_t)
+\end{equation}
+
+\textbf{Intuition:} Down-weight easy examples, focus on hard examples.
+\begin{itemize}
+\item $\gamma = 0$: Standard cross-entropy
+\item $\gamma > 0$: Reduces loss for confident predictions
+\item $\alpha_t$: Class-dependent weighting
+\end{itemize}
+
+\textbf{Label Smoothing:}
+\begin{equation}
+y'_i = (1 - \epsilon) y_i + \frac{\epsilon}{K}
+\end{equation}
+
+Prevents overconfident predictions by mixing true labels with uniform distribution.
+\end{frame}
+
+\begin{frame}[t]{Adam Optimizer: The Workhorse of Deep Learning}
+\textbf{Why Adam Works So Well:}
+
+\begin{concept}{Adaptive Learning Rates}
+Different parameters need different learning rates. Adam adapts automatically.
+\end{concept}
+
+\textbf{Algorithm:}
+\begin{align}
+m_t &= \beta_1 m_{t-1} + (1-\beta_1) g_t \quad \text{(momentum)} \\
+v_t &= \beta_2 v_{t-1} + (1-\beta_2) g_t^2 \quad \text{(variance)} \\
+\hat{m}_t &= \frac{m_t}{1 - \beta_1^t} \quad \text{(bias correction)} \\
+\hat{v}_t &= \frac{v_t}{1 - \beta_2^t} \quad \text{(bias correction)} \\
+\theta_t &= \theta_{t-1} - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}
+\end{align}
+
+\textbf{Intuitive Explanation:}
+\begin{itemize}
+\item $m_t$: Exponential moving average of gradients (momentum)
+\item $v_t$: Exponential moving average of squared gradients (variance)
+\item Bias correction: Accounts for initialization at zero
+\item Final update: Normalized by standard deviation
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Learning Rate Scheduling for Transformers}
+\textbf{The Warmup Strategy:}
+
+\begin{concept}{Gradual Learning Rate Increase}
+Start with small learning rate, increase to maximum, then decay.
+\end{concept}
+
+\textbf{Mathematical Formula:}
+\begin{equation}
+\eta_t = d_{model}^{-0.5} \cdot \min(t^{-0.5}, t \cdot \text{warmup}^{-1.5})
+\end{equation}
+
+\textbf{Why Warmup Works:}
+\begin{itemize}
+\item Random initialization creates large gradients initially
+\item Large learning rates can destabilize training
+\item Warmup allows model to "settle" before aggressive learning
+\item After warmup, decrease learning rate for fine-tuning
+\end{itemize}
+
+\textbf{Practical Guidelines:}
+\begin{itemize}
+\item Warmup steps: Typically 4000-10000 steps
+\item Peak learning rate: Often 1e-4 to 5e-4
+\item Decay schedule: Linear, cosine, or exponential
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Regularization in Deep Learning}
+\textbf{Preventing Overfitting:}
+
+\begin{concept}{Generalization vs Memorization}
+Large models can memorize training data. Regularization encourages learning general patterns.
+\end{concept}
+
+\textbf{Dropout Variants:}
+\begin{equation}
+y = \frac{1}{1-p} x \odot m \text{ where } m \sim \text{Bernoulli}(1-p)
+\end{equation}
+
+\textbf{Dropout Types:}
+\begin{itemize}
+\item \textbf{Standard:} Random neuron dropout
+\item \textbf{Attention dropout:} Dropout in attention weights
+\item \textbf{DropConnect:} Dropout in weight connections
+\item \textbf{Scheduled dropout:} Decrease dropout rate during training
+\end{itemize}
+
+\textbf{Normalization Techniques:}
+\begin{itemize}
+\item \textbf{Batch norm:} Normalize across batch dimension
+\item \textbf{Layer norm:} Normalize across feature dimension
+\item \textbf{Group norm:} Normalize within feature groups
+\end{itemize}
+
+\textbf{Weight Regularization:} L2 penalty $\lambda \sum_i ||W_i||_2^2$
+\end{frame>
+
+\begin{frame}[t]{Multi-Task Learning for NLP}
+\textbf{Learning Multiple Objectives Simultaneously:}
+
+\begin{concept}{Shared Representations}
+Train single model on multiple related tasks to improve generalization.
+\end{concept>
+
+\textbf{Multi-Task Objective:}
+\begin{equation}
+\mathcal{L}_{total} = \sum_{i=1}^T w_i \mathcal{L}_i + \lambda \Omega(\theta)
+\end{equation>
+
+\textbf{Task Weighting Strategies:}
+
+\begin{enumerate}
+\item \textbf{Equal weighting:} $w_i = 1/T$
+\item \textbf{Uncertainty weighting:} $w_i = 1/(2\sigma_i^2)$
+\item \textbf{Dynamic weighting:} Adjust based on task difficulty
+\item \textbf{Gradient normalization:} Balance gradient magnitudes
+\end{enumerate>
+
+\textbf{Gradient Surgery:}
+When gradients conflict:
+\begin{equation}
+g_i' = g_i - \frac{g_i \cdot g_j}{||g_j||^2} g_j \text{ if } g_i \cdot g_j < 0
+\end{equation>
+
+\textbf{Applications:} Joint training on narrative extraction, sentiment analysis, and entity recognition.
+\end{frame>
+
+\begin{frame}[t]{Evaluation Frameworks for LLMs}
+\textbf{Comprehensive Assessment:}
+
+\begin{concept}{Multi-Dimensional Evaluation}
+LLM quality involves multiple aspects: fluency, coherence, factuality, safety.
+\end{concept>
+
+\textbf{Automatic Metrics:}
+
+\begin{enumerate}
+\item \textbf{BLEU:} N-gram overlap with references
+   \begin{equation}
+   BLEU = BP \cdot \exp\left(\sum_{n=1}^N w_n \log p_n\right)
+   \end{equation>
+
+\item \textbf{ROUGE:} Recall-oriented overlap
+   \begin{equation}
+   ROUGE-L = \frac{LCS(\text{ref}, \text{hyp})}{|\text{ref}|}
+   \end{equation>
+
+\item \textbf{BERTScore:} Semantic similarity via embeddings
+   \begin{equation}
+   F_{BERT} = \frac{2 P_{BERT} R_{BERT}}{P_{BERT} + R_{BERT}}
+   \end{equation}
+\end{enumerate}
+
+\textbf{Human Evaluation Dimensions:}
+\begin{itemize}
+\item Fluency, coherence, relevance, informativeness
+\item Factual accuracy, bias, safety
+\item Task-specific criteria (narrative quality)
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Part VII Summary: Optimization Mastery}
+\textbf{Training Large Language Models:}
+
+\begin{enumerate}
+\item \textbf{Loss Functions:} Beyond cross-entropy for specific challenges
+\item \textbf{Optimizers:} Adam and adaptive learning rate methods
+\item \textbf{Learning Schedules:} Warmup strategies for stable training
+\item \textbf{Regularization:} Preventing overfitting in large models
+\item \textbf{Multi-task Learning:} Joint optimization across objectives
+\item \textbf{Evaluation:} Comprehensive assessment frameworks
+\end{enumerate>
+
+\textbf{Practical Skills:}
+\begin{itemize}
+\item Design training pipelines for large models
+\item Debug optimization problems
+\item Balance multiple objectives effectively
+\item Evaluate model quality comprehensively
+\end{itemize>
+
+\textbf{Ready for:} Putting it all together in real-world narrative extraction systems.
+\end{frame>
+
+\begin{frame}[t]{Advanced Topics: Cutting-Edge Research}
+\textbf{Current Research Frontiers:}
+
+\begin{concept}{Beyond Current Methods}
+Active research areas pushing boundaries of narrative understanding.
+\end{concept>
+
+\textbf{Emerging Directions:}
+\begin{enumerate}
+\item \textbf{Multimodal Narratives:} Text + images + video integration
+\item \textbf{Causal Discovery:} Automatic causal graph construction from text
+\item \textbf{Counterfactual Generation:} "What if" scenario modeling
+\item \textbf{Narrative Bias Detection:} Identifying and correcting biases
+\item \textbf{Real-time Adaptation:} Models that update with streaming data
+\item \textbf{Cross-lingual Narratives:} Narratives across language barriers
+\item \textbf{Explainable AI:} Interpretable narrative generation
+\end{enumerate>
+
+\textbf{Mathematical Challenges:}
+\begin{itemize}
+\item Scalable inference for complex models
+\item Causal identification in observational text data
+\item Uncertainty quantification for generated content
+\item Robustness to adversarial inputs
+\end{itemize}
+\end{frame>
+
+\begin{frame}[t]{Practical Implementation Checklist}
+\textbf{Building Production Narrative Systems:}
+
+\begin{concept}{End-to-End Pipeline}
+Complete system from raw headlines to actionable narratives.
+\end{concept>
+
+\textbf{System Components:}
+\begin{enumerate}
+\item \textbf{Data Ingestion:} RSS feeds, APIs, web scraping
+\item \textbf{Preprocessing:} Cleaning, tokenization, filtering
+\item \textbf{Embedding Generation:} BERT/Sentence-BERT encoding
+\item \textbf{Topic Discovery:} BERTopic or neural topic models
+\item \textbf{Clustering:} Spectral clustering on embeddings
+\item \textbf{Summarization:} Extractive/abstractive summary generation
+\item \textbf{Entity Linking:} Knowledge graph integration
+\item \textbf{Temporal Ordering:} Event timeline construction
+\item \textbf{Quality Assessment:} Coherence and consistency checking
+\item \textbf{Output Generation:} Narrative synthesis and presentation
+\end{enumerate>
+
+\textbf{Performance Considerations:} Latency, throughput, memory usage, accuracy.
+\end{frame>
+
+\begin{frame}[t]{Case Study: Financial Narrative Extraction}
+\textbf{Real-World Application:}
+
+\begin{concept}{Complete Pipeline Example}
+Apply all learned techniques to extract narratives from financial news.
+\end{concept>
+
+\textbf{Scenario:} Process 10,000 financial headlines from past month.
+
+\textbf{Implementation Steps:}
+\begin{enumerate}
+\item \textbf{Data Collection:} Gather from Reuters, Bloomberg, WSJ
+\item \textbf{Preprocessing:} Remove duplicates, filter by relevance
+\item \textbf{Embedding:} Generate BERT embeddings for each headline
+\item \textbf{Topic Discovery:} Apply BERTopic to identify themes
+\item \textbf{Clustering:} Group related headlines using spectral clustering
+\item \textbf{Entity Extraction:} Identify companies, people, locations
+\item \textbf{Temporal Analysis:} Order events chronologically
+\item \textbf{Narrative Generation:} Synthesize coherent story threads
+\item \textbf{Validation:} Check against ground truth narratives
+\item \textbf{Deployment:} Real-time monitoring and updates
+\end{enumerate>
+
+\textbf{Expected Outcomes:} Automated narrative tracking, early trend detection, market intelligence.
+\end{frame>
+
+\begin{frame}[t]{Final Assessment and Capstone Project}
+\textbf{Demonstrating Mastery:}
+
+\textbf{Capstone Project Requirements:}
+Design and implement complete narrative extraction system for financial news.
+
+\textbf{Technical Components:}
+\begin{enumerate}
+\item Implement 3+ embedding methods with comparison
+\item Build 2+ topic modeling approaches
+\item Create end-to-end aggregation pipeline
+\item Apply transformer-based models effectively
+\item Generate and evaluate narrative quality
+\item Handle real-time data streams
+\item Address scalability and performance
+\end{enumerate}
+
+\textbf{Evaluation Criteria:}
+\begin{itemize}
+\item \textbf{Technical correctness (40\%):} Algorithm implementation
+\item \textbf{Analysis (30\%):} Experimental design and interpretation
+\item \textbf{Innovation (20\%):} Novel applications or improvements
+\item \textbf{Presentation (10\%):} Clear communication
+\end{itemize>
+
+\textbf{Deliverables:} Code repository, technical report, presentation, demo.
+\end{frame>
+
+\section{Course Summary and Future Directions}
+
+\begin{frame}[t]{Course Conclusion}
+\textbf{Journey Completed:}
+
+We've traveled from basic word representations to sophisticated narrative generation systems, covering:
+
+\begin{itemize}
+\item Mathematical foundations of text representation
+\item Probabilistic and neural topic modeling
+\item Multi-document information aggregation
+\item Transformer architecture and attention mechanisms
+\item Large-scale language model training and generation
+\item Advanced NLP techniques for narrative understanding
+\item Optimization methods for training deep networks
+\end{itemize}
+
+\textbf{Key Achievement:} You now understand the complete mathematical pipeline from raw headlines to extracted narratives using state-of-the-art LLM methods.
+
+\textbf{Applications:} Financial narrative analysis, social media monitoring, news summarization, content recommendation, and much more.
+\end{frame>
+
+\begin{frame}[t]{Course Learning Outcomes Achieved}
+\textbf{Mastery Checklist - Can You:}
+
+\begin{enumerate}
+\item \textbf{Explain} the mathematical foundations of text embeddings?
+\item \textbf{Implement} Word2Vec, GloVe, and FastText from scratch?
+\item \textbf{Derive} the LDA generative process and inference equations?
+\item \textbf{Compare} classical and neural topic modeling approaches?
+\item \textbf{Design} multi-document aggregation pipelines?
+\item \textbf{Understand} transformer attention mechanisms deeply?
+\item \textbf{Build} efficient attention variants for long sequences?
+\item \textbf{Generate} high-quality text using LLMs?
+\item \textbf{Apply} advanced NLP techniques to real problems?
+\item \textbf{Optimize} large-scale neural language models?
+\end{enumerate>
+
+\textbf{If yes to all:} You have mastered LLM-based narrative extraction!
+
+\textbf{If no:} Review relevant sections and practice exercises.
+\end{frame>
+
+\begin{frame}[t]{Next Steps and Advanced Study}
+\textbf{Continuing Your Learning:}
+
+\textbf{Recommended Courses:}
+\begin{itemize}
+\item Advanced Deep Learning for NLP
+\item Computational Linguistics and Formal Semantics
+\item Machine Learning for Finance
+\item Information Retrieval and Search
+\item Multimodal Machine Learning
+\end{itemize>
+
+\textbf{Research Opportunities:}
+\begin{itemize}
+\item Financial narrative analysis research
+\item NLP tool development for finance
+\item Academic research in computational narrative
+\item Industry applications in fintech
+\end{itemize>
+
+\textbf{Career Paths:}
+\begin{itemize}
+\item Data scientist in financial services
+\item NLP engineer in tech companies
+\item Research scientist positions
+\item AI/ML consultant for finance
+\end{itemize>
+
+\textbf{Stay Current:} Follow NLP conferences, research papers, industry developments.
+\end{frame>
+
+\begin{frame}[t]{Resources and Further Reading}
+\textbf{Essential References:}
+
+\textbf{Foundational Papers:}
+\begin{itemize}
+\item Mikolov et al. (2013): Word2Vec
+\item Pennington et al. (2014): GloVe
+\item Vaswani et al. (2017): Attention Is All You Need
+\item Devlin et al. (2018): BERT
+\item Blei et al. (2003): Latent Dirichlet Allocation
+\end{itemize}
+
+\textbf{Textbooks:}
+\begin{itemize}
+\item Jurafsky \& Martin: "Speech and Language Processing"
+\item Goodfellow et al.: "Deep Learning"
+\item Bishop: "Pattern Recognition and Machine Learning"
+\end{itemize>
+
+\textbf{Implementation Resources:}
+\begin{itemize}
+\item Hugging Face Transformers library
+\item PyTorch tutorials and documentation
+\item Course GitHub repository with examples
+\end{itemize}
+
+\textbf{Practice Datasets:} Reuters, Financial news APIs, academic benchmarks.
+\end{frame>
+
+\begin{frame}[t]{Thank You}
+\centering
+\Large Questions and Discussion\\
+\vspace{20pt}
+\normalsize
+\textbf{Contact:}\\
+Prof. Dr. Joerg Osterrieder\\
+\vspace{10pt}
+\textbf{Course Materials:}\\
+Slides, code, and exercises available\\
+\vspace{10pt}
+\textbf{Further Reading:}\\
+Comprehensive bibliography and resources provided
+\end{frame}
+
+\end{document}

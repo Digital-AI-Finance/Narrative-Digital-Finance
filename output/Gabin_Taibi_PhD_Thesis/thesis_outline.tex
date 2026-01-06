@@ -1,0 +1,128 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.1}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\itshape}{\thesubsubsection}{0.5em}{}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{PhD Thesis Outline}}\\[4pt]
+    {\normalsize \textit{Modeling Narrative Dynamics for Volatility Regime Detection in Financial Markets}}\\[6pt]
+\end{center}
+
+\section*{Introduction: NLP and Textual Analysis for Narrative Modeling in Financial Markets}
+\noindent
+This chapter introduces the theoretical and methodological foundations of the thesis.  
+It motivates the integration of natural language processing (NLP) with financial econometrics to quantify the influence of narratives on market dynamics.  
+It defines key research objectives, outlines the data architecture (textual and high-frequency market data), and presents the conceptual link between narrative formation, information diffusion, and volatility regimes.
+
+\section{Systematic Literature Review of Narratives for Financial Market Modeling}
+\noindent
+\textbf{Purpose:} Establish a clear conceptual and methodological baseline for the study of financial narratives.\\[2pt]
+\textbf{Content:}
+\begin{itemize}
+    \item Define narratives in the context of finance and economics, distinguishing them from sentiment or topic modeling.
+    \item Conduct an AI-enhanced systematic literature review (SLR) mapping how narrative concepts have evolved in financial research.
+    \item Identify limitations of current studies and highlight the need for dynamic, quantitative narrative modeling.
+\end{itemize}
+\textbf{Note:} This chapter corresponds to the published or under-revision paper in \textit{Financial Innovation}.
+
+\section{Key Financial Market Narratives}
+\noindent
+This chapter develops methods to detect and quantify key narratives across multiple text sources, combining supervised and unsupervised NLP approaches. Specifically, I apply 3 approaches to detect and track general market narratives over time: supervised embedding similarity-based, semi-supervised LLM-based, graph-based unsupervised online topic modeling.
+
+\subsection{Market-Wide Narratives (News Headlines)}
+\noindent
+Using large-scale raw news headline datasets (RavenPack or LSEG or WallStreetJournal?). Compare to equity and indices prices and macro data.
+
+\subsection{Macro Narratives (Central Bank Speeches)}
+\noindent
+Focuses on macroeconomic and policy-related narratives extracted from BIS and central bank speech transcripts.
+
+- See 
+
+Two possibilities for embedding-based narrative extraction:
+- RAG-like embedding: split raw text in subtexts = 1-5 overlapping sentences OR paragraphs so we have a per-text narrative distribution
+- Ask an LLM to summarise the speechs in one 5-10 sentences paragraphs with key information (state of the economy, forecasts, numbers, etc.) and embed each sentences OR the full summary
+
+For LLM narrative extraction: give full text to the LLM with a custom secured prompt.
+
+Compares macro narratives identified from dedicated policy texts with macroeconomic data (Interest Rates, CPI, PPI, unemployment, etc.) and narratives inferred from market headlines.
+
+\subsection{Micro Narratives (Corporate Filings and Earnings Calls)}
+\noindent
+Analyzes company-specific narratives derived from SEC 10-K/10-Q filings and earnings call transcripts. Same embedding/LLM narrative extraction as previous section. Define company specific narratives in addition to broad narratives?
+Assesses how firm-level narratives on risk, growth, or innovation connect to broader market sentiment: across 10K/10Q filings similarity = filings volatility, compare to news headlines for risk section management, and broad news narratives.
+
+\subsection{Do Narratives Drive Markets?}
+\noindent
+Replicates and extends the Sadka et al. (2023) framework to evaluate whether macro and micro narratives explain market returns and volatility.  
+Compares rolling \(R^2\) from headline-based versus source-specific narratives.  
+\\[2pt]
+\textbf{Expected outputs:} Two papers – (1) Quoniam collaboration paper on narrative detection; (2) Extension including macro/micro narrative comparison.
+
+\noindent
+Compare macro narrative predictive power vs. macro data.
+
+\section{Market Microstructure and Volatility Modeling}
+\noindent
+This chapter builds the volatility modeling backbone from high-frequency trading data (Eurex \& Xetra).  
+It benchmarks realized, implied, and rough volatility estimators and examines their relation to market microstructure.
+
+\subsection{Market Participants and Microstructure}
+\noindent
+Analyzes Deutsche Börse nanosecond data to classify market participants (UFT, HFT, conventional) based on reaction time thresholds.  
+Evaluates how their activity affects market quality metrics.
+
+\subsection{Realized Volatility and Jump Estimation}
+\noindent
+Compares realized variance, realized kernel, MinRV, and MedRV estimators.  
+Implements jump detection tests (BNS, ASJ) and consolidates results into a Python library (\texttt{realized-library}).
+
+\subsection{Implied Volatility from Option Data}
+\noindent
+Estimates implied volatility and reconstructs volatility surfaces from tick-level option data.  
+Serves as the bridge between market expectation and realized volatility.
+
+\subsection{Volatility Second-Order Properties}
+\noindent
+Computes rolling Hurst exponent and volatility-of-volatility measures from both realized and implied volatilities.  
+\\[2pt]
+\textbf{Expected outputs:} Two papers – (1) HFT impact on market quality (submitted); (2) Volatility estimation benchmark (preprint).
+
+\section{Narrative-Driven Volatility Structural Breaks}
+\noindent
+This chapter integrates textual and volatility features to detect, explain, and forecast volatility regime transitions.
+
+\subsection{Volatility Structural Breaks}
+\noindent
+Applies structural break detection (Bai–Perron, CUSUM, Bayesian, Kernel) to realized, implied, and rough volatility measures.  
+Analyzes narrative intensity patterns around breakpoints.
+
+\subsection{Do Narratives Drive Volatility Dynamics?}
+\noindent
+Extends the Sadka framework to volatility metrics—examining whether narrative shifts precede changes in volatility, roughness, or vol-of-vol.
+
+\subsection{Narrative Causality}
+\noindent
+Uses causal econometrics (Granger, Toda–Yamamoto, transfer entropy) and machine learning approaches (Double ML, Causal Forests) to identify which narratives causally drive volatility components.
+
+\subsection{Volatility Forecasting}
+\noindent
+Develops narrative-enhanced forecasting models (HAR-RV, XGBoost, LSTM, Temporal Fusion Transformers).  
+Tests out-of-sample predictive power and explores volatility factor construction.  
+\\[2pt]
+\textbf{Expected outputs:} Two papers – (1) “Do Narratives Drive Volatility Dynamics?” (preprint) and (2) “Narratives as Causal Drivers of Volatility Regimes” (target: \textit{JFQA}).
+
+\section*{Conclusion: Synthesizing Insights on Narratives and Volatility}
+\noindent
+Summarizes the thesis contributions linking narrative detection, volatility structure, and regime dynamics.  
+Emphasizes the interdisciplinary integration of NLP, econometrics, and high-frequency finance.  
+Outlines implications for volatility modeling, risk management, and future research on cross-asset narrative contagion.
+
+\end{document}

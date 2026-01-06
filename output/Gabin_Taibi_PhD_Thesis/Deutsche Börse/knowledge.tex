@@ -1,0 +1,43 @@
+Target Journal: Physica A
+
+Links:
+https://app.litmaps.com/map/830688f0-b8e7-446d-8567-4cb88263c02c
+https://app.litmaps.com/map/1d3673ba-4d35-4544-97ed-908659e4da8e
+https://www.linkedin.com/today/author/stefanschlamp?trk=article-ssr-frontend-pulse_more-articles
+https://www.linkedin.com/pulse/like-sitting-ducks-stefan-schlamp-bkome?trk=portfolio_article-card_title
+
+
+Topics:
+1. HFT  technology behind that. colocation. all DB clients are colocated.
+2. Impact \% of orders done by HFT and by FPGA (defined as subset of HFT)
+
+Definition of FPGA tradres: reaction time between t9a and t3a is less than 1micro ... new order is less than 1 microsecond. We need to define. If order is same side as microprice, it is not noise, it is a signal
+
+Definition of HFT traders: 1 micro to 10 micro reaction time
+
+3. Impact of orders on the price formation. 
+
+
+Definition of HFT:
+Definition of FPGA: use particular hardware to access markets .. consequence of that is that the access to the market (cancelling, sending orders, ) reaction time up to 1 microseconds from receiving an order book update / information from the stock 
+between t 9a and t3a there is less than 1 microseconds.
+
+t9d timestamps given by DB system.
+
+t9a and t9d is a fixed cable lengths, so always a fixed time... to be found. 990 nanoseconds. .
+Messages we call event. (reaction events)
+t3a timestamps given by DB system
+T3a nanosec timestamps, first entry point of an event from an external market participant to the DB system.
+T1 collected by participant. event starts being sent to DB system
+t9d new state of the order book
+
+
+
+Quote Spoofing
+Spoofing is a deceptive trading practice where a trader places large orders to buy or sell financial instruments with the intent to cancel them before execution. The goal is to create a misleading impression of market demand or supply, thereby manipulating prices to the trader’s advantage. Spoofing is illegal in many jurisdictions, including the United States, under the Dodd-Frank Act.
+
+Quote Stuffing
+Quote stuffing involves quickly entering and then withdrawing large numbers of orders to flood the market with quotes. This tactic is used by high-frequency traders to slow down competitors’ trading systems, gaining a pricing edge by causing delays in processing these orders. This practice can create confusion and trading opportunities for those who can react faster.
+
+Quote Sniffing
+Sniffing (or quote sniffing) is a tactic where traders use algorithms to detect large orders from other traders before they are fully executed. By identifying these large orders, sniffers can anticipate market movements and place their own trades to profit from the expected price changes. This practice is often associated with high-frequency trading and can be seen as a form of front-running.

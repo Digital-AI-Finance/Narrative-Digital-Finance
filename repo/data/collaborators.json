@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-01-04T07:08:49.227213",
+  "generator": "PhD Research Pages Generator",
+  "version": "1.0.0",
+  "source_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance-Gabin-Research",
+  "target_repo": "D:\\Joerg\\Research\\slides\\Narrative-Digital-Finance\\repo",
+  "collaborators": [
+    {
+      "name": "Gabin Taibi",
+      "role": "PhD Researcher",
+      "affiliations": [
+        "Bern University of Applied Sciences",
+        "University of Twente"
+      ],
+      "email": "gabin.taibi@bfh.ch",
+      "orcid": "0000-0002-0785-6771"
+    },
+    {
+      "name": "Joerg Osterrieder",
+      "role": "Principal Investigator",
+      "affiliations": [
+        "Bern University of Applied Sciences",
+        "University of Twente"
+      ],
+      "email": "joerg.osterrieder@bfh.ch",
+      "orcid": "0000-0003-0189-8636"
+    },
+    {
+      "name": "Stefan Schlamp",
+      "role": "Industry Collaborator",
+      "affiliations": [
+        "Deutsche Borse"
+      ],
+      "email": "stefan.schlamp@deutsche-boerse.com",
+      "orcid": null
+    },
+    {
+      "name": "Axel Gross-Klussmann",
+      "role": "Industry Collaborator",
+      "affiliations": [
+        "Quoniam Asset Management"
+      ],
+      "email": null,
+      "orcid": null
+    },
+    {
+      "name": "Lucia Gomez Teijeiro",
+      "role": "Researcher",
+      "affiliations": [
+        "University of Twente"
+      ],
+      "email": null,
+      "orcid": null
+    }
+  ],
+  "count": 5,
+  "institutions": [
+    "University of Twente",
+    "Quoniam Asset Management",
+    "Bern University of Applied Sciences",
+    "Deutsche Borse"
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "review_metadata": {
+    "review_date": "2025-12-22",
+    "reviewer": "Claude Code",
+    "pages_reviewed": [
+      "index.html",
+      "objectives.html",
+      "report.html"
+    ],
+    "total_issues": 23,
+    "summary": {
+      "critical": 3,
+      "high": 4,
+      "medium": 5,
+      "low": 3,
+      "content_inconsistencies": 4,
+      "accessibility": 3,
+      "seo_missing": 7
+    }
+  },
+  "issues": {
+    "critical": [
+      {
+        "id": "C1",
+        "page": "objectives.html",
+        "category": "analytics",
+        "issue": "Missing analytics tracking script",
+        "description": "The objectives.html page does not have the analytics tracking script that exists in index.html",
+        "fix": "Add the same analytics script block from index.html lines 559-564",
+        "priority": 1
+      },
+      {
+        "id": "C2",
+        "page": "report.html",
+        "category": "analytics",
+        "issue": "Missing analytics tracking script",
+        "description": "The report.html page does not have the analytics tracking script that exists in index.html",
+        "fix": "Add the same analytics script block from index.html lines 559-564",
+        "priority": 1
+      },
+      {
+        "id": "C3",
+        "page": "all",
+        "category": "seo",
+        "issue": "No meta description tags",
+        "description": "All pages are missing meta description tags which affects SEO and search result snippets",
+        "fix": "Add <meta name=\"description\" content=\"...\"> to all pages",
+        "priority": 1
+      }
+    ],
+    "high": [
+      {
+        "id": "H1",
+        "page": "objectives.html",
+        "category": "content",
+        "issue": "Grant number format inconsistency",
+        "description": "objectives.html uses '213370' while index.html and report.html use 'IZCOZ0_213370'",
+        "current_value": "SNSF Grant 213370",
+        "correct_value": "SNSF Grant IZCOZ0_213370",
+        "fix": "Update line 71 in objectives.html to use full grant number",
+        "priority": 2
+      },
+      {
+        "id": "H2",
+        "page": "objectives.html",
+        "category": "navigation",
+        "issue": "Navbar missing link to report.html",
+        "description": "The navbar in objectives.html links to Home, Publications, Team, GitHub but not to Final Report",
+        "fix": "Add <a href=\"report.html\">Final Report</a> to navbar-nav div",
+        "priority": 2
+      },
+      {
+        "id": "H3",
+        "page": "report.html",
+        "category": "content",
+        "issue": "Footer format differs from other pages",
+        "description": "report.html footer uses 'Prof. Dr. Joerg Osterrieder | Bern Business School / University of Twente | 2025' while index.html uses '(c) Joerg Osterrieder 2025'",
+        "fix": "Standardize footer format across all pages",
+        "priority": 2
+      },
+      {
+        "id": "H4",
+        "page": "index.html vs report.html",
+        "category": "content",
+        "issue": "Project date format inconsistency",
+        "description": "index.html shows '2023-2025' while report.html shows 'July 2023 - December 2025'. Actual start is August 2023.",
+        "current_values": {
+          "index.html": "2023-2025",
+          "report.html": "July 2023 - December 2025"
+        },
+        "correct_value": "August 2023 - December 2025",
+        "fix": "Update both pages to use consistent date format",
+        "priority": 2
+      }
+    ],
+    "medium": [
+      {
+        "id": "M1",
+        "page": "all",
+        "category": "seo",
+        "issue": "No Open Graph meta tags",
+        "description": "Missing og:title, og:description, og:image for social media sharing",
+        "fix": "Add Open Graph meta tags to <head> of all pages",
+        "priority": 3
+      },
+      {
+        "id": "M2",
+        "page": "all",
+        "category": "seo",
+        "issue": "No canonical URL tags",
+        "description": "Missing canonical URLs which can affect SEO",
+        "fix": "Add <link rel=\"canonical\" href=\"https://digital-ai-finance.github.io/Narrative-Digital-Finance/...\">",
+        "priority": 3
+      },
+      {
+        "id": "M3",
+        "page": "index.html",
+        "category": "content",
+        "issue": "Marius Klein team card incomplete",
+        "description": "Marius Klein is the only team member without metrics/links, looks incomplete compared to others",
+        "fix": "Add 'New Member' badge or brief note explaining limited data",
+        "priority": 3
+      },
+      {
+        "id": "M4",
+        "page": "objectives.html",
+        "category": "content",
+        "issue": "Missing copyright footer div",
+        "description": "objectives.html has footer inside main content, index.html has separate copyright-footer div",
+        "fix": "Add matching copyright-footer div for consistency",
+        "priority": 3
+      },
+      {
+        "id": "M5",
+        "page": "objectives.html",
+        "category": "navigation",
+        "issue": "Footer missing link to report.html",
+        "description": "Footer links to SNSF Data Portal and main page but not to Final Report",
+        "fix": "Add link to report.html in footer",
+        "priority": 3
+      }
+    ],
+    "low": [
+      {
+        "id": "L1",
+        "page": "index.html",
+        "category": "privacy",
+        "issue": "Analytics uses external domain",
+        "description": "Analytics tracking goes to analytics-narrative-digital-finance.digital-ai-finance.workers.dev",
+        "fix": "Document this in privacy policy or consider first-party hosting",
+        "priority": 4
+      },
+      {
+        "id": "L2",
+        "page": "all",
+        "category": "privacy",
+        "issue": "Google Fonts loaded externally",
+        "description": "Inter font loaded from fonts.googleapis.com which may have privacy implications",
+        "fix": "Consider self-hosting fonts for GDPR compliance",
+        "priority": 4
+      },
+      {
+        "id": "L3",
+        "page": "index.html",
+        "category": "performance",
+        "issue": "Chart.js loaded from CDN",
+        "description": "Chart.js loaded from cdn.jsdelivr.net, won't work offline",
+        "fix": "Consider local copy for offline functionality",
+        "priority": 4
+      }
+    ]
+  },
+  "content_inconsistencies": [
+    {
+      "id": "D1",
+      "field": "grant_number_format",
+      "values": {
+        "index.html": "IZCOZ0_213370",
+        "objectives.html": "213370",
+        "report.html": "IZCOZ0_213370"
+      },
+      "correct_value": "IZCOZ0_213370"
+    },
+    {
+      "id": "D2",
+      "field": "project_dates",
+      "values": {
+        "index.html": "2023-2025",
+        "objectives.html": "not specified",
+        "report.html": "July 2023 - December 2025"
+      },
+      "correct_value": "August 2023 - December 2025"
+    },
+    {
+      "id": "D3",
+      "field": "funding_amount",
+      "values": {
+        "index.html_hero": "CHF 236K",
+        "index.html_funding": "CHF 236,118",
+        "report.html": "CHF 236K"
+      },
+      "correct_value": "CHF 236,118"
+    },
+    {
+      "id": "D4",
+      "field": "copyright_format",
+      "values": {
+        "index.html": "(c) Joerg Osterrieder 2025",
+        "objectives.html": "(c) Prof. Dr. Joerg Osterrieder 2025",
+        "report.html": "Prof. Dr. Joerg Osterrieder | Bern Business School / University of Twente | 2025"
+      },
+      "correct_value": "(c) Prof. Dr. Joerg Osterrieder 2025"
+    }
+  ],
+  "navigation_status": {
+    "cross_links": [
+      {"from": "index.html sidebar", "to": "objectives.html", "status": "OK"},
+      {"from": "index.html sidebar", "to": "report.html", "status": "OK"},
+      {"from": "objectives.html navbar", "to": "index.html", "status": "OK"},
+      {"from": "objectives.html navbar", "to": "report.html", "status": "MISSING"},
+      {"from": "objectives.html footer", "to": "index.html", "status": "OK"},
+      {"from": "objectives.html footer", "to": "report.html", "status": "MISSING"},
+      {"from": "report.html navbar", "to": "index.html", "status": "OK"},
+      {"from": "report.html navbar", "to": "objectives.html", "status": "OK"},
+      {"from": "report.html footer", "to": "index.html", "status": "OK"},
+      {"from": "report.html footer", "to": "objectives.html", "status": "OK"}
+    ],
+    "missing_count": 2
+  },
+  "seo_analysis": {
+    "meta_tags": {
+      "title": {"index.html": true, "objectives.html": true, "report.html": true},
+      "description": {"index.html": false, "objectives.html": false, "report.html": false},
+      "og_title": {"index.html": false, "objectives.html": false, "report.html": false},
+      "og_description": {"index.html": false, "objectives.html": false, "report.html": false},
+      "og_image": {"index.html": false, "objectives.html": false, "report.html": false},
+      "canonical": {"index.html": false, "objectives.html": false, "report.html": false},
+      "robots": {"index.html": false, "objectives.html": false, "report.html": false}
+    },
+    "missing_tags_count": 7
+  },
+  "accessibility_issues": [
+    {
+      "id": "A1",
+      "category": "images",
+      "issue": "Some shield.io badge images may be missing alt text",
+      "severity": "medium",
+      "fix": "Verify all img tags have descriptive alt attributes"
+    },
+    {
+      "id": "A2",
+      "category": "navigation",
+      "issue": "No skip-to-content link for keyboard users",
+      "severity": "low",
+      "fix": "Add hidden skip link at top of body"
+    },
+    {
+      "id": "A3",
+      "category": "color",
+      "issue": "Some text elements may have low color contrast",
+      "severity": "medium",
+      "fix": "Verify WCAG 2.1 AA compliance for all text/background combinations"
+    }
+  ],
+  "recommendations": {
+    "immediate_fixes": [
+      "Add analytics tracking to objectives.html and report.html",
+      "Add meta descriptions to all pages",
+      "Fix grant number in objectives.html (213370 -> IZCOZ0_213370)",
+      "Add Final Report link to objectives.html navbar"
+    ],
+    "short_term": [
+      "Standardize date format across pages",
+      "Standardize footer format across pages",
+      "Add Open Graph meta tags for social sharing",
+      "Add canonical URLs"
+    ],
+    "long_term": [
+      "Consider self-hosting Google Fonts for GDPR",
+      "Add skip-to-content link for accessibility",
+      "Document analytics tracking in privacy notice"
+    ]
+  }
+}

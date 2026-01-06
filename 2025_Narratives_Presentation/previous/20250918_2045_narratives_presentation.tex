@@ -1,0 +1,394 @@
+\documentclass[8pt]{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Color definitions matching template
+\definecolor{mlblue}{RGB}{31, 119, 180}
+\definecolor{mlorange}{RGB}{255, 127, 14}
+\definecolor{mlgreen}{RGB}{44, 160, 44}
+\definecolor{mlred}{RGB}{214, 39, 40}
+\definecolor{mlpurple}{RGB}{148, 103, 189}
+\definecolor{mlgray}{RGB}{127, 127, 127}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Clean itemize/enumerate
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+
+% Reduce margins for more content space
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+
+% Title information
+\title{Quantifying Narratives and Their Impact on Financial Markets}
+\subtitle{Advanced NLP Methods for Systematic Trading Strategies}
+\author{Prof. Dr. Joerg Osterrieder}
+\institute{Based on: Bhargava et al. (2022) - State Street Associates}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\begin{frame}[t]
+\titlepage
+\end{frame}
+
+% Table of contents
+\begin{frame}[t]{Presentation Overview}
+\tableofcontents
+\vfill
+\footnotesize
+\textbf{Research Approach:} Systematic quantification of market narratives using NLP on 150,000+ digital sources. Rolling regression analysis establishes predictive relationships. Portfolio construction via narrative beta methodology. Out-of-sample validation demonstrates economic significance with IR = 1.26.
+\end{frame}
+
+% Section 1: Introduction and Motivation
+\section{Introduction and Narrative Economics}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Introduction and Narrative Economics\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{The Narrative Economics Framework}
+\begin{columns}[T]
+\begin{column}{0.38\textwidth}
+\textbf{Shiller's Hypothesis:}
+\begin{itemize}
+\item Stories drive markets
+\item Contagion effects
+\item Measurable impact
+\item Predictive power
+\end{itemize}
+\vspace{10pt}
+\textbf{Our Contribution:}\\
+Systematic quantification of narrative intensity
+\end{column}
+\begin{column}{0.58\textwidth}
+\includegraphics[width=\textwidth]{narrative_intensity_vix.pdf}
+\end{column}
+\end{columns}
+\vfill
+\footnotesize
+\textbf{Key Finding:} Market Crash narrative explains 34\% of SPY return variation. Correlation with VIX = 0.62, suggesting narratives capture additional information beyond traditional volatility measures. Real-time tracking enables dynamic portfolio allocation.
+\end{frame}
+
+% Section 2: Data and Methodology
+\section{Data Architecture and NLP Pipeline}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Data Architecture and NLP Pipeline\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Data Processing Infrastructure}
+\centering
+\includegraphics[width=0.95\textwidth]{data_pipeline.pdf}
+\vspace{5pt}
+\small Key insight: Real-time narrative quantification from 150,000+ sources
+\vfill
+\footnotesize
+\textbf{NLP Methods:} Transformer-based models for narrative identification. Sentiment scoring with reservoir adjustment for time-decay. Entity recognition links narratives to specific assets. Multilingual processing covers 15 languages. Cloud-based infrastructure processes 1M articles/day.
+\end{frame}
+
+\begin{frame}[t]{Narrative Intensity Measures}
+\begin{columns}[T]
+\begin{column}{0.25\textwidth}
+\textbf{73 Narratives:}
+\begin{itemize}
+\item Market Crash
+\item Gov Debt
+\item COVID-19
+\item Trade War
+\item Inflation
+\end{itemize}
+\vspace{10pt}
+\textbf{Key Metrics:}
+\begin{itemize}
+\item Intensity $I_{n,t}$
+\item Negative $NI_{n,t}$
+\item 7-day average
+\end{itemize}
+\end{column}
+\begin{column}{0.75\textwidth}
+\includegraphics[width=\textwidth]{r_squared_heatmap.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+% Section 3: Mathematical Framework
+\section{Mathematical Framework and Models}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Mathematical Framework and Models\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Core Regression Models}
+\centering
+\includegraphics[width=0.9\textwidth]{rolling_coefficients.pdf}
+\begin{columns}[T]
+\begin{column}{0.3\textwidth}
+\small\textcolor{mlblue}{Blue: Coefficient}
+\end{column}
+\begin{column}{0.3\textwidth}
+\small\textcolor{mlorange}{Orange: t-statistic}
+\end{column}
+\begin{column}{0.3\textwidth}
+\small\textcolor{mlgreen}{Green: Significance}
+\end{column}
+\end{columns}
+\vfill
+\footnotesize
+\textbf{Regression Specification:} $R_{t+1} = \alpha + \beta_1 \Delta NI_{n,t} + \beta_2 VIX_t + \beta_3 R_t + \epsilon_t$. HAC standard errors with Newey-West adjustment. 3-month rolling windows for parameter stability. Standardization via 60-day z-scores ensures comparability across narratives.
+\end{frame}
+
+% New slide with formula at bottom
+\begin{frame}[t]{Portfolio Optimization with Narrative Constraints}
+\textbf{Mean-Variance Framework with Narrative Exposure}
+
+The optimal portfolio incorporates narrative sensitivities as additional constraints:
+
+\begin{itemize}
+\item Maximize risk-adjusted returns
+\item Control narrative beta exposure
+\item Dynamic rebalancing based on z-scores
+\end{itemize}
+
+\vfill
+\begin{equation}
+\max_w \left\{ w^T \mu - \frac{\lambda}{2} w^T \Sigma w + \gamma \sum_{j} \alpha_j E_j(w) \right\}
+\end{equation}
+\small
+where $E_j(w) = \sum_i w_i \beta_{i,j}^{narrative}$ represents portfolio exposure to narrative $j$
+\end{frame}
+
+% Section 4: Empirical Results
+\section{Core Empirical Results}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Core Empirical Results\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Dynamic Asset Allocation Performance}
+\includegraphics[width=\textwidth]{allocation_performance.pdf}
+\vspace{5pt}
+\centering
+\small Narrative-based strategy achieves Information Ratio = 1.26
+\vfill
+\footnotesize
+\textbf{Strategy Rules:} Monitor Market Crash narrative z-score in real-time. Rotate from equity to bonds when z > 3 (extreme narrative intensity). Hold defensive position for 2 weeks minimum. Implementation lag: 2 days for execution. Annual return: 18.13\% vs 11.2\% benchmark.
+\end{frame}
+
+\begin{frame}[t]{3D Narrative Surface Analysis}
+\centering
+\includegraphics[width=0.85\textwidth]{3d_surface_plot.pdf}
+\vfill
+\footnotesize
+\textbf{Surface Interpretation:} Expected returns decline with both narrative intensity and market volatility. Non-linear interaction effects visible at extreme values. Optimal allocation zone: low narrative intensity, moderate volatility. Model explains 42\% of return variation in 3D space.
+\end{frame}
+
+% New slide with technical text at bottom
+\begin{frame}[t]{COVID-19 Case Study}
+\textbf{Narrative Beta Portfolio Construction}
+
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\textbf{Methodology:}
+\begin{itemize}
+\item Extract COVID narrative beta
+\item Sort S\&P 500 constituents
+\item Long/short quintiles
+\item Monthly rebalancing
+\end{itemize}
+\end{column}
+\begin{column}{0.45\textwidth}
+\textbf{Performance:}
+\begin{itemize}
+\item Return: +120.74\%
+\item Nov 2020 - Dec 2021
+\item Vaccine pivot captured
+\item Beat case-count strategy
+\end{itemize}
+\end{column}
+\end{columns}
+
+\vfill
+\footnotesize
+\textbf{Beta Calculation:} $\beta_{i,COVID} = \frac{Cov(R_i^{adj}, \Delta NI_{COVID})}{Var(\Delta NI_{COVID})}$ where $R_i^{adj}$ is market-adjusted return. Long portfolio: recovery plays (airlines, hotels). Short portfolio: lockdown beneficiaries (tech, e-commerce). Strategy captured narrative reversal on Pfizer announcement (Nov 9, 2020).
+\end{frame}
+
+% Section 5: Predictive Analysis
+\section{Predictive Power and Model Comparison}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Predictive Power and Model Comparison\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Out-of-Sample Predictive Analysis}
+\centering
+\includegraphics[width=0.95\textwidth]{predictive_power_analysis.pdf}
+\vspace{10pt}
+\small Progressive improvement from adding narrative features
+\vfill
+\footnotesize
+\textbf{Model Evolution:} Base model (lagged returns): $R^2$ = 2\%. Adding VIX: $R^2$ = 6\%. Adding narratives: $R^2$ = 12\%. Full model with interactions: $R^2$ = 18\%. COVID period shows enhanced predictive power of narratives during market stress.
+\end{frame}
+
+\begin{frame}[t]{Machine Learning Extensions}
+\begin{columns}[T]
+\begin{column}{0.38\textwidth}
+\centering
+\textbf{Model Performance}\\
+\includegraphics[width=\textwidth]{ml_comparison.pdf}
+\end{column}
+\begin{column}{0.58\textwidth}
+\centering
+\textbf{COVID Beta Distribution}\\
+\includegraphics[width=\textwidth]{covid_beta_distribution.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+% Section 6: Portfolio Implementation
+\section{Portfolio Implementation Strategies}
+
+\begin{frame}[t]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{title}
+\usebeamerfont{title}\Large Portfolio Implementation Strategies\par
+\end{beamercolorbox}
+\vfill
+\end{frame}
+
+\begin{frame}[t]{Dynamic Allocation Framework}
+\centering
+\includegraphics[width=0.9\textwidth]{asset_allocation_pie.pdf}
+\vspace{10pt}
+\small Allocation shifts based on narrative intensity z-scores
+\vfill
+\footnotesize
+\textbf{Implementation Details:} Daily narrative monitoring with 15-minute data updates. Position sizing via Kelly criterion with 25\% fraction. Risk limits: 15\% portfolio VaR, 20\% maximum drawdown. Transaction costs: 5bps equities, 2bps bonds. Rebalancing frequency optimized for cost-return tradeoff.
+\end{frame}
+
+% Multiple charts comparison
+\begin{frame}[t]{Comparative Strategy Analysis}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\textbf{Network Effects}\\
+\includegraphics[width=\textwidth]{narrative_network.pdf}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\textbf{Factor Attribution}\\
+\includegraphics[width=\textwidth]{ml_comparison.pdf}
+\end{column}
+\end{columns}
+\vspace{5pt}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\centering
+\small Network correlation > 0.6
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\small Sharpe Ratio comparison
+\end{column}
+\end{columns}
+\end{frame}
+
+% Key metrics with table
+\begin{frame}[t]{Performance Metrics Summary}
+\small
+\begin{table}
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Strategy & Annual Return & Volatility & Sharpe & Max DD \\
+\midrule
+SPY B\&H & 11.2\% & 18.5\% & 0.61 & -33.7\% \\
+60/40 Portfolio & 8.7\% & 11.2\% & 0.78 & -18.2\% \\
+VIX Timing & 13.1\% & 16.3\% & 0.80 & -22.1\% \\
+\textcolor{mlgreen}{Narrative Strategy} & \textcolor{mlgreen}{18.1\%} & \textcolor{mlgreen}{14.4\%} & \textcolor{mlgreen}{1.26} & \textcolor{mlgreen}{-11.6\%} \\
+ML Enhanced & 19.8\% & 15.7\% & 1.26 & -13.2\% \\
+Combined & 20.3\% & 14.1\% & 1.44 & -10.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace{10pt}
+\includegraphics[width=0.8\textwidth]{allocation_performance.pdf}
+\end{frame}
+
+% Conclusion
+\section{Conclusions and Future Research}
+
+\begin{frame}[t]{Key Takeaways and Extensions}
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+\textbf{Contributions:}
+\begin{itemize}
+\item First systematic narrative quantification
+\item 34\% explanatory power
+\item IR = 1.26 strategy
+\item Real-time implementation
+\end{itemize}
+\vspace{10pt}
+\textbf{Future Research:}
+\begin{itemize}
+\item Transformer models
+\item Cross-asset spillovers
+\item High-frequency data
+\end{itemize}
+\end{column}
+\begin{column}{0.6\textwidth}
+\includegraphics[width=\textwidth]{predictive_power_analysis.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Thank You}
+\centering
+\Large Questions and Discussion\\
+\vspace{20pt}
+\normalsize
+\textbf{Contact:}\\
+Prof. Dr. Joerg Osterrieder\\
+\vspace{10pt}
+\textbf{Paper:}\\
+Bhargava et al. (2022)\\
+SSA Research Paper\\
+\vspace{10pt}
+\textbf{Data \& Code:}\\
+Available upon request
+\end{frame}
+
+\end{document}

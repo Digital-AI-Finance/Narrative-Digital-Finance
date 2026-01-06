@@ -1,0 +1,253 @@
+% Target journal: 
+
+% \documentclass[11pt,a4paper]{article}
+\documentclass[preprint,12pt]{elsarticle}
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[english]{babel}
+\usepackage[backend=biber,style=apa,sorting=ynt,natbib]{biblatex}
+\addbibresource{references2.bib}
+
+
+\begin{document}
+
+\begin{frontmatter}
+% \title{Is attention all you need for NLP tasks?}
+% \title{Are Transformers the new 42?}
+\title{Are transformers the answer to life, the universe, and everything?}
+% \title{Are Transformers the answer to named entity recognition, topic modelling, and sentiment analysis}
+% \title{From Autobots to Autocoders: How Transformers are Remapping NLP}
+% \title{Bridging Worlds: Can Transformers Connect Sentiment, Syntax, and Semantics?}
+% \title{Transformers: The Swiss Army Knife of Natural Language Processing}
+% \title{From Autobots to Autocoders: How Transformers are Remapping NLP.}
+% \title{From Autobots to Autocoders: How Transformers are Remapping NLP.}
+\date{November 2024}
+
+\author[1,2]{Gabin Taibi\corref{cor1}}
+\ead{gabin.taibi@bfh.ch}
+
+\author[1]{Marius Klein\corref{cor1}}
+\ead{marius.klein@bfh.ch}
+
+\author[1,2]{Joerg Osterrieder\corref{cor1}}
+\ead{joerg.osterrieder@bfh.ch}
+
+\address[1]{Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland}
+\address[2]{Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands}
+
+\begin{abstract}
+Transformer models, introduced in \cite{vaswani_attention_2017}, akin to the mystical number '42', are defining a new era in Natural Language Processing, blending depth with unprecedented analytical power. This paper analyzes Transformer models, renowned for their effectiveness in a variety of fields, with a particular emphasis on their applications in financial markets.
+
+The paper further delves into the evolution of NLP methods, tracing the journey from rule-based systems to statistical models, and finally to the machine learning algorithms that set the stage for the development of advanced Transformer architectures. 
+Tasks such as sentiment analysis, named entity recognition, and topic modeling are explored in depth to illustrate how these models are used to manage complex textual data across diverse unstructured datasets. 
+The core of this analysis focuses on how Transformers have revolutionized the field, including their integration into systems for real-time financial news analysis and quantitative prediction models, examining their implications for current NLP tasks and future text mining capabilities. Our discussion extends into the transformative impact these models have on financial analytics, providing nuanced insights into market dynamics and investor behavior that were previously hardly attainable with older NLP techniques.
+
+We conclude by addressing the challenges and limitations of Transformers, particularly in terms of explainability and operational demands. Despite their prowess, the deployment of these models comes with significant computational and resource requirements, raising questions about their scalability and accessibility in various practical applications.
+\end{abstract}
+
+
+\begin{keyword}
+Transformers \sep NLP \sep Named Entity Recognition \sep Topic Modeling \sep Sentiment Analysis \sep Narrative \sep Financial Markets \sep bubble detection
+\end{keyword}
+\end{frontmatter}
+
+\newpage
+\tableofcontents
+\pagebreak
+
+\section{Introduction}
+
+    Natural Language Processing (NLP) stands as a cornerstone of modern artificial intelligence (AI), facilitating the seamless interaction between humans and machines through the medium of language. This field evolved to finally merge computational linguistics with machine learning technologies to process and analyze vast amounts of textual or speech data. The applications of NLP are pervasive and impactful, ranging from simple tasks such as spell checking and keyword search to complex operations like interactive voice-based customer service and real-time translation services that bridge language barriers across the globe.
+
+    The essence of NLP lies in its dual ability to both understand and generate human language, mimicking cognitive functions that require deep semantic comprehension. This dual capability not only enhances machine-human interactions but also offers substantial improvements in information accessibility and business intelligence. As digital information continues to explode, NLP becomes indispensable in sifting through unstructured text data, extracting actionable insights, and even generating content that adapts to human needs and contexts.
+
+    In the finance sector, NLP has emerged as a transformative force, reshaping how financial data is interpreted and acted upon. By automating the extraction of key financial indicators from unstructured data sources such as news articles, financial reports, and social media, NLP enables quicker and more accurate market analyses. It aids in sentiment analysis, detecting shifts in market mood from vast amounts of textual information, which can precede changes in market trends. Additionally, NLP is instrumental in risk management and compliance monitoring by identifying relevant information hidden in complex regulatory documents. Its ability to swiftly parse through and make sense of extensive financial documentation not only enhances decision-making but also increases operational efficiencies, reducing costs associated with manual data review. Thus, NLP stands at the forefront of financial technology, driving innovations that refine investment strategies and improve customer experiences.
+
+    While the fundamental applications of NLP have remained more or less constant, the technologies employed to achieve these tasks have undergone substantial evolution. Initially rooted in simple rule-based models, the field has advanced through significant technological strides. This progression has expanded the potential of NLP applications, making them more versatile and effective across various sectors.
+
+    \subsection{The Expanding Role of NLP}
+
+        Natural Language Understanding (NLU) forms a core part of NLP, where tasks such as Named Entity Recognition (NER), Sentiment Analysis, Topic Modeling, Part-of-Speech Tagging, and Language Modeling are essential. NER works by identifying and categorizing key elements from texts into predefined groups, while Sentiment Analysis assesses the emotional tone behind the text to understand opinions and attitudes. Topic Modeling aids in uncovering the latent themes within large text volumes, facilitating content categorization and summarization. Part-of-Speech Tagging and Language Modeling are crucial for improving text generation fluency, assigning word types based on their roles in sentences and predicting subsequent words in sequences, respectively.
+
+        Following NLU, Natural Language Generation (NLG) plays a pivotal role in how machines create human-like text from structured data. This involves generating narrative content that supports automated reporting and creative writing, converting text across languages to enhance global communication, and summarizing extensive documents into concise versions without losing critical information.
+        
+        Moreover, speech processing capabilities have become increasingly integral to NLP, transforming spoken language into text and vice versa. This technology powers interactions between computers and humans through spoken dialogue, enabling functionalities in voice-operated GPS systems, virtual assistants, and interactive customer service solutions.
+        
+        Together, these capabilities illustrate the dynamic nature of NLP as it continues to intersect with cutting-edge technological advancements, reshaping how we interact with and process language in diverse domains.
+
+    \subsection{Advancements in NLP Methodologies}
+
+        The journey of NLP from its inception has been marked by several pivotal shifts, beginning with rule-based systems. Initially, NLP relied heavily on linguistic rules crafted by researchers. These systems, designed to strictly follow the grammatical rules of languages, were primarily used in machine translation and simple parsing tasks.
+
+        The field underwent a transformation with the advent of statistical methods, marking a significant shift towards models that could learn from data. Techniques such as Hidden Markov Models (HMMs) and probabilistic context-free grammars became popular for their ability to model language based on the probability of occurrence of words and phrases. Concurrently, advances in information retrieval refined techniques to efficiently search through large corpora and retrieve relevant information, optimizing both the accuracy and speed of search results.
+        
+        As computational power increased, the application of machine learning algorithms began to revolutionize NLP. Decision trees, support vector machines (SVM), and naive Bayes classifiers started to enhance tasks like text classification and sentiment analysis. The adoption of neural networks, particularly Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks, furthered understanding in context-sensitive tasks such as language modeling and machine translation. This period also saw the emergence of models like Word2Vec and GloVe, which transformed words into vector spaces, capturing their semantic meanings more effectively.
+        
+        The introduction of deep learning brought additional capabilities, with Convolutional Neural Networks (CNNs), though primarily utilized in image processing, finding new applications in NLP for analyzing text data. The development of attention mechanisms allowed these models to focus dynamically on relevant parts of the text, significantly enhancing performance in complex tasks like neural machine translation.
+        
+        The latest breakthrough in the field has been the development of Transformer models. These models have revolutionized NLP with their ability to handle sequences of data efficiently, using self-attention mechanisms to weigh the influence of different parts of the input data. Transformer architectures, including BERT (Bidirectional Encoder Representations from Transformers) and GPT (Generative Pre-trained Transformer), have significantly advanced the state-of-the-art, offering remarkable improvements in tasks like text generation, language understanding, and semantic prediction. This evolution underscores a shift from simpler, rule-based approaches to more complex models that offer nuanced insights and high levels of adaptability across various linguistic tasks.
+
+
+\section{NLP in Finance: A Closer Look}
+
+    In this section, we delve into the specific applications of NLU within the financial sector. NLU plays a crucial role in extracting and interpreting complex data from financial documents, enabling enhanced decision-making based on textual analysis. We will explore how transformers are applied to key tasks such as sentiment analysis, topic modeling, and named entity recognition to derive meaningful insights from vast volumes of financial texts.
+
+    \subsection{Extracting main topics from texts}
+    
+        The primary motivation behind topic modeling in text analysis is to uncover the hidden thematic structure within large collections of textual data. As textual data has exploded in volume across various domains—ranging from social media and news articles to academic papers and customer reviews—researchers and analysts face the challenge of making sense of this unstructured data efficiently. Topic modeling serves as a powerful tool to automatically discover and organize this content into coherent topics, which are essentially clusters of words that frequently co-occur. These topics offer a distilled representation of the main themes or subjects discussed across the documents, allowing for a more manageable and interpretable exploration of large datasets.
+        
+        Topic modeling can be seen as a method to reduce the dimensionality of text data by transforming a vast array of words into a smaller set of topics, which can then be used for various downstream tasks. These tasks include summarization, trend analysis, and the discovery of latent patterns that might not be immediately obvious through simple keyword searches. Moreover, topic modeling is unsupervised, making it highly versatile and applicable across different domains without the need for prior knowledge of the text’s content.
+
+        \cite{chen_comparative_2017}
+
+        \cite{so_assessing_2022} or \cite{garcia-mendez_automatic_2023}
+
+        \cite{blei_latent_2003}
+
+        \cite{morimoto_forecasting_2017}
+
+        \cite{aziz_machine_2022}
+
+    \subsection{Detecting names and places in textual data}
+    
+        Named Entity Recognition (NER) is critical in the financial sector for extracting specific entities such as company names, stock tickers, financial indicators, and geographical locations from unstructured text data. NER helps in organizing and categorizing data, which can be used for monitoring corporate news, regulatory updates, and market movements effectively. Financial NER systems are often challenged by the unique nomenclature and the dynamic nature of the financial domain, where new terms and product names frequently emerge. Models trained on general language datasets may not perform well in recognizing these specialized entities unless they are specifically fine-tuned on financial corpora.
+
+        \cite{jehangir_survey_2023}
+
+        \cite{konstantinidis_comparative_2023}
+
+        \cite{kang_deep_2022}
+
+    \subsection{Analyzing sentiment in news and social media}
+    
+        Sentiment analysis is increasingly utilized in the financial sector to forecast movements in financial assets, such as through analysis of financial news and social media tweets. By detecting market sentiment shifts before they are reflected in prices, sentiment analysis offers a competitive advantage. A significant challenge in this application is the availability of high-quality datasets with appropriate labels, as well as the specific financial terminology and jargon needed for effective model training.
+
+        \cite{li_news_2014}
+        
+        The dictionary approach by \cite{loughran_when_2011} is particularly noteworthy. They developed six word lists tailored to financial contexts, focusing on 10-K filings from 1994-2008. These lists include categories for negative, positive, uncertainty, litigious, strong modal, and weak modal words. This approach transforms each document into a vector that accounts for term frequency. However, this "word counting" method loses out in analyzing deeper semantic meanings.
+        
+        \cite{yadav_sentiment_2020}
+
+
+\section{"Attention is all you need"}
+
+    Lorem Ipsum.
+    
+    \subsection{Dissecting the Transformer Architecture}
+    
+        \cite{vaswani_attention_2017}
+
+        \cite{devlin_bert_2019}, \cite{liu_roberta_2019}, \cite{sanh_distilbert_2020} and finally \cite{casola_pre-trained_2022}
+
+        \cite{xiao_introduction_2023} or \cite{tucudean_natural_2024} or \cite{gillioz_overview_2020} or \cite{zhang_survey_2024}
+
+        \cite{v_ganesan_empirical_2021} or \cite{hendrycks_pretrained_2020}
+
+        \cite{t_transformers_2023}
+        
+    \subsection{Transformers in Practical Applications}
+
+    Transformers have significantly transformed the landscape of Natural Language Processing, offering refined approaches through models like FinBERT, which is specifically tailored for financial contexts. The widely recognized platform Hugging Face provides a comprehensive library of pre-trained transformer models, which are ready to be deployed in PyTorch and TensorFlow environments. FinBERT, which builds upon the foundational architecture of Google's BERT model, is distinctively pre-trained using the Financial PhraseBank dataset comprising corporate filings, analyst reports, and earnings call transcripts. Studies such as those conducted by \cite{araci_finbert_2019}, \cite{huang_finbert_2023}, and \cite{kirtac_sentiment_2024} have shown that FinBERT significantly surpasses traditional models, like dictionary-based approaches, in decoding complex financial contexts due to its extensive pre-training.
+    
+        \subsubsection{Better sentiment mining with Transformers}
+            
+            The work by \cite{ilgun_sentiment_2021} details a sentiment analysis model structured around three main layers: data preprocessing, the transformer mechanism, and a final classification stage. The model effectively processes a diverse array of datasets sourced from platforms including social media and Kaggle, categorizing sentiments into positive, negative, and neutral classifications. The preprocessing phase is crucial, especially for handling the often informal, abbreviated, and error-prone nature of online text. The model employs a BERT-based architecture, which includes an encoder for "Masked Language Model" and "Next Sentence Prediction" tasks, improving both word-level and sentence-level comprehension. Logistic Regression, Support Vector Machine, and K-Nearest Neighbors algorithms are then applied to classify feature vectors generated by the BERT model. The transformer's capability for parallel processing significantly mitigates performance bottlenecks, enhancing the model's efficiency and overall success in sentiment analysis.
+            
+            \cite{tabinda_kokab_transformer-based_2022} addresses limitations in previous embedding models like GloVe and Word2vec, which often fail to capture sentimental and contextual nuances and struggle with out-of-vocabulary words. They propose a BERT-based Convolution Bi-directional Recurrent Neural Network (CBRNN) on a US-airline reviews dataset, model that excels in processing noisy data and avoiding loss of sentimental and contextual information. The model starts with a zero-shot classification technique to label reviews by determining their polarity scores, followed by employing a pre-trained BERT to extract sentence-level semantics and contextual features. These features are then enhanced through dilated convolutions, which capture local and global contextual semantic features, and a Bi-directional Long Short-Term Memory (Bi-LSTM) for effective sequencing of sentences. The model's robustness is showcased through its superior performance outperforming traditional deep learning approaches across metrics such as accuracy, precision, recall, f1-score, and AUC values.
+            
+            Additionally, \cite{xiao_automatic_2024} introduces an innovative Automatic Sentiment Analysis Method for Short Texts using a Transformer-BERT and Bi-GRU hybrid model. This approach is particularly suited to short texts, which typically contain limited semantic characteristics. The model utilizes the BERT structure to extract enhanced word vectors, which are then integrated with topic vectors to improve the textual feature representation. These enhanced features are processed through a Bidirectional Gated Recurrent Unit (Bi-GRU) to learn contextual nuances, followed by a Transformer that works in tandem with the GRU to finalize the sentiment analysis. The hybrid model has been rigorously tested on real-world datasets from Twitter and online shopping platforms, where it has demonstrated remarkable performance improvements in terms of accuracy and efficiency, showcasing a strong generalization capability in sentiment analysis of short texts.
+
+        \subsubsection{Transformers and Topic Modeling}
+
+            Following the exploration of studies using transformers in sentiment analysis, we now shift our focus to another vital application within NLP: topic modeling. Transformers, known for their deep contextual understanding and flexibility, have also revolutionized the way topics are extracted and analyzed in large corpora. Indeed, the integration of transformer-based models has opened new avenues in topic modeling, enhancing the ability to discern thematic structures from extensive textual data with greater accuracy and less human intervention.
+            
+            In the pursuit of enhancing topic modeling, \cite{nguyen_hybrid_2023} tackle the inherent limitations of unsupervised methods, such as semantic loss and high sensitivity to parameter selection. They propose a hybrid approach that leverages the strengths of LDA coupled with the Bidirectional Encoder Representations from Transformers (BERT) to analyze climate change discussions on Twitter. Their innovative methodology not only speeds up the data annotation process but also significantly enhances the accuracy of topic detection, reducing what would typically require over 66 hours to a mere 30 minutes.
+    
+            \cite{reuter_probabilistic_2024} further advance the field by introducing the Transformer-Representation Neural Topic Model (TNTM), which integrates transformer-based embeddings within a variational autoencoder (VAE) framework. Utilizing the Financial PhraseBank dataset, the TNTM model employs multivariate normal distributions to better represent topics in embedding spaces, thus improving topic coherence and diversity. The incorporation of techniques like UMAP for dimensionality reduction and Gaussian-Mixture-Model for clustering enables TNTM to offer a robust and efficient parameter inference method, achieving high topic diversity with minimal overlap.
+            
+            Taking a different approach, \cite{sia_tired_2020} explore the potential of clustering pre-trained word embeddings to enhance topic modeling. Their technique diverges from traditional LDA by treating topics as clusters of word types within a high-dimensional embedding space, incorporating both contextualized and non-contextualized embeddings. By applying this method to datasets such as the 20 newsgroup and Reuters, they achieve greater topic diversity and maintain coherence, positioning pre-trained embeddings as a compelling alternative to conventional topic modeling practices.
+            
+            The work by \cite{alcoforado_zeroberto_2022} introduces ZeroBERTo, a hybrid model that combines the capabilities of unsupervised learning with transformers to facilitate zero-shot text classification. This model demonstrates its effectiveness on the FolhaUOL dataset, where it not only reduces the overall training and execution time but also surpasses traditional models like XLM-R in terms of efficiency and accuracy, showcasing the feasibility of blending unsupervised clustering with advanced transformer techniques in resource-constrained settings.
+            
+            Lastly, \cite{mersha_semantic-driven_2024} presents a semantic-driven approach to topic modeling that utilizes advanced word and document embeddings paired with robust clustering techniques. By generating document embeddings with SentenceTransformer-BERT and employing UMAP and HDBSCAN for clustering, their model captures the nuanced semantics of documents. Tested across varied datasets including the 20NewsGroups, BBC News, and Trump’s tweets, their method consistently outperforms both traditional and contemporary topic modeling techniques, providing superior topic coherence and demonstrating the effectiveness of embedding-based semantic analysis.
+
+        \subsubsection{Imrpoved NER with Transormers}
+        
+            The transformative capabilities of transformer models extend into the domain of NER, where they are utilized to enhance the identification and classification of named entities across various sectors. This section delves into several studies that highlight innovative approaches to NER using transformer technology.
+    
+            The integration of LDA with transformer-based architectures is explored by \cite{berragan_transformer_2023}, who develop a hybrid model to effectively extract place names from manually annotated Wikipedia articles. Their approach, which combines the semantic depth of BERT embeddings with traditional NER methodologies, significantly accelerates the annotation process while improving recall, demonstrating the hybrid model's efficiency in handling geographic entity recognition.
+            
+            Focusing on industry-specific applications, \cite{shishehgarkhaneh_transformer-based_2024} investigate the effectiveness of various transformer models, including BERT and RoBERTa, in managing Named Entity Recognition within the Australian construction industry. Their study assesses the utility of transformers in identifying entities related to supply chain risks, employing a detailed evaluation of precision and recall across different models to establish their suitability for complex textual analyses in professional domains.
+            
+            Further expanding on the flexibility of transformer models, \cite{marcinczuk_transformer-based_2024} presents an analysis on the impact of different data representation strategies on NER performance. By employing single, merged, and context-enriched sentence embeddings, their research highlights the adaptability of transformers to diverse linguistic contexts, showcasing their capability to enhance NER accuracy across various languages and datasets.
+            
+            Lastly, the work of \cite{yan_tener_2019} introduces TENER, a tailored transformer model designed to overcome specific challenges in NER. By incorporating directional relative positional encoding and refining the attention mechanism, TENER addresses the limitations of vanilla transformers in NER tasks, achieving superior performance across multiple datasets. This adaptation underscores the potential of specialized transformer modifications in achieving high accuracy in entity recognition tasks.
+
+
+\section{Challenges and Limitations of Transformers}
+
+    The adoption of Large Language Models, based on Transformer architectures, has become prevalent for small tasks in everyday life but has not seen significant institutional adoption by large firms or SMEs. Transformers are still considered as experimental models that, while occasionally deployed at a large scale, are predominantly used within research environments, particularly in the field of natural language processing.
+
+    \subsection{Deciphering the Black Box: Explainability Challenges}
+    
+        Transformers, by their nature, present a significant challenge in terms of explainability. The complex and opaque layers within Transformer architectures make it difficult to understand and interpret how decisions are made, which undermines the ability to trace and rationalize outcomes. The lack of intuitive explanation tools exacerbates this issue, as there is a scarcity of mechanisms that can effectively visualize or elucidate the decision-making process of these deep learning models. This is particularly challenging when developing methods that provide clear, understandable explanations suitable for all stakeholders, including those who are non-technical. Furthermore, providing explanations at the appropriate level of granularity—whether for the entire model, specific layers, or individual predictions—remains a daunting task. This complexity often leads to a compromise where the depth of explanation must be balanced against overwhelming users with excessive technical detail. Consequently, this lack of transparency can lower trust among users and decision-makers, potentially hindering broader adoption and posing challenges in sectors like finance or healthcare, where decisions require full auditability to meet regulatory standards.
+
+        \cite{bacco_extractive_nodate}
+
+        \cite{rizinski_sentiment_2024}
+
+        \cite{yang_generating_2020}
+
+        \cite{debelak_embeddings_2024}
+
+    \subsection{Operational Costs and Resource Requirements}
+    
+        Operationalizing Transformers involves significant computational and financial resources. The training of large Transformer models necessitates powerful GPUs or TPUs, which can be prohibitively expensive. Additionally, the ongoing operational costs, which include power consumption and cooling necessary to maintain high-performance computing infrastructure, contribute to the high total cost of ownership. Storage requirements are also substantial, as large volumes of data for model weights, training datasets, and intermediate data generated during training need ample storage capacity, which escalates infrastructure costs. Investments in specialized software or platforms for developing, training, and deploying Transformer models also represent a significant financial burden. Furthermore, the scalability of these models involves considerable costs related to expanding model deployment to handle increased loads or new use cases and ensuring the model can be updated and maintained without extensive retraining. The demand for skilled professionals capable of developing and managing these advanced machine learning models drives up salaries and training costs, adding to the overall expenses of employing Transformer technology.
+
+        \cite{ansar_survey_2024}
+
+        \cite{lan_albert_2020}: parameter reduction techniques to reduce memory consumption and increase training speed
+    
+    \subsection{Potential Barriers in Text Mining Applications and complexity}
+    
+        In text mining applications, several barriers can impede the effective deployment of Transformers. The quality and availability of data are paramount; access to large, high-quality datasets is essential for training or fine-tuning Transformers, and issues with noisy, incomplete, or biased data can significantly affect model performance. Generalizing findings from one domain or dataset to another is also challenging due to the potential for model overfitting on specific data characteristics. Adapting models trained on general texts to specialized or niche domains without substantial retraining can be problematic. Additionally, capturing the subtleties of language, such as sarcasm, idioms, colloquialisms, and cultural references, which may not be well-represented in the training data, poses further challenges. The intensive computational requirements of Transformers can create performance bottlenecks, affecting real-time application viability. Risks of data leakage, where models inadvertently memorize and regurgitate sensitive information, along with the technical difficulties in integrating Transformer models into existing data pipelines and systems, present additional hurdles. Lastly, the challenges associated with keeping the model updated with the latest data or trends without complete retraining, and managing the lifecycle of a model, including versioning and updates to maintain its relevance over time, are significant logistical concerns.
+
+        \cite{chernyavskiy_transformers_2021}
+
+        \cite{nogueira_investigating_2021}
+
+        \cite{madusanka_identifying_2023}
+
+        \cite{merrill_parallelism_2023}
+
+        \cite{sanford_representational_2023}
+
+
+\section{Conclusion}
+
+    Lorem ipsum.
+
+
+\section*{Acknowledgements}
+
+TODO: review acknoldgements
+
+    The author gratefully acknowledges:
+    \begin{itemize}
+        \item The Swiss National Science Foundation (SNSF) for funding the PhD research project "Narrative Digital Finance: a tale of structural breaks, bubbles \& market narratives" (grant number 213370).
+        \item Bern University of Applied Sciences, the author's employer as a PhD student, and PhD supervisors Prof. Dr. Jörg Osterrieder and Prof. Dr. Branka Hadji Misheva.
+        \item University of Twente, the host university awarding the PhD degree, and PhD promotor Prof. Dr. Martijn Mes.
+        \item The COST Action 19130 FinAI for providing exposure to an important research network of researchers and industry members.
+        \item The MSCA Digital Network on Digital Finance for offering access to leading industry partners and a vast network of researchers, professionals, and students.
+    \end{itemize}
+
+\pagebreak
+\printbibliography
+
+\end{document}

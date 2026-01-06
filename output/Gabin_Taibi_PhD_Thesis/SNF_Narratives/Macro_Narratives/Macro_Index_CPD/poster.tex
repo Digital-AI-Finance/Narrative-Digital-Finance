@@ -1,0 +1,230 @@
+\documentclass[final]{beamer}
+
+% \usepackage[orientation=portrait, size=a1, scale=1.2]{beamerposter}
+\usepackage[orientation=landscape, size=a1, scale=1.27]{beamerposter}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+% \usepackage[
+%     backend=biber,
+%     style=numeric,
+%     sorting=none
+% ]{biblatex}
+% \addbibresource{Gabin/Macro_Narratives/macro_narrative_references}
+\usepackage[numbers]{natbib}
+\bibliographystyle{plainnat}
+
+\definecolor{dbagblue}{RGB}{2, 41, 83}
+
+\setbeamercolor{block title}{fg=white,bg=dbagblue}        % Block title background
+\setbeamercolor{block body}{fg=black,bg=white}            % Block body background
+\setbeamerfont{title}{series=\bfseries, size=\Huge}       % Poster title font
+\setbeamerfont{block title}{size=\large,series=\bfseries} % Block title font
+\setbeamercolor{header}{fg=white, bg=dbagblue}            % Header background and font
+\setbeamertemplate{caption}[numbered]
+
+
+
+% -------------------------------------------------------------------------------------------------------------
+
+
+
+\begin{document}
+\begin{frame}[t] % Poster layout in a single frame
+
+
+\begin{tcolorbox}[
+    colback=dbagblue,
+    colframe=dbagblue,
+    rounded corners=all,
+    arc=10pt,
+    boxrule=20pt,
+    width=\textwidth,
+    halign=left,
+    top=0.5cm,
+    bottom=0.5cm,
+    left=0.5cm,
+    right=0.5cm,
+]
+    \usebeamercolor[fg]{header}
+    \begin{tabularx}{\textwidth}{@{}X c c c@{}}
+
+        \begin{minipage}[c]{\linewidth}
+            \raggedright
+            \textbf{\LARGE Strategic Narratives during Economic Turning Points: An AI Framework for Monitoring U.S. Central Bank Communications} \\[0.5em]
+            \textbf{\large Gabin Taibi, Bern University of Applied Sciences, University of Twente}
+        \end{minipage}
+        &
+        \includegraphics[height=3cm]{Gabin/Macro_Narratives/Macro_Index_CPD/images/logos/logo-ut.png} &
+        \includegraphics[height=3cm]{Gabin/Macro_Narratives/Macro_Index_CPD/images/logos/logo-bfh.png} &
+        \includegraphics[height=3cm]{Gabin/Macro_Narratives/Macro_Index_CPD/images/logos/logo-snsf.png}
+        
+    \end{tabularx}
+\end{tcolorbox}
+
+
+\begin{columns}
+
+    % Left Column
+    \begin{column}{0.3\textwidth}
+        \vbox to 1\textheight{
+            \begin{block}{Background}
+            \justifying
+                Examining how the Federal Reserve System communicates during times of macroeconomic change is key to understanding policy strategy. While prior work has studied macro indicators~\cite{dai_global_2021, brave_new_2019} or central bank speeches~\cite{ahrens_mind_2024, feldkircher_suerf_nodate} in isolation for this purpose, little is known about the key strategic communication patterns occurring in times of structural economic changes.\\
+                This project bridges quantitative macroeconomic trends and qualitative communication patterns to uncover patterns in U.S. central bankers narratives during changing economic conditions.
+            \end{block}
+        
+            \begin{block}{Research Objectives}
+            \justifying
+                \begin{itemize}
+                    \item Construct a transparent and data-driven composite index that condenses multifaceted U.S. macroeconomic indicators.
+                    
+                    \item Detect structural breaks in the macroeconomic environment through unsupervised change point detection.
+                    
+                    \item Quantify how the thematic focus, sentiment orientation, and rhetorical structure of Federal Reserve communication evolves around these macroeconomic transitions.
+                    
+                    \item Demonstrate that combining macroeconomic signal detection with narrative analysis offers a practical tool for interpreting monetary policy shifts, with direct applications in market monitoring and economic storytelling.
+                \end{itemize}
+            \end{block}
+    
+            \begin{block}{Methodology}
+            \justifying
+                \textbf{Macroeconomic Index Construction} \\
+                A static Principal Component Analysis (PCA)~\cite{rogot_dimensionality_2023} is applied to six standardized (12-month rolling window Z-score) monthly U.S. macroeconomic indicators (FED Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls from St. Louis FED FRED datasets) from 1996 to 2025. The first principal component (explaining the largest share of variance, see fig. \ref{fig:pca_loadings}) is interpreted as the US Macro Strength Index, capturing joint dynamics in growth, inflation, and labor conditions. Change points are then identified using the PELT algorithm from the \texttt{ruptures}. Python library, with a radial basis function cost and penalty = 5 (see fig. \ref{fig:pc1_change_points}).
+
+                \vspace{0.4cm}
+                \textbf{Narrative Shift Analysis} \\
+                As a case study, we focus on the 2008 financial crisis. Federal Reserve bankers speech transcripts (BIS Gigando datasets) from 2004-01-01 to 2010-04-01 are split at the detected breakpoint (2007-05-01). BERTopic is fit on the pre-break period and updated (partial fit) on the post-break period. For each topic, we compute: Mean polarity shift (FinBERT sentiment~\cite{stander_news_2024}), semantic topic centroid drift, cosine similarity between topic centroids, and Jaccard similarity of Maximal Marginal Relevance (MMR) keyword sets. We also generate word clouds aggregating MMR keywords from all topics before and after the breakpoint, visualizing the thematic drift across narrative regimes (fig \ref{fig:wordcloud_A} and \ref{fig:wordcloud_B}).
+    
+                \vspace{0.4cm}
+                \textbf{Null Hypothesis Testing} \\
+                To test statistical significance, we simulate 1000 null scenarios by randomly shuffling speech dates while preserving content and structure. Each metric is recomputed for the randomized assignments, allowing comparison of observed drift values to their null distributions (see fig. \ref{fig:polarity_drift_null}, \ref{fig:centroid_drift_null}, \ref{fig:cosine_sim_null}, and \ref{fig:jaccard_sim_null}).
+            \end{block}
+    
+            \vfill
+        }
+    \end{column}
+
+
+    % Middle Column
+    \begin{column}{0.3\textwidth}
+        \vbox to 1\textheight{
+
+            \begin{figure}[h]
+                \includegraphics[width=0.85\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/pca_loadings.png}
+                \caption{\centering PCA Loadings and Explained Variance}
+                \label{fig:pca_loadings}
+            \end{figure}
+
+            \begin{figure}[h]
+                \includegraphics[width=0.95\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/PCA1_change_points.png}
+                \caption{\centering Principal Component 1 and Change Points}
+                \label{fig:pc1_change_points}
+            \end{figure}
+
+            \begin{block}{Preliminary Results}
+            \justifying
+                \begin{columns}
+                    \column{0.5\textwidth}
+                        \begin{figure}
+                            \includegraphics[width=0.95\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/wordcloud_A.png}
+                            \caption{\centering MMR Wordcloud for 2004.01.01-2007.05.01 period}
+                            \label{fig:wordcloud_A}
+                        \end{figure}
+    
+                    \column{0.5\textwidth}
+                        \begin{figure}
+                            \includegraphics[width=0.95\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/wordcloud_B.png}
+                            \caption{\centering MMR Wordcloud for 2004.01.01-2010.04.01 period}
+                            \label{fig:wordcloud_B}
+                        \end{figure}
+                \end{columns}
+    
+                \begin{columns}
+                    \column{0.5\textwidth}
+                        \begin{figure}
+                            \includegraphics[width=0.95\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/polarity_null_hypo.png}
+                            \caption{\centering Polarity Drift Null Hypothesis Distribution and Observed Value}
+                            \label{fig:polarity_drift_null}
+                        \end{figure}
+    
+                    \column{0.5\textwidth}
+                        \begin{figure}
+                            \includegraphics[width=0.95\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/centroid_null_hypo.png}
+                            \caption{\centering Centroid Drift Null Hypothesis Distribution and Observed Value}
+                            \label{fig:centroid_drift_null}
+                        \end{figure}
+                \end{columns}
+    
+                \begin{columns}
+                    \column{0.5\textwidth}
+                        \begin{figure}
+                            \includegraphics[width=0.95\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/cosine_null_hypo.png}
+                            \caption{\centering Cosine Similarity Null Hypothesis Distribution and Observed Value}
+                            \label{fig:cosine_sim_null}
+                        \end{figure}
+    
+                    \column{0.5\textwidth}
+                        \begin{figure}
+                            \includegraphics[width=0.95\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/jaccard_null_hypo.png}
+                            \caption{\centering Jaccard Similarity Null Hypothesis Distribution and Observed Value}
+                            \label{fig:jaccard_sim_null}
+                        \end{figure}
+                \end{columns}
+    
+                % \begin{figure}[h]
+                %     \includegraphics[width=0.75\textwidth]{Gabin/Macro_Narratives/Macro_Index_CPD/images/topics_centroids_drift.png}
+                %     \caption{\centering 3D representation of Topic Centroids shift before/after 2007.05.01 break point}
+                %     \label{fig:pc1_change_points}
+                % \end{figure}
+            \end{block}
+
+            \vfill
+        }
+    \end{column}
+    
+    
+    % Right column
+    \begin{column}{0.3\textwidth}
+        \vbox to 1\textheight{
+    
+            \begin{block}{Conclusion}
+            \justifying
+                We apply our method to the 2008 crisis as a case study, showing that the PCA-based Macro Strength Index captures structural shifts in the U.S. economy: the dot-com bubble (2001), economy recovering (2004), the Subprime crisis and its recovering phase (2007 and 2010), the post-2016 monetary regime shift, COVID-19 (2020–2021), and recent inflation-driven turbulence (2023). Clear changes in narrative framing emerge around the detected breakpoint:
+                \begin{itemize}
+                    \item Word clouds reveal a shift from growth-oriented language to crisis and uncertainty themes.
+                    \item Narrative drift is statistically significant across polarity, semantic centroids, cosine similarity, and Jaccard overlap.
+                    \item These changes align with macroeconomic dynamics and are not explained by chance (validated via permutation tests).
+                \end{itemize}
+                This confirms the joint relevance of the Macro Strength Index and the text analysis pipeline. The framework can be replicated across other macroeconomic turning points to further explore strategic communication shifts in central bank narratives.
+            \end{block}
+    
+            \begin{block}{Discussion and Further Work}
+            \justifying
+                While our analysis already demonstrate significant results, there are areas for improvement. The PCA-based Macro Strength Index, while interpretable, may obscure regime-specific dynamics due to its linear nature and fixed component structure. Incorporating non-linear dimensionality reduction or regime-switching models could yield more adaptive representations.
+                
+                On the NLP side, while Transformer embeddings capture nuanced semantic changes, relying on proprietary LLM services (e.g., OpenAI) limits interpretability. A key next step is to compare performance across open-source models and other proprietary services (e.g., FinBERT, Llama, Mistral, Google’s models) and evaluate trade-offs between computation time, cost, explainability, and narrative signal quality.
+                
+                Future work include applying the pipeline across other detected economic shifts. It should also validate whether narrative shifts predict market reactions or volatility, strengthening the framework’s value for policy monitoring and financial decision-making. Extending the framework cross-country and including emerging market central banks would also test robustness across institutional contexts.
+            \end{block}
+
+            \begin{block}{References}
+            \justifying
+                \footnotesize     % ~9 pt
+                % \scriptsize     % ~8 pt
+                % \tiny           % ~6 pt
+                \bibliography{Gabin/Macro_Narratives/macro_narrative_references}
+                % \printbibliography[heading=none]
+            \end{block}
+
+            \vfill
+        }
+    \end{column}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}

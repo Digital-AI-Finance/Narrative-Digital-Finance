@@ -1,0 +1,184 @@
+\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{frontmatter}
+
+
+
+
+
+
+\title{The Fast and the Predictable: High-Frequency Trading's Effect on Price Formation}
+
+\author[1,2,3]{Gabin Taibi\corref{cor1}}
+\ead{gabin.taibi@bfh.ch}
+
+\author[3]{Stefan Schlamp\corref{cor1}}
+\ead{stefan.schlamp@deutsche-boerse.com}
+
+\author[1,2]{Joerg Osterrieder\corref{cor1}}
+\ead{joerg.osterrieder@bfh.ch}
+
+\address[1]{Department of Applied Data Science and Finance, Bern University of Applied Sciences, Bern, Switzerland}
+
+\address[2]{Faculty of Behavioral Management and Social Sciences, University of Twente, Enschede, Netherlands}
+
+\address[3]{Quantitative Analytics, Deutsche Börse, Eschborn, Germany}
+
+\begin{abstract}
+This paper examines the impact of high-frequency trading (HFT) on price information, trader behavior, and market efficiency. By leveraging empirical data from [specific time period] and advanced econometric models such as [specific models], we analyze the role of HFT in modern financial markets and its implications for regulatory policies. Key findings indicate [primary findings], which suggest [significance].
+\end{abstract}
+
+\begin{keyword}
+Financial Markets \sep High-Frequency Trading \sep Price Information \sep Information Share \sep Market Efficiency \sep Orderbook Liquidity \sep Market Micro structures \sep [specific models or methodologies]
+\end{keyword}
+
+\end{frontmatter}
+\tableofcontents
+
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{The Limit Orderbook}
+\begin{itemize}
+    \item Electronic markets (not too long, removable)
+    \item Order types (passive, aggressive), Prioritization (not too long, removable)
+    \item T7 peculiarities
+    \item Key instruments
+\end{itemize}
+
+\subsection{Technological Infrastructure}
+\begin{itemize}
+    \item Technological improvements (computational power, data lakes, collocation, FPGA)
+    \item Deutsche Börse AG (subsidiaries, products, etc.)
+    \item Deutsche Börse Systems (Eurex and T7)
+\end{itemize}
+
+\subsection{Market Participants}
+\begin{itemize}
+    \item Arbitragers, hedgers, speculators, market makers
+    \item Market Makers vs. Market Takers
+    \item Price formation (what is it? This is a well defined notion)
+\end{itemize}
+
+\subsection{Objectives and Structure of the Paper}
+\begin{itemize}
+    \item Research questions and objectives
+    \item Overview of paper structure
+    \item Summary of key contributions
+\end{itemize}
+
+
+\section{Literature Review}
+\label{sec:litreview}
+
+
+\subsection{Starting point and Technical improvements}
+
+\subsection{Theory of efficient markets and critics}
+
+\subsection{\textbf{Empirical studies on HFT}}
+
+\subsection{Critics on HFT: market manipulation, latency arbitrage, leave markets when volatility is high so provoke flash crashes}
+\begin{itemize}
+\end{itemize}
+
+
+\section{Data and Methodology}
+\label{sec:datamethod}
+
+\subsection{Description of Data}
+\begin{itemize}
+    \item Puiblic Data
+    \item Periods (period of high volatility, period of low volatility)
+    \item All trades (HPT files)
+    \item All market events: trades, order add, modification, cancellation, etc. (HPT All files)
+    \item Orderflow weighted microprice (A7 Algos)
+\end{itemize}
+
+\subsection{HFT, FPGA, Non-HFT Classification}
+\begin{itemize}
+    \item Post trade-events latencies
+    \item Arbitrary threshold of 10 microseconds (for HFTs) and 1 microseconds (for FPGA)
+    \item Metrics: percentage of HFTs participation, price formation impact (TODO once decided)
+    \item Hypothesis
+\end{itemize}
+
+
+
+\subsection{Information Share Microprice}
+
+\section{Empirical Results}
+\label{sec:results}
+
+\subsection{Description of Results}
+
+\subsection{Participation of HFTs}
+
+\subsection{HFTs impact on price formation}
+
+\section{Robustness checks (XETRA and CME)}
+
+\begin{itemize}
+\end{itemize}
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+
+\subsection{Comparison with literature (if relevant)}
+
+\subsection{Missclassification}
+\subsection{Metrics used}
+
+\subsection{Further Limitations}
+\begin{itemize}
+    \item Specific to DB data (only co-location, cable lengths, no micro waves)
+    \item Arbitrary threshold for labeling as FPGA, HFTs and non-HFTs
+    \item Possible presence of noise
+    \item Impact on other layers of the orderbook?
+\end{itemize}
+
+\begin{itemize}
+\end{itemize}
+
+
+\section{Conclusion}
+\label{sec:discussion}
+
+\subsection{Summary of key findings}
+
+\subsection{Future possible research}
+\begin{itemize}
+    \item Evolution of theses metrics? HFTs data as trading signal?
+    \item Get non-public to correctly label HFTs/non-HFTs
+    \item Do HFTs create or follow momentum?
+    \item Comparison with US markets
+\end{itemize}
+
+
+\section*{Acknowledgements}
+The author gratefully acknowledges:
+\begin{itemize}
+    \item The Deutsche Börse for hosting the PhD internship, particularly the Quantitative Analytics teams and \textbf{}Dr. Stefan Schlamp for supervision during the internship.
+    \item The Swiss National Science Foundation (SNSF) for funding the PhD research project "Narrative Digital Finance: a tale of structural breaks, bubbles & market narratives" (grant number 213370).
+    \item Bern University of Applied Sciences, the author's employer as a PhD student, and PhD supervisors Prof. Dr. Jörg Osterrieder and Prof. Dr. Branka Hadji Misheva.
+    \item University of Twente, the host university awarding the PhD degree, and PhD promotor Prof. Dr. Martijn Mes.
+    \item The COST Action 19130 FinAI for providing exposure to an important research network of researchers and industry members.
+    \item The MSCA Digital Network on Digital Finance for offering access to leading industry partners and a vast network of researchers, professionals, and students.
+\end{itemize}
+
+
+\section*{References}
+\bibliographystyle{elsarticle-num}
+\bibliography{your_bibliography_file}
+
+\end{document}
+

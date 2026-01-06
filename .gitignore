@@ -1,0 +1,43 @@
+# Claude Code settings (per user config)
+.claude/
+CLAUDE.md
+
+# Temporary folders
+wiki_clone/
+temp/
+__pycache__/
+*.pyc
+*.pyo
+
+# Windows artifacts
+nul
+Thumbs.db
+desktop.ini
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.vrb
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Large data files (GitHub 100MB limit)
+*.parquet
+research_effects_of_policy_makers_on_macroeconomy_environment/

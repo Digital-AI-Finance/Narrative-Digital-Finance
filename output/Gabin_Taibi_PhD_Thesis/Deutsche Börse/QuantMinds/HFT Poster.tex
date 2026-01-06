@@ -1,0 +1,174 @@
+\documentclass[final]{beamer}
+
+\usepackage[orientation=portrait, size=a1, scale=1.45]{beamerposter}
+% \usepackage[orientation=landscape, size=a2, scale=1.4]{beamerposter}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+
+\definecolor{dbagblue}{RGB}{0, 19, 153}
+
+\setbeamercolor{block title}{fg=white,bg=dbagblue}  % Block title background
+\setbeamercolor{block body}{fg=black,bg=white}           % Block body background
+\setbeamerfont{title}{series=\bfseries, size=\Huge}       % Poster title font
+\setbeamerfont{block title}{size=\large,series=\bfseries} % Block title font
+\setbeamercolor{header}{fg=white, bg=dbagblue}               % Header background and font
+
+\begin{document}
+\begin{frame}[t] % Poster layout in a single frame
+
+% Header Section (Rectangle)
+% \begin{block}{
+%     \usebeamercolor[fg]{header}
+%     \centering
+%     \vspace{-0.5cm}
+%     \rule{\textwidth}{0.4cm}  % Top border as a thick line
+%     \vspace{0.5cm}
+    
+%     % Title of the poster
+%     \textbf{\Huge From Speed to Stability: The Influence of Low Latency Trading on Market Quality} \\
+%     \vspace{0.5cm}
+%     \textbf{\Large Gabin Taibi, Bern University of Applied Sciences, University of Twente}
+%     \rule{\textwidth}{0.4cm}  % Bottom border as a thick line
+% }
+% \end{block}
+\begin{tcolorbox}[
+    colback=dbagblue,        % Background color
+    colframe=dbagblue  ,     % Frame color (same as background)
+    rounded corners=all,     % Rounded corners on all sides
+    arc=10pt,                % Degree of roundness
+    boxrule=0pt,             % No visible border
+    width=\textwidth,        % Box width equal to the text width
+    halign=center,           % Center align the content
+    top=1cm,                 % Add 1cm padding at the top
+    bottom=1cm               % Add 1cm padding at the bottom
+]
+    \usebeamercolor[fg]{header}  % Use the beamer theme color for the text
+    \centering
+    \vspace{-0.5cm}
+
+    % Title of the poster
+    \textbf{\Huge From Speed to Stability: The Influence of Low Latency Trading on Market Quality} \\
+    \vspace{0.5cm}
+    \textbf{\Large Gabin Taibi, Bern University of Applied Sciences, University of Twente}
+    
+    \vspace{-0.5cm}  % Adjust vertical spacing if necessary
+\end{tcolorbox}
+
+
+\begin{columns}
+
+    % Left Column
+    \begin{column}{0.5\textwidth}
+    
+        \centering
+        \begin{minipage}{0.23\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Deutsche Börse/images/logos/Deutsche_Boerse_Logo.png}
+        \end{minipage}
+        \begin{minipage}{0.23\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Deutsche Börse/images/logos/logo_SNSF.png}
+        \end{minipage}
+        \begin{minipage}{0.23\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Deutsche Börse/images/logos/bfh_logo.png}
+        \end{minipage}
+        \begin{minipage}{0.23\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{Deutsche Börse/images/logos/logo-ut.png}
+        \end{minipage}
+    
+        \begin{block}{Background}
+        \justifying
+            The rapid evolution of electronic financial markets, driven by technological advancements such as ultra-low-latency trading systems, high-performance computing, and Field-Programmable Gate Arrays (FPGA) technology, has transformed the landscape of trading. These innovations have enabled the rise of Ultra-Fast Traders (UFT) and High-Frequency Traders (HFT), also known as Low-Latency Traders (LLT), who can react to market events within a few microseconds. These ultra-fast reaction capabilities set them apart from conventional market participants, making them a unique force in financial markets.
+            
+            Understanding the role and behavior of these traders is critical to analyzing modern market dynamics. UFTs and HFTs play a significant role in liquidity and price formation, but their impact on market stability and efficiency remains the subject of ongoing debate.
+            \end{block}
+    
+            \begin{block}{Research Objectives}
+            \justifying
+            \begin{itemize}
+                \item Contributing to the ongoing discussion about the role of ultra-fast trading in financial markets.
+                \item Proposing a novel market participants’ classification method.
+                \item Providing a detailed analysis of participation rates and trading behaviors of UFT and HFT.
+                \item Analyzing if and how these participants affect market microstructure, efficiency, and volatility.
+            \end{itemize}
+        \end{block}
+
+        \begin{block}{Data and Preprocessing}
+        \justifying
+            The study is based on nanoseconds timestamp data from Deutsche Börse's T7 platform, starting from January 2021 until September 2024. Specifically, we selected Euro STOXX 50 and DAX Futures, along with MSCI World and S\&P500 iShares ETFs for their high liquidity on Eurex and Xetra, although only the Euro STOXX 50 results are presented on this poster.
+            
+            To classify a specific market event, we have based our approach on the latency between a prior triggering trade and the event. \textbf{Events with a latency of less than $\mathbf{1 \boldsymbol{\mu} s}$ are classified as UFT-triggered, latencies between $\mathbf{1 \boldsymbol{\mu} s}$ and $\mathbf{10 \boldsymbol{\mu} s}$ as HFT-triggered, while latencies exceeding $\mathbf{10 \boldsymbol{\mu} s}$ are attributed to conventional traders.} Additionally, negative latencies are attributed to noise.
+        \end{block}
+
+        \begin{block}{Methodology}
+        \justifying
+            \begin{itemize}
+                \item The total participation is measured as the sum of the \textbf{notional value} (price × quantity) for all market events triggered by a given participant category. 
+                \item Other participation types: aggressive, passive, canceled, and deep (beyond the first order book level).
+                \item Aggregated tick-to-trade data into 1-minute intervals to compute metrics: traded volume, average spread, effective spread, depth, order imbalance ratio (OIR), and mid/micro/trade price volatility.
+                \item Included a control variable similar to SNR.
+                \item Combined 1-minute data into monthly datasets and divided into 5 total participation quantiles.
+            \end{itemize}
+        \end{block}
+
+        \begin{block}{Conclusion}
+        \justifying
+            \begin{itemize}
+                \item LLT (both UFT and HFT) produce, at most, roughly 20\% of total participation, including aggressive and passive (Fig. 1).
+                \item All participants primarily generate passive order data, with UFTs contributing almost no passive orders (Fig. 1): market making strategies?
+                \item UFTs cancel around 80\% of their orders, but this represents, at most, 20\% of total canceled participation.  (Fig. 2).
+                \item The deep order book participation (often considered noise) is insignificant, at most 0.06\% (Fig. 3).
+                % \item Although the market impact study as been done independently between UFT and HFT, it gives the same results.
+                \item Clear correlation between high LLT participation and all eight metrics (Fig. 4), but the impact is positive on spread, effective spread, depth and OIR.
+                \item Interesting difference between UFT and HFT's behaviour: UFTs’ SNR decreases with higher participation while HFTs’ SNR is stable or slightly increases with higher participation (Fig. 5)
+                \item Causal effect study (ongoing)
+            \end{itemize}
+        \end{block}
+        
+    \end{column}
+
+
+    \begin{column}{0.5\textwidth}
+        \begin{block}{Results}
+        \justifying
+        \centering
+            \includegraphics[width=1\textwidth]{Deutsche Börse/images/participation-rates.png}
+            \captionof{Figure 1: Cumulative Total Participation Rates (aggressive and passive)}
+            \vspace{0.4cm}
+
+            \includegraphics[width=1\textwidth]{Deutsche Börse/images/cancelled.png}
+            \captionof{Figure 2: Canceled Participation Insights}
+            \vspace{0.4cm}
+
+            \includegraphics[width=1\textwidth]{Deutsche Börse/images/deep.png}
+            \captionof{Figure 3: Deep Order Book Participation Insights}
+            \vspace{0.4cm}
+    
+            \includegraphics[width=1\textwidth]{Deutsche Börse/images/llt-metrics.png}
+            \captionof{Figure 4: Eight key metrics average value for participation quantile 1 and 5}
+            \vspace{0.4cm}
+
+            \includegraphics[width=1\textwidth]{Deutsche Börse/images/snr.png}
+            \captionof{Figure 5: UFT vs. HFT Signal-to-Noise Ratio (SNR) per Quantile}
+            \vspace{0.4cm}
+        \end{block}
+
+        \begin{block}{Further Work}
+        \justifying
+            Next steps will involve evaluating the classification performance using proprietary data from Deutsche Börse.
+            
+            Then, we will focus on identifying intraday patterns in LLT participation, particularly how they react to macroeconomic events or news, leveraging NLP to assess both the nature and speed of these reactions. This will provide insight into their behavior in response to key events. Another important avenue will be to explore flash crashes, investigating whether these are triggered by 'micro' bubble bursts, contributing to market instability during extreme volatility.
+        
+        \end{block}
+
+    \end{column}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}

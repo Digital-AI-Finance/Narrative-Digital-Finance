@@ -1,0 +1,325 @@
+\documentclass[review,1p,times]{elsarticle}
+%\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage{array,longtable}
+\usepackage{multicol}
+\usepackage{lineno,hyperref}
+\usepackage{parskip}
+\usepackage{lineno,hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{array,longtable}
+\usepackage{mwe}
+\usepackage{layout}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{soul}
+\usepackage{smartdiagram}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} % for "ThreePartTable" environment
+\usepackage{booktabs}        % for well-spaced horizontal rules
+\usepackage[final]{pdfpages}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{scalerel}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage[final]{pdfpages}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{nameref}
+\usepackage{natbib}
+\usepackage{lineno,hyperref}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,tikzmark,positioning}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{smartdiagram}
+\usepackage{mwe}
+\usepackage{layout}
+\usepackage{caption}
+% \usepackage{pgfplots}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{adjustbox,lipsum}
+\usepackage{eurosym}
+\usepackage{nomencl}
+\usepackage[acronym, nogroupskip]{glossaries}
+\usepackage{soul} 
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{csquotes}
+\usepackage{xurl}
+\usepackage{subfig}
+\usepackage{subfig}
+
+\modulolinenumbers[5]
+
+\journal{JOURNAL NAME}
+
+\bibliographystyle{model5-names}
+\biboptions{authoryear}
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\begin{document}
+\begin{frontmatter}
+
+
+\title{Title}
+\date{XX Month YYYY}
+
+% Affiliations
+\affiliation[inst1]{organization={University of Twente},
+addressline={Industrial Engineering and Business Information Systems},
+city={AE Enschede},
+postcode={7500}, 
+country={Netherlands}}
+
+\affiliation[inst2]{organization={Bern University of Applied Sciences},
+addressline={Business School}, 
+city={Bern},
+postcode={3005}, 
+country={Switzerland}}
+
+% Authors
+\author[inst1, inst2]{John M. Doe\corref{mycorrespondingauthor}}
+\cortext[mycorrespondingauthor]{Corresponding author: John M. Doe (john.doe@email.com Tel. +31 000000000).}
+\ead{john.doe@email.com}
+
+\author[inst2]{Auhtor Name} 
+\ead{email} 
+
+
+\begin{abstract}
+Lorem ipsum.
+\end{abstract}
+
+
+\begin{keyword}
+Keyword 1 \sep Keyword 2 \sep Keyword 3
+\end{keyword}
+
+
+\end{frontmatter}
+%% \linenumbers
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Introduction}
+\label{sec:intro}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Related Work}
+\label{sec:relatedwork}
+Lorem ipsum.
+
+
+\subsection{Analysis of Techniques}
+Lorem ipsum.
+
+
+\subsection{Analysis of Settings}
+Lorem ipsum.  
+
+
+\subsection{The Relationship Between Early Warning Systems (EWS) and Customer Segmentation Systems} 
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Proposed Methodology}
+\label{sec:methods}
+
+
+\subsection{Experimental Set-Up}
+Lorem ipsum.
+
+
+\subsection{Data Collection \& Preprocessing}
+Lorem ipsum.
+
+
+\subsection{Data Preprocessing}
+\label{data_preprocessing}
+Lorem ipsum.
+
+
+\subsection{Models Implementation}
+\label{models_implementation}
+Lorem ipsum.
+
+
+\subsection{Dimensionality Reduction}
+\label{dim_reduction}
+Lorem ipsum.
+
+
+\subsection{Feature Scaling: Data Standardization}
+\label{data_standard}
+Lorem ipsum.
+
+
+\subsection{K-Means \& DBSCAN}
+\label{kmeans-dbscan}
+Lorem ipsum.
+
+
+\subsection{Models Validation}
+\label{models_validation}
+Lorem ipsum.
+
+
+\subsection{Clusters Quality Evaluation}
+\label{quality_eval}
+Lorem ipsum.
+
+
+\subsection{Segments Exploration}
+\label{clusters_expl}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Results \& Discussions}
+\label{sec:results}
+
+\subsection{Exploratory Data Analysis}
+Lorem ipsum.
+
+
+\subsection{Dimensionality Reduction Results}
+
+\subsubsection{Correlation Analysis in Dimensionality Reduction}
+\label{corr_analysis}
+Lorem ipsum.
+
+\subsubsection{Principal Component Analysis (PCA)}
+\label{pca_analysis}
+Lorem ipsum.
+
+
+\subsection{Models Implementation Results}
+
+\subsubsection{K-Means: Identifying the Optimal Cluster Count}
+\label{elbow_method}
+Lorem ipsum.
+
+\subsubsection{DBSCAN: Optimizing $\epsilon$ and MinPoints}
+\label{dbscan_hyperpar_analysis}
+Lorem ipsum.
+
+
+\subsection{Models Performance Evaluation}
+\label{clusters_quality_analysis}
+Lorem ipsum.
+
+\subsection{Segments Exploration}
+
+\subsubsection{Clusters' Densities Analysis}
+\label{clusters_densities}
+Lorem ipsum.
+
+\subsubsection{Highlights of Clustering Results and Analysis}
+\label{uncorr_kmeans_expl}
+Lorem ipsum.
+
+\subsubsection{Risk-Reward Analysis}
+\label{risk_rew_analysis}
+Lorem ipsum.
+
+\subsubsection{Risk Exposure Analysis}
+Lorem ipsum.
+
+
+\subsection{Models Explainability \& Validation}
+
+\subsubsection{SHAP Analysis}
+\label{shap_results}
+Lorem ipsum.
+
+\subsubsection{Models Validation Results}
+\label{models_validation_summary}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+Lorem ipsum. 
+
+
+\subsection{Lessons learned and contributions}
+Lorem ipsum.
+
+
+\subsection{Limitations and Future Research}
+Lorem ipsum.
+
+
+% ------------------------------------------------------------------------------------------------------------------------
+
+
+\bibliography{cas-refs}
+
+\newpage
+
+\section*{Appendix A - Exploratory Data Analysis}
+\label{appendixA}
+
+
+\setcounter{figure}{0}
+\makeatletter 
+\renewcommand{\thefigure}{B\@arabic\c@figure}
+\makeatother
+
+\section*{Appendix B - Dimensionality Reduction Analysis}
+\label{appendixB}
+
+
+
+\end{document}
+
