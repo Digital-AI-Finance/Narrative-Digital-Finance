@@ -53,11 +53,12 @@
     <p><strong>Funding Period:</strong> August 2023 - August 2026</p>
     <p><strong>Total Funding:</strong> CHF 236,118</p>
     <p style="margin-top:12px; font-size:10pt;">Report Date: January 5, 2026 | Version 3.0</p>
+    <p style="margin-top:12px;"><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/blob/main/final-report/Narrative-Digital-Finance/docs/SciencePart_Osterrieder.pdf">Full Report PDF</a></p>
 </div>
 
 <h3>Executive Summary</h3>
 
-<p>This project successfully developed novel computational frameworks bridging narrative economics with financial market analysis. The research produced six publications, established collaborations with three industry partners including Deutsche Borse AG and Quoniam Asset Management, built a network spanning 49 countries with over 270 researchers, and completed all four work packages as defined in the original proposal. Key achievements include the TOPol framework for multidimensional semantic polarity analysis, macro-narrative integration combining macroeconomic indices with topic modeling for structural break detection, and HFT classification methodology measuring how rapidly narratives propagate through markets at nanosecond resolution. The research created open-source tools available at OSF (osf.io/nr94j) enabling reproducible research. The project extends narrative economics (Shiller 2017, 2019) with quantitative computational methods.</p>
+<p>This project successfully developed novel computational frameworks bridging narrative economics with financial market analysis. The research produced seven publications and preprints, established collaborations with many industry partners including Deutsche Borse AG and Quoniam Asset Management, built a network spanning 49 countries with over 4200 researchers, and completed all four work packages as defined in the original proposal. Key achievements include the TOPol framework for multidimensional semantic polarity analysis, macro-narrative integration combining macroeconomic indices with topic modeling for structural break detection, and HFT classification methodology measuring how rapidly narratives propagate through markets at nanosecond resolution. The research created open-source tools available at Zenodo enabling reproducible research. The project extends narrative economics (Shiller 2017, 2019) with quantitative computational methods.</p>
 
 <h2>1.1 Achievement of Research Objectives</h2>
 
@@ -65,7 +66,7 @@
 
 <h3>WP1: Text Data and Text Analytics</h3>
 
-<p>We developed the TOPol framework, a semi-unsupervised approach for multidimensional semantic polarity using transformer embeddings, UMAP projection, and Leiden clustering. Unlike traditional unidimensional sentiment scoring, TOPol captures the full complexity of financial narratives through vectorial representation of polarity shifts. The framework embeds documents using transformer-based LLMs, applies neighbor-tuned UMAP projection, and segments via Leiden partitioning. Given regime boundaries, it computes directional vectors between topic-boundary centroids, producing polarity fields that capture semantic displacement. Code and data are publicly available at OSF (osf.io/nr94j). Additionally, we created an AI-enhanced systematic literature review methodology using NLP techniques, clustering algorithms, and interpretability tools, currently under revision at Financial Innovation. Custom data pipelines were developed for RavenPack financial news, LSEG earnings transcripts, BIS central bank speeches, and SEC EDGAR 10-K/10-Q filings.</p>
+<p>We developed the TOPol framework, a semi-unsupervised approach for multidimensional semantic polarity using transformer embeddings, UMAP projection, and Leiden clustering. Unlike traditional unidimensional sentiment scoring, TOPol captures the full complexity of financial narratives through vectorial representation of polarity shifts. The framework embeds documents using transformer-based LLMs, applies neighbor-tuned UMAP projection, and segments via Leiden partitioning. Given regime boundaries, it computes directional vectors between topic-boundary centroids, producing polarity fields that capture semantic displacement. Additionally, we created an AI-enhanced systematic literature review methodology using NLP techniques, clustering algorithms, and interpretability tools, currently under revision at Financial Innovation. We developed a new methodology to quantify narratives in financial texts based on embeddings and zero-shot classification. Custom data pipelines were developed for RavenPack financial news, BIS central bank speeches, and SEC EDGAR 10-K/10-Q filings.</p>
 
 <h3>WP2: Structural Breaks Detection and Asset Price Bubbles</h3>
 
@@ -73,41 +74,33 @@
 
 <h3>WP3: Narratives for Structural Breaks</h3>
 
-<p>We developed the Multimodal Influence Framework (SSRN 4698153), which extends traditional NLP to include non-textual data including images, video, and audio for financial instrument pricing using Generative AI. This research addresses the exponential growth of data from dozens of exabytes in 2003 to approximately 180 zettabytes by 2025. The BERTopic-based narrative shift analysis quantifies polarity drift using FinBERT sentiment, semantic centroid movement using cosine similarity between topic centroids, and keyword evolution using Jaccard similarity of Maximal Marginal Relevance keyword sets across economic regimes. Word clouds aggregate MMR keywords from all topics before and after breakpoints, visualizing thematic drift across narrative regimes.</p>
+<p>We developed Python code and datasets for analyzing the effect of US central bank speeches on the macroeconomy. The methodology uses topic modeling to extract inflation narratives and constructs macroeconomic indices. We regress hawkish and dovish scores extracted from Federal Reserve communications against macro and inflation indices to quantify the relationship between central bank narrative tone and economic outcomes. In collaboration with Quoniam Asset Management, we extended this framework to practical portfolio applications, bridging academic research with institutional investment strategies.</p>
 
 <h3>WP4: Multidimensional AI and ML Solutions</h3>
 
-<p>In collaboration with Deutsche Borse AG, we developed the HFT Market Microstructure framework, which measures how rapidly narratives propagate through financial markets at nanosecond resolution. Using nanosecond-level timestamp data from Deutsche Borse's T7 platform, the methodology classifies market participants by their reaction speed to information: Ultra-Fast Traders (UFT, less than 1 microsecond using FPGAs), High-Frequency Traders (HFT, 1-10 microseconds), and conventional participants (greater than 10 microseconds). Research documents participation shares showing UFT/HFT produce roughly 20% of total participation, price discovery via 15-second mark-out signal-to-noise ratio, and market quality metrics including order-imbalance volatility, Amihud illiquidity, and high-frequency return diagnostics for Euro STOXX 50 Index Futures from January to August 2025. This directly addresses the original research question of ex-ante predictability by quantifying how quickly narrative-driven information is incorporated into prices.</p>
+<p>In collaboration with Deutsche Borse AG, we developed the HFT Market Microstructure framework, which measures how rapidly information propagates through financial markets at nanosecond resolution. Using nanosecond-level timestamp data from Deutsche Borse's T7 platform, the methodology classifies market participants by their reaction speed to information: Ultra-Fast Traders (UFT, less than 1 microsecond using FPGAs), High-Frequency Traders (HFT, 1-10 microseconds), and conventional participants (greater than 10 microseconds). Research documents participation shares showing UFT/HFT produce roughly 20% of total participation, price discovery via 15-second mark-out signal-to-noise ratio, and market quality metrics including order-imbalance volatility, Amihud illiquidity, and high-frequency return diagnostics for Euro STOXX 50 Index Futures from January to August 2025. This directly addresses the original research question of ex-ante predictability by quantifying how quickly narrative-driven information is incorporated into prices.</p>
 
 <h3>Publications</h3>
 
 <ul>
-    <li>Taibi, G., Gomez, L. (2025). TOPol: Transformer Narrative Polarity Fields. EPIA 2025 (submitted). arXiv: 2510.25069</li>
+    <li>Taibi, G., Gomez, L. (2025). TOPol: Transformer Narrative Polarity Fields. EPIA 2025 (submitted). <a href="https://arxiv.org/abs/2510.25069">arXiv: 2510.25069</a></li>
     <li>Taibi, G. et al. (2025). AI-Enhanced Systematic Literature Review on Financial Narratives. Financial Innovation (under revision)</li>
     <li>Taibi, G., Osterrieder, J., Schlamp, S. (2025). Nanosecond Microstructure: HFT Participation Stylized Facts. Working Paper</li>
-    <li>Osterrieder, J., Schlamp, S. (2025). Reaction Times to Economic News in High-Frequency Trading. SSRN 5112295</li>
-    <li>Bolesta, K., Taibi, G., Mare, C., Osterrieder, J., Hopp, C. (2024). Hypothesizing Multimodal Influence on Financial Pricing. SSRN 4698153</li>
-    <li>Taibi, G. (2025). Macro Narrative Index Construction. In Progress</li>
+    <li>Osterrieder, J., Schlamp, S. (2025). Reaction Times to Economic News in High-Frequency Trading. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295">SSRN 5112295</a></li>
+    <li>Bolesta, K., Taibi, G., Mare, C., Osterrieder, J., Hopp, C. (2024). Hypothesizing Multimodal Influence on Financial Pricing. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153">SSRN 4698153</a></li>
+    <li>Taibi, G. (2025). Macro Narrative Index Construction. Poster</li>
     <li>Baals, L. J. (2025). Detecting Price Bubble Formation in NFT and DeFi Markets. Working Paper</li>
 </ul>
-
-<h3>Software and Data Infrastructure</h3>
-
-<p>The TOPol Framework is available as an open source release at osf.io/nr94j with code and data. The realized-library provides Python and C++ implementations for volatility estimation and is available on PyPI. Custom data pipelines were developed for ingestion from RavenPack (news), LSEG (earnings calls), BIS (central bank speeches), SEC EDGAR (10-K/10-Q filings), and Deutsche Borse (nanosecond T7 data). The project repository is available at github.com/Digital-AI-Finance/Narrative-Digital-Finance.</p>
 
 <h2>1.2 Methodological Evolution and Outcomes</h2>
 
 <h3>Data Infrastructure Evolution</h3>
 
-<p>The original proposal envisioned Bloomberg and Refinitiv terminals as primary data sources. We developed custom data pipelines for alternative sources that proved more suitable: RavenPack for financial news headlines, LSEG for earnings call transcripts, BIS Gigando for worldwide central bank speeches, SEC EDGAR for regulatory filings, and Deutsche Borse for nanosecond-level trading data. These alternatives provide both rich textual narratives and precise market reaction timestamps unavailable through terminal-based access.</p>
-
-<h3>Computational Approach Advantages</h3>
-
-<p>The original WP3.1 design planned controlled 2x2 investment experiments. The methodology evolved toward the Multimodal Influence Framework (SSRN 4698153), providing computational analysis at unprecedented scale. This evolution was driven by scalability requirements for analyzing exponentially growing data volumes (dozens of exabytes in 2003 to 180 zettabytes by 2025), reproducibility advantages of computational methods, and the opportunity to extend beyond text to multimodal analysis including images, video, and audio. The TOPol framework similarly moved beyond unidimensional sentiment scoring to capture multidimensional semantic polarity fields.</p>
+<p>The original proposal envisioned Bloomberg and Refinitiv terminals as primary data sources. We developed custom data pipelines for alternative sources that proved more suitable: RavenPack for financial news headlines, BIS Gigando for worldwide central bank speeches, and Deutsche Borse for nanosecond-level trading data. These alternatives provide both rich textual narratives and precise market reaction timestamps unavailable through terminal-based access.</p>
 
 <h3>HFT-Narrative Integration</h3>
 
-<p>The Deutsche Borse collaboration initiated in January 2024 enabled a novel research stream: measuring how rapidly narratives propagate through financial markets. Access to proprietary nanosecond-level trading data from the T7 platform allowed classification of market participants by their reaction speed to information. This directly addresses the original research question of ex-ante predictability by quantifying how quickly narrative-driven information is incorporated into prices.</p>
+<p>The Deutsche Borse collaboration initiated in January 2024 enabled a novel research stream: measuring how rapidly information propagates through financial markets. Access to proprietary nanosecond-level trading data from the T7 platform allowed classification of market participants by their reaction speed to information. This directly addresses the original research question of ex-ante predictability by quantifying how quickly narrative-driven information is incorporated into prices.</p>
 
 <h3>Future Research Directions</h3>
 
@@ -119,7 +112,7 @@
 
 <h3>TOPol Framework</h3>
 
-<p>The TOPol framework represents the first semi-unsupervised framework for multidimensional semantic polarity in financial texts. Unlike traditional unidimensional sentiment scoring (positive/negative), TOPol captures narrative complexity through transformer embeddings for semantic representation, UMAP projection for dimensionality reduction, and Leiden clustering for topic segmentation. The vectorial representation enables quantification of magnitude, direction, and semantic meaning of polarity shifts across discourse regimes. The open source release at osf.io/nr94j enables replication and extension by the research community.</p>
+<p>The TOPol framework represents the first semi-unsupervised framework for multidimensional semantic polarity in financial texts. Unlike traditional unidimensional sentiment scoring (positive/negative), TOPol captures narrative complexity through transformer embeddings for semantic representation, UMAP projection for dimensionality reduction, and Leiden clustering for topic segmentation. The vectorial representation enables quantification of magnitude, direction, and semantic meaning of polarity shifts across discourse regimes. The open source release at Zenodo enables replication and extension by the research community.</p>
 
 <h3>Macro-Narrative Integration</h3>
 
@@ -153,15 +146,15 @@
 
 <h4>COST Action CA19130 Partners</h4>
 
-<p>Academic collaborations were established through the COST Action network with Prof. Dr. Wolfgang Karl Haerdle (Humboldt-University Berlin, Ladislaus von Bortkiewicz Professor of Statistics), Prof. Dr. Daniel Traian Pele (Bucharest University of Economic Studies), and Prof. Dr. Codruta Mare (Babes-Bolyai University). These collaborators contributed through joint research activities, PhD training, and network activities. The Multimodal Influence paper (SSRN 4698153) was co-authored with Prof. Mare.</p>
+<p>Academic collaborations were established through the COST Action network with Prof. Dr. Wolfgang Karl Haerdle (Humboldt-University Berlin, Ladislaus von Bortkiewicz Professor of Statistics), Prof. Dr. Daniel Traian Pele (Bucharest University of Economic Studies), and Prof. Dr. Codruta Mare (Babes-Bolyai University). These collaborators contributed through joint research activities, PhD training, and network activities.</p>
 
 <h3>PhD Research Progress</h3>
 
-<p>The doctoral research progresses through five stages aligned with project objectives. Stage 1 covering Data Collection and Systematic Literature Review is completed, with the paper under revision at Financial Innovation. Stage 2 covering Narrative Detection using the TOPol framework is in progress, with code released on OSF. Stage 3 covering Volatility Estimation is planned for 2026, using the realized-library for estimators, Hurst exponent, and jump detection. Stage 4 covering Narrative-Volatility Integration is planned for 2026-2027, using Bai-Perron, CUSUM, and Bayesian frameworks. Stage 5 covering Thesis Synthesis is planned for 2027.</p>
+<p>The doctoral research progresses through five stages aligned with project objectives. Stage 1 covering Data Collection and Systematic Literature Review is completed, with the paper under revision at Financial Innovation. Stage 2 covering Narrative Detection using the TOPol framework is in progress. Stage 3 covering Volatility Estimation is planned for 2026, using the realized-library for estimators, Hurst exponent, and jump detection. Stage 4 covering Narrative-Volatility Integration is planned for 2026-2027, using Bai-Perron, CUSUM, and Bayesian frameworks. Stage 5 covering Thesis Synthesis is planned for 2027.</p>
 
 <h3>COST Action CA19130: Added Value</h3>
 
-<p>As Chair of COST Action CA19130 "Fintech and AI in Finance" (2020-2024, successfully concluded October 2024), the project leveraged extensive pan-European infrastructure with 49 participating countries, over 270 researchers, and EUR 964,000 network budget.</p>
+<p>As Chair of COST Action CA19130 "Fintech and AI in Finance" (2020-2024, successfully concluded October 2024), the project leveraged extensive pan-European infrastructure with 49 participating countries, over 4200 researchers (the 2nd largest of all COST actions and the largest ever in terms of budget), and EUR 964,000 network budget.</p>
 
 <p>The 7th and 8th European COST Conferences on AI in Finance were organized at Bern University of Applied Sciences in September 2023 and September 2024. The COST FinAI PhD School 2024 was held in Treviso, Italy, focusing on Generative AI and LLMs in Finance. Additional PhD training occurred at the 16th ERCIM Conference in Berlin in December 2023. Active coordination was maintained across six Working Groups covering AI, blockchain, RegTech, sustainable finance, and market microstructure. Joint publications included "Mitigating Digital Asset Risks" (SSRN 4594467) with over 30 co-authors. International meetings including COST FinAI Meets Istanbul (May 2024) and Brussels (2024) facilitated researcher mobility and knowledge exchange.</p>
 
@@ -171,11 +164,11 @@
 
 <h3>Sustainability and Future Impact</h3>
 
-<p>The COST network established lasting research partnerships continuing beyond funding periods. The Deutsche Borse collaboration produced ongoing data access agreements. Academic partnerships with Humboldt-University Berlin, Bucharest University, and Babes-Bolyai University resulted in joint PhD supervision and publication pipelines. These collaborations position the project as a European hub for narrative finance research, with visibility through the COST FinAI Wiki (wiki.fin-ai.eu) and AI-in-Finance.eu platforms.</p>
+<p>The COST network established a huge European and global research network with lasting partnerships continuing beyond funding periods. The Deutsche Borse collaboration produced ongoing data access agreements for proprietary nanosecond trading data. Academic partnerships with Humboldt-University Berlin, Bucharest University of Economic Studies, Babes-Bolyai University, and institutions across 51 countries resulted in joint PhD supervision and publication pipelines. Industry collaborations with Quoniam Asset Management and other financial institutions bridge academic research with practical applications. These collaborations position the project as a leading European hub for narrative finance research, with visibility through the COST FinAI Wiki (wiki.fin-ai.eu), AI-in-Finance.eu, and conference.fin-ai.eu platforms, ensuring sustainable impact and continued growth of the research community.</p>
 
 <div class="footer">
     <p><strong>SNSF Grant IZCOZ0_213370</strong> | Narrative Digital Finance</p>
-    <p><a href="index.html">Project Home</a> | <a href="objectives.html">Research Objectives</a> | <a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a> | <a href="https://osf.io/nr94j">OSF Repository</a></p>
+    <p><a href="index.html">Project Home</a> | <a href="objectives.html">Research Objectives</a> | <a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a> | <a href="#">Zenodo Repository</a></p>
     <p>Funded by SNSF (Grant IZCOZ0_213370) and EU Horizon Europe (Grant No. 101119635)</p>
     <p>&copy; Prof. Dr. Joerg Osterrieder 2026</p>
 </div>
