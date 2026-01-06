@@ -97,31 +97,29 @@
     <p>We use publicly available data from financial markets (accessed via original source URLs) and commercial databases (accessed via provider APIs). Public data is not re-stored by us. Commercial data remains on provider infrastructure per license agreements. Only project-generated code and outputs are stored on GitHub.</p>
 
     <p><strong>Commercial Data Sources (Licensed):</strong></p>
-    <p><strong>Refinitiv/LSEG:</strong> Earnings call transcripts, financial news, market data. Format: JSON, CSV. Volume: ~5 GB. Time range: 2010-2025.</p>
     <p><strong>RavenPack:</strong> News headlines with sentiment scores. Format: CSV, Parquet. Volume: ~3 GB. Time range: 2000-2025.</p>
     <p><strong>Deutsche Borse T7:</strong> Nanosecond-level trading data for FESX and DAX futures. Format: Binary, CSV. Volume: ~50 GB. Time range: January-August 2025.</p>
 
     <p><strong>Public Data Sources:</strong></p>
     <p><strong>BIS Gigando:</strong> Central bank speeches worldwide. Format: Text, PDF. URL: <a href="https://www.bis.org/cbspeeches/">www.bis.org/cbspeeches/</a></p>
-    <p><strong>SEC EDGAR:</strong> 10-K and 10-Q regulatory filings. Format: HTML, XBRL. URL: <a href="https://www.sec.gov/edgar">www.sec.gov/edgar</a></p>
     <p><strong>St. Louis FED FRED:</strong> Macroeconomic indicators (CPI, PPI, GDP, etc.). Format: CSV via API. URL: <a href="https://fred.stlouisfed.org/">fred.stlouisfed.org/</a></p>
 
     <p><strong>Generated Data:</strong></p>
-    <p><strong>Project code:</strong> Analysis scripts and methods. Format: Python. Volume: minimal. Repository: <a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a>.</p>
+    <p><strong>Project code:</strong> Analysis scripts and methods. Format: Python. Volume: minimal. Repository: <a href="https://zenodo.org">Zenodo</a>.</p>
 
     <h3 id="section-1-2">1.2 How will the data be collected, observed or generated?</h3>
 
     <p>The quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.</p>
 
-    <p><strong>Quality assurance:</strong> The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.</p>
+    <p><strong>Quality assurance:</strong> The data are checked for consistency and completeness using statistical methods.</p>
 
     <p><strong>Versioning:</strong> The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases may receive DOIs via Zenodo integration.</p>
 
-    <p><strong>Data Collection Methods:</strong> API Access via FRED API (Python fredapi), SEC EDGAR XBRL API, and BIS web scraping (Beautiful Soup). Commercial data is accessed via RavenPack SQL access, LSEG API and bulk delivery, and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling.</p>
+    <p><strong>Data Collection Methods:</strong> API Access via FRED API (Python fredapi) and BIS API. Commercial data is accessed via RavenPack SQL access and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling.</p>
 
     <h3 id="section-1-3">1.3 What documentation and metadata will you provide with the data?</h3>
 
-    <p>The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.</p>
+    <p>The information on the data as well as data sources and survey processes are documented in detail.</p>
 
     <p><strong>Metadata Standards:</strong> Standard README documentation with variable descriptions and usage instructions.</p>
 
@@ -139,19 +137,17 @@
 
     <p><strong>Ethical Considerations:</strong> All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. Research outputs are intended for academic purposes.</p>
 
-    <p><strong>Data Provider Agreements:</strong> Refinitiv/LSEG operates under academic research license with no redistribution of raw data. RavenPack operates under research subscription with academic use only. Deutsche Borse operates under research collaboration agreement with dr. schlamp with project-specific usage.</p>
+    <p><strong>Data Provider Agreements:</strong> RavenPack operates under research subscription with academic use only. Deutsche Borse operates under research collaboration agreement with project-specific usage.</p>
 
     <p><strong>Ethics Approval:</strong> Not required (non-human-subjects research per Swiss SNSF guidelines)</p>
 
     <h3 id="section-2-2">2.2 How will data access and security be managed?</h3>
 
-    <p>Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.</p>
+    <p>We use private cloud solutions. No sensitive data or personal data is collected in the project.</p>
 
     <p><strong>Access Control:</strong> Public data (FRED, BIS, SEC) has open access and is stored on Original source URLs (not re-stored by us). Commercial data has provider access only access and is stored on Provider cloud infrastructure (not redistributable). Project code has open access and is stored on GitHub.</p>
 
-    <p><strong>Security Measures:</strong> Commercial data remains on provider infrastructure per license agreements. Project code is public on GitHub.</p>
-
-    <p><strong>Authorized Team Members:</strong> Prof. Dr. Joerg Osterrieder (Principal Investigator), Gabin Taibi (PhD Researcher), Lennart John Baals (PhD Researcher), Yiting Liu (PhD Researcher), Marius Jan Klein (Researcher).</p>
+    <p><strong>Security Measures:</strong> Commercial data remains on provider infrastructure per license agreements. Relevant project code is public on GitHub and Zenodo.</p>
 
     <h3 id="section-2-3">2.3 How will you handle copyright and Intellectual Property Rights issues?</h3>
 
@@ -169,17 +165,13 @@
 
     <h3 id="section-3-1">3.1 How will your data be stored and backed-up during the research?</h3>
 
-    <p>The storage capacities are very large, the amount of data remains very limited in the project. The data is managed in the form of databases on GitHub. Backups and versions of the data are continuously created.</p>
+    <p>The storage capacities are very large, the amount of data remains very limited in the project. Relevant data is managed in the form of databases on GitHub and Zenodo and private cloud solutions. Backups and versions of the data are continuously created.</p>
 
     <p><strong>Primary Storage:</strong> Location is GitHub repositories. Capacity is Unlimited (code only). Backup schedule is git version control. Retention is as long as github available.</p>
 
     <h3 id="section-3-2">3.2 What is your data preservation plan?</h3>
 
-    <p>The data is stored on GitHub for a long time and managed using existing tools. There is no obligation to destroy the data.</p>
-
-    <p><strong>Repository Selection:</strong> GitHub is operated by Microsoft (public platform), offers code hosting and version control.</p>
-
-    <p><strong>Retention Period:</strong> As long as GitHub available. Note: Public data remains at original sources. Commercial data is provider responsibility.</p>
+    <p>Most relevant data is stored on Zenodo.</p>
 
 </div>
 
@@ -189,7 +181,7 @@
 
     <h3 id="section-4-1">4.1 How and where will the data be shared?</h3>
 
-    <p>The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.</p>
+    <p>The relevant code developed during the project together with all necessary accompanying documentation will be stored on Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.</p>
 
     <p><strong>Current Outputs (Available Now):</strong> Project Website is live on GitHub Pages at <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">digital-ai-finance.github.io/Narrative-Digital-Finance/</a>.</p>
 
@@ -198,8 +190,6 @@
     <h3 id="section-4-2">4.2 Are there any necessary limitations to protect sensitive data?</h3>
 
     <p>We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.</p>
-
-    <p><strong>Access Requests:</strong> For restricted data, contact <a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a> - we can facilitate contact with original data providers.</p>
 
     <h3 id="section-4-3">4.3 All digital repositories I will choose are conform to the FAIR Data Principles.</h3>
 
