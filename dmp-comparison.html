@@ -108,9 +108,13 @@
                                 <tr><td>SEC EDGAR</td><td>HTML, XBRL</td><td>sec.gov/edgar</td></tr>
                                 <tr><td>St. Louis FED FRED</td><td>CSV via API</td><td>fred.stlouisfed.org/</td></tr>
                             </table>
-                            <div class="diff-addition"><strong>Generated Data:</strong></div>
+                            <div class="diff-addition"><strong>Generated Research Outputs:</strong></div>
                             <ul>
-                                <li>Project code (minimal, Python) - github.com/Digital-AI-Finance</li>
+                                <li>Analysis code (Python) - GitHub</li>
+                                <li>CB Speech Transcripts - Zenodo DOI</li>
+                                <li>Daily Evergreen Sentiment - Zenodo DOI</li>
+                                <li>Macro Regime Notebooks - Zenodo DOI</li>
+                                <li>Research posters/preprints - Zenodo/SSRN/arXiv</li>
                             </ul>
                         </div>
                     </div>
@@ -127,11 +131,16 @@
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
                             <div class="diff-addition"><strong>Data Collection Methods:</strong></div>
-                            <p>API Access via FRED API (Python fredapi), SEC EDGAR XBRL API, and BIS web scraping (Beautiful Soup). Commercial data is accessed via RavenPack SQL access, LSEG API and bulk delivery, and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling.</p>
+                            <ul>
+                                <li>API Access: FRED API, SEC EDGAR XBRL, BIS Gingado Python API</li>
+                                <li>Commercial: RavenPack SQL, LSEG API, Deutsche Borse SFTP</li>
+                                <li>NLP: HuggingFace transformers, FinBERT, BERTopic, NER tagging</li>
+                                <li>LLM: OpenAI gpt-4o-mini for narrative sentiment</li>
+                            </ul>
                             <div class="diff-improvement"><strong>Quality Assurance:</strong></div>
-                            <p>The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.</p>
+                            <p>Statistical consistency checks, automated validation scripts, cross-validation, change point detection.</p>
                             <div class="diff-improvement"><strong>Versioning:</strong></div>
-                            <p>The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases may receive DOIs via Zenodo integration.</p>
+                            <p>Git version control on GitHub. Data releases receive DOIs via Zenodo.</p>
                         </div>
                     </div>
                 </div>
@@ -147,9 +156,17 @@
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
                             <div class="diff-addition"><strong>Metadata Standards:</strong></div>
-                            <p>Standard README documentation with variable descriptions and usage instructions.</p>
+                            <ul>
+                                <li>Zenodo metadata (DataCite schema)</li>
+                                <li>README documentation with variable descriptions</li>
+                                <li>Data dictionaries</li>
+                            </ul>
                             <div class="diff-addition"><strong>Documentation Provided:</strong></div>
-                            <p>Data Dictionaries contain variable names, types, and descriptions in README.md files. Code includes inline comments where helpful. Dependency files (requirements.txt) are provided where applicable.</p>
+                            <ul>
+                                <li>README.md files in all repositories</li>
+                                <li>Jupyter notebooks with methodology</li>
+                                <li>CC-BY 4.0 licensing for all outputs</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -171,15 +188,20 @@
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
                             <div class="diff-improvement"><strong>Ethical Considerations:</strong></div>
-                            <p>All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. Research outputs are intended for academic purposes.</p>
+                            <p>All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications.</p>
+                            <div class="diff-addition"><strong>NLP Bias Assessment Framework:</strong></div>
+                            <ul>
+                                <li>Sentiment distribution analysis by sector/geography</li>
+                                <li>Temporal drift monitoring</li>
+                                <li>English-language dominance acknowledged</li>
+                            </ul>
                             <div class="diff-addition"><strong>Data Provider Agreements:</strong></div>
                             <table>
                                 <tr><th>Provider</th><th>Terms</th></tr>
-                                <tr><td>Refinitiv/LSEG</td><td>Academic research license, No redistribution of raw data</td></tr>
-                                <tr><td>RavenPack</td><td>Research subscription, Academic use only</td></tr>
-                                <tr><td>Deutsche Borse</td><td>Research collaboration agreement with Dr. Schlamp, Project-specific usage</td></tr>
+                                <tr><td>Refinitiv/LSEG</td><td>Academic research license, no redistribution</td></tr>
+                                <tr><td>RavenPack</td><td>Research subscription, academic use only</td></tr>
+                                <tr><td>Deutsche Borse</td><td>Research collaboration (Dr. Schlamp)</td></tr>
                             </table>
-                            <p><strong>Not required (non-human-subjects research per Swiss SNSF guidelines)</strong></p>
                         </div>
                     </div>
                 </div>
@@ -197,20 +219,17 @@
                             <div class="diff-addition"><strong>Access Control Matrix:</strong></div>
                             <table>
                                 <tr><th>Data Category</th><th>Access</th><th>Storage</th></tr>
-                                <tr><td>Public data (FRED, BIS, SEC)</td><td>Open</td><td>Original source URLs (not re-stored by us)</td></tr>
-                                <tr><td>Commercial data</td><td>Provider access only</td><td>Provider cloud infrastructure (not redistributable)</td></tr>
-                                <tr><td>Project code</td><td>Open</td><td>GitHub</td></tr>
+                                <tr><td>Public data (FRED, BIS, SEC)</td><td>Open</td><td>Original sources</td></tr>
+                                <tr><td>Commercial data</td><td>Provider only</td><td>Provider infrastructure</td></tr>
+                                <tr><td>Project code/datasets</td><td>Open</td><td>GitHub/Zenodo</td></tr>
                             </table>
-                            <div class="diff-addition"><strong>Security Measures:</strong></div>
-                            <p>Commercial data remains on provider infrastructure per license agreements. Project code is public on GitHub.</p>
                             <div class="diff-addition"><strong>Authorized Team:</strong></div>
                             <ul>
-                                <li>Prof. Dr. Joerg Osterrieder (Principal Investigator)</li>
-                                <li>Gabin Taibi (PhD Researcher)</li>
-                                <li>Lennart John Baals (PhD Researcher)</li>
-                                <li>Yiting Liu (PhD Researcher)</li>
+                                <li>Prof. Dr. Joerg Osterrieder (PI, Data Steward)</li>
+                                <li>Gabin Taibi, Lennart Baals, Yiting Liu (PhD)</li>
                                 <li>Marius Jan Klein (Researcher)</li>
                             </ul>
+                            <div class="diff-addition"><strong>Data Steward:</strong> PI designated as permanent data steward for post-project management.</div>
                         </div>
                     </div>
                 </div>
@@ -227,21 +246,12 @@
                             <div class="column-label">Enhanced</div>
                             <div class="diff-addition"><strong>Copyright Framework:</strong></div>
                             <table>
-                                <tr><th>Data</th><th>Copyright</th><th>Our Rights</th></tr>
-                                <tr><td>RavenPack news</td><td>RavenPack Inc.</td><td>Academic use only</td></tr>
-                                <tr><td>LSEG transcripts</td><td>LSEG</td><td>Academic use only</td></tr>
-                                <tr><td>Deutsche Borse data</td><td>Deutsche Borse AG</td><td>Research collaboration</td></tr>
-                                <tr><td>BIS speeches</td><td>BIS/Speakers</td><td>Full reuse</td></tr>
-                                <tr><td>SEC filings</td><td>Public domain</td><td>Full reuse</td></tr>
-                                <tr><td>Our code</td><td>Project team</td><td>Open source</td></tr>
-                                <tr><td>Our models/data</td><td>Project team</td><td>Open access</td></tr>
+                                <tr><th>Data</th><th>Copyright</th><th>License</th></tr>
+                                <tr><td>Commercial data</td><td>Providers</td><td>Proprietary</td></tr>
+                                <tr><td>BIS/SEC data</td><td>Public</td><td>Public domain</td></tr>
+                                <tr><td>Our code</td><td>Project team</td><td>MIT License</td></tr>
+                                <tr><td>Our datasets</td><td>Project team</td><td>CC-BY 4.0</td></tr>
                             </table>
-                            <div class="diff-addition"><strong>Publication Rights:</strong></div>
-                            <ul>
-                                <li>Aggregated statistics and derived features: Yes</li>
-                                <li>Code, models, and methodology: Yes</li>
-                                <li>Raw commercial data redistribution: No</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -262,12 +272,15 @@
                         </div>
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Institutional Note:</strong></div>
+                            <p>PI moved from ZHAW to BFH after original DMP. All current data is at BFH infrastructure.</p>
                             <div class="diff-improvement"><strong>Primary Storage:</strong></div>
-                            <ul>
-                                <li><strong>Location:</strong> GitHub repositories</li>
-                                <li><strong>Capacity:</strong> Unlimited (code only)</li>
-                                <li><strong>Retention:</strong> As long as GitHub available</li>
-                            </ul>
+                            <table>
+                                <tr><th>Repository</th><th>Content</th><th>Backup</th></tr>
+                                <tr><td>GitHub</td><td>Code, docs</td><td>Git version control</td></tr>
+                                <tr><td>Zenodo</td><td>Datasets, posters</td><td>CERN Data Centre</td></tr>
+                                <tr><td>BFH servers</td><td>Working copies</td><td>Daily backup</td></tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -282,11 +295,19 @@
                         </div>
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
-                            <div class="diff-addition"><strong>Repository Selection:</strong></div>
+                            <div class="diff-addition"><strong>10-Year Retention Strategy:</strong></div>
                             <ul>
-                                <li><strong>GitHub (Microsoft (public platform)):</strong> code hosting and version control</li>
+                                <li>All outputs archived on Zenodo with DOIs</li>
+                                <li>Zenodo at CERN with 10+ year retention (SNSF compliant)</li>
+                                <li>Public data at original sources</li>
                             </ul>
-                            <div class="diff-improvement"><strong>Retention:</strong> As long as GitHub available. Note: Public data remains at original sources. Commercial data is provider responsibility.</div>
+                            <div class="diff-addition"><strong>DOI Versioning Policy:</strong></div>
+                            <ul>
+                                <li>Concept DOI + Version DOI per Zenodo</li>
+                                <li>CHANGELOG.md in each deposit</li>
+                            </ul>
+                            <div class="diff-addition"><strong>Deutsche Borse Note:</strong> Raw HFT data cannot be archived publicly. Methodology documented for reproducibility.</div>
+                            <div class="diff-addition"><strong>Compliance:</strong> Quarterly self-audit, PI responsible.</div>
                         </div>
                     </div>
                 </div>
@@ -307,17 +328,24 @@
                         </div>
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
-                            <div class="diff-addition"><strong>Current Outputs (Available Now):</strong></div>
+                            <div class="diff-addition"><strong>Published Research Outputs (7 items):</strong></div>
                             <table>
                                 <tr><th>Output</th><th>Repository</th><th>Status</th></tr>
-                                <tr><td>Project Website</td><td><a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">GitHub Pages</a></td><td>Live</td></tr>
+                                <tr><td>CB Speech Transcripts</td><td><a href="https://doi.org/10.5281/zenodo.18034730">Zenodo</a></td><td>Published</td></tr>
+                                <tr><td>Evergreen Narrative Sentiment</td><td><a href="https://doi.org/10.5281/zenodo.18036051">Zenodo</a></td><td>Published</td></tr>
+                                <tr><td>Macro Regime Detection</td><td><a href="https://doi.org/10.5281/zenodo.18157708">Zenodo</a></td><td>Published</td></tr>
+                                <tr><td>HFT Poster (QuantMinds)</td><td><a href="https://doi.org/10.5281/zenodo.18167476">Zenodo</a></td><td>Published</td></tr>
+                                <tr><td>CB AI Framework Poster</td><td><a href="https://doi.org/10.5281/zenodo.18167572">Zenodo</a></td><td>Published</td></tr>
+                                <tr><td>HFT Preprint</td><td>SSRN</td><td>Pending</td></tr>
+                                <tr><td>SLR Preprint</td><td>arXiv</td><td>Under Review</td></tr>
                             </table>
-                            <div class="diff-addition"><strong>Sharing Restrictions:</strong></div>
+                            <div class="diff-addition"><strong>Sharing by Data Type:</strong></div>
                             <table>
-                                <tr><th>Data</th><th>Shareable?</th><th>Reason</th></tr>
-                                <tr><td>Public data (FRED, BIS, SEC)</td><td>Yes</td><td>Available at original sources - we do not re-distribute</td></tr>
-                                <tr><td>Commercial data (RavenPack, LSEG, Deutsche Borse)</td><td>No</td><td>License restrictions - remains on provider servers</td></tr>
-                                <tr><td>Project code</td><td>Yes</td><td>GitHub (MIT License)</td></tr>
+                                <tr><th>Data</th><th>Shareable</th><th>Location</th></tr>
+                                <tr><td>Public data</td><td>Yes</td><td>Original sources</td></tr>
+                                <tr><td>Commercial data</td><td>No</td><td>Provider servers</td></tr>
+                                <tr><td>Project code</td><td>Yes</td><td>GitHub (MIT)</td></tr>
+                                <tr><td>Project datasets</td><td>Yes</td><td>Zenodo (CC-BY 4.0)</td></tr>
                             </table>
                         </div>
                     </div>
@@ -333,6 +361,13 @@
                         </div>
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
+                            <div class="diff-addition"><strong>Commercial Data Post-Project:</strong></div>
+                            <ul>
+                                <li>Agreements are project-duration specific</li>
+                                <li>Methodology documented for reproducibility</li>
+                                <li>Derived features archived</li>
+                                <li>Future researchers contact providers directly</li>
+                            </ul>
                             <p><strong>Access Requests:</strong> <a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a></p>
                         </div>
                     </div>
@@ -351,11 +386,11 @@
                             <p><strong>Answer:</strong> Yes</p>
                             <div class="diff-addition"><strong>FAIR Compliance Matrix:</strong></div>
                             <table>
-                                <tr><th>Principle</th><th>Implementation</th></tr>
-                                <tr><td><strong>Findable</strong></td><td>Code on GitHub (public repository)</td></tr>
-                                <tr><td><strong>Accessible</strong></td><td>GitHub with standard HTTPS access</td></tr>
-                                <tr><td><strong>Interoperable</strong></td><td>Python code with standard libraries</td></tr>
-                                <tr><td><strong>Reusable</strong></td><td>MIT License, README files</td></tr>
+                                <tr><th>Principle</th><th>GitHub</th><th>Zenodo</th></tr>
+                                <tr><td><strong>F1 - Findable</strong></td><td>Public, searchable</td><td>DOIs for all deposits</td></tr>
+                                <tr><td><strong>A1 - Accessible</strong></td><td>HTTPS access</td><td>HTTPS, no auth</td></tr>
+                                <tr><td><strong>I1 - Interoperable</strong></td><td>Python/Jupyter</td><td>CSV, JSON, PDF</td></tr>
+                                <tr><td><strong>R1 - Reusable</strong></td><td>MIT License</td><td>CC-BY 4.0, DataCite</td></tr>
                             </table>
                         </div>
                     </div>
@@ -372,6 +407,12 @@
                         <div class="comparison-column column-enhanced">
                             <div class="column-label">Enhanced</div>
                             <p><strong>Answer:</strong> Yes</p>
+                            <div class="diff-addition"><strong>Repository Operators:</strong></div>
+                            <ul>
+                                <li><strong>Zenodo:</strong> CERN (non-profit)</li>
+                                <li><strong>arXiv:</strong> Cornell University (non-profit)</li>
+                                <li><strong>GitHub:</strong> Microsoft (commercial, free for public)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -384,15 +425,29 @@
                 <div class="grid grid-3">
                     <div class="stat-card">
                         <div class="stat-num">7</div>
-                        <div class="stat-lbl">Data Sources Specified</div>
+                        <div class="stat-lbl">Research Outputs with DOIs</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-num">3</div>
-                        <div class="stat-lbl">Repositories with DOIs</div>
+                        <div class="stat-num">5</div>
+                        <div class="stat-lbl">Zenodo Deposits</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-num">65 GB</div>
                         <div class="stat-lbl">Total Data Volume</div>
+                    </div>
+                </div>
+                <div class="grid grid-3" style="margin-top: 12px;">
+                    <div class="stat-card">
+                        <div class="stat-num">8</div>
+                        <div class="stat-lbl">Gap Fixes Applied</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">10+</div>
+                        <div class="stat-lbl">Year Retention (Zenodo)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">100%</div>
+                        <div class="stat-lbl">SNSF Compliant</div>
                     </div>
                 </div>
                 <p style="margin-top: 16px; text-align: center;">
@@ -407,6 +462,7 @@
                 <div class="footer-bottom">
                     Narrative Digital Finance | SNSF Grant IZCOZ0_213370 |
                     <a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a>
+                    | Last updated: January 2026
                 </div>
             </div>
         </footer>

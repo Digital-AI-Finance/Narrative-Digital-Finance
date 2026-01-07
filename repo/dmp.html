@@ -37,10 +37,16 @@
         .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
         .badge-yes { background: #10b981; color: #fff; }
         .badge-no { background: #dc2626; color: #fff; }
+        .badge-pending { background: #f59e0b; color: #fff; }
         .report-footer { margin-top: 32px; padding: 16px 0; border-top: 1px solid #e2e8f0; text-align: center; font-size: 10px; color: #64748b; }
         .report-footer a { color: #3b82f6; }
         .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #3b82f6; color: #fff; padding: 8px 12px; border-radius: 4px; font-size: 11px; text-decoration: none; opacity: 0.8; }
         .back-to-top:hover { opacity: 1; color: #fff; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 11px; }
+        th, td { padding: 6px 8px; text-align: left; border: 1px solid #e2e8f0; }
+        th { background: #f1f5f9; font-weight: 600; }
+        .note { background: #fef3c7; border-left: 3px solid #f59e0b; padding: 8px 12px; margin: 10px 0; font-size: 11px; }
+        .info { background: #dbeafe; border-left: 3px solid #3b82f6; padding: 8px 12px; margin: 10px 0; font-size: 11px; }
         @media print {
             .navbar, .back-to-top { display: none; }
             body { padding-top: 0; background: #fff; }
@@ -61,14 +67,14 @@
     <div class="navbar-nav">
         <a href="index.html">Home</a>
         <a href="papers/index.html">Papers</a>
-            <a href="objectives.html">Objectives</a>
+        <a href="objectives.html">Objectives</a>
         <a href="report.html">Report</a>
         <a href="dmp.html" class="active">DMP</a>
         <a href="dmp-comparison.html">Compare</a>
     </div>
 </nav>
 
-<h1>Data management plan (DMP)</h1>
+<h1>Data Management Plan (DMP)</h1>
 
 <div class="header-info">
     <p style="font-size: 14px; font-weight: 700;">SNSF Grant IZCOZ0_213370</p>
@@ -94,38 +100,79 @@
 
     <h3 id="section-1-1">1.1 What data will you collect, observe, generate or reuse?</h3>
 
-    <p>We use publicly available data from financial markets (accessed via original source URLs) and commercial databases (accessed via provider APIs). Public data is not re-stored by us. Commercial data remains on provider infrastructure per license agreements. Only project-generated code and outputs are stored on GitHub.</p>
+    <p>We use publicly available data from financial markets (accessed via original source URLs) and commercial databases (accessed via provider APIs). Public data is not re-stored by us. Commercial data remains on provider infrastructure per license agreements. Project-generated code, datasets, and research outputs are stored on GitHub and archived on Zenodo with DOIs.</p>
 
     <p><strong>Commercial Data Sources (Licensed):</strong></p>
-    <p><strong>Refinitiv/LSEG:</strong> Earnings call transcripts, financial news, market data. Format: JSON, CSV. Volume: ~5 GB. Time range: 2010-2025.</p>
-    <p><strong>RavenPack:</strong> News headlines with sentiment scores. Format: CSV, Parquet. Volume: ~3 GB. Time range: 2000-2025.</p>
-    <p><strong>Deutsche Borse T7:</strong> Nanosecond-level trading data for FESX and DAX futures. Format: Binary, CSV. Volume: ~50 GB. Time range: January-August 2025.</p>
+    <table>
+        <tr><th>Source</th><th>Description</th><th>Format</th><th>Volume</th><th>Time Range</th></tr>
+        <tr><td>Refinitiv/LSEG</td><td>Earnings call transcripts, financial news, market data</td><td>JSON, CSV</td><td>~5 GB</td><td>2010-2025</td></tr>
+        <tr><td>RavenPack</td><td>News headlines with sentiment scores</td><td>CSV, Parquet</td><td>~3 GB</td><td>2000-2025</td></tr>
+        <tr><td>Deutsche Borse T7</td><td>Nanosecond-level trading data for FESX and DAX futures</td><td>Binary, CSV</td><td>~50 GB</td><td>Jan 2021 - Sep 2024</td></tr>
+    </table>
 
     <p><strong>Public Data Sources:</strong></p>
-    <p><strong>BIS Gigando:</strong> Central bank speeches worldwide. Format: Text, PDF. URL: <a href="https://www.bis.org/cbspeeches/">www.bis.org/cbspeeches/</a></p>
-    <p><strong>SEC EDGAR:</strong> 10-K and 10-Q regulatory filings. Format: HTML, XBRL. URL: <a href="https://www.sec.gov/edgar">www.sec.gov/edgar</a></p>
-    <p><strong>St. Louis FED FRED:</strong> Macroeconomic indicators (CPI, PPI, GDP, etc.). Format: CSV via API. URL: <a href="https://fred.stlouisfed.org/">fred.stlouisfed.org/</a></p>
+    <table>
+        <tr><th>Source</th><th>Description</th><th>Format</th><th>URL</th></tr>
+        <tr><td>BIS Gigando</td><td>Central bank speeches worldwide (1996-2025)</td><td>Text, PDF</td><td><a href="https://www.bis.org/cbspeeches/">bis.org/cbspeeches/</a></td></tr>
+        <tr><td>SEC EDGAR</td><td>10-K and 10-Q regulatory filings</td><td>HTML, XBRL</td><td><a href="https://www.sec.gov/edgar">sec.gov/edgar</a></td></tr>
+        <tr><td>St. Louis FED FRED</td><td>Macroeconomic indicators (CPI, PPI, GDP, etc.)</td><td>CSV via API</td><td><a href="https://fred.stlouisfed.org/">fred.stlouisfed.org/</a></td></tr>
+    </table>
 
-    <p><strong>Generated Data:</strong></p>
-    <p><strong>Project code:</strong> Analysis scripts and methods. Format: Python. Volume: minimal. Repository: <a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a>.</p>
+    <p><strong>Generated Research Outputs:</strong></p>
+    <table>
+        <tr><th>Output</th><th>Type</th><th>Format</th><th>Repository</th></tr>
+        <tr><td>Analysis code and methods</td><td>Software</td><td>Python</td><td><a href="https://github.com/Digital-AI-Finance">GitHub</a></td></tr>
+        <tr><td>CB Speech Transcripts Dataset</td><td>Dataset</td><td>CSV</td><td><a href="https://doi.org/10.5281/zenodo.18034730">Zenodo</a></td></tr>
+        <tr><td>Daily Evergreen Narrative Sentiment</td><td>Dataset</td><td>CSV</td><td><a href="https://doi.org/10.5281/zenodo.18036051">Zenodo</a></td></tr>
+        <tr><td>Macro Regime Detection Notebooks</td><td>Software</td><td>Jupyter</td><td><a href="https://doi.org/10.5281/zenodo.18157708">Zenodo</a></td></tr>
+        <tr><td>Research posters and preprints</td><td>Publication</td><td>PDF</td><td>Zenodo, SSRN, arXiv</td></tr>
+    </table>
+
+    <div class="note">
+        <strong>Note on data volume:</strong> Total data volume increased from the original estimate of ~10 GB to ~65 GB due to the addition of Deutsche Borse T7 high-frequency trading data (~50 GB) through a research collaboration established after project start.
+    </div>
 
     <h3 id="section-1-2">1.2 How will the data be collected, observed or generated?</h3>
 
-    <p>The quality of the collected data will be checked during the first working package and is an integral part of the research. The consistency as well. In addition, due to shortcomings of the data, we will apply statistical methods to overcome this. We will have various documents describing the dataset, its quality and the methods used to check its consistency.</p>
+    <p>The quality of the collected data is checked during the first working package and is an integral part of the research. We apply statistical methods to address data shortcomings. Various documents describe the dataset, its quality, and the methods used to check its consistency.</p>
 
-    <p><strong>Quality assurance:</strong> The data are checked for consistency and completeness using statistical methods. Automated validation scripts verify data integrity. Cross-validation with alternative data sources is performed where available.</p>
+    <p><strong>Data Collection Methods:</strong></p>
+    <ul>
+        <li><strong>API Access:</strong> FRED API (Python fredapi), SEC EDGAR XBRL API, BIS Gingado Python API for central bank speeches</li>
+        <li><strong>Commercial Data:</strong> RavenPack SQL access, LSEG API and bulk delivery, Deutsche Borse secure file transfer</li>
+        <li><strong>NLP Processing:</strong> HuggingFace transformers, BERT/FinBERT embeddings, BERTopic modeling, Named Entity Recognition (NER) for institution and region tagging</li>
+        <li><strong>LLM-based Analysis:</strong> OpenAI gpt-4o-mini for daily narrative sentiment scoring (Evergreen narratives)</li>
+    </ul>
 
-    <p><strong>Versioning:</strong> The code and the database are versioned with the help of Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases may receive DOIs via Zenodo integration.</p>
+    <p><strong>Quality Assurance:</strong></p>
+    <ul>
+        <li>Data checked for consistency and completeness using statistical methods</li>
+        <li>Automated validation scripts verify data integrity</li>
+        <li>Cross-validation with alternative data sources where available</li>
+        <li>Change point detection to identify structural economic shifts</li>
+    </ul>
 
-    <p><strong>Data Collection Methods:</strong> API Access via FRED API (Python fredapi), SEC EDGAR XBRL API, and BIS web scraping (Beautiful Soup). Commercial data is accessed via RavenPack SQL access, LSEG API and bulk delivery, and Deutsche Borse secure file transfer. NLP Processing uses HuggingFace transformers, BERT/FinBERT embeddings, and BERTopic modeling.</p>
+    <p><strong>Versioning:</strong> Code and databases are versioned with Git. Code repositories are maintained on GitHub (Digital-AI-Finance organization). Data releases receive DOIs via Zenodo integration.</p>
 
     <h3 id="section-1-3">1.3 What documentation and metadata will you provide with the data?</h3>
 
-    <p>The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data will be made available to our university employees so that further projects can be developed in this area.</p>
+    <p>The information on the data as well as data sources and survey processes are documented in detail. The information on the project and the data is made available to university employees so that further projects can be developed in this area.</p>
 
-    <p><strong>Metadata Standards:</strong> Standard README documentation with variable descriptions and usage instructions.</p>
+    <p><strong>Metadata Standards:</strong></p>
+    <ul>
+        <li>Zenodo metadata (DataCite schema) for all archived outputs</li>
+        <li>Standard README documentation with variable descriptions and usage instructions</li>
+        <li>Data dictionaries with variable names, types, and descriptions</li>
+    </ul>
 
-    <p><strong>Documentation Provided:</strong> Data Dictionaries contain variable names, types, and descriptions in README.md files. Code includes inline comments where helpful. Dependency files (requirements.txt) are provided where applicable.</p>
+    <p><strong>Documentation Provided:</strong></p>
+    <ul>
+        <li>README.md files in all repositories with variable descriptions</li>
+        <li>Inline code comments where helpful</li>
+        <li>Dependency files (requirements.txt) for reproducibility</li>
+        <li>Jupyter notebooks with step-by-step methodology</li>
+        <li>CC-BY 4.0 licensing for all project outputs</li>
+    </ul>
 
 </div>
 
@@ -135,11 +182,30 @@
 
     <h3 id="section-2-1">2.1 How will ethical issues be addressed and handled?</h3>
 
-    <p>No personal data or other sensitive data is used in the project. In this respect, the university internal security standards are applied. The conditions have already been discussed with the data providers. No special security standards are required by the data providers for this data.</p>
+    <p>No personal data or other sensitive data is used in the project. University internal security standards are applied. The conditions have been discussed with the data providers. No special security standards are required by the data providers for this data.</p>
 
-    <p><strong>Ethical Considerations:</strong> All financial data is aggregated market data with no individual identification. Central bank speeches are official public communications. Research outputs are intended for academic purposes.</p>
+    <p><strong>Ethical Considerations:</strong></p>
+    <ul>
+        <li>All financial data is aggregated market data with no individual identification</li>
+        <li>Central bank speeches are official public communications</li>
+        <li>Research outputs are intended for academic purposes</li>
+    </ul>
 
-    <p><strong>Data Provider Agreements:</strong> Refinitiv/LSEG operates under academic research license with no redistribution of raw data. RavenPack operates under research subscription with academic use only. Deutsche Borse operates under research collaboration agreement with dr. schlamp with project-specific usage.</p>
+    <p><strong>NLP Bias Assessment Framework:</strong></p>
+    <ul>
+        <li>Sentiment distribution analysis by sector and geographic coverage</li>
+        <li>Temporal drift monitoring for NLP model outputs</li>
+        <li>Limitations section included in all publications</li>
+        <li>English-language dominance acknowledged in central bank speech analysis</li>
+    </ul>
+
+    <p><strong>Data Provider Agreements:</strong></p>
+    <table>
+        <tr><th>Provider</th><th>Agreement Type</th><th>Terms</th></tr>
+        <tr><td>Refinitiv/LSEG</td><td>Academic research license</td><td>No redistribution of raw data</td></tr>
+        <tr><td>RavenPack</td><td>Research subscription</td><td>Academic use only</td></tr>
+        <tr><td>Deutsche Borse</td><td>Research collaboration (Dr. Schlamp)</td><td>Project-specific usage</td></tr>
+    </table>
 
     <p><strong>Ethics Approval:</strong> Not required (non-human-subjects research per Swiss SNSF guidelines)</p>
 
@@ -147,19 +213,53 @@
 
     <p>Access to the data is only granted to team members. The university IT service guarantees the security of data and processes. No sensitive data or personal data is collected in the project.</p>
 
-    <p><strong>Access Control:</strong> Public data (FRED, BIS, SEC) has open access and is stored on Original source URLs (not re-stored by us). Commercial data has provider access only access and is stored on Provider cloud infrastructure (not redistributable). Project code has open access and is stored on GitHub.</p>
+    <p><strong>Access Control:</strong></p>
+    <table>
+        <tr><th>Data Category</th><th>Access Level</th><th>Storage Location</th></tr>
+        <tr><td>Public data (FRED, BIS, SEC)</td><td>Open access</td><td>Original source URLs (not re-stored by us)</td></tr>
+        <tr><td>Commercial data</td><td>Provider access only</td><td>Provider cloud infrastructure (not redistributable)</td></tr>
+        <tr><td>Project code</td><td>Open access</td><td>GitHub (public)</td></tr>
+        <tr><td>Project datasets</td><td>Open access</td><td>Zenodo (CC-BY 4.0)</td></tr>
+    </table>
 
-    <p><strong>Security Measures:</strong> Commercial data remains on provider infrastructure per license agreements. Project code is public on GitHub.</p>
+    <p><strong>Security Measures:</strong> Commercial data remains on provider infrastructure per license agreements. Project code and derived datasets are public on GitHub and Zenodo.</p>
 
-    <p><strong>Authorized Team Members:</strong> Prof. Dr. Joerg Osterrieder (Principal Investigator), Gabin Taibi (PhD Researcher), Lennart John Baals (PhD Researcher), Yiting Liu (PhD Researcher), Marius Jan Klein (Researcher).</p>
+    <p><strong>Authorized Team Members:</strong></p>
+    <ul>
+        <li>Prof. Dr. Joerg Osterrieder (Principal Investigator, Data Steward)</li>
+        <li>Gabin Taibi (PhD Researcher)</li>
+        <li>Lennart John Baals (PhD Researcher)</li>
+        <li>Yiting Liu (PhD Researcher)</li>
+        <li>Marius Jan Klein (Researcher)</li>
+    </ul>
+
+    <div class="info">
+        <strong>Data Steward:</strong> Prof. Dr. Joerg Osterrieder is designated as permanent data steward for post-project data management. Contact: <a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a>
+    </div>
 
     <h3 id="section-2-3">2.3 How will you handle copyright and Intellectual Property Rights issues?</h3>
 
     <p>The project is based on data that are largely publicly available. The raw data records may not be published without restriction.</p>
 
-    <p><strong>Copyright Framework:</strong> RavenPack news is copyrighted by RavenPack Inc. with academic use only rights under Proprietary. LSEG transcripts is copyrighted by LSEG with academic use only rights under Proprietary. Deutsche Borse data is copyrighted by Deutsche Borse AG with research collaboration rights under Agreement. BIS speeches is copyrighted by BIS/Speakers with full reuse rights under Public (cite). SEC filings is copyrighted by Public domain with full reuse rights under Public domain. Our code is copyrighted by Project team with open source rights under MIT License. Our models/data is copyrighted by Project team with open access rights under CC-BY 4.0.</p>
+    <p><strong>Copyright Framework:</strong></p>
+    <table>
+        <tr><th>Data</th><th>Copyright Holder</th><th>Our Rights</th><th>License</th></tr>
+        <tr><td>RavenPack news</td><td>RavenPack Inc.</td><td>Academic use only</td><td>Proprietary</td></tr>
+        <tr><td>LSEG transcripts</td><td>LSEG</td><td>Academic use only</td><td>Proprietary</td></tr>
+        <tr><td>Deutsche Borse data</td><td>Deutsche Borse AG</td><td>Research collaboration</td><td>Agreement</td></tr>
+        <tr><td>BIS speeches</td><td>BIS/Speakers</td><td>Full reuse (cite)</td><td>Public</td></tr>
+        <tr><td>SEC filings</td><td>Public domain</td><td>Full reuse</td><td>Public domain</td></tr>
+        <tr><td>Our code</td><td>Project team</td><td>Open source</td><td>MIT License</td></tr>
+        <tr><td>Our datasets</td><td>Project team</td><td>Open access</td><td>CC-BY 4.0</td></tr>
+    </table>
 
-    <p><strong>Publication Rights:</strong> <span class="badge badge-yes">Yes</span> Aggregated statistics and derived features. <span class="badge badge-yes">Yes</span> Code, models, and methodology. <span class="badge badge-no">No</span> Raw commercial data redistribution.</p>
+    <p><strong>Publication Rights:</strong></p>
+    <ul>
+        <li><span class="badge badge-yes">Yes</span> Aggregated statistics and derived features</li>
+        <li><span class="badge badge-yes">Yes</span> Code, models, and methodology</li>
+        <li><span class="badge badge-yes">Yes</span> Project-generated datasets (Zenodo)</li>
+        <li><span class="badge badge-no">No</span> Raw commercial data redistribution</li>
+    </ul>
 
 </div>
 
@@ -169,17 +269,52 @@
 
     <h3 id="section-3-1">3.1 How will your data be stored and backed-up during the research?</h3>
 
-    <p>The storage capacities are very large, the amount of data remains very limited in the project. The data is managed in the form of databases on GitHub. Backups and versions of the data are continuously created.</p>
+    <p>The storage capacities are large; the amount of data remains limited in the project. The data is managed in databases on GitHub. Backups and versions of the data are continuously created.</p>
 
-    <p><strong>Primary Storage:</strong> Location is GitHub repositories. Capacity is Unlimited (code only). Backup schedule is git version control. Retention is as long as github available.</p>
+    <div class="note">
+        <strong>Institutional Note:</strong> The PI moved from ZHAW (Zurich University of Applied Sciences) to BFH (Bern University of Applied Sciences) after the original DMP was submitted. All current project data is stored at BFH infrastructure. ZHAW no longer holds project data.
+    </div>
+
+    <p><strong>Primary Storage:</strong></p>
+    <table>
+        <tr><th>Repository</th><th>Content</th><th>Capacity</th><th>Backup</th></tr>
+        <tr><td>GitHub</td><td>Code, documentation</td><td>Unlimited</td><td>Git version control</td></tr>
+        <tr><td>Zenodo</td><td>Datasets, posters, preprints</td><td>50 GB per record</td><td>CERN Data Centre</td></tr>
+        <tr><td>BFH servers</td><td>Working copies</td><td>1 TB allocated</td><td>Daily institutional backup</td></tr>
+    </table>
 
     <h3 id="section-3-2">3.2 What is your data preservation plan?</h3>
 
-    <p>The data is stored on GitHub for a long time and managed using existing tools. There is no obligation to destroy the data.</p>
+    <p>The data is stored on GitHub and Zenodo for long-term preservation and managed using existing tools. There is no obligation to destroy the data.</p>
 
-    <p><strong>Repository Selection:</strong> GitHub is operated by Microsoft (public platform), offers code hosting and version control.</p>
+    <p><strong>Repository Selection:</strong></p>
+    <table>
+        <tr><th>Repository</th><th>Operator</th><th>Purpose</th><th>Retention</th></tr>
+        <tr><td>GitHub</td><td>Microsoft (public platform)</td><td>Code hosting, version control</td><td>Indefinite</td></tr>
+        <tr><td>Zenodo</td><td>CERN (non-profit)</td><td>Dataset archival with DOIs</td><td>10+ years (SNSF compliant)</td></tr>
+    </table>
 
-    <p><strong>Retention Period:</strong> As long as GitHub available. Note: Public data remains at original sources. Commercial data is provider responsibility.</p>
+    <p><strong>10-Year Retention Strategy:</strong></p>
+    <ul>
+        <li>All project outputs archived on Zenodo with persistent DOIs</li>
+        <li>Zenodo hosted at CERN Data Centre with guaranteed long-term preservation</li>
+        <li>Public data remains at original sources (FRED, BIS, SEC)</li>
+        <li>Commercial data is provider responsibility (not archived by us)</li>
+    </ul>
+
+    <p><strong>DOI Versioning Policy:</strong></p>
+    <ul>
+        <li>Zenodo provides Concept DOI (resolves to latest version) and Version DOI (resolves to specific snapshot)</li>
+        <li>New version created for any data change; README updated for documentation changes</li>
+        <li>CHANGELOG.md maintained in each Zenodo deposit</li>
+        <li>Citation format included in all README files</li>
+    </ul>
+
+    <div class="note">
+        <strong>Deutsche Borse T7 Data:</strong> Due to the research collaboration agreement, raw HFT data cannot be archived publicly. Analysis methodology and derived features are documented to enable reproducibility. Future researchers can contact Deutsche Borse for data access.
+    </div>
+
+    <p><strong>Compliance Verification:</strong> Quarterly self-audit of FAIR/ORD compliance. PI responsible for verification. Compliance status included in project progress reports.</p>
 
 </div>
 
@@ -189,15 +324,50 @@
 
     <h3 id="section-4-1">4.1 How and where will the data be shared?</h3>
 
-    <p>The code developed during the project together with all necessary accompanying documentation will be stored on a GitHub channel. On the other hand, the data archiving will be done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and it provides easy integration with GitHub.</p>
+    <p>The code developed during the project together with all necessary accompanying documentation is stored on GitHub. Data archiving is done through Zenodo. Zenodo offers safe storage for all data and research outputs in CERN's Data Centre and provides easy integration with GitHub.</p>
 
-    <p><strong>Current Outputs (Available Now):</strong> Project Website is live on GitHub Pages at <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">digital-ai-finance.github.io/Narrative-Digital-Finance/</a>.</p>
+    <p><strong>Published Research Outputs:</strong></p>
+    <table>
+        <tr><th>Output</th><th>Repository</th><th>DOI</th><th>Status</th></tr>
+        <tr><td>World Central Banker Speech Transcripts (1996-2025)</td><td>Zenodo</td><td><a href="https://doi.org/10.5281/zenodo.18034730">10.5281/zenodo.18034730</a></td><td><span class="badge badge-yes">Published</span></td></tr>
+        <tr><td>Daily Evergreen Narrative Sentiment (2004-2025)</td><td>Zenodo</td><td><a href="https://doi.org/10.5281/zenodo.18036051">10.5281/zenodo.18036051</a></td><td><span class="badge badge-yes">Published</span></td></tr>
+        <tr><td>Macroeconomic Regime Detection Notebooks</td><td>Zenodo</td><td><a href="https://doi.org/10.5281/zenodo.18157708">10.5281/zenodo.18157708</a></td><td><span class="badge badge-yes">Published</span></td></tr>
+        <tr><td>HFT Market Quality Poster (QuantMinds 2024)</td><td>Zenodo</td><td><a href="https://doi.org/10.5281/zenodo.18167476">10.5281/zenodo.18167476</a></td><td><span class="badge badge-yes">Published</span></td></tr>
+        <tr><td>CB Communications AI Framework Poster (Freiburg 2025)</td><td>Zenodo</td><td><a href="https://doi.org/10.5281/zenodo.18167572">10.5281/zenodo.18167572</a></td><td><span class="badge badge-yes">Published</span></td></tr>
+        <tr><td>HFT Impact on Market Liquidity (Preprint)</td><td>SSRN</td><td>Pending</td><td><span class="badge badge-pending">Submitted</span></td></tr>
+        <tr><td>Systematic Literature Review (Financial Innovation)</td><td>arXiv</td><td>Pending</td><td><span class="badge badge-pending">Under Review</span></td></tr>
+        <tr><td>Project Website</td><td>GitHub Pages</td><td>N/A</td><td><span class="badge badge-yes">Live</span></td></tr>
+    </table>
 
-    <p><strong>Sharing by Data Type:</strong> Public data (FRED, BIS, SEC): <span class="badge badge-yes">Yes</span> (Available at original sources - we do not re-distribute). Commercial data (RavenPack, LSEG, Deutsche Borse): <span class="badge badge-no">No</span> (License restrictions - remains on provider servers). Project code: <span class="badge badge-yes">Yes</span> (GitHub (MIT License)).</p>
+    <p><strong>Repository URLs:</strong></p>
+    <ul>
+        <li>Website: <a href="https://digital-ai-finance.github.io/Narrative-Digital-Finance/">digital-ai-finance.github.io/Narrative-Digital-Finance/</a></li>
+        <li>Code: <a href="https://github.com/Digital-AI-Finance">github.com/Digital-AI-Finance</a></li>
+        <li>Datasets: <a href="https://zenodo.org/communities/narrative-digital-finance">zenodo.org/communities/narrative-digital-finance</a></li>
+    </ul>
+
+    <p><strong>Sharing by Data Type:</strong></p>
+    <table>
+        <tr><th>Data Type</th><th>Shareable</th><th>Location/Reason</th></tr>
+        <tr><td>Public data (FRED, BIS, SEC)</td><td><span class="badge badge-yes">Yes</span></td><td>Available at original sources (not re-distributed)</td></tr>
+        <tr><td>Commercial data (RavenPack, LSEG, Deutsche Borse)</td><td><span class="badge badge-no">No</span></td><td>License restrictions (remains on provider servers)</td></tr>
+        <tr><td>Project code</td><td><span class="badge badge-yes">Yes</span></td><td>GitHub (MIT License)</td></tr>
+        <tr><td>Project datasets</td><td><span class="badge badge-yes">Yes</span></td><td>Zenodo (CC-BY 4.0)</td></tr>
+        <tr><td>Research posters</td><td><span class="badge badge-yes">Yes</span></td><td>Zenodo (CC-BY 4.0)</td></tr>
+        <tr><td>Preprints</td><td><span class="badge badge-yes">Yes</span></td><td>SSRN, arXiv (Open Access)</td></tr>
+    </table>
 
     <h3 id="section-4-2">4.2 Are there any necessary limitations to protect sensitive data?</h3>
 
     <p>We do not use sensitive data in the project. The data come from conventional data providers and are originally collected from public sources.</p>
+
+    <p><strong>Commercial Data Post-Project Access:</strong></p>
+    <ul>
+        <li>Commercial data agreements are project-duration specific</li>
+        <li>Analyses using commercial data are reproducible via methodology documentation</li>
+        <li>Derived features (shareable) are archived with sufficient detail</li>
+        <li>Future researchers can contact original providers for data access</li>
+    </ul>
 
     <p><strong>Access Requests:</strong> For restricted data, contact <a href="mailto:joerg.osterrieder@bfh.ch">joerg.osterrieder@bfh.ch</a> - we can facilitate contact with original data providers.</p>
 
@@ -205,11 +375,25 @@
 
     <p><span class="badge badge-yes">Yes</span></p>
 
-    <p><strong>FAIR Data Principles Implementation:</strong> <strong>Findable:</strong> Code on GitHub (public repository). <strong>Accessible:</strong> GitHub with standard HTTPS access. <strong>Interoperable:</strong> Python code with standard libraries. <strong>Reusable:</strong> MIT License, README files.</p>
+    <p><strong>FAIR Data Principles Implementation:</strong></p>
+    <table>
+        <tr><th>Principle</th><th>GitHub</th><th>Zenodo</th></tr>
+        <tr><td><strong>F1 - Findable</strong></td><td>Public repository, searchable</td><td>DOIs for all deposits</td></tr>
+        <tr><td><strong>A1 - Accessible</strong></td><td>HTTPS access</td><td>HTTPS, no authentication required</td></tr>
+        <tr><td><strong>I1 - Interoperable</strong></td><td>Standard Python/Jupyter formats</td><td>Standard formats (CSV, JSON, PDF)</td></tr>
+        <tr><td><strong>R1 - Reusable</strong></td><td>MIT License, README files</td><td>CC-BY 4.0, DataCite metadata</td></tr>
+    </table>
 
     <h3 id="section-4-4">4.4 I will choose digital repositories maintained by a non-profit organisation.</h3>
 
     <p><span class="badge badge-yes">Yes</span></p>
+
+    <p><strong>Repository Operators:</strong></p>
+    <ul>
+        <li><strong>Zenodo:</strong> Operated by CERN (European Organization for Nuclear Research) - non-profit</li>
+        <li><strong>arXiv:</strong> Operated by Cornell University - non-profit</li>
+        <li><strong>GitHub:</strong> Operated by Microsoft - commercial, but free for public repositories</li>
+    </ul>
 
 </div>
 
