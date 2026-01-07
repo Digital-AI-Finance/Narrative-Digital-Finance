@@ -52,13 +52,13 @@
     <p><strong>Institution:</strong> Bern University of Applied Sciences / University of Twente</p>
     <p><strong>Funding Period:</strong> August 2023 - August 2026</p>
     <p><strong>Total Funding:</strong> CHF 236,118</p>
-    <p style="margin-top:12px; font-size:10pt;">Report Date: January 5, 2026 | Version 3.0</p>
+    <p style="margin-top:12px; font-size:10pt;">Report Date: January 7, 2026 | Version 4.0</p>
     <p style="margin-top:12px;"><a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/blob/main/final-report/Narrative-Digital-Finance/docs/SciencePart_Osterrieder.pdf">Full Report PDF</a></p>
 </div>
 
 <h3>Executive Summary</h3>
 
-<p>This project successfully developed novel computational frameworks bridging narrative economics with financial market analysis. The research produced eight publications and preprints, established collaborations with many industry partners including Deutsche Borse AG and Quoniam Asset Management, built a network spanning 49 countries with over 420 researchers, and completed all four work packages as defined in the original proposal. Key achievements include the TOPol framework for multidimensional semantic polarity analysis, macro-narrative integration combining macroeconomic indices with topic modeling for structural break detection, and HFT classification methodology measuring how rapidly information propagates through markets at nanosecond resolution. The research created open-source tools available at Zenodo enabling reproducible research. The project extends narrative economics (Shiller 2017, 2019) with quantitative computational methods.</p>
+<p>This project successfully developed novel computational frameworks bridging narrative economics with financial market analysis. The research produced eight publications and preprints, six Zenodo-archived datasets and code repositories totaling over 600 MB of research outputs, established collaborations with industry partners including Deutsche Borse AG and Quoniam Asset Management, built a network spanning 49 countries with over 420 researchers, and completed all four work packages as defined in the original proposal. Key achievements include the TOPol framework for multidimensional semantic polarity analysis, macro-narrative integration combining macroeconomic indices with topic modeling for structural break detection, and HFT classification methodology measuring how rapidly information propagates through markets at nanosecond resolution. All research outputs are publicly available through Zenodo with persistent DOIs, enabling fully reproducible research in accordance with FAIR principles. The project extends narrative economics (Shiller 2017, 2019) with quantitative computational methods.</p>
 
 <h2>1.1 Achievement of Research Objectives</h2>
 
@@ -66,31 +66,32 @@
 
 <h3>WP1: Text Data and Text Analytics</h3>
 
-<p>We developed the TOPol framework, a semi-unsupervised approach for multidimensional semantic polarity using transformer embeddings, UMAP projection, and Leiden clustering. Unlike traditional unidimensional sentiment scoring, TOPol captures the full complexity of financial narratives through vectorial representation of polarity shifts. The framework embeds documents using transformer-based LLMs, applies neighbor-tuned UMAP projection, and segments via Leiden partitioning. Given regime boundaries, it computes directional vectors between topic-boundary centroids, producing polarity fields that capture semantic displacement. Additionally, we created an AI-enhanced systematic literature review methodology using NLP techniques, clustering algorithms, and interpretability tools, currently under revision at Financial Innovation. We developed a new methodology to quantify narratives in financial texts based on embeddings and zero-shot classification. Custom data pipelines were developed for RavenPack financial news, BIS central bank speeches, and SEC EDGAR 10-K/10-Q filings.</p>
+<p>We developed the TOPol framework, a semi-unsupervised approach for multidimensional semantic polarity using transformer embeddings, UMAP projection, and Leiden clustering. Unlike traditional unidimensional sentiment scoring, TOPol captures the full complexity of financial narratives through vectorial representation of polarity shifts. The framework embeds documents using transformer-based LLMs, applies neighbor-tuned UMAP projection, and segments via Leiden partitioning. Given regime boundaries, it computes directional vectors between topic-boundary centroids, producing polarity fields that capture semantic displacement. Additionally, we created an AI-enhanced systematic literature review methodology using NLP techniques, clustering algorithms, and interpretability tools, currently under revision at Financial Innovation (<a href="docs/preprint-SLR.pdf">preprint</a>). We developed a new methodology to quantify narratives in financial texts based on embeddings and zero-shot classification. Custom data pipelines were developed for RavenPack financial news, BIS central bank speeches, and SEC EDGAR 10-K/10-Q filings. To enable reproducible research, we released the BIS Central Banker Speeches Archive: a comprehensive 379 MB dataset containing worldwide central banker speeches from 1996-2025, collected via the BIS Gingado API using our open-source Python extraction script (<a href="https://doi.org/10.5281/zenodo.18034730">DOI: 10.5281/zenodo.18034730</a> | <a href="docs/extract_speeches.py">Script</a> | <a href="docs/gigando-cb-speeches_1996-2025.csv">CSV</a>).</p>
 
 <h3>WP2: Structural Breaks Detection and Asset Price Bubbles</h3>
 
-<p>We developed the Macro Narratives Framework, which combines a PCA-based US Macro Strength Index using FED Funds Rate, CPI, PPI, GDP, Unemployment, and Nonfarm Payrolls from St. Louis FED FRED (1996-2025) with the PELT algorithm for change point detection. The first principal component captures joint dynamics in growth, inflation, and labor conditions. As validation, we applied the framework to Federal Reserve banker speech transcripts from BIS Gigando datasets (2004-2010) around the 2008 financial crisis, successfully identifying narrative shifts at detected breakpoints using BERTopic topic modeling. Null hypothesis testing via 1,000 random shuffling simulations validated statistical significance of observed polarity drift (FinBERT sentiment), semantic centroid movement (cosine similarity), and keyword evolution (Jaccard similarity of MMR sets). Additionally, we examined bubble formation in digital asset markets using supremum augmented Dickey-Fuller (SADF), generalized SADF (GSADF), and log-periodic power-law singularity (LPPLS) methods on NFT and DeFi indices, documenting recurrent explosive episodes clustering around the "DeFi Summer" of 2020, the crypto boom of early 2021, and the NFT bull run of late 2021.</p>
+<p>We developed the Macro Narratives Framework, which combines a PCA-based US Macro Strength Index using FED Funds Rate, CPI, PPI, GDP, Unemployment, and Nonfarm Payrolls from St. Louis FED FRED (1996-2025) with the PELT algorithm for change point detection. The first principal component captures joint dynamics in growth, inflation, and labor conditions. As validation, we applied the framework to Federal Reserve banker speech transcripts from BIS Gigando datasets (2004-2010) around the 2008 financial crisis, successfully identifying narrative shifts at detected breakpoints using BERTopic topic modeling. Null hypothesis testing via 1,000 random shuffling simulations validated statistical significance of observed polarity drift (FinBERT sentiment), semantic centroid movement (cosine similarity), and keyword evolution (Jaccard similarity of MMR sets). This research was presented as a poster at the Advances in Mathematical Finance conference at University of Freiburg in May 2025 (<a href="https://doi.org/10.5281/zenodo.18167572">DOI: 10.5281/zenodo.18167572</a> | <a href="docs/Poster_Macro_narratives.pdf">PDF</a>). The complete analysis pipeline and datasets are publicly available: the US Fed Speeches NER Dataset (206 MB parquet file with NER-tagged transcripts and macro sentiment scores), macroeconomic indicators (14 KB CSV), and two Jupyter notebooks for NER tagging and breakpoint detection analysis (<a href="https://doi.org/10.5281/zenodo.18157708">DOI: 10.5281/zenodo.18157708</a> | <a href="docs/gigando_speech_NER.ipynb">NER Notebook</a> | <a href="docs/macroeconomic_narratives_breakpoints.ipynb">Breakpoints Notebook</a>). Additionally, we examined bubble formation in digital asset markets using supremum augmented Dickey-Fuller (SADF), generalized SADF (GSADF), and log-periodic power-law singularity (LPPLS) methods on NFT and DeFi indices, documenting recurrent explosive episodes clustering around the "DeFi Summer" of 2020, the crypto boom of early 2021, and the NFT bull run of late 2021. The bubble detection methodology and code are archived at Zenodo (<a href="https://doi.org/10.5281/zenodo.18154903">DOI: 10.5281/zenodo.18154903</a> | <a href="papers/NFT_DeFi_Bubble_Detection.pdf">PDF</a>).</p>
 
 <h3>WP3: Narratives for Structural Breaks</h3>
 
-<p>We developed Python code and datasets for analyzing the effect of US central bank speeches on the macroeconomy. The methodology uses topic modeling to extract inflation narratives and constructs macroeconomic indices. We regress hawkish and dovish scores extracted from Federal Reserve communications against macro and inflation indices to quantify the relationship between central bank narrative tone and economic outcomes. In collaboration with Quoniam Asset Management, we extended this framework to practical portfolio applications, bridging academic research with institutional investment strategies.</p>
+<p>We developed Python code and datasets for analyzing the effect of US central bank speeches on the macroeconomy. The methodology uses topic modeling to extract inflation narratives and constructs macroeconomic indices. We regress hawkish and dovish scores extracted from Federal Reserve communications against macro and inflation indices to quantify the relationship between central bank narrative tone and economic outcomes. In collaboration with Quoniam Asset Management, we extended this framework to practical portfolio applications, bridging academic research with institutional investment strategies. A key output of the Quoniam collaboration is the Evergreen Narratives Sentiments dataset: a 1.5 MB CSV file containing daily sentiment scores for "evergreen" financial narratives spanning from 2004 through mid-2025, computed using OpenAI's gpt-4o-mini model applied to US-filtered news headlines. This dataset enables researchers to study how persistent narrative themes evolve over time and correlate with market outcomes (<a href="https://doi.org/10.5281/zenodo.18036051">DOI: 10.5281/zenodo.18036051</a> | <a href="docs/llm_narrative_sentiment_daily.csv">CSV</a>).</p>
 
 <h3>WP4: Multidimensional AI and ML Solutions</h3>
 
-<p>In collaboration with Deutsche Borse AG, we developed the HFT Market Microstructure framework, which measures how rapidly information propagates through financial markets at nanosecond resolution. Using nanosecond-level timestamp data from Deutsche Borse's T7 platform, the methodology classifies market participants by their reaction speed to information: Ultra-Fast Traders (UFT, less than 1 microsecond using FPGAs), High-Frequency Traders (HFT, 1-10 microseconds), and conventional participants (greater than 10 microseconds). Research documents participation shares showing UFT/HFT produce roughly 20% of total participation, price discovery via 15-second mark-out signal-to-noise ratio, and market quality metrics including order-imbalance volatility, Amihud illiquidity, and high-frequency return diagnostics for Euro STOXX 50 Index Futures from January to August 2025. This directly addresses the original research question of ex-ante predictability by quantifying how quickly narrative-driven information is incorporated into prices.</p>
+<p>In collaboration with Deutsche Borse AG, we developed the HFT Market Microstructure framework, which measures how rapidly information propagates through financial markets at nanosecond resolution. Using nanosecond-level timestamp data from Deutsche Borse's T7 platform, the methodology classifies market participants by their reaction speed to information: Ultra-Fast Traders (UFT, less than 1 microsecond using FPGAs), High-Frequency Traders (HFT, 1-10 microseconds), and conventional participants (greater than 10 microseconds). Research documents participation shares showing UFT/HFT produce roughly 20% of total participation, price discovery via 15-second mark-out signal-to-noise ratio, and market quality metrics including order-imbalance volatility, Amihud illiquidity, and high-frequency return diagnostics for Euro STOXX 50 Index Futures from January to August 2025. This directly addresses the original research question of ex-ante predictability by quantifying how quickly narrative-driven information is incorporated into prices. The research was presented as a poster titled "From Speed to Stability: The Influence of Low Latency Trading on Market Quality" at QuantMinds International 2024 in London (<a href="https://doi.org/10.5281/zenodo.18167476">DOI: 10.5281/zenodo.18167476</a> | <a href="docs/Poster_HFT_Impact_1.pdf">PDF</a>). A comprehensive preprint documenting nanosecond microstructure stylized facts has been submitted to SSRN (<a href="docs/HFT-stylized-facts.pdf">preprint</a>).</p>
 
 <h3>Publications</h3>
 
 <ul>
-    <li>Taibi, G., Gomez, L. (2025). TOPol: Transformer Narrative Polarity Fields. EPIA 2025 (submitted). <a href="https://arxiv.org/abs/2510.25069">arXiv: 2510.25069</a></li>
-    <li>Taibi, G. et al. (2025). AI-Enhanced Systematic Literature Review on Financial Narratives. Financial Innovation (under revision)</li>
-    <li>Taibi, G., Osterrieder, J., Schlamp, S. (2025). Nanosecond Microstructure: HFT Participation Stylized Facts. Working Paper</li>
+    <li>Taibi, G., Gomez, L. (2025). TOPol: Transformer Narrative Polarity Fields. EPIA 2025 (submitted). <a href="https://arxiv.org/abs/2510.25069">arXiv: 2510.25069</a> | <a href="https://osf.io/nr94j/">OSF</a></li>
+    <li>Taibi, G. et al. (2025). AI-Enhanced Systematic Literature Review on Financial Narratives. Financial Innovation (under revision). <a href="docs/preprint-SLR.pdf">Preprint</a></li>
+    <li>Taibi, G., Osterrieder, J., Schlamp, S. (2025). Nanosecond Microstructure: HFT Participation Stylized Facts. <a href="docs/HFT-stylized-facts.pdf">Preprint</a> | SSRN (pending)</li>
     <li>Osterrieder, J., Schlamp, S. (2025). Reaction Times to Economic News in High-Frequency Trading. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295">SSRN 5112295</a></li>
     <li>Bolesta, K., Taibi, G., Mare, C., Osterrieder, J., Hopp, C. (2024). Hypothesizing Multimodal Influence on Financial Pricing. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153">SSRN 4698153</a></li>
     <li>Chan, S., Chandrashekhar, D., Almazloum, W., Zhang, Y., Lord, N., Osterrieder, J., Chu, J. (2024). Stylized Facts of Metaverse Non-Fungible Tokens. Physica A. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4733153">SSRN 4733153</a></li>
-    <li>Taibi, G. (2025). Macro Narrative Index Construction. Poster</li>
-    <li>Baals, L. J. (2025). Detecting Price Bubble Formation in NFT and DeFi Markets. Working Paper</li>
+    <li>Taibi, G. (2025). Macroeconomic Regimes and Central Banker Speeches. Poster at Advances in Mathematical Finance, Freiburg. <a href="https://doi.org/10.5281/zenodo.18167572">DOI: 10.5281/zenodo.18167572</a> | <a href="docs/Poster_Macro_narratives.pdf">PDF</a></li>
+    <li>Taibi, G. (2024). From Speed to Stability: HFT Impact on Market Quality. Poster at QuantMinds International, London. <a href="https://doi.org/10.5281/zenodo.18167476">DOI: 10.5281/zenodo.18167476</a> | <a href="docs/Poster_HFT_Impact_1.pdf">PDF</a></li>
+    <li>Baals, L. J. (2025). Detecting Price Bubble Formation in NFT and DeFi Markets. <a href="https://doi.org/10.5281/zenodo.18154903">DOI: 10.5281/zenodo.18154903</a> | <a href="papers/NFT_DeFi_Bubble_Detection.pdf">PDF</a></li>
 </ul>
 
 <h2>1.2 Methodological Evolution and Outcomes</h2>
@@ -167,33 +168,49 @@
 
 <p>The COST network established a huge European and global research network with lasting partnerships continuing beyond funding periods. The Deutsche Borse collaboration produced ongoing data access agreements for proprietary nanosecond trading data. Academic partnerships with Humboldt-University Berlin, Bucharest University of Economic Studies, Babes-Bolyai University, and institutions across 51 countries resulted in joint PhD supervision and publication pipelines. Industry collaborations with Quoniam Asset Management and other financial institutions bridge academic research with practical applications. These collaborations position the project as a leading European hub for narrative finance research, with visibility through the COST FinAI Wiki (wiki.fin-ai.eu), AI-in-Finance.eu, and conference.fin-ai.eu platforms, ensuring sustainable impact and continued growth of the research community.</p>
 
-<h2>DOI References</h2>
+<h2>DOI References and Research Outputs</h2>
 
-<h3>Available DOIs</h3>
+<h3>Publications (arXiv/SSRN)</h3>
 <ul>
-    <li><strong>TOPol Framework:</strong> <a href="https://arxiv.org/abs/2510.25069">arXiv:2510.25069</a></li>
+    <li><strong>TOPol Framework:</strong> <a href="https://arxiv.org/abs/2510.25069">arXiv:2510.25069</a> | <a href="https://osf.io/nr94j/">OSF</a></li>
     <li><strong>HFT Reaction Times:</strong> <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5112295">SSRN 5112295</a></li>
     <li><strong>Multimodal Influence:</strong> <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4698153">SSRN 4698153</a></li>
     <li><strong>Stylized Facts of Metaverse NFTs:</strong> <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4733153">SSRN 4733153</a> (Physica A)</li>
     <li><strong>COST Mitigating Digital Asset Risks:</strong> <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4594467">SSRN 4594467</a></li>
 </ul>
 
-<h3>Pending DOIs (to be added)</h3>
+<h3>Zenodo Code Repositories</h3>
 <ul>
-    <li><strong>Zenodo Repository:</strong> [PLACEHOLDER - Zenodo DOI for code/data release]</li>
-    <li><strong>Macro Narrative Index Poster:</strong> [PLACEHOLDER - DOI for poster]</li>
-    <li><strong>NFT/DeFi Bubble Detection (Baals):</strong> [PLACEHOLDER - ask Lennart for hosting]</li>
-    <li><strong>WP3 Fed Speeches Analysis:</strong> [PLACEHOLDER - DOI pending]</li>
-    <li><strong>Quoniam Collaboration:</strong> [PLACEHOLDER - DOI pending]</li>
-    <li><strong>SLR Financial Innovation:</strong> [PLACEHOLDER - DOI upon publication]</li>
-    <li><strong>HFT Nanosecond Microstructure:</strong> [PLACEHOLDER - working paper DOI pending]</li>
+    <li><strong>US Central Banker Speeches Analysis:</strong> NER + macro sentiment tagging on Fed speech transcripts with LLM. <a href="https://doi.org/10.5281/zenodo.18157708">DOI: 10.5281/zenodo.18157708</a> | <a href="docs/gigando_speech_NER.ipynb">NER Notebook</a> | <a href="docs/macroeconomic_narratives_breakpoints.ipynb">Breakpoints Notebook</a></li>
+    <li><strong>BIS Central Banker Speeches Collection:</strong> Python script to collect worldwide speeches via BIS Gingado API. <a href="https://doi.org/10.5281/zenodo.18034730">DOI: 10.5281/zenodo.18034730</a> | <a href="docs/extract_speeches.py">Script</a></li>
+    <li><strong>NFT/DeFi Bubble Detection:</strong> SADF, GSADF, LPPLS analysis code and LaTeX source. <a href="https://doi.org/10.5281/zenodo.18154903">DOI: 10.5281/zenodo.18154903</a> | <a href="papers/NFT_DeFi_Bubble_Detection.pdf">PDF</a></li>
 </ul>
 
-<p><em>Note: This section will be updated once all DOIs are finalized. Sections 1.2 and 1.3 will be revised to include proper DOI citations.</em></p>
+<h3>Zenodo Datasets</h3>
+<ul>
+    <li><strong>BIS Central Banker Speeches Archive:</strong> Worldwide speeches 1996-2025, 379 MB CSV. <a href="https://doi.org/10.5281/zenodo.18034730">DOI: 10.5281/zenodo.18034730</a> | <a href="docs/gigando-cb-speeches_1996-2025.csv">CSV</a></li>
+    <li><strong>US Fed Speeches NER Dataset:</strong> NER-tagged Fed speeches with macro sentiment, 206 MB parquet. <a href="https://doi.org/10.5281/zenodo.18157708">DOI: 10.5281/zenodo.18157708</a> | <a href="docs/gigando_speeches_ner.parquet">Parquet</a></li>
+    <li><strong>Evergreen Narratives Sentiments:</strong> Daily LLM sentiment scores 2004-2025, 1.5 MB CSV. <a href="https://doi.org/10.5281/zenodo.18036051">DOI: 10.5281/zenodo.18036051</a> | <a href="docs/llm_narrative_sentiment_daily.csv">CSV</a></li>
+    <li><strong>Macroeconomic Indicators:</strong> US macro variables for breakpoint analysis, 14 KB CSV. <a href="https://doi.org/10.5281/zenodo.18157708">DOI: 10.5281/zenodo.18157708</a> | <a href="docs/macroeconomic_data.csv">CSV</a></li>
+</ul>
+
+<h3>Posters and Presentations</h3>
+<ul>
+    <li><strong>HFT Impact on Market Liquidity:</strong> Poster at QuantMinds International 2024, London. <a href="https://doi.org/10.5281/zenodo.18167476">DOI: 10.5281/zenodo.18167476</a> | <a href="docs/Poster_HFT_Impact_1.pdf">PDF</a></li>
+    <li><strong>Macroeconomic Regimes and Central Banker Speeches:</strong> Poster at Advances in Mathematical Finance, Freiburg 2025. <a href="https://doi.org/10.5281/zenodo.18167572">DOI: 10.5281/zenodo.18167572</a> | <a href="docs/Poster_Macro_narratives.pdf">PDF</a></li>
+</ul>
+
+<h3>Preprints (pending publication)</h3>
+<ul>
+    <li><strong>AI-Enhanced SLR on Financial Narratives:</strong> Under revision at Financial Innovation. <a href="docs/preprint-SLR.pdf">Preprint</a></li>
+    <li><strong>HFT Nanosecond Microstructure Stylized Facts:</strong> Submitted to SSRN. <a href="docs/HFT-stylized-facts.pdf">Preprint</a></li>
+</ul>
+
+<p><em>All research outputs are permanently archived with DOIs following FAIR principles for findability, accessibility, interoperability, and reusability. Total archived data: 600+ MB across 6 Zenodo repositories.</em></p>
 
 <div class="footer">
     <p><strong>SNSF Grant IZCOZ0_213370</strong> | Narrative Digital Finance</p>
-    <p><a href="index.html">Project Home</a> | <a href="objectives.html">Research Objectives</a> | <a href="inventory.html">Evidence Inventory</a> | <a href="dmp.html">Data Management Plan</a> | <a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a> | <a href="#">Zenodo Repository</a></p>
+    <p><a href="index.html">Project Home</a> | <a href="objectives.html">Research Objectives</a> | <a href="inventory.html">Evidence Inventory</a> | <a href="dmp.html">Data Management Plan</a> | <a href="https://data.snf.ch/grants/grant/213370">SNSF Data Portal</a> | <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Taibi%2C%20Gabin%22">Zenodo</a></p>
     <p>Funded by SNSF (Grant IZCOZ0_213370) and EU Horizon Europe (Grant No. 101119635)</p>
     <p>&copy; Prof. Dr. Joerg Osterrieder 2026</p>
 </div>
