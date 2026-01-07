@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analysis of Federal Reserve speech sentiment and macroeconomic conditions using PCA and structural break detection. Key finding: near-zero correlation (0.005) between CB speech sentiment and macro indices.">
+    <meta name="keywords" content="central bank, Federal Reserve, speech sentiment, PCA, structural breaks, monetary policy, narrative economics">
+    <meta name="author" content="SNSF Narrative Digital Finance Project">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Central Bank Speeches and Macroeconomic Narratives">
+    <meta property="og:description" content="Analyzing the relationship between Federal Reserve speech sentiment and macroeconomic indices. Key finding: near-zero correlation (0.005).">
+    <meta property="og:url" content="https://digital-ai-finance.github.io/Narrative-Digital-Finance-CB-Speeches/cb-speeches/">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CB Speeches Analysis - Narrative Digital Finance">
+    <meta name="twitter:description" content="PCA-based analysis of Federal Reserve speech sentiment vs macroeconomic conditions.">
+    <title>CB Speeches Analysis - NDF</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --accent: #f59e0b;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 700; }
+        header p { opacity: 0.9; font-size: 1rem; max-width: 700px; margin: 0 auto; }
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 15px 5px 0;
+        }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 40px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.4rem; }
+        h3 { margin: 20px 0 10px; font-size: 1.1rem; color: var(--primary); }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+            margin: 5px;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-secondary { background: var(--secondary); }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .result-card {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .result-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .result-card .label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+        ul { margin-left: 20px; margin-bottom: 15px; }
+        li { margin: 8px 0; }
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Central Bank Speeches and Macroeconomic Narratives</h1>
+            <p>Analyzing the relationship between Federal Reserve speech sentiment and macroeconomic indices using PCA, structural break detection, and rolling regression analysis.</p>
+            <span class="badge">SNSF Narrative Digital Finance</span>
+            <span class="badge">1996-2025</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Project Home</a></li>
+            <li><a href="index.html" class="active">Overview</a></li>
+            <li><a href="figures/index.html">Figures</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="paper/index.html">Paper</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h2>Research Overview</h2>
+            <p>This research investigates whether Federal Reserve speech sentiment (hawkish vs. dovish) correlates with underlying macroeconomic conditions. Using 2,421 US Fed speeches from 1996-2025 and six FRED macroeconomic indicators, we construct PCA-based indices and analyze their relationship with speech sentiment.</p>
+
+            <div class="highlight-box">
+                <h4>Key Finding</h4>
+                <p><strong>Near-zero correlation (0.005)</strong> between CB speech sentiment and macro indices - a significant empirical result challenging assumptions about central bank communication effectiveness and the narrative-driven policy transmission mechanism.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Key Results</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="value">0.005</div>
+                    <div class="label">Macro-Hawkish Correlation</div>
+                </div>
+                <div class="result-card">
+                    <div class="value">87%</div>
+                    <div class="label">Variance (3 PCs)</div>
+                </div>
+                <div class="result-card">
+                    <div class="value">2,421</div>
+                    <div class="label">US Fed Speeches</div>
+                </div>
+                <div class="result-card">
+                    <div class="value">-0.43</div>
+                    <div class="label">Hawkish Autocorr</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Methodology</h2>
+            <h3>Data Sources</h3>
+            <ul>
+                <li><strong>FRED Macroeconomic Data:</strong> Fed Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls (1996-2025)</li>
+                <li><strong>CB Speeches:</strong> BIS/Gigando dataset with NER annotations and sentiment labels</li>
+            </ul>
+
+            <h3>Analysis Pipeline</h3>
+            <ul>
+                <li><strong>PCA:</strong> Dimensionality reduction on 6 macro indicators to construct Macro Strength Index (PC1) and Inflation Index (PC2)</li>
+                <li><strong>PELT Algorithm:</strong> Structural break detection with RBF kernel (penalty=4)</li>
+                <li><strong>Rolling Regression:</strong> 36-month window beta and R-squared calculation</li>
+                <li><strong>Sentiment Aggregation:</strong> Monthly hawkish/dovish counts with 12-month rolling standardization</li>
+            </ul>
+
+            <h3>PCA Component Interpretation</h3>
+            <ul>
+                <li><strong>PC1 (Macro Strength):</strong> Fed Rate, Nonfarm Payrolls (+), Unemployment (-) - captures expansion/tightening cycles</li>
+                <li><strong>PC2 (Inflation):</strong> CPI, PPI (+), Fed Rate (-) - captures price pressure independent of policy</li>
+                <li><strong>PC3 (Policy-Labor Conflict):</strong> Fed Rate, Unemployment (+), Payrolls (-) - policy tightening amid labor weakness</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Implications</h2>
+            <ul>
+                <li><strong>Policy Independence:</strong> CB communication may be more forward-looking than reactive to current conditions</li>
+                <li><strong>Narrative Disconnect:</strong> Speech sentiment does not mirror macroeconomic reality in real-time</li>
+                <li><strong>Mean Reversion:</strong> Strong negative autocorrelation (-0.43) in hawkish sentiment suggests rapid narrative shifts</li>
+                <li><strong>Research Gap:</strong> Challenges assumptions about the effectiveness of narrative-driven policy transmission</li>
+            </ul>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>Resources</h2>
+            <a href="dashboard.html" class="btn" style="background:#f59e0b">Interactive Dashboard</a>
+            <a href="figures/index.html" class="btn">View Figures</a>
+            <a href="paper/index.html" class="btn btn-outline">Read Paper</a>
+            <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-CB-Speeches" class="btn btn-secondary">GitHub Repository</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="../index.html">Narrative Digital Finance</a> SNSF Research Project</p>
+            <p style="margin-top: 10px; opacity: 0.7;">SNSF Grant IZCOZ0_213370 | 2023-2026</p>
+        </div>
+    </footer>
+</body>
+</html>

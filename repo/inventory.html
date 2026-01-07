@@ -146,7 +146,7 @@
         <header class="page-header">
             <h1>Evidence Inventory</h1>
             <p class="subtitle">Complete inventory of all project outputs, publications, and verifiable evidence</p>
-            <p class="verified-date">Last verified: 2026-01-03 | SNSF Grant IZCOZ0_213370</p>
+            <p class="verified-date">Last verified: 2026-01-07 | SNSF Grant IZCOZ0_213370</p>
         </header>
 
         <!-- Summary Statistics -->
@@ -156,7 +156,7 @@
                 <div class="label">Publications</div>
             </div>
             <div class="summary-card">
-                <div class="number">3</div>
+                <div class="number">6</div>
                 <div class="label">Repositories</div>
             </div>
             <div class="summary-card">
@@ -168,7 +168,7 @@
                 <div class="label">Team ORCIDs</div>
             </div>
             <div class="summary-card">
-                <div class="number">2</div>
+                <div class="number">5</div>
                 <div class="label">Datasets</div>
             </div>
             <div class="summary-card">
@@ -176,7 +176,7 @@
                 <div class="label">Collaborations</div>
             </div>
             <div class="summary-card">
-                <div class="number">6</div>
+                <div class="number">8</div>
                 <div class="label">Events</div>
             </div>
             <div class="summary-card">
@@ -213,15 +213,15 @@
                         <td>Taibi et al.</td>
                         <td>2025</td>
                         <td><span class="status-pending">Under Revision</span></td>
-                        <td>Financial Innovation (journal)</td>
+                        <td><a href="docs/preprint-SLR.pdf" target="_blank" rel="noopener noreferrer">Preprint</a> | Financial Innovation (journal)</td>
                         <td><span class="wp-tag">WP1</span></td>
                     </tr>
                     <tr>
                         <td><span class="badge badge-paper">Paper</span> Nanosecond Microstructure: High-Frequency Traders Participation Stylized Facts</td>
                         <td>Taibi, Osterrieder, Schlamp</td>
                         <td>2025</td>
-                        <td><span class="status-pending">Working Paper</span></td>
-                        <td>In preparation</td>
+                        <td><span class="status-pending">Preprint</span></td>
+                        <td><a href="docs/HFT-stylized-facts.pdf" target="_blank" rel="noopener noreferrer">Preprint</a> | SSRN (pending)</td>
                         <td><span class="wp-tag">WP4</span></td>
                     </tr>
                     <tr>
@@ -296,6 +296,24 @@
                         <td>SADF, GSADF, LPPLS analysis code and LaTeX source</td>
                         <td>Zenodo/GitHub</td>
                         <td><a href="https://doi.org/10.5281/zenodo.18154903" target="_blank" rel="noopener noreferrer">Zenodo</a> | <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance/tree/main/papers/NFT_DeFi_Bubble_Detection" target="_blank" rel="noopener noreferrer">LaTeX</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-repo">Repo</span> US Central Banker Speeches Analysis</td>
+                        <td>NER + macro sentiment tagging on Fed speech transcripts with LLM</td>
+                        <td>Zenodo</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.18157708" target="_blank" rel="noopener noreferrer">Zenodo</a> | <a href="docs/gigando_speech_NER.ipynb" target="_blank" rel="noopener noreferrer">Notebook</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-repo">Repo</span> BIS Central Banker Speeches Collection</td>
+                        <td>Code to collect worldwide speeches via BIS Gingado API</td>
+                        <td>Zenodo</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.18034730" target="_blank" rel="noopener noreferrer">Zenodo</a> | <a href="docs/extract_speeches.py" target="_blank" rel="noopener noreferrer">Script</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-repo">Repo</span> Evergreen Narratives Sentiment Analysis</td>
+                        <td>LLM-based daily narrative sentiment scores computed at Quoniam</td>
+                        <td>Zenodo</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.18036051" target="_blank" rel="noopener noreferrer">Zenodo</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -438,6 +456,24 @@
                         <td>BIS Gigando</td>
                         <td><a href="https://www.bis.org/cbspeeches/" target="_blank" rel="noopener noreferrer">BIS Central Bank Speeches</a></td>
                     </tr>
+                    <tr>
+                        <td><span class="badge badge-dataset">Data</span> Evergreen Narratives Sentiments</td>
+                        <td>Daily LLM sentiment scores for narratives (2004-2025) computed at Quoniam</td>
+                        <td>Zenodo/Quoniam</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.18036051" target="_blank" rel="noopener noreferrer">Zenodo</a> | <a href="docs/llm_narrative_sentiment_daily.csv" target="_blank" rel="noopener noreferrer">CSV</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-dataset">Data</span> BIS Central Banker Speeches Archive</td>
+                        <td>Worldwide central banker speeches 1996-2025 (379 MB CSV)</td>
+                        <td>Zenodo</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.18034730" target="_blank" rel="noopener noreferrer">Zenodo</a> | <a href="docs/gigando-cb-speeches_1996-2025.csv" target="_blank" rel="noopener noreferrer">CSV</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-dataset">Data</span> US Fed Speeches NER Dataset</td>
+                        <td>NER-tagged Fed speeches with macro sentiment (206 MB parquet)</td>
+                        <td>Zenodo</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.18157708" target="_blank" rel="noopener noreferrer">Zenodo</a> | <a href="docs/gigando_speeches_ner.parquet" target="_blank" rel="noopener noreferrer">Parquet</a></td>
+                    </tr>
                 </tbody>
             </table>
         </section>
@@ -573,6 +609,18 @@
                         <td>September 2024</td>
                         <td>Naples, Italy</td>
                         <td><a href="https://www.cost.eu/actions/CA19130/" target="_blank" rel="noopener noreferrer">COST</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-event">Poster</span> HFT Impact on Market Liquidity</td>
+                        <td>December 2024</td>
+                        <td>London, UK (QuantMinds International)</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.18167476" target="_blank" rel="noopener noreferrer">Zenodo</a> | <a href="docs/Poster_HFT_Impact_1.pdf" target="_blank" rel="noopener noreferrer">PDF</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-event">Poster</span> Macroeconomic Regimes & Central Banker Speeches</td>
+                        <td>May 2025</td>
+                        <td>Freiburg, Germany (Advances in Mathematical Finance)</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.18167572" target="_blank" rel="noopener noreferrer">Zenodo</a> | <a href="docs/Poster_Macro_narratives.pdf" target="_blank" rel="noopener noreferrer">PDF</a></td>
                     </tr>
                 </tbody>
             </table>

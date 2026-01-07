@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figures - CB Speeches Analysis</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 0.95rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 30px 0; }
+        .figure-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .figure-header {
+            background: var(--bg);
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .figure-header h2 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .figure-num {
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .figure-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .figure-content embed {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        .figure-description {
+            padding: 15px 20px;
+            background: #f1f5f9;
+            border-top: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+        .btn-download {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .btn-download:hover { opacity: 0.9; }
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a { color: #f59e0b; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Research Figures</h1>
+            <p>CB Speeches and Macroeconomic Narratives Analysis</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Project Home</a></li>
+            <li><a href="../index.html">Overview</a></li>
+            <li><a href="index.html" class="active">Figures</a></li>
+            <li><a href="../paper/index.html">Paper</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Scaled Macroeconomic Data</h2>
+                <span class="figure-num">Figure 1</span>
+            </div>
+            <div class="figure-content">
+                <embed src="01_scaled_macro_timeseries.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                Rolling 12-month standardized macroeconomic indicators (Fed Funds Rate, CPI, PPI, GDP, Unemployment, Nonfarm Payrolls) from 1996-2025.
+                <a href="01_scaled_macro_timeseries.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Principal Components Over Time</h2>
+                <span class="figure-num">Figure 2</span>
+            </div>
+            <div class="figure-content">
+                <embed src="02_principal_components.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                First two principal components: PC1 (Macro Strength Index) and PC2 (Inflation Index) capturing 72% of total variance.
+                <a href="02_principal_components.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Macro Strength Index with Breakpoints</h2>
+                <span class="figure-num">Figure 3</span>
+            </div>
+            <div class="figure-content">
+                <embed src="03_macro_strength_breakpoints.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                PC1 (Macro Strength Index) with PELT-detected structural breakpoints identifying regime changes in macroeconomic conditions.
+                <a href="03_macro_strength_breakpoints.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Inflation Index with Breakpoints</h2>
+                <span class="figure-num">Figure 4</span>
+            </div>
+            <div class="figure-content">
+                <embed src="04_inflation_index_breakpoints.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                PC2 (Inflation Index) with PELT-detected structural breakpoints identifying inflation regime transitions.
+                <a href="04_inflation_index_breakpoints.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Monthly Speech Distribution</h2>
+                <span class="figure-num">Figure 5</span>
+            </div>
+            <div class="figure-content">
+                <embed src="05_speech_count_distribution.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                Distribution of US Federal Reserve speeches over time, showing 2,421 total speeches from 1996-2025.
+                <a href="05_speech_count_distribution.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Inflation Index with CB Sentiment</h2>
+                <span class="figure-num">Figure 6</span>
+            </div>
+            <div class="figure-content">
+                <embed src="06_inflation_sentiment_combined.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                Combined visualization of Inflation Index (PC2) with hawkish/dovish sentiment scores, showing structural breakpoints.
+                <a href="06_inflation_sentiment_combined.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Rolling Betas vs Macro Index</h2>
+                <span class="figure-num">Figure 7</span>
+            </div>
+            <div class="figure-content">
+                <embed src="07_rolling_betas_macro.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                Rolling 36-month beta coefficients showing relationship between CB sentiment and Macro Strength Index over time.
+                <a href="07_rolling_betas_macro.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Rolling R-squared vs Macro Index</h2>
+                <span class="figure-num">Figure 8</span>
+            </div>
+            <div class="figure-content">
+                <embed src="08_rolling_r2_macro.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                Rolling R-squared showing near-zero explanatory power of sentiment for Macro Index changes.
+                <a href="08_rolling_r2_macro.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Rolling Betas vs Inflation Index</h2>
+                <span class="figure-num">Figure 9</span>
+            </div>
+            <div class="figure-content">
+                <embed src="09_rolling_betas_inflation.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                Rolling 36-month beta coefficients for CB sentiment versus Inflation Index.
+                <a href="09_rolling_betas_inflation.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Rolling R-squared vs Inflation Index</h2>
+                <span class="figure-num">Figure 10</span>
+            </div>
+            <div class="figure-content">
+                <embed src="10_rolling_r2_inflation.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                Rolling R-squared showing weak explanatory power of sentiment for Inflation Index changes.
+                <a href="10_rolling_r2_inflation.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>Correlation Matrix</h2>
+                <span class="figure-num">Figure 11</span>
+            </div>
+            <div class="figure-content">
+                <embed src="11_correlation_matrix.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                Correlation matrix (first differences) showing near-zero correlations between macro indices and CB sentiment.
+                <a href="11_correlation_matrix.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+
+        <div class="figure-card">
+            <div class="figure-header">
+                <h2>PCA Loadings Heatmap</h2>
+                <span class="figure-num">Figure 12</span>
+            </div>
+            <div class="figure-content">
+                <embed src="12_pca_loadings_heatmap.pdf" type="application/pdf">
+            </div>
+            <div class="figure-description">
+                PCA loadings showing component weights on macroeconomic variables with explained variance.
+                <a href="12_pca_loadings_heatmap.pdf" class="btn-download" style="float: right;">Download PDF</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="../../index.html">Narrative Digital Finance</a> SNSF Research Project</p>
+        </div>
+    </footer>
+</body>
+</html>

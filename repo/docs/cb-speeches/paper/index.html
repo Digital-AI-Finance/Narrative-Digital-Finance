@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper - CB Speeches Analysis</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --accent: #f59e0b;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 0.95rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 40px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.4rem; }
+        .status-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .abstract {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .citation-box {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 5px;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Academic Paper</h1>
+            <p>Central Bank Speeches and Macroeconomic Narratives</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Project Home</a></li>
+            <li><a href="../index.html">Overview</a></li>
+            <li><a href="../figures/index.html">Figures</a></li>
+            <li><a href="index.html" class="active">Paper</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h2>Paper Information</h2>
+            <p><span class="status-badge">In Preparation</span></p>
+
+            <h3 style="margin-top: 20px; color: var(--primary);">Title</h3>
+            <p style="font-size: 1.2rem; font-weight: 600;">Central Bank Communication and Macroeconomic Conditions: A PCA-Based Framework for Analyzing Narrative-Reality Disconnect</p>
+
+            <h3 style="margin-top: 20px; color: var(--primary);">Authors</h3>
+            <p>Joerg Osterrieder, [Additional Authors]</p>
+            <p style="font-size: 0.9rem; color: #666;">Bern University of Applied Sciences, University of Twente</p>
+
+            <h3 style="margin-top: 20px; color: var(--primary);">Abstract</h3>
+            <div class="abstract">
+                This paper investigates the relationship between Federal Reserve speech sentiment and macroeconomic conditions using a comprehensive framework combining Principal Component Analysis (PCA), structural break detection (PELT algorithm), and rolling regression analysis. Analyzing 2,421 US Fed speeches from 1996-2025 alongside six FRED macroeconomic indicators, we construct orthogonal indices capturing macro strength and inflation dynamics. Our key finding reveals a near-zero correlation (0.005) between central bank speech sentiment and macroeconomic indices, challenging conventional assumptions about the effectiveness of narrative-driven policy transmission. The strong negative autocorrelation (-0.43) in hawkish sentiment suggests rapid mean reversion in central bank communication, while PELT-detected breakpoints identify distinct macroeconomic regimes. These results have important implications for understanding central bank communication effectiveness and the disconnect between economic narratives and underlying conditions.
+            </div>
+
+            <h3 style="margin-top: 20px; color: var(--primary);">Target Journal</h3>
+            <p>Journal of Monetary Economics / Journal of Financial Economics</p>
+        </div>
+
+        <div class="card">
+            <h2>Download</h2>
+            <p>The paper is currently in preparation. A draft will be available soon.</p>
+            <div style="margin-top: 20px;">
+                <a href="#" class="btn btn-disabled">Download PDF (Coming Soon)</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Citation</h2>
+            <p>If you use this research, please cite:</p>
+            <div class="citation-box">
+@article{osterrieder2025cbspeeches,
+  title={Central Bank Communication and Macroeconomic Conditions:
+         A PCA-Based Framework for Analyzing Narrative-Reality Disconnect},
+  author={Osterrieder, Joerg and others},
+  journal={Working Paper},
+  year={2025},
+  institution={Bern University of Applied Sciences}
+}
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Related Resources</h2>
+            <ul style="margin-left: 20px;">
+                <li><a href="../figures/index.html">View all research figures</a></li>
+                <li><a href="https://github.com/Digital-AI-Finance/narrative-digital-finance">GitHub repository with code and data</a></li>
+                <li><a href="../../index.html">Narrative Digital Finance project homepage</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="../../index.html">Narrative Digital Finance</a> SNSF Research Project</p>
+            <p style="margin-top: 10px; opacity: 0.7;">SNSF Grant IZCOZ0_213370 | 2023-2026</p>
+        </div>
+    </footer>
+</body>
+</html>

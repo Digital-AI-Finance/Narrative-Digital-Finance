@@ -37,12 +37,14 @@ ENV/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Data files (large)
+# Data files (large) - except in docs/
 *.csv
 *.parquet
 *.h5
 *.hdf5
 !data/.gitkeep
+!docs/*.csv
+!docs/*.parquet
 
 # Credentials
 *.key
