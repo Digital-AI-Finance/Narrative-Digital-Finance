@@ -1,0 +1,74 @@
+{
+  "hawkish_Macro_Index": {
+    "hawkish_causes_Macro_Index": {
+      "min_p_value": 0.07478445342801189,
+      "min_p_lag": 1,
+      "significant_lags": [],
+      "any_significant": false,
+      "num_lags_tested": 12
+    },
+    "Macro_Index_causes_hawkish": {
+      "min_p_value": 0.03296944503357746,
+      "min_p_lag": 2,
+      "significant_lags": [
+        2,
+        5
+      ],
+      "any_significant": true,
+      "num_lags_tested": 12
+    }
+  },
+  "dovish_Macro_Index": {
+    "dovish_causes_Macro_Index": {
+      "min_p_value": 0.14797309529982253,
+      "min_p_lag": 1,
+      "significant_lags": [],
+      "any_significant": false,
+      "num_lags_tested": 12
+    },
+    "Macro_Index_causes_dovish": {
+      "min_p_value": 0.011377970873721076,
+      "min_p_lag": 1,
+      "significant_lags": [
+        1,
+        2,
+        3,
+        9
+      ],
+      "any_significant": true,
+      "num_lags_tested": 12
+    }
+  },
+  "hawkish_Inflation_Index": {
+    "hawkish_causes_Inflation_Index": {
+      "min_p_value": 0.15960480576384503,
+      "min_p_lag": 1,
+      "significant_lags": [],
+      "any_significant": false,
+      "num_lags_tested": 12
+    },
+    "Inflation_Index_causes_hawkish": {
+      "min_p_value": 0.06216659393382025,
+      "min_p_lag": 1,
+      "significant_lags": [],
+      "any_significant": false,
+      "num_lags_tested": 12
+    }
+  },
+  "dovish_Inflation_Index": {
+    "dovish_causes_Inflation_Index": {
+      "min_p_value": 0.15397001222781062,
+      "min_p_lag": 3,
+      "significant_lags": [],
+      "any_significant": false,
+      "num_lags_tested": 12
+    },
+    "Inflation_Index_causes_dovish": {
+      "min_p_value": 0.1820839607467601,
+      "min_p_lag": 4,
+      "significant_lags": [],
+      "any_significant": false,
+      "num_lags_tested": 12
+    }
+  }
+}

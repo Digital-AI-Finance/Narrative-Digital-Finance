@@ -1,0 +1,162 @@
+{
+  "raw_FED Funds Rate": {
+    "name": "Raw FED Funds Rate",
+    "interpretation": "NON-STATIONARY (both tests agree)",
+    "adf_p_value": 0.0844045959935506,
+    "adf_statistic": -2.643141039194179,
+    "adf_stationary": false,
+    "kpss_p_value": 0.01,
+    "kpss_statistic": 0.9192028351076784,
+    "kpss_stationary": false
+  },
+  "raw_CPI": {
+    "name": "Raw CPI",
+    "interpretation": "NON-STATIONARY (both tests agree)",
+    "adf_p_value": 0.9961453014237333,
+    "adf_statistic": 1.223653615747421,
+    "adf_stationary": false,
+    "kpss_p_value": 0.01,
+    "kpss_statistic": 2.89942286939028,
+    "kpss_stationary": false
+  },
+  "raw_PPI": {
+    "name": "Raw PPI",
+    "interpretation": "NON-STATIONARY (both tests agree)",
+    "adf_p_value": 0.890798336955672,
+    "adf_statistic": -0.5062131066807043,
+    "adf_stationary": false,
+    "kpss_p_value": 0.01,
+    "kpss_statistic": 2.672165887470204,
+    "kpss_stationary": false
+  },
+  "raw_GDP": {
+    "name": "Raw GDP",
+    "interpretation": "NON-STATIONARY (both tests agree)",
+    "adf_p_value": 0.9988396121231686,
+    "adf_statistic": 2.150898630370882,
+    "adf_stationary": false,
+    "kpss_p_value": 0.01,
+    "kpss_statistic": 2.858808206409133,
+    "kpss_stationary": false
+  },
+  "raw_Unemployment": {
+    "name": "Raw Unemployment",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 0.028967411658164254,
+    "adf_statistic": -3.0685809855731985,
+    "adf_stationary": true,
+    "kpss_p_value": 0.0951642608721596,
+    "kpss_statistic": 0.35821891477658974,
+    "kpss_stationary": true
+  },
+  "raw_Nonfarm Payrolls": {
+    "name": "Raw Nonfarm Payrolls",
+    "interpretation": "NON-STATIONARY (both tests agree)",
+    "adf_p_value": 0.8378065803236447,
+    "adf_statistic": -0.733773011926329,
+    "adf_stationary": false,
+    "kpss_p_value": 0.01,
+    "kpss_statistic": 2.5680902175515046,
+    "kpss_stationary": false
+  },
+  "scaled_FED Funds Rate": {
+    "name": "Scaled FED Funds Rate",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 0.00018529072075785722,
+    "adf_statistic": -4.514267841705699,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.1564945553515088,
+    "kpss_stationary": true
+  },
+  "scaled_CPI": {
+    "name": "Scaled CPI",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 0.0029846631755122166,
+    "adf_statistic": -3.7925310551516516,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.16752717987500554,
+    "kpss_stationary": true
+  },
+  "scaled_PPI": {
+    "name": "Scaled PPI",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 5.588695754782772e-05,
+    "adf_statistic": -4.793815687220409,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.13057466479296945,
+    "kpss_stationary": true
+  },
+  "scaled_GDP": {
+    "name": "Scaled GDP",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 1.1325212192389754e-05,
+    "adf_statistic": -5.1459236070671075,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.10206507407730393,
+    "kpss_stationary": true
+  },
+  "scaled_Unemployment": {
+    "name": "Scaled Unemployment",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 0.008292300905735852,
+    "adf_statistic": -3.4883153428881513,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.1544823890371775,
+    "kpss_stationary": true
+  },
+  "scaled_Nonfarm Payrolls": {
+    "name": "Scaled Nonfarm Payrolls",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 0.0075331957715115486,
+    "adf_statistic": -3.5181426509233833,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.2512907426899279,
+    "kpss_stationary": true
+  },
+  "pca_PC1": {
+    "name": "PCA PC1",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 0.007452065756060219,
+    "adf_statistic": -3.5214887763063287,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.14364248381687392,
+    "kpss_stationary": true
+  },
+  "pca_PC2": {
+    "name": "PCA PC2",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 1.2364884142277443e-05,
+    "adf_statistic": -5.12706041173728,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.19600468994903703,
+    "kpss_stationary": true
+  },
+  "diff_PC1": {
+    "name": "D.PC1",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 5.0370086845314625e-30,
+    "adf_statistic": -17.386636760881444,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.029724678656800146,
+    "kpss_stationary": true
+  },
+  "diff_PC2": {
+    "name": "D.PC2",
+    "interpretation": "STATIONARY (both tests agree)",
+    "adf_p_value": 3.7105062290699063e-25,
+    "adf_statistic": -13.449344396114512,
+    "adf_stationary": true,
+    "kpss_p_value": 0.1,
+    "kpss_statistic": 0.02058832021576627,
+    "kpss_stationary": true
+  }
+}

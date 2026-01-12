@@ -934,7 +934,7 @@ print(f"Stationary: {'Yes' if kpss_result[1] > 0.05 else 'No'}")
             # Add macro breakpoints (convert string dates to datetime)
             for bp_date in breakpoints['macro_index']['dates']:
                 fig_timeline.add_vline(x=pd.to_datetime(bp_date), line_dash="dash", line_color=COLORS['vermillion'],
-                                      opacity=0.7, annotation_text="BP", annotation_position="top")
+                                      opacity=0.7)
 
             # Add economic event annotations (convert string dates to datetime)
             for date, event, _ in economic_events:

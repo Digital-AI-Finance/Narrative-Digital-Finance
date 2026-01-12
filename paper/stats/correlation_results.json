@@ -1,0 +1,58 @@
+{
+  "macro_index_hawkish": {
+    "index": "Macro Index",
+    "sentiment": "hawkish",
+    "correlation": 0.0054175653324813776,
+    "bootstrap_ci_95": [
+      -0.09283420919087035,
+      0.10390878233678691
+    ],
+    "bootstrap_se": 0.04981652361892883,
+    "t_statistic": 0.09796803720991709,
+    "p_value": 0.9220176962345386,
+    "df": 327,
+    "n_samples": 329
+  },
+  "macro_index_dovish": {
+    "index": "Macro Index",
+    "sentiment": "dovish",
+    "correlation": 0.0053848779554297324,
+    "bootstrap_ci_95": [
+      -0.10903414342927475,
+      0.1255836158059731
+    ],
+    "bootstrap_se": 0.06011108567363823,
+    "t_statistic": 0.09737692088429296,
+    "p_value": 0.922486728921383,
+    "df": 327,
+    "n_samples": 329
+  },
+  "inflation_index_hawkish": {
+    "index": "Inflation Index",
+    "sentiment": "hawkish",
+    "correlation": 0.002618055084336771,
+    "bootstrap_ci_95": [
+      -0.11510296629955127,
+      0.12070135565766353
+    ],
+    "bootstrap_se": 0.060802044241159835,
+    "t_statistic": 0.04734282232283064,
+    "p_value": 0.9622688995342015,
+    "df": 327,
+    "n_samples": 329
+  },
+  "inflation_index_dovish": {
+    "index": "Inflation Index",
+    "sentiment": "dovish",
+    "correlation": -0.025929496366581126,
+    "bootstrap_ci_95": [
+      -0.14027440680317446,
+      0.08654248023706342
+    ],
+    "bootstrap_se": 0.058017621002613054,
+    "t_statistic": -0.4690444520539594,
+    "p_value": 0.6393504228299678,
+    "df": 327,
+    "n_samples": 329
+  }
+}

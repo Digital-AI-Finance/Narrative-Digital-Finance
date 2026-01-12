@@ -1,3 +1,26 @@
+\subsection{Figures}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/05_speech_count_distribution.pdf}
+\caption{Monthly Distribution of Federal Reserve Speeches by Sentiment Category (1996-2025). Hawkish speeches (red) suggest tighter monetary policy, dovish speeches (blue) suggest looser policy, and neutral speeches (gray) show no clear direction.}
+\label{fig:speech_dist}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/07_rolling_betas_macro.pdf}
+\caption{Rolling 36-Month Betas: Speech Sentiment on Macro Strength Index. The betas for both hawkish and dovish sentiment fluctuate around zero throughout the sample period, indicating no persistent relationship between speech sentiment and macroeconomic conditions.}
+\label{fig:rolling_betas}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/08_rolling_r2_macro.pdf}
+\caption{Rolling 36-Month $R^2$: Speech Sentiment Explaining Macro Strength Index. The $R^2$ remains consistently below 0.05 throughout the sample, indicating that speech sentiment explains less than 5\% of the variation in macroeconomic index changes at any point in time.}
+\label{fig:rolling_r2}
+\end{figure}
+
 \subsection{Additional PCA Results}
 
 Table \ref{tab:pca_full} presents the full PCA loadings for all six principal components.
@@ -50,6 +73,38 @@ Regime & Period & Duration & Mean & Std Dev & Label \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\subsubsection{Inflation Index Regimes}
+
+Table \ref{tab:inflation_regimes} characterizes each regime identified by the PELT algorithm in the Inflation Index.
+
+\begin{table}[H]
+\centering
+\caption{Inflation Index Regimes}
+\label{tab:inflation_regimes}
+\small
+\begin{tabular}{llrrl}
+\toprule
+Regime & Period & Duration & Mean & Label \\
+\midrule
+1 & 1997-01 to 1999-04 & 28 mo & 0.45 & Moderate Inflation \\
+2 & 1999-05 to 2001-05 & 25 mo & -0.82 & Low Inflation \\
+3 & 2001-06 to 2002-03 & 10 mo & 0.67 & Rising Prices \\
+4 & 2002-04 to 2004-04 & 25 mo & -0.34 & Disinflation \\
+5 & 2004-05 to 2007-03 & 35 mo & 1.23 & Commodity Boom \\
+6 & 2007-04 to 2008-06 & 15 mo & 2.45 & Oil Price Spike \\
+7 & 2008-07 to 2014-09 & 75 mo & -0.56 & Post-GFC Disinflation \\
+8 & 2014-10 to 2016-05 & 20 mo & -1.12 & Oil Price Collapse \\
+9 & 2016-06 to 2018-06 & 25 mo & 0.78 & Gradual Normalization \\
+10 & 2018-07 to 2020-07 & 25 mo & 0.12 & Pre-COVID Stability \\
+11 & 2020-08 to 2022-08 & 25 mo & 1.89 & Pandemic Inflation \\
+12 & 2022-09 to 2023-11 & 15 mo & 0.56 & Inflation Moderation \\
+13 & 2023-12 to 2025-05 & 18 mo & -0.23 & Rate Cut Anticipation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Inflation Index exhibits more regime changes (12 breakpoints) than the Macro Strength Index (8 breakpoints), reflecting greater volatility in price dynamics over the sample period.
 
 \subsection{Rolling Regression Details}
 

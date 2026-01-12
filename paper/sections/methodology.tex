@@ -58,7 +58,7 @@ We use the Pruned Exact Linear Time (PELT) algorithm \citep{killick2012optimal} 
 
 where $\mathcal{C}(\cdot)$ is a segment cost function, $\tau_0 = 0$, $\tau_{m+1} = T$, and $\beta$ is a penalty parameter controlling the number of breakpoints.
 
-We use the radial basis function (RBF) kernel for the cost function:
+We use the L2 (squared error) cost function:
 
 \begin{equation}
 \mathcal{C}(y_{s:e}) = \sum_{t=s}^{e} \left\| y_t - \bar{y}_{s:e} \right\|^2
@@ -74,7 +74,7 @@ Each detected breakpoint defines the boundary between economic regimes. For each
 
 \subsubsection{Sentiment Classification}
 
-Each speech in our dataset is classified as hawkish, dovish, or neutral using a dictionary-based approach combined with machine learning refinement. The classification follows the methodology of \citet{apel2022potential}, employing a lexicon of monetary policy-specific terms. Hawkish indicators include references to inflation concerns, tightening, rate increases, and price stability emphasis. Dovish indicators include references to employment concerns, accommodation, growth support, and easing conditions. The classifier assigns each speech to one of three categories based on the relative balance of hawkish and dovish sentiment expressions.
+Each speech in our dataset is classified as hawkish, dovish, or neutral using a dictionary-based approach combined with machine learning refinement. The classification follows the methodology of \citet{apel2014foreign}, employing a lexicon of monetary policy-specific terms. Hawkish indicators include references to inflation concerns, tightening, rate increases, and price stability emphasis. Dovish indicators include references to employment concerns, accommodation, growth support, and easing conditions. The classifier assigns each speech to one of three categories based on the relative balance of hawkish and dovish sentiment expressions.
 
 Let $S_t^H$ and $S_t^D$ denote the number of hawkish and dovish speeches, respectively, in month $t$.
 
