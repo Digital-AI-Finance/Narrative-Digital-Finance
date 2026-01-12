@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproduce - CB Speeches Analysis</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --accent: #f59e0b;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 0.95rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 40px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.4rem; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        h3 { margin: 25px 0 15px; color: var(--primary); font-size: 1.1rem; }
+        p { margin-bottom: 15px; }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+        code {
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+        pre code {
+            background: transparent;
+            padding: 0;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .step-num {
+            background: var(--primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .step-content { flex: 1; }
+        .note-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .note-box strong { color: #92400e; }
+        .success-box {
+            background: #dcfce7;
+            border-left: 4px solid #22c55e;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .success-box strong { color: #166534; }
+        ul, ol { margin-left: 25px; margin-bottom: 15px; }
+        li { margin: 8px 0; }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 5px;
+        }
+        .btn:hover { opacity: 0.9; }
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Reproduce the Analysis</h1>
+            <p>Step-by-step guide to replicate all results</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Project Home</a></li>
+            <li><a href="../index.html">Overview</a></li>
+            <li><a href="../figures/index.html">Figures</a></li>
+            <li><a href="../data/index.html">Data</a></li>
+            <li><a href="../methodology/index.html">Methodology</a></li>
+            <li><a href="index.html" class="active">Reproduce</a></li>
+            <li><a href="../paper/index.html">Paper</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h2>Prerequisites</h2>
+            <ul>
+                <li><strong>Python 3.9+</strong> (tested with 3.10, 3.11)</li>
+                <li><strong>Git</strong> for cloning the repository</li>
+                <li><strong>~500 MB disk space</strong> for data and outputs</li>
+                <li><strong>Optional:</strong> FRED API key for fresh macroeconomic data</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Quick Start (5 minutes)</h2>
+
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <strong>Clone the repository</strong>
+                    <pre><code>git clone https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-CB-Speeches.git
+cd Narrative-Digital-Finance-CB-Speeches/cb_speeches</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <strong>Create virtual environment (recommended)</strong>
+                    <pre><code># Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS/Linux
+python -m venv venv
+source venv/bin/activate</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <strong>Install dependencies</strong>
+                    <pre><code>pip install -r requirements.txt</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <strong>Run the full analysis pipeline</strong>
+                    <pre><code>python -c "from analysis.run_all import run_pipeline; run_pipeline(use_cached=True, verbose=True)"</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">5</div>
+                <div class="step-content">
+                    <strong>Generate all charts</strong>
+                    <pre><code>cd charts
+python run_all_charts.py</code></pre>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <strong>Done!</strong> All outputs are now in the <code>data/</code> and <code>charts/*/</code> directories.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Expected Outputs</h2>
+
+            <h3>Data Files (data/)</h3>
+            <pre><code>data/
+├── pca_components.csv      # Principal components time series
+├── pca_loadings.csv        # Component weights
+├── breakpoints.json        # Structural break dates
+├── sentiment_standardized.csv  # Monthly sentiment
+├── correlation_matrix.csv  # Correlation results
+├── inventory.json          # Full analysis summary
+└── ... (15+ additional files)</code></pre>
+
+            <h3>Charts (charts/)</h3>
+            <pre><code>charts/
+├── 01_scaled_macro_timeseries/chart.pdf
+├── 02_principal_components/chart.pdf
+├── 03_macro_strength_breakpoints/chart.pdf
+├── 04_inflation_index_breakpoints/chart.pdf
+├── 05_speech_count_distribution/chart.pdf
+├── 06_inflation_sentiment_combined/chart.pdf
+├── 07_rolling_betas_macro/chart.pdf
+├── 08_rolling_r2_macro/chart.pdf
+├── 09_rolling_betas_inflation/chart.pdf
+├── 10_rolling_r2_inflation/chart.pdf
+├── 11_correlation_matrix/chart.pdf
+└── 12_pca_loadings_heatmap/chart.pdf</code></pre>
+        </div>
+
+        <div class="card">
+            <h2>Interactive Dashboard</h2>
+            <p>Launch the Streamlit dashboard for interactive exploration:</p>
+            <pre><code>cd cb_speeches
+streamlit run app.py</code></pre>
+            <p>Opens at <code>http://localhost:8501</code></p>
+        </div>
+
+        <div class="card">
+            <h2>Run Tests</h2>
+            <p>Verify data integrity and pipeline outputs:</p>
+            <pre><code>cd cb_speeches
+python -m pytest tests/ -v</code></pre>
+
+            <h3>Test Coverage</h3>
+            <ul>
+                <li><code>test_data_loading.py</code> - Inventory structure, file existence</li>
+                <li><code>test_data_integrity.py</code> - PCA eigenvalues, sentiment counts, correlations</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Fresh Data Download (Optional)</h2>
+            <p>To download fresh macroeconomic data from FRED:</p>
+
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <strong>Get a free FRED API key</strong>
+                    <p>Register at <a href="https://fred.stlouisfed.org/docs/api/api_key.html" target="_blank">FRED API</a></p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <strong>Set environment variable</strong>
+                    <pre><code># Windows (PowerShell)
+$env:FRED_API_KEY = "your_api_key_here"
+
+# macOS/Linux
+export FRED_API_KEY="your_api_key_here"</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <strong>Run pipeline with fresh download</strong>
+                    <pre><code>python -c "from analysis.run_all import run_pipeline; run_pipeline(use_cached=False, verbose=True)"</code></pre>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <strong>Note:</strong> The repository includes cached macroeconomic data, so a FRED API key is not required for reproduction.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Troubleshooting</h2>
+
+            <h3>ImportError: No module named 'ruptures'</h3>
+            <pre><code>pip install ruptures</code></pre>
+
+            <h3>FileNotFoundError: speeches parquet</h3>
+            <p>Ensure you're in the <code>cb_speeches/</code> directory when running commands.</p>
+
+            <h3>Memory errors on large datasets</h3>
+            <p>The pipeline requires ~2GB RAM. Close other applications if needed.</p>
+
+            <h3>Chart fonts look different</h3>
+            <p>Charts are designed for PDF output. Screen rendering may vary by system.</p>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>Resources</h2>
+            <a href="https://github.com/Digital-AI-Finance/Narrative-Digital-Finance-CB-Speeches" class="btn">GitHub Repository</a>
+            <a href="../data/index.html" class="btn" style="background: var(--accent);">Download Data</a>
+            <a href="../paper/index.html" class="btn" style="background: var(--secondary);">Read Paper</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="../../index.html">Narrative Digital Finance</a> SNSF Research Project</p>
+            <p style="margin-top: 10px; opacity: 0.7;">SNSF Grant IZCOZ0_213370 | 2023-2026</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+\subsection{Overview}
+
+Our analytical framework combines three main components: (1) Principal Component Analysis for constructing macroeconomic indices, (2) the PELT algorithm for detecting structural breaks, and (3) rolling regression analysis for measuring time-varying relationships. This section describes each component in detail.
+
+\subsection{PCA-Based Index Construction}
+
+\subsubsection{Data Standardization}
+
+Let $X_t = (x_{1,t}, x_{2,t}, \ldots, x_{K,t})'$ denote the vector of $K=6$ macroeconomic indicators at time $t$. We apply rolling window standardization to remove time-varying means and variances:
+
+\begin{equation}
+\tilde{x}_{k,t} = \frac{x_{k,t} - \bar{x}_{k,t}^{(w)}}{\sigma_{k,t}^{(w)}}
+\end{equation}
+
+where $\bar{x}_{k,t}^{(w)} = \frac{1}{w}\sum_{j=0}^{w-1} x_{k,t-j}$ and $\sigma_{k,t}^{(w)} = \sqrt{\frac{1}{w-1}\sum_{j=0}^{w-1} (x_{k,t-j} - \bar{x}_{k,t}^{(w)})^2}$ are the rolling mean and standard deviation computed over a window of $w=12$ months.
+
+This approach captures deviations from recent trends rather than absolute levels, making the analysis robust to long-run structural changes in the economy.
+
+\subsubsection{Principal Component Analysis}
+
+Given the standardized data matrix $\tilde{X} \in \mathbb{R}^{T \times K}$, we compute the sample covariance matrix:
+
+\begin{equation}
+\Sigma = \frac{1}{T-1} \tilde{X}' \tilde{X}
+\end{equation}
+
+and perform eigenvalue decomposition:
+
+\begin{equation}
+\Sigma = V \Lambda V'
+\end{equation}
+
+where $V = [v_1, v_2, \ldots, v_K]$ contains the eigenvectors and $\Lambda = \text{diag}(\lambda_1, \lambda_2, \ldots, \lambda_K)$ contains the eigenvalues in descending order.
+
+The principal components are computed as:
+
+\begin{equation}
+PC_{j,t} = \tilde{X}_t' v_j, \quad j = 1, \ldots, K
+\end{equation}
+
+The proportion of variance explained by the $j$-th component is:
+
+\begin{equation}
+\text{PVE}_j = \frac{\lambda_j}{\sum_{k=1}^K \lambda_k}
+\end{equation}
+
+We retain the first two principal components, which explain over 70\% of total variance. PC1 is interpreted as the \textit{Macro Strength Index} and PC2 as the \textit{Inflation Index} based on their loadings on the original variables.
+
+\subsection{Structural Break Detection}
+
+\subsubsection{PELT Algorithm}
+
+We use the Pruned Exact Linear Time (PELT) algorithm \citep{killick2012optimal} to detect structural breaks in the principal component series. The PELT algorithm solves the optimization problem:
+
+\begin{equation}
+\min_{\tau_1, \ldots, \tau_m} \left[ \sum_{j=0}^{m} \mathcal{C}(y_{\tau_j+1:\tau_{j+1}}) + \beta m \right]
+\end{equation}
+
+where $\mathcal{C}(\cdot)$ is a segment cost function, $\tau_0 = 0$, $\tau_{m+1} = T$, and $\beta$ is a penalty parameter controlling the number of breakpoints.
+
+We use the radial basis function (RBF) kernel for the cost function:
+
+\begin{equation}
+\mathcal{C}(y_{s:e}) = \sum_{t=s}^{e} \left\| y_t - \bar{y}_{s:e} \right\|^2
+\end{equation}
+
+where $\bar{y}_{s:e}$ is the segment mean. The penalty parameter is set to $\beta = 4$, which balances the trade-off between detecting meaningful regime changes and avoiding spurious breaks.
+
+\subsubsection{Regime Identification}
+
+Each detected breakpoint defines the boundary between economic regimes. For each regime $r$, we compute summary statistics including mean, variance, and duration. This allows us to characterize the evolution of macroeconomic conditions over the sample period.
+
+\subsection{Speech Sentiment Analysis}
+
+\subsubsection{Sentiment Classification}
+
+Each speech in our dataset is classified as hawkish, dovish, or neutral using a dictionary-based approach combined with machine learning refinement. The classification follows the methodology of \citet{apel2022potential}, employing a lexicon of monetary policy-specific terms. Hawkish indicators include references to inflation concerns, tightening, rate increases, and price stability emphasis. Dovish indicators include references to employment concerns, accommodation, growth support, and easing conditions. The classifier assigns each speech to one of three categories based on the relative balance of hawkish and dovish sentiment expressions.
+
+Let $S_t^H$ and $S_t^D$ denote the number of hawkish and dovish speeches, respectively, in month $t$.
+
+\subsubsection{Sentiment Aggregation}
+
+We aggregate sentiment to monthly frequency and apply rolling standardization:
+
+\begin{equation}
+\tilde{H}_t = \frac{S_t^H - \bar{S}_{t}^{H,(w)}}{\sigma_{t}^{H,(w)}}
+\end{equation}
+
+and similarly for dovish sentiment $\tilde{D}_t$. To avoid look-ahead bias, we shift the sentiment series forward by one month before computing correlations with macroeconomic indices.
+
+\subsection{Rolling Regression Analysis}
+
+\subsubsection{Beta Estimation}
+
+We estimate time-varying betas using rolling window OLS:
+
+\begin{equation}
+\Delta PC_{j,t} = \alpha_t + \beta_t^H \Delta \tilde{H}_t + \beta_t^D \Delta \tilde{D}_t + \varepsilon_t
+\end{equation}
+
+where $\Delta$ denotes first differences and the estimation uses a rolling window of $w_r = 36$ months.
+
+The rolling beta for the hawkish sentiment factor is:
+
+\begin{equation}
+\hat{\beta}_t^H = \frac{\text{Cov}_{t-w_r:t}(\Delta PC_j, \Delta \tilde{H})}{\text{Var}_{t-w_r:t}(\Delta \tilde{H})}
+\end{equation}
+
+\subsubsection{R-Squared Calculation}
+
+The rolling $R^2$ measures the time-varying explanatory power:
+
+\begin{equation}
+R_t^2 = \frac{\text{Cov}_{t-w_r:t}(\Delta PC_j, \Delta \tilde{H})^2}{\text{Var}_{t-w_r:t}(\Delta PC_j) \cdot \text{Var}_{t-w_r:t}(\Delta \tilde{H})}
+\end{equation}
+
+\subsection{Correlation Analysis}
+
+We compute contemporaneous correlations between first-differenced series to assess the relationship between speech sentiment and macroeconomic indices:
+
+\begin{equation}
+\rho_{PC_j, H} = \text{Corr}(\Delta PC_j, \Delta \tilde{H})
+\end{equation}
+
+We also compute autocorrelations to assess the persistence of each series:
+
+\begin{equation}
+\rho_1(X) = \text{Corr}(X_t, X_{t-1})
+\end{equation}

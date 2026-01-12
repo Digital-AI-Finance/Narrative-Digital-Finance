@@ -1,0 +1,99 @@
+\subsection{Main Finding: Near-Zero Correlation}
+
+Our central finding is that the correlation between central bank speech sentiment and macroeconomic indices is essentially zero. Table \ref{tab:correlations} reports the correlation matrix for first-differenced series.
+
+\begin{table}[H]
+\centering
+\caption{Correlation Matrix (First Differences)}
+\label{tab:correlations}
+\begin{tabular}{lrrrr}
+\toprule
+& Macro Index & Inflation Index & Hawkish & Dovish \\
+\midrule
+Macro Index & 1.000 & & & \\
+Inflation Index & 0.042 & 1.000 & & \\
+Hawkish & \textbf{0.005} & 0.003 & 1.000 & \\
+Dovish & 0.005 & -0.026 & 0.098 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The correlation between the Macro Index and Hawkish sentiment is $r = 0.005$, statistically indistinguishable from zero. Similarly, the correlation between the Inflation Index and Hawkish sentiment is $r = 0.003$. These results indicate that changes in central bank speech sentiment do not systematically coincide with changes in macroeconomic conditions.
+
+\subsection{Autocorrelation Analysis}
+
+Table \ref{tab:autocorr} reports the first-order autocorrelations for each series.
+
+\begin{table}[H]
+\centering
+\caption{First-Order Autocorrelations}
+\label{tab:autocorr}
+\begin{tabular}{lr}
+\toprule
+Variable & $\rho_1$ \\
+\midrule
+Macro Index (PC1) & 0.052 \\
+Inflation Index (PC2) & 0.288 \\
+Hawkish Sentiment & -0.430 \\
+Dovish Sentiment & -0.380 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The macroeconomic indices show low to moderate persistence, with the Inflation Index more persistent than the Macro Index. In contrast, speech sentiment shows strong \textit{negative} autocorrelation, indicating rapid mean reversion. A hawkish month is typically followed by a less hawkish month, and vice versa.
+
+\subsection{Structural Break Analysis}
+
+The PELT algorithm identifies significant structural breaks in both macroeconomic indices.
+
+\subsubsection{Macro Strength Index Breakpoints}
+
+Eight breakpoints are detected in the Macro Strength Index, dividing the sample into nine distinct regimes:
+\begin{enumerate}
+    \item January 2001: Dot-com bust beginning
+    \item December 2003: Recovery consolidation
+    \item April 2007: Pre-crisis peak
+    \item March 2010: Post-GFC recovery
+    \item November 2016: Post-election regime
+    \item May 2019: Late-cycle slowdown
+    \item June 2021: COVID recovery
+    \item July 2023: Tightening cycle peak
+\end{enumerate}
+
+\subsubsection{Inflation Index Breakpoints}
+
+Twelve breakpoints are detected in the Inflation Index, reflecting greater volatility in price dynamics over the sample period. Key breaks include the commodity boom (2007-2008), the disinflation following the Global Financial Crisis (2009-2010), and the post-pandemic inflation surge (2021-2022).
+
+\subsection{Rolling Regression Results}
+
+Figure \ref{fig:rolling_betas} presents the rolling 36-month betas for Hawkish and Dovish sentiment on the Macro Index. The betas fluctuate around zero throughout the sample period, with no persistent positive or negative relationship.
+
+Figure \ref{fig:rolling_r2} shows the corresponding rolling $R^2$ values. The $R^2$ is consistently below 0.05, indicating that speech sentiment explains less than 5\% of the variation in macroeconomic index changes at any point in time. The average $R^2$ over the sample period is approximately 0.01.
+
+\subsection{Robustness Checks}
+
+\subsubsection{Alternative Lag Structures}
+
+We examine whether speech sentiment leads or lags macroeconomic conditions by computing cross-correlations at various lags. The results show no significant correlation at any lag from -12 to +12 months.
+
+\subsubsection{Subperiod Analysis}
+
+We divide the sample into three subperiods: pre-GFC (1996-2007), GFC and aftermath (2008-2015), and recent period (2016-2025). The near-zero correlation finding holds in all three subperiods.
+
+\subsubsection{Alternative Standardization}
+
+We test alternative standardization methods including fixed-window standardization and no standardization. The results are robust to these alternatives.
+
+\subsection{Implications}
+
+Our findings have several important implications:
+
+\begin{enumerate}
+    \item \textbf{Weak information content}: Central bank speeches do not provide significant real-time information about current macroeconomic conditions.
+
+    \item \textbf{Forward-looking communication}: The low contemporaneous correlation may reflect that central bankers speak primarily about future expectations rather than current conditions.
+
+    \item \textbf{Mean-reverting communication}: The strong negative autocorrelation suggests that central banks actively manage the ``balance'' of their communication, avoiding prolonged hawkish or dovish stretches.
+
+    \item \textbf{Regime independence}: Speech sentiment does not systematically anticipate or respond to the structural breaks detected in macroeconomic indices.
+\end{enumerate}

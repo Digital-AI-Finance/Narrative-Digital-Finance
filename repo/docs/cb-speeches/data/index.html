@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data - CB Speeches Analysis</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --accent: #f59e0b;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 0.95rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 40px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.4rem; }
+        h3 { margin: 20px 0 10px; color: var(--primary); font-size: 1.1rem; }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-large { font-size: 1.1rem; padding: 16px 32px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: var(--bg);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        tr:hover { background: #f8fafc; }
+        code {
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+        .file-size {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .download-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .download-box h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Research Data</h1>
+            <p>Download processed data for CB Speeches analysis</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Project Home</a></li>
+            <li><a href="../index.html">Overview</a></li>
+            <li><a href="../figures/index.html">Figures</a></li>
+            <li><a href="index.html" class="active">Data</a></li>
+            <li><a href="../methodology/index.html">Methodology</a></li>
+            <li><a href="../reproduce/index.html">Reproduce</a></li>
+            <li><a href="../paper/index.html">Paper</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="download-box">
+            <h3>Download All Data</h3>
+            <p style="margin: 15px 0;">Complete dataset package with all processed analysis outputs</p>
+            <a href="cb-speeches-data.zip" class="btn btn-large">Download ZIP (57 KB)</a>
+        </div>
+
+        <div class="card">
+            <h2>Included Files</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>File</th>
+                        <th>Description</th>
+                        <th>Rows</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>pca_components.csv</code></td>
+                        <td>Principal components (PC1-PC6) time series with dates</td>
+                        <td>340</td>
+                    </tr>
+                    <tr>
+                        <td><code>pca_loadings.csv</code></td>
+                        <td>Component loadings on each macroeconomic variable</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td><code>breakpoints.json</code></td>
+                        <td>PELT-detected structural break dates for Macro and Inflation indices</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><code>sentiment_standardized.csv</code></td>
+                        <td>Monthly hawkish/dovish standardized sentiment counts</td>
+                        <td>276</td>
+                    </tr>
+                    <tr>
+                        <td><code>correlation_matrix.csv</code></td>
+                        <td>First-difference correlations between indices and sentiment</td>
+                        <td>3x3</td>
+                    </tr>
+                    <tr>
+                        <td><code>scaled_macro.csv</code></td>
+                        <td>Rolling 12-month standardized macroeconomic indicators</td>
+                        <td>340</td>
+                    </tr>
+                    <tr>
+                        <td><code>raw_macro.csv</code></td>
+                        <td>Original FRED macroeconomic data (1996-2025)</td>
+                        <td>353</td>
+                    </tr>
+                    <tr>
+                        <td><code>inventory.json</code></td>
+                        <td>Complete analysis summary: parameters, statistics, regime details</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Data Dictionary</h2>
+
+            <h3>pca_components.csv</h3>
+            <table>
+                <tr><th>Column</th><th>Description</th></tr>
+                <tr><td><code>date</code></td><td>Month (YYYY-MM-DD format)</td></tr>
+                <tr><td><code>PC1</code></td><td>Macro Strength Index - captures expansion/tightening cycles</td></tr>
+                <tr><td><code>PC2</code></td><td>Inflation Index - captures price pressure independent of policy</td></tr>
+                <tr><td><code>PC3-PC6</code></td><td>Additional principal components</td></tr>
+            </table>
+
+            <h3>sentiment_standardized.csv</h3>
+            <table>
+                <tr><th>Column</th><th>Description</th></tr>
+                <tr><td><code>date</code></td><td>Month (YYYY-MM-DD format)</td></tr>
+                <tr><td><code>hawkish</code></td><td>Standardized hawkish speech count (12-month rolling z-score)</td></tr>
+                <tr><td><code>dovish</code></td><td>Standardized dovish speech count (12-month rolling z-score)</td></tr>
+            </table>
+
+            <h3>scaled_macro.csv</h3>
+            <table>
+                <tr><th>Column</th><th>Description</th></tr>
+                <tr><td><code>date</code></td><td>Month (YYYY-MM-DD format)</td></tr>
+                <tr><td><code>FED Funds Rate</code></td><td>Federal Funds effective rate (standardized)</td></tr>
+                <tr><td><code>CPI</code></td><td>Consumer Price Index (standardized)</td></tr>
+                <tr><td><code>PPI</code></td><td>Producer Price Index (standardized)</td></tr>
+                <tr><td><code>GDP</code></td><td>Gross Domestic Product (standardized, quarterly forward-filled)</td></tr>
+                <tr><td><code>Unemployment</code></td><td>Unemployment rate (standardized)</td></tr>
+                <tr><td><code>Nonfarm Payrolls</code></td><td>Total nonfarm payrolls (standardized)</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Data Sources</h2>
+            <ul style="margin-left: 20px;">
+                <li><strong>Macroeconomic Data:</strong> Federal Reserve Economic Data (FRED) API</li>
+                <li><strong>CB Speeches:</strong> BIS/Gigando dataset with NER annotations and pre-computed sentiment labels</li>
+            </ul>
+            <p style="margin-top: 15px; color: #666;">
+                Note: Raw speech text is not included due to licensing. Only aggregated monthly sentiment counts are provided.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Citation</h2>
+            <p>If you use this data, please cite:</p>
+            <pre style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 0.85rem;">@article{taibi2025cbspeeches,
+  title={Central Bank Communication and Macroeconomic Conditions:
+         A PCA-Based Framework for Analyzing Narrative-Reality Disconnect},
+  author={Taibi, Gabin},
+  journal={Working Paper},
+  year={2025},
+  institution={University of Zurich}
+}</pre>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="../../index.html">Narrative Digital Finance</a> SNSF Research Project</p>
+            <p style="margin-top: 10px; opacity: 0.7;">SNSF Grant IZCOZ0_213370 | 2023-2026</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+\subsection{Additional PCA Results}
+
+Table \ref{tab:pca_full} presents the full PCA loadings for all six principal components.
+
+\begin{table}[H]
+\centering
+\caption{Complete PCA Loadings and Variance Explained}
+\label{tab:pca_full}
+\small
+\begin{tabular}{lrrrrrr|r}
+\toprule
+& PC1 & PC2 & PC3 & PC4 & PC5 & PC6 & Var. Exp. \\
+\midrule
+Fed Funds Rate & 61.3 & -31.2 & 71.6 & 10.5 & 2.1 & 4.6 & --- \\
+CPI & 11.3 & 35.0 & -5.7 & 35.7 & 42.1 & 74.6 & --- \\
+PPI & 33.7 & 68.9 & -3.1 & -47.9 & -40.1 & 16.0 & --- \\
+GDP & 24.7 & -30.9 & 13.9 & 36.9 & 51.9 & -54.0 & --- \\
+Unemployment & -40.9 & 15.7 & 51.9 & 36.2 & -50.9 & -9.9 & --- \\
+Nonfarm Payrolls & 48.0 & -2.2 & -47.2 & 46.0 & -57.9 & 0.9 & --- \\
+\midrule
+Var. Explained (\%) & 48.6 & 23.2 & 15.4 & 6.2 & 4.0 & 2.7 & 100.0 \\
+Cumulative (\%) & 48.6 & 71.8 & 87.1 & 93.4 & 97.3 & 100.0 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Breakpoint Details}
+
+\subsubsection{Macro Strength Index Regimes}
+
+Table \ref{tab:macro_regimes} characterizes each regime identified by the PELT algorithm in the Macro Strength Index.
+
+\begin{table}[H]
+\centering
+\caption{Macro Strength Index Regimes}
+\label{tab:macro_regimes}
+\begin{tabular}{llrrrr}
+\toprule
+Regime & Period & Duration & Mean & Std Dev & Label \\
+\midrule
+1 & 1997-01 to 2001-01 & 49 mo & 1.24 & 1.15 & Dot-com Boom \\
+2 & 2001-02 to 2003-12 & 35 mo & -1.42 & 0.89 & Recession \\
+3 & 2004-01 to 2007-04 & 40 mo & 0.87 & 0.78 & Recovery \\
+4 & 2007-05 to 2010-03 & 35 mo & -1.89 & 1.56 & GFC Crisis \\
+5 & 2010-04 to 2016-11 & 80 mo & 0.23 & 0.92 & Slow Recovery \\
+6 & 2016-12 to 2019-05 & 30 mo & 1.45 & 0.67 & Late Expansion \\
+7 & 2019-06 to 2021-06 & 25 mo & -0.78 & 2.34 & COVID Impact \\
+8 & 2021-07 to 2023-07 & 25 mo & 1.12 & 0.91 & Recovery \\
+9 & 2023-08 to 2025-05 & 22 mo & -0.34 & 0.76 & Normalization \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Rolling Regression Details}
+
+\subsubsection{Window Sensitivity}
+
+Table \ref{tab:window_sensitivity} shows how the average correlation varies with rolling window size.
+
+\begin{table}[H]
+\centering
+\caption{Window Size Sensitivity Analysis}
+\label{tab:window_sensitivity}
+\begin{tabular}{lrrrr}
+\toprule
+Window (months) & Mean $\beta^H$ & Mean $\beta^D$ & Mean $R^2_H$ & Mean $R^2_D$ \\
+\midrule
+24 & 0.003 & 0.002 & 0.008 & 0.006 \\
+36 & 0.004 & 0.003 & 0.010 & 0.008 \\
+48 & 0.003 & 0.002 & 0.009 & 0.007 \\
+60 & 0.003 & 0.002 & 0.008 & 0.007 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Results are robust to window size choice, with consistently near-zero betas and low $R^2$ values.
+
+\subsection{Subperiod Results}
+
+Table \ref{tab:subperiod} reports correlations for three subperiods.
+
+\begin{table}[H]
+\centering
+\caption{Subperiod Correlation Analysis}
+\label{tab:subperiod}
+\begin{tabular}{lrrr}
+\toprule
+Period & Macro-Hawkish & Inflation-Hawkish & Obs \\
+\midrule
+1996-2007 & 0.008 & 0.005 & 144 \\
+2008-2015 & 0.003 & -0.012 & 96 \\
+2016-2025 & 0.006 & 0.008 & 100 \\
+\midrule
+Full Sample & 0.005 & 0.003 & 340 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The near-zero correlation finding is consistent across all subperiods.

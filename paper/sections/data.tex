@@ -1,0 +1,84 @@
+\subsection{Macroeconomic Data}
+
+We obtain monthly macroeconomic data from the Federal Reserve Economic Data (FRED) database maintained by the Federal Reserve Bank of St. Louis. Our sample spans from January 1996 to May 2025, yielding 353 monthly observations before standardization.
+
+Table \ref{tab:macro_vars} describes the six macroeconomic indicators used in our analysis.
+
+\begin{table}[H]
+\centering
+\caption{Macroeconomic Variables}
+\label{tab:macro_vars}
+\begin{tabular}{llll}
+\toprule
+Variable & FRED Code & Description & Unit \\
+\midrule
+Fed Funds Rate & FEDFUNDS & Federal Funds Effective Rate & Percent \\
+CPI & CPIAUCNS & Consumer Price Index for All Urban Consumers & Index \\
+PPI & PPIACO & Producer Price Index for All Commodities & Index \\
+GDP & GDP & Gross Domestic Product & Billions USD \\
+Unemployment & UNRATE & Civilian Unemployment Rate & Percent \\
+Nonfarm Payrolls & PAYEMS & Total Nonfarm Payrolls & Thousands \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The variables are chosen to capture key dimensions of the macroeconomy: monetary policy stance (Fed Funds Rate), price stability (CPI, PPI), economic output (GDP), and labor market conditions (Unemployment, Nonfarm Payrolls). Missing values are forward-filled to maintain data continuity.
+
+\subsection{Central Bank Speeches}
+
+We obtain speech data from the BIS central bank speeches database (Gigando dataset), which contains transcripts and metadata for speeches by central bank officials worldwide. We filter for speeches by US Federal Reserve officials, yielding 2,421 speeches over our sample period.
+
+Each speech is classified into one of three sentiment categories:
+\begin{itemize}
+    \item \textbf{Hawkish} (413 speeches, 17.1\%): Suggesting tighter monetary policy
+    \item \textbf{Dovish} (713 speeches, 29.5\%): Suggesting looser monetary policy
+    \item \textbf{Neutral} (1,295 speeches, 53.5\%): No clear policy direction
+\end{itemize}
+
+The sentiment classification is based on named entity recognition (NER) and natural language processing techniques applied to the speech text. Figure \ref{fig:speech_dist} shows the monthly distribution of speeches over time.
+
+\subsection{Summary Statistics}
+
+Table \ref{tab:summary_stats} presents summary statistics for the macroeconomic variables and sentiment measures.
+
+\begin{table}[H]
+\centering
+\caption{Summary Statistics}
+\label{tab:summary_stats}
+\begin{tabular}{lrrrrr}
+\toprule
+Variable & Mean & Std Dev & Min & Max & Obs \\
+\midrule
+Fed Funds Rate (\%) & 2.47 & 2.21 & 0.05 & 6.54 & 353 \\
+CPI (Index) & 206.5 & 42.3 & 154.4 & 315.5 & 353 \\
+PPI (Index) & 168.2 & 35.9 & 126.2 & 262.3 & 353 \\
+GDP (Billions) & 15,892 & 5,621 & 7,868 & 29,354 & 353 \\
+Unemployment (\%) & 5.43 & 1.68 & 3.40 & 14.70 & 353 \\
+Nonfarm Payrolls (000s) & 139,482 & 11,894 & 118,317 & 159,038 & 353 \\
+\midrule
+Monthly Hawkish Count & 1.17 & 1.82 & 0 & 12 & 353 \\
+Monthly Dovish Count & 2.02 & 2.41 & 0 & 16 & 353 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{PCA Results}
+
+Table \ref{tab:pca_loadings} reports the PCA loadings for each principal component on the original macroeconomic variables.
+
+\begin{table}[H]
+\centering
+\caption{PCA Loadings (\%)}
+\label{tab:pca_loadings}
+\begin{tabular}{lrrrrrr}
+\toprule
+Component & Fed Rate & CPI & PPI & GDP & Unemp & NFP \\
+\midrule
+PC1 (Macro Strength) & 61.3 & 11.3 & 33.7 & 24.7 & -40.9 & 48.0 \\
+PC2 (Inflation) & -31.2 & 35.0 & 68.9 & -30.9 & 15.7 & -2.2 \\
+PC3 (Policy-Labor) & 71.6 & -5.7 & -3.1 & 13.9 & 51.9 & -47.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The first principal component (PC1) loads positively on the Fed Funds Rate, Nonfarm Payrolls, and GDP while loading negatively on Unemployment, consistent with interpretation as a macro strength or expansion index. The second component (PC2) loads heavily on PPI and CPI while negatively loading on the Fed Rate, capturing inflation dynamics. These two components explain 72\% of total variance, with PC1 explaining 49\% and PC2 explaining 23\%.
