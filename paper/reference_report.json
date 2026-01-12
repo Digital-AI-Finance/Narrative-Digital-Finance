@@ -1,0 +1,606 @@
+{
+  "generated": "2026-01-12T13:13:40.598403",
+  "summary": {
+    "total": 18,
+    "ok": 15,
+    "warnings": 2,
+    "errors": 1,
+    "total_fixes": 39,
+    "total_citations": 35613
+  },
+  "references": [
+    {
+      "key": "blinder2008central",
+      "status": "OK",
+      "confidence": 0.867,
+      "doi": "10.1257/jel.46.4.910",
+      "openalex_id": "W2098317876",
+      "citation_count": 1321,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1257/jel.46.4.910",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W2098317876",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "blinder2008central",
+        "title": "Central Bank Communication and Monetary Policy: A Survey of Theory and Evidence",
+        "author": "Blinder, Alan S and Ehrmann, Michael and Fratzscher, Marcel and De Haan, Jakob and Jansen, David-Jan",
+        "journal": "Journal of Economic Literature",
+        "volume": "46",
+        "number": "4",
+        "pages": "910--945",
+        "year": "2008"
+      }
+    },
+    {
+      "key": "woodford2005central",
+      "status": "OK",
+      "confidence": 0.845,
+      "doi": "10.3386/w11898",
+      "openalex_id": "W2151748264",
+      "citation_count": 187,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.3386/w11898",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W2151748264",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "woodford2005central",
+        "title": "Central Bank Communication and Policy Effectiveness",
+        "author": "Woodford, Michael",
+        "journal": "NBER Working Paper",
+        "number": "11898",
+        "year": "2005"
+      }
+    },
+    {
+      "key": "gurkaynak2005sensitivity",
+      "status": "OK",
+      "confidence": 0.712,
+      "doi": "10.2139/ssrn.633281",
+      "openalex_id": "W2769967772",
+      "citation_count": 1233,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.2139/ssrn.633281",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "year",
+          "value": "2004",
+          "note": "Year corrected: 2005 -> 2004"
+        },
+        {
+          "field": "openalex",
+          "value": "W2769967772",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "gurkaynak2005sensitivity",
+        "title": "Do Actions Speak Louder Than Words? The Response of Asset Prices to Monetary Policy Actions and Statements",
+        "author": "G{\\\"u",
+        "journal": "International Journal of Central Banking",
+        "volume": "1",
+        "number": "1",
+        "pages": "55--93",
+        "year": "2005"
+      }
+    },
+    {
+      "key": "hansen2016shocking",
+      "status": "OK",
+      "confidence": 0.864,
+      "doi": "10.1016/j.jinteco.2015.12.008",
+      "openalex_id": "W2230143319",
+      "citation_count": 95,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1016/j.jinteco.2015.12.008",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "year",
+          "value": "2015",
+          "note": "Year corrected: 2016 -> 2015"
+        },
+        {
+          "field": "openalex",
+          "value": "W2230143319",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "hansen2016shocking",
+        "title": "Shocking Language: Understanding the Macroeconomic Effects of Central Bank Communication",
+        "author": "Hansen, Stephen and McMahon, Michael",
+        "journal": "Journal of International Economics",
+        "volume": "99",
+        "pages": "S114--S133",
+        "year": "2016"
+      }
+    },
+    {
+      "key": "apel2014foreign",
+      "status": "WARN",
+      "confidence": 0.863,
+      "doi": "10.1111/jmcb.12885",
+      "openalex_id": "W2994641285",
+      "citation_count": 41,
+      "issues": [
+        "Year mismatch: bib=2014, OpenAlex=2021"
+      ],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1111/jmcb.12885",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W2994641285",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "apel2014foreign",
+        "title": "How Much Information Do Monetary Policy Committees Disclose? Evidence from the FOMC's Minutes and Transcripts",
+        "author": "Apel, Mikael and Blix Grimaldi, Marianna",
+        "journal": "Journal of Money, Credit and Banking",
+        "volume": "46",
+        "number": "s2",
+        "pages": "163--198",
+        "year": "2014"
+      }
+    },
+    {
+      "key": "shapiro2022measuring",
+      "status": "OK",
+      "confidence": 0.875,
+      "doi": "10.1016/j.jeconom.2020.07.053",
+      "openalex_id": "W2595186334",
+      "citation_count": 359,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1016/j.jeconom.2020.07.053",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "year",
+          "value": "2020",
+          "note": "Year corrected: 2022 -> 2020"
+        },
+        {
+          "field": "openalex",
+          "value": "W2595186334",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "shapiro2022measuring",
+        "title": "Measuring News Sentiment",
+        "author": "Shapiro, Adam Hale and Sudhof, Moritz and Wilson, Daniel J",
+        "journal": "Journal of Econometrics",
+        "volume": "228",
+        "number": "2",
+        "pages": "221--243",
+        "year": "2022"
+      }
+    },
+    {
+      "key": "stock2002forecasting",
+      "status": "OK",
+      "confidence": 0.855,
+      "doi": "10.1198/016214502388618960",
+      "openalex_id": "W2079563517",
+      "citation_count": 2984,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1198/016214502388618960",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W2079563517",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "stock2002forecasting",
+        "title": "Forecasting Using Principal Components from a Large Number of Predictors",
+        "author": "Stock, James H and Watson, Mark W",
+        "journal": "Journal of the American Statistical Association",
+        "volume": "97",
+        "number": "460",
+        "pages": "1167--1179",
+        "year": "2002"
+      }
+    },
+    {
+      "key": "ludvigson2009macro",
+      "status": "OK",
+      "confidence": 0.852,
+      "doi": "10.1093/rfs/hhp081",
+      "openalex_id": "W3023877248",
+      "citation_count": 1070,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1093/rfs/hhp081",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W3023877248",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "ludvigson2009macro",
+        "title": "Macro Factors in Bond Risk Premia",
+        "author": "Ludvigson, Sydney C and Ng, Serena",
+        "journal": "The Review of Financial Studies",
+        "volume": "22",
+        "number": "12",
+        "pages": "5027--5067",
+        "year": "2009"
+      }
+    },
+    {
+      "key": "diebold2006measuring",
+      "status": "OK",
+      "confidence": 0.87,
+      "doi": "10.1111/j.1468-0297.2008.02208.x",
+      "openalex_id": "W3122186884",
+      "citation_count": 2822,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1111/j.1468-0297.2008.02208.x",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "year",
+          "value": "2008",
+          "note": "Year corrected: 2009 -> 2008"
+        },
+        {
+          "field": "openalex",
+          "value": "W3122186884",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "diebold2006measuring",
+        "title": "Measuring Financial Asset Return and Volatility Spillovers, with Application to Global Equity Markets",
+        "author": "Diebold, Francis X and Yilmaz, Kamil",
+        "journal": "The Economic Journal",
+        "volume": "119",
+        "number": "534",
+        "pages": "158--171",
+        "year": "2009"
+      }
+    },
+    {
+      "key": "killick2012optimal",
+      "status": "OK",
+      "confidence": 0.859,
+      "doi": "10.1080/01621459.2012.737745",
+      "openalex_id": "W1975684011",
+      "citation_count": 2269,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1080/01621459.2012.737745",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W1975684011",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "killick2012optimal",
+        "title": "Optimal Detection of Changepoints with a Linear Computational Cost",
+        "author": "Killick, Rebecca and Fearnhead, Paul and Eckley, Idris A",
+        "journal": "Journal of the American Statistical Association",
+        "volume": "107",
+        "number": "500",
+        "pages": "1590--1598",
+        "year": "2012"
+      }
+    },
+    {
+      "key": "hamilton1989new",
+      "status": "OK",
+      "confidence": 0.841,
+      "doi": "10.2307/1912559",
+      "openalex_id": "W2074812030",
+      "citation_count": 9428,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.2307/1912559",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W2074812030",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "hamilton1989new",
+        "title": "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle",
+        "author": "Hamilton, James D",
+        "journal": "Econometrica",
+        "volume": "57",
+        "number": "2",
+        "pages": "357--384",
+        "year": "1989"
+      }
+    },
+    {
+      "key": "sims2006were",
+      "status": "ERROR",
+      "confidence": 0.0,
+      "doi": null,
+      "openalex_id": null,
+      "citation_count": 0,
+      "issues": [
+        "NOT FOUND in OpenAlex"
+      ],
+      "fixes": [],
+      "bib_entry": {
+        "type": "article",
+        "key": "sims2006were",
+        "title": "Were There Regime Switches in US Monetary Policy?",
+        "author": "Sims, Christopher A and Zha, Tao",
+        "journal": "American Economic Review",
+        "volume": "96",
+        "number": "1",
+        "pages": "54--81",
+        "year": "2006"
+      }
+    },
+    {
+      "key": "loughran2011liability",
+      "status": "OK",
+      "confidence": 0.888,
+      "doi": "10.1111/j.1540-6261.2010.01625.x",
+      "openalex_id": "W2152136804",
+      "citation_count": 1372,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1111/j.1540-6261.2010.01625.x",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W2152136804",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "loughran2011liability",
+        "title": "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks",
+        "author": "Loughran, Tim and McDonald, Bill",
+        "journal": "The Journal of Finance",
+        "volume": "66",
+        "number": "1",
+        "pages": "35--65",
+        "year": "2011"
+      }
+    },
+    {
+      "key": "tetlock2007giving",
+      "status": "OK",
+      "confidence": 0.84,
+      "doi": "10.1111/j.1540-6261.2007.01232.x",
+      "openalex_id": "W3122944446",
+      "citation_count": 4212,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1111/j.1540-6261.2007.01232.x",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W3122944446",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "tetlock2007giving",
+        "title": "Giving Content to Investor Sentiment: The Role of Media in the Stock Market",
+        "author": "Tetlock, Paul C",
+        "journal": "The Journal of Finance",
+        "volume": "62",
+        "number": "3",
+        "pages": "1139--1168",
+        "year": "2007"
+      }
+    },
+    {
+      "key": "baker2016measuring",
+      "status": "WARN",
+      "confidence": 0.862,
+      "doi": "10.2139/ssrn.2198490",
+      "openalex_id": "W2096756813",
+      "citation_count": 910,
+      "issues": [
+        "Year mismatch: bib=2016, OpenAlex=2013"
+      ],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.2139/ssrn.2198490",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W2096756813",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "baker2016measuring",
+        "title": "Measuring Economic Policy Uncertainty",
+        "author": "Baker, Scott R and Bloom, Nicholas and Davis, Steven J",
+        "journal": "The Quarterly Journal of Economics",
+        "volume": "131",
+        "number": "4",
+        "pages": "1593--1636",
+        "year": "2016"
+      }
+    },
+    {
+      "key": "shiller2017narrative",
+      "status": "OK",
+      "confidence": 0.841,
+      "doi": "10.1257/aer.107.4.967",
+      "openalex_id": "W4233731957",
+      "citation_count": 726,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1257/aer.107.4.967",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W4233731957",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "shiller2017narrative",
+        "title": "Narrative Economics",
+        "author": "Shiller, Robert J",
+        "journal": "American Economic Review",
+        "volume": "107",
+        "number": "4",
+        "pages": "967--1004",
+        "year": "2017"
+      }
+    },
+    {
+      "key": "andre2022subjective",
+      "status": "OK",
+      "confidence": 0.886,
+      "doi": "10.1093/restud/rdac008",
+      "openalex_id": "W4213038271",
+      "citation_count": 201,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.1093/restud/rdac008",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "year",
+          "value": "2021",
+          "note": "Year corrected: 2022 -> 2021"
+        },
+        {
+          "field": "openalex",
+          "value": "W4213038271",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "andre2022subjective",
+        "title": "Subjective Models of the Macroeconomy: Evidence from Experts and Representative Samples",
+        "author": "Andre, Peter and Pizzinelli, Carlo and Roth, Christopher and Wohlfart, Johannes",
+        "journal": "The Review of Economic Studies",
+        "volume": "89",
+        "number": "6",
+        "pages": "2958--2991",
+        "year": "2022"
+      }
+    },
+    {
+      "key": "chow1960tests",
+      "status": "OK",
+      "confidence": 0.88,
+      "doi": "10.2307/1910133",
+      "openalex_id": "W1984536024",
+      "citation_count": 6383,
+      "issues": [],
+      "fixes": [
+        {
+          "field": "doi",
+          "value": "10.2307/1910133",
+          "note": "Added missing DOI"
+        },
+        {
+          "field": "openalex",
+          "value": "W1984536024",
+          "note": "Added OpenAlex ID"
+        }
+      ],
+      "bib_entry": {
+        "type": "article",
+        "key": "chow1960tests",
+        "title": "Tests of Equality Between Sets of Coefficients in Two Linear Regressions",
+        "author": "Chow, Gregory C",
+        "journal": "Econometrica",
+        "volume": "28",
+        "number": "3",
+        "pages": "591--605",
+        "year": "1960"
+      }
+    }
+  ]
+}

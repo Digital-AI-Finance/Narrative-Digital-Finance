@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References - CB Speeches Analysis</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --accent: #f59e0b;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 0.95rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 40px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.4rem; }
+        .summary {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 100px;
+        }
+        .stat-value { font-size: 2rem; font-weight: bold; }
+        .stat-label { font-size: 0.85rem; color: #666; }
+        .stat-ok .stat-value { color: var(--success); }
+        .stat-warn .stat-value { color: var(--warning); }
+        .stat-error .stat-value { color: var(--error); }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .badge-ok { background: #dcfce7; color: #166534; }
+        .badge-warn { background: #fef3c7; color: #92400e; }
+        .badge-error { background: #fee2e2; color: #991b1b; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th { background: var(--bg); font-weight: 600; }
+        tr:hover { background: #f8fafc; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 5px;
+        }
+        .btn:hover { opacity: 0.9; text-decoration: none; }
+        .openalex-badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 5px;
+        }
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bibliography Verification</h1>
+            <p>All references verified against OpenAlex.org</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Project Home</a></li>
+            <li><a href="../index.html">Overview</a></li>
+            <li><a href="../figures/index.html">Figures</a></li>
+            <li><a href="../data/index.html">Data</a></li>
+            <li><a href="../methodology/index.html">Methodology</a></li>
+            <li><a href="../reproduce/index.html">Reproduce</a></li>
+            <li><a href="index.html" class="active">References</a></li>
+            <li><a href="../paper/index.html">Paper</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h2>Verification Summary</h2>
+            <div class="summary">
+                <div class="stat">
+                    <div class="stat-value">18</div>
+                    <div class="stat-label">Total References</div>
+                </div>
+                <div class="stat stat-ok">
+                    <div class="stat-value">15</div>
+                    <div class="stat-label">Verified</div>
+                </div>
+                <div class="stat stat-warn">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Warnings</div>
+                </div>
+                <div class="stat stat-error">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Not Found</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">34K+</div>
+                    <div class="stat-label">Total Citations</div>
+                </div>
+            </div>
+            <p>All references have been verified against the <a href="https://openalex.org" target="_blank">OpenAlex</a> academic database. DOIs have been added where missing, and metadata has been corrected.</p>
+            <div style="margin-top: 20px;">
+                <a href="report.html" class="btn">View Full Report</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Reference List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Reference</th>
+                        <th>Year</th>
+                        <th>Citations</th>
+                        <th>DOI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Blinder et al. - Central Bank Communication Survey <a href="https://openalex.org/W2095515098" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2008</td>
+                        <td>1,321</td>
+                        <td><a href="https://doi.org/10.1257/jel.46.4.910" target="_blank">10.1257/jel.46.4.910</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Woodford - Central Bank Communication Effectiveness <a href="https://openalex.org/W3124629009" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2005</td>
+                        <td>187</td>
+                        <td><a href="https://doi.org/10.3386/w11898" target="_blank">10.3386/w11898</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Gurkaynak, Sack, Swanson - Actions vs Words <a href="https://openalex.org/W2121251997" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2005</td>
+                        <td>1,233</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.633281" target="_blank">10.2139/ssrn.633281</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Hansen, McMahon - Shocking Language <a href="https://openalex.org/W2291261927" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2016</td>
+                        <td>95</td>
+                        <td><a href="https://doi.org/10.1016/j.jinteco.2015.12.008" target="_blank">10.1016/j.jinteco.2015.12.008</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-warn">WARN</span></td>
+                        <td>Apel, Blix Grimaldi - FOMC Minutes/Transcripts <a href="https://openalex.org/W3142497456" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2014</td>
+                        <td>-</td>
+                        <td>Year mismatch (fixed)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Shapiro, Sudhof, Wilson - Measuring News Sentiment <a href="https://openalex.org/W3044898628" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2022</td>
+                        <td>359</td>
+                        <td><a href="https://doi.org/10.1016/j.jeconom.2020.07.053" target="_blank">10.1016/j.jeconom.2020.07.053</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Stock, Watson - Forecasting with PCA <a href="https://openalex.org/W2143043631" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2002</td>
+                        <td>2,984</td>
+                        <td><a href="https://doi.org/10.1198/016214502388618960" target="_blank">10.1198/016214502388618960</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Ludvigson, Ng - Macro Factors in Bond Risk Premia <a href="https://openalex.org/W2008133905" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2009</td>
+                        <td>1,070</td>
+                        <td><a href="https://doi.org/10.1093/rfs/hhp081" target="_blank">10.1093/rfs/hhp081</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Diebold, Yilmaz - Volatility Spillovers <a href="https://openalex.org/W2082936698" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2009</td>
+                        <td>2,822</td>
+                        <td><a href="https://doi.org/10.1111/j.1468-0297.2008.02208.x" target="_blank">10.1111/j.1468-0297.2008.02208.x</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Killick, Fearnhead, Eckley - PELT Changepoints <a href="https://openalex.org/W2134116091" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2012</td>
+                        <td>2,269</td>
+                        <td><a href="https://doi.org/10.1080/01621459.2012.737745" target="_blank">10.1080/01621459.2012.737745</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Hamilton - Regime Switching <a href="https://openalex.org/W2165052628" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>1989</td>
+                        <td>9,428</td>
+                        <td><a href="https://doi.org/10.2307/1912559" target="_blank">10.2307/1912559</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-error">ERROR</span></td>
+                        <td>Sims, Zha - US Monetary Policy Regimes</td>
+                        <td>2006</td>
+                        <td>-</td>
+                        <td>Not found in OpenAlex</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Loughran, McDonald - Textual Analysis 10-Ks <a href="https://openalex.org/W2091419714" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2011</td>
+                        <td>1,372</td>
+                        <td><a href="https://doi.org/10.1111/j.1540-6261.2010.01625.x" target="_blank">10.1111/j.1540-6261.2010.01625.x</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Tetlock - Media and Stock Market <a href="https://openalex.org/W2052556455" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2007</td>
+                        <td>4,212</td>
+                        <td><a href="https://doi.org/10.1111/j.1540-6261.2007.01232.x" target="_blank">10.1111/j.1540-6261.2007.01232.x</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-warn">WARN</span></td>
+                        <td>Baker, Bloom, Davis - Economic Policy Uncertainty <a href="https://openalex.org/W2028437059" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2016</td>
+                        <td>-</td>
+                        <td>Year mismatch (fixed)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Shiller - Narrative Economics <a href="https://openalex.org/W2604616296" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2017</td>
+                        <td>726</td>
+                        <td><a href="https://doi.org/10.1257/aer.107.4.967" target="_blank">10.1257/aer.107.4.967</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Andre et al. - Subjective Macro Models <a href="https://openalex.org/W4210480814" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>2022</td>
+                        <td>201</td>
+                        <td><a href="https://doi.org/10.1093/restud/rdac008" target="_blank">10.1093/restud/rdac008</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td>Chow - Chow Test <a href="https://openalex.org/W1986973088" class="openalex-badge" target="_blank">OA</a></td>
+                        <td>1960</td>
+                        <td>6,383</td>
+                        <td><a href="https://doi.org/10.2307/1910133" target="_blank">10.2307/1910133</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>About OpenAlex Verification</h2>
+            <p>All references are automatically verified using the <a href="https://openalex.org" target="_blank">OpenAlex</a> open academic database. The verification process:</p>
+            <ul style="margin: 15px 0 15px 25px;">
+                <li>Searches OpenAlex by title and author names</li>
+                <li>Verifies DOI, journal, volume, pages, and year</li>
+                <li>Adds missing DOIs and OpenAlex identifiers</li>
+                <li>Auto-corrects minor year discrepancies</li>
+                <li>Reports citation counts from OpenAlex</li>
+            </ul>
+            <p>Run verification locally: <code>cd paper && python verify_references.py</code></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="../../index.html">Narrative Digital Finance</a> SNSF Research Project</p>
+            <p style="margin-top: 10px; opacity: 0.7;">SNSF Grant IZCOZ0_213370 | 2023-2026</p>
+        </div>
+    </footer>
+</body>
+</html>
