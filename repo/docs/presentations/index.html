@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentations - Narrative Digital Finance</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 1rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 40px 0; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 { color: var(--primary); margin-bottom: 15px; }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .btn:hover { opacity: 0.9; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat .num { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .stat .label { font-size: 0.85rem; color: #666; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Research Presentations</h1>
+            <p>Visualizations and figures from Narrative Digital Finance research</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Project Home</a></li>
+            <li><a href="../cb-speeches/">CB Speeches</a></li>
+            <li><a href="../block4/">Block 4</a></li>
+            <li><a href="./" class="active">Presentations</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h2>Presentation Figures</h2>
+            <p>A curated collection of 20 key visualizations from research presentations covering:</p>
+            <ul style="margin: 15px 0 15px 20px;">
+                <li>Topic modeling and NLP analysis (BERTopic, embeddings)</li>
+                <li>Market dynamics and VIX relationships</li>
+                <li>Narrative network analysis</li>
+                <li>LLM comparison and pipeline architectures</li>
+                <li>Regime change detection methods</li>
+                <li>Portfolio performance evaluation</li>
+            </ul>
+
+            <div class="stat-grid">
+                <div class="stat">
+                    <div class="num">20</div>
+                    <div class="label">Figures</div>
+                </div>
+                <div class="stat">
+                    <div class="num">6</div>
+                    <div class="label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="num">PDF</div>
+                    <div class="label">Downloads</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 25px;">
+                <a href="figures/" class="btn">View All Figures</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Narrative Digital Finance | SNSF Grant IZCOZ0_213370</p>
+    </footer>
+</body>
+</html>

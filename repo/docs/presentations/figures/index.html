@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation Figures - Narrative Digital Finance</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #c73e1d;
+            --text: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), #0f3d4c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
+        header p { opacity: 0.9; font-size: 0.95rem; }
+        nav {
+            background: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: var(--bg); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+        main { padding: 30px 0; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .figure-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .figure-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+        }
+        .figure-card .info {
+            padding: 15px;
+        }
+        .figure-card h3 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+        .figure-card .links {
+            display: flex;
+            gap: 10px;
+        }
+        .figure-card .links a {
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .figure-card .links a:hover { text-decoration: underline; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            nav ul { flex-direction: column; align-items: center; gap: 10px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Presentation Figures</h1>
+            <p>Visualizations from the Narrative Digital Finance Research</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Project Home</a></li>
+            <li><a href="../../cb-speeches/">CB Speeches</a></li>
+            <li><a href="../../block4/">Block 4</a></li>
+            <li><a href="./" class="active">Presentations</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="grid">
+            <div class="figure-card">
+                <img src="bertopic_clustering.png" alt="BERTopic Clustering">
+                <div class="info">
+                    <h3>BERTopic Clustering</h3>
+                    <div class="links"><a href="bertopic_clustering.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="correlation_heatmap.png" alt="Correlation Heatmap">
+                <div class="info">
+                    <h3>Correlation Heatmap</h3>
+                    <div class="links"><a href="correlation_heatmap.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="covid_narrative_timeline.png" alt="COVID Narrative Timeline">
+                <div class="info">
+                    <h3>COVID Narrative Timeline</h3>
+                    <div class="links"><a href="covid_narrative_timeline.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="data_pipeline.png" alt="Data Pipeline">
+                <div class="info">
+                    <h3>Data Pipeline Architecture</h3>
+                    <div class="links"><a href="data_pipeline.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="embedding_space.png" alt="Embedding Space">
+                <div class="info">
+                    <h3>Embedding Space Visualization</h3>
+                    <div class="links"><a href="embedding_space.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="hierarchical_topics.png" alt="Hierarchical Topics">
+                <div class="info">
+                    <h3>Hierarchical Topic Structure</h3>
+                    <div class="links"><a href="hierarchical_topics.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="llm_comparison.png" alt="LLM Comparison">
+                <div class="info">
+                    <h3>LLM Model Comparison</h3>
+                    <div class="links"><a href="llm_comparison.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="llm_pipeline_flow.png" alt="LLM Pipeline Flow">
+                <div class="info">
+                    <h3>LLM Pipeline Flow</h3>
+                    <div class="links"><a href="llm_pipeline_flow.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="market_crash_vix.png" alt="Market Crash VIX">
+                <div class="info">
+                    <h3>Market Crash & VIX Analysis</h3>
+                    <div class="links"><a href="market_crash_vix.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="narrative_intensity_vix.png" alt="Narrative Intensity VIX">
+                <div class="info">
+                    <h3>Narrative Intensity vs VIX</h3>
+                    <div class="links"><a href="narrative_intensity_vix.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="narrative_network.png" alt="Narrative Network">
+                <div class="info">
+                    <h3>Narrative Network Graph</h3>
+                    <div class="links"><a href="narrative_network.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="narrative_r_squared.png" alt="Narrative R-Squared">
+                <div class="info">
+                    <h3>Narrative R-Squared Analysis</h3>
+                    <div class="links"><a href="narrative_r_squared.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="pipeline_architecture.png" alt="Pipeline Architecture">
+                <div class="info">
+                    <h3>Pipeline Architecture</h3>
+                    <div class="links"><a href="pipeline_architecture.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="portfolio_performance.png" alt="Portfolio Performance">
+                <div class="info">
+                    <h3>Portfolio Performance</h3>
+                    <div class="links"><a href="portfolio_performance.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="regime_change_detection.png" alt="Regime Change Detection">
+                <div class="info">
+                    <h3>Regime Change Detection</h3>
+                    <div class="links"><a href="regime_change_detection.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="roc_curves.png" alt="ROC Curves">
+                <div class="info">
+                    <h3>ROC Curves Comparison</h3>
+                    <div class="links"><a href="roc_curves.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="rolling_coefficients.png" alt="Rolling Coefficients">
+                <div class="info">
+                    <h3>Rolling Coefficients</h3>
+                    <div class="links"><a href="rolling_coefficients.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="sir_narrative_dynamics.png" alt="SIR Narrative Dynamics">
+                <div class="info">
+                    <h3>SIR Narrative Dynamics Model</h3>
+                    <div class="links"><a href="sir_narrative_dynamics.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="time_series_decomposition.png" alt="Time Series Decomposition">
+                <div class="info">
+                    <h3>Time Series Decomposition</h3>
+                    <div class="links"><a href="time_series_decomposition.pdf" download>PDF</a></div>
+                </div>
+            </div>
+            <div class="figure-card">
+                <img src="topic_evolution.png" alt="Topic Evolution">
+                <div class="info">
+                    <h3>Topic Evolution Over Time</h3>
+                    <div class="links"><a href="topic_evolution.pdf" download>PDF</a></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Narrative Digital Finance | SNSF Grant IZCOZ0_213370</p>
+        <p>20 key visualizations from research presentations</p>
+    </footer>
+</body>
+</html>
